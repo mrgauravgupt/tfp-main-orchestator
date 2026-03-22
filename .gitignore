@@ -1,0 +1,11 @@
+# OS noise
+.DS_Store
+
+# Local QA/debug artifacts
+audit-shots/
+tmp/
+
+# Large local screenshot exports
+*.png
+*.jpg
+*.jpeg

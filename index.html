@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TFP Digital Twin Architectural Dashboard</title>
+  <script>
+    tailwind = window.tailwind || {};
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#050816',
+            panel: 'rgba(12, 18, 38, 0.7)',
+            line: 'rgba(255,255,255,0.12)',
+            neon: '#5eead4',
+            aurora: '#8b5cf6',
+            pulse: '#38bdf8',
+            limeglass: '#84cc16'
+          },
+          boxShadow: {
+            neon: '0 0 0 1px rgba(94,234,212,.25), 0 20px 60px rgba(56,189,248,.18)',
+            glass: '0 18px 70px rgba(2, 8, 23, .45)'
+          },
+          backdropBlur: {
+            xl: '26px'
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050816;
+      --panel: rgba(10, 18, 37, 0.64);
+      --panel-strong: rgba(14, 23, 46, 0.84);
+      --line: rgba(255,255,255,.1);
+      --text: rgba(241,245,249,.92);
+      --muted: rgba(191,219,254,.64);
+      --cyan: #67e8f9;
+      --emerald: #34d399;
+      --fuchsia: #f0abfc;
+      --amber: #fbbf24;
+      --shadow: 0 22px 80px rgba(4,10,25,.55);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100%;
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(56,189,248,.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(168,85,247,.14), transparent 25%),
+        radial-gradient(circle at bottom center, rgba(16,185,129,.12), transparent 30%),
+        linear-gradient(160deg, #040711 0%, #070d1d 45%, #02050c 100%);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 120px 120px;
+      mask-image: radial-gradient(circle at center, black, transparent 85%);
+      opacity: .24;
+    }
+    h1, h2, h3, h4, .display-font {
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: -.03em;
+    }
+    .glass {
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+    .glow-border { position: relative; overflow: hidden; }
+    .glow-border::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(103,232,249,.4), rgba(139,92,246,.24), rgba(52,211,153,.3));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+    .metric-ring {
+      background: radial-gradient(circle at center, rgba(103,232,249,.26), rgba(103,232,249,.03) 60%, transparent 72%);
+    }
+    .step-card {
+      transition: transform .35s ease, border-color .35s ease, background .35s ease, box-shadow .35s ease;
+    }
+    .step-card:hover {
+      transform: translateY(-4px) scale(1.01);
+      border-color: rgba(103,232,249,.34);
+      box-shadow: 0 18px 60px rgba(34,211,238,.14);
+    }
+    .step-card.active {
+      border-color: rgba(103,232,249,.7);
+      box-shadow: 0 0 0 1px rgba(103,232,249,.45), 0 16px 64px rgba(56,189,248,.22);
+      background: linear-gradient(180deg, rgba(34,211,238,.16), rgba(255,255,255,.04));
+    }
+    .pulse-dot { box-shadow: 0 0 0 0 rgba(103,232,249,.75); animation: pulse 2.4s infinite; }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(103,232,249,.7); }
+      70% { box-shadow: 0 0 0 18px rgba(103,232,249,0); }
+      100% { box-shadow: 0 0 0 0 rgba(103,232,249,0); }
+    }
+    .chip { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); color: rgba(226,232,240,.9); }
+    .chip:hover { border-color: rgba(103,232,249,.35); color: white; transform: translateY(-1px); }
+    .hero-mesh {
+      background:
+        radial-gradient(circle at 12% 24%, rgba(103,232,249,.22), transparent 28%),
+        radial-gradient(circle at 85% 20%, rgba(244,114,182,.16), transparent 24%),
+        radial-gradient(circle at 50% 100%, rgba(52,211,153,.14), transparent 30%);
+    }
+    .inventory-row:hover { background: rgba(255,255,255,.035); }
+    .inventory-pill { border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); }
+    .mermaid-panel .mermaid { background: transparent; overflow: auto; }
+    .neon-text {
+      background: linear-gradient(90deg, #e2e8f0, #67e8f9 48%, #c084fc 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .section-fade { opacity: 0; transform: translateY(28px); }
+    .search-input:focus {
+      outline: none;
+      border-color: rgba(103,232,249,.5);
+      box-shadow: 0 0 0 4px rgba(34,211,238,.12);
+    }
+    .grid-auto { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .scan-gradient {
+      background: linear-gradient(90deg, rgba(255,255,255,.02), rgba(103,232,249,.15), rgba(255,255,255,.02));
+      background-size: 180% 100%;
+      animation: sweep 8s linear infinite;
+    }
+    @keyframes sweep {
+      0% { background-position: 180% 0; }
+      100% { background-position: -180% 0; }
+    }
+    .media-card { position: relative; overflow: hidden; }
+    .media-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+    .media-card:hover img { transform: scale(1.04); }
+    .media-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 1rem;
+      background: linear-gradient(180deg, rgba(5,8,22,.06), rgba(5,8,22,.82));
+    }
+    .media-expand {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(255,255,255,.2);
+      background: rgba(6, 12, 26, .62);
+      color: white;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition: transform .25s ease, background .25s ease;
+    }
+    .media-expand:hover { transform: scale(1.06); background: rgba(103,232,249,.22); }
+    .image-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      background: rgba(2, 6, 16, .84);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease;
+    }
+    .image-modal.open { opacity: 1; pointer-events: auto; }
+    .image-modal__panel {
+      width: min(1200px, 100%);
+      max-height: 100%;
+      border-radius: 1.75rem;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(8, 13, 28, .92);
+      box-shadow: 0 30px 120px rgba(0,0,0,.55);
+    }
+    .image-modal__frame {
+      display: block;
+      width: 100%;
+      max-height: min(76vh, 980px);
+      object-fit: contain;
+      background: #02050c;
+    }
+    .image-modal__meta { padding: 1rem 1.15rem 1.15rem; }
+    @media (max-width: 900px) {
+      .hero-grid,
+      .tracer-grid,
+      .diagram-grid,
+      .feature-grid,
+      .inventory-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+<body class="h-full selection:bg-cyan-300/30 selection:text-white">
+  <div class="relative mx-auto max-w-[1700px] px-4 pb-20 pt-6 sm:px-6 lg:px-10">
+    <header class="section-fade glass glow-border hero-mesh relative overflow-hidden rounded-[34px] px-6 py-8 sm:px-8 lg:px-12 lg:py-12">
+      <div class="hero-grid grid gap-10 lg:grid-cols-[1.15fr_.85fr] lg:items-end">
+        <div class="space-y-6">
+          <div class="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200/90">
+            <span class="pulse-dot h-2.5 w-2.5 rounded-full bg-cyan-300"></span>
+            <span>Digital Twin · Production Architecture Mirror</span>
+          </div>
+          <div class="space-y-4">
+            <p class="display-font text-xs uppercase tracking-[0.34em] text-cyan-200/70">TFP Photographers Platform</p>
+            <h1 class="max-w-4xl text-4xl font-bold leading-[0.95] text-white sm:text-5xl lg:text-7xl">
+              A <span class="neon-text">CEO-level</span> architectural dashboard for the photography application.
+            </h1>
+            <p class="max-w-3xl text-base leading-8 text-slate-300/82 sm:text-lg">
+              The dashboard scans the live codebase for real route modules, page routes, service exports, adapters, moderation flows, and now distinguishes exact public URLs like <span class="font-medium text-white">/contests</span> from write flows such as voting.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <div class="glass rounded-3xl p-4"><div class="text-xs uppercase tracking-[0.24em] text-slate-400">API routes</div><div class="mt-3 text-3xl font-bold text-white">77</div></div>
+            <div class="glass rounded-3xl p-4"><div class="text-xs uppercase tracking-[0.24em] text-slate-400">Web routes</div><div class="mt-3 text-3xl font-bold text-white">35</div></div>
+            <div class="glass rounded-3xl p-4"><div class="text-xs uppercase tracking-[0.24em] text-slate-400">Service exports</div><div class="mt-3 text-3xl font-bold text-white">33</div></div>
+            <div class="glass rounded-3xl p-4"><div class="text-xs uppercase tracking-[0.24em] text-slate-400">Controller modules</div><div class="mt-3 text-3xl font-bold text-white">10</div></div>
+          </div>
+        </div>
+        <div class="glass rounded-[30px] p-5 sm:p-6">
+          <div class="flex items-center justify-between gap-3">
+            <div>
+              <p class="text-xs uppercase tracking-[0.26em] text-slate-400">Architecture posture</p>
+              <h2 class="mt-2 text-2xl font-semibold text-white">SSR-first, modular, provider-swappable</h2>
+            </div>
+            <div class="metric-ring flex h-16 w-16 items-center justify-center rounded-full border border-cyan-300/20 text-cyan-200"><i data-lucide="radar" class="h-8 w-8"></i></div>
+          </div>
+          <div class="mt-6 space-y-4 text-sm text-slate-300/85">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4"><div class="flex items-start gap-3"><i data-lucide="layers-3" class="mt-0.5 h-4 w-4 text-cyan-300"></i><p>Astro pages provide the SSR shell, Fastify route modules own delivery, commands and queries stay explicit, and adapters isolate storage plus moderation providers.</p></div></div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4"><div class="flex items-start gap-3"><i data-lucide="shield-check" class="mt-0.5 h-4 w-4 text-emerald-300"></i><p>Both web and API middleware enforce trusted-origin protections, CSP, auth boundaries, and locale propagation before critical writes land.</p></div></div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4"><div class="flex items-start gap-3"><i data-lucide="sparkles" class="mt-0.5 h-4 w-4 text-fuchsia-300"></i><p>The storage layer exposes a hexagonal port through <span class="font-medium text-white">IStorageService</span>, with the current production adapter resolved to Backblaze B2.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="mt-8 space-y-8 lg:space-y-10">
+      <section class="section-fade tracer-grid grid gap-6 lg:grid-cols-[1.05fr_.95fr]">
+        <div class="glass glow-border rounded-[30px] p-6 sm:p-7 lg:p-8">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <p class="text-xs uppercase tracking-[0.28em] text-slate-400">The Master Utility</p>
+              <h2 class="mt-2 text-3xl font-semibold text-white">Interactive Request Tracer</h2>
+            </div>
+            <div class="flex items-center gap-2 rounded-full border border-cyan-300/15 bg-cyan-300/10 px-3 py-2 text-xs uppercase tracking-[0.2em] text-cyan-100/90"><i data-lucide="binary" class="h-4 w-4"></i>Exact route aware</div>
+          </div>
+          <p class="mt-4 max-w-3xl text-sm leading-7 text-slate-300/78">
+            Enter a route such as <span class="font-medium text-white">/contests</span>, <span class="font-medium text-white">/projects</span>, <span class="font-medium text-white">/events</span>, <span class="font-medium text-white">/profile/edit</span>, or <span class="font-medium text-white">/workspace-admin</span>. The tracer now normalizes the route, preserves what you typed, and maps exact public URLs separately from write flows.
+          </p>
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+            <input id="tracerInput" class="search-input min-w-0 flex-1 rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-base text-white placeholder:text-slate-500" placeholder="Type a route, e.g. /contests or /api/v1/workspace-admin" />
+            <button id="traceButton" class="rounded-2xl border border-cyan-300/30 bg-cyan-300/15 px-5 py-4 font-medium text-cyan-50 transition hover:-translate-y-0.5 hover:bg-cyan-300/20">Trace request</button>
+          </div>
+          <div id="presetRow" class="mt-4 flex flex-wrap gap-2"></div>
+          <div class="mt-6 rounded-[26px] border border-white/10 bg-black/20 p-4 sm:p-5">
+            <div class="scan-gradient rounded-2xl border border-white/5 px-4 py-3 text-xs uppercase tracking-[0.24em] text-slate-300/70">Resolved flow</div>
+            <div class="mt-4 space-y-4">
+              <div>
+                <div id="resolvedTitle" class="text-2xl font-semibold text-white"></div>
+                <div id="resolvedDescription" class="mt-2 text-sm leading-7 text-slate-300/80"></div>
+              </div>
+              <div id="resolvedTags" class="flex flex-wrap gap-2"></div>
+              <div id="resolvedMeta" class="grid gap-3 sm:grid-cols-3"></div>
+            </div>
+          </div>
+          <div id="stepsContainer" class="mt-6 grid gap-4"></div>
+        </div>
+        <div class="space-y-6">
+          <div class="glass rounded-[30px] p-6 sm:p-7">
+            <div class="flex items-center justify-between gap-3">
+              <div>
+                <p class="text-xs uppercase tracking-[0.28em] text-slate-400">Matched runtime assets</p>
+                <h3 class="mt-2 text-2xl font-semibold text-white">Exact route intelligence</h3>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-3 text-cyan-200"><i data-lucide="route" class="h-5 w-5"></i></div>
+            </div>
+            <div id="matchedRoutes" class="mt-5 space-y-3"></div>
+          </div>
+          <div class="glass rounded-[30px] p-6 sm:p-7">
+            <div class="flex items-center justify-between gap-3">
+              <div>
+                <p class="text-xs uppercase tracking-[0.28em] text-slate-400">Coverage matrix</p>
+                <h3 class="mt-2 text-2xl font-semibold text-white">Public and protected surfaces</h3>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-3 text-fuchsia-200"><i data-lucide="workflow" class="h-5 w-5"></i></div>
+            </div>
+            <div id="coverageHighlights" class="mt-5 grid gap-3 sm:grid-cols-2"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-fade glass glow-border rounded-[30px] p-6 sm:p-7 lg:p-8">
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p class="text-xs uppercase tracking-[0.28em] text-slate-400">Diagram cockpit</p>
+            <h2 class="mt-2 text-3xl font-semibold text-white">Live UML & flow diagrams</h2>
+          </div>
+          <p class="max-w-2xl text-sm leading-7 text-slate-300/78">Mermaid diagrams below express the production architecture as scanned: provider swappability, upload-to-display sequence, and the monorepo’s single-source-of-truth folder topology.</p>
+        </div>
+        <div class="diagram-grid mt-8 grid gap-6 lg:grid-cols-3">
+          <div class="mermaid-panel glass rounded-[26px] p-4 sm:p-5"><div class="mb-4 flex items-center gap-3"><div class="rounded-2xl border border-cyan-300/15 bg-cyan-300/10 p-3 text-cyan-200"><i data-lucide="git-branch-plus" class="h-5 w-5"></i></div><div><div class="text-sm font-semibold text-white">Master class diagram</div><div class="text-xs uppercase tracking-[0.22em] text-slate-400">SOLID · Adapter pattern</div></div></div><div class="mermaid text-sm">classDiagram
+  direction LR
+  class buildApp
+  class IStorageService {
+    +createPresignedUpload()
+    +copy()
+    +getUrl()
+  }
+  class BackblazeB2Adapter
+  class IModerationProvider {
+    +analyzeImage()
+  }
+  class AwsRekognitionAdapter
+  class GoogleVisionAdapter
+  class NoopModerationAdapter
+  class ImageModerationFactory {
+    +createProvider()
+    +createStrategy()
+  }
+  class PrismaModerationRepository
+  class createModerationModule
+  IStorageService <|.. BackblazeB2Adapter
+  IModerationProvider <|.. AwsRekognitionAdapter
+  IModerationProvider <|.. GoogleVisionAdapter
+  IModerationProvider <|.. NoopModerationAdapter
+  buildApp --> IStorageService : getStorageService()
+  buildApp --> createModerationModule : app.decorate('moderation')
+  createModerationModule --> ImageModerationFactory : createProvider()
+  createModerationModule --> PrismaModerationRepository : inject repository
+  createModerationModule --> IStorageService : inject storage</div></div>
+          <div class="mermaid-panel glass rounded-[26px] p-4 sm:p-5"><div class="mb-4 flex items-center gap-3"><div class="rounded-2xl border border-fuchsia-300/15 bg-fuchsia-300/10 p-3 text-fuchsia-200"><i data-lucide="waypoints" class="h-5 w-5"></i></div><div><div class="text-sm font-semibold text-white">Sequence diagram</div><div class="text-xs uppercase tracking-[0.22em] text-slate-400">Upload → Process → Portfolio display</div></div></div><div class="mermaid text-sm">sequenceDiagram
+  actor User
+  participant Page as SSR Page
+  participant WebMW as Web Middleware
+  participant Api as API Layer
+  participant Upload as Upload Pipeline
+  participant Moderation as Moderation Service
+  participant Storage as BackblazeB2Adapter
+  participant Repo as Repository
+  User->>Page: choose image / submit form
+  Page->>WebMW: POST request
+  WebMW->>Api: user portfolio upload endpoint
+  Api->>Upload: finalize + moderate
+  Upload->>Storage: getObjectInfo() / copy() / getUrl()
+  Upload->>Moderation: execute()
+  Moderation-->>Upload: APPROVED or REJECTED
+  Upload-->>Api: finalized upload result
+  Api->>Repo: persist portfolio image
+  Repo-->>Page: portfolio entity
+  Page-->>User: SSR render + enhanced preview</div></div>
+          <div class="mermaid-panel glass rounded-[26px] p-4 sm:p-5"><div class="mb-4 flex items-center gap-3"><div class="rounded-2xl border border-emerald-300/15 bg-emerald-300/10 p-3 text-emerald-200"><i data-lucide="folder-tree" class="h-5 w-5"></i></div><div><div class="text-sm font-semibold text-white">Folder structure tree</div><div class="text-xs uppercase tracking-[0.22em] text-slate-400">Single source of truth</div></div></div><div class="mermaid text-sm">graph TD
+  ROOT[tfp-workspace]
+  ROOT --> APPS[apps]
+  ROOT --> PKG[packages]
+  ROOT --> SCRIPTS[scripts]
+  APPS --> WEB[web]
+  APPS --> API[api]
+  WEB --> WEBP[pages]
+  WEB --> WEBU[utils]
+  WEB --> WEBC[components]
+  WEB --> WEBM[middleware.ts]
+  API --> MOD[modules]
+  API --> APIU[utils]
+  PKG --> CFG[config]
+  PKG --> DB[database]
+  PKG --> I18N[i18n]
+  PKG --> ST[storage]
+  PKG --> SHARED[shared]
+  ST --> PORT[IStorageService]
+  ST --> ADAPT[BackblazeB2Adapter]
+  MOD --> CONTEST[contest]
+  MOD --> USER[user]
+  MOD --> ADMIN[admin]
+  MOD --> PROJECT[project]
+  MOD --> MODERATION[moderation]</div></div>
+        </div>
+      </section>
+
+      <section class="section-fade glass rounded-[30px] p-6 sm:p-7 lg:p-8">
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p class="text-xs uppercase tracking-[0.28em] text-slate-400">Visual evidence wall</p>
+            <h2 class="mt-2 text-3xl font-semibold text-white">Production screenshots with fullscreen overlay</h2>
+          </div>
+          <p class="max-w-2xl text-sm leading-7 text-slate-300/78">Every image now has a visible plus control. Click it to inspect the screenshot in a full-screen overlay.</p>
+        </div>
+        <div id="galleryGrid" class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3"></div>
+      </section>
+
+      <section class="section-fade glass rounded-[30px] p-6 sm:p-7 lg:p-8">
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p class="text-xs uppercase tracking-[0.28em] text-slate-400">Feature deep-dive</p>
+            <h2 class="mt-2 text-3xl font-semibold text-white">Gallery of production modules</h2>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="chip rounded-full px-3 py-2 text-sm">SSR baseline preserved</span>
+            <span class="chip rounded-full px-3 py-2 text-sm">JS enhancement layered on top</span>
+            <span class="chip rounded-full px-3 py-2 text-sm">i18n threaded through pages and middleware</span>
+          </div>
+        </div>
+        <div id="featureCards" class="feature-grid mt-8 grid gap-6 lg:grid-cols-3"></div>
+        <div class="mt-8 grid gap-6 lg:grid-cols-[.78fr_1.22fr]">
+          <div class="glass rounded-[26px] p-5 sm:p-6"><div class="flex items-center gap-3"><div class="rounded-2xl border border-amber-300/15 bg-amber-300/10 p-3 text-amber-200"><i data-lucide="languages" class="h-5 w-5"></i></div><div><div class="text-sm font-semibold text-white">i18n backbone</div><div class="text-xs uppercase tracking-[0.2em] text-slate-400">Middleware + locale utilities</div></div></div><p class="mt-4 text-sm leading-7 text-slate-300/80">Locale resolution is wired from <span class="font-medium text-white">apps/web/src/middleware.ts</span> into <span class="font-medium text-white">apps/web/src/utils/locale.ts</span>, while pages consistently import <span class="font-medium text-white">t</span> from the i18n package for copy and labels.</p></div>
+          <div class="glass rounded-[26px] p-5 sm:p-6"><div class="flex items-center gap-3"><div class="rounded-2xl border border-amber-300/15 bg-amber-300/10 p-3 text-amber-200"><i data-lucide="ruler" class="h-5 w-5"></i></div><div><div class="text-sm font-semibold text-white">Margin-top only CSS philosophy</div><div class="text-xs uppercase tracking-[0.2em] text-slate-400">Observed in review artifacts, not yet fully converged</div></div></div><ul id="spacingInsights" class="mt-4 space-y-2 text-sm leading-7 text-slate-300/80"></ul></div>
+        </div>
+      </section>
+
+      <section class="section-fade inventory-grid grid gap-6 lg:grid-cols-[.9fr_1.1fr]">
+        <div class="glass rounded-[30px] p-6 sm:p-7">
+          <div class="flex items-center justify-between gap-4"><div><p class="text-xs uppercase tracking-[0.28em] text-slate-400">Controller surface</p><h2 class="mt-2 text-3xl font-semibold text-white">Route modules</h2></div><div class="rounded-2xl border border-white/10 bg-white/5 p-3 text-cyan-200"><i data-lucide="component" class="h-5 w-5"></i></div></div>
+          <div id="routeModuleCards" class="mt-6 grid gap-4 grid-auto"></div>
+        </div>
+        <div class="glass rounded-[30px] p-6 sm:p-7">
+          <div class="flex flex-wrap items-center justify-between gap-4"><div><p class="text-xs uppercase tracking-[0.28em] text-slate-400">Complete scan inventory</p><h2 class="mt-2 text-3xl font-semibold text-white">Every route and service export</h2></div><input id="inventorySearch" class="search-input w-full max-w-xs rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-500" placeholder="Filter by path, file, or symbol" /></div>
+          <div class="mt-5 flex flex-wrap gap-2"><button class="chip inventory-tab rounded-full px-3 py-2 text-sm" data-target="apiRoutesPanel">API routes</button><button class="chip inventory-tab rounded-full px-3 py-2 text-sm" data-target="webRoutesPanel">Web routes</button><button class="chip inventory-tab rounded-full px-3 py-2 text-sm" data-target="servicesPanel">Services</button></div>
+          <div id="apiRoutesPanel" class="inventory-panel mt-5 overflow-hidden rounded-[24px] border border-white/10"><div class="max-h-[520px] overflow-auto"><table class="w-full text-left text-sm"><thead class="bg-white/5 text-slate-300"><tr><th class="px-4 py-3 font-medium">Method</th><th class="px-4 py-3 font-medium">Full path</th><th class="px-4 py-3 font-medium">File</th></tr></thead><tbody id="apiRoutesBody"></tbody></table></div></div>
+          <div id="webRoutesPanel" class="inventory-panel mt-5 hidden overflow-hidden rounded-[24px] border border-white/10"><div class="max-h-[520px] overflow-auto"><table class="w-full text-left text-sm"><thead class="bg-white/5 text-slate-300"><tr><th class="px-4 py-3 font-medium">Route</th><th class="px-4 py-3 font-medium">Access</th><th class="px-4 py-3 font-medium">File</th></tr></thead><tbody id="webRoutesBody"></tbody></table></div></div>
+          <div id="servicesPanel" class="inventory-panel mt-5 hidden space-y-4"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="section-fade mt-8 glass rounded-[28px] px-6 py-5 text-sm text-slate-300/76 sm:px-7">Generated from the live workspace scan of <span class="font-medium text-white">tfp-workspace</span>. Exact public routes, fullscreen image inspection, and route normalization are now part of the dashboard behavior.</footer>
+  </div>
+
+  <div id="imageModal" class="image-modal" aria-hidden="true">
+    <div class="image-modal__panel">
+      <div class="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3 text-slate-200">
+        <div>
+          <div id="imageModalTitle" class="text-base font-semibold text-white"></div>
+          <div id="imageModalSubtitle" class="text-xs uppercase tracking-[0.18em] text-slate-400"></div>
+        </div>
+        <button id="imageModalClose" class="media-expand relative right-0 top-0"><i data-lucide="x" class="h-5 w-5"></i></button>
+      </div>
+      <img id="imageModalImg" class="image-modal__frame" alt="Expanded architecture screenshot" />
+      <div class="image-modal__meta text-sm text-slate-300/78" id="imageModalMeta"></div>
+    </div>
+  </div>
+
+  <script>
+    const scanData = {
+      metrics: { apiRoutes: 0, webRoutes: 0, serviceExports: 0, controllerModules: 0 },
+      routes: [],
+      pages: [],
+      services: [],
+      routeModuleSummary: [],
+      flowPresets: {
+        portfolio: {
+          key: 'portfolio',
+          title: 'Portfolio Flow (Sanitized)',
+          urlHints: ['/profile/edit'],
+          description: 'Detailed route intelligence is intentionally redacted in shared artifacts.',
+          tags: ['Sanitized'],
+          routeMatches: ['/profile/edit'],
+          steps: [],
+        },
+        contestsIndex: {
+          key: 'contestsIndex',
+          title: 'Contests Flow (Sanitized)',
+          urlHints: ['/contests'],
+          description: 'Detailed route intelligence is intentionally redacted in shared artifacts.',
+          tags: ['Sanitized'],
+          routeMatches: ['/contests'],
+          steps: [],
+        },
+        contestReaction: {
+          key: 'contestReaction',
+          title: 'Contest Reaction Flow (Sanitized)',
+          urlHints: ['/contests/[id]/submissions/[submissionId]'],
+          description: 'Detailed route intelligence is intentionally redacted in shared artifacts.',
+          tags: ['Sanitized'],
+          routeMatches: ['/contests/[id]/submissions/[submissionId]'],
+          steps: [],
+        },
+        projectsIndex: {
+          key: 'projectsIndex',
+          title: 'Projects Flow (Sanitized)',
+          urlHints: ['/projects'],
+          description: 'Detailed route intelligence is intentionally redacted in shared artifacts.',
+          tags: ['Sanitized'],
+          routeMatches: ['/projects'],
+          steps: [],
+        },
+        eventsIndex: {
+          key: 'eventsIndex',
+          title: 'Events Flow (Sanitized)',
+          urlHints: ['/events'],
+          description: 'Detailed route intelligence is intentionally redacted in shared artifacts.',
+          tags: ['Sanitized'],
+          routeMatches: ['/events'],
+          steps: [],
+        },
+        adminReports: {
+          key: 'adminReports',
+          title: 'Admin Flow (Sanitized)',
+          urlHints: ['/workspace-admin'],
+          description: 'Detailed route intelligence is intentionally redacted in shared artifacts.',
+          tags: ['Sanitized'],
+          routeMatches: ['/workspace-admin'],
+          steps: [],
+        },
+      },
+    };
+    const featureCards = [
+      {
+        title: 'Portfolio Experience',
+        accent: 'cyan',
+        image: './audit-shots/profile__desktop.png',
+        imageLabel: 'Portfolio surface (sanitized)',
+        files: ['internal module paths redacted'],
+        ssr: ['SSR route support retained.'],
+        enhanced: ['Progressive enhancement details redacted in shared artifact.'],
+        architecture: ['Internal implementation paths intentionally redacted.'],
+      },
+      {
+        title: 'Contests Experience',
+        accent: 'fuchsia',
+        image: './audit-shots/regression-2026-03-03T19-09-59-331Z/admin__md-768__contests.png',
+        imageLabel: 'Contests surface (sanitized)',
+        files: ['internal module paths redacted'],
+        ssr: ['SSR route support retained.'],
+        enhanced: ['Progressive enhancement details redacted in shared artifact.'],
+        architecture: ['Internal implementation paths intentionally redacted.'],
+      },
+      {
+        title: 'Admin Experience',
+        accent: 'emerald',
+        image: './audit-shots/admin_reports-mobile.png',
+        imageLabel: 'Admin surface (sanitized)',
+        files: ['internal module paths redacted'],
+        ssr: ['Admin access remains server-side gated.'],
+        enhanced: ['Operational interaction details redacted in shared artifact.'],
+        architecture: ['Internal implementation paths intentionally redacted.'],
+      },
+    ];
+    const spacingInsights = ["ENTERPRISE_REVIEW.md flags 76 margin-bottom violations and explicitly calls out a margin-top only guideline.", "final_review.md recommends converting sibling spacing to margin-top or gap-based layouts instead of bottom margins.", "This dashboard now presents the rule as an active architectural migration item rather than a completed state."];
+    const screenshotGallery = [{"title": "Portfolio Shell", "subtitle": "SSR profile editing + upload enhancement", "image": "./audit-shots/profile__desktop.png", "file": "audit-shots/profile__desktop.png"}, {"title": "Projects Discovery", "subtitle": "Public route /projects", "image": "./audit-shots/projects__desktop.png", "file": "audit-shots/projects__desktop.png"}, {"title": "Events Creation", "subtitle": "Enhanced creation UX", "image": "./audit-shots/events_create-desktop.png", "file": "audit-shots/events_create-desktop.png"}, {"title": "Contests Listing", "subtitle": "Public contests surface", "image": "./audit-shots/regression-2026-03-03T19-09-59-331Z/admin__md-768__contests.png", "file": "audit-shots/regression-2026-03-03T19-09-59-331Z/admin__md-768__contests.png"}, {"title": "Admin Reports", "subtitle": "Operational reporting cockpit", "image": "./audit-shots/admin_reports-mobile.png", "file": "audit-shots/admin_reports-mobile.png"}];
+
+    const tracerInput = document.getElementById('tracerInput');
+    const traceButton = document.getElementById('traceButton');
+    const resolvedTitle = document.getElementById('resolvedTitle');
+    const resolvedDescription = document.getElementById('resolvedDescription');
+    const resolvedTags = document.getElementById('resolvedTags');
+    const resolvedMeta = document.getElementById('resolvedMeta');
+    const stepsContainer = document.getElementById('stepsContainer');
+    const matchedRoutes = document.getElementById('matchedRoutes');
+    const inventorySearch = document.getElementById('inventorySearch');
+    const apiRoutesBody = document.getElementById('apiRoutesBody');
+    const webRoutesBody = document.getElementById('webRoutesBody');
+    const servicesPanel = document.getElementById('servicesPanel');
+    const presetRow = document.getElementById('presetRow');
+    const featureCardsRoot = document.getElementById('featureCards');
+    const spacingInsightsRoot = document.getElementById('spacingInsights');
+    const routeModuleCards = document.getElementById('routeModuleCards');
+    const galleryGrid = document.getElementById('galleryGrid');
+    const coverageHighlights = document.getElementById('coverageHighlights');
+    const imageModal = document.getElementById('imageModal');
+    const imageModalImg = document.getElementById('imageModalImg');
+    const imageModalTitle = document.getElementById('imageModalTitle');
+    const imageModalSubtitle = document.getElementById('imageModalSubtitle');
+    const imageModalMeta = document.getElementById('imageModalMeta');
+    const imageModalClose = document.getElementById('imageModalClose');
+    const flowList = Object.values(scanData.flowPresets);
+
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      securityLevel: 'loose',
+      themeVariables: {
+        primaryColor: '#0f172a',
+        primaryTextColor: '#e2e8f0',
+        primaryBorderColor: '#67e8f9',
+        lineColor: '#7dd3fc',
+        tertiaryColor: '#111827',
+        background: 'transparent',
+        noteBkgColor: '#0b1228',
+        noteTextColor: '#e2e8f0'
+      }
+    });
+
+    function escapeHtml(value) {
+      return String(value == null ? '' : value)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+    }
+
+    function normalizeRoute(value) {
+      let normalized = String(value || '').trim();
+      if (!normalized) return '/';
+      normalized = normalized.replace(/^https?:\/\/[^/]+/i, '');
+      normalized = normalized.split('?')[0].split('#')[0].trim();
+      if (!normalized.startsWith('/')) normalized = '/' + normalized;
+      normalized = normalized.replace(/\/{2,}/g, '/');
+      if (normalized !== '/' && normalized.endsWith('/')) normalized = normalized.slice(0, -1);
+      return normalized || '/';
+    }
+
+    function accessTone(access) {
+      return access === 'protected'
+        ? 'border-amber-300/20 bg-amber-300/10 text-amber-100'
+        : 'border-emerald-300/20 bg-emerald-300/10 text-emerald-100';
+    }
+
+    function buildPresetRow() {
+      presetRow.innerHTML = flowList.map(function(flow) {
+        return '<button class="chip trace-preset rounded-full px-3 py-2 text-sm transition" data-flow="' + escapeHtml(flow.key) + '">' + escapeHtml(flow.urlHints[0]) + '</button>';
+      }).join('');
+      document.querySelectorAll('.trace-preset').forEach(function(button) {
+        button.addEventListener('click', function() {
+          const flow = scanData.flowPresets[button.dataset.flow];
+          tracerInput.value = flow.urlHints[0];
+          applyFlow(flow, flow.urlHints[0]);
+        });
+      });
+    }
+
+    function buildCoverageHighlights() {
+      const publicCount = scanData.pages.filter(function(page) { return page.access === 'public'; }).length;
+      const protectedCount = scanData.pages.filter(function(page) { return page.access === 'protected'; }).length;
+      const cards = [
+        { title: 'Public SSR routes', value: publicCount, detail: 'Examples include /, /contests, /projects, /events, /privacy.' },
+        { title: 'Protected web routes', value: protectedCount, detail: 'Admin and user-session flows are represented as valid URLs with server-side guards.' },
+        { title: 'Exact tracer presets', value: flowList.length, detail: 'Core content, upload, and admin routes are now split into separate route-intelligence tracks.' },
+        { title: 'Image inspection', value: screenshotGallery.length, detail: 'Every dashboard image exposes a plus-icon fullscreen overlay.' },
+      ];
+      coverageHighlights.innerHTML = cards.map(function(card) {
+        return '<div class="rounded-2xl border border-white/10 bg-white/5 p-4"><div class="text-xs uppercase tracking-[0.22em] text-slate-400">' + escapeHtml(card.title) + '</div><div class="mt-2 text-2xl font-semibold text-white">' + escapeHtml(card.value) + '</div><p class="mt-2 text-sm leading-7 text-slate-300/76">' + escapeHtml(card.detail) + '</p></div>';
+      }).join('');
+    }
+
+    function buildGallery() {
+      galleryGrid.innerHTML = screenshotGallery.map(function(item) {
+        return '<article class="glass rounded-[26px] p-3 sm:p-4">'
+          + '<div class="media-card rounded-[22px] border border-white/10 bg-black/20">'
+          + '<img src="' + escapeHtml(item.image) + '" alt="' + escapeHtml(item.title) + '" loading="lazy" />'
+          + '<button type="button" class="media-expand" data-lightbox-src="' + escapeHtml(item.image) + '" data-lightbox-title="' + escapeHtml(item.title) + '" data-lightbox-subtitle="' + escapeHtml(item.subtitle) + '" data-lightbox-meta="' + escapeHtml(item.file) + '"><i data-lucide="plus" class="h-5 w-5"></i></button>'
+          + '<div class="media-overlay"><div><div class="text-sm font-semibold text-white">' + escapeHtml(item.title) + '</div><div class="mt-1 text-xs uppercase tracking-[0.18em] text-slate-300/75">' + escapeHtml(item.subtitle) + '</div></div></div>'
+          + '</div>'
+          + '<div class="mt-3 px-1 text-xs uppercase tracking-[0.18em] text-slate-400">' + escapeHtml(item.file) + '</div>'
+          + '</article>';
+      }).join('');
+    }
+
+    function buildFeatureCards() {
+      featureCardsRoot.innerHTML = featureCards.map(function(card) {
+        return '<article class="glass glow-border rounded-[28px] p-5 sm:p-6">'
+          + '<div class="media-card rounded-[24px] border border-white/10 bg-black/20">'
+          + '<img src="' + escapeHtml(card.image) + '" alt="' + escapeHtml(card.imageLabel) + '" loading="lazy" />'
+          + '<button type="button" class="media-expand" data-lightbox-src="' + escapeHtml(card.image) + '" data-lightbox-title="' + escapeHtml(card.title) + '" data-lightbox-subtitle="' + escapeHtml(card.imageLabel) + '" data-lightbox-meta="' + escapeHtml(card.files[0]) + '"><i data-lucide="plus" class="h-5 w-5"></i></button>'
+          + '<div class="media-overlay"><div><div class="text-sm font-semibold text-white">' + escapeHtml(card.title) + '</div><div class="mt-1 text-xs uppercase tracking-[0.18em] text-slate-300/75">' + escapeHtml(card.imageLabel) + '</div></div></div>'
+          + '</div>'
+          + '<div class="mt-5 flex items-start justify-between gap-4">'
+          + '<div><p class="text-xs uppercase tracking-[0.24em] text-slate-400">Module</p><h3 class="mt-2 text-2xl font-semibold text-white">' + escapeHtml(card.title) + '</h3></div>'
+          + '<div class="rounded-2xl border border-white/10 bg-white/5 p-3 text-' + escapeHtml(card.accent) + '-200"><i data-lucide="aperture" class="h-5 w-5"></i></div>'
+          + '</div>'
+          + '<div class="mt-5 space-y-4 text-sm leading-7 text-slate-300/80">'
+          + '<div class="rounded-2xl border border-white/10 bg-white/5 p-4"><div class="font-semibold text-white">JS-disabled / SSR</div><ul class="mt-2 space-y-2">'
+          + card.ssr.map(function(item) { return '<li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-cyan-300"></span><span>' + escapeHtml(item) + '</span></li>'; }).join('')
+          + '</ul></div>'
+          + '<div class="rounded-2xl border border-white/10 bg-white/5 p-4"><div class="font-semibold text-white">JS-enabled / Enhanced</div><ul class="mt-2 space-y-2">'
+          + card.enhanced.map(function(item) { return '<li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-fuchsia-300"></span><span>' + escapeHtml(item) + '</span></li>'; }).join('')
+          + '</ul></div>'
+          + '<div class="rounded-2xl border border-white/10 bg-white/5 p-4"><div class="font-semibold text-white">i18n + architecture notes</div><ul class="mt-2 space-y-2">'
+          + card.architecture.map(function(item) { return '<li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-300"></span><span>' + escapeHtml(item) + '</span></li>'; }).join('')
+          + '</ul></div>'
+          + '</div>'
+          + '<div class="mt-5 flex flex-wrap gap-2">'
+          + card.files.map(function(file) { return '<span class="inventory-pill rounded-full px-3 py-1.5 text-xs text-slate-200/85">' + escapeHtml(file) + '</span>'; }).join('')
+          + '</div>'
+          + '</article>';
+      }).join('');
+    }
+
+    function buildSpacingInsights() {
+      spacingInsightsRoot.innerHTML = spacingInsights.map(function(item) {
+        return '<li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-amber-300"></span><span>' + escapeHtml(item) + '</span></li>';
+      }).join('');
+    }
+
+    function buildRouteModuleCards() {
+      routeModuleCards.innerHTML = scanData.routeModuleSummary.map(function(item) {
+        return '<div class="glass rounded-[24px] p-4">'
+          + '<div class="flex items-start justify-between gap-4">'
+          + '<div><div class="text-lg font-semibold text-white">' + escapeHtml(item.module) + '</div><div class="mt-1 text-xs uppercase tracking-[0.2em] text-slate-400">' + escapeHtml(item.file) + '</div></div>'
+          + '<div class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">' + escapeHtml(item.count) + ' routes</div>'
+          + '</div>'
+          + '<div class="mt-4 flex flex-wrap gap-2">'
+          + item.methods.map(function(method) { return '<span class="inventory-pill rounded-full px-3 py-1 text-xs text-slate-200/85">' + escapeHtml(method) + '</span>'; }).join('')
+          + '</div>'
+          + '<div class="mt-4 space-y-2 text-sm text-slate-300/78">'
+          + item.sample.map(function(sample) { return '<div class="truncate">' + escapeHtml(sample) + '</div>'; }).join('')
+          + '</div></div>';
+      }).join('');
+    }
+
+    function findPageMatches(route) {
+      const normalized = normalizeRoute(route);
+      return scanData.pages.filter(function(page) { return page.normalizedRoute === normalized; });
+    }
+
+    function findApiMatches(route) {
+      const normalized = normalizeRoute(route);
+      return scanData.routes.filter(function(item) { return item.normalizedPath === normalized; });
+    }
+
+    function findSimilarRoutes(route) {
+      const normalized = normalizeRoute(route);
+      const terms = normalized.split('/').filter(Boolean);
+      const pageMatches = scanData.pages.filter(function(page) {
+        return page.normalizedRoute.startsWith(normalized)
+          || normalized.startsWith(page.normalizedRoute)
+          || terms.some(function(term) { return term && page.normalizedRoute.includes(term); });
+      }).slice(0, 6);
+      const apiMatches = scanData.routes.filter(function(item) {
+        return item.normalizedPath.startsWith(normalized)
+          || normalized.startsWith(item.normalizedPath)
+          || terms.some(function(term) { return term && item.normalizedPath.includes(term); });
+      }).slice(0, 6);
+      return { pageMatches: pageMatches, apiMatches: apiMatches };
+    }
+
+    function resolveFlow(value) {
+      const normalized = normalizeRoute(value);
+      const exactPresetByRoute = {
+        '/profile/edit': 'portfolio',
+        '/contests': 'contestsIndex',
+        '/projects': 'projectsIndex',
+        '/events': 'eventsIndex',
+        '/workspace-admin': 'adminReports',
+        '/admin': 'adminReports',
+      };
+      if (exactPresetByRoute[normalized]) return scanData.flowPresets[exactPresetByRoute[normalized]];
+      if (normalized.includes('/submissions/') || normalized.includes('/reactions') || normalized.includes('/vote')) return scanData.flowPresets.contestReaction;
+      if (normalized.startsWith('/contests')) return scanData.flowPresets.contestsIndex;
+      if (normalized.startsWith('/projects')) return scanData.flowPresets.projectsIndex;
+      if (normalized.startsWith('/events')) return scanData.flowPresets.eventsIndex;
+      if (normalized.startsWith('/admin')) return scanData.flowPresets.adminReports;
+      if (normalized.startsWith('/profile') || normalized.includes('portfolio') || normalized.includes('/users/me')) return scanData.flowPresets.portfolio;
+      return scanData.flowPresets.portfolio;
+    }
+
+    function renderTags(tags) {
+      resolvedTags.innerHTML = tags.map(function(tag) {
+        return '<span class="inventory-pill rounded-full px-3 py-1.5 text-xs uppercase tracking-[0.18em] text-slate-200/85">' + escapeHtml(tag) + '</span>';
+      }).join('');
+    }
+
+    function renderMeta(queryValue, flow, exactPages, exactApi) {
+      const normalized = normalizeRoute(queryValue);
+      const access = exactPages[0] ? exactPages[0].access : (normalized.startsWith('/admin') ? 'protected' : 'mixed');
+      const accessClass = access === 'protected'
+        ? 'border-amber-300/20 bg-amber-300/10 text-amber-100'
+        : access === 'public'
+        ? 'border-emerald-300/20 bg-emerald-300/10 text-emerald-100'
+        : 'border-cyan-300/20 bg-cyan-300/10 text-cyan-100';
+      const exactCount = exactPages.length + exactApi.length;
+      resolvedMeta.innerHTML = ''
+        + '<div class="rounded-2xl border ' + accessClass + ' p-4"><div class="text-xs uppercase tracking-[0.2em] opacity-75">Access</div><div class="mt-2 text-lg font-semibold">' + escapeHtml(access) + '</div></div>'
+        + '<div class="rounded-2xl border border-white/10 bg-white/5 p-4"><div class="text-xs uppercase tracking-[0.2em] text-slate-400">Normalized route</div><div class="mt-2 text-lg font-semibold text-white">' + escapeHtml(normalized) + '</div></div>'
+        + '<div class="rounded-2xl border border-white/10 bg-white/5 p-4"><div class="text-xs uppercase tracking-[0.2em] text-slate-400">Exact matches</div><div class="mt-2 text-lg font-semibold text-white">' + escapeHtml(exactCount) + '</div></div>';
+    }
+
+    function renderSteps(flow) {
+      stepsContainer.innerHTML = flow.steps.map(function(step, index) {
+        const order = String(index + 1).padStart(2, '0');
+        return '<article class="step-card rounded-[24px] border border-white/10 bg-white/5 p-4 sm:p-5" data-step-card>'
+          + '<div class="flex flex-wrap items-start justify-between gap-3">'
+          + '<div><div class="text-xs uppercase tracking-[0.22em] text-slate-400">' + order + ' · ' + escapeHtml(step.lane) + '</div><h4 class="mt-2 text-xl font-semibold text-white">' + escapeHtml(step.layer) + '</h4></div>'
+          + '<span class="inventory-pill rounded-full px-3 py-1 text-xs text-slate-200/85">' + escapeHtml(step.action) + '</span>'
+          + '</div><div class="mt-4 text-sm font-medium text-cyan-100">' + escapeHtml(step.file) + '</div><p class="mt-3 text-sm leading-7 text-slate-300/78">' + escapeHtml(step.detail) + '</p></article>';
+      }).join('');
+    }
+
+    function renderMatched(flow, queryValue) {
+      const exactPages = findPageMatches(queryValue);
+      const exactApi = findApiMatches(queryValue);
+      const similar = findSimilarRoutes(queryValue);
+      const relatedFiles = Array.from(new Set(flow.steps.map(function(step) { return step.file; })));
+      renderMeta(queryValue, flow, exactPages, exactApi);
+      matchedRoutes.innerHTML = ''
+        + '<div class="rounded-[24px] border border-white/10 bg-white/5 p-4">'
+        + '<div class="text-xs uppercase tracking-[0.22em] text-slate-400">Exact page matches</div>'
+        + '<div class="mt-3 space-y-2 text-sm text-slate-200/86">'
+        + (exactPages.length ? exactPages.map(function(page) {
+          return '<div class="flex items-start justify-between gap-3"><span>' + escapeHtml(page.route) + '</span><span class="rounded-full border px-2 py-0.5 text-[10px] uppercase tracking-[0.18em] ' + accessTone(page.access) + '">' + escapeHtml(page.access) + '</span></div><div class="text-xs text-slate-500">' + escapeHtml(page.file) + '</div>';
+        }).join('') : '<div class="text-slate-400">No exact web route match for the current input.</div>')
+        + '</div></div>'
+        + '<div class="rounded-[24px] border border-white/10 bg-white/5 p-4">'
+        + '<div class="text-xs uppercase tracking-[0.22em] text-slate-400">Exact API matches</div>'
+        + '<div class="mt-3 space-y-2 text-sm text-slate-200/86">'
+        + (exactApi.length ? exactApi.map(function(route) {
+          return '<div><span class="text-cyan-200">' + escapeHtml(route.method) + '</span> ' + escapeHtml(route.fullPath) + '<div class="text-xs text-slate-500">' + escapeHtml(route.file) + '</div></div>';
+        }).join('') : '<div class="text-slate-400">No exact API route match for the current input.</div>')
+        + '</div></div>'
+        + '<div class="rounded-[24px] border border-white/10 bg-white/5 p-4">'
+        + '<div class="text-xs uppercase tracking-[0.22em] text-slate-400">Similar discovered routes</div>'
+        + '<div class="mt-3 flex flex-wrap gap-2">'
+        + similar.pageMatches.map(function(page) { return '<span class="inventory-pill rounded-full px-3 py-1.5 text-xs text-slate-200/86">' + escapeHtml(page.route) + '</span>'; }).join('')
+        + similar.apiMatches.slice(0, 4).map(function(route) { return '<span class="inventory-pill rounded-full px-3 py-1.5 text-xs text-slate-200/86">' + escapeHtml(route.fullPath) + '</span>'; }).join('')
+        + '</div></div>'
+        + '<div class="rounded-[24px] border border-white/10 bg-white/5 p-4">'
+        + '<div class="text-xs uppercase tracking-[0.22em] text-slate-400">Files in play</div><div class="mt-3 flex flex-wrap gap-2">'
+        + relatedFiles.map(function(file) { return '<span class="inventory-pill rounded-full px-3 py-1.5 text-xs text-slate-200/86">' + escapeHtml(file) + '</span>'; }).join('')
+        + '</div></div>';
+    }
+
+    function animateSteps() {
+      const cards = Array.from(document.querySelectorAll('[data-step-card]'));
+      gsap.killTweensOf(cards);
+      cards.forEach(function(card) { card.classList.remove('active'); });
+      const timeline = gsap.timeline();
+      cards.forEach(function(card, index) {
+        timeline.to(card, {
+          duration: 0.18,
+          scale: 1.02,
+          y: -4,
+          boxShadow: '0 20px 60px rgba(34,211,238,.18)',
+          onStart: function() { card.classList.add('active'); }
+        }, index * 0.14).to(card, {
+          duration: 0.24,
+          scale: 1,
+          y: 0,
+          boxShadow: '0 0 0 rgba(0,0,0,0)',
+          onComplete: function() { card.classList.remove('active'); }
+        }, index * 0.14 + 0.18);
+      });
+    }
+
+    function openImageOverlay(src, title, subtitle, meta) {
+      imageModalImg.src = src;
+      imageModalTitle.textContent = title || 'Architecture screenshot';
+      imageModalSubtitle.textContent = subtitle || 'Expanded view';
+      imageModalMeta.textContent = meta || '';
+      imageModal.classList.add('open');
+      imageModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeImageOverlay() {
+      imageModal.classList.remove('open');
+      imageModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    function bindMediaLightbox() {
+      document.querySelectorAll('[data-lightbox-src]').forEach(function(button) {
+        button.addEventListener('click', function() {
+          openImageOverlay(
+            button.getAttribute('data-lightbox-src') || '',
+            button.getAttribute('data-lightbox-title') || '',
+            button.getAttribute('data-lightbox-subtitle') || '',
+            button.getAttribute('data-lightbox-meta') || ''
+          );
+        });
+      });
+    }
+
+    function applyFlow(flow, queryValue) {
+      const currentValue = queryValue || tracerInput.value || flow.urlHints[0];
+      resolvedTitle.textContent = flow.title;
+      resolvedDescription.textContent = flow.description;
+      renderTags(flow.tags);
+      renderSteps(flow);
+      renderMatched(flow, currentValue);
+      animateSteps();
+    }
+
+    function renderApiRoutes(filter) {
+      const value = String(filter || '').trim().toLowerCase();
+      const list = scanData.routes.filter(function(route) {
+        return !value || (route.method + ' ' + route.fullPath + ' ' + route.file).toLowerCase().includes(value);
+      });
+      apiRoutesBody.innerHTML = list.map(function(route) {
+        return '<tr class="inventory-row border-t border-white/6"><td class="px-4 py-3 text-cyan-200">' + escapeHtml(route.method) + '</td><td class="px-4 py-3 text-white">' + escapeHtml(route.fullPath) + '</td><td class="px-4 py-3 text-slate-400">' + escapeHtml(route.file) + '</td></tr>';
+      }).join('');
+    }
+
+    function renderWebRoutes(filter) {
+      const value = String(filter || '').trim().toLowerCase();
+      const list = scanData.pages.filter(function(page) {
+        return !value || (page.route + ' ' + page.access + ' ' + page.file).toLowerCase().includes(value);
+      });
+      webRoutesBody.innerHTML = list.map(function(page) {
+        return '<tr class="inventory-row border-t border-white/6"><td class="px-4 py-3 text-white">' + escapeHtml(page.route) + '</td><td class="px-4 py-3"><span class="rounded-full border px-2 py-0.5 text-[10px] uppercase tracking-[0.18em] ' + accessTone(page.access) + '">' + escapeHtml(page.access) + '</span></td><td class="px-4 py-3 text-slate-400">' + escapeHtml(page.file) + '</td></tr>';
+      }).join('');
+    }
+
+    function renderServices(filter) {
+      const value = String(filter || '').trim().toLowerCase();
+      const list = scanData.services.filter(function(item) {
+        return !value || (item.file + ' ' + item.exports.join(' ')).toLowerCase().includes(value);
+      });
+      servicesPanel.innerHTML = list.map(function(item) {
+        return '<div class="glass rounded-[24px] p-4"><div class="flex flex-wrap items-center justify-between gap-3"><div><div class="text-lg font-semibold text-white">' + escapeHtml(item.module) + '</div><div class="mt-1 text-xs uppercase tracking-[0.18em] text-slate-400">' + escapeHtml(item.file) + '</div></div><div class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200">' + escapeHtml(item.exports.length) + ' exports</div></div><div class="mt-4 flex flex-wrap gap-2">' + item.exports.map(function(name) { return '<span class="inventory-pill rounded-full px-3 py-1.5 text-xs text-slate-200/85">' + escapeHtml(name) + '</span>'; }).join('') + '</div></div>';
+      }).join('');
+    }
+
+    traceButton.addEventListener('click', function() { applyFlow(resolveFlow(tracerInput.value), tracerInput.value); });
+    tracerInput.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        applyFlow(resolveFlow(tracerInput.value), tracerInput.value);
+      }
+    });
+
+    inventorySearch.addEventListener('input', function() {
+      const value = inventorySearch.value;
+      renderApiRoutes(value);
+      renderWebRoutes(value);
+      renderServices(value);
+    });
+
+    document.querySelectorAll('.inventory-tab').forEach(function(button, index) {
+      if (index === 0) button.classList.add('bg-cyan-300/15', 'border-cyan-300/30', 'text-white');
+      button.addEventListener('click', function() {
+        document.querySelectorAll('.inventory-tab').forEach(function(tab) {
+          tab.classList.remove('bg-cyan-300/15', 'border-cyan-300/30', 'text-white');
+        });
+        button.classList.add('bg-cyan-300/15', 'border-cyan-300/30', 'text-white');
+        document.querySelectorAll('.inventory-panel').forEach(function(panel) { panel.classList.add('hidden'); });
+        document.getElementById(button.dataset.target).classList.remove('hidden');
+      });
+    });
+
+    imageModalClose.addEventListener('click', closeImageOverlay);
+    imageModal.addEventListener('click', function(event) {
+      if (event.target === imageModal) closeImageOverlay();
+    });
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && imageModal.classList.contains('open')) closeImageOverlay();
+    });
+
+    buildPresetRow();
+    buildCoverageHighlights();
+    buildGallery();
+    buildFeatureCards();
+    buildSpacingInsights();
+    buildRouteModuleCards();
+    renderApiRoutes('');
+    renderWebRoutes('');
+    renderServices('');
+    bindMediaLightbox();
+    lucide.createIcons();
+    tracerInput.value = '/contests';
+    applyFlow(scanData.flowPresets.contestsIndex, '/contests');
+
+    gsap.to('.section-fade', {
+      opacity: 1,
+      y: 0,
+      duration: 0.9,
+      stagger: 0.08,
+      ease: 'power3.out'
+    });
+  </script>
+</body>
+</html>

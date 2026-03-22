@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TFP Photographers Platform</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        bgBase: '#0F1115',
+                        accentPrimary: '#6F4BFF',
+                        accentSecondary: '#A36BFF',
+                        accentElectric: '#A3FFFF'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <style>
+        /* --- SCOPED COMPONENT SELECTORS --- */
+        
+        .tfp-glass-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1rem;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .tfp-glass-card.interactive:hover {
+            border-color: rgba(111, 75, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px rgba(111, 75, 255, 0.15), inset 0 1px 0 rgba(255,255,255,0.05);
+            transform: translateY(-2px);
+        }
+        
+        .tfp-btn-primary {
+            background: linear-gradient(to right, #6F4BFF, #A36BFF);
+            color: #ffffff;
+            box-shadow: 0 4px 20px rgba(111, 75, 255, 0.2);
+            transition: all 0.2s ease-out;
+        }
+        .tfp-btn-primary:active { transform: scale(0.98); }
+
+        .tfp-input {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            transition: all 0.2s ease-out;
+        }
+        .tfp-input:focus {
+            outline: none;
+            border-color: #A3FFFF;
+            background-color: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 2px rgba(163, 255, 255, 0.1);
+        }
+
+        /* Status Badges */
+        .badge-pending { background: rgba(234, 179, 8, 0.2); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.3); }
+        .badge-approved { background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.3); }
+        .badge-rejected { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+
+        /* Custom Scrollbar */
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; height: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.02); border-radius: 8px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 8px; }
+        
+        /* Drawer Styles */
+        .admin-drawer {
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .admin-drawer.open {
+            transform: translateX(0);
+        }
+
+        dialog::backdrop { background: rgba(0, 0, 0, 0.65); backdrop-filter: blur(8px); }
+        dialog { border: none; background: transparent; padding: 0; outline: none; }
+
+        /* --- CSS-ONLY ROUTING LOGIC --- */
+        .view-page { display: none; }
+        .view-page:target { display: block; animation: fadeIn 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+        body:not(:has(.view-page:target)) #home { display: block; animation: fadeIn 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+
+        /* --- ROLE-BASED VISIBILITY --- */
+        .admin-only { display: none !important; }
+        body.role-admin .admin-only { display: flex !important; }
+        .user-only { display: none !important; }
+        body.role-user .user-only, body.role-admin .user-only { display: flex !important; }
+
+        /* --- ACTIVE STATE STYLING --- */
+        body:not(:has(.view-page:target)) .nav-home, body:has(#home:target) .nav-home,
+        body:has(#project:target) .nav-project, body:has(#project-detail:target) .nav-project, body:has(#create-project:target) .nav-project, body:has(#apply:target) .nav-project,
+        body:has(#contest:target) .nav-contest, body:has(#contest-detail:target) .nav-contest, body:has(#contest-gallery:target) .nav-contest, body:has(#create-contest:target) .nav-contest,
+        body:has(#events:target) .nav-events, body:has(#event-detail:target) .nav-events, body:has(#create-event:target) .nav-events,
+        body:has(#profile:target) .nav-profile, body:has(#edit-profile:target) .nav-profile,
+        body:has(#admin-reports:target) .nav-admin, body:has(#activity:target) .nav-activity, body:has(#search-results:target) .nav-search { color: #A3FFFF; }
+        
+        body:has(#countries:target) .header-nav-global { color: #A3FFFF; background: rgba(255, 255, 255, 0.1); }
+
+        body:not(:has(.view-page:target)) .header-nav-home::after, body:has(#home:target) .header-nav-home::after,
+        body:has(#project:target) .header-nav-project::after, body:has(#project-detail:target) .header-nav-project::after, body:has(#create-project:target) .header-nav-project::after, body:has(#apply:target) .header-nav-project::after,
+        body:has(#contest:target) .header-nav-contest::after, body:has(#contest-detail:target) .header-nav-contest::after, body:has(#contest-gallery:target) .header-nav-contest::after, body:has(#create-contest:target) .header-nav-contest::after,
+        body:has(#events:target) .header-nav-events::after, body:has(#event-detail:target) .header-nav-events::after, body:has(#create-event:target) .header-nav-events::after,
+        body:has(#profile:target) .header-nav-profile::after, body:has(#edit-profile:target) .header-nav-profile::after,
+        body:has(#admin-reports:target) .header-nav-admin::after {
+            content: ''; position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); width: 24px; height: 2px;
+            background: #A3FFFF; border-radius: 2px 2px 0 0; box-shadow: 0 -2px 10px rgba(163, 255, 255, 0.6);
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-8px); } 100% { transform: translateY(0px); } }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-float-delayed { animation: float 6s ease-in-out 3s infinite; }
+    </style>
+</head>
+<body class="min-h-screen bg-[#0F1115] text-white font-sans selection:bg-[#6F4BFF]/30 antialiased relative overflow-x-hidden role-user">
+
+    <div class="fixed top-0 left-1/4 w-[250px] md:w-[600px] h-[250px] md:h-[600px] bg-[#6F4BFF]/15 blur-[90px] md:blur-[140px] rounded-full -z-10 animate-pulse" style="animation-duration: 5s;"></div>
+    <div class="fixed bottom-0 right-1/4 w-[250px] md:w-[600px] h-[250px] md:h-[600px] bg-[#A3FFFF]/10 blur-[90px] md:blur-[140px] rounded-full -z-10"></div>
+
+    <div class="flex flex-col pb-16 md:pb-0 min-h-screen">
+        
+        <!-- HEADER -->
+        <header class="sticky top-0 z-40 bg-[#0F1115]/80 backdrop-blur-xl border-b border-white/5 px-4 md:px-8 py-3 md:py-4 flex justify-between items-center w-full">
+            <div class="flex items-center gap-4 md:gap-6 lg:w-1/3">
+                <a href="#home" class="flex items-center gap-2 md:gap-3 font-bold text-lg tracking-tight hover:opacity-80 transition-opacity">
+                    <div class="w-8 h-8 bg-gradient-to-tr from-[#6F4BFF] to-[#A3FFFF] rounded-lg flex-shrink-0 shadow-lg shadow-[#6F4BFF]/20 flex items-center justify-center">
+                        <i data-lucide="camera" class="w-[18px] h-[18px] text-[#0F1115] not-italic text-xs">📷</i>
+                    </div>
+                    <span class="hidden lg:block text-base xl:text-lg">TFP PLATFORM</span>
+                </a>
+                <div class="relative hidden lg:block group w-full max-w-[240px] xl:max-w-[280px]">
+                    <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-[#A3FFFF] transition-colors w-[16px] h-[16px] not-italic">🔍</i>
+                    <input type="text" placeholder="Search creatives..." onkeypress="executeSearch(event, this)" class="w-full tfp-input rounded-full py-2 pl-9 pr-4 text-xs xl:text-sm placeholder:text-white/30" />
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center justify-center gap-6 lg:gap-8 xl:gap-12 flex-1">
+                <a href="#home" class="nav-home header-nav-home relative flex flex-col items-center gap-1 text-white/50 hover:text-white transition-colors group">
+                    <i data-lucide="layout-grid" class="w-5 h-5 transition-transform group-hover:-translate-y-0.5 not-italic">🏠</i>
+                    <span class="text-[10px] font-bold tracking-widest uppercase">Home</span>
+                </a>
+                <a href="#project" class="nav-project header-nav-project relative flex flex-col items-center gap-1 text-white/50 hover:text-white transition-colors group">
+                    <i data-lucide="image" class="w-5 h-5 transition-transform group-hover:-translate-y-0.5 not-italic">📸</i>
+                    <span class="text-[10px] font-bold tracking-widest uppercase">Projects</span>
+                </a>
+                <a href="#contest" class="nav-contest header-nav-contest relative flex flex-col items-center gap-1 text-white/50 hover:text-white transition-colors group">
+                    <i data-lucide="trophy" class="w-5 h-5 transition-transform group-hover:-translate-y-0.5 not-italic">🏆</i>
+                    <span class="text-[10px] font-bold tracking-widest uppercase">Contests</span>
+                </a>
+                <a href="#events" class="nav-events header-nav-events relative flex flex-col items-center gap-1 text-white/50 hover:text-white transition-colors group">
+                    <i data-lucide="calendar" class="w-5 h-5 transition-transform group-hover:-translate-y-0.5 not-italic">📅</i>
+                    <span class="text-[10px] font-bold tracking-widest uppercase">Events</span>
+                </a>
+                <a href="#profile" class="nav-profile header-nav-profile relative flex flex-col items-center gap-1 text-white/50 hover:text-white transition-colors group">
+                    <i data-lucide="user" class="w-5 h-5 transition-transform group-hover:-translate-y-0.5 not-italic">👤</i>
+                    <span class="text-[10px] font-bold tracking-widest uppercase">Profile</span>
+                </a>
+                <a href="#admin-reports" class="nav-admin header-nav-admin admin-only relative flex-col items-center gap-1 text-pink-400 hover:text-pink-300 transition-colors group">
+                    <i data-lucide="shield-alert" class="w-5 h-5 transition-transform group-hover:-translate-y-0.5 not-italic">🛡️</i>
+                    <span class="text-[10px] font-bold tracking-widest uppercase">Admin</span>
+                </a>
+            </nav>
+
+            <div class="flex items-center justify-end gap-3 md:gap-4 lg:w-1/3">
+                <a href="#countries" data-modal="modal-country" class="header-nav-global cursor-pointer flex items-center gap-1.5 px-3 py-1.5 md:py-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-xs md:text-sm text-white/70">
+                    <i data-lucide="globe" class="w-3.5 h-3.5 not-italic text-xs">🌍</i> <span class="hidden lg:inline">Global</span>
+                </a>
+                
+                <div id="auth-state-container" class="flex items-center gap-3">
+                    <a href="#activity" class="text-white/50 hover:text-[#A3FFFF] transition-colors"><i data-lucide="bell" class="w-5 h-5 not-italic">🔔</i></a>
+                    <a href="#profile"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&h=100&q=80" class="w-8 h-8 rounded-full border-2 border-[#6F4BFF]" alt="User" /></a>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-1 flex flex-col w-full relative">
+            <div class="flex-1 px-4 py-6 md:p-8 lg:p-10 max-w-[1400px] mx-auto w-full">
+                
+                <!-- VIEW: HOME -->
+                <article id="home" class="view-page">
+                    <div class="flex flex-col gap-6 md:gap-10">
+                        <div class="relative w-full rounded-2xl md:rounded-3xl overflow-hidden border border-white/10 aspect-[4/3] sm:aspect-[21/9] md:aspect-[2.5/1] min-h-[300px] md:min-h-[450px] flex items-center bg-[#0F1115]">
+                            <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=1600&q=80" class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity" alt="Hero" />
+                            <div class="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-[#0F1115] via-[#0F1115]/80 to-transparent"></div>
+                            <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                                <div class="absolute -top-10 -left-10 w-48 h-48 bg-[#6F4BFF]/40 blur-[80px] rounded-full"></div>
+                            </div>
+                            <div class="relative z-10 px-6 md:px-12 w-full max-w-4xl text-center md:text-left flex flex-col gap-4 md:gap-6">
+                                <div>
+                                    <span class="inline-block px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#A3FFFF] backdrop-blur-md mb-4 md:mb-6">TFP Photographers Network</span>
+                                    <h1 class="text-[clamp(32px,6vw,64px)] font-bold tracking-tight leading-[1.1]">
+                                        Where vision meets <br class="hidden sm:block" />
+                                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#6F4BFF] to-[#A3FFFF]">collaboration.</span>
+                                    </h1>
+                                </div>
+                                <p class="text-white/70 text-sm md:text-lg max-w-lg mx-auto md:mx-0 leading-relaxed">Join the elite network for visual storytellers. Find your dream team, showcase your portfolio, and compete globally.</p>
+                                <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-3 md:gap-4 mt-2">
+                                    <a href="#create-project" onclick="requireAuthNavigation(event)" class="tfp-btn-primary px-6 py-3 md:py-3.5 rounded-full font-bold text-sm md:text-base text-center">Post Project</a>
+                                    <a href="#contest" class="px-6 py-3 md:py-3.5 rounded-full font-bold transition-all active:scale-[0.98] bg-white/5 border border-white/10 hover:bg-white/10 text-white text-sm md:text-base backdrop-blur-md text-center">Join Contests</a>
+                                </div>
+                            </div>
+                            <div class="absolute right-10 hidden lg:flex items-center gap-6 h-full pointer-events-none">
+                                <div class="w-48 h-64 rounded-2xl overflow-hidden border border-white/20 shadow-2xl animate-float rotate-[-6deg] bg-black">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover opacity-90" />
+                                </div>
+                                <div class="w-56 h-72 rounded-2xl overflow-hidden border border-white/20 shadow-2xl animate-float-delayed rotate-[4deg] bg-black mt-20">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover opacity-90" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <section class="flex flex-col gap-4 md:gap-6">
+                            <h2 class="text-xl md:text-2xl font-bold tracking-tight">Explore the Platform</h2>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-5">
+                                <a href="#project" class="tfp-glass-card interactive relative overflow-hidden sm:col-span-2 sm:row-span-2 aspect-[4/3] md:aspect-square flex items-end p-5 md:p-8 group">
+                                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-[#0F1115] via-[#0F1115]/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                                    <div class="relative z-10 w-full flex flex-col gap-2 md:gap-3">
+                                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#6F4BFF]/30 backdrop-blur-md flex items-center justify-center border border-[#6F4BFF]/50 text-[#A3FFFF] mb-2 md:mb-4 group-hover:-translate-y-1 transition-transform">
+                                            <i data-lucide="layout-grid" class="w-5 h-5 md:w-6 md:h-6 not-italic">🗂️</i>
+                                        </div>
+                                        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-white">Active Projects</h2>
+                                        <p class="text-white/70 text-sm md:text-base max-w-sm">Find your next collaboration or assemble a dream team.</p>
+                                    </div>
+                                </a>
+                                <a href="#contest" class="tfp-glass-card interactive relative overflow-hidden sm:col-span-2 h-32 md:h-auto flex items-end p-4 md:p-6 group">
+                                    <img src="https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?auto=format&fit=crop&w=800&q=80" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-[#0F1115] via-[#0F1115]/60 to-transparent opacity-90"></div>
+                                    <div class="relative z-10 flex flex-col gap-1 md:gap-2 w-full">
+                                        <div class="inline-flex px-2 py-0.5 bg-pink-500/20 border border-pink-500/30 rounded text-[10px] md:text-xs font-bold uppercase tracking-widest text-pink-400 backdrop-blur-md self-start">Win $5k</div>
+                                        <h2 class="text-lg md:text-2xl font-bold text-white">Global Contests</h2>
+                                        <p class="text-white/60 text-xs md:text-sm">Submit your best shots.</p>
+                                    </div>
+                                </a>
+                                <a href="#events" class="tfp-glass-card interactive relative overflow-hidden col-span-1 h-32 md:h-auto flex flex-col justify-end p-4 md:p-6 group bg-[#1A1D24]">
+                                    <div class="absolute top-0 right-0 w-24 h-24 bg-indigo-500/20 blur-2xl rounded-full group-hover:bg-indigo-500/30 transition-colors"></div>
+                                    <div class="relative z-10 flex flex-col gap-1 md:gap-2">
+                                        <i data-lucide="calendar" class="w-6 h-6 md:w-8 md:h-8 text-indigo-400 mb-1 md:mb-2 not-italic">📅</i>
+                                        <h3 class="text-base md:text-xl font-bold text-white">IRL Events</h3>
+                                    </div>
+                                </a>
+                                <a href="#profile" class="tfp-glass-card interactive relative overflow-hidden col-span-1 h-32 md:h-auto flex flex-col justify-end p-4 md:p-6 group bg-[#1A1D24]">
+                                    <div class="absolute top-4 right-4 flex -space-x-2 opacity-60 group-hover:opacity-100 transition-opacity">
+                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" class="w-6 h-6 md:w-8 md:h-8 rounded-full border border-[#1A1D24] object-cover"/>
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" class="w-6 h-6 md:w-8 md:h-8 rounded-full border border-[#1A1D24] object-cover"/>
+                                    </div>
+                                    <div class="absolute bottom-0 left-0 w-24 h-24 bg-cyan-500/10 blur-2xl rounded-full group-hover:bg-cyan-500/20 transition-colors"></div>
+                                    <div class="relative z-10 flex flex-col gap-1 md:gap-2">
+                                        <i data-lucide="users" class="w-5 h-5 md:w-8 md:h-8 text-cyan-400 mb-1 md:mb-2 not-italic">👥</i>
+                                        <h3 class="text-base md:text-xl font-bold text-white">Top Artists</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </section>
+                    </div>
+                </article>
+
+                <!-- VIEW: SEARCH RESULTS (COMPACT LIST VIEW) -->
+                <article id="search-results" class="view-page max-w-7xl mx-auto">
+                    <div class="flex flex-col gap-6 md:gap-8 animate-[fadeIn_0.4s_ease-out]">
+                        
+                        <header class="flex flex-col gap-2 border-b border-white/10 pb-4 md:pb-6">
+                            <p class="text-white/50 text-sm md:text-base">Found 24 results</p>
+                            <h1 class="text-[clamp(24px,4vw,40px)] font-bold tracking-tight">Search results for "<span id="search-query-display" class="text-[#A3FFFF]">Neon</span>"</h1>
+                        </header>
+
+                        <!-- Search Filters -->
+                        <div class="flex items-center gap-3 overflow-x-auto custom-scrollbar pb-2">
+                            <button class="px-5 py-2 rounded-full bg-[#A3FFFF] text-[#0F1115] font-bold text-sm whitespace-nowrap shadow-[0_0_15px_rgba(163,255,255,0.3)]">All</button>
+                            <button class="px-5 py-2 rounded-full bg-white/5 text-white/70 hover:text-white hover:bg-white/10 font-medium text-sm whitespace-nowrap transition-colors border border-transparent hover:border-white/10">Artists (3)</button>
+                            <button class="px-5 py-2 rounded-full bg-white/5 text-white/70 hover:text-white hover:bg-white/10 font-medium text-sm whitespace-nowrap transition-colors border border-transparent hover:border-white/10">Projects (12)</button>
+                            <button class="px-5 py-2 rounded-full bg-white/5 text-white/70 hover:text-white hover:bg-white/10 font-medium text-sm whitespace-nowrap transition-colors border border-transparent hover:border-white/10">Events (9)</button>
+                        </div>
+
+                        <div class="flex flex-col gap-10 md:gap-12 mt-2">
+                            
+                            <!-- Artists Results -->
+                            <section class="flex flex-col gap-4">
+                                <h2 class="text-xl font-bold border-l-4 border-[#A3FFFF] pl-3">Artists</h2>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                    <a href="#profile" class="tfp-glass-card interactive p-4 flex items-center gap-4 group">
+                                        <div class="relative shrink-0">
+                                            <div class="p-0.5 rounded-full bg-gradient-to-tr from-[#6F4BFF] to-[#A3FFFF] group-hover:scale-105 transition-transform">
+                                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80" class="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-[#0F1115]" alt="Artist" />
+                                            </div>
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <h3 class="font-bold text-white truncate text-sm md:text-base group-hover:text-[#A3FFFF] transition-colors">Sarah Lights</h3>
+                                            <p class="text-white/50 text-[10px] md:text-xs truncate">@sarah_lights • Photographer</p>
+                                        </div>
+                                        <button class="px-4 py-1.5 bg-white/5 border border-white/10 hover:bg-white/20 rounded-full text-xs font-bold transition-colors" onclick="event.preventDefault(); alert('Followed!')">Follow</button>
+                                    </a>
+                                    
+                                    <a href="#profile" class="tfp-glass-card interactive p-4 flex items-center gap-4 group">
+                                        <div class="relative shrink-0">
+                                            <div class="p-0.5 rounded-full bg-gradient-to-tr from-[#6F4BFF] to-[#A3FFFF] group-hover:scale-105 transition-transform">
+                                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80" class="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-[#0F1115]" alt="Artist" />
+                                            </div>
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <h3 class="font-bold text-white truncate text-sm md:text-base group-hover:text-[#A3FFFF] transition-colors">Neon Killa</h3>
+                                            <p class="text-white/50 text-[10px] md:text-xs truncate">@neonkilla • Model</p>
+                                        </div>
+                                        <button class="px-4 py-1.5 bg-white/5 border border-white/10 hover:bg-white/20 rounded-full text-xs font-bold transition-colors" onclick="event.preventDefault(); alert('Followed!')">Follow</button>
+                                    </a>
+                                </div>
+                            </section>
+
+                            <!-- Projects Results -->
+                            <section class="flex flex-col gap-4">
+                                <h2 class="text-xl font-bold border-l-4 border-[#6F4BFF] pl-3">Projects</h2>
+                                <div class="flex flex-col gap-3 md:gap-4">
+                                    <!-- List Item 1 -->
+                                    <div class="tfp-glass-card interactive p-3 sm:p-4 flex flex-col sm:flex-row gap-4 group cursor-pointer" onclick="window.location.hash='#project-detail'">
+                                        <div class="w-full sm:w-48 h-32 sm:h-36 shrink-0 relative rounded-xl overflow-hidden bg-black/20">
+                                            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Project" />
+                                            <span class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-[#6F4BFF]/80 backdrop-blur-md text-white text-[9px] font-bold uppercase tracking-wider z-10 border border-white/10">Project</span>
+                                        </div>
+                                        <div class="flex flex-col flex-1 min-w-0 justify-center">
+                                            <div class="flex items-center gap-1.5 text-[10px] md:text-xs text-[#A3FFFF] mb-1">
+                                                <i data-lucide="map-pin" class="w-3 h-3"></i> Tokyo, JP
+                                            </div>
+                                            <h3 class="text-base md:text-lg font-bold text-white leading-tight truncate group-hover:text-[#A3FFFF] transition-colors">Neon Dreams</h3>
+                                            <p class="text-xs md:text-sm text-white/60 line-clamp-2 mt-1 leading-relaxed">A collaborative effort to capture the neon aesthetic of Tokyo's nightlife.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- VIEW: ADMIN REPORTS DASHBOARD (COMPACT UI) -->
+                <article id="admin-reports" class="view-page">
+                    <div class="flex flex-col gap-4 animate-[fadeIn_0.5s_ease-out] h-[calc(100vh-140px)]">
+                        
+                        <!-- Top Header & Navigation (Ultra Compact) -->
+                        <header class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/10 pb-3 shrink-0">
+                            <div>
+                                <p class="text-[10px] text-white/50 uppercase tracking-widest font-bold">ADMIN</p>
+                                <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-white leading-none mt-1">Reports</h1>
+                            </div>
+                            
+                            <div class="flex items-center gap-2 overflow-x-auto custom-scrollbar pb-1 md:pb-0">
+                                <button class="px-4 py-2 rounded-full bg-[#A3FFFF] text-[#0F1115] text-xs font-bold shadow-[0_0_15px_rgba(163,255,255,0.3)] whitespace-nowrap flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Moderation Queue</button>
+                                <button class="px-4 py-2 rounded-full bg-white/5 text-white/70 hover:text-white hover:bg-white/10 text-xs font-medium whitespace-nowrap transition-colors flex items-center gap-1.5 border border-transparent hover:border-white/10"><i data-lucide="flag" class="w-3.5 h-3.5"></i> Reports</button>
+                                <button class="px-4 py-2 rounded-full bg-white/5 text-white/70 hover:text-white hover:bg-white/10 text-xs font-medium whitespace-nowrap transition-colors flex items-center gap-1.5 border border-transparent hover:border-white/10"><i data-lucide="users" class="w-3.5 h-3.5"></i> Users</button>
+                            </div>
+                        </header>
+
+                        <!-- Metrics & Filters Row -->
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 shrink-0">
+                            <div class="flex items-center gap-2 overflow-x-auto custom-scrollbar pb-1 md:pb-0">
+                                <span class="px-3 py-1.5 bg-red-500/10 border border-red-500/20 text-red-400 rounded-lg text-xs font-bold flex items-center gap-1.5 whitespace-nowrap">
+                                    <div class="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></div> 5 Open
+                                </span>
+                                <span class="px-3 py-1.5 bg-[#1A1D24] border border-white/5 text-white/70 rounded-lg text-xs font-medium whitespace-nowrap">1 High risk</span>
+                            </div>
+
+                            <div class="flex items-center gap-2 w-full md:w-auto">
+                                <select class="w-28 bg-[#1A1D24] border border-white/10 rounded-lg py-1.5 px-3 focus:outline-none focus:border-[#6F4BFF] text-xs text-white appearance-none cursor-pointer">
+                                    <option>OPEN</option>
+                                    <option>RESOLVED</option>
+                                </select>
+                                <select class="w-28 bg-[#1A1D24] border border-white/10 rounded-lg py-1.5 px-3 focus:outline-none focus:border-[#6F4BFF] text-xs text-white appearance-none cursor-pointer">
+                                    <option>All Entities</option>
+                                    <option>Contest</option>
+                                    <option>Project</option>
+                                    <option>User</option>
+                                </select>
+                                <div class="relative flex-1 md:w-64">
+                                    <i data-lucide="search" class="absolute left-2.5 top-1/2 -translate-y-1/2 text-white/30 w-3.5 h-3.5"></i>
+                                    <input type="text" placeholder="Search ID or reason..." class="w-full bg-white/5 border border-white/10 rounded-lg py-1.5 pl-8 pr-3 focus:outline-none focus:border-[#A3FFFF] transition-all text-xs text-white" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Moderation Queue List (Card UI) -->
+                        <div class="flex flex-col gap-4 overflow-y-auto custom-scrollbar flex-1 pb-10 pr-1">
+                            
+                            <!-- Card 1: Event (AI Rejected) -->
+                            <div id="mod-card-1" class="bg-[#14161B] border border-white/5 hover:border-white/10 rounded-2xl p-4 md:p-5 flex flex-col gap-4 transition-all">
+                                <div class="flex flex-col md:flex-row gap-4 w-full">
+                                    <!-- Left: Image & Text -->
+                                    <div class="flex gap-4 flex-1 min-w-0">
+                                        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=400&q=80" class="w-16 h-16 md:w-20 md:h-20 rounded-xl object-cover bg-black shrink-0 border border-white/10" alt="Thumbnail" />
+                                        <div class="flex flex-col min-w-0 justify-center">
+                                            <div class="flex items-center gap-2 mb-1.5">
+                                                <span class="px-2 py-0.5 bg-blue-500/20 text-blue-400 rounded-md text-[9px] font-bold uppercase tracking-wider">Event</span>
+                                                <span class="px-2 py-0.5 bg-yellow-500/20 text-yellow-500 rounded-md text-[9px] font-bold uppercase tracking-wider">Pending</span>
+                                            </div>
+                                            <h3 class="font-bold text-white text-base truncate">Sunrise Rooftop Networking Shoot</h3>
+                                            <p class="text-xs text-white/50 line-clamp-2 mt-0.5">Pending review: sunrise creator meetup with guided portraits and brand-building networking.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Middle: AI Flags -->
+                                    <div class="flex flex-col items-center justify-center shrink-0 md:w-48 gap-1.5 hidden md:flex border-l border-white/5 pl-4">
+                                        <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-white/70 border border-white/10">Studio Dawn</span>
+                                        <span class="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-[10px] font-bold border border-red-500/20 shadow-[0_0_10px_rgba(239,68,68,0.15)] flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></div> AI rejected 1</span>
+                                        <span class="text-[9px] text-white/40">Explicit Content</span>
+                                    </div>
+
+                                    <!-- Right: Time -->
+                                    <div class="shrink-0 flex items-end justify-end md:w-16 hidden md:flex">
+                                        <span class="text-xs text-white/40 mb-1">3h ago</span>
+                                    </div>
+                                </div>
+
+                                <!-- Bottom: Actions -->
+                                <div class="flex items-center justify-between pt-2 border-t border-white/5">
+                                    <div class="flex md:hidden flex-col gap-1">
+                                         <span class="text-[10px] font-bold text-red-400 flex items-center gap-1"><div class="w-1 h-1 rounded-full bg-red-500"></div> AI Rejected</span>
+                                         <span class="text-[9px] text-white/40">3h ago</span>
+                                    </div>
+                                    <div class="flex gap-2 w-full md:w-auto justify-end md:justify-start">
+                                        <button onclick="openAdminReviewModal('mod-card-1', 'Event', 'Sunrise Rooftop Networking Shoot', 'Studio Dawn', 'AI Flag: Explicit Content', 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80', 'text-blue-400 border-blue-500/30 bg-blue-500/10', 'Pending review: sunrise creator meetup with guided portraits and brand-building networking.', 1)" class="px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-lg text-xs font-medium transition-colors">View Details</button>
+                                        <button onclick="resolveInlineCard('mod-card-1', 'Approved')" class="px-4 py-2 bg-green-500/10 hover:bg-green-500/20 text-green-400 rounded-lg text-xs font-bold transition-colors border border-green-500/20">Approve</button>
+                                        <button onclick="resolveInlineCard('mod-card-1', 'Rejected')" class="px-4 py-2 bg-red-500/10 hover:bg-red-500/20 text-red-400 rounded-lg text-xs font-bold transition-colors border border-red-500/20">Reject</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 2: Project (AI Flagged Active State) -->
+                            <div id="mod-card-2" class="bg-[#14161B] border border-[#A3FFFF]/30 shadow-[0_0_20px_rgba(163,255,255,0.05)] rounded-2xl p-4 md:p-5 flex flex-col gap-4 transition-all relative overflow-hidden">
+                                <!-- Subtle glowing accent for selected/flagged item -->
+                                <div class="absolute top-0 left-0 w-1 h-full bg-[#A3FFFF]"></div>
+                                
+                                <div class="flex flex-col md:flex-row gap-4 w-full">
+                                    <!-- Left: Image & Text -->
+                                    <div class="flex gap-4 flex-1 min-w-0">
+                                        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=400&q=80" class="w-16 h-16 md:w-20 md:h-20 rounded-xl object-cover bg-black shrink-0 border border-white/10" alt="Thumbnail" />
+                                        <div class="flex flex-col min-w-0 justify-center">
+                                            <div class="flex items-center gap-2 mb-1.5">
+                                                <span class="px-2 py-0.5 bg-purple-500/20 text-purple-400 rounded-md text-[9px] font-bold uppercase tracking-wider">Project</span>
+                                                <span class="px-2 py-0.5 bg-yellow-500/20 text-yellow-500 rounded-md text-[9px] font-bold uppercase tracking-wider">Pending</span>
+                                                <span class="text-[10px] text-white/50 font-medium">3 images</span>
+                                            </div>
+                                            <h3 class="font-bold text-white text-base truncate">Monsoon Editorial Casting</h3>
+                                            <p class="text-xs text-white/50 line-clamp-1 mt-0.5">Pending review: rain-soaked fashion story with reflective styling, waterproof makeup looks, and cinematic alley locations.</p>
+                                            
+                                            <!-- Mini Thumbnails Grid -->
+                                            <div class="flex gap-1.5 mt-2.5">
+                                                <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=100&q=80" class="w-6 h-6 rounded-md object-cover border border-white/10" />
+                                                <div class="relative w-6 h-6 rounded-md overflow-hidden border border-white/10">
+                                                    <img src="https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?auto=format&fit=crop&w=100&q=80" class="w-full h-full object-cover" />
+                                                    <div class="absolute -top-0.5 -right-0.5 w-2 h-2 bg-yellow-500 rounded-full border border-[#14161B]"></div>
+                                                </div>
+                                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" class="w-6 h-6 rounded-md object-cover border border-white/10" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Middle: AI Flags -->
+                                    <div class="flex flex-col items-center justify-center shrink-0 md:w-48 gap-1.5 hidden md:flex border-l border-white/5 pl-4">
+                                        <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-white/70 border border-white/10">Aarav Studio</span>
+                                        <span class="px-3 py-1 bg-yellow-500/20 text-yellow-500 rounded-full text-[10px] font-bold border border-yellow-500/20 shadow-[0_0_10px_rgba(234,179,8,0.15)] flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-yellow-500"></div> AI flagged 1</span>
+                                        <span class="text-[9px] text-white/40">Adult Content</span>
+                                    </div>
+
+                                    <!-- Right: Time -->
+                                    <div class="shrink-0 flex items-end justify-end md:w-16 hidden md:flex">
+                                        <span class="text-xs text-white/40 mb-1">21h ago</span>
+                                    </div>
+                                </div>
+
+                                <!-- Bottom: Actions -->
+                                <div class="flex items-center justify-between pt-2 border-t border-white/5">
+                                    <div class="flex md:hidden flex-col gap-1">
+                                         <span class="text-[10px] font-bold text-yellow-500 flex items-center gap-1"><div class="w-1 h-1 rounded-full bg-yellow-500"></div> AI Flagged</span>
+                                         <span class="text-[9px] text-white/40">21h ago</span>
+                                    </div>
+                                    <div class="flex gap-2 w-full md:w-auto justify-end md:justify-start">
+                                        <button onclick="openAdminReviewModal('mod-card-2', 'Project', 'Monsoon Editorial Casting', 'Aarav Studio', 'AI Flag: Adult Content', 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80', 'text-purple-400 border-purple-500/30 bg-purple-500/10', 'Pending review: rain-soaked fashion story with reflective styling, waterproof makeup looks, and cinematic alley locations.', 1)" class="px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-lg text-xs font-medium transition-colors">View Details</button>
+                                        <button onclick="resolveInlineCard('mod-card-2', 'Approved')" class="px-4 py-2 bg-green-500/10 hover:bg-green-500/20 text-green-400 rounded-lg text-xs font-bold transition-colors border border-green-500/20">Approve</button>
+                                        <button onclick="resolveInlineCard('mod-card-2', 'Rejected')" class="px-4 py-2 bg-red-500/10 hover:bg-red-500/20 text-red-400 rounded-lg text-xs font-bold transition-colors border border-red-500/20">Reject</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+
+                <!-- LEGAL PAGES -->
+                <article id="privacy" class="view-page max-w-3xl mx-auto py-6 space-y-6"><h1 class="text-2xl font-bold">Privacy Policy</h1><div class="tfp-glass-card p-6 text-sm text-white/70">Content...</div></article>
+                <article id="terms" class="view-page max-w-3xl mx-auto py-6 space-y-6"><h1 class="text-2xl font-bold">Terms of Service</h1><div class="tfp-glass-card p-6 text-sm text-white/70">Content...</div></article>
+                <article id="guidelines" class="view-page max-w-3xl mx-auto py-6 space-y-6"><h1 class="text-2xl font-bold">Community Guidelines</h1><div class="tfp-glass-card p-6 text-sm text-white/70">Content...</div></article>
+            </div>
+            
+            <!-- --- MODERN COMPACT FOOTER --- -->
+            <footer class="mt-auto border-t border-white/10 bg-[#0F1115]/50 backdrop-blur-md z-30">
+                <div class="max-w-7xl mx-auto px-4 md:px-8 py-4 md:py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+                    <div class="flex items-center gap-2 font-bold text-sm tracking-tight">
+                        <div class="w-4 h-4 bg-gradient-to-tr from-[#6F4BFF] to-[#A3FFFF] rounded-sm"></div>TFP PLATFORM
+                    </div>
+                    <div class="flex flex-wrap justify-center items-center gap-4 md:gap-8">
+                        <a href="#privacy" class="text-[10px] md:text-xs text-white/50 hover:text-[#A3FFFF] font-medium transition-colors">Privacy Policy</a>
+                        <a href="#terms" class="text-[10px] md:text-xs text-white/50 hover:text-[#A3FFFF] font-medium transition-colors">Terms of Service</a>
+                        <a href="#guidelines" class="text-[10px] md:text-xs text-white/50 hover:text-[#A3FFFF] font-medium transition-colors">Community Guidelines</a>
+                    </div>
+                    <div class="text-[10px] md:text-xs text-white/40">
+                        &copy; 2026 TFP Platform. All rights reserved.
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-[#0F1115]/95 backdrop-blur-xl border-t border-white/10 z-40 pb-safe">
+        <div class="flex justify-around items-center h-[60px] px-2 relative">
+            <a href="#home" class="nav-home flex flex-col items-center justify-center w-full h-full text-white/50 hover:text-white transition-colors">
+                <i data-lucide="layout-grid" class="w-5 h-5 not-italic mb-1">🏠</i><span class="text-[9px] font-bold tracking-widest uppercase">Home</span>
+            </a>
+            <a href="#project" class="nav-project flex flex-col items-center justify-center w-full h-full text-white/50 hover:text-white transition-colors">
+                <i data-lucide="image" class="w-5 h-5 not-italic mb-1">📸</i><span class="text-[9px] font-bold tracking-widest uppercase">Projects</span>
+            </a>
+            <a href="#activity" class="nav-activity user-only flex flex-col items-center justify-center w-full h-full text-white/50 hover:text-white transition-colors">
+                <i data-lucide="bell" class="w-5 h-5 not-italic mb-1">🔔</i><span class="text-[9px] font-bold tracking-widest uppercase">Activity</span>
+            </a>
+            <a href="#profile" class="nav-profile flex flex-col items-center justify-center w-full h-full text-white/50 hover:text-white transition-colors">
+                <i data-lucide="user" class="w-5 h-5 not-italic mb-1">👤</i><span class="text-[9px] font-bold tracking-widest uppercase">Profile</span>
+            </a>
+            <a href="#admin-reports" class="nav-admin admin-only flex flex-col items-center justify-center w-full h-full text-pink-500 hover:text-pink-400 transition-colors">
+                <i data-lucide="shield-alert" class="w-5 h-5 not-italic mb-1">🛡️</i><span class="text-[9px] font-bold tracking-widest uppercase">Admin</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- NATIVE HTML5 DIALOGS -->
+    <dialog id="modal-auth" class="w-[92%] sm:w-[90%] max-w-sm m-auto bg-transparent p-0">
+        <div class="tfp-glass-card p-6 md:p-8 flex flex-col gap-5 relative">
+            <button onclick="document.getElementById('modal-auth').close()" class="absolute top-4 right-4 text-white/50 hover:text-white transition-colors"><i data-lucide="x" class="w-5 h-5 not-italic">❌</i></button>
+            <h2 class="text-xl md:text-2xl font-bold text-white text-center">Join TFP</h2>
+            <form class="flex flex-col gap-4" onsubmit="handleAuthSubmit(event, 'USER')">
+                <input type="email" placeholder="Email" class="w-full tfp-input rounded-xl py-3 px-4 text-sm" required />
+                <input type="password" placeholder="Password" class="w-full tfp-input rounded-xl py-3 px-4 text-sm" required />
+                <button type="submit" class="w-full tfp-btn-primary py-3 rounded-xl font-bold text-sm mt-1">Sign In</button>
+                <button type="button" onclick="handleAuthSubmit(event, 'ADMIN')" class="w-full py-2.5 bg-white/5 hover:bg-white/10 text-white rounded-xl font-medium text-xs border border-white/10 transition-colors">Login as Admin</button>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="modal-country" class="w-[92%] sm:w-[90%] max-w-sm m-auto bg-transparent p-0">
+        <div class="tfp-glass-card p-6 md:p-8 flex flex-col gap-5 relative">
+            <h2 class="text-xl font-bold text-white">Select Region</h2>
+            <button onclick="document.getElementById('modal-country').close()" class="absolute top-4 right-4 text-white/50 hover:text-white transition-colors"><i data-lucide="x" class="w-5 h-5 not-italic">❌</i></button>
+            <div class="grid grid-cols-2 gap-3 text-white">
+                <button onclick="document.getElementById('modal-country').close()" class="flex items-center gap-2 p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#6F4BFF] transition-colors text-sm font-medium"><span class="text-xl">🇺🇸</span> US</button>
+                <button onclick="document.getElementById('modal-country').close()" class="flex items-center gap-2 p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#6F4BFF] transition-colors text-sm font-medium"><span class="text-xl">🇬🇧</span> UK</button>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- PORTFOLIO UPLOAD MODAL -->
+    <dialog id="modal-portfolio-upload" class="w-[92%] sm:w-[90%] max-w-2xl m-auto bg-transparent p-0">
+        <form class="tfp-glass-card p-6 md:p-8 flex flex-col gap-6 relative" onsubmit="handlePortfolioPublish(event)">
+            <h2 class="text-xl md:text-2xl font-bold text-white flex items-center gap-2 border-b border-white/10 pb-4"><i data-lucide="image-plus" class="w-6 h-6 text-[#A3FFFF] not-italic">📸</i> Add to Portfolio</h2>
+            <button type="button" onclick="document.getElementById('modal-portfolio-upload').close()" class="absolute top-4 right-4 text-white/50 hover:text-white transition-colors"><i data-lucide="x" class="w-5 h-5 not-italic">❌</i></button>
+            
+            <label class="block border-2 border-dashed border-white/20 rounded-2xl p-8 text-center hover:border-[#A3FFFF] bg-white/5 cursor-pointer transition-colors group">
+                <input type="file" multiple accept="image/*" class="hidden" onchange="previewFiles(this, 'preview-portfolio-grid')" />
+                <i data-lucide="upload-cloud" class="w-8 h-8 mx-auto mb-3 text-white/50 group-hover:text-[#A3FFFF] not-italic transition-colors">⬆️</i>
+                <span class="text-sm font-medium block text-white/80">Tap to select images</span>
+                <span class="text-xs text-white/40 mt-1 block">Max 10 files. JPEG/PNG up to 20MB</span>
+            </label>
+            
+            <!-- Staging Area -->
+            <div id="preview-portfolio-grid" class="grid grid-cols-3 sm:grid-cols-4 gap-2"></div>
+            
+            <div class="flex gap-3 pt-2">
+                <button type="button" onclick="document.getElementById('modal-portfolio-upload').close()" class="flex-1 py-3 bg-white/5 hover:bg-white/10 rounded-xl font-bold text-sm transition-colors border border-white/10">Cancel</button>
+                <button type="submit" class="flex-1 tfp-btn-primary py-3 rounded-xl text-sm font-bold">Publish Photos</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- NEW: UNIFIED ADMIN REVIEW OVERLAY (70% Standard Width/Height) -->
+    <dialog id="modal-admin-review-overlay" class="w-[95vw] lg:w-[80vw] xl:w-[70vw] max-w-6xl m-auto bg-transparent p-0 h-[90vh] md:h-[80vh] lg:h-[70vh]">
+        <div class="bg-[#14161b] rounded-2xl border border-white/10 w-full h-full flex flex-col md:flex-row relative overflow-hidden shadow-2xl">
+            <button onclick="document.getElementById('modal-admin-review-overlay').close()" class="absolute top-3 right-3 z-50 p-2 bg-black/60 backdrop-blur-md rounded-full text-white hover:bg-black/80 transition-colors shadow-lg"><i data-lucide="x" class="w-4 h-4 not-italic">❌</i></button>
+
+            <!-- Left: High-Res Image Preview, Titles, and Description -->
+            <div class="w-full md:flex-[1.5] lg:flex-[2] h-64 md:h-full shrink-0 bg-[#0F1115] flex flex-col p-4 lg:p-6 relative">
+                
+                <!-- Image Container -->
+                <div class="flex-1 flex items-center justify-center min-h-0 relative bg-black rounded-xl border border-white/10 overflow-hidden shadow-inner">
+                    <img id="review-overlay-img" src="" class="max-w-full max-h-full object-contain" />
+                    
+                    <!-- Overlay Badges -->
+                    <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+                        <span class="badge-pending px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider shadow-lg border border-yellow-500/20 backdrop-blur-md">Pending Review</span>
+                        <span class="px-2.5 py-1 bg-white/10 text-white rounded-md text-[10px] font-bold uppercase tracking-wider shadow-lg border border-white/20 backdrop-blur-md"><span id="review-overlay-count">1</span> Reported</span>
+                        <span class="px-2.5 py-1 bg-red-500/20 text-red-400 rounded-md text-[10px] font-bold uppercase tracking-wider shadow-lg border border-red-500/30 backdrop-blur-md">Risk: HIGH</span>
+                    </div>
+                </div>
+                
+                <!-- Meta, Title, and Description -->
+                <div class="mt-4 shrink-0 flex flex-col gap-2">
+                    <div class="flex items-center gap-2">
+                        <span id="review-overlay-type" class="text-[9px] px-2 py-0.5 rounded font-bold uppercase tracking-wider border w-fit">TYPE</span>
+                        <span id="review-overlay-reason" class="text-[10px] text-red-500 font-bold uppercase tracking-widest">Reason</span>
+                    </div>
+                    <div class="flex justify-between items-start gap-4">
+                        <div class="min-w-0">
+                            <h2 id="review-overlay-title" class="text-lg lg:text-xl font-bold text-white tracking-tight leading-tight truncate">Title</h2>
+                            <p id="review-overlay-desc" class="text-xs text-white/60 line-clamp-2 mt-1 leading-relaxed">Description goes here.</p>
+                        </div>
+                        <button onclick="document.getElementById('modal-admin-review-overlay').close(); window.location.hash='#contest-detail';" class="shrink-0 px-3 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg text-[10px] font-bold text-[#A3FFFF] transition-colors flex items-center gap-1.5 mt-1">
+                            View Details <i data-lucide="external-link" class="w-3 h-3"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Moderation Details & Actions Sidebar -->
+            <div class="flex-1 md:flex-none md:w-80 lg:w-[340px] xl:w-[380px] bg-[#1A1D24] p-5 lg:p-6 flex flex-col gap-5 border-t md:border-t-0 md:border-l border-white/10 overflow-y-auto custom-scrollbar shadow-2xl">
+                
+                <!-- 1. User Profile Box -->
+                <div class="space-y-2 shrink-0">
+                    <h3 class="text-[10px] font-bold text-white/50 uppercase tracking-widest">Reported User</h3>
+                    <div class="bg-white/5 p-3 rounded-xl border border-white/5 flex items-center justify-between shadow-inner">
+                        <div class="flex items-center gap-3 min-w-0">
+                            <div class="w-10 h-10 rounded-full border border-white/20 p-0.5 shrink-0">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" class="w-full h-full rounded-full object-cover grayscale" />
+                            </div>
+                            <div class="min-w-0 pr-2">
+                                <p id="review-overlay-author" class="text-sm font-bold text-white leading-tight truncate">Author Name</p>
+                                <p class="text-[10px] text-white/50 truncate mt-0.5">Joined 2024</p>
+                            </div>
+                        </div>
+                        <button onclick="document.getElementById('modal-admin-review-overlay').close(); window.location.hash='#profile';" class="text-[10px] font-bold text-[#A3FFFF] bg-[#A3FFFF]/10 hover:bg-[#A3FFFF]/20 px-3 py-1.5 rounded-full transition-colors shrink-0">Inspect</button>
+                    </div>
+                </div>
+
+                <!-- 2. Previous Violations -->
+                <div class="space-y-2 shrink-0">
+                    <h3 class="text-[10px] font-bold text-white/50 uppercase tracking-widest">User History</h3>
+                    <div class="bg-[#0F1115] p-3.5 rounded-xl border border-white/5 shadow-inner flex flex-col gap-2">
+                        <div class="flex items-center gap-2 text-orange-400">
+                            <i data-lucide="alert-circle" class="w-4 h-4"></i>
+                            <span class="text-xs font-bold">2 Prior Violations</span>
+                        </div>
+                        <ul class="text-[10px] text-white/60 space-y-1 list-disc pl-5">
+                            <li>Jan 12: Spam/Self-Promotion (Warned)</li>
+                            <li>Mar 01: Inappropriate Content (Removed)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 3. Reporter Notes -->
+                <div class="space-y-2 shrink-0">
+                    <h3 class="text-[10px] font-bold text-white/50 uppercase tracking-widest flex items-center gap-1.5">Reporter Notes</h3>
+                    <div class="bg-[#0F1115] p-3.5 rounded-xl border border-white/5 text-xs text-white/80 leading-relaxed shadow-inner italic relative">
+                        <i data-lucide="quote" class="w-3 h-3 absolute top-2 right-2 text-white/20"></i>
+                        "This image is clearly stolen from a stock website. I've seen it used in multiple other campaigns outside TFP."
+                    </div>
+                </div>
+
+                <!-- 4. Enforcement Action (Sticky/Bottom) -->
+                <div class="mt-auto pt-4 border-t border-white/10 shrink-0 flex flex-col gap-3.5">
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest">Enforcement Action</label>
+                        <div class="relative group">
+                            <select class="w-full bg-[#0F1115] border border-white/10 hover:border-white/20 rounded-xl py-2.5 px-3 text-sm font-bold text-white focus:outline-none focus:border-[#A3FFFF] appearance-none cursor-pointer transition-colors">
+                                <option>Warn User & Keep Content</option>
+                                <option class="text-red-400">Delete Content</option>
+                                <option class="text-red-400">Suspend User Account</option>
+                                <option class="text-green-400">Mark as Safe (Ignore)</option>
+                            </select>
+                            <i data-lucide="chevron-down" class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40 pointer-events-none"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-[10px] font-bold text-white/50 uppercase tracking-widest">Resolution Notes</label>
+                        <textarea rows="2" placeholder="Required if taking action..." class="w-full bg-[#0F1115] border border-white/10 hover:border-white/20 rounded-xl p-2.5 text-xs text-white focus:border-[#A3FFFF] outline-none resize-none custom-scrollbar transition-colors shadow-inner"></textarea>
+                    </div>
+
+                    <div class="flex gap-2 pt-1">
+                        <button onclick="document.getElementById('modal-admin-review-overlay').close()" class="flex-1 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl text-xs font-bold transition-colors">Cancel</button>
+                        <button onclick="executeAdminResolution()" class="flex-[2] py-3 bg-gradient-to-r from-[#6F4BFF] to-[#A36BFF] text-white rounded-xl text-xs font-bold shadow-[0_4px_20px_rgba(111,75,255,0.3)] transition-transform active:scale-[0.98] flex items-center justify-center gap-2">
+                            <i data-lucide="shield-check" class="w-4 h-4"></i> Execute
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="modal-lightbox" class="w-[95vw] lg:w-[80vw] xl:w-[70vw] max-w-6xl m-auto bg-transparent p-0 h-[90vh] md:h-[80vh] lg:h-[70vh]">
+                <div class="mt-4 shrink-0 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div class="min-w-0">
+                        <h2 id="lightbox-title" class="text-xl lg:text-2xl font-bold text-white tracking-tight leading-tight truncate">Title</h2>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex-1 md:flex-none md:w-80 lg:w-[350px] bg-[#1A1D24] p-5 md:p-6 flex flex-col gap-6 border-t md:border-t-0 md:border-l border-white/10 overflow-y-auto custom-scrollbar shadow-2xl">
+                
+                <!-- Author Info -->
+                <div class="flex items-center justify-between gap-3 shrink-0 bg-white/5 p-3.5 rounded-xl border border-white/5 shadow-inner">
+                    <div class="flex items-center gap-3 min-w-0">
+                        <img id="lightbox-avatar" src="" class="w-10 h-10 rounded-full border border-white/20 object-cover shrink-0" />
+                        <div class="min-w-0">
+                            <p class="text-[10px] text-white/50 uppercase font-bold tracking-widest mb-0.5">Creator</p>
+                            <span id="lightbox-author" class="text-sm font-bold text-white truncate block">@user</span>
+                        </div>
+                    </div>
+                    <button class="px-3 py-1.5 bg-[#A3FFFF]/10 text-[#A3FFFF] text-[10px] font-bold rounded-full hover:bg-[#A3FFFF]/20 transition-colors">Follow</button>
+                </div>
+
+                <!-- Post Stats added to fill vertical space nicely -->
+                <div class="grid grid-cols-2 gap-3 shrink-0">
+                    <div class="bg-[#0F1115] p-3 rounded-xl border border-white/5 shadow-inner text-center">
+                        <i data-lucide="eye" class="w-4 h-4 text-white/40 mx-auto mb-1"></i>
+                        <p class="text-[10px] text-white/50 uppercase font-bold tracking-widest mb-0.5">Views</p>
+                        <p class="text-sm font-bold text-white">1.2k</p>
+                    </div>
+                    <div class="bg-[#0F1115] p-3 rounded-xl border border-white/5 shadow-inner text-center">
+                        <i data-lucide="calendar" class="w-4 h-4 text-white/40 mx-auto mb-1"></i>
+                        <p class="text-[10px] text-white/50 uppercase font-bold tracking-widest mb-0.5">Posted</p>
+                        <p class="text-sm font-bold text-white">Oct 12</p>
+                    </div>
+                </div>
+                
+                <div class="mt-auto shrink-0 pt-4 border-t border-white/10">
+                    <button onclick="toggleVote(this, event)" class="w-full py-3.5 bg-white/5 hover:bg-white/10 rounded-xl text-white text-sm font-bold border border-white/10 group/btn flex items-center justify-center gap-2 transition-colors active:scale-[0.98] shadow-lg">
+                        <i data-lucide="heart" class="w-4 h-4 group-hover/btn:scale-110 transition-transform" fill="none"></i> Vote (<span id="lightbox-votes">0</span>)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- PROGRESSIVE ENHANCEMENT JAVASCRIPT -->
+    <script>
+        // MOCKUP UTILITY: Default to logged in for testing profile features instantly.
+        let isLoggedIn = true;
+        let currentUserRole = 'ADMIN'; 
+        let currentAdminRowId = null;
+        let currentReportData = {}; // Stores data for Focus Lightbox
+        let pendingHashToNavigate = null; 
+
+        // Set initial body class based on default mockup role
+        document.body.classList.add(currentUserRole === 'ADMIN' ? 'role-admin' : 'role-user');
+
+        if (typeof window !== 'undefined') {
+            document.addEventListener('DOMContentLoaded', () => {
+                const modalLinks = document.querySelectorAll('a[data-modal]');
+                modalLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault(); 
+                        const dialogId = link.getAttribute('data-modal');
+                        const dialog = document.getElementById(dialogId);
+                        if(dialog) dialog.showModal();
+                    });
+                });
+                const dialogs = document.querySelectorAll('dialog');
+                dialogs.forEach(dialog => {
+                    dialog.addEventListener('click', (e) => {
+                        const rect = dialog.getBoundingClientRect();
+                        if (!(rect.top <= e.clientY && e.clientY <= rect.top + rect.height && rect.left <= e.clientX && e.clientX <= rect.left + rect.width)) {
+                            dialog.close();
+                        }
+                    });
+                });
+            });
+        }
+
+        // --- GLOBAL SEARCH LOGIC ---
+        function executeSearch(e, input) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const query = input.value.trim();
+                if (query) {
+                    const displayElement = document.getElementById('search-query-display');
+                    if (displayElement) displayElement.innerText = query;
+                    window.location.hash = '#search-results';
+                }
+            }
+        }
+
+        // --- AUTH GUARD ROUTING ---
+        function requireAuthNavigation(e) {
+            if (!isLoggedIn) {
+                e.preventDefault();
+                let target = e.target;
+                while (target && !target.href) { target = target.parentElement; }
+                if (target && target.getAttribute('href')) {
+                    pendingHashToNavigate = target.getAttribute('href');
+                }
+                const authModal = document.getElementById('modal-auth');
+                if (authModal) authModal.showModal();
+            }
+        }
+
+        function copyToClipboard(text) {
+            const dummy = document.createElement('input');
+            document.body.appendChild(dummy);
+            dummy.value = text;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+            alert('Voting link copied to clipboard!');
+        }
+
+        function handleAuthSubmit(e, role = 'USER') {
+            if (e) e.preventDefault();
+            isLoggedIn = true;
+            currentUserRole = role;
+            
+            document.body.classList.remove('role-admin', 'role-user');
+            document.body.classList.add(role === 'ADMIN' ? 'role-admin' : 'role-user');
+
+            const authModal = document.getElementById('modal-auth');
+            if (authModal && typeof authModal.close === 'function') authModal.close();
+
+            const authContainer = document.getElementById('auth-state-container');
+            if(authContainer) {
+                authContainer.innerHTML = `
+                    <a href="#activity" class="text-white/50 hover:text-[#A3FFFF] transition-colors"><i data-lucide="bell" class="w-5 h-5 not-italic">🔔</i></a>
+                    <a href="#profile"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&h=100&q=80" class="w-8 h-8 rounded-full border-2 border-[#6F4BFF]" /></a>
+                `;
+                if(typeof lucide !== 'undefined') lucide.createIcons();
+            }
+
+            if (pendingHashToNavigate) {
+                window.location.hash = pendingHashToNavigate;
+                pendingHashToNavigate = null;
+            } else {
+                window.location.hash = role === 'ADMIN' ? '#admin-reports' : '#profile';
+            }
+        }
+
+        function switchProfileTab(btn, targetId) {
+            const container = btn.parentElement;
+            const tabs = container.querySelectorAll('button');
+            tabs.forEach(t => {
+                t.classList.remove('text-[#A3FFFF]', 'border-[#A3FFFF]', 'font-bold');
+                t.classList.add('text-white/50', 'font-medium', 'border-transparent');
+            });
+            btn.classList.remove('text-white/50', 'font-medium', 'border-transparent');
+            btn.classList.add('text-[#A3FFFF]', 'border-[#A3FFFF]', 'font-bold');
+
+            document.querySelectorAll('.profile-tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(targetId).classList.remove('hidden');
+        }
+
+        // Location Auto-Complete Logic
+        const MOCK_LOCATIONS = ['Bengaluru, India', 'New York, USA', 'London, UK', 'Tokyo, Japan', 'Paris, France'];
+
+        function handleLocSearch(input, dropdownId, mapId) {
+            const val = input.value.toLowerCase();
+            const dropdown = document.getElementById(dropdownId);
+            if (!val) { dropdown.classList.add('hidden'); return; }
+            
+            const matches = MOCK_LOCATIONS.filter(loc => loc.toLowerCase().includes(val));
+            if (matches.length > 0) {
+                dropdown.innerHTML = matches.map(m => `
+                    <div onclick="selectLoc('${input.id}', '${dropdownId}', '${m}', '${mapId}')" class="px-4 py-2.5 hover:bg-white/10 cursor-pointer text-xs md:text-sm text-white/80 hover:text-white transition-colors border-b border-white/5 flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#A3FFFF]"></i> ${m}
+                    </div>
+                `).join('');
+                dropdown.classList.remove('hidden');
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            } else {
+                dropdown.classList.add('hidden');
+            }
+        }
+
+        function selectLoc(inputId, dropdownId, val, mapId) {
+            document.getElementById(inputId).value = val;
+            document.getElementById(dropdownId).classList.add('hidden');
+            if (mapId) document.getElementById(mapId).classList.remove('hidden');
+        }
+
+        document.addEventListener('click', (e) => {
+            if(!e.target.closest('.loc-autocomplete-container')) {
+                document.querySelectorAll('.loc-autocomplete-dropdown').forEach(el => el.classList.add('hidden'));
+            }
+        });
+
+        // --- INLINE MODERATION ACTIONS ---
+        function resolveInlineCard(cardId, action) {
+            const card = document.getElementById(cardId);
+            if(card) {
+                // Animate out
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.98)';
+                card.style.pointerEvents = 'none';
+                
+                setTimeout(() => {
+                    card.remove();
+                    // Update header mock badge
+                    const badge = document.querySelector('#admin-reports .bg-red-500\\/10.text-red-400');
+                    if (badge) badge.innerHTML = '<div class="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></div> 4 Open';
+                }, 300);
+            }
+        }
+
+        // --- DIRECT ADMIN REVIEW OVERLAY FLOW ---
+        function openAdminReviewModal(rowId, type, title, author, reason, imgSrc, typeColor, desc, reportCount) {
+            currentAdminRowId = rowId;
+
+            // Populate Left Side (Image & Meta)
+            document.getElementById('review-overlay-img').src = imgSrc;
+            document.getElementById('review-overlay-type').innerText = type;
+            document.getElementById('review-overlay-type').className = `text-[9px] px-2 py-0.5 rounded font-bold uppercase tracking-wider border w-fit ${typeColor}`;
+            document.getElementById('review-overlay-reason').innerText = reason;
+            document.getElementById('review-overlay-title').innerText = title;
+            document.getElementById('review-overlay-desc').innerText = desc;
+            document.getElementById('review-overlay-count').innerText = reportCount;
+            
+            // Populate Right Side (User Profile)
+            document.getElementById('review-overlay-author').innerText = author;
+            
+            // Open the unified Admin Modal
+            document.getElementById('modal-admin-review-overlay').showModal();
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
+
+        function executeAdminResolution() {
+            if(currentAdminRowId) {
+                // Target the specific row in the table and animate out
+                const row = document.getElementById(currentAdminRowId);
+                if(row) {
+                    row.style.opacity = '0';
+                    row.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        row.remove();
+                        // Update the badge count mock
+                        const badge = document.querySelector('#admin-reports .bg-red-500\\/10.text-red-400');
+                        if (badge) {
+                            badge.innerHTML = '<div class="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></div> 4 Open';
+                        }
+                    }, 300);
+                }
+            }
+            document.getElementById('modal-admin-review-overlay').close();
+            currentAdminRowId = null;
+            setTimeout(() => alert('Resolution Saved & Executed successfully!'), 400);
+        }
+
+        function submitForApproval(e, type) {
+            e.preventDefault();
+            window.location.hash = `#${type.toLowerCase()}`;
+        }
+
+        // Interactive States
+        function toggleVote(btn, event) {
+            if (event) { event.preventDefault(); event.stopPropagation(); }
+            if (!isLoggedIn) {
+                const authModal = document.getElementById('modal-auth');
+                if (authModal) authModal.showModal();
+                return;
+            }
+            const icon = btn.querySelector('i');
+            const span = btn.querySelector('span');
+            let count = parseInt(span.innerText.replace(/[^0-9]/g, ''));
+            if (btn.classList.contains('text-pink-500')) {
+                btn.classList.remove('text-pink-500', 'border-pink-500/50');
+                btn.classList.add('text-white');
+                if(icon) icon.setAttribute('fill', 'none');
+                span.innerText = count - 1;
+            } else {
+                btn.classList.remove('text-white');
+                btn.classList.add('text-pink-500', 'border-pink-500/50');
+                if(icon) icon.setAttribute('fill', 'currentColor');
+                span.innerText = count + 1;
+            }
+        }
+
+        function toggleRsvp(btn, type) {
+            if (!isLoggedIn) {
+                const authModal = document.getElementById('modal-auth');
+                if (authModal) authModal.showModal();
+                return;
+            }
+            const container = btn.parentElement;
+            const allBtns = container.querySelectorAll('.rsvp-btn');
+            const isActive = btn.classList.contains('active-rsvp');
+
+            allBtns.forEach(b => {
+                b.className = 'rsvp-btn w-full py-3 bg-white/5 border border-white/10 text-white rounded-xl text-sm md:text-base font-bold transition-all active:scale-[0.98]';
+            });
+
+            if (!isActive) {
+                btn.classList.add('active-rsvp');
+                if (type === 'going') {
+                    btn.classList.remove('bg-white/5', 'border-white/10', 'text-white');
+                    btn.classList.add('bg-green-500/20', 'text-green-400', 'border-green-500/50');
+                } else if (type === 'interested') {
+                    btn.classList.remove('bg-white/5', 'border-white/10', 'text-white');
+                    btn.classList.add('bg-[#6F4BFF]/20', 'text-[#A3FFFF]', 'border-[#6F4BFF]/50');
+                }
+            }
+        }
+
+        function openLightbox(imgSrc, title, author, votes, avatarSrc) {
+            const lightbox = document.getElementById('modal-lightbox');
+            if(!lightbox) return;
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox-title').innerText = title;
+            document.getElementById('lightbox-author').innerText = author;
+            document.getElementById('lightbox-votes').innerText = votes;
+            
+            const voteBtn = lightbox.querySelector('.group\\/btn');
+            if (voteBtn) {
+                voteBtn.classList.remove('text-pink-500', 'border-pink-500/50');
+                voteBtn.classList.add('text-white');
+                const icon = voteBtn.querySelector('i');
+                if(icon) icon.setAttribute('fill', 'none');
+            }
+            lightbox.showModal();
+        }
+
+        // --- ENHANCED PROFILE UPLOAD LOGIC ---
+        
+        // 1. Profile Avatar Image Swap
+        function updateProfileAvatar(input) {
+            if(input.files && input.files[0]) {
+                const url = URL.createObjectURL(input.files[0]);
+                const avatar = document.getElementById('profile-avatar-img');
+                if(avatar) avatar.src = url;
+            }
+        }
+
+        // 2. Delete Portfolio Item
+        function deletePortfolioItem(event, btn) {
+            // Stop lightbox from opening when clicking delete
+            event.stopPropagation();
+            const item = btn.closest('.portfolio-item');
+            if(item) {
+                item.style.transform = 'scale(0.8)';
+                item.style.opacity = '0';
+                setTimeout(() => item.remove(), 300); // animate out then remove
+            }
+        }
+
+        // 3. Staged Files to Portfolio Grid
+        let currentStagedFiles = [];
+
+        function previewFiles(input, containerId) {
+            const container = document.getElementById(containerId);
+            if(!container) return;
+            
+            if (containerId === 'preview-mood') {
+                if (input.files && (input.files.length < 2 || input.files.length > 6)) {
+                    alert("Please select between 2 and 6 images for the mood board.");
+                    input.value = ""; 
+                    container.innerHTML = "";
+                    return;
+                }
+            }
+
+            container.innerHTML = '';
+            currentStagedFiles = []; // Reset staging
+
+            if(input.files && input.files.length > 0) {
+                Array.from(input.files).forEach(file => {
+                    if(!file.type.startsWith('image/')) return;
+                    const url = URL.createObjectURL(file);
+                    currentStagedFiles.push(url); // Save to array for publishing
+                    const div = document.createElement('div');
+                    div.className = "aspect-square rounded-lg overflow-hidden bg-black animate-[fadeIn_0.3s_ease-out]";
+                    div.innerHTML = `<img src="${url}" class="w-full h-full object-cover opacity-80" />`;
+                    container.appendChild(div);
+                });
+            }
+        }
+
+        function handlePortfolioPublish(e) {
+            e.preventDefault();
+            const modal = document.getElementById('modal-portfolio-upload');
+            const grid = document.getElementById('portfolio-grid-items');
+            
+            if(!currentStagedFiles.length) {
+                modal.close();
+                return;
+            }
+
+            // Inject staged files into grid with loading spinner
+            currentStagedFiles.forEach(url => {
+                const tempId = 'upload-' + Math.random().toString(36).substr(2, 9);
+                
+                const loadingHtml = `
+                    <div id="${tempId}" class="portfolio-item rounded-2xl overflow-hidden group relative border border-white/5 aspect-[4/5] md:aspect-square shadow-lg bg-black animate-[zoomIn_0.3s_ease-out] flex flex-col items-center justify-center gap-3">
+                        <img src="${url}" class="absolute inset-0 w-full h-full object-cover opacity-30 grayscale blur-sm scale-105" />
+                        <div class="relative z-10 flex flex-col items-center gap-2">
+                            <i data-lucide="loader-2" class="w-8 h-8 text-[#A3FFFF] animate-spin"></i>
+                            <span class="text-[10px] font-bold tracking-widest text-[#A3FFFF] uppercase drop-shadow-md">Uploading</span>
+                        </div>
+                    </div>
+                `;
+                grid.insertAdjacentHTML('afterbegin', loadingHtml);
+                
+                if(typeof lucide !== 'undefined') lucide.createIcons();
+
+                // Simulate network request resolving after 2.5 seconds
+                setTimeout(() => {
+                    const el = document.getElementById(tempId);
+                    if (el) {
+                        el.innerHTML = `
+                            <img src="${url}" onclick="openLightbox('${url}', 'New Upload', '@m_thorne_visuals', 0, '')" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out cursor-pointer" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0F1115]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4 md:p-6 pointer-events-none">
+                                 <p class="text-[10px] md:text-xs text-[#A3FFFF] font-mono tracking-widest font-bold drop-shadow-md">VIEW SHOT</p>
+                            </div>
+                            <button onclick="deletePortfolioItem(event, this)" class="user-only absolute top-3 right-3 p-2 bg-red-500/80 hover:bg-red-500 text-white rounded-full opacity-0 group-hover:opacity-100 transition-all scale-95 hover:scale-105 shadow-lg z-10" title="Delete Photo"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+                        `;
+                        if(typeof lucide !== 'undefined') lucide.createIcons();
+                    }
+                }, 2500);
+            });
+            
+            // Reset state
+            currentStagedFiles = [];
+            const previewGrid = document.getElementById('preview-portfolio-grid');
+            if (previewGrid) previewGrid.innerHTML = '';
+            
+            // Reset input file value
+            const input = modal.querySelector('input[type="file"]');
+            if(input) input.value = '';
+            
+            modal.close();
+        }
+
+        // Auto load initial hash or default to #admin-reports if admin, else #home
+        window.addEventListener('load', () => { 
+            if(!window.location.hash) {
+                window.location.hash = currentUserRole === 'ADMIN' ? '#admin-reports' : '#home';
+            }
+        });
+    </script>
+</body>
+</html>
