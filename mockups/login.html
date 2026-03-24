@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TFP Mockup - Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-[#0F1115] text-white">
+  <div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(111,75,255,.25),transparent_35%),radial-gradient(circle_at_80%_80%,rgba(163,255,255,.12),transparent_35%)]"></div>
+  <main class="min-h-screen grid place-items-center p-4">
+    <section class="w-full max-w-md rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 shadow-2xl shadow-black/40">
+      <a href="home.html" class="inline-flex items-center gap-2 text-sm text-white/60 hover:text-white mb-6">← Back to Home</a>
+      <h1 class="text-3xl font-bold tracking-tight">Welcome Back</h1>
+      <p class="text-white/60 mt-2 mb-6">Sign in to manage your projects, contests, and events.</p>
+      <form class="space-y-4">
+        <label class="block text-sm text-white/80">Email
+          <input type="email" placeholder="you@example.com" class="mt-1 w-full rounded-xl border border-white/15 bg-black/20 px-4 py-3 outline-none focus:border-[#A3FFFF]" />
+        </label>
+        <label class="block text-sm text-white/80">Password
+          <input type="password" placeholder="••••••••" class="mt-1 w-full rounded-xl border border-white/15 bg-black/20 px-4 py-3 outline-none focus:border-[#A3FFFF]" />
+        </label>
+        <div class="flex justify-between text-xs text-white/60">
+          <label class="inline-flex items-center gap-2"><input type="checkbox" class="accent-[#6F4BFF]" /> Remember me</label>
+          <a href="forgot-password.html" class="hover:text-[#A3FFFF]">Forgot password?</a>
+        </div>
+        <button type="button" class="w-full rounded-xl bg-gradient-to-r from-[#6F4BFF] to-[#A36BFF] px-4 py-3 font-semibold">Sign In</button>
+      </form>
+      <div class="my-5 h-px bg-white/10"></div>
+      <div class="grid grid-cols-2 gap-3">
+        <a href="auth-google.html" class="rounded-xl border border-white/15 bg-white/5 px-3 py-2.5 text-center text-sm hover:bg-white/10">Google</a>
+        <a href="auth-github.html" class="rounded-xl border border-white/15 bg-white/5 px-3 py-2.5 text-center text-sm hover:bg-white/10">GitHub</a>
+      </div>
+      <p class="mt-6 text-sm text-white/60">New here? <a class="text-[#A3FFFF] hover:underline" href="register.html">Create account</a></p>
+    </section>
+  </main>
+<script>window.addEventListener('load',()=>{if(window.lucide){window.lucide.createIcons();}});</script>
+</body>
+</html>
