@@ -69,7 +69,8 @@ Source baseline: `/Users/hexa/Desktop/tfp-latest/tfp-workspace/packages/i18n/src
 - [x] zu
 - [x] af
 
-## Notes
-- All listed languages above now parse as valid JSON and match source key parity (`1181` leaf keys).
+## Closure
+- Pending locales from the requested roster: `0`
+- All listed locales parse as valid JSON and match source key parity (`1181` leaf keys).
 - Protected brand tokens `TFP` and `TFP Photographers` remain in English where present.
-- Additional catalogs currently present in repo: `en`, `hi`, `ne`.
+- Additional catalogs in repository: `en`, `hi`, `ne`.
