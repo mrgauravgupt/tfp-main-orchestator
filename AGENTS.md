@@ -16,6 +16,10 @@
 - Add a concise body for non-trivial changes: what changed, why, and any risk notes.
 
 ## Execution Defaults
+- Before starting repository work, sync the latest remote changes for any repo that has a configured remote.
+- After completing each meaningful fix in a repo with a configured remote, push the commit promptly unless the user explicitly says not to.
+- For browser, UI, integration, or end-to-end work that depends on the running app, always restart both FE and BE first.
+- Treat restart order as mandatory for any fresh UI verification pass: stop stale processes, restart services, confirm FE and BE health, then test.
 - Run fast validation before finalizing when applicable (`tsc`, build, and targeted tests).
 - Do not revert user-authored unrelated changes unless explicitly requested.
 - Keep changes minimal, traceable, and production-safe.
