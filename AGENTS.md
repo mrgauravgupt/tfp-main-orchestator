@@ -24,6 +24,12 @@
 - Do not revert user-authored unrelated changes unless explicitly requested.
 - Keep changes minimal, traceable, and production-safe.
 
+## Testing Conventions
+- Prefer test roots over colocated source tests for new work:
+  - app-local: `apps/<app>/tests/**`
+  - workspace-level: `tests/**` for cross-app E2E/contract flows
+- Keep API and web unit/integration tests in app-local test roots (`apps/api/tests/**`, `apps/web/tests/**`).
+
 ## Reporting Expectations
 - Final responses should include:
   - what was changed,
