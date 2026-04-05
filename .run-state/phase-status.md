@@ -49,10 +49,15 @@
 - Re-ran end-to-end validation gates after changes.
 - Confirmed clean final status for all required gates.
 - Cleaned duplicate background dev server processes to leave recoverable environment.
+- Added deterministic test-mode upload/storage bypass for E2E to remove external object-store flakiness.
+- Validated blocker regression specs:
+  - `tests/e2e/domains/admin/tests/admin-reports.spec.ts`
+  - `tests/e2e/domains/moderation/tests/profile-portfolio-dataset-moderation.spec.ts`
 
 ## Retry / Failure Notes
 - Auth regression fixed in first retry.
 - UI capture bootstrap retried once after service restart and completed successfully.
+- E2E upload/storage failures were resolved by test-mode bypass and revalidated with passing targeted suites.
 
 ## Deferred / Risk Notes
 - No critical/high deferred items.
