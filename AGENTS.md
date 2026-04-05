@@ -29,6 +29,7 @@
   - app-local: `apps/<app>/tests/**`
   - workspace-level: `tests/**` for cross-app E2E/contract flows
 - Keep API and web unit/integration tests in app-local test roots (`apps/api/tests/**`, `apps/web/tests/**`).
+- When creating or updating test scripts/flows, update `/Users/hexa/Desktop/tfp-latest/tfp-workspace/tests/README.md` in the same change so script usage stays discoverable.
 
 ## Reporting Expectations
 - Final responses should include:
