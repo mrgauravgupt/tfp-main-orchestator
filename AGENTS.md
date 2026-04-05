@@ -3,6 +3,7 @@
 ## Scope
 - Primary workspace root: `/Users/hexa/Desktop/tfp-latest`.
 - Main application workspace: `/Users/hexa/Desktop/tfp-latest/tfp-workspace`.
+- For domain-level routing in the app workspace, use `/Users/hexa/Desktop/tfp-latest/tfp-workspace/docs/agent-index.json` first.
 - If both root and nested workspaces changed, update and commit in both repositories.
 
 ## Commit Preference
@@ -30,6 +31,7 @@
   - workspace-level: `tests/**` for cross-app E2E/contract flows
 - Keep API and web unit/integration tests in app-local test roots (`apps/api/tests/**`, `apps/web/tests/**`).
 - When creating or updating test scripts/flows, update `/Users/hexa/Desktop/tfp-latest/tfp-workspace/tests/README.md` in the same change so script usage stays discoverable.
+- When changing browser seed assets/configs/commands, also update `/Users/hexa/Desktop/tfp-latest/tfp-workspace/tests/seed/README.md`.
 
 ## Reporting Expectations
 - Final responses should include:
