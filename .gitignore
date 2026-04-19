@@ -4,6 +4,8 @@
 # Local QA/debug artifacts
 audit-shots/
 tmp/
+.runtime/
+.playwright-mcp/
 
 # Large local screenshot exports
 *.png
