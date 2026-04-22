@@ -18,11 +18,13 @@
 
 ## Execution Defaults
 - Before starting repository work, sync the latest remote changes for any repo that has a configured remote.
+- If `git pull --rebase` is blocked by unrelated local changes, continue with scoped work, leave those changes untouched, and mention the skipped sync in the final report instead of stopping the task.
 - After completing each meaningful fix in a repo with a configured remote, push the commit promptly unless the user explicitly says not to.
 - For browser, UI, integration, or end-to-end work that depends on the running app, always restart both FE and BE first.
 - Treat restart order as mandatory for any fresh UI verification pass: stop stale processes, restart services, confirm FE and BE health, then test.
 - Run fast validation before finalizing when applicable (`tsc`, build, and targeted tests).
 - Do not revert user-authored unrelated changes unless explicitly requested.
+- Unrelated pre-existing changes in the working tree are not blockers by themselves. Continue with the requested task, avoid staging those files, and call them out only if they materially affect the work.
 - Keep changes minimal, traceable, and production-safe.
 
 ## Testing Conventions
