@@ -4,30 +4,30 @@ _Date: 2026-04-22_
 
 ## 1. Executive Summary
 
-Overall system health is **mixed / below release standard**. The codebase contains a large amount of functionality and substantial test surface area, but it is not in a state that supports a clean production-readiness claim: the API test suite is materially red once the broken root test wrapper is corrected, key runtime hotspots remain too large and tightly coupled, environment/config drift is significant, and prior audit artifacts have gone stale.
+Overall system health is **mixed / below release standard**. The codebase contains a large amount of functionality and substantial test surface area, but it is not in a state that supports a clean production-readiness claim: the API test suite remains materially red once the broken root test wrapper is corrected, key runtime hotspots remain too large and tightly coupled, environment/config drift is significant, and prior audit artifacts have gone stale.
 
 The strongest result from this pass is that the highest-risk inference-service security gap was **real, evidence-backed, and remediated immediately**. The AI service now defaults to internal-key enforcement outside local development, remote image fetches are no longer open by default, SSRF protections were added for enabled remote fetches, public OpenAPI/playground surfaces are disabled by default, deployment now requires an internal key, and the TFP callers now send the correct internal-service auth header contract.
 
-Leadership-level takeaway: **the application is functional but not audit-clean**. Core delivery risk is no longer dominated by the inference-service exposure issue; it is now dominated by the breadth of failing API tests, auth-protected route regressions, moderation/data-integrity failures under test, and maintainability hotspots in several large modules.
+Leadership-level takeaway: **the application is functional but not audit-clean**. Core delivery risk is no longer dominated by the inference-service exposure issue; it is now dominated by the breadth of failing API tests, auth-protected route regressions, moderation/data-integrity failures under test, and maintainability hotspots in several large modules. A second remediation-and-validation pass reduced the API suite from **51 failing tests across 22 files** to **36 failing tests across 16 files**, but that still remains a release blocker.
 
 ## 2. Critical Findings (Prioritized)
 
 ### Critical
 - 🔴 Critical **Workspace API test suite is materially red after the wrapper fix allowed it to execute.**
-  Impact: Breakage is broad enough to block a clean production-readiness claim: 51 failing tests across 22 files, including project creation/edit, reports, messages, account deletion, telemetry, moderation job processing, password-reset session revocation, and image-visibility logic.
-  Evidence: Evidence: `tfp-workspace` root `test:vitest` run now reaches the suite and fails in `apps/api/tests/modules/project/project.routes.test.ts`, `project.create.routes.test.ts`, `report.routes.test.ts`, `message.routes.test.ts`, `user.activity.test.ts`, `user.account-deletion.test.ts`, `telemetry.routes.test.ts`, `tests/background/worker.test.ts`, `tests/modules/moderation/application/process-image-moderation-job.test.ts`, and others.
+  Impact: Breakage is broad enough to block a clean production-readiness claim: after remediation it still fails with 36 failing tests across 16 files, concentrated in project creation/edit, reports, messages, user activity, rate limiting, event update moderation, and queue-state logic.
+  Evidence: `tfp-workspace` root `test:vitest` rerun now reaches the suite and still fails in `apps/api/tests/modules/project/project.routes.test.ts`, `project.create.routes.test.ts`, `report.routes.test.ts`, `message.routes.test.ts`, `user.activity.test.ts`, `content.kill-switch.test.ts`, `admin-report-route-utils.test.ts`, `event.routes.test.ts`, `event-update-moderation.service.test.ts`, and others.
   Recommendation: Stabilize auth-protected route behavior, moderation side effects, and background-worker mocks before claiming release readiness. Treat the newly-runnable suite as a blocker, not as optional technical debt.
 - 🔴 Critical **The AI inference service previously shipped with insecure defaults and a caller/header mismatch; the codebase is now hardened, but this was a real exploitable gap.**
   Impact: Before this pass, the service could run publicly with no key, public docs/UI enabled, and arbitrary remote image fetches. At the same time, TFP callers sent `Authorization` while the service enforced `x-internal-api-key`, so enabling a key would have broken integration.
-  Evidence: Evidence: `ai-inference-platform/config/base.yaml`, `src/ai_inference_platform/web.py`, `src/ai_inference_platform/adapters.py`, `scripts/oci/deploy-to-instance.sh`; caller evidence in `tfp-workspace/apps/api/src/modules/moderation/infrastructure/providers/RemoteHttpModerationAdapter.ts`, `.../translation/.../RemoteHttpTranslationProvider.ts`, and `.../moderation/application/text-moderation.ts`.
+  Evidence: `ai-inference-platform/config/base.yaml`, `src/ai_inference_platform/web.py`, `src/ai_inference_platform/adapters.py`, `scripts/oci/deploy-to-instance.sh`; caller evidence in `tfp-workspace/apps/api/src/modules/moderation/infrastructure/providers/RemoteHttpModerationAdapter.ts`, `.../translation/.../RemoteHttpTranslationProvider.ts`, and `.../moderation/application/text-moderation.ts`.
   Recommendation: Keep the hardened defaults, provision real internal keys in non-local environments, and do not re-enable remote URL fetches or debug surfaces without explicit threat-model review.
 - 🔴 Critical **The root test-wrapper defect was hiding the state of the system until now.**
   Impact: The previous root `test`, `test:vitest`, `test:ci:autofix`, `coverage:api`, and `qa:db:reset:admin` scripts only exported the target environment for the first chained command. That prevented Prisma reset from receiving `DATABASE_DIRECT_URL` and masked the actual suite state.
-  Evidence: Evidence: `tfp-workspace/package.json` and `scripts/with-target-env.sh`; reproduced previously via `P1012 Environment variable not found: DATABASE_DIRECT_URL`.
+  Evidence: `tfp-workspace/package.json` and `scripts/with-target-env.sh`; reproduced previously via `P1012 Environment variable not found: DATABASE_DIRECT_URL`.
   Recommendation: Keep the new `with-target-env-shell.sh` pattern and migrate any future multi-step destructive commands to the same model.
 - 🔴 Critical **Database/moderation side effects are still generating live integrity failures inside the API suite.**
   Impact: Several failing tests are not superficial assertions: they show real `P2003/P2010` foreign-key failures and missing-file visibility transitions during project/event/report flows.
-  Evidence: Evidence: `tfp-workspace/apps/api/src/modules/moderation/ModerationService.ts`, `apps/api/src/modules/project/project.routes.ts`, `apps/api/src/modules/event/event.commands.ts`, `packages/storage/src/adapters/LocalFilesystemAdapter.ts`; failures surfaced during `test:vitest`.
+  Evidence: `tfp-workspace/apps/api/src/modules/moderation/ModerationService.ts`, `apps/api/src/modules/project/project.routes.ts`, `apps/api/src/modules/event/event.commands.ts`, `packages/storage/src/adapters/LocalFilesystemAdapter.ts`; failures surfaced during `test:vitest`.
   Recommendation: Audit moderation event writes, ownership references, and storage lifecycle side effects under freshly reset local databases.
 
 ### High
@@ -239,9 +239,10 @@ Shared duplicated elements identified:
 - `tfp-workspace`: `bash ./scripts/pnpm-node20.sh typecheck` -> pass
 - `tfp-workspace`: `bash ./scripts/pnpm-node20.sh lint` -> pass
 - `tfp-workspace`: `bash ./scripts/pnpm-node20.sh build` -> pass (with repeated Dart Sass legacy-JS-API deprecation warnings)
-- `tfp-workspace`: `bash ./scripts/pnpm-node20.sh test:vitest` -> bootstrap fixed; suite now executes, but fails with 51 failing tests across 22 files in the current codebase
+- `tfp-workspace`: `bash ./scripts/pnpm-node20.sh test:vitest` -> bootstrap fixed; after remediation rerun, suite now executes but still fails with 36 failing tests across 16 files in the current codebase
 - `tfp-workspace`: `bash ./scripts/pnpm-node20.sh --filter api exec vitest run tests/shared/internal-service-auth.test.ts tests/modules/moderation/remote-http-moderation-adapter.test.ts` -> pass
 - `tfp-workspace`: `bash ./scripts/pnpm-node20.sh --filter api exec tsc --noEmit` -> pass
+- `tfp-workspace`: `./scripts/with-target-env-shell.sh local "bash ./scripts/pnpm-node20.sh --filter api exec vitest run tests/shared/internal-service-auth.test.ts tests/modules/moderation/remote-http-moderation-adapter.test.ts tests/modules/moderation/application/image-visibility.test.ts tests/modules/moderation/application/process-image-moderation-job.test.ts tests/modules/moderation/text-moderation.test.ts"` -> pass (25 tests)
 - `tfp-workspace`: `bash ./scripts/pnpm-node20.sh --filter web test -- --runInBand` -> fails on an existing web-unit assertion: admin reason catalog expects “AI passed” but runtime returns “AI approved”
 - `ai-inference-platform`: `./.venv/bin/ruff check` -> pass
 - `ai-inference-platform`: `./.venv/bin/pytest -q` -> pass (23 passed); FastAPI/Pydantic alias warnings remain on v2 request models
