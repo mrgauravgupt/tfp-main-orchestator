@@ -20,6 +20,7 @@
 - Before starting repository work, sync the latest remote changes for any repo that has a configured remote.
 - If `git pull --rebase` is blocked by unrelated local changes, continue with scoped work, leave those changes untouched, and mention the skipped sync in the final report instead of stopping the task.
 - After completing each meaningful fix in a repo with a configured remote, push the commit promptly unless the user explicitly says not to.
+- If work happens on a branch, merge it back into `main` promptly after validation unless the user explicitly says not to. `main` should remain updated with completed work.
 - For browser, UI, integration, or end-to-end work that depends on the running app, always restart both FE and BE first.
 - Treat restart order as mandatory for any fresh UI verification pass: stop stale processes, restart services, confirm FE and BE health, then test.
 - Run fast validation before finalizing when applicable (`tsc`, build, and targeted tests).
