@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TFP Photographers - Standalone Demo Prototype</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080a0f;
+      --panel: rgba(23, 27, 35, 0.78);
+      --panel-2: rgba(31, 36, 47, 0.74);
+      --line: rgba(255, 255, 255, 0.11);
+      --line-strong: rgba(255, 255, 255, 0.18);
+      --text: #f6f7fb;
+      --muted: #aeb6c7;
+      --soft: #7e879a;
+      --cyan: #42e8ff;
+      --violet: #7447ff;
+      --pink: #ff4f8b;
+      --amber: #f7b84b;
+      --green: #36d399;
+      --danger: #ff5f6d;
+      --radius: 22px;
+      --radius-sm: 14px;
+      --shadow: 0 30px 80px rgba(0, 0, 0, 0.34);
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font);
+      color: var(--text);
+      background:
+        radial-gradient(circle at 30% 12%, rgba(116, 71, 255, 0.19), transparent 30rem),
+        radial-gradient(circle at 74% 24%, rgba(66, 232, 255, 0.12), transparent 34rem),
+        linear-gradient(180deg, #0d111a 0%, var(--bg) 45%, #07080c 100%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+    img { display: block; max-width: 100%; }
+
+    .app-shell { min-height: 100vh; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(9, 11, 16, 0.84);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav {
+      width: min(1220px, calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: linear-gradient(135deg, #66f1ff, #7646ff 72%, #ff4f8b);
+      box-shadow: 0 12px 30px rgba(116, 71, 255, 0.38);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .nav-link {
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .nav-link.is-active {
+      background: rgba(66, 232, 255, 0.12);
+      color: var(--cyan);
+      box-shadow: inset 0 0 0 1px rgba(66, 232, 255, 0.22);
+    }
+
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .icon-btn, .primary-btn, .ghost-btn, .danger-btn {
+      min-height: 42px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.045);
+      padding: 0 16px;
+      font-weight: 800;
+    }
+
+    .primary-btn {
+      border-color: rgba(116, 71, 255, 0.45);
+      background: linear-gradient(135deg, #5a4cff, #8b3dff);
+      box-shadow: 0 16px 34px rgba(116, 71, 255, 0.32);
+    }
+
+    .danger-btn {
+      border-color: rgba(255, 95, 109, 0.34);
+      background: rgba(255, 95, 109, 0.16);
+      color: #ffd7dc;
+    }
+
+    .mobile-menu { display: none; }
+
+    .container {
+      width: min(1220px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .view { display: none; padding: 34px 0 90px; }
+    .view.is-active { display: block; animation: enter 280ms ease both; }
+
+    @keyframes enter {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      gap: 28px;
+      align-items: stretch;
+      min-height: 520px;
+    }
+
+    .hero-copy, .glass-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.02)),
+        var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: clamp(28px, 5vw, 56px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 30px;
+      border: 1px solid rgba(66, 232, 255, 0.22);
+      border-radius: 999px;
+      background: rgba(66, 232, 255, 0.08);
+      color: var(--cyan);
+      padding: 0 12px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+    h1 {
+      margin-top: 22px;
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 0.94;
+      letter-spacing: -0.03em;
+    }
+
+    .lede {
+      margin-top: 22px;
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: clamp(16px, 1.5vw, 19px);
+      line-height: 1.75;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+
+    .hero-media {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      min-height: 520px;
+      border: 1px solid var(--line);
+      background: #151922;
+      box-shadow: var(--shadow);
+    }
+
+    .photo-collage {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .photo {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      background:
+        var(--image),
+        linear-gradient(135deg, rgba(66, 232, 255, 0.2), rgba(116, 71, 255, 0.2));
+      background-size: cover;
+      background-position: center;
+      isolation: isolate;
+    }
+
+    .photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 35%, rgba(0, 0, 0, 0.34));
+      z-index: -1;
+    }
+
+    .photo-xl { grid-row: span 2; }
+    .p1 { --image: url("https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1200&q=80"); }
+    .p2 { --image: url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80"); }
+    .p3 { --image: url("https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=900&q=80"); }
+    .p4 { --image: url("https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80"); }
+    .p5 { --image: url("https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80"); }
+    .p6 { --image: url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80"); }
+    .p7 { --image: url("https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1200&q=80"); }
+    .p8 { --image: url("https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=900&q=80"); }
+
+    .floating-panel {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      background: rgba(8, 10, 15, 0.72);
+      backdrop-filter: blur(16px);
+      padding: 18px;
+    }
+
+    .stat strong { display: block; font-size: 22px; }
+    .stat span { color: var(--muted); font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin: 48px 0 18px;
+    }
+
+    .section-head h2 { font-size: clamp(28px, 4vw, 44px); letter-spacing: -0.02em; }
+    .section-head p { margin-top: 8px; color: var(--muted); line-height: 1.6; }
+
+    .tabs, .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.045);
+      color: var(--muted);
+      padding: 0 13px;
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .chip.hot {
+      border-color: rgba(66, 232, 255, 0.22);
+      background: rgba(66, 232, 255, 0.08);
+      color: #dffbff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(18, 22, 30, 0.78);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
+      transition: transform 180ms ease, border-color 180ms ease;
+    }
+
+    .card:hover { transform: translateY(-3px); border-color: rgba(66, 232, 255, 0.28); }
+    .card-media { height: 245px; padding: 8px; background: rgba(255, 255, 255, 0.025); }
+    .card-media .photo { height: 100%; }
+    .card-body { padding: 18px; }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; color: var(--soft); font-size: 13px; }
+    .card h3 { margin-top: 12px; font-size: 21px; letter-spacing: -0.01em; }
+    .card p { margin-top: 10px; color: var(--muted); line-height: 1.6; font-size: 14px; }
+    .card-actions { display: flex; gap: 10px; margin-top: 16px; }
+
+    .split-detail {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .detail-hero {
+      overflow: hidden;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .detail-media-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      grid-template-rows: 180px 180px;
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .detail-media-grid .photo:first-child { grid-row: span 2; }
+
+    .detail-content {
+      margin-top: 20px;
+      padding: 28px;
+    }
+
+    .detail-content h1 {
+      margin-top: 12px;
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 0.98;
+    }
+
+    .side-stack { display: grid; gap: 16px; }
+    .side-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.02)),
+        rgba(15, 18, 26, 0.72);
+      padding: 22px;
+      box-shadow: 0 22px 54px rgba(0, 0, 0, 0.2);
+    }
+
+    .side-card h3 { font-size: 22px; }
+    .fact-list { display: grid; gap: 12px; margin-top: 16px; }
+    .fact {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.035);
+      padding: 13px;
+    }
+    .fact span { color: var(--soft); font-size: 12px; font-weight: 850; text-transform: uppercase; letter-spacing: 0.08em; }
+    .fact strong { text-align: right; }
+
+    .submissions-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .submission-tile {
+      position: relative;
+      overflow: hidden;
+      min-height: 210px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--panel);
+    }
+
+    .submission-tile .photo { position: absolute; inset: 0; border-radius: 0; border: 0; }
+    .submission-info {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 14px;
+      background: rgba(8, 10, 15, 0.72);
+      backdrop-filter: blur(14px);
+      padding: 10px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .form-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .form-panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02)),
+        var(--panel);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    label { display: grid; gap: 8px; color: var(--muted); font-size: 12px; font-weight: 850; letter-spacing: 0.08em; text-transform: uppercase; }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(5, 7, 11, 0.54);
+      color: var(--text);
+      padding: 14px;
+      outline: none;
+    }
+    textarea { min-height: 126px; resize: vertical; }
+    input:focus, select:focus, textarea:focus { border-color: rgba(66, 232, 255, 0.42); box-shadow: 0 0 0 3px rgba(66, 232, 255, 0.11); }
+
+    .upload-box {
+      min-height: 190px;
+      border: 1px dashed rgba(66, 232, 255, 0.34);
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: var(--muted);
+      background: rgba(66, 232, 255, 0.045);
+      padding: 20px;
+    }
+
+    .table {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(15, 18, 26, 0.7);
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.7fr 0.7fr auto;
+      gap: 14px;
+      align-items: center;
+      padding: 15px 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .row:first-child { border-top: 0; color: var(--soft); font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    .searchbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid var(--line-strong);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.045);
+      padding: 10px 14px;
+    }
+
+    .searchbar input { border: 0; background: transparent; padding: 8px 0; }
+    .empty { color: var(--muted); padding: 34px; text-align: center; }
+
+    .toast {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 80;
+      display: none;
+      border: 1px solid rgba(54, 211, 153, 0.28);
+      border-radius: 16px;
+      background: rgba(14, 30, 25, 0.92);
+      color: #dcfff3;
+      padding: 14px 16px;
+      box-shadow: var(--shadow);
+    }
+    .toast.show { display: block; animation: enter 220ms ease both; }
+
+    @media (max-width: 920px) {
+      .nav { min-height: 68px; }
+      .nav-links { display: none; }
+      .mobile-menu { display: inline-flex; }
+      .hero, .split-detail, .form-shell { grid-template-columns: 1fr; }
+      .hero-media { min-height: 420px; }
+      .grid { grid-template-columns: 1fr 1fr; }
+      .submissions-grid { grid-template-columns: 1fr 1fr; }
+      .row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      .container, .nav { width: min(100% - 24px, 1220px); }
+      .view { padding-top: 22px; }
+      .nav-actions .primary-btn { display: none; }
+      .hero-copy { padding: 24px; }
+      .hero-media { min-height: 380px; }
+      .floating-panel { left: 14px; right: 14px; bottom: 14px; display: grid; grid-template-columns: 1fr 1fr; }
+      .grid, .submissions-grid, .form-grid { grid-template-columns: 1fr; }
+      .detail-media-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 180px 120px; }
+      .detail-media-grid .photo:first-child { grid-column: span 2; grid-row: auto; }
+      .section-head { align-items: start; flex-direction: column; }
+      .photo-collage { grid-template-columns: 1fr 1fr; }
+      .photo-xl { grid-column: span 2; grid-row: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <nav class="nav">
+        <a href="#home" class="brand" data-link>
+          <span class="brand-mark">📷</span>
+          <span>TFP PLATFORM</span>
+        </a>
+        <div class="nav-links" aria-label="Primary">
+          <a href="#home" class="nav-link" data-link>Home</a>
+          <a href="#projects" class="nav-link" data-link>Projects</a>
+          <a href="#contests" class="nav-link" data-link>Contests</a>
+          <a href="#events" class="nav-link" data-link>Events</a>
+          <a href="#submissions" class="nav-link" data-link>Submissions</a>
+        </div>
+        <div class="nav-actions">
+          <button class="icon-btn mobile-menu" data-open-menu>☰</button>
+          <a href="#create-project" class="primary-btn" data-link>Create</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section id="home" class="view"></section>
+      <section id="projects" class="view"></section>
+      <section id="contests" class="view"></section>
+      <section id="events" class="view"></section>
+      <section id="project-detail" class="view"></section>
+      <section id="contest-detail" class="view"></section>
+      <section id="event-detail" class="view"></section>
+      <section id="submissions" class="view"></section>
+      <section id="create-project" class="view"></section>
+      <section id="create-contest" class="view"></section>
+      <section id="create-event" class="view"></section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast">Saved demo item</div>
+
+  <script>
+    const projects = [
+      { title: "Fashion Editorial Shoot", city: "New York, USA", date: "2 May - 9 May", pay: "TFP", type: "Portfolio collaboration", role: "Model", img: "p7", desc: "Looking for models for a high-end fashion editorial. Outdoor and studio locations available." },
+      { title: "Urban Portrait Series", city: "Los Angeles, USA", date: "18 May", pay: "Paid", type: "Editorial", role: "Photographer", img: "p1", desc: "A cinematic city portrait series with dramatic evening light and layered street styling." },
+      { title: "Runway Lookbook Campaign", city: "Mumbai, India", date: "24 May", pay: "Negotiable", type: "Fashion design", role: "Stylist", img: "p2", desc: "Boutique label lookbook needing a compact creative crew for premium social-ready stills." }
+    ];
+
+    const contests = [
+      { title: "Street Photography Challenge", city: "Global", date: "Deadline May 8", prize: "3 prizes", img: "p6", desc: "Capture the rhythm of urban life. Strong composition, timing, and emotion will lead the shortlist." },
+      { title: "Monochrome Portrait Awards", city: "Online", date: "Deadline Jun 2", prize: "$1,500 pool", img: "p5", desc: "Black and white portraits judged for lighting, character, and refined post-production." },
+      { title: "Editorial Color Story", city: "Global", date: "Deadline Jun 18", prize: "Featured campaign", img: "p8", desc: "Build a fashion-forward visual story using a bold color palette and cohesive styling." }
+    ];
+
+    const events = [
+      { title: "Golden Hour Portfolio Walk", city: "London, UK", date: "May 12", img: "p6", desc: "A guided creator meetup for photographers and models to build fresh natural-light work." },
+      { title: "Studio Lighting Intensive", city: "Delhi, India", date: "May 20", img: "p4", desc: "Hands-on workshop covering beauty lighting, modifiers, posing direction, and tethered review." },
+      { title: "Fashion Crew Mixer", city: "Berlin, Germany", date: "Jun 4", img: "p3", desc: "An invite-style networking evening for models, stylists, MUAs, photographers, and brands." }
+    ];
+
+    const views = [...document.querySelectorAll(".view")];
+    const toast = document.querySelector("#toast");
+
+    function card(item, kind, index) {
+      const detail = kind === "project" ? "#project-detail" : kind === "contest" ? "#contest-detail" : "#event-detail";
+      return `
+        <article class="card">
+          <div class="card-media"><div class="photo ${item.img}"></div></div>
+          <div class="card-body">
+            <div class="meta">
+              <span>${item.city}</span>
+              <span>•</span>
+              <span>${item.date}</span>
+            </div>
+            <div class="tabs">
+              <span class="chip hot">${item.pay || item.prize || "RSVP"}</span>
+              <span class="chip">${item.type || kind}</span>
+            </div>
+            <h3>${item.title}</h3>
+            <p>${item.desc}</p>
+            <div class="card-actions">
+              <a href="${detail}" class="ghost-btn" data-link>View details</a>
+              ${kind === "contest" ? `<a href="#submissions" class="ghost-btn" data-link>Submissions</a>` : ""}
+            </div>
+          </div>
+        </article>`;
+    }
+
+    function listing(title, subtitle, items, kind, createHash) {
+      return `
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">${kind} directory</span>
+            <h2>${title}</h2>
+            <p>${subtitle}</p>
+          </div>
+          <a class="primary-btn" href="${createHash}" data-link>Create ${kind}</a>
+        </div>
+        <div class="filter-row">
+          <div class="searchbar">⌕ <input placeholder="Search ${kind}s" /></div>
+          <span class="chip hot">View all</span>
+          <span class="chip">Upcoming</span>
+          <span class="chip">Open roles</span>
+          <span class="chip">Near me</span>
+        </div>
+        <div class="grid">${items.map((item, index) => card(item, kind.slice(0, -1), index)).join("")}</div>`;
+    }
+
+    function detail(kind) {
+      const item = kind === "project" ? projects[0] : kind === "contest" ? contests[0] : events[0];
+      const action = kind === "project" ? "Apply for role" : kind === "contest" ? "Submit entry" : "Reserve spot";
+      return `
+        <a href="#${kind}s" class="ghost-btn" data-link>← Back to ${kind}s</a>
+        <div class="split-detail" style="margin-top:18px">
+          <article class="detail-hero">
+            <div class="detail-media-grid">
+              <div class="photo ${item.img}"></div>
+              <div class="photo p2"></div>
+              <div class="photo p3"></div>
+            </div>
+            <div class="detail-content">
+              <span class="eyebrow">${kind} details</span>
+              <h1>${item.title}</h1>
+              <p class="lede">${item.desc} This prototype screen shows how a polished detail page can communicate the opportunity, creator expectations, timeline, and next action without connecting to a backend.</p>
+              <div class="tabs">
+                <span class="chip hot">${item.city}</span>
+                <span class="chip">${item.date}</span>
+                <span class="chip">${item.pay || item.prize || "Limited seats"}</span>
+              </div>
+            </div>
+          </article>
+          <aside class="side-stack">
+            <section class="side-card">
+              <h3>${action}</h3>
+              <p class="lede" style="font-size:14px;margin-top:8px">Complete this demo action to show the modal-free application path.</p>
+              <div class="fact-list">
+                <div class="fact"><span>Status</span><strong>Open</strong></div>
+                <div class="fact"><span>Creator</span><strong>Elena Rodriguez</strong></div>
+                <div class="fact"><span>Review</span><strong>Moderated</strong></div>
+              </div>
+              <button class="primary-btn" style="width:100%;margin-top:16px" data-save>${action}</button>
+            </section>
+            <section class="side-card">
+              <h3>Brief</h3>
+              <p class="lede" style="font-size:14px;margin-top:8px">Bring clean references, strong posing direction, release-ready communication, and a collaborative mindset.</p>
+            </section>
+          </aside>
+        </div>`;
+    }
+
+    function submissions() {
+      return `
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Contest gallery</span>
+            <h2>Street Photography Submissions</h2>
+            <p>Hardcoded moderation-ready gallery with votes, creator names, and selected image states.</p>
+          </div>
+          <a href="#contest-detail" class="primary-btn" data-link>Back to contest</a>
+        </div>
+        <div class="submissions-grid">
+          ${["p1","p2","p3","p4","p5","p6","p7","p8"].map((p, i) => `
+            <article class="submission-tile">
+              <div class="photo ${p}"></div>
+              <div class="submission-info"><span>Creator ${i + 1}</span><span>♡ ${42 + i * 7}</span></div>
+            </article>`).join("")}
+        </div>`;
+    }
+
+    function createPage(kind) {
+      const title = kind === "project" ? "Create Project" : kind === "contest" ? "Create Contest" : "Create Event";
+      return `
+        <div class="form-shell">
+          <section class="form-panel">
+            <span class="eyebrow">Create flow</span>
+            <h1>${title}</h1>
+            <p class="lede">Standalone hardcoded form state for demos. It validates visually and shows a saved confirmation without sending data anywhere.</p>
+            <div class="upload-box" style="margin-top:22px">
+              <div>
+                <strong style="display:block;color:var(--text);font-size:20px">Drop hero image</strong>
+                <p style="margin-top:8px">JPG, PNG, or WebP. Prototype only.</p>
+              </div>
+            </div>
+          </section>
+          <form class="form-panel" data-demo-form>
+            <div class="form-grid">
+              <label>Title<input required value="${kind === "project" ? "Editorial shoot in Mumbai" : kind === "contest" ? "City Light Challenge" : "Creator portfolio walk"}" /></label>
+              <label>Location<input value="Mumbai, India" /></label>
+              <label>Date<input value="May 24, 2026" /></label>
+              <label>Category<select><option>Fashion</option><option>Portrait</option><option>Street</option></select></label>
+            </div>
+            <label style="margin-top:16px">Description<textarea>Describe the creative direction, expectations, timing, deliverables, and any important notes for participants.</textarea></label>
+            <div class="form-grid" style="margin-top:16px">
+              <label>Compensation<select><option>TFP</option><option>Paid</option><option>Negotiable</option></select></label>
+              <label>Visibility<select><option>Public after review</option><option>Draft</option></select></label>
+            </div>
+            <button class="primary-btn" style="width:100%;margin-top:20px" type="submit">Save ${kind}</button>
+          </form>
+        </div>`;
+    }
+
+    function home() {
+      return `
+        <section class="hero">
+          <div class="hero-copy">
+            <span class="eyebrow">Premium creator network</span>
+            <h1>Find the crew for your next visual story.</h1>
+            <p class="lede">A stylish standalone prototype for TFP Photographers: projects, contests, events, submissions, listings, details, and create flows in one portable HTML file.</p>
+            <div class="hero-actions">
+              <a href="#projects" class="primary-btn" data-link>Explore projects</a>
+              <a href="#contests" class="ghost-btn" data-link>View contests</a>
+            </div>
+          </div>
+          <div class="hero-media">
+            <div class="photo-collage">
+              <div class="photo photo-xl p1"></div>
+              <div class="photo p2"></div>
+              <div class="photo p3"></div>
+            </div>
+            <div class="floating-panel">
+              <div class="stat"><strong>128</strong><span>Open roles</span></div>
+              <div class="stat"><strong>42</strong><span>Live contests</span></div>
+              <div class="stat"><strong>18</strong><span>Events</span></div>
+            </div>
+          </div>
+        </section>
+        <div class="section-head">
+          <div><h2>Featured opportunities</h2><p>Demo-ready cards with a photography-platform feel.</p></div>
+          <a href="#create-project" class="ghost-btn" data-link>Create project</a>
+        </div>
+        <div class="grid">${projects.map((item, index) => card(item, "project", index)).join("")}</div>`;
+    }
+
+    function render() {
+      document.querySelector("#home").innerHTML = home();
+      document.querySelector("#projects").innerHTML = listing("TFP Projects", "Find modelling, photography, styling, makeup, and film opportunities in one place.", projects, "projects", "#create-project");
+      document.querySelector("#contests").innerHTML = listing("Photo Contests", "Submit work, discover galleries, and follow challenge timelines.", contests, "contests", "#create-contest");
+      document.querySelector("#events").innerHTML = listing("Creator Events", "Portfolio walks, lighting workshops, studio mixers, and local meetups.", events, "events", "#create-event");
+      document.querySelector("#project-detail").innerHTML = detail("project");
+      document.querySelector("#contest-detail").innerHTML = detail("contest");
+      document.querySelector("#event-detail").innerHTML = detail("event");
+      document.querySelector("#submissions").innerHTML = submissions();
+      document.querySelector("#create-project").innerHTML = createPage("project");
+      document.querySelector("#create-contest").innerHTML = createPage("contest");
+      document.querySelector("#create-event").innerHTML = createPage("event");
+    }
+
+    function route() {
+      const id = (location.hash || "#home").replace("#", "");
+      views.forEach(view => view.classList.toggle("is-active", view.id === id));
+      document.querySelectorAll(".nav-link").forEach(link => {
+        const target = link.getAttribute("href").replace("#", "");
+        link.classList.toggle("is-active", target === id || (id.includes("detail") && target === `${id.split("-")[0]}s`));
+      });
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }
+
+    function showToast(text) {
+      toast.textContent = text;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 2200);
+    }
+
+    render();
+    route();
+    window.addEventListener("hashchange", route);
+    document.addEventListener("click", event => {
+      const save = event.target.closest("[data-save]");
+      if (save) showToast("Demo action completed");
+    });
+    document.addEventListener("submit", event => {
+      if (event.target.matches("[data-demo-form]")) {
+        event.preventDefault();
+        showToast("Saved in prototype mode");
+      }
+    });
+  </script>
+</body>
+</html>
