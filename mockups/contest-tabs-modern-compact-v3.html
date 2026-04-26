@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contest Tabs Mockup V3 - Command Bar Dark</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #05070c;
+      --surface: #0b1019;
+      --surface-2: #111727;
+      --line: #233148;
+      --line-2: #2d3d58;
+      --text: #ecf2ff;
+      --muted: #9ca9c4;
+      --lime: #8dff9a;
+      --cyan: #5ce5ff;
+      --rose: #ff9eb1;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Space Grotesk", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(960px 420px at 90% -20%, #1c1f46 0%, transparent 53%),
+        radial-gradient(640px 340px at 8% -15%, #10222b 0%, transparent 48%),
+        var(--bg);
+      min-height: 100vh;
+    }
+
+    .layout {
+      width: min(1120px, calc(100vw - 30px));
+      margin: 22px auto 56px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .hero {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 230px;
+      background: linear-gradient(120deg, #0d1525 0%, #0f1828 100%);
+    }
+
+    .hero-copy { padding: 24px; }
+
+    .hero-copy h1 {
+      margin: 6px 0 10px;
+      font-size: clamp(24px, 2.2vw, 32px);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 60ch;
+    }
+
+    .chip-row {
+      margin-top: 14px;
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      border: 1px solid #395070;
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 11px;
+      color: #d4dff3;
+      background: #111c31;
+      font-weight: 600;
+    }
+
+    .hero-media {
+      background:
+        linear-gradient(12deg, rgba(6, 9, 15, 0.8), rgba(6, 9, 15, 0.2)),
+        url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=1400&auto=format&fit=crop') center/cover;
+    }
+
+    .console {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: linear-gradient(180deg, #0b121f 0%, #080d17 100%);
+      overflow: hidden;
+    }
+
+    .console-top {
+      border-bottom: 1px solid #1f2b40;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px;
+      gap: 10px;
+    }
+
+    .tabs {
+      display: inline-flex;
+      gap: 6px;
+      background: #0a111e;
+      border: 1px solid #21324c;
+      border-radius: 11px;
+      padding: 5px;
+    }
+
+    .tab {
+      border: 0;
+      background: transparent;
+      color: #90a4cc;
+      border-radius: 8px;
+      padding: 8px 10px;
+      font: 600 12px/1 "Space Grotesk", sans-serif;
+      cursor: pointer;
+      letter-spacing: 0.01em;
+      transition: 140ms ease;
+      white-space: nowrap;
+    }
+
+    .tab.active {
+      color: #f2f7ff;
+      background: #1a2a44;
+      box-shadow: inset 0 0 0 1px #355077;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: #a8b5d0;
+      border: 1px solid #2f4262;
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: #101a2e;
+    }
+
+    .status i {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      display: inline-block;
+      background: linear-gradient(180deg, var(--lime), var(--cyan));
+    }
+
+    .content {
+      padding: 12px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .panel {
+      display: none;
+      gap: 10px;
+    }
+
+    .panel.active { display: grid; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 10px;
+    }
+
+    .box {
+      border: 1px solid var(--line-2);
+      border-radius: 12px;
+      background: var(--surface-2);
+      padding: 11px;
+    }
+
+    .box h3 {
+      margin: 0 0 6px;
+      font-size: 14px;
+    }
+
+    .box p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .stack {
+      display: grid;
+      gap: 7px;
+    }
+
+    .item {
+      border: 1px solid #2e4060;
+      border-radius: 9px;
+      background: var(--surface);
+      padding: 9px;
+      font-size: 12px;
+      color: #d8e4ff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pill {
+      border: 1px solid #4b648f;
+      border-radius: 999px;
+      padding: 2px 7px;
+      font-size: 10px;
+      font-weight: 700;
+      color: #cfe0ff;
+    }
+
+    .pill.rose {
+      border-color: #84536a;
+      color: #ffd3df;
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-media { min-height: 170px; }
+      .console-top { flex-wrap: wrap; }
+      .tabs { width: 100%; overflow-x: auto; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="layout">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="chip">Top split hero unchanged</span>
+        <h1>Street Photography Challenge</h1>
+        <p>Third concept uses a compact command-bar style shell with dense information cards and smaller type rhythm. It feels more pro and utility-first than standard tab strips.</p>
+        <div class="chip-row">
+          <span class="chip">Dark mode</span>
+          <span class="chip">Compact</span>
+          <span class="chip">Mobile ready</span>
+        </div>
+      </div>
+      <div class="hero-media" aria-hidden="true"></div>
+    </section>
+
+    <section class="console">
+      <header class="console-top">
+        <div class="tabs" role="tablist" aria-label="Contest modules">
+          <button class="tab active" data-tab="brief">Brief</button>
+          <button class="tab" data-tab="rules">Rules</button>
+          <button class="tab" data-tab="prizes">Prizes</button>
+          <button class="tab" data-tab="entries">Entries</button>
+        </div>
+        <span class="status"><i></i>Contest Active · Ends in 13 days</span>
+      </header>
+
+      <div class="content">
+        <section class="panel active" data-panel="brief">
+          <div class="grid">
+            <article class="box">
+              <h3>Challenge Brief</h3>
+              <p>Capture real city moments with narrative punch. Preference goes to natural light handling and strong visual storytelling.</p>
+            </article>
+            <article class="box">
+              <h3>Format</h3>
+              <p>One final JPG/PNG only. Minimum 2400px long edge.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="rules">
+          <div class="stack">
+            <div class="item"><span>One submission per photographer</span><span class="pill">Required</span></div>
+            <div class="item"><span>Basic global edit allowed, no composites</span><span class="pill">Strict</span></div>
+            <div class="item"><span>No watermarks or signatures on image</span><span class="pill rose">Reject if violated</span></div>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="prizes">
+          <div class="grid">
+            <article class="box"><h3>1st Place</h3><p>$1,200 + premium feature placement.</p></article>
+            <article class="box"><h3>2nd Place</h3><p>$700 + lens sponsorship bundle.</p></article>
+            <article class="box"><h3>3rd Place</h3><p>$300 + profile spotlight.</p></article>
+            <article class="box"><h3>Bonus</h3><p>Top 10 in curated community showcase reel.</p></article>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="entries">
+          <div class="stack">
+            <div class="item"><span>Aria Sen - Platform Rain</span><span class="pill">9.2</span></div>
+            <div class="item"><span>Daniel Choi - Neon Exit</span><span class="pill">8.9</span></div>
+            <div class="item"><span>Nora Alvarez - Quiet Alley</span><span class="pill">8.6</span></div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const tabButtons = document.querySelectorAll('.tab');
+    const tabPanels = document.querySelectorAll('.panel');
+
+    tabButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const target = button.dataset.tab;
+
+        tabButtons.forEach((candidate) => {
+          candidate.classList.toggle('active', candidate === button);
+        });
+
+        tabPanels.forEach((panel) => {
+          panel.classList.toggle('active', panel.dataset.panel === target);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
