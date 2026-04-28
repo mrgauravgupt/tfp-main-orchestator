@@ -1,0 +1,96 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+.output/
+.cache/
+.astro/
+packages/*/src/**/*.js
+packages/*/src/**/*.js.map
+packages/*/src/**/*.d.ts
+packages/*/src/**/*.d.ts.map
+
+# Environment files
+.env
+.env.local
+.env.*.local
+apps/api/.secrets/
+
+# Uploads
+/uploads/
+apps/api/uploads/
+apps/web/uploads/
+!apps/web/src/pages/api/uploads/
+!apps/web/src/pages/api/uploads/**
+!packages/uploads/
+!packages/uploads/package.json
+!packages/uploads/tsconfig.json
+!packages/uploads/src/
+!packages/uploads/src/**
+
+# Database
+*.db
+*.db-journal
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Prisma
+apps/api/node_modules/.prisma/client/
+
+# Test coverage
+coverage/
+
+# Playwright artifacts
+playwright-report/
+test-results/
+apps/web/test-results/
+tests/e2e/**/report/
+tests/**/playwright-report/
+tests/**/results/
+
+# Local QA scratch artifacts
+tmp/
+.runtime/
+.playwright-mcp/
+/.zenflow
+.zenflow-attachments/
+.qodo/
+.lingma/
+.zencoder/
+.kilo/package-lock.json
+.tmp/
+reports/
+eslint-report.json
+admin-reports-cors-issue.png
+apps/combined.scss
+scripts/qa/test-folder-moderation/images/*
+!scripts/qa/test-folder-moderation/images/.gitkeep
+playwright/.auth/
+test-results/reports/moderation-e2e/
+test-results/reports/ui-coverage/
+testing-screenshots/
+docs/qa/evidence/
+.ai-agent/state/coverage-state.json
+.ai-agent/state/coverage-dashboard/
+.ai-agent/state/failure-signatures.tsv
+.ai-agent/state/flow-hashes.txt
+.ai-agent/state/flows.txt
+.ai-agent/state/page-routes.txt
+.ai-agent/state/routes.txt
+ai-logs/
+ai-logs/code-files.txt
+ai-logs/coverage-dashboard.html
