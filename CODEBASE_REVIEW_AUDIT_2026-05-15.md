@@ -4,39 +4,40 @@ Date: 2026-05-15
 Workspace root: `/Users/hexa/Desktop/tfp-latest`  
 Primary application workspace: `/Users/hexa/Desktop/tfp-latest/tfp-workspace`  
 AI inference workspace: `/Users/hexa/Desktop/tfp-latest/ai-inference-platform`  
-Scope: Documentation-only audit. No application source, test, config, or generated asset changes were made.
+Scope: Documentation-only audit. No executable application source, test specs, config, or generated asset changes were made.
 
 ## Executive Verdict
 
 This workspace is a multi-repository product surface, not a single flat app. The root repository is mostly a wrapper, documentation, audit artifacts, local tooling, and gitlinks. The real product code lives in:
 
-| Area | Verdict | Reason |
-| --- | --- | --- |
-| TFP web/API monorepo | Functional but not release-clean | Architecture and typecheck pass, but dependency audit reports one critical advisory and multiple high advisories. There is also architecture drift around direct Prisma access outside the repository layer. |
-| AI inference platform | Validation-clean in the current working tree, but not deployment-clean yet | `uv run ruff check .` and `uv run pytest -q` now pass in the re-audit snapshot. Production deploy defaults still need fail-closed playground/API hardening before public exposure. |
-| UI/FE | Broad, mature, and heavily tested, but high-risk admin surfaces need tighter rendering discipline | Public/auth/admin routes are well covered, but admin/report JavaScript still has many HTML rendering sinks that deserve centralized rendering and regression coverage. |
-| Backend/API | Strong domain split with real CSRF, auth, upload, moderation, and repository foundations | The intended architecture is clear, but enforcement does not fully prevent command/service/middleware Prisma usage. |
-| Tests/QA | Very deep coverage and manual QA infrastructure | The test tree is unusually large and useful, but tracked fixtures and ignored local reports make the repo heavy and harder to operate. |
+| Area                  | Verdict                                                                                           | Reason                                                                                                                                                                                                       |
+| --------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| TFP web/API monorepo  | Functional but not release-clean                                                                  | Architecture and typecheck pass, but dependency audit reports one critical advisory and multiple high advisories. There is also architecture drift around direct Prisma access outside the repository layer. |
+| AI inference platform | Validation-clean in the current working tree, but not deployment-clean yet                        | `uv run ruff check .` and `uv run pytest -q` now pass in the re-audit snapshot. Production deploy defaults still need fail-closed playground/API hardening before public exposure.                           |
+| UI/FE                 | Broad, mature, and heavily tested, but high-risk admin surfaces need tighter rendering discipline | Public/auth/admin routes are well covered, but admin/report JavaScript still has many HTML rendering sinks that deserve centralized rendering and regression coverage.                                       |
+| Backend/API           | Strong domain split with real CSRF, auth, upload, moderation, and repository foundations          | The intended architecture is clear, but enforcement does not fully prevent command/service/middleware Prisma usage.                                                                                          |
+| Tests/QA              | Very deep coverage and manual QA infrastructure                                                   | The test tree is unusually large and useful, but tracked fixtures and ignored local reports make the repo heavy and harder to operate.                                                                       |
 
 Release posture: do not treat the current state as production-ready until the dependency audit and AI production exposure defaults are addressed. The previous AI lint/test failure is resolved in the current checkout snapshot, but the deployment-hardening concern remains.
 
 ## 2026-05-15 Reaudit Update
 
-This update refreshed the previous audit against the current checkout without changing application source, tests, configs, or generated assets.
+This update refreshed the previous audit against the current checkout without changing executable application source, test specs, configs, or generated assets.
 
-| Area | Current result | Reaudit note |
-| --- | --- | --- |
-| Root repo | Dirty wrapper state remains | Root still shows modified nested gitlinks plus untracked `.cline/` and `ingress-rules.json`; these were not touched. |
-| TFP repo sync | Rebase sync blocked; branch is `0 ahead / 0 behind` | `git pull --rebase` was blocked by the pre-existing modified generated report `scripts/qa/test-folder-moderation/reports/folder-moderation-policy-playground-latest.html`; `git rev-list --left-right --count HEAD...origin/main` returned `0 0`. |
-| AI repo sync | Rebase sync blocked; branch is `0 ahead / 0 behind` | `git pull --rebase` was blocked by the pre-existing modified generated/static policy artifact `src/ai_inference_platform/static/policy/tfp-moderation-policy.json`; `git rev-list --left-right --count HEAD...origin/main` returned `0 0`. |
-| TFP architecture lint | Passed | `bash ./scripts/pnpm-node20.sh lint:architecture` reports `Architecture boundary check passed.` |
-| TFP typecheck | Passed | `bash ./scripts/pnpm-node20.sh typecheck` completed across workspace packages, Astro, and API TypeScript. |
-| TFP design-token audit | Passed | `bash ./scripts/pnpm-node20.sh qa:design-tokens` passed across 285 source files. |
-| TFP SEO integrity | Passed with warnings | Health score `80/100`, `0` errors, `20` warnings; all warnings are short opportunity/contest descriptions below 150 characters. |
-| TFP dependency audit | Failed | Still 18 advisories: 1 critical, 11 high, 5 moderate, 1 low. |
-| TFP moderation policy SSOT | Passed | Only `policy_ai_inference_raw_envelope.yml` exists under `scripts/qa/test-folder-moderation/policies`; raw-envelope loader, playground, and tests point at that file. |
-| AI lint | Passed | `uv run ruff check .` reports all checks passed. |
-| AI tests | Passed | `uv run pytest -q` reports 45 passed. |
+| Area                       | Current result                                      | Reaudit note                                                                                                                                                                                                                               |
+| -------------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Detailed clutter audit     | Added                                               | See `tfp-workspace/docs/audit/2026-05-15-code-clutter-reaudit.md` for the focused code/test/artifact clutter register.                                                                                                                     |
+| Root repo                  | Dirty wrapper state remains                         | Root still shows modified nested gitlinks plus untracked `.cline/` and `ingress-rules.json`; these were not touched.                                                                                                                       |
+| TFP repo sync              | Rebase sync blocked; branch is `0 ahead / 0 behind` | `git pull --rebase` was blocked by unrelated unstaged files in the nested repo; `git rev-list --left-right --count HEAD...origin/main` returned `0 0`.                                                                                     |
+| AI repo sync               | Rebase sync blocked; branch is `0 ahead / 0 behind` | `git pull --rebase` was blocked by the pre-existing modified generated/static policy artifact `src/ai_inference_platform/static/policy/tfp-moderation-policy.json`; `git rev-list --left-right --count HEAD...origin/main` returned `0 0`. |
+| TFP architecture lint      | Passed                                              | `bash ./scripts/pnpm-node20.sh lint:architecture` reports `Architecture boundary check passed.`                                                                                                                                            |
+| TFP typecheck              | Passed                                              | `bash ./scripts/pnpm-node20.sh typecheck` completed across workspace packages, Astro, and API TypeScript.                                                                                                                                  |
+| TFP design-token audit     | Passed                                              | `bash ./scripts/pnpm-node20.sh qa:design-tokens` passed across 285 source files.                                                                                                                                                           |
+| TFP SEO integrity          | Passed with warnings                                | Health score `80/100`, `0` errors, `20` warnings; all warnings are short opportunity/contest descriptions below 150 characters.                                                                                                            |
+| TFP dependency audit       | Failed                                              | Still 18 advisories: 1 critical, 11 high, 5 moderate, 1 low.                                                                                                                                                                               |
+| TFP moderation policy SSOT | Passed                                              | Only `policy_ai_inference_raw_envelope.yml` exists under `scripts/qa/test-folder-moderation/policies`; raw-envelope loader, playground, and tests point at that file.                                                                      |
+| AI lint                    | Passed                                              | `uv run ruff check .` reports all checks passed.                                                                                                                                                                                           |
+| AI tests                   | Passed                                              | `uv run pytest -q` reports 45 passed.                                                                                                                                                                                                      |
 
 ## Review Method
 
@@ -44,27 +45,27 @@ This was a source-driven audit, not a speculative summary. I used the workspace 
 
 Primary evidence sources:
 
-| Evidence | Status |
-| --- | --- |
-| Root `AGENTS.md` and `tfp-workspace/AGENTS.md` | Reviewed |
-| `tfp-workspace/docs/agent-index.json` | Reviewed first for domain routing |
-| `tfp-workspace/docs/architecture/ARCHITECTURE_RULEBOOK.md` | Reviewed for intended dependency boundaries |
-| Root `git status --short --branch` | Reviewed |
-| Nested remote sync check for repos with remotes | `git pull --rebase` was attempted in both nested repos and blocked by pre-existing unstaged generated/static artifacts; ahead/behind checks returned `0 0` for both. |
-| `git ls-files` inventories | Run across root, TFP workspace, and AI service |
-| Route, module, package, style, script, seed, test, and artifact inventories | Run |
-| Security and architecture pattern scans | Run |
-| Fast validation commands | Run |
+| Evidence                                                                    | Status                                                                                                                                                         |
+| --------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Root `AGENTS.md` and `tfp-workspace/AGENTS.md`                              | Reviewed                                                                                                                                                       |
+| `tfp-workspace/docs/agent-index.json`                                       | Reviewed first for domain routing                                                                                                                              |
+| `tfp-workspace/docs/architecture/ARCHITECTURE_RULEBOOK.md`                  | Reviewed for intended dependency boundaries                                                                                                                    |
+| Root `git status --short --branch`                                          | Reviewed                                                                                                                                                       |
+| Nested remote sync check for repos with remotes                             | `git pull --rebase` was attempted in both nested repos and blocked by pre-existing/concurrent unstaged artifacts; ahead/behind checks returned `0 0` for both. |
+| `git ls-files` inventories                                                  | Run across root, TFP workspace, and AI service                                                                                                                 |
+| Route, module, package, style, script, seed, test, and artifact inventories | Run                                                                                                                                                            |
+| Security and architecture pattern scans                                     | Run                                                                                                                                                            |
+| Fast validation commands                                                    | Run                                                                                                                                                            |
 
 Important limitation: this report inventories and audits every tracked file family and every major code path by source scan and targeted evidence. It does not paste all 8,000+ TFP tracked filenames into the report body because that would make the document less useful. The authoritative per-file inventory for this audit is the current `git ls-files` output of each repository.
 
 ## Repository Boundary Map
 
-| Repository | Role | Git/remote state observed |
-| --- | --- | --- |
-| `/Users/hexa/Desktop/tfp-latest` | Root wrapper, documentation, local artifacts, nested gitlinks | On `main`. No remote configured. Dirty because nested gitlinks and unrelated root files were already present. |
-| `/Users/hexa/Desktop/tfp-latest/tfp-workspace` | Main TFP Photographers app monorepo | `main...origin/main`, `0 ahead / 0 behind`. `git pull --rebase` is blocked by one pre-existing modified generated report. |
-| `/Users/hexa/Desktop/tfp-latest/ai-inference-platform` | Python AI inference service | `main...origin/main`, `0 ahead / 0 behind`. `git pull --rebase` is blocked by one pre-existing modified generated/static policy artifact. |
+| Repository                                             | Role                                                          | Git/remote state observed                                                                                                                 |
+| ------------------------------------------------------ | ------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `/Users/hexa/Desktop/tfp-latest`                       | Root wrapper, documentation, local artifacts, nested gitlinks | On `main`. No remote configured. Dirty because nested gitlinks and unrelated root files were already present.                             |
+| `/Users/hexa/Desktop/tfp-latest/tfp-workspace`         | Main TFP Photographers app monorepo                           | `main...origin/main`, `0 ahead / 0 behind`. `git pull --rebase` is blocked by unrelated unstaged files.                                   |
+| `/Users/hexa/Desktop/tfp-latest/ai-inference-platform` | Python AI inference service                                   | `main...origin/main`, `0 ahead / 0 behind`. `git pull --rebase` is blocked by one pre-existing modified generated/static policy artifact. |
 
 Nested repo note: root status showed modified gitlinks for both nested projects plus untracked `.cline/` and `ingress-rules.json`. Those were not touched.
 
@@ -74,109 +75,109 @@ Dirty-state note: the nested dirty files were pre-existing or concurrent changes
 
 ### Root Workspace
 
-| Metric | Value |
-| --- | ---: |
-| Tracked files | 80 |
-| Role | Wrapper repository, nested project pointers, docs, local orchestration, historical audits |
-| Main risk | Artifact sprawl and ambiguous ownership between root docs and nested repo docs |
+| Metric        |                                                                                     Value |
+| ------------- | ----------------------------------------------------------------------------------------: |
+| Tracked files |                                                                                        80 |
+| Role          | Wrapper repository, nested project pointers, docs, local orchestration, historical audits |
+| Main risk     |            Artifact sprawl and ambiguous ownership between root docs and nested repo docs |
 
 ### TFP Workspace
 
-| Metric | Value |
-| --- | ---: |
-| Tracked files | 8,023 |
-| Text/source/document lines scanned | 518,513 |
-| Largest tracked file family | Test fixtures and QA assets |
-| Main application routes | 67 tracked files under `apps/web/src/pages` |
-| API modules | 206 tracked files under `apps/api/src/modules` |
-| Packages | 206 tracked files under `packages` |
-| Styles | 103 tracked files under `apps/web/src/styles` |
-| Components | 57 tracked files under `apps/web/src/components` |
-| Web scripts | 8 tracked files under `apps/web/src/scripts` |
-| E2E specs | 61 specs under `tests/e2e` |
-| Seed assets | 5,675 tracked files under `tests/seed` |
+| Metric                                         |                                            Value |
+| ---------------------------------------------- | -----------------------------------------------: |
+| Tracked files before this documentation update |                                            8,023 |
+| Text/source/document lines scanned             |                                          518,513 |
+| Largest tracked file family                    |                      Test fixtures and QA assets |
+| Main application routes                        |      67 tracked files under `apps/web/src/pages` |
+| API modules                                    |   206 tracked files under `apps/api/src/modules` |
+| Packages                                       |               206 tracked files under `packages` |
+| Styles                                         |    103 tracked files under `apps/web/src/styles` |
+| Components                                     | 57 tracked files under `apps/web/src/components` |
+| Web scripts                                    |     8 tracked files under `apps/web/src/scripts` |
+| E2E specs                                      |                       61 specs under `tests/e2e` |
+| Seed assets                                    |           5,675 tracked files under `tests/seed` |
 
 Top tracked directory concentrations:
 
-| Directory | Count | Audit meaning |
-| --- | ---: | --- |
-| `tests` | 5,893 | Very high QA/fixture investment; also repository weight risk |
-| `apps` | 654 | Main FE and BE application code |
-| `docs` | 374 | Large architecture, audit, QA, and product documentation base |
-| `packages` | 206 | Shared config, database, i18n, moderation, uploads, UI contracts |
-| `scripts` | 95 | QA, seed, moderation, and operational tooling |
+| Directory  | Count | Audit meaning                                                    |
+| ---------- | ----: | ---------------------------------------------------------------- |
+| `tests`    | 5,893 | Very high QA/fixture investment; also repository weight risk     |
+| `apps`     |   654 | Main FE and BE application code                                  |
+| `docs`     |   374 | Large architecture, audit, QA, and product documentation base    |
+| `packages` |   206 | Shared config, database, i18n, moderation, uploads, UI contracts |
+| `scripts`  |    95 | QA, seed, moderation, and operational tooling                    |
 
 High-volume extensions:
 
-| Extension | Count | Notes |
-| --- | ---: | --- |
-| `.jpg` | 5,801 | Mostly moderation/test seed images |
-| `.html` | 646 | Mockups, reports, QA artifacts, generated/static review surfaces |
-| `.ts` | 561 | API, packages, tests, scripts |
-| `.md` | 268 | Docs, audit artifacts, QA/manual logs |
-| `.json` | 163 | Config, route indexes, reports, locale/QA metadata |
-| `.mmd` | 132 | Architecture/flow diagrams |
-| `.astro` | 111 | Web routes/components |
-| `.scss` | 102 | Design system and page styles |
+| Extension | Count | Notes                                                            |
+| --------- | ----: | ---------------------------------------------------------------- |
+| `.jpg`    | 5,801 | Mostly moderation/test seed images                               |
+| `.html`   |   646 | Mockups, reports, QA artifacts, generated/static review surfaces |
+| `.ts`     |   561 | API, packages, tests, scripts                                    |
+| `.md`     |   268 | Docs, audit artifacts, QA/manual logs                            |
+| `.json`   |   163 | Config, route indexes, reports, locale/QA metadata               |
+| `.mmd`    |   132 | Architecture/flow diagrams                                       |
+| `.astro`  |   111 | Web routes/components                                            |
+| `.scss`   |   102 | Design system and page styles                                    |
 
 ### AI Inference Platform
 
-| Metric | Value |
-| --- | ---: |
-| Tracked files | 61 |
-| Text/source lines scanned | 11,798 |
-| Python source/test files | 24 tracked `.py` files |
-| Largest source file | `src/ai_inference_platform/service.py` at about 3,840 lines |
-| Main source areas | service orchestration, adapters, policy, web server, static playground |
-| Main risk | Production playground/API exposure defaults and the still-large service/orchestration files |
+| Metric                    |                                                                                       Value |
+| ------------------------- | ------------------------------------------------------------------------------------------: |
+| Tracked files             |                                                                                          61 |
+| Text/source lines scanned |                                                                                      11,798 |
+| Python source/test files  |                                                                      24 tracked `.py` files |
+| Largest source file       |                                 `src/ai_inference_platform/service.py` at about 3,840 lines |
+| Main source areas         |                      service orchestration, adapters, policy, web server, static playground |
+| Main risk                 | Production playground/API exposure defaults and the still-large service/orchestration files |
 
 ## Validation Log
 
 ### TFP Workspace
 
-| Command | Result | Notes |
-| --- | --- | --- |
-| `git pull --rebase` + ahead/behind check | Blocked by dirty artifact; branch is current | Rebase sync was blocked by the pre-existing generated report modification; `git rev-list --left-right --count HEAD...origin/main` returned `0 0`. |
-| `bash ./scripts/pnpm-node20.sh lint:architecture` | Passed | Reported `Architecture boundary check passed.` |
-| `bash ./scripts/pnpm-node20.sh typecheck` | Passed | Astro check reported 0 errors/warnings/hints for 212 files; API TypeScript build completed. |
-| `bash ./scripts/pnpm-node20.sh qa:design-tokens` | Passed | Reported `Design token audit passed across 285 source files.` |
-| `bash ./scripts/pnpm-node20.sh seo:integrity` | Passed with warnings | Health score `80/100`, 0 errors, 20 short-description warnings, report at `tmp/seo-integrity-report.json`. |
-| `bash ./scripts/pnpm-node20.sh audit --audit-level low` | Failed | 18 vulnerabilities: 1 critical, 11 high, 5 moderate, 1 low. |
-| `pnpm audit --json` | Failed with advisory metadata | Confirmed dependency and advisory counts. |
+| Command                                                 | Result                                    | Notes                                                                                                                                          |
+| ------------------------------------------------------- | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `git pull --rebase` + ahead/behind check                | Blocked by dirty files; branch is current | Rebase sync was blocked by unrelated unstaged files in the nested repo; `git rev-list --left-right --count HEAD...origin/main` returned `0 0`. |
+| `bash ./scripts/pnpm-node20.sh lint:architecture`       | Passed                                    | Reported `Architecture boundary check passed.`                                                                                                 |
+| `bash ./scripts/pnpm-node20.sh typecheck`               | Passed                                    | Astro check reported 0 errors/warnings/hints for 212 files; API TypeScript build completed.                                                    |
+| `bash ./scripts/pnpm-node20.sh qa:design-tokens`        | Passed                                    | Reported `Design token audit passed across 285 source files.`                                                                                  |
+| `bash ./scripts/pnpm-node20.sh seo:integrity`           | Passed with warnings                      | Health score `80/100`, 0 errors, 20 short-description warnings, report at `tmp/seo-integrity-report.json`.                                     |
+| `bash ./scripts/pnpm-node20.sh audit --audit-level low` | Failed                                    | 18 vulnerabilities: 1 critical, 11 high, 5 moderate, 1 low.                                                                                    |
+| `pnpm audit --json`                                     | Failed with advisory metadata             | Confirmed dependency and advisory counts.                                                                                                      |
 
 ### AI Inference Platform
 
-| Command | Result | Notes |
-| --- | --- | --- |
+| Command                                  | Result                                       | Notes                                                                                                                                                   |
+| ---------------------------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `git pull --rebase` + ahead/behind check | Blocked by dirty artifact; branch is current | Rebase sync was blocked by the pre-existing static policy artifact modification; `git rev-list --left-right --count HEAD...origin/main` returned `0 0`. |
-| `uv run ruff check .` | Passed | Reaudit snapshot reports all checks passed. |
-| `uv run pytest -q` | Passed | Reaudit snapshot reports 45 passed. |
+| `uv run ruff check .`                    | Passed                                       | Reaudit snapshot reports all checks passed.                                                                                                             |
+| `uv run pytest -q`                       | Passed                                       | Reaudit snapshot reports 45 passed.                                                                                                                     |
 
 No browser/manual UI execution was run because the user requested documentation-only audit work, not UI changes or end-to-end remediation.
 
 ## Severity Model
 
-| Severity | Meaning |
-| --- | --- |
-| P0 | Blocks safe release or can expose security/auth/runtime-critical failure. |
-| P1 | High production risk, broken validation, major architecture drift, or likely user-facing defect. |
-| P2 | Medium risk, maintainability issue, performance risk, or weak operational discipline. |
-| P3 | Cleanup, documentation, or long-term quality improvement. |
+| Severity | Meaning                                                                                          |
+| -------- | ------------------------------------------------------------------------------------------------ |
+| P0       | Blocks safe release or can expose security/auth/runtime-critical failure.                        |
+| P1       | High production risk, broken validation, major architecture drift, or likely user-facing defect. |
+| P2       | Medium risk, maintainability issue, performance risk, or weak operational discipline.            |
+| P3       | Cleanup, documentation, or long-term quality improvement.                                        |
 
 ## Findings Overview
 
-| ID | Severity | Area | Finding |
-| --- | --- | --- | --- |
-| F-001 | P0 | TFP dependencies | `pnpm audit` reports one critical advisory and multiple high advisories across auth, Astro, OpenTelemetry, protobuf, XML parsing, and transitive tooling. |
-| F-002 | P0 | AI production security | Production/deploy defaults can expose playground/API behavior when `AIP_INTERNAL_API_KEY` is missing and `AIP_EXPOSE_PLAYGROUND_UI=true`. |
-| F-003 | Resolved in current snapshot | AI validation | Previous lint and test collection failures are no longer present; keep these gates required before deployment. |
-| F-004 | P1 | Backend architecture | TFP architecture rulebook requires Prisma behind repositories, but direct Prisma access exists in commands, services, and middleware. |
-| F-005 | P1 | Admin UI security | Admin/report JavaScript contains many HTML rendering sinks. Many are escaped, but the surface is too sensitive to leave decentralized. |
-| F-006 | P2 | Search semantics | Search parameterization prevents SQL injection, but unescaped `%` and `_` wildcard behavior can broaden result sets. |
-| F-007 | P2 | Repo operations | Huge seed fixtures and ignored QA reports make local operation and review harder. |
-| F-008 | P2 | AI observability | `/metrics` is exposed without auth in the AI service. |
-| F-009 | P2 | Configuration | Production templates rely on strict runtime config checks; deployment safety depends on the runtime actually supplying all required secrets. |
-| F-010 | P2 | UI maintainability | Admin UI scripts and some page styles are large enough to make behavior and visual regressions harder to review. |
+| ID    | Severity                     | Area                   | Finding                                                                                                                                                   |
+| ----- | ---------------------------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| F-001 | P0                           | TFP dependencies       | `pnpm audit` reports one critical advisory and multiple high advisories across auth, Astro, OpenTelemetry, protobuf, XML parsing, and transitive tooling. |
+| F-002 | P0                           | AI production security | Production/deploy defaults can expose playground/API behavior when `AIP_INTERNAL_API_KEY` is missing and `AIP_EXPOSE_PLAYGROUND_UI=true`.                 |
+| F-003 | Resolved in current snapshot | AI validation          | Previous lint and test collection failures are no longer present; keep these gates required before deployment.                                            |
+| F-004 | P1                           | Backend architecture   | TFP architecture rulebook requires Prisma behind repositories, but direct Prisma access exists in commands, services, and middleware.                     |
+| F-005 | P1                           | Admin UI security      | Admin/report JavaScript contains many HTML rendering sinks. Many are escaped, but the surface is too sensitive to leave decentralized.                    |
+| F-006 | P2                           | Search semantics       | Search parameterization prevents SQL injection, but unescaped `%` and `_` wildcard behavior can broaden result sets.                                      |
+| F-007 | P2                           | Repo operations        | Huge seed fixtures and ignored QA reports make local operation and review harder.                                                                         |
+| F-008 | P2                           | AI observability       | `/metrics` is exposed without auth in the AI service.                                                                                                     |
+| F-009 | P2                           | Configuration          | Production templates rely on strict runtime config checks; deployment safety depends on the runtime actually supplying all required secrets.              |
+| F-010 | P2                           | UI maintainability     | Admin UI scripts and some page styles are large enough to make behavior and visual regressions harder to review.                                          |
 
 ## Detailed Findings
 
@@ -192,15 +193,15 @@ Evidence:
 
 Important advisories observed:
 
-| Package/advisory area | Severity | Path/risk |
-| --- | --- | --- |
-| `fast-jwt <=6.2.3` | Critical | Auth bypass through `apps__api > @fastify/jwt > fast-jwt`; patched in `>=6.2.4`. |
-| `fast-uri` | High | Path traversal and host confusion via Astro check tooling dependency chain. |
-| OpenTelemetry Prometheus exporter stack | High | Malformed HTTP request crash in `@opentelemetry/auto-instrumentations-node`, `@opentelemetry/sdk-node`, `@opentelemetry/exporter-prometheus`. |
-| `protobufjs <=7.5.5` | High/Moderate | Transitive through `@google-cloud/vision > google-gax`. |
-| `fast-xml-builder` | High/Moderate | Transitive through `@aws-sdk/client-rekognition`. |
-| `devalue >=5.6.3 <=5.8.0` | High | Transitive through `apps__web > astro`. |
-| `astro <6.1.10` | Low | Server island encrypted params advisory. |
+| Package/advisory area                   | Severity      | Path/risk                                                                                                                                     |
+| --------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `fast-jwt <=6.2.3`                      | Critical      | Auth bypass through `apps__api > @fastify/jwt > fast-jwt`; patched in `>=6.2.4`.                                                              |
+| `fast-uri`                              | High          | Path traversal and host confusion via Astro check tooling dependency chain.                                                                   |
+| OpenTelemetry Prometheus exporter stack | High          | Malformed HTTP request crash in `@opentelemetry/auto-instrumentations-node`, `@opentelemetry/sdk-node`, `@opentelemetry/exporter-prometheus`. |
+| `protobufjs <=7.5.5`                    | High/Moderate | Transitive through `@google-cloud/vision > google-gax`.                                                                                       |
+| `fast-xml-builder`                      | High/Moderate | Transitive through `@aws-sdk/client-rekognition`.                                                                                             |
+| `devalue >=5.6.3 <=5.8.0`               | High          | Transitive through `apps__web > astro`.                                                                                                       |
+| `astro <6.1.10`                         | Low           | Server island encrypted params advisory.                                                                                                      |
 
 Impact:
 
@@ -280,11 +281,11 @@ Evidence:
 
 Concrete examples:
 
-| File | Evidence |
-| --- | --- |
-| `apps/api/src/modules/report/report.commands.ts` | Imports and uses global `prisma` inside command logic. |
-| `apps/api/src/modules/auth/auth.middleware.ts` | Imports global `prisma`; middleware calls `prisma.user.findUnique`. |
-| `apps/api/src/modules/search/search.service.ts` | Uses Prisma/raw SQL behavior directly in service code. |
+| File                                             | Evidence                                                            |
+| ------------------------------------------------ | ------------------------------------------------------------------- |
+| `apps/api/src/modules/report/report.commands.ts` | Imports and uses global `prisma` inside command logic.              |
+| `apps/api/src/modules/auth/auth.middleware.ts`   | Imports global `prisma`; middleware calls `prisma.user.findUnique`. |
+| `apps/api/src/modules/search/search.service.ts`  | Uses Prisma/raw SQL behavior directly in service code.              |
 
 Impact:
 
@@ -470,18 +471,18 @@ Recommended UI priorities:
 
 The API module tree has 205 tracked files under `apps/api/src/modules`, with the heaviest areas:
 
-| Module | Count | Audit note |
-| --- | ---: | --- |
-| `moderation` | 57 | Central product risk area; queue state, reports, manual rerun, provider contracts, policy mapping. |
-| `admin` | 24 | Operational controls and approval/report surfaces. |
-| `contest` | 22 | Public participation, submission/voting workflows, ownership restrictions. |
-| `translation` | 17 | Locale and content translation support. |
-| `auth` | 17 | Login/session/OAuth/security behavior. |
-| `opportunity` | 11 | Marketplace/workflow domain. |
-| `event` | 10 | Event listing, RSVP, submission workflow. |
-| `user` | 9 | Profile/account behavior. |
-| `report` | 7 | Content reporting and moderation handoff. |
-| `upload` | 5 | Upload validation and storage integration. |
+| Module        | Count | Audit note                                                                                         |
+| ------------- | ----: | -------------------------------------------------------------------------------------------------- |
+| `moderation`  |    57 | Central product risk area; queue state, reports, manual rerun, provider contracts, policy mapping. |
+| `admin`       |    24 | Operational controls and approval/report surfaces.                                                 |
+| `contest`     |    22 | Public participation, submission/voting workflows, ownership restrictions.                         |
+| `translation` |    17 | Locale and content translation support.                                                            |
+| `auth`        |    17 | Login/session/OAuth/security behavior.                                                             |
+| `opportunity` |    11 | Marketplace/workflow domain.                                                                       |
+| `event`       |    10 | Event listing, RSVP, submission workflow.                                                          |
+| `user`        |     9 | Profile/account behavior.                                                                          |
+| `report`      |     7 | Content reporting and moderation handoff.                                                          |
+| `upload`      |     5 | Upload validation and storage integration.                                                         |
 
 Strengths:
 
@@ -596,21 +597,21 @@ Recommended AI priorities:
 
 ### Strong Areas
 
-| Area | Evidence |
-| --- | --- |
-| TFP CSRF | API server and web middleware enforce origin/referer/sec-fetch checks for cookie-authenticated state-changing requests. |
+| Area                  | Evidence                                                                                                                                    |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| TFP CSRF              | API server and web middleware enforce origin/referer/sec-fetch checks for cookie-authenticated state-changing requests.                     |
 | TFP production config | Strict runtime config assertions exist for production secrets, CORS, OAuth, storage, rate limit, observability, and moderation credentials. |
-| Upload validation | Upload validation includes extension/mimetype checks and shared upload utilities for deeper inspection. |
-| AI remote image fetch | Adapter code blocks unsafe remote fetch behavior by default and validates DNS/address safety. |
+| Upload validation     | Upload validation includes extension/mimetype checks and shared upload utilities for deeper inspection.                                     |
+| AI remote image fetch | Adapter code blocks unsafe remote fetch behavior by default and validates DNS/address safety.                                               |
 
 ### High-Risk Areas
 
-| Area | Risk |
-| --- | --- |
-| TFP dependency tree | Active critical/high advisories in auth and supporting libraries. |
-| AI production auth defaults | Missing internal key can lead to permissive behavior. |
-| Admin HTML sinks | Escaping exists but rendering policy is decentralized. |
-| Public metrics | AI metrics endpoint is not protected. |
+| Area                        | Risk                                                              |
+| --------------------------- | ----------------------------------------------------------------- |
+| TFP dependency tree         | Active critical/high advisories in auth and supporting libraries. |
+| AI production auth defaults | Missing internal key can lead to permissive behavior.             |
+| Admin HTML sinks            | Escaping exists but rendering policy is decentralized.            |
+| Public metrics              | AI metrics endpoint is not protected.                             |
 
 Security recommendation: prioritize dependency remediation and AI fail-closed defaults before UI polish or non-critical refactors.
 
@@ -621,7 +622,7 @@ Security recommendation: prioritize dependency remediation and AI fail-closed de
 TFP has unusually broad QA infrastructure:
 
 - Domain-first Playwright E2E layout under `tests/e2e`.
-- 77 E2E specs across admin, auth, localization, moderation, SEO, uploads, public flows, opportunities, contests, and event workflows.
+- 61 E2E specs across admin, auth, localization, moderation, SEO, uploads, public flows, opportunities, contests, and event workflows.
 - Manual QA docs under `tests/manual`.
 - Seed README and seed assets under `tests/seed`.
 - QA scripts under `scripts/qa`, including moderation folder tooling, layout checks, browser capture, design-token checks, and audit/report generation.
@@ -689,27 +690,27 @@ Risks:
 
 This section maps every tracked file family into the audit so future work can target the right source of truth.
 
-| Family | Covered by | Primary risk |
-| --- | --- | --- |
-| Root docs/audit files | Root inventory and audit-artifact review | Historical docs may conflict or confuse current source of truth. |
-| Root nested gitlinks | Git boundary review | Root can look dirty due nested repo pointer changes. |
-| `tfp-workspace/apps/web/src/pages` | Route inventory and FE review | Route-specific auth/locale/proxy behavior must stay consistent. |
-| `tfp-workspace/apps/web/src/components` | Component/style/rendering scans | Rendering sinks and structured data must remain safe. |
-| `tfp-workspace/apps/web/src/scripts` | Admin/report script scan | High-sensitivity HTML rendering and large admin runtime files. |
-| `tfp-workspace/apps/web/src/styles` | Style inventory and large-file scan | Overlay/responsive concentration and visual regression risk. |
-| `tfp-workspace/apps/api/src/modules` | Module inventory, Prisma scan, security review | Direct DB access and high-risk auth/report/moderation flows. |
-| `tfp-workspace/packages/database` | Schema/repository/migration review | Repository boundary bypass and migration complexity. |
-| `tfp-workspace/packages/config` | Production config review | Runtime secret enforcement and deployment safety. |
-| `tfp-workspace/packages/shared` | Shared request/security/locale review | Shared contracts must remain source of truth. |
-| `tfp-workspace/packages/uploads` | Upload/security review | User-generated content safety. |
-| `tfp-workspace/tests/e2e` | Test inventory | Browser flow breadth is strong; keep scripts discoverable. |
-| `tfp-workspace/tests/seed` | Fixture inventory | Large tracked image corpus needs lifecycle discipline. |
-| `tfp-workspace/scripts/qa` | QA/artifact scan | Ignored generated reports are very large. |
-| `tfp-workspace/docs` | Docs inventory and architecture source review | Multiple old audit docs can conflict with current rulebook. |
-| `ai-inference-platform/src` | Source scan, security review, validation | Auth defaults, adapter contract, cache, metrics, playground. |
-| `ai-inference-platform/tests` | Test validation | Current local suite passes; keep it as a deployment gate. |
-| `ai-inference-platform/config` | Production config review | Playground enabled in prod config. |
-| `ai-inference-platform/scripts` | Deploy script review | API key auto-mode can fail open. |
+| Family                                  | Covered by                                     | Primary risk                                                     |
+| --------------------------------------- | ---------------------------------------------- | ---------------------------------------------------------------- |
+| Root docs/audit files                   | Root inventory and audit-artifact review       | Historical docs may conflict or confuse current source of truth. |
+| Root nested gitlinks                    | Git boundary review                            | Root can look dirty due nested repo pointer changes.             |
+| `tfp-workspace/apps/web/src/pages`      | Route inventory and FE review                  | Route-specific auth/locale/proxy behavior must stay consistent.  |
+| `tfp-workspace/apps/web/src/components` | Component/style/rendering scans                | Rendering sinks and structured data must remain safe.            |
+| `tfp-workspace/apps/web/src/scripts`    | Admin/report script scan                       | High-sensitivity HTML rendering and large admin runtime files.   |
+| `tfp-workspace/apps/web/src/styles`     | Style inventory and large-file scan            | Overlay/responsive concentration and visual regression risk.     |
+| `tfp-workspace/apps/api/src/modules`    | Module inventory, Prisma scan, security review | Direct DB access and high-risk auth/report/moderation flows.     |
+| `tfp-workspace/packages/database`       | Schema/repository/migration review             | Repository boundary bypass and migration complexity.             |
+| `tfp-workspace/packages/config`         | Production config review                       | Runtime secret enforcement and deployment safety.                |
+| `tfp-workspace/packages/shared`         | Shared request/security/locale review          | Shared contracts must remain source of truth.                    |
+| `tfp-workspace/packages/uploads`        | Upload/security review                         | User-generated content safety.                                   |
+| `tfp-workspace/tests/e2e`               | Test inventory                                 | Browser flow breadth is strong; keep scripts discoverable.       |
+| `tfp-workspace/tests/seed`              | Fixture inventory                              | Large tracked image corpus needs lifecycle discipline.           |
+| `tfp-workspace/scripts/qa`              | QA/artifact scan                               | Ignored generated reports are very large.                        |
+| `tfp-workspace/docs`                    | Docs inventory and architecture source review  | Multiple old audit docs can conflict with current rulebook.      |
+| `ai-inference-platform/src`             | Source scan, security review, validation       | Auth defaults, adapter contract, cache, metrics, playground.     |
+| `ai-inference-platform/tests`           | Test validation                                | Current local suite passes; keep it as a deployment gate.        |
+| `ai-inference-platform/config`          | Production config review                       | Playground enabled in prod config.                               |
+| `ai-inference-platform/scripts`         | Deploy script review                           | API key auto-mode can fail open.                                 |
 
 ## Recommended Remediation Roadmap
 
@@ -743,16 +744,16 @@ This section maps every tracked file family into the audit so future work can ta
 
 ## Final Readiness Checklist
 
-| Gate | Current result |
-| --- | --- |
-| TFP architecture lint | Pass |
-| TFP typecheck | Pass |
-| TFP dependency audit | Fail |
-| AI lint | Pass |
-| AI tests | Pass |
-| AI production auth defaults | Needs hardening |
-| Admin rendering sinks | Needs hardening |
-| Prisma boundary | Needs enforcement |
+| Gate                          | Current result       |
+| ----------------------------- | -------------------- |
+| TFP architecture lint         | Pass                 |
+| TFP typecheck                 | Pass                 |
+| TFP dependency audit          | Fail                 |
+| AI lint                       | Pass                 |
+| AI tests                      | Pass                 |
+| AI production auth defaults   | Needs hardening      |
+| Admin rendering sinks         | Needs hardening      |
+| Prisma boundary               | Needs enforcement    |
 | Large artifact/fixture policy | Needs cleanup policy |
 
 ## Bottom Line
