@@ -13,12 +13,30 @@ This workspace is a multi-repository product surface, not a single flat app. The
 | Area | Verdict | Reason |
 | --- | --- | --- |
 | TFP web/API monorepo | Functional but not release-clean | Architecture and typecheck pass, but dependency audit reports one critical advisory and multiple high advisories. There is also architecture drift around direct Prisma access outside the repository layer. |
-| AI inference platform | Not release-clean in the current working tree | `ruff` and `pytest` both fail. Production deploy defaults can expose unauthenticated playground/API behavior if secrets are not supplied. |
+| AI inference platform | Validation-clean in the current working tree, but not deployment-clean yet | `uv run ruff check .` and `uv run pytest -q` now pass in the re-audit snapshot. Production deploy defaults still need fail-closed playground/API hardening before public exposure. |
 | UI/FE | Broad, mature, and heavily tested, but high-risk admin surfaces need tighter rendering discipline | Public/auth/admin routes are well covered, but admin/report JavaScript still has many HTML rendering sinks that deserve centralized rendering and regression coverage. |
 | Backend/API | Strong domain split with real CSRF, auth, upload, moderation, and repository foundations | The intended architecture is clear, but enforcement does not fully prevent command/service/middleware Prisma usage. |
 | Tests/QA | Very deep coverage and manual QA infrastructure | The test tree is unusually large and useful, but tracked fixtures and ignored local reports make the repo heavy and harder to operate. |
 
-Release posture: do not treat the current state as production-ready until the dependency audit, AI validation failures, and AI production exposure defaults are addressed.
+Release posture: do not treat the current state as production-ready until the dependency audit and AI production exposure defaults are addressed. The previous AI lint/test failure is resolved in the current checkout snapshot, but the deployment-hardening concern remains.
+
+## 2026-05-15 Reaudit Update
+
+This update refreshed the previous audit against the current checkout without changing application source, tests, configs, or generated assets.
+
+| Area | Current result | Reaudit note |
+| --- | --- | --- |
+| Root repo | Dirty wrapper state remains | Root still shows modified nested gitlinks plus untracked `.cline/` and `ingress-rules.json`; these were not touched. |
+| TFP repo sync | Rebase sync blocked; branch is `0 ahead / 0 behind` | `git pull --rebase` was blocked by the pre-existing modified generated report `scripts/qa/test-folder-moderation/reports/folder-moderation-policy-playground-latest.html`; `git rev-list --left-right --count HEAD...origin/main` returned `0 0`. |
+| AI repo sync | Rebase sync blocked; branch is `0 ahead / 0 behind` | `git pull --rebase` was blocked by the pre-existing modified generated/static policy artifact `src/ai_inference_platform/static/policy/tfp-moderation-policy.json`; `git rev-list --left-right --count HEAD...origin/main` returned `0 0`. |
+| TFP architecture lint | Passed | `bash ./scripts/pnpm-node20.sh lint:architecture` reports `Architecture boundary check passed.` |
+| TFP typecheck | Passed | `bash ./scripts/pnpm-node20.sh typecheck` completed across workspace packages, Astro, and API TypeScript. |
+| TFP design-token audit | Passed | `bash ./scripts/pnpm-node20.sh qa:design-tokens` passed across 285 source files. |
+| TFP SEO integrity | Passed with warnings | Health score `80/100`, `0` errors, `20` warnings; all warnings are short opportunity/contest descriptions below 150 characters. |
+| TFP dependency audit | Failed | Still 18 advisories: 1 critical, 11 high, 5 moderate, 1 low. |
+| TFP moderation policy SSOT | Passed | Only `policy_ai_inference_raw_envelope.yml` exists under `scripts/qa/test-folder-moderation/policies`; raw-envelope loader, playground, and tests point at that file. |
+| AI lint | Passed | `uv run ruff check .` reports all checks passed. |
+| AI tests | Passed | `uv run pytest -q` reports 45 passed. |
 
 ## Review Method
 
@@ -32,7 +50,7 @@ Primary evidence sources:
 | `tfp-workspace/docs/agent-index.json` | Reviewed first for domain routing |
 | `tfp-workspace/docs/architecture/ARCHITECTURE_RULEBOOK.md` | Reviewed for intended dependency boundaries |
 | Root `git status --short --branch` | Reviewed |
-| Nested `git pull --rebase` for repos with remotes | Completed for `tfp-workspace` and `ai-inference-platform` |
+| Nested remote sync check for repos with remotes | `git pull --rebase` was attempted in both nested repos and blocked by pre-existing unstaged generated/static artifacts; ahead/behind checks returned `0 0` for both. |
 | `git ls-files` inventories | Run across root, TFP workspace, and AI service |
 | Route, module, package, style, script, seed, test, and artifact inventories | Run |
 | Security and architecture pattern scans | Run |
@@ -45,21 +63,12 @@ Important limitation: this report inventories and audits every tracked file fami
 | Repository | Role | Git/remote state observed |
 | --- | --- | --- |
 | `/Users/hexa/Desktop/tfp-latest` | Root wrapper, documentation, local artifacts, nested gitlinks | On `main`. No remote configured. Dirty because nested gitlinks and unrelated root files were already present. |
-| `/Users/hexa/Desktop/tfp-latest/tfp-workspace` | Main TFP Photographers app monorepo | `main...origin/main [ahead 2]`. `git pull --rebase` reported up to date. Working tree clean during audit. |
-| `/Users/hexa/Desktop/tfp-latest/ai-inference-platform` | Python AI inference service | `main...origin/main`. `git pull --rebase` reported up to date. Later observed dirty files not created by this audit. |
+| `/Users/hexa/Desktop/tfp-latest/tfp-workspace` | Main TFP Photographers app monorepo | `main...origin/main`, `0 ahead / 0 behind`. `git pull --rebase` is blocked by one pre-existing modified generated report. |
+| `/Users/hexa/Desktop/tfp-latest/ai-inference-platform` | Python AI inference service | `main...origin/main`, `0 ahead / 0 behind`. `git pull --rebase` is blocked by one pre-existing modified generated/static policy artifact. |
 
 Nested repo note: root status showed modified gitlinks for both nested projects plus untracked `.cline/` and `ingress-rules.json`. Those were not touched.
 
-AI dirty-state note: the AI repo later showed modified files in:
-
-- `src/ai_inference_platform/adapters.py`
-- `src/ai_inference_platform/service.py`
-- `src/ai_inference_platform/static/js/app.js`
-- `tests/conftest.py`
-- `tests/integration/test_api.py`
-- `tests/unit/test_yolo_private_parts_adapter.py`
-
-These were pre-existing or concurrent changes from outside this audit. They were not reverted, staged, or modified.
+Dirty-state note: the nested dirty files were pre-existing or concurrent changes from outside this documentation audit. They were not reverted, staged, or modified.
 
 ## Full Inventory Summary
 
@@ -67,7 +76,7 @@ These were pre-existing or concurrent changes from outside this audit. They were
 
 | Metric | Value |
 | --- | ---: |
-| Tracked files | 79 |
+| Tracked files | 80 |
 | Role | Wrapper repository, nested project pointers, docs, local orchestration, historical audits |
 | Main risk | Artifact sprawl and ambiguous ownership between root docs and nested repo docs |
 
@@ -75,16 +84,16 @@ These were pre-existing or concurrent changes from outside this audit. They were
 
 | Metric | Value |
 | --- | ---: |
-| Tracked files | 8,022 |
+| Tracked files | 8,023 |
 | Text/source/document lines scanned | 518,513 |
 | Largest tracked file family | Test fixtures and QA assets |
 | Main application routes | 67 tracked files under `apps/web/src/pages` |
-| API modules | 205 tracked files under `apps/api/src/modules` |
+| API modules | 206 tracked files under `apps/api/src/modules` |
 | Packages | 206 tracked files under `packages` |
 | Styles | 103 tracked files under `apps/web/src/styles` |
 | Components | 57 tracked files under `apps/web/src/components` |
 | Web scripts | 8 tracked files under `apps/web/src/scripts` |
-| E2E specs | 77 specs under `tests/e2e` |
+| E2E specs | 61 specs under `tests/e2e` |
 | Seed assets | 5,675 tracked files under `tests/seed` |
 
 Top tracked directory concentrations:
@@ -93,7 +102,7 @@ Top tracked directory concentrations:
 | --- | ---: | --- |
 | `tests` | 5,893 | Very high QA/fixture investment; also repository weight risk |
 | `apps` | 654 | Main FE and BE application code |
-| `docs` | 373 | Large architecture, audit, QA, and product documentation base |
+| `docs` | 374 | Large architecture, audit, QA, and product documentation base |
 | `packages` | 206 | Shared config, database, i18n, moderation, uploads, UI contracts |
 | `scripts` | 95 | QA, seed, moderation, and operational tooling |
 
@@ -119,7 +128,7 @@ High-volume extensions:
 | Python source/test files | 24 tracked `.py` files |
 | Largest source file | `src/ai_inference_platform/service.py` at about 3,840 lines |
 | Main source areas | service orchestration, adapters, policy, web server, static playground |
-| Main risk | Current test/ruff failures and unauthenticated production playground defaults |
+| Main risk | Production playground/API exposure defaults and the still-large service/orchestration files |
 
 ## Validation Log
 
@@ -127,9 +136,11 @@ High-volume extensions:
 
 | Command | Result | Notes |
 | --- | --- | --- |
-| `git pull --rebase` | Passed | Main branch already up to date with origin, while local branch remained ahead by 2 commits. |
+| `git pull --rebase` + ahead/behind check | Blocked by dirty artifact; branch is current | Rebase sync was blocked by the pre-existing generated report modification; `git rev-list --left-right --count HEAD...origin/main` returned `0 0`. |
 | `bash ./scripts/pnpm-node20.sh lint:architecture` | Passed | Reported `Architecture boundary check passed.` |
 | `bash ./scripts/pnpm-node20.sh typecheck` | Passed | Astro check reported 0 errors/warnings/hints for 212 files; API TypeScript build completed. |
+| `bash ./scripts/pnpm-node20.sh qa:design-tokens` | Passed | Reported `Design token audit passed across 285 source files.` |
+| `bash ./scripts/pnpm-node20.sh seo:integrity` | Passed with warnings | Health score `80/100`, 0 errors, 20 short-description warnings, report at `tmp/seo-integrity-report.json`. |
 | `bash ./scripts/pnpm-node20.sh audit --audit-level low` | Failed | 18 vulnerabilities: 1 critical, 11 high, 5 moderate, 1 low. |
 | `pnpm audit --json` | Failed with advisory metadata | Confirmed dependency and advisory counts. |
 
@@ -137,9 +148,9 @@ High-volume extensions:
 
 | Command | Result | Notes |
 | --- | --- | --- |
-| `git pull --rebase` | Passed | Already up to date. |
-| `uv run ruff check .` | Failed | Two line-length violations in `src/ai_inference_platform/service.py` at lines 3165 and 3174. |
-| `uv run pytest -q` | Failed | Collection failure: `tests/unit/test_yolov8n_adapter.py` cannot import `YoloV8nAdapter` from `ai_inference_platform.adapters`. |
+| `git pull --rebase` + ahead/behind check | Blocked by dirty artifact; branch is current | Rebase sync was blocked by the pre-existing static policy artifact modification; `git rev-list --left-right --count HEAD...origin/main` returned `0 0`. |
+| `uv run ruff check .` | Passed | Reaudit snapshot reports all checks passed. |
+| `uv run pytest -q` | Passed | Reaudit snapshot reports 45 passed. |
 
 No browser/manual UI execution was run because the user requested documentation-only audit work, not UI changes or end-to-end remediation.
 
@@ -158,7 +169,7 @@ No browser/manual UI execution was run because the user requested documentation-
 | --- | --- | --- | --- |
 | F-001 | P0 | TFP dependencies | `pnpm audit` reports one critical advisory and multiple high advisories across auth, Astro, OpenTelemetry, protobuf, XML parsing, and transitive tooling. |
 | F-002 | P0 | AI production security | Production/deploy defaults can expose playground/API behavior when `AIP_INTERNAL_API_KEY` is missing and `AIP_EXPOSE_PLAYGROUND_UI=true`. |
-| F-003 | P1 | AI validation | AI service currently fails both lint and test collection. |
+| F-003 | Resolved in current snapshot | AI validation | Previous lint and test collection failures are no longer present; keep these gates required before deployment. |
 | F-004 | P1 | Backend architecture | TFP architecture rulebook requires Prisma behind repositories, but direct Prisma access exists in commands, services, and middleware. |
 | F-005 | P1 | Admin UI security | Admin/report JavaScript contains many HTML rendering sinks. Many are escaped, but the surface is too sensitive to leave decentralized. |
 | F-006 | P2 | Search semantics | Search parameterization prevents SQL injection, but unescaped `%` and `_` wildcard behavior can broaden result sets. |
@@ -233,28 +244,27 @@ Recommendation:
 3. Playground POST endpoints should require the same internal API key when exposed outside localhost.
 4. Keep an explicit local/dev override for manual testing.
 
-### F-003 - AI Service Fails Lint and Test Collection
+### F-003 - AI Service Validation Is Clean In The Current Snapshot
 
-Severity: P1  
+Severity: Resolved in current snapshot / keep as release gate
 Area: AI service correctness/CI readiness  
 Evidence:
 
-- `uv run ruff check .` failed with line-length violations in `src/ai_inference_platform/service.py` at lines 3165 and 3174.
-- `uv run pytest -q` failed during collection because `tests/unit/test_yolov8n_adapter.py` imports `YoloV8nAdapter`, but `ai_inference_platform.adapters` does not export it.
-- The AI repo working tree contains unrelated modified files around YOLO/private-part scoring code.
+- `uv run ruff check .` now passes.
+- `uv run pytest -q` now passes with 45 tests.
+- The AI repo still has a pre-existing modified generated/static policy artifact: `src/ai_inference_platform/static/policy/tfp-moderation-policy.json`.
 
 Impact:
 
-- Current AI service cannot be considered CI-clean.
-- Test collection failure means other tests were not reached, so runtime confidence is incomplete.
-- The dirty working tree suggests ongoing model-contract changes that need a coherent source/test update.
+- The prior CI-readiness blocker is resolved in this snapshot.
+- The validation gate should stay mandatory because this service has large model-adapter and response-contract surfaces.
+- The remaining deployment risk is not local lint/test health; it is production playground/API exposure behavior.
 
 Recommendation:
 
-1. Reconcile the YOLO adapter class/export naming and the tests that import it.
-2. Fix the two style violations.
-3. Re-run `uv run ruff check .` and `uv run pytest -q`.
-4. Only then validate live inference payloads, especially `models_used`, private-part axes, and cache behavior.
+1. Keep `uv run ruff check .` and `uv run pytest -q` as required release gates.
+2. Resolve the generated/static policy artifact ownership before deployment.
+3. Validate live inference payloads after deployment, especially `models_used`, private-part axes, and cache behavior.
 
 ### F-004 - Prisma Boundary Drift Conflicts With Architecture Rulebook
 
@@ -561,7 +571,7 @@ AI service source is compact but dense:
 - `src/ai_inference_platform/adapters.py` contains adapter logic, including strong remote-image safety controls.
 - `src/ai_inference_platform/web.py` exposes health, metrics, API, playground, and cache routes.
 - Static playground files provide manual testing UI.
-- Tests cover unit, integration, and contract behavior, but collection currently fails.
+- Tests cover unit, integration, and contract behavior, and the current re-audit snapshot passes the local suite.
 
 Strengths:
 
@@ -572,14 +582,14 @@ Strengths:
 Risks:
 
 - Playground exposure and missing internal key behavior are too permissive for production.
-- Test collection failure blocks confidence in current YOLO/private-part changes.
+- The service remains dense enough that lint/test gates should stay mandatory before deployment.
 - `/metrics` is unauthenticated.
 
 Recommended AI priorities:
 
-1. Fix test collection and lint first.
+1. Keep lint and tests as mandatory release gates.
 2. Make production fail closed on API key and playground exposure.
-3. Validate live OCI payloads only after local tests pass.
+3. Validate live OCI payloads after each deploy.
 4. Preserve raw model scores and expose normalized policy outcomes as separate derived fields.
 
 ## Security Review
@@ -697,7 +707,7 @@ This section maps every tracked file family into the audit so future work can ta
 | `tfp-workspace/scripts/qa` | QA/artifact scan | Ignored generated reports are very large. |
 | `tfp-workspace/docs` | Docs inventory and architecture source review | Multiple old audit docs can conflict with current rulebook. |
 | `ai-inference-platform/src` | Source scan, security review, validation | Auth defaults, adapter contract, cache, metrics, playground. |
-| `ai-inference-platform/tests` | Test validation | Current collection failure blocks suite. |
+| `ai-inference-platform/tests` | Test validation | Current local suite passes; keep it as a deployment gate. |
 | `ai-inference-platform/config` | Production config review | Playground enabled in prod config. |
 | `ai-inference-platform/scripts` | Deploy script review | API key auto-mode can fail open. |
 
@@ -707,7 +717,7 @@ This section maps every tracked file family into the audit so future work can ta
 
 1. Fix TFP dependency audit, especially `fast-jwt`.
 2. Make AI production auth/playground behavior fail closed.
-3. Fix AI `ruff` and `pytest` failures.
+3. Make AI lint/test gates mandatory in deployment handoff.
 4. Confirm no unexpected dirty AI changes remain before deployment.
 
 ### Phase 2 - Architecture and Security Hardening
@@ -738,8 +748,8 @@ This section maps every tracked file family into the audit so future work can ta
 | TFP architecture lint | Pass |
 | TFP typecheck | Pass |
 | TFP dependency audit | Fail |
-| AI lint | Fail |
-| AI tests | Fail at collection |
+| AI lint | Pass |
+| AI tests | Pass |
 | AI production auth defaults | Needs hardening |
 | Admin rendering sinks | Needs hardening |
 | Prisma boundary | Needs enforcement |
@@ -749,6 +759,6 @@ This section maps every tracked file family into the audit so future work can ta
 
 The TFP product codebase has substantial structure, meaningful tests, real architecture documentation, and a serious moderation/QA investment. The main problem is not lack of organization; it is that the documented standards are stronger than some current enforcement, and the workspace has grown enough that release discipline now depends on automated gates being stricter.
 
-The AI inference platform is smaller but currently riskier operationally because local validation fails and production exposure defaults are too permissive. Fixing those two issues should come before any deployment or deeper product integration.
+The AI inference platform is smaller and currently validation-clean, but it is still operationally sensitive because production exposure defaults are too permissive. Hardening those defaults should come before any public deployment or deeper product integration.
 
-The highest-value next move is a focused release-hardening pass: dependency upgrades, AI fail-closed config, AI test repair, Prisma-boundary enforcement, and admin rendering tests.
+The highest-value next move is a focused release-hardening pass: dependency upgrades, AI fail-closed config, Prisma-boundary enforcement, and admin rendering tests.
