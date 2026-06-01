@@ -14,6 +14,21 @@ Run a fully manual, end-to-end quality cycle across UI, FE, BE, and DB using onl
 - Do not commit in the middle of the cycle.
 - Commit only after the final comprehensive validation pass is complete.
 
+## Execution Baseline (Required Before Phase 1)
+- Begin immediately. Start at Phase 1 and continue without interruption until final report publication.
+- Use deterministic starting state before test execution:
+  - Preferred: run `pnpm qa:test:reset`
+  - Fallback: run `pnpm db:reset`
+- Confirm service URLs:
+  - Web: `http://localhost:3000`
+  - API health: `http://localhost:4000/health`
+- Use explicit role accounts for role-matrix testing:
+  - Admin: `admin@tfp.local` / `Admin123!`
+  - Creator/Photo role: `photo@tfp.local` / `Photo123!`
+  - User/Model role: `model@tfp.local` / `Model123!`
+- Save all evidence in one run folder:
+  - `test-results/manual-qa-run/<YYYYMMDD-HHMM>/`
+
 ## App-Specific Mandatory Coverage (Completion Gate)
 The cycle is not complete unless all domains below are manually validated:
 - Messaging/DMs (`/{locale}/messages`): conversation start, send, receive, unread/read state, empty inbox.
@@ -72,6 +87,11 @@ For each critical business flow:
 
 ### 6. Responsive and Breakpoint Coverage
 - Desktop wide, laptop, tablet, mobile widths.
+- Required viewport widths:
+  - 1440px (desktop wide)
+  - 1280px (laptop)
+  - 768px (tablet)
+  - 375px (mobile)
 - Check overflow, clipping, misalignment, overlap, sticky/fixed behavior.
 - Verify all actions remain usable at each breakpoint.
 - Capture screenshots for each major page per breakpoint.
@@ -88,7 +108,15 @@ For each critical business flow:
 - Recoverability from failed operations.
 - Reopen and retry behavior without stale UI corruption.
 
-### 9. Defect Handling Workflow
+### 9. Accessibility Manual Procedure (Required)
+- For each major modal/dialog (auth, report, country picker, confirm dialog):
+  - Verify Tab traversal stays inside modal while open (focus trap).
+  - Verify `Esc` closes modal when expected by UX.
+  - Verify focus returns to triggering control after close.
+  - Verify visible focus indicator is present on all keyboard-focusable controls.
+- Verify keyboard-only navigation for top navigation, forms, and primary CTA paths.
+
+### 10. Defect Handling Workflow
 For each issue:
 - Reproduce and document.
 - Capture screenshot evidence.
@@ -97,7 +125,7 @@ For each issue:
 - Retest the exact failing path.
 - Run nearby regression checks on impacted flows.
 
-### 10. Iterative Completion Rule
+### 11. Iterative Completion Rule
 - Repeat the full cycle until no significant issues remain.
 - Significant issues include broken functionality, data inconsistency, severe UX defects, accessibility blockers, security/privacy risk, or major responsiveness/theme regressions.
 - Do not exit the cycle while any App-Specific Mandatory Coverage domain remains partially tested.
@@ -166,6 +194,9 @@ Hard constraints:
 7) Repeat until no significant issues remain.
 8) Produce the final report only after the repo is comprehensively cleaned, refactored, and validated.
 9) Mandatory domains must all pass: messaging, notifications, reports/moderation, media upload pipeline, contest invariants, locale routing, role matrix, RSVP, redirect preservation, admin workspace, legal/static pages, search correctness.
+10) Begin immediately at environment baseline, then Phase 1, and continue without waiting for additional prompts.
+11) Use baseline URLs `http://localhost:3000` and `http://localhost:4000/health`.
+12) Save all screenshots/evidence under `test-results/manual-qa-run/<timestamp>/`.
 
 Mandatory execution behavior:
 - Do not stop at recommendations.
@@ -177,6 +208,7 @@ Mandatory execution behavior:
 - Execute continuously in a loop: review -> document -> fix -> validate -> repeat.
 - Keep iterating until all obvious issues, clutter, and incomplete work are resolved and the result is fully validated.
 - Do not mark completion if any required domain was skipped, partially covered, or not retested after fixes.
+- Do not mark completion if deterministic baseline reset, role-account coverage, breakpoint width checks, and accessibility modal checks were not completed.
 
 Output requirements:
 - Maintain a running defect log with severity and screenshot evidence.
