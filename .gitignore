@@ -6,6 +6,7 @@ audit-shots/
 tmp/
 .runtime/
 .playwright-mcp/
+tfp-legacy/
 
 # Large local screenshot exports
 *.png
