@@ -1,0 +1,3 @@
+[submodule "collage-service"]
+	path = collage-service
+	url = git@github.com:mrgauravgupt/collage-service.git
