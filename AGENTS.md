@@ -5,6 +5,11 @@
 - Main application workspace: `/Users/hexa/Desktop/tfp-latest/tfp-workspace`.
 - For domain-level routing in the app workspace, use `/Users/hexa/Desktop/tfp-latest/tfp-workspace/docs/agent-index.json` first.
 - If both root and nested workspaces changed, update and commit in both repositories.
+- For cross-repo operator work, prefer the checked-in menu and runbook paths first:
+  - `tfp-workspace/scripts/manage-tfp.sh`
+  - `tfp-workspace/scripts/start-app.sh`
+  - `tfp-workspace/tests/create-data/README.md`
+  - `tfp-workspace/docs/operations/AGENT_RUNTIME_AND_SEED_GUIDE.md`
 
 ## Commit Preference
 - For this workspace, commit completed work by default unless the user explicitly says not to.
@@ -23,6 +28,10 @@
 - If work happens on a branch, merge it back into `main` promptly after validation unless the user explicitly says not to. `main` should remain updated with completed work.
 - For browser, UI, integration, or end-to-end work that depends on the running app, always restart both FE and BE first.
 - Treat restart order as mandatory for any fresh UI verification pass: stop stale processes, restart services, confirm FE and BE health, then test.
+- For destructive seed/reset work, use the checked-in launcher flow:
+  - `bash ./scripts/start-app.sh reset <env>`
+  - `pnpm qa:create-data:seed:real:quick`
+  - `bash ./scripts/manage-tfp.sh` for menu-driven operator flows.
 - Run fast validation before finalizing when applicable (`tsc`, build, and targeted tests).
 - Do not revert user-authored unrelated changes unless explicitly requested.
 - Unrelated pre-existing changes in the working tree are not blockers by themselves. Continue with the requested task, avoid staging those files, and call them out only if they materially affect the work.
