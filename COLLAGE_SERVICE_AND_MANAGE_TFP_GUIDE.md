@@ -1,7 +1,7 @@
 # Collage Service & UAT Environment Configuration Guide
 
-**Updated:** June 8, 2026  
-**Status:** ✅ Complete - All systems configured and documented
+**Updated:** June 12, 2026  
+**Status:** ✅ Complete - All systems configured, documented, and aligned to 16:9 aspect ratio
 
 ---
 
@@ -434,7 +434,8 @@ Content-Type: application/json
     "https://ik.imagekit.io/tfpphotographers_uat/portfolio/photo-2.jpg",
     "https://ik.imagekit.io/tfpphotographers_uat/portfolio/photo-3.jpg"
   ],
-  "targetWidth": 1000
+  "targetWidth": 1200,
+  "targetHeight": 675
 }
 
 Response: JPEG image buffer (200 OK)
