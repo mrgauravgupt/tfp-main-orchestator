@@ -51,3 +51,12 @@
   - file paths affected,
   - commit hash(es),
   - verification commands run.
+
+## Agent Capabilities & System Access
+- **MCP Servers**: Equipped with `filesystem`, `github`, `prisma-mcp-server`, and `puppeteer`.
+- **Advanced Skills**: Equipped with plugin-based developer skills (`chrome-devtools`, `firebase-*`, `a11y-debugging`, `debug-optimize-lcp`, `troubleshooting`, `modern-web-guidance`, `uv`, etc.).
+- **System Access via Shell**:
+  - Direct execution access via `run_command` on the host macOS system.
+  - Silent desktop screen capture via `screencapture -x /Users/hexa/.gemini/antigravity/scratch/screen.png`.
+  - Opening files or launching apps via macOS `open`.
+- See the full directory of tools and workflows in [SKILLS.md](file:///Users/hexa/Desktop/tfp-main-orchestator/SKILLS.md).
