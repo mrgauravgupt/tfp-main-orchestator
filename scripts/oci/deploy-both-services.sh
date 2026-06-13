@@ -25,18 +25,18 @@ canonical_env() {
 
 choose_env() {
   while true; do
-    cat <<'MENU'
+    cat >&2 <<'MENU'
 
 Choose deployment environment
-1) local
-2) UAT
-3) PROD
+1) UAT
+2) PROD
+3) LOCAL
 MENU
     read -r -p "Environment [1-3]: " choice
     case "$choice" in
-      1) printf 'local'; return 0 ;;
-      2) printf 'uat'; return 0 ;;
-      3) printf 'production'; return 0 ;;
+      1) printf 'uat'; return 0 ;;
+      2) printf 'production'; return 0 ;;
+      3) printf 'local'; return 0 ;;
       *) echo "Invalid option: $choice" ;;
     esac
   done
