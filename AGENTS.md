@@ -60,3 +60,10 @@
   - Silent desktop screen capture via `screencapture -x /Users/hexa/.gemini/antigravity/scratch/screen.png`.
   - Opening files or launching apps via macOS `open`.
 - See the full directory of tools and workflows in [SKILLS.md](file:///Users/hexa/Desktop/tfp-main-orchestator/SKILLS.md).
+
+## Multi-Agent Coordination & Context Sharing
+- **Workspace Sharing**: When spawning subagents via `invoke_subagent`, always prefer `inherit` or `share` workspaces to ensure they share file states and db states.
+- **Messaging Protocol**: Use `send_message` with recipient conversation IDs to pass data and completion flags. Do not poll peer agent statuses in a loop.
+- **Persistent State**: Document all configuration drift, branch switches, or tool updates in `MEMORY.md` and `AGENTS.md` so parallel/future agents inherit the context on startup.
+- **Transcript Audits**: If tracing peer actions is needed, read the local JSONL log at `<appDataDir>/brain/<conversation-id>/.system_generated/logs/transcript.jsonl`.
+
