@@ -67,3 +67,10 @@
 - **Persistent State**: Document all configuration drift, branch switches, or tool updates in `MEMORY.md` and `AGENTS.md` so parallel/future agents inherit the context on startup.
 - **Transcript Audits**: If tracing peer actions is needed, read the local JSONL log at `<appDataDir>/brain/<conversation-id>/.system_generated/logs/transcript.jsonl`.
 
+## Cross-Agent & Codex (Vibe Coding) Coexistence Rules
+- **Branch Strategy**: Since Codex creates feature branches prefixed with `codex/`, always verify the current active branch and pull the latest changes before starting work.
+- **Worktree Isolation**: Respect Codex's isolated worktrees (e.g., in `/Users/hexa/.codex/worktrees/`). Do not modify files in those paths unless explicitly instructed.
+- **Database Consistency**: If schema or migration changes are made by Codex, regenerate the Prisma client using `pnpm db:generate` and run migrations with `pnpm db:migrate`.
+- **State Synchronization**: Document all active changes, new ports, or configuration variables in `MEMORY.md` and `AGENTS.md` to ensure both Antigravity and Codex read the same single source of truth.
+
+
