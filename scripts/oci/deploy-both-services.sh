@@ -2,10 +2,55 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-DEPLOY_ENV="${DEPLOY_ENV:-uat}"
+
+canonical_env() {
+  case "${1:-}" in
+    local|test|qa)
+      printf 'local'
+      ;;
+    development|dev)
+      printf 'development'
+      ;;
+    uat)
+      printf 'uat'
+      ;;
+    prod|production)
+      printf 'production'
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
+choose_env() {
+  while true; do
+    cat <<'MENU'
+
+Choose deployment environment
+1) local
+2) UAT
+3) PROD
+MENU
+    read -r -p "Environment [1-3]: " choice
+    case "$choice" in
+      1) printf 'local'; return 0 ;;
+      2) printf 'uat'; return 0 ;;
+      3) printf 'production'; return 0 ;;
+      *) echo "Invalid option: $choice" ;;
+    esac
+  done
+}
+
+DEPLOY_ENV_RAW="${DEPLOY_ENV:-}"
+if [[ -n "$DEPLOY_ENV_RAW" ]]; then
+  DEPLOY_ENV="$(canonical_env "$DEPLOY_ENV_RAW")"
+else
+  DEPLOY_ENV="$(choose_env)"
+fi
 
 ENV_FILE_SUFFIX="$DEPLOY_ENV"
-if [[ "$DEPLOY_ENV" == "prod" ]]; then
+if [[ "$DEPLOY_ENV" == "production" ]]; then
   ENV_FILE_SUFFIX="production"
 fi
 
@@ -139,7 +184,7 @@ fi
 # Deploy TFP Collage Service first.
 if [[ "$DEPLOY_COLLAGE" == "true" ]]; then
   echo "📦 Deploying TFP Collage Service..."
-  bash "$ROOT_DIR/tfp-collage-service/scripts/oci/deploy-prod-7003.sh" "$DEPLOY_ENV"
+  bash "$ROOT_DIR/tfp-collage-service/scripts/oci/deploy-interactive.sh" "$DEPLOY_ENV"
   echo "✅ TFP Collage Service deployment complete"
   echo ""
 fi
@@ -147,7 +192,7 @@ fi
 # Deploy TFP Image Moderation Service and DB-driven workers.
 if [[ "$DEPLOY_AI" == "true" ]]; then
   echo "📦 Deploying TFP Image Moderation Service..."
-  bash "$ROOT_DIR/tfp-image-moderation-service/scripts/oci/deploy-prod-7001.sh" "$DEPLOY_ENV"
+  bash "$ROOT_DIR/tfp-image-moderation-service/scripts/oci/deploy-interactive.sh" "$DEPLOY_ENV"
   echo "✅ TFP Image Moderation Service deployment complete"
   echo ""
 fi
@@ -163,5 +208,5 @@ echo "  Health Check:  http://$DEPLOY_HOST:$AIP_NGINX_PORT/health/live"
 echo ""
 echo "To deploy only one service, use:"
 echo "  DEPLOY_AI=false bash $0        # Deploy only tfp-collage-service"
-echo "  DEPLOY_COLLAGE=false bash $0   # Deploy only AI inference platform"
+echo "  DEPLOY_COLLAGE=false bash $0   # Deploy only tfp-image-moderation-service"
 echo ""
