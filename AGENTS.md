@@ -34,7 +34,9 @@
   - `bash ./scripts/manage-tfp.sh` for menu-driven operator flows.
 - Run fast validation before finalizing when applicable (`tsc`, build, and targeted tests).
 - Do not revert user-authored unrelated changes unless explicitly requested.
-- Unrelated pre-existing changes in the working tree are not blockers by themselves. Continue with the requested task, avoid staging those files, and call them out only if they materially affect the work.
+- **Dirty Workspace Policy**: Unrelated pre-existing changes in the working tree are not blockers by themselves. Continue with the requested task. Make code changes very carefully to avoid overwriting anyone else's changes.
+- **Selective Commits**: Stage, commit, and push only your specific changes. Avoid staging unrelated modified files.
+- **Git Worktree Isolation Option**: Alternatively, if the working tree has complex dirty files, you may choose to execute your work inside a separate `git worktree` and merge back in the end, carefully committing and pushing only your changes.
 - Keep changes minimal, traceable, and production-safe.
 
 ## Testing Conventions
