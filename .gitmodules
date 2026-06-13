@@ -1,3 +1,11 @@
-[submodule "collage-service"]
-	path = collage-service
-	url = git@github.com:mrgauravgupt/collage-service.git
+[submodule "tfp-collage-service"]
+	path = tfp-collage-service
+	url = git@github.com:mrgauravgupt/tfp-collage-service.git
+
+[submodule "tfp-image-moderation-service"]
+	path = tfp-image-moderation-service
+	url = git@github.com:mrgauravgupt/ai-inference-platform.git
+
+[submodule "tfp-workspace"]
+	path = tfp-workspace
+	url = git@github.com:mrgauravgupt/tfpphotographers.com.git

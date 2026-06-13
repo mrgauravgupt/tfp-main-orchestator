@@ -4,7 +4,12 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 DEPLOY_ENV="${DEPLOY_ENV:-uat}"
 
-TFP_ENV_FILE="${TFP_ENV_FILE:-$ROOT_DIR/tfp-workspace/.env.${DEPLOY_ENV}.local}"
+ENV_FILE_SUFFIX="$DEPLOY_ENV"
+if [[ "$DEPLOY_ENV" == "prod" ]]; then
+  ENV_FILE_SUFFIX="production"
+fi
+
+TFP_ENV_FILE="${TFP_ENV_FILE:-$ROOT_DIR/tfp-workspace/.env.${ENV_FILE_SUFFIX}.local}"
 if [[ "${LOAD_TFP_ENV_FILE:-true}" == "true" && -f "$TFP_ENV_FILE" ]]; then
   set -a
   # shellcheck disable=SC1090
@@ -17,26 +22,24 @@ export DEPLOY_HOST="${DEPLOY_HOST:-80.225.208.169}"
 export DEPLOY_USER="${DEPLOY_USER:-ubuntu}"
 export DEPLOY_PORT="${DEPLOY_PORT:-22}"
 
-# AI Inference Platform configuration
+# TFP Image Moderation Service configuration
 export AIP_DEPLOY_HOST="${AIP_DEPLOY_HOST:-$DEPLOY_HOST}"
 export AIP_DEPLOY_USER="${AIP_DEPLOY_USER:-$DEPLOY_USER}"
 export AIP_DEPLOY_PORT="${AIP_DEPLOY_PORT:-$DEPLOY_PORT}"
-export AIP_DEPLOY_PATH="${AIP_DEPLOY_PATH:-/srv/ai-inference-platform/current}"
-export AIP_SERVICE_NAME="${AIP_SERVICE_NAME:-ai-inference-platform}"
+export AIP_DEPLOY_PATH="${AIP_DEPLOY_PATH:-/srv/tfp-image-moderation-service/current}"
+export AIP_SERVICE_NAME="${AIP_SERVICE_NAME:-tfp-image-moderation-service}"
 export AIP_NGINX_PORT="${AIP_NGINX_PORT:-7001}"
 export AIP_APP_PORT="${AIP_APP_PORT:-7002}"
 export AIP_EXPOSE_PLAYGROUND_UI="${AIP_EXPOSE_PLAYGROUND_UI:-true}"
 export AIP_RUNTIME_ENV="${AIP_RUNTIME_ENV:-${AIP_ENV:-$DEPLOY_ENV}}"
-export AIP_ENABLE_COLLAGE_WORKER="${AIP_ENABLE_COLLAGE_WORKER:-true}"
 export AIP_ENABLE_MODERATION_WORKER="${AIP_ENABLE_MODERATION_WORKER:-true}"
-export AIP_COLLAGE_SERVICE_URL="${AIP_COLLAGE_SERVICE_URL:-http://127.0.0.1:7004/api/v1/generate-collage}"
 
-# Collage Service configuration
+# TFP Collage Service configuration
 export COLLAGE_DEPLOY_HOST="${COLLAGE_DEPLOY_HOST:-$DEPLOY_HOST}"
 export COLLAGE_DEPLOY_USER="${COLLAGE_DEPLOY_USER:-$DEPLOY_USER}"
 export COLLAGE_DEPLOY_PORT="${COLLAGE_DEPLOY_PORT:-$DEPLOY_PORT}"
-export COLLAGE_DEPLOY_PATH="${COLLAGE_DEPLOY_PATH:-/srv/collage-service/current}"
-export COLLAGE_SERVICE_NAME="${COLLAGE_SERVICE_NAME:-collage-service}"
+export COLLAGE_DEPLOY_PATH="${COLLAGE_DEPLOY_PATH:-/srv/tfp-collage-service/current}"
+export COLLAGE_SERVICE_NAME="${COLLAGE_SERVICE_NAME:-tfp-collage-service}"
 export COLLAGE_NGINX_PORT="${COLLAGE_NGINX_PORT:-7003}"
 export COLLAGE_APP_PORT="${COLLAGE_APP_PORT:-7004}"
 
@@ -99,7 +102,7 @@ EOF
 }
 
 echo "═══════════════════════════════════════════════════════════════════════════════"
-echo "  OCI Deployment: AI Inference Platform + Collage Service"
+echo "  OCI Deployment: TFP Image Moderation Service + TFP Collage Service"
 echo "═══════════════════════════════════════════════════════════════════════════════"
 echo ""
 echo "Deployment Configuration:"
@@ -108,16 +111,15 @@ echo "  User:              $DEPLOY_USER"
 echo "  Port:              $DEPLOY_PORT"
 echo "  Apply migrations:  $APPLY_TFP_MIGRATIONS"
 echo ""
-echo "AI Inference Platform:"
+echo "TFP Image Moderation Service:"
 echo "  Deploy:            $DEPLOY_AI"
 echo "  Path:              $AIP_DEPLOY_PATH"
 echo "  Service:           $AIP_SERVICE_NAME"
 echo "  Nginx Port:        $AIP_NGINX_PORT (public)"
 echo "  App Port:          $AIP_APP_PORT (private)"
-echo "  Collage Worker:    $AIP_ENABLE_COLLAGE_WORKER"
 echo "  Moderation Worker: $AIP_ENABLE_MODERATION_WORKER"
 echo ""
-echo "Collage Service:"
+echo "TFP Collage Service:"
 echo "  Deploy:            $DEPLOY_COLLAGE"
 echo "  Path:              $COLLAGE_DEPLOY_PATH"
 echo "  Service:           $COLLAGE_SERVICE_NAME"
@@ -134,19 +136,19 @@ if [[ "$APPLY_TFP_MIGRATIONS" == "true" ]]; then
   echo ""
 fi
 
-# Deploy Collage Service first so the AI collage worker can call its local API.
+# Deploy TFP Collage Service first.
 if [[ "$DEPLOY_COLLAGE" == "true" ]]; then
-  echo "📦 Deploying Collage Service..."
-  bash "$ROOT_DIR/collage-service/scripts/oci/deploy-prod-7003.sh"
-  echo "✅ Collage Service deployment complete"
+  echo "📦 Deploying TFP Collage Service..."
+  bash "$ROOT_DIR/tfp-collage-service/scripts/oci/deploy-prod-7003.sh" "$DEPLOY_ENV"
+  echo "✅ TFP Collage Service deployment complete"
   echo ""
 fi
 
-# Deploy AI Inference Platform and DB-driven workers.
+# Deploy TFP Image Moderation Service and DB-driven workers.
 if [[ "$DEPLOY_AI" == "true" ]]; then
-  echo "📦 Deploying AI Inference Platform..."
-  bash "$ROOT_DIR/ai-inference-platform/scripts/oci/deploy-prod-7001.sh"
-  echo "✅ AI Inference Platform deployment complete"
+  echo "📦 Deploying TFP Image Moderation Service..."
+  bash "$ROOT_DIR/tfp-image-moderation-service/scripts/oci/deploy-prod-7001.sh" "$DEPLOY_ENV"
+  echo "✅ TFP Image Moderation Service deployment complete"
   echo ""
 fi
 
@@ -160,6 +162,6 @@ echo "  Collage:       http://$DEPLOY_HOST:$COLLAGE_NGINX_PORT/"
 echo "  Health Check:  http://$DEPLOY_HOST:$AIP_NGINX_PORT/health/live"
 echo ""
 echo "To deploy only one service, use:"
-echo "  DEPLOY_AI=false bash $0        # Deploy only collage service"
+echo "  DEPLOY_AI=false bash $0        # Deploy only tfp-collage-service"
 echo "  DEPLOY_COLLAGE=false bash $0   # Deploy only AI inference platform"
 echo ""
