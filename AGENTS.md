@@ -75,4 +75,9 @@
 - **Database Consistency**: If schema or migration changes are made by Codex, regenerate the Prisma client using `pnpm db:generate` and run migrations with `pnpm db:migrate`.
 - **State Synchronization**: Document all active changes, new ports, or configuration variables in `MEMORY.md` and `AGENTS.md` to ensure both Antigravity and Codex read the same single source of truth.
 
+## OCI Database Rule
+
+- UAT and production for the TFP stack use OCI-hosted PostgreSQL, not localhost.
+- Keep the app, collage worker, and image moderation worker pointed at the same OCI DB host so they can share the same state for moderation and collage generation.
+- Use localhost only for local and development workflows unless a task explicitly asks for an isolated override.
 
