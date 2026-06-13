@@ -9,7 +9,7 @@ if [[ "$DEPLOY_ENV" == "prod" ]]; then
   ENV_FILE_SUFFIX="production"
 fi
 
-TFP_ENV_FILE="${TFP_ENV_FILE:-$ROOT_DIR/tfp-workspace/.env.${ENV_FILE_SUFFIX}.local}"
+TFP_ENV_FILE="${TFP_ENV_FILE:-$ROOT_DIR/tfpphotographers/.env.${ENV_FILE_SUFFIX}.local}"
 if [[ "${LOAD_TFP_ENV_FILE:-true}" == "true" && -f "$TFP_ENV_FILE" ]]; then
   set -a
   # shellcheck disable=SC1090
@@ -50,7 +50,7 @@ APPLY_TFP_MIGRATIONS="${APPLY_TFP_MIGRATIONS:-true}"
 
 apply_tfp_migrations() {
   local migration_name="20260611000100_external_image_moderation_jobs"
-  local migration_file="$ROOT_DIR/tfp-workspace/packages/database/prisma/migrations/$migration_name/migration.sql"
+  local migration_file="$ROOT_DIR/tfpphotographers/packages/database/prisma/migrations/$migration_name/migration.sql"
   local remote_file="/tmp/$migration_name.sql"
   local database_name="${TFP_UAT_DATABASE_NAME:-tfp_photographers_uat}"
   local app_database_user="${TFP_UAT_DATABASE_USER:-tfp_user}"

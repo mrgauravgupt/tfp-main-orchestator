@@ -2,14 +2,14 @@
 
 ## Scope
 - Primary workspace root: `/Users/hexa/Desktop/tfp-latest`.
-- Main application workspace: `/Users/hexa/Desktop/tfp-latest/tfp-workspace`.
-- For domain-level routing in the app workspace, use `/Users/hexa/Desktop/tfp-latest/tfp-workspace/docs/agent-index.json` first.
+- Main application workspace: `/Users/hexa/Desktop/tfp-latest/tfpphotographers`.
+- For domain-level routing in the app workspace, use `/Users/hexa/Desktop/tfp-latest/tfpphotographers/docs/agent-index.json` first.
 - If both root and nested workspaces changed, update and commit in both repositories.
 - For cross-repo operator work, prefer the checked-in menu and runbook paths first:
-  - `tfp-workspace/scripts/manage-tfp.sh`
-  - `tfp-workspace/scripts/start-app.sh`
-  - `tfp-workspace/tests/create-data/README.md`
-  - `tfp-workspace/docs/operations/AGENT_RUNTIME_AND_SEED_GUIDE.md`
+  - `tfpphotographers/scripts/manage-tfp.sh`
+  - `tfpphotographers/scripts/start-app.sh`
+  - `tfpphotographers/tests/create-data/README.md`
+  - `tfpphotographers/docs/operations/AGENT_RUNTIME_AND_SEED_GUIDE.md`
 
 ## Commit Preference
 - For this workspace, commit completed work by default unless the user explicitly says not to.
@@ -42,8 +42,8 @@
   - app-local: `apps/<app>/tests/**`
   - workspace-level: `tests/**` for cross-app E2E/contract flows
 - Keep API and web unit/integration tests in app-local test roots (`apps/api/tests/**`, `apps/web/tests/**`).
-- When creating or updating test scripts/flows, update `/Users/hexa/Desktop/tfp-latest/tfp-workspace/tests/README.md` in the same change so script usage stays discoverable.
-- When changing browser seed assets/configs/commands, also update `/Users/hexa/Desktop/tfp-latest/tfp-workspace/tests/seed/README.md`.
+- When creating or updating test scripts/flows, update `/Users/hexa/Desktop/tfp-latest/tfpphotographers/tests/README.md` in the same change so script usage stays discoverable.
+- When changing browser seed assets/configs/commands, also update `/Users/hexa/Desktop/tfp-latest/tfpphotographers/tests/seed/README.md`.
 
 ## Reporting Expectations
 - Final responses should include:
