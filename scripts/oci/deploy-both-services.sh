@@ -113,6 +113,7 @@ apply_tfp_migrations() {
   ssh -p "$DEPLOY_PORT" -o StrictHostKeyChecking=accept-new "$DEPLOY_USER@$DEPLOY_HOST" \
     MIGRATION_ID="$migration_id" MIGRATION_NAME="$migration_name" CHECKSUM="$checksum" REMOTE_FILE="$remote_file" DATABASE_NAME="$database_name" APP_DATABASE_USER="$app_database_user" 'bash -s' <<'EOF'
 set -euo pipefail
+cd /tmp
 if ! sudo -u postgres psql -d "$DATABASE_NAME" -Atc "SELECT 1 FROM _prisma_migrations WHERE migration_name = '$MIGRATION_NAME' LIMIT 1;" | grep -q 1; then
   sudo -u postgres psql -d "$DATABASE_NAME" -v ON_ERROR_STOP=1 -f "$REMOTE_FILE"
   sudo -u postgres psql -d "$DATABASE_NAME" -v ON_ERROR_STOP=1 -c "
@@ -181,19 +182,20 @@ if [[ "$APPLY_TFP_MIGRATIONS" == "true" ]]; then
   echo ""
 fi
 
-# Deploy TFP Collage Service first.
-if [[ "$DEPLOY_COLLAGE" == "true" ]]; then
-  echo "📦 Deploying TFP Collage Service..."
-  bash "$ROOT_DIR/tfp-collage-service/scripts/oci/deploy-interactive.sh" "$DEPLOY_ENV"
-  echo "✅ TFP Collage Service deployment complete"
-  echo ""
-fi
-
 # Deploy TFP Image Moderation Service and DB-driven workers.
 if [[ "$DEPLOY_AI" == "true" ]]; then
   echo "📦 Deploying TFP Image Moderation Service..."
   bash "$ROOT_DIR/tfp-image-moderation-service/scripts/oci/deploy-interactive.sh" "$DEPLOY_ENV"
   echo "✅ TFP Image Moderation Service deployment complete"
+  echo ""
+fi
+
+# Deploy collage last so it can patch the image-service nginx site after the
+# image service has written its fresh config for this run.
+if [[ "$DEPLOY_COLLAGE" == "true" ]]; then
+  echo "📦 Deploying TFP Collage Service..."
+  bash "$ROOT_DIR/tfp-collage-service/scripts/oci/deploy-interactive.sh" "$DEPLOY_ENV"
+  echo "✅ TFP Collage Service deployment complete"
   echo ""
 fi
 
