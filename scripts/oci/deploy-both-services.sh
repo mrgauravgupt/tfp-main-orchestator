@@ -75,9 +75,10 @@ export AIP_DEPLOY_PATH="${AIP_DEPLOY_PATH:-/srv/tfp-image-moderation-service/cur
 export AIP_SERVICE_NAME="${AIP_SERVICE_NAME:-tfp-image-moderation-service}"
 export AIP_NGINX_PORT="${AIP_NGINX_PORT:-7001}"
 export AIP_APP_PORT="${AIP_APP_PORT:-7002}"
-export AIP_EXPOSE_PLAYGROUND_UI="${AIP_EXPOSE_PLAYGROUND_UI:-true}"
+export AIP_EXPOSE_PLAYGROUND_UI="${AIP_EXPOSE_PLAYGROUND_UI:-auto}"
 export AIP_RUNTIME_ENV="${AIP_RUNTIME_ENV:-${AIP_ENV:-$DEPLOY_ENV}}"
 export AIP_ENABLE_MODERATION_WORKER="${AIP_ENABLE_MODERATION_WORKER:-true}"
+export AIP_INTERNAL_API_KEY="${AIP_INTERNAL_API_KEY:-${MODERATION_REMOTE_AUTH_TOKEN:-}}"
 
 # TFP Collage Service configuration
 export COLLAGE_DEPLOY_HOST="${COLLAGE_DEPLOY_HOST:-$DEPLOY_HOST}"
@@ -92,6 +93,17 @@ export COLLAGE_APP_PORT="${COLLAGE_APP_PORT:-7004}"
 DEPLOY_AI="${DEPLOY_AI:-true}"
 DEPLOY_COLLAGE="${DEPLOY_COLLAGE:-true}"
 APPLY_TFP_MIGRATIONS="${APPLY_TFP_MIGRATIONS:-true}"
+
+if [[ "$DEPLOY_ENV" != "local" ]]; then
+  if [[ "$DEPLOY_AI" == "true" && -z "${AIP_INTERNAL_API_KEY:-}" ]]; then
+    echo "Set AIP_INTERNAL_API_KEY before deploying image moderation to $DEPLOY_ENV." >&2
+    exit 1
+  fi
+  if [[ "$DEPLOY_COLLAGE" == "true" && -z "${COLLAGE_SERVICE_API_KEY:-}" ]]; then
+    echo "Set COLLAGE_SERVICE_API_KEY before deploying collage service to $DEPLOY_ENV." >&2
+    exit 1
+  fi
+fi
 
 apply_tfp_migrations() {
   local migration_name="20260611000100_external_image_moderation_jobs"
@@ -164,6 +176,8 @@ echo "  Service:           $AIP_SERVICE_NAME"
 echo "  Nginx Port:        $AIP_NGINX_PORT (public)"
 echo "  App Port:          $AIP_APP_PORT (private)"
 echo "  Moderation Worker: $AIP_ENABLE_MODERATION_WORKER"
+echo "  Internal API auth: $([[ -n "${AIP_INTERNAL_API_KEY:-}" ]] && printf configured || printf missing)"
+echo "  Playground UI:     $AIP_EXPOSE_PLAYGROUND_UI"
 echo ""
 echo "TFP Collage Service:"
 echo "  Deploy:            $DEPLOY_COLLAGE"
@@ -171,6 +185,7 @@ echo "  Path:              $COLLAGE_DEPLOY_PATH"
 echo "  Service:           $COLLAGE_SERVICE_NAME"
 echo "  Nginx Port:        $COLLAGE_NGINX_PORT (public)"
 echo "  App Port:          $COLLAGE_APP_PORT (private)"
+echo "  API auth:          $([[ -n "${COLLAGE_SERVICE_API_KEY:-}" ]] && printf configured || printf missing)"
 echo ""
 echo "═══════════════════════════════════════════════════════════════════════════════"
 echo ""
