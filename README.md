@@ -131,6 +131,9 @@ This writes ignored runtime files in `tfpphotographers`:
 
 The command will not overwrite existing files unless `--force` is passed. UAT and production files intentionally contain `REPLACE_*` placeholders for secrets that must be filled from the secure runtime source.
 
+For the complete secret inventory and exact update locations, see
+[tfpphotographers/docs/operations/ENVIRONMENT_AND_SECRETS_GUIDE.md](file:///Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/docs/operations/ENVIRONMENT_AND_SECRETS_GUIDE.md).
+
 ### 3. Spin Up Local Stack
 Run the clean local startup script from the main platform folder:
 ```bash
