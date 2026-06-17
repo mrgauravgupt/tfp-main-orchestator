@@ -119,21 +119,17 @@ To run the entire ecosystem locally:
 - **PostgreSQL**: `v14+` running locally
 
 ### 2. Environment Configuration
-Copy environment files in each service directory and fill in the required keys:
+Generate the canonical local, UAT, and production env files from the orchestrator root:
 ```bash
-# Main platform configuration
-cd tfpphotographers
-cp .env.example .env.local
-cp .env.example .env.development
-
-# Collage service configuration
-cd ../tfp-collage-service
-cp .env.example .env.local
-
-# Image moderation configuration
-cd ../tfp-image-moderation-service
-cp .env.example .env
+bash scripts/setup-env.sh --target all
 ```
+
+This writes ignored runtime files in `tfpphotographers`:
+- `.env.local`: local PostgreSQL, local filesystem storage, local moderation at `http://127.0.0.1:7001`, local collage at `http://127.0.0.1:4001`.
+- `.env.uat.local`: OCI UAT PostgreSQL, UAT B2 bucket/prefix, UAT moderation/collage endpoints.
+- `.env.production.local`: production PostgreSQL placeholder, production B2 bucket/prefix, production moderation/collage endpoints.
+
+The command will not overwrite existing files unless `--force` is passed. UAT and production files intentionally contain `REPLACE_*` placeholders for secrets that must be filled from the secure runtime source.
 
 ### 3. Spin Up Local Stack
 Run the clean local startup script from the main platform folder:
@@ -142,13 +138,13 @@ cd tfpphotographers
 pnpm start:local:clean
 ```
 This launches:
-- Astro Web App (`http://localhost:4321`)
+- Astro Web App (`http://localhost:3000`)
 - Fastify API (`http://localhost:4000`)
 - The outbox/moderation background worker.
 
 To run the helper microservices locally:
 ```bash
-# Run Collage Service locally (runs Fastify app on port 4001)
+# Run Collage Service locally (Fastify app on port 4001)
 cd tfp-collage-service
 pnpm dev
 
