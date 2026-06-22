@@ -68,7 +68,7 @@ The orchestration layer coordinates three main subprojects, each serving a disti
 
 ## Service Deployment Matrix
 
-The orchestrator utilizes Oracle Cloud Infrastructure (OCI) VMs behind Nginx reverse proxies.
+The orchestrator deploys UAT services to the Contabo VPS behind Nginx reverse proxies.
 
 | Service | Port (Public) | Port (Private) | Runtime | Profile Map | Service Name |
 | :--- | :---: | :---: | :--- | :--- | :--- |
@@ -81,18 +81,18 @@ The orchestrator utilizes Oracle Cloud Infrastructure (OCI) VMs behind Nginx rev
 
 ## Shared DevOps & Deployment Scripting
 
-Deployments are orchestrated from the root using automated, interactive shell wrappers located in [scripts/oci](file:///Users/hexa/Desktop/tfp-main-orchestator/scripts/oci).
+Deployments are orchestrated from the root using automated, interactive shell wrappers located in [scripts/vps](file:///Users/hexa/Desktop/tfp-main-orchestator/scripts/vps). The older `scripts/oci` path remains as a compatibility shim for legacy operator muscle memory.
 
 ### Deploying Both Microservices (Recommended)
 To run a unified, interactive deployment for both the Collage and Moderation services:
 ```bash
-bash scripts/oci/deploy-both-services.sh
+bash scripts/vps/deploy-both-services.sh
 ```
 This script will:
 1. Prompt you to choose the environment: `local` (1), `UAT` (2), or `PROD` (3).
 2. Load the matching environment variables from [tfpphotographers](file:///Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers) (e.g., `.env.production.local`).
 3. Run database migrations on the target database (e.g., creating external image moderation job tables).
-4. SSH into the OCI host, sync the code repositories, install dependencies via `pnpm` (Collage) and `uv` (Moderation).
+4. SSH into the VPS host, sync the code repositories, install dependencies via `pnpm` (Collage) and `uv` (Moderation).
 5. Build and configure Systemd service scripts and Nginx routing blocks.
 6. Verify service health and print live endpoints.
 
@@ -100,10 +100,10 @@ This script will:
 You can disable deployment of individual services using flags:
 ```bash
 # Deploy ONLY the Collage Service
-DEPLOY_AI=false bash scripts/oci/deploy-both-services.sh
+DEPLOY_AI=false bash scripts/vps/deploy-both-services.sh
 
 # Deploy ONLY the Moderation Service
-DEPLOY_COLLAGE=false bash scripts/oci/deploy-both-services.sh
+DEPLOY_COLLAGE=false bash scripts/vps/deploy-both-services.sh
 ```
 
 ---

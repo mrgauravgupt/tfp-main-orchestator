@@ -48,7 +48,7 @@ Do not use those local overrides in UAT or production.
 From the workspace root:
 
 ```bash
-bash scripts/oci/deploy-both-services.sh
+bash scripts/vps/deploy-both-services.sh
 ```
 
 For service-local deployment:

@@ -62,9 +62,9 @@ if [[ "${LOAD_TFP_ENV_FILE:-true}" == "true" && -f "$TFP_ENV_FILE" ]]; then
   set +a
 fi
 
-# OCI deployment configuration
-export DEPLOY_HOST="${DEPLOY_HOST:-80.225.208.169}"
-export DEPLOY_USER="${DEPLOY_USER:-ubuntu}"
+# Generic VPS deployment configuration.
+export DEPLOY_HOST="${DEPLOY_HOST:-${VPS_DEPLOY_HOST:-13.140.189.236}}"
+export DEPLOY_USER="${DEPLOY_USER:-${VPS_DEPLOY_USER:-root}}"
 export DEPLOY_PORT="${DEPLOY_PORT:-22}"
 
 # TFP Image Moderation Service configuration
@@ -160,7 +160,7 @@ EOF
 }
 
 echo "═══════════════════════════════════════════════════════════════════════════════"
-echo "  OCI Deployment: TFP Image Moderation Service + TFP Collage Service"
+echo "  VPS Deployment: TFP Image Moderation Service + TFP Collage Service"
 echo "═══════════════════════════════════════════════════════════════════════════════"
 echo ""
 echo "Deployment Configuration:"
