@@ -81,7 +81,7 @@ The orchestrator deploys UAT services to the Contabo VPS behind Nginx reverse pr
 
 ## Shared DevOps & Deployment Scripting
 
-Deployments are orchestrated from the root using automated, interactive shell wrappers located in [scripts/vps](file:///Users/hexa/Desktop/tfp-main-orchestator/scripts/vps). The older `scripts/oci` path remains as a compatibility shim for legacy operator muscle memory.
+Deployments are orchestrated from the root using automated, interactive shell wrappers located in [scripts/vps](file:///Users/hexa/Desktop/tfp-main-orchestator/scripts/vps).
 
 ### Deploying Both Microservices (Recommended)
 To run a unified, interactive deployment for both the Collage and Moderation services:
@@ -126,7 +126,7 @@ bash scripts/setup-env.sh --target all
 
 This writes ignored runtime files in `tfpphotographers`:
 - `.env.local`: local PostgreSQL, local filesystem storage, local moderation at `http://127.0.0.1:7001`, local collage at `http://127.0.0.1:4001`.
-- `.env.uat.local`: OCI UAT PostgreSQL, UAT B2 bucket/prefix, UAT moderation/collage endpoints.
+- `.env.uat.local`: Contabo VPS UAT PostgreSQL, UAT B2 bucket/prefix, UAT moderation/collage endpoints.
 - `.env.production.local`: production PostgreSQL placeholder, production B2 bucket/prefix, production moderation/collage endpoints.
 
 The command will not overwrite existing files unless `--force` is passed. UAT and production files intentionally contain `REPLACE_*` placeholders for secrets that must be filled from the secure runtime source.

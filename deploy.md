@@ -90,7 +90,7 @@ DEPLOY_AI=false bash scripts/vps/deploy-both-services.sh
 DEPLOY_COLLAGE=false bash scripts/vps/deploy-both-services.sh
 ```
 
-The old `scripts/oci` wrappers still exist for compatibility, but the operator path is now `scripts/vps`.
+The operator path is `scripts/vps`.
 
 ## Database
 

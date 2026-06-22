@@ -54,8 +54,8 @@ bash scripts/vps/deploy-both-services.sh
 For service-local deployment:
 
 ```bash
-bash tfp-image-moderation-service/scripts/oci/deploy-interactive.sh
-bash tfp-collage-service/scripts/oci/deploy-interactive.sh
+bash tfp-image-moderation-service/scripts/vps/deploy-interactive.sh
+bash tfp-collage-service/scripts/vps/deploy-interactive.sh
 ```
 
 The deploy wrappers load the matching `tfpphotographers/.env.<env>.local` file when present. Keep `AIP_INTERNAL_API_KEY`, `COLLAGE_SERVICE_API_KEY`, app URLs, B2 settings, and DB settings aligned there or export them in the shell before deploy.
