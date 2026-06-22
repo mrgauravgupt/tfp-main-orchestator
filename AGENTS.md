@@ -81,3 +81,18 @@
 - Local operator scripts should reach the UAT database through an SSH tunnel to the VPS local Postgres listener (`127.0.0.1:5432` on the VPS), not through a developer-local fallback.
 - Keep the app, collage worker, and image moderation worker pointed at the same VPS DB target so they can share the same state for moderation and collage generation.
 - Use localhost only for local and development workflows unless a task explicitly asks for an isolated override.
+
+## UAT VPS and Deployment Target (Contabo)
+
+- **UAT Host Details**:
+  - **Display Name / Host**: `uat` (Contabo VPS 20)
+  - **IP Address**: `13.140.189.236`
+  - **Default User**: `root` (Option A: quick first deploy using root)
+  - **Region**: `EU`
+  - **SSH Access**: Key-based (`id_ed25519` from Mac client, added to `/root/.ssh/authorized_keys`)
+- **UAT Service Ports and URLs**:
+  - **Image Moderation public port**: `7001` (proxies to local app port `7002`)
+    - URL: `http://13.140.189.236:7001`
+  - **Collage public port**: `7003` (proxies to local app port `7004`)
+    - URL: `http://13.140.189.236:7003`
+  - **Private app ports**: `7002` and `7004` (not exposed publicly)
