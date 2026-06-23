@@ -1,9 +1,9 @@
 # Workspace-Wide Agent Notes
 
 ## Scope
-- Primary workspace root: `/Users/hexa/Desktop/tfp-latest`.
-- Main application workspace: `/Users/hexa/Desktop/tfp-latest/tfpphotographers`.
-- For domain-level routing in the app workspace, use `/Users/hexa/Desktop/tfp-latest/tfpphotographers/docs/agent-index.json` first.
+- Primary workspace root: `/Users/hexa/Desktop/tfp-main-orchestator`.
+- Main application workspace: `/Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers`.
+- For domain-level routing in the app workspace, use `/Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/docs/agent-index.json` first.
 - If both root and nested workspaces changed, update and commit in both repositories.
 - For cross-repo operator work, prefer the checked-in menu and runbook paths first:
   - `tfpphotographers/scripts/manage-tfp.sh`
@@ -44,8 +44,8 @@
   - app-local: `apps/<app>/tests/**`
   - workspace-level: `tests/**` for cross-app E2E/contract flows
 - Keep API and web unit/integration tests in app-local test roots (`apps/api/tests/**`, `apps/web/tests/**`).
-- When creating or updating test scripts/flows, update `/Users/hexa/Desktop/tfp-latest/tfpphotographers/tests/README.md` in the same change so script usage stays discoverable.
-- When changing browser seed assets/configs/commands, also update `/Users/hexa/Desktop/tfp-latest/tfpphotographers/tests/seed/README.md`.
+- When creating or updating test scripts/flows, update `/Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/tests/README.md` in the same change so script usage stays discoverable.
+- When changing browser seed assets/configs/commands, also update `/Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/tests/seed/README.md`.
 
 ## Reporting Expectations
 - Final responses should include:
@@ -81,6 +81,20 @@
 - Local operator scripts should reach the UAT database through an SSH tunnel to the VPS local Postgres listener (`127.0.0.1:5432` on the VPS), not through a developer-local fallback.
 - Keep the app, collage worker, and image moderation worker pointed at the same VPS DB target so they can share the same state for moderation and collage generation.
 - Use localhost only for local and development workflows unless a task explicitly asks for an isolated override.
+
+## VPS vs OCI Rule
+
+- Do not confuse the Contabo VPS with Oracle Cloud Infrastructure.
+- Contabo VPS is the current UAT service host and deploy target for the checked-in `scripts/vps` flow.
+- OCI is a separate Oracle Cloud account/tenancy used for Always Free Ampere A1 acquisition experiments and future ARM64 deployment planning.
+- The root OCI helper is `scripts/oci/acquire-a1-free.sh`; it requests `VM.Standard.A1.Flex` at `2 OCPU / 12 GB RAM` and retries `Out of host capacity`.
+- Current known OCI free-tier VM state from June 23, 2026:
+  - `aip-mumbai-e2-micro-new`
+  - public IP `140.245.30.133`
+  - shape `VM.Standard.E2.1.Micro`
+  - tagged `free-tier-retained=true`
+- The OCI E2 micro is not the Contabo VPS and is not the public UAT service host.
+- Never use `13.140.189.236` as an OCI host. That IP belongs to the Contabo VPS UAT target.
 
 ## UAT VPS and Deployment Target (Contabo)
 

@@ -77,6 +77,22 @@ The orchestrator deploys UAT services to the Contabo VPS behind Nginx reverse pr
 | **Moderation Service** | `7001` | `7002` | Python / FastAPI / Uvicorn | `it` (dev) / `uat` / `prod` | `tfp-image-moderation-service` |
 | **Collage Service** | `7003` | `7004` | Node.js / Fastify | `it` (dev) / `uat` / `prod` | `tfp-collage-service` |
 
+### VPS vs OCI Hosts
+
+Keep these hosting targets separate:
+
+- **Contabo VPS UAT**: `13.140.189.236`
+  - Current checked-in `scripts/vps` deployment target.
+  - Public moderation endpoint: `http://13.140.189.236:7001`.
+  - Public collage endpoint: `http://13.140.189.236:7003`.
+- **Oracle Cloud Infrastructure (OCI)**:
+  - Separate Oracle tenancy for Always Free Ampere A1 acquisition and future ARM64 deployment planning.
+  - Current known OCI micro VM: `aip-mumbai-e2-micro-new`, public IP `140.245.30.133`, shape `VM.Standard.E2.1.Micro`.
+  - A1 acquisition helper: [scripts/oci/acquire-a1-free.sh](file:///Users/hexa/Desktop/tfp-main-orchestator/scripts/oci/acquire-a1-free.sh).
+  - Safe Always Free target: `VM.Standard.A1.Flex` with `2 OCPU / 12 GB RAM`.
+
+Do not use the Contabo VPS IP when checking OCI state, and do not treat the OCI E2 micro as the UAT service host.
+
 ---
 
 ## Shared DevOps & Deployment Scripting
@@ -104,6 +120,21 @@ DEPLOY_AI=false bash scripts/vps/deploy-both-services.sh
 
 # Deploy ONLY the Moderation Service
 DEPLOY_COLLAGE=false bash scripts/vps/deploy-both-services.sh
+```
+
+### OCI A1 Capacity Acquisition
+
+OCI free-tier capacity is managed separately from the VPS deployment flow. To run the background acquisition loop on macOS:
+
+```bash
+scripts/oci/acquire-a1-free.sh --daemon
+```
+
+For a LaunchAgent-managed background run, check:
+
+```bash
+tail -f .run-state/oci/launchd-a1-acquire.out.log
+launchctl print gui/$(id -u)/com.tfp.oci-a1-acquire
 ```
 
 ---
