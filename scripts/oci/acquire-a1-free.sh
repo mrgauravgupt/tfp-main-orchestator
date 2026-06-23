@@ -11,7 +11,7 @@ Defaults are based on the current OCI CLI configuration for this workspace:
   availability domain: lqoG:AP-MUMBAI-1-AD-1
   subnet:              root tfp-public-subnet
   shape:               VM.Standard.A1.Flex
-  sizing:              2 OCPU / 12 GB RAM
+  sizing:              2 OCPU / 12 GB RAM, the current Always Free-safe target
 
 Usage:
   scripts/oci/acquire-a1-free.sh [--once] [--daemon] [--name NAME]
@@ -26,6 +26,10 @@ Useful environment overrides:
   OCI_COMPARTMENT_ID, OCI_AVAILABILITY_DOMAIN, OCI_SUBNET_ID, OCI_IMAGE_ID
   OCI_SSH_PUBLIC_KEY_FILE, OCI_RETRY_SLEEP_SECONDS, OCI_MAX_ATTEMPTS
   OCI_OCPUS, OCI_MEMORY_GBS, OCI_REGION
+
+Safety:
+  By default this script refuses requests above 2 OCPU or 12 GB RAM. Set
+  OCI_ALLOW_OVER_FREE_TIER=1 only if you intentionally want to bypass that guard.
 EOF
 }
 
@@ -90,6 +94,21 @@ OCI_OCPUS="${OCI_OCPUS:-2}"
 OCI_MEMORY_GBS="${OCI_MEMORY_GBS:-12}"
 OCI_RETRY_SLEEP_SECONDS="${OCI_RETRY_SLEEP_SECONDS:-90}"
 OCI_MAX_ATTEMPTS="${OCI_MAX_ATTEMPTS:-0}"
+OCI_ALLOW_OVER_FREE_TIER="${OCI_ALLOW_OVER_FREE_TIER:-0}"
+
+if [[ "$OCI_ALLOW_OVER_FREE_TIER" != "1" ]]; then
+  python3 - "$OCI_OCPUS" "$OCI_MEMORY_GBS" <<'PY'
+import sys
+
+ocpus = float(sys.argv[1])
+memory = float(sys.argv[2])
+if ocpus > 2 or memory > 12:
+    raise SystemExit(
+        "Refusing request above the Always Free-safe target of 2 OCPU / 12 GB RAM. "
+        "Set OCI_ALLOW_OVER_FREE_TIER=1 to override intentionally."
+    )
+PY
+fi
 
 if [[ ! -r "$OCI_SSH_PUBLIC_KEY_FILE" ]]; then
   echo "SSH public key not readable: $OCI_SSH_PUBLIC_KEY_FILE" >&2
