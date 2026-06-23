@@ -97,17 +97,20 @@ OCI_MAX_ATTEMPTS="${OCI_MAX_ATTEMPTS:-0}"
 OCI_ALLOW_OVER_FREE_TIER="${OCI_ALLOW_OVER_FREE_TIER:-0}"
 
 if [[ "$OCI_ALLOW_OVER_FREE_TIER" != "1" ]]; then
-  python3 - "$OCI_OCPUS" "$OCI_MEMORY_GBS" <<'PY'
-import sys
-
-ocpus = float(sys.argv[1])
-memory = float(sys.argv[2])
-if ocpus > 2 or memory > 12:
-    raise SystemExit(
-        "Refusing request above the Always Free-safe target of 2 OCPU / 12 GB RAM. "
-        "Set OCI_ALLOW_OVER_FREE_TIER=1 to override intentionally."
-    )
-PY
+  case "$OCI_OCPUS" in
+    1|1.0|2|2.0) ;;
+    *)
+      echo "Refusing request above the Always Free-safe target of 2 OCPU / 12 GB RAM. Set OCI_ALLOW_OVER_FREE_TIER=1 to override intentionally." >&2
+      exit 1
+      ;;
+  esac
+  case "$OCI_MEMORY_GBS" in
+    1|1.0|2|2.0|3|3.0|4|4.0|5|5.0|6|6.0|7|7.0|8|8.0|9|9.0|10|10.0|11|11.0|12|12.0) ;;
+    *)
+      echo "Refusing request above the Always Free-safe target of 2 OCPU / 12 GB RAM. Set OCI_ALLOW_OVER_FREE_TIER=1 to override intentionally." >&2
+      exit 1
+      ;;
+  esac
 fi
 
 if [[ ! -r "$OCI_SSH_PUBLIC_KEY_FILE" ]]; then
