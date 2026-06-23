@@ -2,25 +2,13 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+ENV_LOADER="$ROOT_DIR/scripts/vps/load-service-env.sh"
+
+# shellcheck disable=SC1090
+source "$ENV_LOADER"
 
 canonical_env() {
-  case "${1:-}" in
-    local|test|qa)
-      printf 'local'
-      ;;
-    development|dev)
-      printf 'development'
-      ;;
-    uat)
-      printf 'uat'
-      ;;
-    prod|production)
-      printf 'production'
-      ;;
-    *)
-      return 1
-      ;;
-  esac
+  canonical_service_env "$1"
 }
 
 choose_env() {
@@ -49,18 +37,7 @@ else
   DEPLOY_ENV="$(choose_env)"
 fi
 
-ENV_FILE_SUFFIX="$DEPLOY_ENV"
-if [[ "$DEPLOY_ENV" == "production" ]]; then
-  ENV_FILE_SUFFIX="production"
-fi
-
-TFP_ENV_FILE="${TFP_ENV_FILE:-$ROOT_DIR/tfpphotographers/.env.${ENV_FILE_SUFFIX}.local}"
-if [[ "${LOAD_TFP_ENV_FILE:-true}" == "true" && -f "$TFP_ENV_FILE" ]]; then
-  set -a
-  # shellcheck disable=SC1090
-  source "$TFP_ENV_FILE"
-  set +a
-fi
+load_service_deploy_env "$ROOT_DIR" "$DEPLOY_ENV"
 
 # Generic VPS deployment configuration.
 export DEPLOY_HOST="${DEPLOY_HOST:-${VPS_DEPLOY_HOST:-13.140.189.236}}"
@@ -78,7 +55,6 @@ export AIP_APP_PORT="${AIP_APP_PORT:-7002}"
 export AIP_EXPOSE_PLAYGROUND_UI="${AIP_EXPOSE_PLAYGROUND_UI:-auto}"
 export AIP_RUNTIME_ENV="${AIP_RUNTIME_ENV:-${AIP_ENV:-$DEPLOY_ENV}}"
 export AIP_ENABLE_MODERATION_WORKER="${AIP_ENABLE_MODERATION_WORKER:-true}"
-export AIP_INTERNAL_API_KEY="${AIP_INTERNAL_API_KEY:-${MODERATION_REMOTE_AUTH_TOKEN:-}}"
 
 # TFP Collage Service configuration
 export COLLAGE_DEPLOY_HOST="${COLLAGE_DEPLOY_HOST:-$DEPLOY_HOST}"

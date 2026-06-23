@@ -7,10 +7,13 @@ tmp/
 .runtime/
 .playwright-mcp/
 tfp-legacy/
+.run-state/
+
+# Local deploy secrets
+.env.deploy*.local
 
 # Large local screenshot exports
 *.png
 *.jpg
 *.jpeg
 JUNK/
-
