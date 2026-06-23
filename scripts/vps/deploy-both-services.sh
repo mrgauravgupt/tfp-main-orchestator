@@ -115,8 +115,13 @@ apply_tfp_migrations() {
   local migration_id
 
   if [[ ! -f "$migration_file" ]]; then
-    echo "Missing migration file: $migration_file" >&2
-    return 1
+    cat >&2 <<MSG
+Skipping legacy service migration helper because $migration_name is no longer a standalone migration.
+Run the main application migration source of truth before service deployment instead:
+  cd $ROOT_DIR/tfpphotographers
+  TFP_ENV_TARGET=$DEPLOY_ENV bash ./scripts/db/migrate.sh deploy
+MSG
+    return 0
   fi
 
   checksum="$(shasum -a 256 "$migration_file" | awk '{print $1}')"
