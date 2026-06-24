@@ -44,6 +44,10 @@ source_env_file_if_present() {
         value="${value:1:${#value}-2}"
       fi
     fi
+    # Deploy files are parsed as literal dotenv files, not shell programs.
+    # Ignore unresolved shell expressions so the checked-in script defaults
+    # apply instead of forwarding strings such as ${NAME:-default}.
+    [[ "$value" == *'${'* ]] && continue
     export "$key=$value"
   done < "$env_file"
 }
