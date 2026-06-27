@@ -95,6 +95,23 @@ Do not use the Contabo VPS IP when checking OCI state, and do not treat the OCI 
 
 ---
 
+### Folder Moderation Audit Artifacts
+
+The folder moderation audit runs against the Contabo VPS UAT moderation service and writes artifacts under `/srv/tfp-folder-moderation/reports`.
+
+- **Run on VPS from local wrapper**: `cd tfpphotographers && bash ./scripts/vps/run-folder-moderation.sh`
+- **VPS workspace**: `/srv/tfp-folder-moderation/tfpphotographers`
+- **VPS images**: `/srv/tfp-folder-moderation/images`
+- **VPS reports**: `/srv/tfp-folder-moderation/reports`
+- **Raw download expectation**: the completed downloadable `folder-moderation-audit-v1-*.json` must include full `rawEnvelope` and `providerRawResponse` values.
+- **Review-page expectation**: isolated reviewer JSON/chunks intentionally remove heavy raw payloads so the browser review page can load quickly.
+- **Auth gotcha**: if all processed rows are errors with `401 unauthorized`, the launcher did not resolve the internal moderation API key. The wrapper should load `AIP__SECURITY__INTERNAL_API_KEY` from the VPS systemd service when `MODERATION_REMOTE_AUTH_TOKEN` is absent.
+- **Large JSON gotcha**: full raw audit JSON must be streamed when written. A single `JSON.stringify` over the entire payload can fail with `Invalid string length`.
+
+Use the raw VPS/downloaded JSON for policy-field completeness debugging. Use the reviewer page only for human outcome review.
+
+---
+
 ## Shared DevOps & Deployment Scripting
 
 Deployments are orchestrated from the root using automated, interactive shell wrappers located in [scripts/vps](file:///Users/hexa/Desktop/tfp-main-orchestator/scripts/vps).

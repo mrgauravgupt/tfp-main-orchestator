@@ -110,3 +110,16 @@
   - **Collage public port**: `7003` (proxies to local app port `7004`)
     - URL: `http://13.140.189.236:7003`
   - **Private app ports**: `7002` and `7004` (not exposed publicly)
+
+## VPS Folder Moderation Audit And Reviewer Flow
+
+- Canonical local-to-VPS launcher: `tfpphotographers/scripts/vps/run-folder-moderation.sh`.
+- VPS working directory: `/srv/tfp-folder-moderation/tfpphotographers`.
+- VPS image drop/source directory: `/srv/tfp-folder-moderation/images`.
+- VPS report directory: `/srv/tfp-folder-moderation/reports`.
+- The launcher targets the Contabo VPS (`13.140.189.236`) and the moderation endpoint at `http://127.0.0.1:7001` from the VPS. Do not route this flow to OCI.
+- If `MODERATION_REMOTE_AUTH_TOKEN` is not explicitly set, the launcher should load it from `/etc/systemd/system/tfp-image-moderation-service.service` via `AIP__SECURITY__INTERNAL_API_KEY`. A run where every row is `401 unauthorized` means this auth token was missing or wrong; stop the run and fix auth before retrying.
+- Final downloadable audit JSON must preserve full `rawEnvelope` and `providerRawResponse` fields for policy debugging. The final writer streams large JSON files row-by-row; do not replace it with a single full `JSON.stringify(...)`, which can fail with `Invalid string length` on large raw payloads.
+- Partial checkpoints and isolated reviewer chunks intentionally strip `rawEnvelope` and `providerRawResponse` to keep review pages small and loadable. Do not use those compact artifacts to judge whether the model/provider returned all policy fields.
+- Local download flow should copy the VPS raw artifact first as `folder-moderation-audit-v1-vps-raw-<stamp>.json`, then create any local path-rewritten/review variants separately.
+- Review page generation is intentionally separate from raw audit preservation. `build-folder-moderation-reviewers.sh` and `build-isolated-reviewer-route.ts` create compact reviewer artifacts/pages; they are not the canonical raw evidence source.
