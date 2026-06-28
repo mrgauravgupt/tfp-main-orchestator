@@ -1,0 +1,3949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TFP Image Moderation AI Field Explorer</title>
+  <!-- Google Fonts Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-main: #0b0f19;
+      --bg-card: #111827;
+      --bg-card-hover: #1f2937;
+      --bg-header: #0f172a;
+      --border-color: #374151;
+      --border-focus: #10b981;
+      --text-primary: #f9fafb;
+      --text-secondary: #d1d5db;
+      --text-muted: #9ca3af;
+      --accent-color: #10b981;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+      
+      --risk-color: #ef4444;
+      --risk-glow: rgba(239, 68, 68, 0.15);
+      --safe-color: #10b981;
+      --safe-glow: rgba(16, 185, 129, 0.15);
+      --review-color: #f59e0b;
+      --review-glow: rgba(245, 158, 11, 0.15);
+      --context-color: #3b82f6;
+      --context-glow: rgba(59, 130, 246, 0.15);
+      
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+    
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-main);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #374151;
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #4b5563;
+    }
+    
+    header {
+      background: linear-gradient(180deg, var(--bg-header) 0%, var(--bg-main) 100%);
+      padding: 40px 6% 20px;
+      border-bottom: 1px solid var(--border-color);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: -150px;
+      right: -150px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      z-index: 2;
+      position: relative;
+    }
+    
+    .eyebrow {
+      color: var(--accent-color);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+    
+    h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, #ffffff 50%, #9ca3af 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .description {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 800px;
+      margin-bottom: 25px;
+    }
+    
+    /* Stats Bar */
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+    
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      transition: border-color 0.2s ease;
+    }
+    
+    .stat-card:hover {
+      border-color: var(--border-focus);
+    }
+    
+    .stat-card span {
+      display: block;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .stat-card strong {
+      display: block;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 5px;
+    }
+    
+    .stat-card small {
+      display: block;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-top: 4px;
+    }
+    
+    /* Main Content */
+    main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 40px 6%;
+    }
+    
+    /* Search & Filter Section */
+    .controls-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      position: sticky;
+      top: 20px;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      background-opacity: 0.95;
+    }
+    
+    .search-wrapper {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    
+    .search-input-box {
+      position: relative;
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .search-input-box svg {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      width: 20px;
+      height: 20px;
+      pointer-events: none;
+    }
+    
+    input[type="search"] {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      color: var(--text-primary);
+      padding: 14px 20px 14px 45px;
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    
+    input[type="search"]:focus {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+      background: rgba(255, 255, 255, 0.08);
+    }
+    
+    select {
+      background: #1f2937;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      color: var(--text-primary);
+      padding: 14px 20px;
+      font-size: 0.95rem;
+      outline: none;
+      cursor: pointer;
+      min-width: 180px;
+      font-family: inherit;
+      transition: border-color 0.2s ease;
+    }
+    
+    select:focus {
+      border-color: var(--accent-color);
+    }
+    
+    /* Category Pills */
+    .filter-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    
+    .pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    
+    .pill:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-primary);
+    }
+    
+    .pill.active {
+      background: var(--accent-color);
+      border-color: var(--accent-color);
+      color: var(--bg-main);
+      box-shadow: 0 0 12px var(--accent-glow);
+    }
+    
+    .search-summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    
+    .similarity-hint-box {
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 8px;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #93c5fd;
+    }
+    
+    /* Table Styling */
+    .table-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    
+    th {
+      background: #1f2937;
+      padding: 16px 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-secondary);
+      border-bottom: 2px solid var(--border-color);
+    }
+    
+    td {
+      padding: 20px;
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: top;
+    }
+    
+    tr:last-child td {
+      border-bottom: none;
+    }
+    
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.015);
+    }
+    
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      border: 1px solid transparent;
+      margin-top: 4px;
+    }
+    
+    .badge.risk-evidence {
+      background: var(--risk-glow);
+      color: var(--risk-color);
+      border-color: rgba(239, 68, 68, 0.2);
+    }
+    
+    .badge.safe-suppressor {
+      background: var(--safe-glow);
+      color: var(--safe-color);
+      border-color: rgba(16, 185, 129, 0.2);
+    }
+    
+    .badge.review-risk {
+      background: var(--review-glow);
+      color: var(--review-color);
+      border-color: rgba(245, 158, 11, 0.2);
+    }
+    
+    .badge.context {
+      background: var(--context-glow);
+      color: var(--context-color);
+      border-color: rgba(59, 130, 246, 0.2);
+    }
+    
+    /* Field Name Styling */
+    .field-path {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #34d399; /* Light Emerald */
+      word-break: break-all;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .field-path:hover {
+      text-decoration: underline;
+    }
+    
+    .field-path svg {
+      width: 14px;
+      height: 14px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      color: var(--text-muted);
+    }
+    
+    .field-path:hover svg {
+      opacity: 1;
+    }
+    
+    .field-type {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+    
+    .field-type b {
+      color: var(--text-secondary);
+    }
+    
+    /* Model Info */
+    .model-source {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .model-source span {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 400;
+      margin-top: 4px;
+    }
+    
+    /* Description Styling */
+    .field-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    
+    /* Range Visual Slider */
+    .range-visualizer {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 120px;
+    }
+    
+    .range-bar {
+      height: 6px;
+      background: #1f2937;
+      border-radius: 999px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .range-fill {
+      position: absolute;
+      height: 100%;
+      background: var(--accent-color);
+      border-radius: 999px;
+    }
+    
+    .range-fill.risk {
+      background: var(--risk-color);
+    }
+    
+    .range-fill.safe {
+      background: var(--safe-color);
+    }
+    
+    .range-fill.review {
+      background: var(--review-color);
+    }
+    
+    .range-avg-marker {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #ffffff;
+      border-radius: 50%;
+      top: 0;
+      transform: translateX(-50%);
+    }
+    
+    .range-label {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .range-label span {
+      font-weight: 600;
+    }
+    
+    .range-val {
+      color: var(--text-primary) !important;
+    }
+    
+    /* Examples list */
+    .example-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    
+    .example-tag {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      word-break: break-all;
+    }
+    
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #10b981;
+      color: #0b0f19;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transform: translateY(150%);
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 1000;
+    }
+    
+    .toast.show {
+      transform: translateY(0);
+    }
+    
+    /* Match Highlights */
+    .highlight {
+      background: rgba(245, 158, 11, 0.3);
+      color: #ffffff;
+      padding: 0 2px;
+      border-radius: 3px;
+      border-bottom: 1px solid #f59e0b;
+    }
+    
+    /* Empty State */
+    .empty-state {
+      padding: 60px 20px;
+      text-align: center;
+      color: var(--text-muted);
+    }
+    
+    .empty-state svg {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 15px;
+      color: var(--text-muted);
+    }
+    
+    .empty-state h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+    
+    /* Relevance Indicator */
+    .relevance-score {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 700;
+      background: rgba(255,255,255,0.05);
+      padding: 2px 6px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-top: 5px;
+    }
+    
+    @media (max-width: 1024px) {
+      .table-container {
+        border-radius: 12px;
+      }
+      th {
+        padding: 12px 14px;
+      }
+      td {
+        padding: 14px;
+      }
+      .range-visualizer {
+        min-width: 100px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      thead {
+        display: none;
+      }
+      tr {
+        border-bottom: 2px solid var(--border-color);
+        padding: 15px 0;
+      }
+      td {
+        border: none;
+        padding: 8px 20px;
+      }
+      td:first-child {
+        padding-top: 15px;
+      }
+      td:last-child {
+        padding-bottom: 15px;
+      }
+      .range-visualizer {
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <header>
+    <div class="header-content">
+      <span class="eyebrow">TFP Moderation Engine</span>
+      <h1>AI Image Moderation Field Explorer</h1>
+      <p class="description">
+        An interactive, searchable reference of all response parameters and variables present for images inside 
+        <code>folder-moderation-audit-v1-latest.json</code>. Use this tool to understand the role of each variable 
+        in policy evaluations and adjust rule thresholds.
+      </p>
+      
+      <div class="stats-container">
+        <div class="stat-card">
+          <span>Total Schema Fields</span>
+          <strong>186</strong>
+          <small>Documented leaf paths</small>
+        </div>
+        <div class="stat-card">
+          <span>Audit Sample Size</span>
+          <strong>6,825</strong>
+          <small>Images parsed in latest run</small>
+        </div>
+        <div class="stat-card">
+          <span>AI Provider Models</span>
+          <strong>4 Models + Derived</strong>
+          <small>YOLO, NudeNet, Marqo, CLIP</small>
+        </div>
+        <div class="stat-card">
+          <span>Audit Source</span>
+          <strong style="font-size: 1.1rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-top: 12px;">v1-latest.json</strong>
+          <small>TFP Folder Moderation Report</small>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <main>
+    <div class="controls-container">
+      <div class="search-wrapper">
+        <div class="search-input-box">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input type="search" id="fieldSearch" placeholder="Type to search... Ex: 'sexual', 'nudity', 'face', 'blur' (Similarity search enabled)" autocomplete="off" />
+        </div>
+        
+        <select id="modelFilter" aria-label="Filter by model provider">
+          <option value="">All Model Sources</option>
+          <option value="Falconsai">Falconsai NSFW</option>
+          <option value="NudeNet">notAI-tech/NudeNet</option>
+          <option value="YOLO">YOLO Detector</option>
+          <option value="CLIP">OpenAI CLIP</option>
+          <option value="Derived">Derived Builder</option>
+          <option value="Policy">TFP Policy Evaluator</option>
+          <option value="Cache">AI Cache Layer</option>
+          <option value="Audit">Audit Row Metadata</option>
+        </select>
+      </div>
+      
+      <div class="filter-pills">
+        <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-right: 5px;">Kinds:</span>
+        <div class="pill active" data-kind="all">All Fields</div>
+        <div class="pill" data-kind="risk-evidence">Risk Evidence</div>
+        <div class="pill" data-kind="safe-suppressor">Safe Suppressors</div>
+        <div class="pill" data-kind="review-risk">Review & Uncertainty</div>
+        <div class="pill" data-kind="context">Context & Metadata</div>
+      </div>
+      
+      <div class="search-summary">
+        <span id="resultsCount">Showing 186 fields</span>
+        <div class="similarity-hint-box">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+          </svg>
+          <span>Similarity search expands concepts (e.g. searching 'sexual' exposes nipples, genital, thong, explicit, etc.)</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="table-container">
+      <table id="fieldTable">
+        <thead>
+          <tr>
+            <th style="width: 25%;">Parameter Path</th>
+            <th style="width: 20%;">Source Model</th>
+            <th style="width: 30%;">Description & Policy Purpose</th>
+            <th style="width: 13%;">Audit Range (Min..Max)</th>
+            <th style="width: 12%;">Example Value</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Populated by JS -->
+        </tbody>
+      </table>
+      <div id="emptyState" class="empty-state" style="display: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <h3>No fields found</h3>
+        <p>Try refining your search query or selecting a different filter.</p>
+      </div>
+    </div>
+  </main>
+  
+  <div class="toast" id="copyToast">
+    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+    </svg>
+    <span>Field path copied to clipboard!</span>
+  </div>
+  
+  <script>
+    // Embedded JSON payload containing all 186 fields
+    const FIELDS_DATA = {
+    "aiCache.cacheHit": {
+        "path": "aiCache.cacheHit",
+        "type": "boolean",
+        "seen": 6825,
+        "min": true,
+        "max": true,
+        "avg": 1.0,
+        "examples": [
+            "True"
+        ],
+        "description": "Indicates whether the response was served from the local AI analysis cache.",
+        "model": "AI Cache Layer",
+        "badge": "context"
+    },
+    "aiCache.imageHash": {
+        "path": "aiCache.imageHash",
+        "type": "string",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "44eb196a42cd824e6f20b5c41ee09fb18bfdda2086417f9d7cadb4fc82aee65f",
+            "08b0d658b513f5f82c24426ec0e4fd44c4e34eb066053fd15c3221cb70a0de44",
+            "42affc08277084760aefa8a22f7d7b4609bca302e8c6dc32c3d808d36f239246"
+        ],
+        "description": "Cryptographic hash of the image data used for cache key generation.",
+        "model": "AI Cache Layer",
+        "badge": "context"
+    },
+    "aiCache.latencyMs": {
+        "path": "aiCache.latencyMs",
+        "type": "number",
+        "seen": 6825,
+        "min": 3,
+        "max": 1643,
+        "avg": 16.4029304029304,
+        "examples": [
+            "20",
+            "8",
+            "31"
+        ],
+        "description": "Latency in milliseconds of the AI analysis (from cache or model run).",
+        "model": "AI Cache Layer",
+        "badge": "context"
+    },
+    "aiCache.traceId": {
+        "path": "aiCache.traceId",
+        "type": "string",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "OPPORTUNITY:folder-audit-0022f05209c1899c04ec168daa9f69a8b549faea61e409d6863015dc873e6811.jpg:UPLOAD_PORTFOLIO:0022f05209c1899c04ec168daa9f69a8b549faea61e409d6863015dc873e6811.jpg",
+            "OPPORTUNITY:folder-audit-002d58fddd2d73a023074b914f2e47c91a794ac5dfbe97d36ac3eb1c46a07c8a.jpg:UPLOAD_PORTFOLIO:002d58fddd2d73a023074b914f2e47c91a794ac5dfbe97d36ac3eb1c46a07c8a.jpg",
+            "OPPORTUNITY:folder-audit-001d3c3e71c266186ed373006bdf63f38610c21158bdfa9e589e4de076e913b8.jpg:UPLOAD_PORTFOLIO:001d3c3e71c266186ed373006bdf63f38610c21158bdfa9e589e4de076e913b8.jpg"
+        ],
+        "description": "Unique transaction trace ID for monitoring and debugging.",
+        "model": "AI Cache Layer",
+        "badge": "context"
+    },
+    "categoryScores.ADULT": {
+        "path": "categoryScores.ADULT",
+        "type": "number",
+        "seen": 6825,
+        "min": 0,
+        "max": 0.86,
+        "avg": 0.37097027797990156,
+        "examples": [
+            "0.02255965",
+            "0.0494627",
+            "0.28197235"
+        ],
+        "description": "Compatibility score mapped into broad moderation bucket ADULT.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "categoryScores.MEDICAL": {
+        "path": "categoryScores.MEDICAL",
+        "type": "number",
+        "seen": 6825,
+        "min": 0,
+        "max": 0,
+        "avg": 0.0,
+        "examples": [
+            "0"
+        ],
+        "description": "Compatibility score mapped into broad moderation bucket MEDICAL.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "categoryScores.RACY": {
+        "path": "categoryScores.RACY",
+        "type": "number",
+        "seen": 6825,
+        "min": 0.007398,
+        "max": 0.54754675,
+        "avg": 0.26001251424175853,
+        "examples": [
+            "0.37760315",
+            "0.51919875",
+            "0.1470733"
+        ],
+        "description": "Compatibility score mapped into broad moderation bucket RACY.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "categoryScores.SPOOF": {
+        "path": "categoryScores.SPOOF",
+        "type": "number",
+        "seen": 6825,
+        "min": 4.158347428528942e-06,
+        "max": 0.5303151607513428,
+        "avg": 0.012663448835025832,
+        "examples": [
+            "0.24147005379199982",
+            "0.0032084332080557945",
+            "0.0008590399578679353"
+        ],
+        "description": "Compatibility score mapped into broad moderation bucket SPOOF.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "categoryScores.VIOLENCE": {
+        "path": "categoryScores.VIOLENCE",
+        "type": "number",
+        "seen": 6825,
+        "min": 0,
+        "max": 0,
+        "avg": 0.0,
+        "examples": [
+            "0"
+        ],
+        "description": "Compatibility score mapped into broad moderation bucket VIOLENCE.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "decisionSignals.approveMatches": {
+        "path": "decisionSignals.approveMatches",
+        "type": "array",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "list(len=0)",
+            "list(len=1)"
+        ],
+        "description": "Explains how the moderation policy tree reached the final outcome.List field; more entries means more evidence, matches, regions, or trace steps.",
+        "model": "TFP policy evaluator",
+        "badge": "context"
+    },
+    "decisionSignals.decisionBlockingConditions": {
+        "path": "decisionSignals.decisionBlockingConditions",
+        "type": "array",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "list(len=0)",
+            "list(len=1)"
+        ],
+        "description": "Explains how the moderation policy tree reached the final outcome.List field; more entries means more evidence, matches, regions, or trace steps.",
+        "model": "TFP policy evaluator",
+        "badge": "context"
+    },
+    "decisionSignals.decisionBranch": {
+        "path": "decisionSignals.decisionBranch",
+        "type": "string",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "visible_private_parts_only"
+        ],
+        "description": "Explains how the moderation policy tree reached the final outcome.Categorical/context value; compare against policy rules and category definitions.",
+        "model": "TFP policy evaluator",
+        "badge": "context"
+    },
+    "decisionSignals.decisionDecisive": {
+        "path": "decisionSignals.decisionDecisive",
+        "type": "array",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "list(len=1)"
+        ],
+        "description": "Explains how the moderation policy tree reached the final outcome.List field; more entries means more evidence, matches, regions, or trace steps.",
+        "model": "TFP policy evaluator",
+        "badge": "context"
+    },
+    "decisionSignals.decisionGateDetails": {
+        "path": "decisionSignals.decisionGateDetails",
+        "type": "array",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "list(len=3)"
+        ],
+        "description": "Explains how the moderation policy tree reached the final outcome.List field; more entries means more evidence, matches, regions, or trace steps.",
+        "model": "TFP policy evaluator",
+        "badge": "context"
+    },
+    "decisionSignals.decisionPath": {
+        "path": "decisionSignals.decisionPath",
+        "type": "array",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "list(len=4)"
+        ],
+        "description": "Explains how the moderation policy tree reached the final outcome.List field; more entries means more evidence, matches, regions, or trace steps.",
+        "model": "TFP policy evaluator",
+        "badge": "context"
+    },
+    "decisionSignals.decisionPrimaryCause": {
+        "path": "decisionSignals.decisionPrimaryCause",
+        "type": "string",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "cartoon_porn",
+            "porn_reject_mixed_illustration",
+            "safe_clothes"
+        ],
+        "description": "Explains how the moderation policy tree reached the final outcome.Categorical/context value; compare against policy rules and category definitions.",
+        "model": "TFP policy evaluator",
+        "badge": "context"
+    },
+    "decisionSignals.decisionPrimaryCauseDetail": {
+        "path": "decisionSignals.decisionPrimaryCauseDetail",
+        "type": "string",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "(rawEnvelope.derived.pose_gesture.arched_back_pose < 0.1) && (rawEnvelope.derived.vulgarity_profile.explicit_pose_pattern_score < 0.08) && (rawEnvelope.derived.vulgarity_profile.fetish_styling_risk < 0.03) && (rawEnvelope.derived.categories.candidates.uncertain_sexualized < 0.6) && (rawEnvelope.derived.exposure_profile.calibrated.anus_visible_calibrated < 0.2) && (rawEnvelope.derived.exposure_profile.calibrated.genitals_visible_calibrated < 0.06) && (rawEnvelope.derived.pose_profile.composition_emphasis < 0.1) && (rawEnvelope.derived.vulgarity_profile.camera_objectification_risk < 0.055) && (rawEnvelope.derived.vulgarity_profile.explicit_pose_pattern_score < 0.1) && (rawEnvelope.derived.vulgarity_profile.genital_vulgarity < 0.4) && (rawEnvelope.derived.vulgarity_profile.intimate_focus_without_face_score < 0.25) && (rawEnvelope.derived.categories.candidates.explicit_nudity <= 0.25) && (rawEnvelope.clip.explicit_semantics.pack_scores.vulgar_exploitative < 0.02)",
+            "rawEnvelope.derived.illustration_explicit_profile.toon_explicit_minus_safe  >= 0.001 && rawEnvelope.derived.illustration_explicit_profile.toon_explicit_score > 0.04 && rawEnvelope.clip.explicit_semantics.cartoon_explicit_sexual_act_score > 0.035 && rawEnvelope.clip.explicit_semantics.contrastive_scores.tasteful_boudoir_vs_pornographic_bedroom < 0",
+            "(rawEnvelope.marqo.raw_label_scores.nsfw < 0.99) && (rawEnvelope.derived.vulgarity_profile.fetish_styling_risk < 0.064) && (rawEnvelope.derived.categories.candidates.uncertain_sexualized < 0.6) && (rawEnvelope.derived.exposure_profile.calibrated.anus_visible_calibrated < 0.5) && (rawEnvelope.derived.exposure_profile.calibrated.genitals_visible_calibrated < 0.245) && (rawEnvelope.derived.pose_profile.composition_emphasis < 0.35) && (rawEnvelope.derived.vulgarity_profile.camera_objectification_risk < 0.095) && (rawEnvelope.derived.vulgarity_profile.explicit_pose_pattern_score < 0.21) && (rawEnvelope.derived.vulgarity_profile.genital_vulgarity < 0.5) && (rawEnvelope.derived.vulgarity_profile.intimate_focus_without_face_score < 0.4) && (rawEnvelope.derived.categories.candidates.explicit_nudity <= 0.65) && (rawEnvelope.clip.explicit_semantics.pack_scores.vulgar_exploitative < 0.075)"
+        ],
+        "description": "Explains how the moderation policy tree reached the final outcome.Categorical/context value; compare against policy rules and category definitions.",
+        "model": "TFP policy evaluator",
+        "badge": "context"
+    },
+    "decisionSignals.decisionProfile": {
+        "path": "decisionSignals.decisionProfile",
+        "type": "string",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "BALANCED"
+        ],
+        "description": "Explains how the moderation policy tree reached the final outcome.Categorical/context value; compare against policy rules and category definitions.",
+        "model": "TFP policy evaluator",
+        "badge": "context"
+    },
+    "decisionSignals.diagnosticSignals.evaluatedRuleCount": {
+        "path": "decisionSignals.diagnosticSignals.evaluatedRuleCount",
+        "type": "number",
+        "seen": 6825,
+        "min": 1,
+        "max": 43,
+        "avg": 20.78080586080586,
+        "examples": [
+            "7",
+            "8",
+            "26"
+        ],
+        "description": "The number of policy rules that were evaluated before a terminal decision was reached.",
+        "model": "TFP Policy Evaluator",
+        "badge": "context"
+    },
+    "decisionSignals.diagnosticSignals.policyRuleCount": {
+        "path": "decisionSignals.diagnosticSignals.policyRuleCount",
+        "type": "number",
+        "seen": 6825,
+        "min": 43,
+        "max": 43,
+        "avg": 43.0,
+        "examples": [
+            "43"
+        ],
+        "description": "Total number of rules configured in the active moderation policy.",
+        "model": "TFP Policy Evaluator",
+        "badge": "context"
+    },
+    "decisionSignals.diagnosticSignals.policyStageCount": {
+        "path": "decisionSignals.diagnosticSignals.policyStageCount",
+        "type": "number",
+        "seen": 6825,
+        "min": 1,
+        "max": 1,
+        "avg": 1.0,
+        "examples": [
+            "1"
+        ],
+        "description": "Total number of stages defined in the active moderation policy.",
+        "model": "TFP Policy Evaluator",
+        "badge": "context"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.clip.anatomy_context.breast_visible": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.clip.anatomy_context.breast_visible",
+        "type": "number",
+        "seen": 7,
+        "min": 0.05081288516521454,
+        "max": 0.21097557246685028,
+        "avg": 0.1292460901396615,
+        "examples": [
+            "0.05081288516521454",
+            "0.07790771871805191",
+            "0.14455437660217285"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: clip.anatomy_context.breast_visible.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.clip.anatomy_context.pubic_region_visible": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.clip.anatomy_context.pubic_region_visible",
+        "type": "number",
+        "seen": 1,
+        "min": 0.014646610245108604,
+        "max": 0.014646610245108604,
+        "avg": 0.014646610245108604,
+        "examples": [
+            "0.014646610245108604"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of visible pubic region.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.cartoon_explicit_sexual_act_score": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.cartoon_explicit_sexual_act_score",
+        "type": "number",
+        "seen": 56,
+        "min": 0.035189367830753326,
+        "max": 0.13769057393074036,
+        "avg": 0.07066255754658154,
+        "examples": [
+            "0.13690827786922455",
+            "0.05170499160885811",
+            "0.07071058452129364"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score for cartoon or animated explicit sexual acts.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "context"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.exposed_genitals_score": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.exposed_genitals_score",
+        "type": "number",
+        "seen": 21,
+        "min": 8.396938210353255e-05,
+        "max": 0.00837671011686325,
+        "avg": 0.001645858552018624,
+        "examples": [
+            "0.0008450858294963837",
+            "0.000454391265520826",
+            "0.002464271616190672"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score representing exposed genitals.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.fetish_scene_score": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.fetish_scene_score",
+        "type": "number",
+        "seen": 26,
+        "min": 0.0180941354483366,
+        "max": 0.32709768414497375,
+        "avg": 0.11157898755314258,
+        "examples": [
+            "0.2094912976026535",
+            "0.32709768414497375",
+            "0.06812835484743118"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score representing fetish scenes.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "context"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.graphic_nudity_score": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.graphic_nudity_score",
+        "type": "number",
+        "seen": 1,
+        "min": 0.0055694677866995335,
+        "max": 0.0055694677866995335,
+        "avg": 0.0055694677866995335,
+        "examples": [
+            "0.0055694677866995335"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: clip.explicit_semantics.graphic_nudity_score.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pack_scores.camera_objectification_strong": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pack_scores.camera_objectification_strong",
+        "type": "number",
+        "seen": 1,
+        "min": 0.004348,
+        "max": 0.004348,
+        "avg": 0.004348,
+        "examples": [
+            "0.004348"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of highly objectifying camera focus.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "context"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pack_scores.explicit_pose_patterns": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pack_scores.explicit_pose_patterns",
+        "type": "number",
+        "seen": 1,
+        "min": 0.008309,
+        "max": 0.008309,
+        "avg": 0.008309,
+        "examples": [
+            "0.008309"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of explicit pose patterns.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pack_scores.minimal_coverage": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pack_scores.minimal_coverage",
+        "type": "number",
+        "seen": 10,
+        "min": 0.03028,
+        "max": 0.133903,
+        "avg": 0.0655269,
+        "examples": [
+            "0.099682",
+            "0.03028",
+            "0.037509"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: clip.explicit_semantics.pack_scores.minimal_coverage.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "safe-suppressor"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pack_scores.tasteful_intent": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pack_scores.tasteful_intent",
+        "type": "number",
+        "seen": 150,
+        "min": 0.001478,
+        "max": 0.102905,
+        "avg": 0.01824659333333334,
+        "examples": [
+            "0.006118",
+            "0.001964",
+            "0.001478"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score representing tasteful aesthetic intent.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "context"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pack_scores.vulgar_exploitative": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pack_scores.vulgar_exploitative",
+        "type": "number",
+        "seen": 4319,
+        "min": 4.2e-05,
+        "max": 0.107822,
+        "avg": 0.011975976614957157,
+        "examples": [
+            "0.007747",
+            "0.010649",
+            "0.028451"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score representing vulgar or exploitative semantic content.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "context"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pornographic_cartoon_score": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pornographic_cartoon_score",
+        "type": "number",
+        "seen": 181,
+        "min": 0.002570147393271327,
+        "max": 0.30155396461486816,
+        "avg": 0.015943093630562417,
+        "examples": [
+            "0.00303413113579154",
+            "0.009258728474378586",
+            "0.009249954484403133"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score for pornographic cartoon or hentai style.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pornographic_illustration_score": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pornographic_illustration_score",
+        "type": "number",
+        "seen": 16,
+        "min": 0.018321527168154716,
+        "max": 0.04299617558717728,
+        "avg": 0.02611827978398651,
+        "examples": [
+            "0.025297177955508232",
+            "0.023657960817217827",
+            "0.023278450593352318"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score representing explicit pornographic illustration.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pornographic_photo_score": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pornographic_photo_score",
+        "type": "number",
+        "seen": 37,
+        "min": 0.007233047857880592,
+        "max": 0.06213198974728584,
+        "avg": 0.015829891495003894,
+        "examples": [
+            "0.007407803554087877",
+            "0.013101134449243546",
+            "0.026250896975398064"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score representing explicit pornographic photography.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.anatomy_visibility.areola_visible": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.anatomy_visibility.areola_visible",
+        "type": "number",
+        "seen": 19,
+        "min": 0.02531,
+        "max": 0.098996,
+        "avg": 0.06251915789473685,
+        "examples": [
+            "0.083727",
+            "0.058257",
+            "0.04217"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of visible areola.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.anatomy_visibility.breast_visible": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.anatomy_visibility.breast_visible",
+        "type": "number",
+        "seen": 7,
+        "min": 0.400308,
+        "max": 0.741634,
+        "avg": 0.507749,
+        "examples": [
+            "0.460087",
+            "0.473837",
+            "0.584053"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.anatomy_visibility.breast_visible.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.anatomy_visibility.genital_outline_visible": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.anatomy_visibility.genital_outline_visible",
+        "type": "number",
+        "seen": 7,
+        "min": 1.7e-05,
+        "max": 0.001137,
+        "avg": 0.0003711428571428572,
+        "examples": [
+            "1.7e-05",
+            "0.000845",
+            "0.000164"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.anatomy_visibility.genital_outline_visible.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.anatomy_visibility.genitals_visible": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.anatomy_visibility.genitals_visible",
+        "type": "number",
+        "seen": 6,
+        "min": 0.005124,
+        "max": 0.291967,
+        "avg": 0.054072666666666665,
+        "examples": [
+            "0.005124",
+            "0.006726",
+            "0.005448"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.anatomy_visibility.genitals_visible.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.anatomy_visibility.nipple_visible": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.anatomy_visibility.nipple_visible",
+        "type": "number",
+        "seen": 19,
+        "min": 0.010047,
+        "max": 0.16881,
+        "avg": 0.04425768421052632,
+        "examples": [
+            "0.011416",
+            "0.044528",
+            "0.036533"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of visible nipple.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.anatomy_visibility.pubic_region_visible": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.anatomy_visibility.pubic_region_visible",
+        "type": "number",
+        "seen": 9,
+        "min": 0.013691,
+        "max": 0.334653,
+        "avg": 0.14151155555555556,
+        "examples": [
+            "0.018479",
+            "0.013691",
+            "0.128564"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of visible pubic region.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.categories.candidates.erotic_explicit": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.categories.candidates.erotic_explicit",
+        "type": "number",
+        "seen": 1,
+        "min": 0.181785,
+        "max": 0.181785,
+        "avg": 0.181785,
+        "examples": [
+            "0.181785"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of erotic explicit content.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.categories.candidates.explicit_nudity": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.categories.candidates.explicit_nudity",
+        "type": "number",
+        "seen": 4453,
+        "min": 1.5e-05,
+        "max": 0.86938,
+        "avg": 0.10644487289467769,
+        "examples": [
+            "0.001298",
+            "0.052066",
+            "0.003931"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of explicit nudity.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.categories.candidates.uncertain_sexualized": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.categories.candidates.uncertain_sexualized",
+        "type": "number",
+        "seen": 4299,
+        "min": 0.002344,
+        "max": 0.576365,
+        "avg": 0.24635877901837627,
+        "examples": [
+            "0.083653",
+            "0.154814",
+            "0.397477"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of the image containing borderline or uncertain sexualized content.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "context"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.composition.body_part_dominance": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.composition.body_part_dominance",
+        "type": "number",
+        "seen": 187,
+        "min": 0.000351,
+        "max": 0.113033,
+        "avg": 0.011005614973262036,
+        "examples": [
+            "0.027107",
+            "0.001744",
+            "0.004114"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: measure of body part size dominance in the frame composition.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "context"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.composition.butt_focus_crop": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.composition.butt_focus_crop",
+        "type": "number",
+        "seen": 146,
+        "min": 4e-06,
+        "max": 0.054532,
+        "avg": 0.0022249246575342463,
+        "examples": [
+            "0.002622",
+            "0.002932",
+            "0.001346"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: composition score representing tight cropping on the buttocks area.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "context"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.composition.chest_focus_crop": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.composition.chest_focus_crop",
+        "type": "number",
+        "seen": 12,
+        "min": 0.010153,
+        "max": 0.202657,
+        "avg": 0.058094333333333324,
+        "examples": [
+            "0.019745",
+            "0.108332",
+            "0.038622"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: composition score representing tight cropping on the chest area.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "context"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.composition.full_body_crop": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.composition.full_body_crop",
+        "type": "number",
+        "seen": 9,
+        "min": 3.5e-05,
+        "max": 0.402612,
+        "avg": 0.10496044444444445,
+        "examples": [
+            "8e-05",
+            "3.5e-05",
+            "0.000255"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.composition.full_body_crop.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "context"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.composition.groin_focus_crop": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.composition.groin_focus_crop",
+        "type": "number",
+        "seen": 12,
+        "min": 0.002348,
+        "max": 0.025364,
+        "avg": 0.007659583333333332,
+        "examples": [
+            "0.004623",
+            "0.002348",
+            "0.008771"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: composition score representing tight cropping on the groin area.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "context"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.composition.torso_focus_crop": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.composition.torso_focus_crop",
+        "type": "number",
+        "seen": 9,
+        "min": 0.004208,
+        "max": 0.046388,
+        "avg": 0.01839977777777778,
+        "examples": [
+            "0.012867",
+            "0.004607",
+            "0.03117"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.composition.torso_focus_crop.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "context"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.coverage.breast_coverage": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.coverage.breast_coverage",
+        "type": "number",
+        "seen": 180,
+        "min": 0.808854,
+        "max": 0.999567,
+        "avg": 0.9691664944444444,
+        "examples": [
+            "0.98863",
+            "0.99893",
+            "0.96074"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: percentage of breast coverage by clothing.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "safe-suppressor"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.coverage.butt_coverage": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.coverage.butt_coverage",
+        "type": "number",
+        "seen": 180,
+        "min": 0.984818,
+        "max": 0.999946,
+        "avg": 0.9989233555555554,
+        "examples": [
+            "0.999507",
+            "0.9994",
+            "0.999454"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: percentage of buttocks coverage by clothing.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "safe-suppressor"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.coverage.genital_coverage": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.coverage.genital_coverage",
+        "type": "number",
+        "seen": 180,
+        "min": 0.67863,
+        "max": 0.999966,
+        "avg": 0.9951647055555549,
+        "examples": [
+            "0.999731",
+            "0.998697",
+            "0.999498"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: percentage of genital area coverage by clothing.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "safe-suppressor"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.coverage.intimate_region_coverage_confidence": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.coverage.intimate_region_coverage_confidence",
+        "type": "number",
+        "seen": 180,
+        "min": 0.360648,
+        "max": 0.867712,
+        "avg": 0.7705844333333335,
+        "examples": [
+            "0.867712",
+            "0.798533",
+            "0.774893"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: confidence score of the intimate region coverage estimator.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "safe-suppressor"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.evidence.risk_snapshot.camera_objectification_risk": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.evidence.risk_snapshot.camera_objectification_risk",
+        "type": "number",
+        "seen": 6,
+        "min": 0.018418,
+        "max": 0.042702,
+        "avg": 0.0288305,
+        "examples": [
+            "0.01862",
+            "0.034335",
+            "0.030462"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: risk of objectifying camera angles focusing on sensitive regions.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.evidence.risk_snapshot.erotic_context_risk": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.evidence.risk_snapshot.erotic_context_risk",
+        "type": "number",
+        "seen": 16,
+        "min": 0.051393,
+        "max": 0.222961,
+        "avg": 0.10697681249999999,
+        "examples": [
+            "0.064917",
+            "0.10024",
+            "0.161913"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: risk score indicating erotic context in the image.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.evidence.risk_snapshot.explicitness_risk": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.evidence.risk_snapshot.explicitness_risk",
+        "type": "number",
+        "seen": 32,
+        "min": 0.002842,
+        "max": 0.351565,
+        "avg": 0.02514353125,
+        "examples": [
+            "0.008579",
+            "0.005703",
+            "0.003425"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.evidence.risk_snapshot.explicitness_risk.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.evidence.risk_snapshot.genital_nudity": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.evidence.risk_snapshot.genital_nudity",
+        "type": "number",
+        "seen": 21,
+        "min": 0.003994,
+        "max": 0.461454,
+        "avg": 0.22955819047619055,
+        "examples": [
+            "0.209188",
+            "0.217965",
+            "0.342149"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.evidence.risk_snapshot.genital_nudity.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.evidence.risk_snapshot.sexualization_risk": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.evidence.risk_snapshot.sexualization_risk",
+        "type": "number",
+        "seen": 33,
+        "min": 0.016603,
+        "max": 0.05923,
+        "avg": 0.027285454545454547,
+        "examples": [
+            "0.035241",
+            "0.025509",
+            "0.023822"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.evidence.risk_snapshot.sexualization_risk.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.evidence.risk_snapshot.suggestiveness_risk": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.evidence.risk_snapshot.suggestiveness_risk",
+        "type": "number",
+        "seen": 32,
+        "min": 0.05063,
+        "max": 0.097519,
+        "avg": 0.06629950000000001,
+        "examples": [
+            "0.05063",
+            "0.060003",
+            "0.064308"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.evidence.risk_snapshot.suggestiveness_risk.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.explicit_content.graphic_nudity": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.explicit_content.graphic_nudity",
+        "type": "number",
+        "seen": 1,
+        "min": 0.005569,
+        "max": 0.005569,
+        "avg": 0.005569,
+        "examples": [
+            "0.005569"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.explicit_content.graphic_nudity.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.calibrated.anus_visible_calibrated": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.calibrated.anus_visible_calibrated",
+        "type": "number",
+        "seen": 4634,
+        "min": 6e-06,
+        "max": 1,
+        "avg": 0.08043822939145429,
+        "examples": [
+            "0.05532",
+            "0.080884",
+            "0.000307"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: calibrated probability of anus visibility.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.calibrated.buttocks_visible_calibrated": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.calibrated.buttocks_visible_calibrated",
+        "type": "number",
+        "seen": 183,
+        "min": 5.4e-05,
+        "max": 1,
+        "avg": 0.01646203278688525,
+        "examples": [
+            "0.000546",
+            "0.000333",
+            "0.000493"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: calibrated probability of buttocks visibility.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.calibrated.genitals_visible_calibrated": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.calibrated.genitals_visible_calibrated",
+        "type": "number",
+        "seen": 4703,
+        "min": 8e-06,
+        "max": 1,
+        "avg": 0.09153121177971524,
+        "examples": [
+            "0.070773",
+            "0.000409",
+            "0.137902"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: calibrated probability of genitals visibility.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.calibrated.nipples_visible_calibrated": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.calibrated.nipples_visible_calibrated",
+        "type": "number",
+        "seen": 1382,
+        "min": 0.059183,
+        "max": 1,
+        "avg": 0.9419938914616495,
+        "examples": [
+            "0.94235",
+            "0.871894",
+            "1"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: calibrated probability of nipple visibility.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.calibrated.pubic_region_visible_calibrated": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.calibrated.pubic_region_visible_calibrated",
+        "type": "number",
+        "seen": 2,
+        "min": 0.346847,
+        "max": 0.446964,
+        "avg": 0.3969055,
+        "examples": [
+            "0.346847",
+            "0.446964"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.exposure_profile.calibrated.pubic_region_visible_calibrated.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.corroborated_nipple_visibility_score": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.corroborated_nipple_visibility_score",
+        "type": "number",
+        "seen": 7,
+        "min": 0.444786,
+        "max": 0.648256,
+        "avg": 0.5163978571428571,
+        "examples": [
+            "0.526485",
+            "0.648256",
+            "0.546671"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.exposure_profile.corroborated_nipple_visibility_score.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "context"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.private_part_candidates.genitals.calibrated_score": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.private_part_candidates.genitals.calibrated_score",
+        "type": "number",
+        "seen": 98,
+        "min": 0.500708,
+        "max": 0.86938,
+        "avg": 0.6203188163265305,
+        "examples": [
+            "0.543351",
+            "0.755852",
+            "0.555159"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.exposure_profile.private_part_candidates.genitals.calibrated_score.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "context"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.private_part_visibility.yolo_calibrated.genital_nudity": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.private_part_visibility.yolo_calibrated.genital_nudity",
+        "type": "number",
+        "seen": 8,
+        "min": 0.422523,
+        "max": 0.652402,
+        "avg": 0.534753375,
+        "examples": [
+            "0.627612",
+            "0.652402",
+            "0.576463"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.exposure_profile.private_part_visibility.yolo_calibrated.genital_nudity.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.private_part_visibility.yolo_calibrated.nipple_nudity": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.private_part_visibility.yolo_calibrated.nipple_nudity",
+        "type": "number",
+        "seen": 3,
+        "min": 0.164454,
+        "max": 0.433194,
+        "avg": 0.32817100000000005,
+        "examples": [
+            "0.386865",
+            "0.164454",
+            "0.433194"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.exposure_profile.private_part_visibility.yolo_calibrated.nipple_nudity.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.illustration_explicit_profile.toon_context_confidence": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.illustration_explicit_profile.toon_context_confidence",
+        "type": "number",
+        "seen": 181,
+        "min": 0.03552,
+        "max": 0.670047,
+        "avg": 0.17075140331491717,
+        "examples": [
+            "0.124037",
+            "0.16752",
+            "0.110224"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: confidence that the image style is cartoon or illustration.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "context"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.illustration_explicit_profile.toon_explicit_minus_safe": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.illustration_explicit_profile.toon_explicit_minus_safe",
+        "type": "number",
+        "seen": 208,
+        "min": 0.014091,
+        "max": 0.745221,
+        "avg": 0.22062431250000006,
+        "examples": [
+            "0.143198",
+            "0.060799",
+            "0.168758"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: illustration explicit score minus safe baseline.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "safe-suppressor"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.illustration_explicit_profile.toon_explicit_score": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.illustration_explicit_profile.toon_explicit_score",
+        "type": "number",
+        "seen": 237,
+        "min": 0.0428,
+        "max": 0.750453,
+        "avg": 0.23761342194092822,
+        "examples": [
+            "0.198459",
+            "0.176359",
+            "0.270446"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: toon/cartoon explicit content likelihood.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "context"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.porn_detection.private_part_detector_profile.raw_yolo_private_part_scores.anus_visible": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.porn_detection.private_part_detector_profile.raw_yolo_private_part_scores.anus_visible",
+        "type": "number",
+        "seen": 13,
+        "min": 0.105633,
+        "max": 0.383256,
+        "avg": 0.2569771538461538,
+        "examples": [
+            "0.328135",
+            "0.219872",
+            "0.105633"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.porn_detection.private_part_detector_profile.raw_yolo_private_part_scores.anus_visible.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.porn_detection.private_part_detector_profile.raw_yolo_private_part_scores.penis_visible": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.porn_detection.private_part_detector_profile.raw_yolo_private_part_scores.penis_visible",
+        "type": "number",
+        "seen": 9,
+        "min": 0.105801,
+        "max": 0.270212,
+        "avg": 0.190697,
+        "examples": [
+            "0.112777",
+            "0.26168",
+            "0.21594"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: YOLO detection score for visible penis.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.pose_gesture.arched_back_pose": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.pose_gesture.arched_back_pose",
+        "type": "number",
+        "seen": 2275,
+        "min": 1e-06,
+        "max": 0.058664,
+        "avg": 0.0018247309890109848,
+        "examples": [
+            "6.9e-05",
+            "9e-06",
+            "0.000488"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of an arched back pose, often associated with suggestive presentation.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.pose_profile.composition_emphasis": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.pose_profile.composition_emphasis",
+        "type": "number",
+        "seen": 4318,
+        "min": 4.9e-05,
+        "max": 0.332636,
+        "avg": 0.0213319499768411,
+        "examples": [
+            "0.010149",
+            "0.016146",
+            "0.029981"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: measure of composition focus emphasizing specific body parts.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.risk_axes.safe_context_suppressor": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.risk_axes.safe_context_suppressor",
+        "type": "number",
+        "seen": 12,
+        "min": 0.001562,
+        "max": 0.086653,
+        "avg": 0.026082083333333325,
+        "examples": [
+            "0.008524",
+            "0.011316",
+            "0.086653"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: suppression score based on safe contexts (like family, athletic, or public settings) which reduces risk enforcement.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.risk_axes.sexualization_risk": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.risk_axes.sexualization_risk",
+        "type": "number",
+        "seen": 1,
+        "min": 0.021453,
+        "max": 0.021453,
+        "avg": 0.021453,
+        "examples": [
+            "0.021453"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.risk_axes.sexualization_risk.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.uncertainty.model_disagreement": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.uncertainty.model_disagreement",
+        "type": "number",
+        "seen": 1366,
+        "min": 0.001051,
+        "max": 0.944158,
+        "avg": 0.5241643726207906,
+        "examples": [
+            "0.395514",
+            "0.585543",
+            "0.554458"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: measure of disagreement across different model predictions.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "review-risk"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.uncertainty.review_recommended": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.uncertainty.review_recommended",
+        "type": "number",
+        "seen": 6,
+        "min": 0.71964,
+        "max": 0.868625,
+        "avg": 0.8197144999999999,
+        "examples": [
+            "0.868625",
+            "0.71964",
+            "0.81365"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.uncertainty.review_recommended.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "review-risk"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.butt_focus_without_face_score": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.butt_focus_without_face_score",
+        "type": "number",
+        "seen": 1,
+        "min": 0.248958,
+        "max": 0.248958,
+        "avg": 0.248958,
+        "examples": [
+            "0.248958"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.vulgarity_profile.butt_focus_without_face_score.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.butt_vulgarity": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.butt_vulgarity",
+        "type": "number",
+        "seen": 4,
+        "min": 0.321441,
+        "max": 0.376147,
+        "avg": 0.349482,
+        "examples": [
+            "0.376147",
+            "0.326948",
+            "0.373392"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.vulgarity_profile.butt_vulgarity.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.camera_intent_buttocks_score": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.camera_intent_buttocks_score",
+        "type": "number",
+        "seen": 1,
+        "min": 0.160015,
+        "max": 0.160015,
+        "avg": 0.160015,
+        "examples": [
+            "0.160015"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.vulgarity_profile.camera_intent_buttocks_score.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.camera_objectification_risk": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.camera_objectification_risk",
+        "type": "number",
+        "seen": 4500,
+        "min": 8.2e-05,
+        "max": 0.092116,
+        "avg": 0.015846477333333338,
+        "examples": [
+            "0.008605",
+            "0.015742",
+            "0.020633"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: risk of objectifying camera angles focusing on sensitive regions.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.explicit_pose_pattern_score": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.explicit_pose_pattern_score",
+        "type": "number",
+        "seen": 4293,
+        "min": 1.7e-05,
+        "max": 0.206725,
+        "avg": 0.016480471698113203,
+        "examples": [
+            "0.0073",
+            "0.000348",
+            "0.008474"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: score representing explicit or highly suggestive pose patterns.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.exploitative_cropping_score": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.exploitative_cropping_score",
+        "type": "number",
+        "seen": 1,
+        "min": 0.068166,
+        "max": 0.068166,
+        "avg": 0.068166,
+        "examples": [
+            "0.068166"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.vulgarity_profile.exploitative_cropping_score.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.face_absence_score": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.face_absence_score",
+        "type": "number",
+        "seen": 1,
+        "min": 0.999333,
+        "max": 0.999333,
+        "avg": 0.999333,
+        "examples": [
+            "0.999333"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.vulgarity_profile.face_absence_score.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.fetish_styling_risk": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.fetish_styling_risk",
+        "type": "number",
+        "seen": 4318,
+        "min": 2.1e-05,
+        "max": 0.066982,
+        "avg": 0.005719535664659581,
+        "examples": [
+            "0.015677",
+            "0.000218",
+            "0.0246"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: risk of fetishistic clothing, styling, or bondage themes.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.genital_vulgarity": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.genital_vulgarity",
+        "type": "number",
+        "seen": 2073,
+        "min": 0.000223,
+        "max": 0.478472,
+        "avg": 0.2356614708152436,
+        "examples": [
+            "0.271277",
+            "0.34979",
+            "0.374659"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: measure of genital area vulgarity or exposure emphasis.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.intimate_focus_without_face_score": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.intimate_focus_without_face_score",
+        "type": "number",
+        "seen": 4286,
+        "min": 2.5e-05,
+        "max": 0.399785,
+        "avg": 0.0645815191320579,
+        "examples": [
+            "0.138301",
+            "0.004367",
+            "0.202209"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: score representing camera focus on intimate body areas while excluding the face.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.minimal_coverage_presentation_risk": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.minimal_coverage_presentation_risk",
+        "type": "number",
+        "seen": 257,
+        "min": 0.000477,
+        "max": 0.108837,
+        "avg": 0.02371560311284048,
+        "examples": [
+            "0.025719",
+            "0.033783",
+            "0.027798"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: risk score for minimal clothing coverage presentation.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.non_objectifying_sensual_score": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.non_objectifying_sensual_score",
+        "type": "number",
+        "seen": 1,
+        "min": 0.015304,
+        "max": 0.015304,
+        "avg": 0.015304,
+        "examples": [
+            "0.015304"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: score representing non-objectifying, tasteful sensual modeling.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.objectification_risk": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.objectification_risk",
+        "type": "number",
+        "seen": 9,
+        "min": 0.021646,
+        "max": 0.114222,
+        "avg": 0.050657,
+        "examples": [
+            "0.072827",
+            "0.038613",
+            "0.057831"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: overall risk of body/objectification presentation.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.vulgarity_risk": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.vulgarity_risk",
+        "type": "number",
+        "seen": 6,
+        "min": 0.087285,
+        "max": 0.144601,
+        "avg": 0.10873666666666666,
+        "examples": [
+            "0.129238",
+            "0.103126",
+            "0.087285"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: overall risk of vulgar presentation or framing.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.marqo.raw_label_scores.nsfw": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.marqo.raw_label_scores.nsfw",
+        "type": "number",
+        "seen": 1786,
+        "min": 0.03207407146692276,
+        "max": 0.9605783820152283,
+        "avg": 0.6793666235030466,
+        "examples": [
+            "0.9542379975318909",
+            "0.8506577014923096",
+            "0.19202964007854462"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: broad NSFW (Not Safe For Work) classification score.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.marqo.raw_label_scores.sfw": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.marqo.raw_label_scores.sfw",
+        "type": "number",
+        "seen": 1360,
+        "min": 0.038879912346601486,
+        "max": 0.7336133122444153,
+        "avg": 0.06957677052739789,
+        "examples": [
+            "0.05061475932598114",
+            "0.05034838989377022",
+            "0.04897297918796539"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: broad SFW (Safe For Work) classification score.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "context"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.nudenet.buttocks_exposed_score": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.nudenet.buttocks_exposed_score",
+        "type": "number",
+        "seen": 1,
+        "min": 0.2677302956581116,
+        "max": 0.2677302956581116,
+        "avg": 0.2677302956581116,
+        "examples": [
+            "0.2677302956581116"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: nudenet.buttocks_exposed_score.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.yolo.genital_visible": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.yolo.genital_visible",
+        "type": "number",
+        "seen": 63,
+        "min": 0.500708,
+        "max": 0.86938,
+        "avg": 0.63850926984127,
+        "examples": [
+            "0.693985",
+            "0.755852",
+            "0.516131"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: yolo.genital_visible.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.yolo.nipples_nudity": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.yolo.nipples_nudity",
+        "type": "number",
+        "seen": 1375,
+        "min": 0.18589,
+        "max": 0.863892,
+        "avg": 0.4754785854545448,
+        "examples": [
+            "0.265413",
+            "0.636271",
+            "0.48054"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: YOLO detection score for nipple nudity.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.yolo.penis_visible": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.yolo.penis_visible",
+        "type": "number",
+        "seen": 118,
+        "min": 0.350884,
+        "max": 0.866991,
+        "avg": 0.5282304237288135,
+        "examples": [
+            "0.350884",
+            "0.422781",
+            "0.655481"
+        ],
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: YOLO detection score for visible penis.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.yolo.vagina_visible": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.yolo.vagina_visible",
+        "type": "number",
+        "seen": 103,
+        "min": 0.197797,
+        "max": 0.86938,
+        "avg": 0.6019400679611651,
+        "examples": [
+            "0.543351",
+            "0.755852",
+            "0.516131"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: yolo.vagina_visible.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.diagnosticSignals.rawEnvelope.yolo.vulva_visible": {
+        "path": "decisionSignals.diagnosticSignals.rawEnvelope.yolo.vulva_visible",
+        "type": "number",
+        "seen": 63,
+        "min": 0.500708,
+        "max": 0.86938,
+        "avg": 0.6345384603174604,
+        "examples": [
+            "0.693985",
+            "0.755852",
+            "0.516131"
+        ],
+        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: yolo.vulva_visible.",
+        "model": "TFP Policy Evaluator (Diagnostic)",
+        "badge": "risk-evidence"
+    },
+    "decisionSignals.flagMatches": {
+        "path": "decisionSignals.flagMatches",
+        "type": "array",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "list(len=0)"
+        ],
+        "description": "Explains how the moderation policy tree reached the final outcome.List field; more entries means more evidence, matches, regions, or trace steps.",
+        "model": "TFP policy evaluator",
+        "badge": "context"
+    },
+    "decisionSignals.hardRuleHits": {
+        "path": "decisionSignals.hardRuleHits",
+        "type": "array",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "list(len=0)"
+        ],
+        "description": "Explains how the moderation policy tree reached the final outcome.List field; more entries means more evidence, matches, regions, or trace steps.",
+        "model": "TFP policy evaluator",
+        "badge": "context"
+    },
+    "decisionSignals.rejectMatches": {
+        "path": "decisionSignals.rejectMatches",
+        "type": "array",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "list(len=0)",
+            "list(len=1)"
+        ],
+        "description": "Explains how the moderation policy tree reached the final outcome.List field; more entries means more evidence, matches, regions, or trace steps.",
+        "model": "TFP policy evaluator",
+        "badge": "context"
+    },
+    "decisionSignals.softRuleHits": {
+        "path": "decisionSignals.softRuleHits",
+        "type": "array",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "list(len=1)"
+        ],
+        "description": "Explains how the moderation policy tree reached the final outcome.List field; more entries means more evidence, matches, regions, or trace steps.",
+        "model": "TFP policy evaluator",
+        "badge": "context"
+    },
+    "decisionSignals.topCategories": {
+        "path": "decisionSignals.topCategories",
+        "type": "array",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "list(len=5)"
+        ],
+        "description": "Explains how the moderation policy tree reached the final outcome.List field; more entries means more evidence, matches, regions, or trace steps.",
+        "model": "TFP policy evaluator",
+        "badge": "context"
+    },
+    "decisionSignals.topCategories[i].label": {
+        "path": "decisionSignals.topCategories[i].label",
+        "type": "string",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "explicit_nudity",
+            "uncertain_sexualized",
+            "neutral"
+        ],
+        "description": "The category label for one of the top classification categories.",
+        "model": "TFP Policy Evaluator",
+        "badge": "context"
+    },
+    "decisionSignals.topCategories[i].score": {
+        "path": "decisionSignals.topCategories[i].score",
+        "type": "number",
+        "seen": 6825,
+        "min": 0.042888,
+        "max": 0.892862,
+        "avg": 0.452044571575092,
+        "examples": [
+            "0.399485",
+            "0.341164",
+            "0.334381"
+        ],
+        "description": "Confidence score (0 to 1) of the corresponding top category.",
+        "model": "TFP Policy Evaluator",
+        "badge": "context"
+    },
+    "fileName": {
+        "path": "fileName",
+        "type": "string",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "00181e6b75610aa86eb4f1f1d6f360b3cc5b8e1de76d7b782dd49792cf2701ca.jpg",
+            "001b421e8c17d538397eac1ba40b23e558b850bdf22128d80dbd79fcaa67bc5d.jpg",
+            "0022f05209c1899c04ec168daa9f69a8b549faea61e409d6863015dc873e6811.jpg"
+        ],
+        "description": "Audit source pointer for the tested image.Categorical/context value; compare against policy rules and category definitions.",
+        "model": "Audit row / response metadata",
+        "badge": "context"
+    },
+    "imagePath": {
+        "path": "imagePath",
+        "type": "string",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "/Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/scripts/qa/test-folder-moderation/Images/002d58fddd2d73a023074b914f2e47c91a794ac5dfbe97d36ac3eb1c46a07c8a.jpg",
+            "/Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/scripts/qa/test-folder-moderation/Images/0022f05209c1899c04ec168daa9f69a8b549faea61e409d6863015dc873e6811.jpg",
+            "/Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/scripts/qa/test-folder-moderation/Images/001b421e8c17d538397eac1ba40b23e558b850bdf22128d80dbd79fcaa67bc5d.jpg"
+        ],
+        "description": "Audit source pointer for the tested image.Categorical/context value; compare against policy rules and category definitions.",
+        "model": "Audit row / response metadata",
+        "badge": "context"
+    },
+    "imageUrl": {
+        "path": "imageUrl",
+        "type": "string",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "./images/00181e6b75610aa86eb4f1f1d6f360b3cc5b8e1de76d7b782dd49792cf2701ca.jpg",
+            "./images/0022f05209c1899c04ec168daa9f69a8b549faea61e409d6863015dc873e6811.jpg",
+            "./images/001b421e8c17d538397eac1ba40b23e558b850bdf22128d80dbd79fcaa67bc5d.jpg"
+        ],
+        "description": "Audit source pointer for the tested image.Categorical/context value; compare against policy rules and category definitions.",
+        "model": "Audit row / response metadata",
+        "badge": "context"
+    },
+    "outcome": {
+        "path": "outcome",
+        "type": "string",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "APPROVED",
+            "REJECTED"
+        ],
+        "description": "Field carrying outcome information in the audit or AI response envelope.Categorical/context value; compare against policy rules and category definitions.",
+        "model": "Audit row / response metadata",
+        "badge": "context"
+    },
+    "primaryCategory": {
+        "path": "primaryCategory",
+        "type": "string",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "explicit_nudity",
+            "uncertain_sexualized",
+            "neutral"
+        ],
+        "description": "Field carrying primary category information in the audit or AI response envelope.Categorical/context value; compare against policy rules and category definitions.",
+        "model": "Audit row / response metadata",
+        "badge": "context"
+    },
+    "rawSignals.adultContentStyle": {
+        "path": "rawSignals.adultContentStyle",
+        "type": "number",
+        "seen": 6825,
+        "min": 1.2e-05,
+        "max": 0.260981,
+        "avg": 0.008907175531135526,
+        "examples": [
+            "0.015165",
+            "0.004466",
+            "0.003538"
+        ],
+        "description": "Field carrying adult content style information in the audit or AI response envelope.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.allowedContext": {
+        "path": "rawSignals.allowedContext",
+        "type": "number",
+        "seen": 6825,
+        "min": 4e-06,
+        "max": 0.7,
+        "avg": 0.04876643282051293,
+        "examples": [
+            "0.084393",
+            "0.017385",
+            "0.001111"
+        ],
+        "description": "Field carrying allowed context information in the audit or AI response envelope.Lower: less safety/context support. Higher: more safe, covered, editorial, balanced, or confidence support; can reduce enforcement pressure unless explicit hard rules fire.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.allowedSensual": {
+        "path": "rawSignals.allowedSensual",
+        "type": "number",
+        "seen": 6825,
+        "min": 4.8e-05,
+        "max": 0.314449,
+        "avg": 0.01481113831501825,
+        "examples": [
+            "0.009913",
+            "0.000242",
+            "0.025566"
+        ],
+        "description": "Field carrying allowed sensual information in the audit or AI response envelope.Lower: less safety/context support. Higher: more safe, covered, editorial, balanced, or confidence support; can reduce enforcement pressure unless explicit hard rules fire.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.areolaVisible": {
+        "path": "rawSignals.areolaVisible",
+        "type": "number",
+        "seen": 6825,
+        "min": 7e-06,
+        "max": 0.32019,
+        "avg": 0.01606593831501833,
+        "examples": [
+            "0.001057",
+            "0.000287",
+            "0.014408"
+        ],
+        "description": "Field carrying areola visible information in the audit or AI response envelope.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.balancedContext": {
+        "path": "rawSignals.balancedContext",
+        "type": "number",
+        "seen": 6825,
+        "min": 7.6e-05,
+        "max": 0.53246,
+        "avg": 0.25787618285714325,
+        "examples": [
+            "0.232269",
+            "0.238346",
+            "0.139735"
+        ],
+        "description": "Field carrying balanced context information in the audit or AI response envelope.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.bodyPartDominance": {
+        "path": "rawSignals.bodyPartDominance",
+        "type": "number",
+        "seen": 6825,
+        "min": 2.2e-05,
+        "max": 0.332636,
+        "avg": 0.020897504029304015,
+        "examples": [
+            "0.010149",
+            "0.029981",
+            "0.002416"
+        ],
+        "description": "Field carrying body part dominance information in the audit or AI response envelope.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.borderlineContext": {
+        "path": "rawSignals.borderlineContext",
+        "type": "number",
+        "seen": 6825,
+        "min": 0.002344,
+        "max": 0.72,
+        "avg": 0.3051823871062291,
+        "examples": [
+            "0.399485",
+            "0.154814",
+            "0.397477"
+        ],
+        "description": "Field carrying borderline context information in the audit or AI response envelope.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.buttEmphasisPose": {
+        "path": "rawSignals.buttEmphasisPose",
+        "type": "number",
+        "seen": 6825,
+        "min": 3e-06,
+        "max": 0.249124,
+        "avg": 0.0062485835897436275,
+        "examples": [
+            "7.3e-05",
+            "0.00089",
+            "0.000189"
+        ],
+        "description": "Field carrying butt emphasis pose information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.buttFocus": {
+        "path": "rawSignals.buttFocus",
+        "type": "number",
+        "seen": 6825,
+        "min": 4e-06,
+        "max": 0.224212,
+        "avg": 0.006973416996336982,
+        "examples": [
+            "0.010149",
+            "6.6e-05",
+            "0.001304"
+        ],
+        "description": "Field carrying butt focus information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.buttocksVisible": {
+        "path": "rawSignals.buttocksVisible",
+        "type": "number",
+        "seen": 6825,
+        "min": 9e-06,
+        "max": 0.869579,
+        "avg": 0.10685053435897442,
+        "examples": [
+            "0.001075",
+            "0.000445",
+            "0.005365"
+        ],
+        "description": "Field carrying buttocks visible information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.cameraObjectification": {
+        "path": "rawSignals.cameraObjectification",
+        "type": "number",
+        "seen": 6825,
+        "min": 7.9e-05,
+        "max": 0.194494,
+        "avg": 0.01627513010989015,
+        "examples": [
+            "0.008605",
+            "0.011689",
+            "0.009074"
+        ],
+        "description": "Field carrying camera objectification information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "rawSignals.cameraObjectificationStrong": {
+        "path": "rawSignals.cameraObjectificationStrong",
+        "type": "number",
+        "seen": 6825,
+        "min": 4.4e-05,
+        "max": 0.263245,
+        "avg": 0.020990191501831477,
+        "examples": [
+            "0.002594",
+            "0.000765",
+            "0.00417"
+        ],
+        "description": "Field carrying camera objectification strong information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "rawSignals.chestFocus": {
+        "path": "rawSignals.chestFocus",
+        "type": "number",
+        "seen": 6825,
+        "min": 7e-06,
+        "max": 0.332636,
+        "avg": 0.012892771575091545,
+        "examples": [
+            "9.5e-05",
+            "0.029981",
+            "0.002416"
+        ],
+        "description": "Field carrying chest focus information in the audit or AI response envelope.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.coveredButtShapeVisible": {
+        "path": "rawSignals.coveredButtShapeVisible",
+        "type": "number",
+        "seen": 6825,
+        "min": 2e-06,
+        "max": 0.800927,
+        "avg": 0.04117681582417576,
+        "examples": [
+            "0.007574",
+            "0.00298",
+            "0.000361"
+        ],
+        "description": "Field carrying covered butt shape visible information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.editorialSafe": {
+        "path": "rawSignals.editorialSafe",
+        "type": "number",
+        "seen": 6825,
+        "min": 1.7e-05,
+        "max": 0.349388,
+        "avg": 0.011184481904761928,
+        "examples": [
+            "0.000157",
+            "0.004097",
+            "0.013765"
+        ],
+        "description": "Field carrying editorial safe information in the audit or AI response envelope.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.explicitContext": {
+        "path": "rawSignals.explicitContext",
+        "type": "number",
+        "seen": 6825,
+        "min": 0.000695,
+        "max": 0.892862,
+        "avg": 0.25927928322344296,
+        "examples": [
+            "0.023747",
+            "0.052066",
+            "0.296813"
+        ],
+        "description": "Field carrying explicit context information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "rawSignals.explicitLingerieIntent": {
+        "path": "rawSignals.explicitLingerieIntent",
+        "type": "number",
+        "seen": 6825,
+        "min": 4.8e-05,
+        "max": 0.138989,
+        "avg": 0.011130872820512816,
+        "examples": [
+            "0.004636",
+            "0.006381",
+            "0.027473"
+        ],
+        "description": "Field carrying explicit lingerie intent information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "rawSignals.explicitPosePatterns": {
+        "path": "rawSignals.explicitPosePatterns",
+        "type": "number",
+        "seen": 6825,
+        "min": 5e-06,
+        "max": 0.674839,
+        "avg": 0.014525579633699656,
+        "examples": [
+            "0.00225",
+            "0.000348",
+            "0.008474"
+        ],
+        "description": "Field carrying explicit pose patterns information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "rawSignals.exploitativeCropping": {
+        "path": "rawSignals.exploitativeCropping",
+        "type": "number",
+        "seen": 6825,
+        "min": 4.1e-05,
+        "max": 0.281916,
+        "avg": 0.02452405186813179,
+        "examples": [
+            "0.008579",
+            "0.003921",
+            "0.038614"
+        ],
+        "description": "Field carrying exploitative cropping information in the audit or AI response envelope.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.faceVisible": {
+        "path": "rawSignals.faceVisible",
+        "type": "number",
+        "seen": 6825,
+        "min": 1e-06,
+        "max": 0.900491,
+        "avg": 0.6541477783150188,
+        "examples": [
+            "0.819834",
+            "0.285566",
+            "0.868223"
+        ],
+        "description": "Field carrying face visible information in the audit or AI response envelope.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.fetishStyling": {
+        "path": "rawSignals.fetishStyling",
+        "type": "number",
+        "seen": 6825,
+        "min": 2.1e-05,
+        "max": 0.263386,
+        "avg": 0.011658334212454224,
+        "examples": [
+            "0.015677",
+            "0.010774",
+            "0.0246"
+        ],
+        "description": "Field carrying fetish styling information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.fullBodyVisible": {
+        "path": "rawSignals.fullBodyVisible",
+        "type": "number",
+        "seen": 6825,
+        "min": 1e-06,
+        "max": 0.812721,
+        "avg": 0.2401180678388281,
+        "examples": [
+            "0.000139",
+            "0.256949",
+            "0.001955"
+        ],
+        "description": "Field carrying full body visible information in the audit or AI response envelope.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.genitalOutline": {
+        "path": "rawSignals.genitalOutline",
+        "type": "number",
+        "seen": 6825,
+        "min": 1e-06,
+        "max": 0.032181,
+        "avg": 0.0004701393406593415,
+        "examples": [
+            "0.000257",
+            "2.8e-05",
+            "0.000232"
+        ],
+        "description": "Field carrying genital outline information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "rawSignals.genitalsVisible": {
+        "path": "rawSignals.genitalsVisible",
+        "type": "number",
+        "seen": 6825,
+        "min": 3e-06,
+        "max": 0.840396,
+        "avg": 0.09370021641025622,
+        "examples": [
+            "0.000964",
+            "0.003039",
+            "0.000409"
+        ],
+        "description": "Field carrying genitals visible information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "rawSignals.glamourPhoto": {
+        "path": "rawSignals.glamourPhoto",
+        "type": "number",
+        "seen": 6825,
+        "min": 2e-06,
+        "max": 0.185632,
+        "avg": 0.005072872820512823,
+        "examples": [
+            "0.00082",
+            "2.8e-05",
+            "0.004432"
+        ],
+        "description": "Field carrying glamour photo information in the audit or AI response envelope.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.groinFocus": {
+        "path": "rawSignals.groinFocus",
+        "type": "number",
+        "seen": 6825,
+        "min": 3e-06,
+        "max": 0.142589,
+        "avg": 0.0018187629304029231,
+        "examples": [
+            "8.4e-05",
+            "0.001541",
+            "0.000895"
+        ],
+        "description": "Field carrying groin focus information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.hentaiContext": {
+        "path": "rawSignals.hentaiContext",
+        "type": "number",
+        "seen": 6825,
+        "min": 0,
+        "max": 0.6,
+        "avg": 0.006857142857142867,
+        "examples": [
+            "0"
+        ],
+        "description": "Field carrying hentai context information in the audit or AI response envelope.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.lingerieBra": {
+        "path": "rawSignals.lingerieBra",
+        "type": "number",
+        "seen": 6825,
+        "min": 1e-06,
+        "max": 0.634264,
+        "avg": 0.01175103516483517,
+        "examples": [
+            "5e-05",
+            "0.000259",
+            "0.020205"
+        ],
+        "description": "Field carrying lingerie bra information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.lingeriePanty": {
+        "path": "rawSignals.lingeriePanty",
+        "type": "number",
+        "seen": 6825,
+        "min": 8e-06,
+        "max": 0.348577,
+        "avg": 0.009218009377289362,
+        "examples": [
+            "0.052287",
+            "0.00078",
+            "0.004239"
+        ],
+        "description": "Field carrying lingerie panty information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.microBikini": {
+        "path": "rawSignals.microBikini",
+        "type": "number",
+        "seen": 6825,
+        "min": 1e-06,
+        "max": 0.436286,
+        "avg": 0.024137609230769217,
+        "examples": [
+            "0.018599",
+            "0.065882",
+            "0.000159"
+        ],
+        "description": "Field carrying micro bikini information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.minimalCoveragePresentation": {
+        "path": "rawSignals.minimalCoveragePresentation",
+        "type": "number",
+        "seen": 6825,
+        "min": 0.00012,
+        "max": 0.217962,
+        "avg": 0.03578172293040274,
+        "examples": [
+            "0.005898",
+            "0.003424",
+            "0.030735"
+        ],
+        "description": "Field carrying minimal coverage presentation information in the audit or AI response envelope.Lower: less safety/context support. Higher: more safe, covered, editorial, balanced, or confidence support; can reduce enforcement pressure unless explicit hard rules fire.",
+        "model": "Audit mapper",
+        "badge": "safe-suppressor"
+    },
+    "rawSignals.modelDisagreement": {
+        "path": "rawSignals.modelDisagreement",
+        "type": "number",
+        "seen": 6825,
+        "min": 0.00022,
+        "max": 0.958425,
+        "avg": 0.5759029188278402,
+        "examples": [
+            "0.751589",
+            "0.922303",
+            "0.919678"
+        ],
+        "description": "Field carrying model disagreement information in the audit or AI response envelope.Lower: model decision is cleaner. Higher: more disagreement, crop/occlusion risk, or need for human review.",
+        "model": "Audit mapper",
+        "badge": "review-risk"
+    },
+    "rawSignals.nippleVisible": {
+        "path": "rawSignals.nippleVisible",
+        "type": "number",
+        "seen": 6825,
+        "min": 7e-06,
+        "max": 0.216596,
+        "avg": 0.00905369479853481,
+        "examples": [
+            "3.3e-05",
+            "0.001381",
+            "0.004273"
+        ],
+        "description": "Field carrying nipple visible information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "rawSignals.nonObjectifyingSensual": {
+        "path": "rawSignals.nonObjectifyingSensual",
+        "type": "number",
+        "seen": 6825,
+        "min": 2.5e-05,
+        "max": 0.738783,
+        "avg": 0.014959384468864455,
+        "examples": [
+            "0.008151",
+            "0.11177",
+            "0.000116"
+        ],
+        "description": "Field carrying non objectifying sensual information in the audit or AI response envelope.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.objectificationRisk": {
+        "path": "rawSignals.objectificationRisk",
+        "type": "number",
+        "seen": 6825,
+        "min": 0,
+        "max": 0.28235,
+        "avg": 0.03540106798534802,
+        "examples": [
+            "0.038654",
+            "0.00088",
+            "0.01123"
+        ],
+        "description": "Field carrying objectification risk information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "rawSignals.overallConfidence": {
+        "path": "rawSignals.overallConfidence",
+        "type": "number",
+        "seen": 6825,
+        "min": 0.339937,
+        "max": 0.947556,
+        "avg": 0.6190945454945058,
+        "examples": [
+            "0.581971",
+            "0.71552",
+            "0.519968"
+        ],
+        "description": "Field carrying overall confidence information in the audit or AI response envelope.Lower: less safety/context support. Higher: more safe, covered, editorial, balanced, or confidence support; can reduce enforcement pressure unless explicit hard rules fire.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.provocativePose": {
+        "path": "rawSignals.provocativePose",
+        "type": "number",
+        "seen": 6825,
+        "min": 4e-05,
+        "max": 0.095005,
+        "avg": 0.004863554725274734,
+        "examples": [
+            "0.005556",
+            "0.003773",
+            "0.000564"
+        ],
+        "description": "Field carrying provocative pose information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.safeContextSuppressor": {
+        "path": "rawSignals.safeContextSuppressor",
+        "type": "number",
+        "seen": 6825,
+        "min": 0.00032,
+        "max": 0.738783,
+        "avg": 0.26078335824175836,
+        "examples": [
+            "0.232269",
+            "0.238346",
+            "0.139735"
+        ],
+        "description": "Field carrying safe context suppressor information in the audit or AI response envelope.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.safeSwimwearContext": {
+        "path": "rawSignals.safeSwimwearContext",
+        "type": "number",
+        "seen": 6825,
+        "min": 1e-06,
+        "max": 0.346716,
+        "avg": 0.11154003018315019,
+        "examples": [
+            "0.094547",
+            "0.080919",
+            "0.09664"
+        ],
+        "description": "Field carrying safe swimwear context information in the audit or AI response envelope.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.seductivePose": {
+        "path": "rawSignals.seductivePose",
+        "type": "number",
+        "seen": 6825,
+        "min": 1.3e-05,
+        "max": 0.20285,
+        "avg": 0.009008231062271029,
+        "examples": [
+            "0.005726",
+            "0.000198",
+            "0.003304"
+        ],
+        "description": "Field carrying seductive pose information in the audit or AI response envelope.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.seeThrough": {
+        "path": "rawSignals.seeThrough",
+        "type": "number",
+        "seen": 6825,
+        "min": 0,
+        "max": 0.660072,
+        "avg": 0.006635213186813158,
+        "examples": [
+            "0.000341",
+            "7.5e-05",
+            "0.005697"
+        ],
+        "description": "Field carrying see through information in the audit or AI response envelope.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.sexualizedPose": {
+        "path": "rawSignals.sexualizedPose",
+        "type": "number",
+        "seen": 6825,
+        "min": 9e-06,
+        "max": 0.110434,
+        "avg": 0.003189979926739938,
+        "examples": [
+            "0.000146",
+            "0.000351",
+            "0.005673"
+        ],
+        "description": "Field carrying sexualized pose information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "rawSignals.skinExposureTotal": {
+        "path": "rawSignals.skinExposureTotal",
+        "type": "number",
+        "seen": 6825,
+        "min": 0.460028,
+        "max": 0.902184,
+        "avg": 0.5001275816849826,
+        "examples": [
+            "0.473667",
+            "0.490561",
+            "0.461857"
+        ],
+        "description": "Field carrying skin exposure total information in the audit or AI response envelope.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.tastefulIntent": {
+        "path": "rawSignals.tastefulIntent",
+        "type": "number",
+        "seen": 6825,
+        "min": 5e-05,
+        "max": 0.738783,
+        "avg": 0.023415289377289393,
+        "examples": [
+            "0.025566",
+            "0.11177",
+            "0.010364"
+        ],
+        "description": "Field carrying tasteful intent information in the audit or AI response envelope.Lower: less safety/context support. Higher: more safe, covered, editorial, balanced, or confidence support; can reduce enforcement pressure unless explicit hard rules fire.",
+        "model": "Audit mapper",
+        "badge": "safe-suppressor"
+    },
+    "rawSignals.thong": {
+        "path": "rawSignals.thong",
+        "type": "number",
+        "seen": 6825,
+        "min": 1e-06,
+        "max": 0.391489,
+        "avg": 0.0019947393406593446,
+        "examples": [
+            "0.000641",
+            "0.00104",
+            "9.1e-05"
+        ],
+        "description": "Field carrying thong information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.underboobVisible": {
+        "path": "rawSignals.underboobVisible",
+        "type": "number",
+        "seen": 6825,
+        "min": 6e-06,
+        "max": 0.554115,
+        "avg": 0.024285115457875376,
+        "examples": [
+            "0.014617",
+            "0.000204",
+            "0.030823"
+        ],
+        "description": "Field carrying underboob visible information in the audit or AI response envelope.",
+        "model": "Audit mapper",
+        "badge": "context"
+    },
+    "rawSignals.vulgarityRisk": {
+        "path": "rawSignals.vulgarityRisk",
+        "type": "number",
+        "seen": 6825,
+        "min": 0,
+        "max": 0.249682,
+        "avg": 0.014138752380952375,
+        "examples": [
+            "0.024362",
+            "0"
+        ],
+        "description": "Field carrying vulgarity risk information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "reasonCodes": {
+        "path": "reasonCodes",
+        "type": "array",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "list(len=2)"
+        ],
+        "description": "Field carrying reason codes information in the audit or AI response envelope.List field; more entries means more evidence, matches, regions, or trace steps.",
+        "model": "Audit row / response metadata",
+        "badge": "context"
+    },
+    "riskAxes.cameraObjectificationRisk": {
+        "path": "riskAxes.cameraObjectificationRisk",
+        "type": "number",
+        "seen": 6825,
+        "min": 7.9e-05,
+        "max": 0.194494,
+        "avg": 0.01627513010989015,
+        "examples": [
+            "0.008605",
+            "0.011689",
+            "0.009074"
+        ],
+        "description": "Risk axis for camera objectification risk; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "riskAxes.explicitLingerieIntentRisk": {
+        "path": "riskAxes.explicitLingerieIntentRisk",
+        "type": "number",
+        "seen": 6825,
+        "min": 4.8e-05,
+        "max": 0.138989,
+        "avg": 0.011130872820512816,
+        "examples": [
+            "0.004636",
+            "0.006381",
+            "0.027473"
+        ],
+        "description": "Risk axis for explicit lingerie intent risk; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "riskAxes.explicitnessRisk": {
+        "path": "riskAxes.explicitnessRisk",
+        "type": "number",
+        "seen": 6825,
+        "min": 1.1e-05,
+        "max": 0.571897,
+        "avg": 0.10450563545787522,
+        "examples": [
+            "0.022243",
+            "0.151822",
+            "0.007806"
+        ],
+        "description": "Risk axis for explicitness risk; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "riskAxes.fetishStylingRisk": {
+        "path": "riskAxes.fetishStylingRisk",
+        "type": "number",
+        "seen": 6825,
+        "min": 2.1e-05,
+        "max": 0.263386,
+        "avg": 0.011658334212454224,
+        "examples": [
+            "0.015677",
+            "0.010774",
+            "0.0246"
+        ],
+        "description": "Risk axis for fetish styling risk; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "riskAxes.minimalCoveragePresentationRisk": {
+        "path": "riskAxes.minimalCoveragePresentationRisk",
+        "type": "number",
+        "seen": 6825,
+        "min": 0.00012,
+        "max": 0.217962,
+        "avg": 0.03578172293040274,
+        "examples": [
+            "0.005898",
+            "0.003424",
+            "0.030735"
+        ],
+        "description": "Risk axis for minimal coverage presentation risk; used to rank safety concern and review priority.Lower: less safety/context support. Higher: more safe, covered, editorial, balanced, or confidence support; can reduce enforcement pressure unless explicit hard rules fire.",
+        "model": "Audit mapper",
+        "badge": "safe-suppressor"
+    },
+    "riskAxes.nudityRisk": {
+        "path": "riskAxes.nudityRisk",
+        "type": "number",
+        "seen": 6825,
+        "min": 3.7e-05,
+        "max": 0.499366,
+        "avg": 0.06416773274725279,
+        "examples": [
+            "0.002536",
+            "0.157459",
+            "0.027438"
+        ],
+        "description": "Risk axis for nudity risk; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "riskAxes.objectificationRisk": {
+        "path": "riskAxes.objectificationRisk",
+        "type": "number",
+        "seen": 6825,
+        "min": 0,
+        "max": 0.28235,
+        "avg": 0.03540106798534802,
+        "examples": [
+            "0.038654",
+            "0.00088",
+            "0.01123"
+        ],
+        "description": "Risk axis for objectification risk; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "riskAxes.policySensitivityRisk": {
+        "path": "riskAxes.policySensitivityRisk",
+        "type": "number",
+        "seen": 6825,
+        "min": 0.000457,
+        "max": 0.664969,
+        "avg": 0.15084124527472517,
+        "examples": [
+            "0.012017",
+            "0.039261",
+            "0.008732"
+        ],
+        "description": "Risk axis for policy sensitivity risk; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "riskAxes.provocativePoseRisk": {
+        "path": "riskAxes.provocativePoseRisk",
+        "type": "number",
+        "seen": 6825,
+        "min": 4e-05,
+        "max": 0.095005,
+        "avg": 0.004863554725274734,
+        "examples": [
+            "0.005556",
+            "0.003773",
+            "0.000564"
+        ],
+        "description": "Risk axis for provocative pose risk; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "riskAxes.reviewPriority": {
+        "path": "riskAxes.reviewPriority",
+        "type": "number",
+        "seen": 6825,
+        "min": 0.023841,
+        "max": 0.576365,
+        "avg": 0.33734416879121104,
+        "examples": [
+            "0.399485",
+            "0.397477",
+            "0.334381"
+        ],
+        "description": "Risk axis for review priority; used to rank safety concern and review priority.Lower: model decision is cleaner. Higher: more disagreement, crop/occlusion risk, or need for human review.",
+        "model": "Audit mapper",
+        "badge": "review-risk"
+    },
+    "riskAxes.safeContextSuppressor": {
+        "path": "riskAxes.safeContextSuppressor",
+        "type": "number",
+        "seen": 6825,
+        "min": 0.00032,
+        "max": 0.738783,
+        "avg": 0.26078335824175836,
+        "examples": [
+            "0.232269",
+            "0.238346",
+            "0.139735"
+        ],
+        "description": "Risk axis for safe context suppressor; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "riskAxes.sexualizationRisk": {
+        "path": "riskAxes.sexualizationRisk",
+        "type": "number",
+        "seen": 6825,
+        "min": 3.1e-05,
+        "max": 0.080762,
+        "avg": 0.011426499780219774,
+        "examples": [
+            "0.001338",
+            "0.004042",
+            "0.020441"
+        ],
+        "description": "Risk axis for sexualization risk; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "riskAxes.suggestivenessRisk": {
+        "path": "riskAxes.suggestivenessRisk",
+        "type": "number",
+        "seen": 6825,
+        "min": 0.007368,
+        "max": 0.190924,
+        "avg": 0.05622207589743597,
+        "examples": [
+            "0.05277",
+            "0.039002",
+            "0.094452"
+        ],
+        "description": "Risk axis for suggestiveness risk; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "riskAxes.vulgarityRisk": {
+        "path": "riskAxes.vulgarityRisk",
+        "type": "number",
+        "seen": 6825,
+        "min": 0,
+        "max": 0.249682,
+        "avg": 0.014138752380952375,
+        "examples": [
+            "0.024362",
+            "0"
+        ],
+        "description": "Risk axis for vulgarity risk; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
+        "model": "Audit mapper",
+        "badge": "risk-evidence"
+    },
+    "secondaryCategory": {
+        "path": "secondaryCategory",
+        "type": "string",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "explicit_nudity",
+            "uncertain_sexualized",
+            "neutral"
+        ],
+        "description": "Field carrying secondary category information in the audit or AI response envelope.Categorical/context value; compare against policy rules and category definitions.",
+        "model": "Audit row / response metadata",
+        "badge": "context"
+    },
+    "semanticTags": {
+        "path": "semanticTags",
+        "type": "array",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "list(len=0)",
+            "list(len=2)"
+        ],
+        "description": "Field carrying semantic tags information in the audit or AI response envelope.List field; more entries means more evidence, matches, regions, or trace steps.",
+        "model": "Audit row / response metadata",
+        "badge": "context"
+    },
+    "sexualizationLevel": {
+        "path": "sexualizationLevel",
+        "type": "string",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "HIGH",
+            "LOW"
+        ],
+        "description": "Field carrying sexualization level information in the audit or AI response envelope.Categorical/context value; compare against policy rules and category definitions.",
+        "model": "Audit row / response metadata",
+        "badge": "risk-evidence"
+    },
+    "sourceType": {
+        "path": "sourceType",
+        "type": "string",
+        "seen": 6825,
+        "min": null,
+        "max": null,
+        "avg": null,
+        "examples": [
+            "UPLOAD_PORTFOLIO"
+        ],
+        "description": "Field carrying source type information in the audit or AI response envelope.Categorical/context value; compare against policy rules and category definitions.",
+        "model": "Audit row / response metadata",
+        "badge": "context"
+    },
+    "uncertainty.cropUncertainty": {
+        "path": "uncertainty.cropUncertainty",
+        "type": "number",
+        "seen": 6825,
+        "min": 2.2e-05,
+        "max": 0.253984,
+        "avg": 0.016738807032967023,
+        "examples": [
+            "0.006729",
+            "0.002865",
+            "0.019434"
+        ],
+        "description": "Uncertainty signal for crop uncertainty; used to decide when human review is safer.Lower: model decision is cleaner. Higher: more disagreement, crop/occlusion risk, or need for human review.",
+        "model": "Audit row / response metadata",
+        "badge": "review-risk"
+    },
+    "uncertainty.modelDisagreement": {
+        "path": "uncertainty.modelDisagreement",
+        "type": "number",
+        "seen": 6825,
+        "min": 0.00022,
+        "max": 0.958425,
+        "avg": 0.5759029188278402,
+        "examples": [
+            "0.751589",
+            "0.922303",
+            "0.919678"
+        ],
+        "description": "Uncertainty signal for model disagreement; used to decide when human review is safer.Lower: model decision is cleaner. Higher: more disagreement, crop/occlusion risk, or need for human review.",
+        "model": "Audit row / response metadata",
+        "badge": "review-risk"
+    },
+    "uncertainty.occlusionUncertainty": {
+        "path": "uncertainty.occlusionUncertainty",
+        "type": "number",
+        "seen": 6825,
+        "min": 0.052278,
+        "max": 0.35,
+        "avg": 0.20756388087912092,
+        "examples": [
+            "0.211657",
+            "0.224307",
+            "0.211818"
+        ],
+        "description": "Uncertainty signal for occlusion uncertainty; used to decide when human review is safer.Lower: model decision is cleaner. Higher: more disagreement, crop/occlusion risk, or need for human review.",
+        "model": "Audit row / response metadata",
+        "badge": "review-risk"
+    },
+    "uncertainty.overallConfidence": {
+        "path": "uncertainty.overallConfidence",
+        "type": "number",
+        "seen": 6825,
+        "min": 0.339937,
+        "max": 0.947556,
+        "avg": 0.6190945454945058,
+        "examples": [
+            "0.581971",
+            "0.71552",
+            "0.519968"
+        ],
+        "description": "Uncertainty signal for overall confidence; used to decide when human review is safer.Lower: less safety/context support. Higher: more safe, covered, editorial, balanced, or confidence support; can reduce enforcement pressure unless explicit hard rules fire.",
+        "model": "Audit row / response metadata",
+        "badge": "review-risk"
+    },
+    "uncertainty.reviewRecommended": {
+        "path": "uncertainty.reviewRecommended",
+        "type": "number",
+        "seen": 6825,
+        "min": 0.023841,
+        "max": 0.881751,
+        "avg": 0.5399542309157501,
+        "examples": [
+            "0.27499",
+            "0.691462",
+            "0.839747"
+        ],
+        "description": "Uncertainty signal for review recommended; used to decide when human review is safer.Lower: model decision is cleaner. Higher: more disagreement, crop/occlusion risk, or need for human review.",
+        "model": "Audit row / response metadata",
+        "badge": "review-risk"
+    }
+};
+    
+    // Semantic Expansion Map for Similarity Search
+    const CONCEPT_EXPANSIONS = {
+      "sexual": ["sexual", "sex", "erotic", "porn", "explicit", "nudity", "nude", "nipple", "genital", "vagina", "penis", "vulva", "anus", "butt", "groin", "thong", "bikini", "lingerie", "areola", "underboob", "hentai", "oral", "penetration", "breast", "sensual", "seductive", "provocative", "objectification", "vulgarity", "racy"],
+      "sex": ["sexual", "sex", "erotic", "porn", "explicit", "nudity", "nude", "nipple", "genital", "vagina", "penis", "vulva", "anus", "butt", "groin", "thong", "bikini", "lingerie", "areola", "underboob", "hentai", "oral", "penetration", "breast", "sensual", "seductive", "provocative", "objectification", "vulgarity", "racy"],
+      "porn": ["porn", "pornographic", "hentai", "illustration", "bedroom", "erotic", "act", "toy", "anime", "cartoon", "explicit", "penetration", "oral"],
+      "nudity": ["nudity", "nude", "naked", "exposure", "exposed", "nipple", "genital", "vagina", "penis", "vulva", "anus", "buttocks", "groin", "areola", "underboob", "skin", "unclothed", "exposure"],
+      "nude": ["nudity", "nude", "naked", "exposure", "exposed", "nipple", "genital", "vagina", "penis", "vulva", "anus", "buttocks", "groin", "areola", "underboob", "skin", "unclothed", "exposure"],
+      "anatomy": ["anatomy", "body", "nipple", "genital", "vagina", "penis", "vulva", "anus", "buttocks", "groin", "areola", "underboob", "breast", "chest", "face", "groin", "pubic", "rectal"],
+      "body": ["anatomy", "body", "nipple", "genital", "vagina", "penis", "vulva", "anus", "buttocks", "groin", "areola", "underboob", "breast", "chest", "face", "groin", "pubic", "skin", "exposure"],
+      "clothing": ["clothing", "garment", "swimwear", "bikini", "thong", "lingerie", "bra", "panty", "underwear", "fabric", "see_through", "sheer", "clothes", "coverage", "apparel"],
+      "garment": ["clothing", "garment", "swimwear", "bikini", "thong", "lingerie", "bra", "panty", "underwear", "fabric", "see_through", "sheer", "clothes", "coverage", "apparel"],
+      "swimwear": ["swimwear", "bikini", "micro_bikini", "thong", "beach", "pool", "water", "swim", "suit"],
+      "bikini": ["swimwear", "bikini", "micro_bikini", "thong", "beach", "pool", "water", "swim", "suit"],
+      "breast": ["breast", "boob", "chest", "nipple", "areola", "underboob", "chestFocus", "breast_visible", "cleavage", "bra"],
+      "boob": ["breast", "boob", "chest", "nipple", "areola", "underboob", "chestFocus", "breast_visible", "cleavage", "bra"],
+      "genital": ["genital", "crotch", "groin", "vagina", "penis", "vulva", "anus", "groinFocus", "genitalOutline", "genitalsVisible", "pubic", "thong"],
+      "crotch": ["genital", "crotch", "groin", "vagina", "penis", "vulva", "anus", "groinFocus", "genitalOutline", "genitalsVisible", "pubic", "thong"],
+      "butt": ["butt", "buttocks", "anus", "thong", "rear", "cheek", "buttocks_visible", "butt_focus", "butt_emphasis", "rectal"],
+      "buttocks": ["butt", "buttocks", "anus", "thong", "rear", "cheek", "buttocks_visible", "butt_focus", "butt_emphasis", "rectal"],
+      "provocative": ["provocative", "seductive", "pose", "gesture", "arched", "emphasis", "objectification", "sensual", "glamour", "erotic", "bedroom"],
+      "pose": ["pose", "posing", "gesture", "arched_back", "emphasis", "position", "adjustment"],
+      "quality": ["quality", "blur", "exposure", "resolution", "brightness", "contrast", "geometry", "noise", "sharpness", "focus", "overexposed", "underexposed"],
+      "uncertainty": ["uncertainty", "confidence", "review", "disagreement", "modelDisagreement", "occlusionUncertainty", "cropUncertainty", "reviewRecommended"],
+      "confidence": ["uncertainty", "confidence", "review", "disagreement", "modelDisagreement", "occlusionUncertainty", "cropUncertainty", "reviewRecommended"],
+      "cartoon": ["cartoon", "anime", "drawing", "hentai", "toon", "illustration", "explicit"],
+      "anime": ["cartoon", "anime", "drawing", "hentai", "toon", "illustration", "explicit"],
+      "oral": ["oral", "penetration", "porn", "sexual_act", "explicit_semantics", "sex_toy"],
+      "penetration": ["penetration", "penetrative", "porn", "sexual_act", "explicit_semantics", "sex_toy", "oral"]
+    };
+    
+    // Setup references
+    const searchInput = document.getElementById('fieldSearch');
+    const modelFilter = document.getElementById('modelFilter');
+    const pills = document.querySelectorAll('.pill');
+    const tableBody = document.getElementById('tableBody');
+    const emptyState = document.getElementById('emptyState');
+    const resultsCount = document.getElementById('resultsCount');
+    const copyToast = document.getElementById('copyToast');
+    
+    let activeKind = 'all';
+    
+    // Copy to clipboard helper
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        copyToast.classList.add('show');
+        setTimeout(() => {
+          copyToast.classList.remove('show');
+        }, 2000);
+      });
+    }
+    
+    // Highlight matching text helper
+    function highlightText(text, query) {
+      if (!query) return text;
+      const terms = query.toLowerCase().split(/\s+/).filter(t => t.length > 2);
+      if (terms.length === 0) return text;
+      
+      let highlighted = text;
+      // Simple highlight for each term
+      terms.forEach(term => {
+        const regex = new RegExp(`(${escapeRegExp(term)})`, 'gi');
+        highlighted = highlighted.replace(regex, '<span class="highlight">$1</span>');
+      });
+      return highlighted;
+    }
+    
+    function escapeRegExp(string) {
+      return string.replace(/[.*+?^${}()|[\]\]/g, '\$&');
+    }
+    
+    // Render range visualizer HTML
+    function getRangeVisualizer(field) {
+      if (field.min === null || field.max === null || field.avg === null) {
+        return '<span style="color: var(--text-muted); font-size: 0.8rem;">N/A (Non-numeric)</span>';
+      }
+      
+      const minVal = field.min;
+      const maxVal = field.max;
+      const avgVal = field.avg;
+      
+      // Calculate percentages for visual display
+      // Cap at 0..1 scale
+      const fillLeft = Math.min(100, Math.max(0, minVal * 100));
+      const fillWidth = Math.min(100, Math.max(0, (maxVal - minVal) * 100));
+      const avgLeft = Math.min(100, Math.max(0, avgVal * 100));
+      
+      let classFill = 'context';
+      if (field.badge === 'risk-evidence') classFill = 'risk';
+      else if (field.badge === 'safe-suppressor') classFill = 'safe';
+      else if (field.badge === 'review-risk') classFill = 'review';
+      
+      return `
+        <div class="range-visualizer">
+          <div class="range-bar">
+            <div class="range-fill ${classFill}" style="left: ${fillLeft}%; width: ${fillWidth}%;"></div>
+            <div class="range-avg-marker" style="left: ${avgLeft}%;" title="Average: ${avgVal.toFixed(4)}"></div>
+          </div>
+          <div class="range-label">
+            <span>Min: <b class="range-val">${minVal.toFixed(3)}</b></span>
+            <span>Avg: <b class="range-val">${avgVal.toFixed(3)}</b></span>
+            <span>Max: <b class="range-val">${maxVal.toFixed(3)}</b></span>
+          </div>
+        </div>
+      `;
+    }
+    
+    // Main filter and search execution
+    function runSearch() {
+      const query = searchInput.value.trim().toLowerCase();
+      const selectedModel = modelFilter.value.toLowerCase();
+      const matchingFields = [];
+      
+      // Query tokenization
+      const queryTokens = query.split(/\s+/).filter(t => t.length > 0);
+      
+      // Build synonym list if matching concepts
+      let expandedQueryTokens = [...queryTokens];
+      queryTokens.forEach(token => {
+        // Direct concept match
+        if (CONCEPT_EXPANSIONS[token]) {
+          expandedQueryTokens = expandedQueryTokens.concat(CONCEPT_EXPANSIONS[token]);
+        }
+        // Substring check for concept key matching
+        for (const conceptKey in CONCEPT_EXPANSIONS) {
+          if (token.includes(conceptKey) || conceptKey.includes(token)) {
+            expandedQueryTokens = expandedQueryTokens.concat(CONCEPT_EXPANSIONS[conceptKey]);
+          }
+        }
+      });
+      // Remove duplicates
+      const searchTerms = [...new Set(expandedQueryTokens)];
+      
+      for (const [path, info] of Object.entries(FIELDS_DATA)) {
+        // Filter: Model Source
+        if (selectedModel && !info.model.toLowerCase().includes(selectedModel)) {
+          continue;
+        }
+        
+        // Filter: Kind Badge
+        if (activeKind !== 'all' && info.badge !== activeKind) {
+          continue;
+        }
+        
+        // Similarity Search Score Computation
+        let matchScore = 0;
+        let isMatch = queryTokens.length === 0; // Show all if no query
+        
+        if (queryTokens.length > 0) {
+          const pathLower = path.toLowerCase();
+          const descLower = info.description.toLowerCase();
+          const modelLower = info.model.toLowerCase();
+          
+          // 1. Direct matches (Exact and Substrings of search tokens)
+          queryTokens.forEach(token => {
+            if (pathLower === token) {
+              matchScore += 100;
+              isMatch = true;
+            } else if (pathLower.includes(token)) {
+              matchScore += 50;
+              isMatch = true;
+            }
+            
+            if (descLower.includes(token)) {
+              matchScore += 30;
+              isMatch = true;
+            }
+            
+            if (modelLower.includes(token)) {
+              matchScore += 20;
+              isMatch = true;
+            }
+          });
+          
+          // 2. Similarity/Synonym expansions
+          if (!isMatch && searchTerms.length > 0) {
+            searchTerms.forEach(term => {
+              if (pathLower.includes(term)) {
+                matchScore += 30;
+                isMatch = true;
+              }
+              if (descLower.includes(term)) {
+                matchScore += 15;
+                isMatch = true;
+              }
+            });
+          }
+        }
+        
+        if (isMatch) {
+          matchingFields.push({
+            path,
+            ...info,
+            score: matchScore
+          });
+        }
+      }
+      
+      // Sort by match score (relevance descending) when search is active,
+      // otherwise sort alphabetically by path.
+      if (queryTokens.length > 0) {
+        matchingFields.sort((a, b) => b.score - a.score || a.path.localeCompare(b.path));
+      } else {
+        matchingFields.sort((a, b) => a.path.localeCompare(b.path));
+      }
+      
+      renderTable(matchingFields, query);
+    }
+    
+    // Render fields table
+    function renderTable(data, query) {
+      if (data.length === 0) {
+        tableBody.innerHTML = '';
+        emptyState.style.display = 'block';
+        resultsCount.textContent = 'Showing 0 fields';
+        return;
+      }
+      
+      emptyState.style.display = 'none';
+      resultsCount.textContent = `Showing ${data.length} fields`;
+      
+      let html = '';
+      data.forEach(field => {
+        let badgeLabel = 'Context';
+        if (field.badge === 'risk-evidence') badgeLabel = 'Risk Evidence';
+        else if (field.badge === 'safe-suppressor') badgeLabel = 'Safe Suppressor';
+        else if (field.badge === 'review-risk') badgeLabel = 'Review / Uncertainty';
+        
+        const highlightedPath = highlightText(field.path, query);
+        const highlightedDesc = highlightText(field.description, query);
+        const highlightedModel = highlightText(field.model, query);
+        
+        const examplesList = field.examples.map(ex => `<span class="example-tag">${escapeHtml(ex)}</span>`).join('');
+        const relevanceText = field.score > 0 ? `<div class="relevance-score">Relevance: ${field.score}</div>` : '';
+        
+        html += `
+          <tr data-path="${field.path}">
+            <td>
+              <div class="field-path" onclick="copyToClipboard('${field.path}')" title="Click to copy path">
+                ${highlightedPath}
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m-5 4h5m-5 4h5m-2 5h2"></path>
+                </svg>
+              </div>
+              <div class="field-type">Type: <b>${field.type}</b></div>
+              <div><span class="badge ${field.badge}">${badgeLabel}</span></div>
+              ${relevanceText}
+            </td>
+            <td>
+              <div class="model-source">
+                ${highlightedModel}
+                <span>Seen in <b>${field.seen.toLocaleString()}</b> / 6,825 images</span>
+              </div>
+            </td>
+            <td>
+              <div class="field-desc">${highlightedDesc}</div>
+            </td>
+            <td>
+              ${getRangeVisualizer(field)}
+            </td>
+            <td>
+              <div class="example-list">
+                ${examplesList}
+              </div>
+            </td>
+          </tr>
+        `;
+      });
+      
+      tableBody.innerHTML = html;
+    }
+    
+    function escapeHtml(text) {
+      return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+    
+    // Event listeners
+    searchInput.addEventListener('input', runSearch);
+    modelFilter.addEventListener('change', runSearch);
+    
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        activeKind = pill.dataset.kind;
+        runSearch();
+      });
+    });
+    
+    // Initial Render
+    runSearch();
+  </script>
+</body>
+</html>
