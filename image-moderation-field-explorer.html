@@ -755,7 +755,7 @@
         "examples": [
             "True"
         ],
-        "description": "Indicates whether the response was served from the local AI analysis cache.",
+        "description": "Indicates whether the response was served from the local AI analysis cache. A higher value (true/1.0) means a cache hit (fast response, no model execution). A lower value (false/0.0) means a cache miss (slower, models were run).",
         "model": "AI Cache Layer",
         "badge": "context"
     },
@@ -771,7 +771,7 @@
             "08b0d658b513f5f82c24426ec0e4fd44c4e34eb066053fd15c3221cb70a0de44",
             "42affc08277084760aefa8a22f7d7b4609bca302e8c6dc32c3d808d36f239246"
         ],
-        "description": "Cryptographic hash of the image data used for cache key generation.",
+        "description": "Unique cryptographic hash of the image data used for cache key generation. Allows the cache layer to quickly retrieve past results for identical images.",
         "model": "AI Cache Layer",
         "badge": "context"
     },
@@ -787,7 +787,7 @@
             "8",
             "31"
         ],
-        "description": "Latency in milliseconds of the AI analysis (from cache or model run).",
+        "description": "Latency in milliseconds of the AI analysis. A higher value indicates slow execution (e.g. cache miss running all models). A lower value indicates fast execution (e.g. cache hit).",
         "model": "AI Cache Layer",
         "badge": "context"
     },
@@ -819,8 +819,8 @@
             "0.0494627",
             "0.28197235"
         ],
-        "description": "Compatibility score mapped into broad moderation bucket ADULT.",
-        "model": "Audit mapper",
+        "description": "Measures similarity to broad adult content. A higher value means strong presence of sexualized or explicit themes. A lower value means safe, benign content.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "categoryScores.MEDICAL": {
@@ -833,8 +833,8 @@
         "examples": [
             "0"
         ],
-        "description": "Compatibility score mapped into broad moderation bucket MEDICAL.",
-        "model": "Audit mapper",
+        "description": "Measures medical content (surgeries, clinical diagrams). A higher value means clinical focus. A lower value means non-medical.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "categoryScores.RACY": {
@@ -849,8 +849,8 @@
             "0.51919875",
             "0.1470733"
         ],
-        "description": "Compatibility score mapped into broad moderation bucket RACY.",
-        "model": "Audit mapper",
+        "description": "Measures whether the image is suggestive or racy (borderline, swimwear, lingerie). A higher value means suggestive clothing or posing. A lower value means non-suggestive.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "categoryScores.SPOOF": {
@@ -865,8 +865,8 @@
             "0.0032084332080557945",
             "0.0008590399578679353"
         ],
-        "description": "Compatibility score mapped into broad moderation bucket SPOOF.",
-        "model": "Audit mapper",
+        "description": "Measures whether the image is a meme, spoof, parody, or manipulated. A higher value means synthetic or joke content. A lower value means a standard photograph.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "categoryScores.VIOLENCE": {
@@ -879,8 +879,8 @@
         "examples": [
             "0"
         ],
-        "description": "Compatibility score mapped into broad moderation bucket VIOLENCE.",
-        "model": "Audit mapper",
+        "description": "Measures violent content. A higher value means weapons, blood, or gore. A lower value means non-violent.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "decisionSignals.approveMatches": {
@@ -895,7 +895,7 @@
             "list(len=1)"
         ],
         "description": "Explains how the moderation policy tree reached the final outcome.List field; more entries means more evidence, matches, regions, or trace steps.",
-        "model": "TFP policy evaluator",
+        "model": "TFP Policy Engine",
         "badge": "context"
     },
     "decisionSignals.decisionBlockingConditions": {
@@ -910,7 +910,7 @@
             "list(len=1)"
         ],
         "description": "Explains how the moderation policy tree reached the final outcome.List field; more entries means more evidence, matches, regions, or trace steps.",
-        "model": "TFP policy evaluator",
+        "model": "TFP Policy Engine",
         "badge": "context"
     },
     "decisionSignals.decisionBranch": {
@@ -924,7 +924,7 @@
             "visible_private_parts_only"
         ],
         "description": "Explains how the moderation policy tree reached the final outcome.Categorical/context value; compare against policy rules and category definitions.",
-        "model": "TFP policy evaluator",
+        "model": "TFP Policy Engine",
         "badge": "context"
     },
     "decisionSignals.decisionDecisive": {
@@ -938,7 +938,7 @@
             "list(len=1)"
         ],
         "description": "Explains how the moderation policy tree reached the final outcome.List field; more entries means more evidence, matches, regions, or trace steps.",
-        "model": "TFP policy evaluator",
+        "model": "TFP Policy Engine",
         "badge": "context"
     },
     "decisionSignals.decisionGateDetails": {
@@ -952,7 +952,7 @@
             "list(len=3)"
         ],
         "description": "Explains how the moderation policy tree reached the final outcome.List field; more entries means more evidence, matches, regions, or trace steps.",
-        "model": "TFP policy evaluator",
+        "model": "TFP Policy Engine",
         "badge": "context"
     },
     "decisionSignals.decisionPath": {
@@ -966,7 +966,7 @@
             "list(len=4)"
         ],
         "description": "Explains how the moderation policy tree reached the final outcome.List field; more entries means more evidence, matches, regions, or trace steps.",
-        "model": "TFP policy evaluator",
+        "model": "TFP Policy Engine",
         "badge": "context"
     },
     "decisionSignals.decisionPrimaryCause": {
@@ -982,7 +982,7 @@
             "safe_clothes"
         ],
         "description": "Explains how the moderation policy tree reached the final outcome.Categorical/context value; compare against policy rules and category definitions.",
-        "model": "TFP policy evaluator",
+        "model": "TFP Policy Engine",
         "badge": "context"
     },
     "decisionSignals.decisionPrimaryCauseDetail": {
@@ -998,7 +998,7 @@
             "(rawEnvelope.marqo.raw_label_scores.nsfw < 0.99) && (rawEnvelope.derived.vulgarity_profile.fetish_styling_risk < 0.064) && (rawEnvelope.derived.categories.candidates.uncertain_sexualized < 0.6) && (rawEnvelope.derived.exposure_profile.calibrated.anus_visible_calibrated < 0.5) && (rawEnvelope.derived.exposure_profile.calibrated.genitals_visible_calibrated < 0.245) && (rawEnvelope.derived.pose_profile.composition_emphasis < 0.35) && (rawEnvelope.derived.vulgarity_profile.camera_objectification_risk < 0.095) && (rawEnvelope.derived.vulgarity_profile.explicit_pose_pattern_score < 0.21) && (rawEnvelope.derived.vulgarity_profile.genital_vulgarity < 0.5) && (rawEnvelope.derived.vulgarity_profile.intimate_focus_without_face_score < 0.4) && (rawEnvelope.derived.categories.candidates.explicit_nudity <= 0.65) && (rawEnvelope.clip.explicit_semantics.pack_scores.vulgar_exploitative < 0.075)"
         ],
         "description": "Explains how the moderation policy tree reached the final outcome.Categorical/context value; compare against policy rules and category definitions.",
-        "model": "TFP policy evaluator",
+        "model": "TFP Policy Engine",
         "badge": "context"
     },
     "decisionSignals.decisionProfile": {
@@ -1012,7 +1012,7 @@
             "BALANCED"
         ],
         "description": "Explains how the moderation policy tree reached the final outcome.Categorical/context value; compare against policy rules and category definitions.",
-        "model": "TFP policy evaluator",
+        "model": "TFP Policy Engine",
         "badge": "context"
     },
     "decisionSignals.diagnosticSignals.evaluatedRuleCount": {
@@ -1028,7 +1028,7 @@
             "26"
         ],
         "description": "The number of policy rules that were evaluated before a terminal decision was reached.",
-        "model": "TFP Policy Evaluator",
+        "model": "TFP Policy Engine",
         "badge": "context"
     },
     "decisionSignals.diagnosticSignals.policyRuleCount": {
@@ -1042,7 +1042,7 @@
             "43"
         ],
         "description": "Total number of rules configured in the active moderation policy.",
-        "model": "TFP Policy Evaluator",
+        "model": "TFP Policy Engine",
         "badge": "context"
     },
     "decisionSignals.diagnosticSignals.policyStageCount": {
@@ -1056,7 +1056,7 @@
             "1"
         ],
         "description": "Total number of stages defined in the active moderation policy.",
-        "model": "TFP Policy Evaluator",
+        "model": "TFP Policy Engine",
         "badge": "context"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.clip.anatomy_context.breast_visible": {
@@ -1071,8 +1071,8 @@
             "0.07790771871805191",
             "0.14455437660217285"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: clip.anatomy_context.breast_visible.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: clip.anatomy_context.breast_visible.",
+        "model": "OpenAI CLIP",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.clip.anatomy_context.pubic_region_visible": {
@@ -1085,8 +1085,8 @@
         "examples": [
             "0.014646610245108604"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of visible pubic region.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of visible pubic region.",
+        "model": "OpenAI CLIP",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.cartoon_explicit_sexual_act_score": {
@@ -1101,8 +1101,8 @@
             "0.05170499160885811",
             "0.07071058452129364"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score for cartoon or animated explicit sexual acts.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score for cartoon or animated explicit sexual acts.",
+        "model": "OpenAI CLIP",
         "badge": "context"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.exposed_genitals_score": {
@@ -1117,8 +1117,8 @@
             "0.000454391265520826",
             "0.002464271616190672"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score representing exposed genitals.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score representing exposed genitals.",
+        "model": "YOLO Detector",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.fetish_scene_score": {
@@ -1133,8 +1133,8 @@
             "0.32709768414497375",
             "0.06812835484743118"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score representing fetish scenes.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score representing fetish scenes.",
+        "model": "OpenAI CLIP",
         "badge": "context"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.graphic_nudity_score": {
@@ -1147,8 +1147,8 @@
         "examples": [
             "0.0055694677866995335"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: clip.explicit_semantics.graphic_nudity_score.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: clip.explicit_semantics.graphic_nudity_score.",
+        "model": "OpenAI CLIP",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pack_scores.camera_objectification_strong": {
@@ -1161,8 +1161,8 @@
         "examples": [
             "0.004348"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of highly objectifying camera focus.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of highly objectifying camera focus.",
+        "model": "OpenAI CLIP",
         "badge": "context"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pack_scores.explicit_pose_patterns": {
@@ -1175,8 +1175,8 @@
         "examples": [
             "0.008309"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of explicit pose patterns.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of explicit pose patterns.",
+        "model": "OpenAI CLIP",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pack_scores.minimal_coverage": {
@@ -1191,8 +1191,8 @@
             "0.03028",
             "0.037509"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: clip.explicit_semantics.pack_scores.minimal_coverage.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: clip.explicit_semantics.pack_scores.minimal_coverage.",
+        "model": "OpenAI CLIP",
         "badge": "safe-suppressor"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pack_scores.tasteful_intent": {
@@ -1207,8 +1207,8 @@
             "0.001964",
             "0.001478"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score representing tasteful aesthetic intent.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score representing tasteful aesthetic intent.",
+        "model": "OpenAI CLIP",
         "badge": "context"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pack_scores.vulgar_exploitative": {
@@ -1223,8 +1223,8 @@
             "0.010649",
             "0.028451"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score representing vulgar or exploitative semantic content.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score representing vulgar or exploitative semantic content.",
+        "model": "OpenAI CLIP",
         "badge": "context"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pornographic_cartoon_score": {
@@ -1239,8 +1239,8 @@
             "0.009258728474378586",
             "0.009249954484403133"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score for pornographic cartoon or hentai style.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score for pornographic cartoon or hentai style.",
+        "model": "OpenAI CLIP",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pornographic_illustration_score": {
@@ -1255,8 +1255,8 @@
             "0.023657960817217827",
             "0.023278450593352318"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score representing explicit pornographic illustration.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score representing explicit pornographic illustration.",
+        "model": "OpenAI CLIP",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.clip.explicit_semantics.pornographic_photo_score": {
@@ -1271,8 +1271,8 @@
             "0.013101134449243546",
             "0.026250896975398064"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score representing explicit pornographic photography.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: CLIP score representing explicit pornographic photography.",
+        "model": "OpenAI CLIP",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.anatomy_visibility.areola_visible": {
@@ -1287,8 +1287,8 @@
             "0.058257",
             "0.04217"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of visible areola.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of visible areola.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.anatomy_visibility.breast_visible": {
@@ -1303,8 +1303,8 @@
             "0.473837",
             "0.584053"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.anatomy_visibility.breast_visible.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.anatomy_visibility.breast_visible.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.anatomy_visibility.genital_outline_visible": {
@@ -1319,8 +1319,8 @@
             "0.000845",
             "0.000164"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.anatomy_visibility.genital_outline_visible.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.anatomy_visibility.genital_outline_visible.",
+        "model": "YOLO Detector",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.anatomy_visibility.genitals_visible": {
@@ -1335,8 +1335,8 @@
             "0.006726",
             "0.005448"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.anatomy_visibility.genitals_visible.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.anatomy_visibility.genitals_visible.",
+        "model": "YOLO Detector",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.anatomy_visibility.nipple_visible": {
@@ -1351,8 +1351,8 @@
             "0.044528",
             "0.036533"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of visible nipple.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of visible nipple.",
+        "model": "YOLO Detector",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.anatomy_visibility.pubic_region_visible": {
@@ -1367,8 +1367,8 @@
             "0.013691",
             "0.128564"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of visible pubic region.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of visible pubic region.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.categories.candidates.erotic_explicit": {
@@ -1381,8 +1381,8 @@
         "examples": [
             "0.181785"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of erotic explicit content.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of erotic explicit content.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.categories.candidates.explicit_nudity": {
@@ -1397,8 +1397,8 @@
             "0.052066",
             "0.003931"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of explicit nudity.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of explicit nudity.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.categories.candidates.uncertain_sexualized": {
@@ -1413,8 +1413,8 @@
             "0.154814",
             "0.397477"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of the image containing borderline or uncertain sexualized content.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of the image containing borderline or uncertain sexualized content.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.composition.body_part_dominance": {
@@ -1429,8 +1429,8 @@
             "0.001744",
             "0.004114"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: measure of body part size dominance in the frame composition.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: measure of body part size dominance in the frame composition.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.composition.butt_focus_crop": {
@@ -1445,8 +1445,8 @@
             "0.002932",
             "0.001346"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: composition score representing tight cropping on the buttocks area.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: composition score representing tight cropping on the buttocks area.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.composition.chest_focus_crop": {
@@ -1461,8 +1461,8 @@
             "0.108332",
             "0.038622"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: composition score representing tight cropping on the chest area.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: composition score representing tight cropping on the chest area.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.composition.full_body_crop": {
@@ -1477,8 +1477,8 @@
             "3.5e-05",
             "0.000255"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.composition.full_body_crop.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.composition.full_body_crop.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.composition.groin_focus_crop": {
@@ -1493,8 +1493,8 @@
             "0.002348",
             "0.008771"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: composition score representing tight cropping on the groin area.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: composition score representing tight cropping on the groin area.",
+        "model": "YOLO Detector",
         "badge": "context"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.composition.torso_focus_crop": {
@@ -1509,8 +1509,8 @@
             "0.004607",
             "0.03117"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.composition.torso_focus_crop.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.composition.torso_focus_crop.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.coverage.breast_coverage": {
@@ -1525,8 +1525,8 @@
             "0.99893",
             "0.96074"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: percentage of breast coverage by clothing.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: percentage of breast coverage by clothing.",
+        "model": "Derived Builder (AIP)",
         "badge": "safe-suppressor"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.coverage.butt_coverage": {
@@ -1541,8 +1541,8 @@
             "0.9994",
             "0.999454"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: percentage of buttocks coverage by clothing.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: percentage of buttocks coverage by clothing.",
+        "model": "Derived Builder (AIP)",
         "badge": "safe-suppressor"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.coverage.genital_coverage": {
@@ -1557,8 +1557,8 @@
             "0.998697",
             "0.999498"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: percentage of genital area coverage by clothing.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: percentage of genital area coverage by clothing.",
+        "model": "YOLO Detector",
         "badge": "safe-suppressor"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.coverage.intimate_region_coverage_confidence": {
@@ -1573,8 +1573,8 @@
             "0.798533",
             "0.774893"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: confidence score of the intimate region coverage estimator.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Measures the confidence (reliability) of the coverage estimator for the intimate regions of the body. A higher value means the models are highly confident about how much of the intimate regions are covered by clothing. For example, everyday clothing like jeans or a heavy dress will have a very high confidence value (near 1.0) because they clearly cover the body. A standard bikini or activewear will have a moderate confidence value, while a completely naked body or exposed private parts will have the lowest confidence value (near 0.0) since there is no clothing coverage to detect.",
+        "model": "Derived Builder (AIP)",
         "badge": "safe-suppressor"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.evidence.risk_snapshot.camera_objectification_risk": {
@@ -1589,8 +1589,8 @@
             "0.034335",
             "0.030462"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: risk of objectifying camera angles focusing on sensitive regions.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: risk of objectifying camera angles focusing on sensitive regions.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.evidence.risk_snapshot.erotic_context_risk": {
@@ -1605,8 +1605,8 @@
             "0.10024",
             "0.161913"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: risk score indicating erotic context in the image.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: risk score indicating erotic context in the image.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.evidence.risk_snapshot.explicitness_risk": {
@@ -1621,8 +1621,8 @@
             "0.005703",
             "0.003425"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.evidence.risk_snapshot.explicitness_risk.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.evidence.risk_snapshot.explicitness_risk.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.evidence.risk_snapshot.genital_nudity": {
@@ -1637,8 +1637,8 @@
             "0.217965",
             "0.342149"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.evidence.risk_snapshot.genital_nudity.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.evidence.risk_snapshot.genital_nudity.",
+        "model": "YOLO Detector",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.evidence.risk_snapshot.sexualization_risk": {
@@ -1653,8 +1653,8 @@
             "0.025509",
             "0.023822"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.evidence.risk_snapshot.sexualization_risk.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.evidence.risk_snapshot.sexualization_risk.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.evidence.risk_snapshot.suggestiveness_risk": {
@@ -1669,8 +1669,8 @@
             "0.060003",
             "0.064308"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.evidence.risk_snapshot.suggestiveness_risk.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.evidence.risk_snapshot.suggestiveness_risk.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.explicit_content.graphic_nudity": {
@@ -1683,8 +1683,8 @@
         "examples": [
             "0.005569"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.explicit_content.graphic_nudity.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.explicit_content.graphic_nudity.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.calibrated.anus_visible_calibrated": {
@@ -1699,8 +1699,8 @@
             "0.080884",
             "0.000307"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: calibrated probability of anus visibility.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Calibrated probability score of visible anus. A higher value indicates exposed anus. A lower value indicates covered. For example, a fully naked rear will have a value near 1.0, while a thong might have a moderate-to-high value, and regular pants will have a value of 0.0.",
+        "model": "YOLO Detector",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.calibrated.buttocks_visible_calibrated": {
@@ -1715,8 +1715,8 @@
             "0.000333",
             "0.000493"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: calibrated probability of buttocks visibility.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Calibrated probability score of visible buttocks. A higher value indicates exposed buttocks. A lower value indicates covered. For example, a nude body will have a value near 1.0, a thong or micro-bikini will have a high value, and everyday trousers will have a value of 0.0.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.calibrated.genitals_visible_calibrated": {
@@ -1731,8 +1731,8 @@
             "0.000409",
             "0.137902"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: calibrated probability of genitals visibility.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Calibrated probability score of visible genitals. A higher value indicates exposed genitals. A lower value indicates covered. For example, a completely naked groin will have a value near 1.0, while underwear or swimwear will have a low-to-moderate value, and jeans will have a value of 0.0.",
+        "model": "YOLO Detector",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.calibrated.nipples_visible_calibrated": {
@@ -1747,8 +1747,8 @@
             "0.871894",
             "1"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: calibrated probability of nipple visibility.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Calibrated probability score of visible nipples (unclothed). A higher value indicates higher probability of exposed nipples. A lower value indicates covered or clothed nipples. For example, a bare chest will have a value near 1.0, while a t-shirt or thick jacket will have a value near 0.0.",
+        "model": "YOLO Detector",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.calibrated.pubic_region_visible_calibrated": {
@@ -1762,8 +1762,8 @@
             "0.346847",
             "0.446964"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.exposure_profile.calibrated.pubic_region_visible_calibrated.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.exposure_profile.calibrated.pubic_region_visible_calibrated.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.corroborated_nipple_visibility_score": {
@@ -1778,8 +1778,8 @@
             "0.648256",
             "0.546671"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.exposure_profile.corroborated_nipple_visibility_score.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.exposure_profile.corroborated_nipple_visibility_score.",
+        "model": "YOLO Detector",
         "badge": "context"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.private_part_candidates.genitals.calibrated_score": {
@@ -1794,8 +1794,8 @@
             "0.755852",
             "0.555159"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.exposure_profile.private_part_candidates.genitals.calibrated_score.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.exposure_profile.private_part_candidates.genitals.calibrated_score.",
+        "model": "YOLO Detector",
         "badge": "context"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.private_part_visibility.yolo_calibrated.genital_nudity": {
@@ -1810,8 +1810,8 @@
             "0.652402",
             "0.576463"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.exposure_profile.private_part_visibility.yolo_calibrated.genital_nudity.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.exposure_profile.private_part_visibility.yolo_calibrated.genital_nudity.",
+        "model": "YOLO Detector",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.exposure_profile.private_part_visibility.yolo_calibrated.nipple_nudity": {
@@ -1826,8 +1826,8 @@
             "0.164454",
             "0.433194"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.exposure_profile.private_part_visibility.yolo_calibrated.nipple_nudity.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.exposure_profile.private_part_visibility.yolo_calibrated.nipple_nudity.",
+        "model": "YOLO Detector",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.illustration_explicit_profile.toon_context_confidence": {
@@ -1842,8 +1842,8 @@
             "0.16752",
             "0.110224"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: confidence that the image style is cartoon or illustration.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: confidence that the image style is cartoon or illustration.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.illustration_explicit_profile.toon_explicit_minus_safe": {
@@ -1858,8 +1858,8 @@
             "0.060799",
             "0.168758"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: illustration explicit score minus safe baseline.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: illustration explicit score minus safe baseline.",
+        "model": "Derived Builder (AIP)",
         "badge": "safe-suppressor"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.illustration_explicit_profile.toon_explicit_score": {
@@ -1874,8 +1874,8 @@
             "0.176359",
             "0.270446"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: toon/cartoon explicit content likelihood.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: toon/cartoon explicit content likelihood.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.porn_detection.private_part_detector_profile.raw_yolo_private_part_scores.anus_visible": {
@@ -1890,8 +1890,8 @@
             "0.219872",
             "0.105633"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.porn_detection.private_part_detector_profile.raw_yolo_private_part_scores.anus_visible.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.porn_detection.private_part_detector_profile.raw_yolo_private_part_scores.anus_visible.",
+        "model": "YOLO Detector",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.porn_detection.private_part_detector_profile.raw_yolo_private_part_scores.penis_visible": {
@@ -1906,8 +1906,8 @@
             "0.26168",
             "0.21594"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: YOLO detection score for visible penis.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "YOLO detector score for visible penis. A higher value means exposed genitals. A lower value means covered.",
+        "model": "YOLO Detector",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.pose_gesture.arched_back_pose": {
@@ -1922,8 +1922,8 @@
             "9e-06",
             "0.000488"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of an arched back pose, often associated with suggestive presentation.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: likelihood of an arched back pose, often associated with suggestive presentation.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.pose_profile.composition_emphasis": {
@@ -1938,8 +1938,8 @@
             "0.016146",
             "0.029981"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: measure of composition focus emphasizing specific body parts.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: measure of composition focus emphasizing specific body parts.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.risk_axes.safe_context_suppressor": {
@@ -1954,8 +1954,8 @@
             "0.011316",
             "0.086653"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: suppression score based on safe contexts (like family, athletic, or public settings) which reduces risk enforcement.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: suppression score based on safe contexts (like family, athletic, or public settings) which reduces risk enforcement.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.risk_axes.sexualization_risk": {
@@ -1968,8 +1968,8 @@
         "examples": [
             "0.021453"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.risk_axes.sexualization_risk.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.risk_axes.sexualization_risk.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.uncertainty.model_disagreement": {
@@ -1984,8 +1984,8 @@
             "0.585543",
             "0.554458"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: measure of disagreement across different model predictions.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot of model disagreement score. A higher value means the models had conflicting predictions, indicating a need for review.",
+        "model": "Derived Builder (AIP)",
         "badge": "review-risk"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.uncertainty.review_recommended": {
@@ -2000,8 +2000,8 @@
             "0.71964",
             "0.81365"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.uncertainty.review_recommended.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.uncertainty.review_recommended.",
+        "model": "Derived Builder (AIP)",
         "badge": "review-risk"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.butt_focus_without_face_score": {
@@ -2014,8 +2014,8 @@
         "examples": [
             "0.248958"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.vulgarity_profile.butt_focus_without_face_score.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.vulgarity_profile.butt_focus_without_face_score.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.butt_vulgarity": {
@@ -2030,8 +2030,8 @@
             "0.326948",
             "0.373392"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.vulgarity_profile.butt_vulgarity.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.vulgarity_profile.butt_vulgarity.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.camera_intent_buttocks_score": {
@@ -2044,8 +2044,8 @@
         "examples": [
             "0.160015"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.vulgarity_profile.camera_intent_buttocks_score.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.vulgarity_profile.camera_intent_buttocks_score.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.camera_objectification_risk": {
@@ -2060,8 +2060,8 @@
             "0.015742",
             "0.020633"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: risk of objectifying camera angles focusing on sensitive regions.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: risk of objectifying camera angles focusing on sensitive regions.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.explicit_pose_pattern_score": {
@@ -2076,8 +2076,8 @@
             "0.000348",
             "0.008474"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: score representing explicit or highly suggestive pose patterns.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: score representing explicit or highly suggestive pose patterns.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.exploitative_cropping_score": {
@@ -2090,8 +2090,8 @@
         "examples": [
             "0.068166"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.vulgarity_profile.exploitative_cropping_score.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.vulgarity_profile.exploitative_cropping_score.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.face_absence_score": {
@@ -2104,8 +2104,8 @@
         "examples": [
             "0.999333"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.vulgarity_profile.face_absence_score.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: derived.vulgarity_profile.face_absence_score.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.fetish_styling_risk": {
@@ -2120,8 +2120,8 @@
             "0.000218",
             "0.0246"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: risk of fetishistic clothing, styling, or bondage themes.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: risk of fetishistic clothing, styling, or bondage themes.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.genital_vulgarity": {
@@ -2136,8 +2136,8 @@
             "0.34979",
             "0.374659"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: measure of genital area vulgarity or exposure emphasis.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: measure of genital area vulgarity or exposure emphasis.",
+        "model": "YOLO Detector",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.intimate_focus_without_face_score": {
@@ -2152,8 +2152,8 @@
             "0.004367",
             "0.202209"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: score representing camera focus on intimate body areas while excluding the face.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: score representing camera focus on intimate body areas while excluding the face.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.minimal_coverage_presentation_risk": {
@@ -2168,8 +2168,8 @@
             "0.033783",
             "0.027798"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: risk score for minimal clothing coverage presentation.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: risk score for minimal clothing coverage presentation.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.non_objectifying_sensual_score": {
@@ -2182,8 +2182,8 @@
         "examples": [
             "0.015304"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: score representing non-objectifying, tasteful sensual modeling.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: score representing non-objectifying, tasteful sensual modeling.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.objectification_risk": {
@@ -2198,8 +2198,8 @@
             "0.038613",
             "0.057831"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: overall risk of body/objectification presentation.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: overall risk of body/objectification presentation.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.derived.vulgarity_profile.vulgarity_risk": {
@@ -2214,8 +2214,8 @@
             "0.103126",
             "0.087285"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: overall risk of vulgar presentation or framing.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: overall risk of vulgar presentation or framing.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.marqo.raw_label_scores.nsfw": {
@@ -2230,8 +2230,8 @@
             "0.8506577014923096",
             "0.19202964007854462"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: broad NSFW (Not Safe For Work) classification score.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: broad NSFW (Not Safe For Work) classification score.",
+        "model": "Falconsai / Marqo NSFW",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.marqo.raw_label_scores.sfw": {
@@ -2246,8 +2246,8 @@
             "0.05034838989377022",
             "0.04897297918796539"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: broad SFW (Safe For Work) classification score.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: broad SFW (Safe For Work) classification score.",
+        "model": "Falconsai / Marqo NSFW",
         "badge": "context"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.nudenet.buttocks_exposed_score": {
@@ -2260,8 +2260,8 @@
         "examples": [
             "0.2677302956581116"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: nudenet.buttocks_exposed_score.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: nudenet.buttocks_exposed_score.",
+        "model": "notAI-tech/NudeNet",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.yolo.genital_visible": {
@@ -2276,8 +2276,8 @@
             "0.755852",
             "0.516131"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: yolo.genital_visible.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: yolo.genital_visible.",
+        "model": "YOLO Detector",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.yolo.nipples_nudity": {
@@ -2292,8 +2292,8 @@
             "0.636271",
             "0.48054"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: YOLO detection score for nipple nudity.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "YOLO detector score for exposed nipples. A higher value means higher likelihood of nipple exposure. A lower value means clothed.",
+        "model": "YOLO Detector",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.yolo.penis_visible": {
@@ -2308,8 +2308,8 @@
             "0.422781",
             "0.655481"
         ],
-        "description": "Diagnostic snapshot value of rawEnvelope parameter used in policy evaluation: YOLO detection score for visible penis.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "YOLO detector score for visible penis. A higher value means exposed genitals. A lower value means covered.",
+        "model": "YOLO Detector",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.yolo.vagina_visible": {
@@ -2324,8 +2324,8 @@
             "0.755852",
             "0.516131"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: yolo.vagina_visible.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "YOLO detector score for visible vagina or vulva. A higher value means exposed genitals. A lower value means covered.",
+        "model": "YOLO Detector",
         "badge": "risk-evidence"
     },
     "decisionSignals.diagnosticSignals.rawEnvelope.yolo.vulva_visible": {
@@ -2340,8 +2340,8 @@
             "0.755852",
             "0.516131"
         ],
-        "description": "Diagnostic snapshot of rawEnvelope parameter used during rule evaluation: yolo.vulva_visible.",
-        "model": "TFP Policy Evaluator (Diagnostic)",
+        "description": "YOLO detector score for visible vagina or vulva. A higher value means exposed genitals. A lower value means covered.",
+        "model": "YOLO Detector",
         "badge": "risk-evidence"
     },
     "decisionSignals.flagMatches": {
@@ -2355,7 +2355,7 @@
             "list(len=0)"
         ],
         "description": "Explains how the moderation policy tree reached the final outcome.List field; more entries means more evidence, matches, regions, or trace steps.",
-        "model": "TFP policy evaluator",
+        "model": "TFP Policy Engine",
         "badge": "context"
     },
     "decisionSignals.hardRuleHits": {
@@ -2369,7 +2369,7 @@
             "list(len=0)"
         ],
         "description": "Explains how the moderation policy tree reached the final outcome.List field; more entries means more evidence, matches, regions, or trace steps.",
-        "model": "TFP policy evaluator",
+        "model": "TFP Policy Engine",
         "badge": "context"
     },
     "decisionSignals.rejectMatches": {
@@ -2384,7 +2384,7 @@
             "list(len=1)"
         ],
         "description": "Explains how the moderation policy tree reached the final outcome.List field; more entries means more evidence, matches, regions, or trace steps.",
-        "model": "TFP policy evaluator",
+        "model": "TFP Policy Engine",
         "badge": "context"
     },
     "decisionSignals.softRuleHits": {
@@ -2398,7 +2398,7 @@
             "list(len=1)"
         ],
         "description": "Explains how the moderation policy tree reached the final outcome.List field; more entries means more evidence, matches, regions, or trace steps.",
-        "model": "TFP policy evaluator",
+        "model": "TFP Policy Engine",
         "badge": "context"
     },
     "decisionSignals.topCategories": {
@@ -2412,7 +2412,7 @@
             "list(len=5)"
         ],
         "description": "Explains how the moderation policy tree reached the final outcome.List field; more entries means more evidence, matches, regions, or trace steps.",
-        "model": "TFP policy evaluator",
+        "model": "TFP Policy Engine",
         "badge": "context"
     },
     "decisionSignals.topCategories[i].label": {
@@ -2428,7 +2428,7 @@
             "neutral"
         ],
         "description": "The category label for one of the top classification categories.",
-        "model": "TFP Policy Evaluator",
+        "model": "TFP Policy Engine",
         "badge": "context"
     },
     "decisionSignals.topCategories[i].score": {
@@ -2444,7 +2444,7 @@
             "0.334381"
         ],
         "description": "Confidence score (0 to 1) of the corresponding top category.",
-        "model": "TFP Policy Evaluator",
+        "model": "TFP Policy Engine",
         "badge": "context"
     },
     "fileName": {
@@ -2459,8 +2459,8 @@
             "001b421e8c17d538397eac1ba40b23e558b850bdf22128d80dbd79fcaa67bc5d.jpg",
             "0022f05209c1899c04ec168daa9f69a8b549faea61e409d6863015dc873e6811.jpg"
         ],
-        "description": "Audit source pointer for the tested image.Categorical/context value; compare against policy rules and category definitions.",
-        "model": "Audit row / response metadata",
+        "description": "The filename of the image being audited. Used as a unique pointer in the audit database to associate the moderation results with the source file.",
+        "model": "Audit Row Metadata",
         "badge": "context"
     },
     "imagePath": {
@@ -2475,8 +2475,8 @@
             "/Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/scripts/qa/test-folder-moderation/Images/0022f05209c1899c04ec168daa9f69a8b549faea61e409d6863015dc873e6811.jpg",
             "/Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/scripts/qa/test-folder-moderation/Images/001b421e8c17d538397eac1ba40b23e558b850bdf22128d80dbd79fcaa67bc5d.jpg"
         ],
-        "description": "Audit source pointer for the tested image.Categorical/context value; compare against policy rules and category definitions.",
-        "model": "Audit row / response metadata",
+        "description": "The absolute local file path of the image on the disk where the audit script ran. Useful for debugging and finding the exact image file locally.",
+        "model": "Audit Row Metadata",
         "badge": "context"
     },
     "imageUrl": {
@@ -2491,8 +2491,8 @@
             "./images/0022f05209c1899c04ec168daa9f69a8b549faea61e409d6863015dc873e6811.jpg",
             "./images/001b421e8c17d538397eac1ba40b23e558b850bdf22128d80dbd79fcaa67bc5d.jpg"
         ],
-        "description": "Audit source pointer for the tested image.Categorical/context value; compare against policy rules and category definitions.",
-        "model": "Audit row / response metadata",
+        "description": "The relative web path to the image, used by the reviewer UI to display the image. Path-rewritten to avoid exposing local directories.",
+        "model": "Audit Row Metadata",
         "badge": "context"
     },
     "outcome": {
@@ -2506,8 +2506,8 @@
             "APPROVED",
             "REJECTED"
         ],
-        "description": "Field carrying outcome information in the audit or AI response envelope.Categorical/context value; compare against policy rules and category definitions.",
-        "model": "Audit row / response metadata",
+        "description": "The final moderation decision made by the TFP policy engine: APPROVED (safe for the platform), REJECTED (contains policy violations, blocked), or FLAGGED (borderline, routed to human review).",
+        "model": "Audit Row Metadata",
         "badge": "context"
     },
     "primaryCategory": {
@@ -2522,8 +2522,8 @@
             "uncertain_sexualized",
             "neutral"
         ],
-        "description": "Field carrying primary category information in the audit or AI response envelope.Categorical/context value; compare against policy rules and category definitions.",
-        "model": "Audit row / response metadata",
+        "description": "The highest-scoring content category candidate determined by the Derived Builder (e.g., explicit_nudity, uncertain_sexualized, neutral, borderline_swimwear).",
+        "model": "Audit Row Metadata",
         "badge": "context"
     },
     "rawSignals.adultContentStyle": {
@@ -2538,8 +2538,8 @@
             "0.004466",
             "0.003538"
         ],
-        "description": "Field carrying adult content style information in the audit or AI response envelope.",
-        "model": "Audit mapper",
+        "description": "Likelihood of adult content style lighting, posing, or setting. A higher value means strong adult-industry style cues. A lower value means standard commercial fashion.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.allowedContext": {
@@ -2554,8 +2554,8 @@
             "0.017385",
             "0.001111"
         ],
-        "description": "Field carrying allowed context information in the audit or AI response envelope.Lower: less safety/context support. Higher: more safe, covered, editorial, balanced, or confidence support; can reduce enforcement pressure unless explicit hard rules fire.",
-        "model": "Audit mapper",
+        "description": "Likelihood of a safe, allowed context.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.allowedSensual": {
@@ -2570,8 +2570,8 @@
             "0.000242",
             "0.025566"
         ],
-        "description": "Field carrying allowed sensual information in the audit or AI response envelope.Lower: less safety/context support. Higher: more safe, covered, editorial, balanced, or confidence support; can reduce enforcement pressure unless explicit hard rules fire.",
-        "model": "Audit mapper",
+        "description": "CLIP score representing allowed sensual or fashion context.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.areolaVisible": {
@@ -2586,8 +2586,8 @@
             "0.000287",
             "0.014408"
         ],
-        "description": "Field carrying areola visible information in the audit or AI response envelope.",
-        "model": "Audit mapper",
+        "description": "Likelihood of visible areola (unclothed). A higher value means exposed areola. A lower value means covered.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.balancedContext": {
@@ -2602,8 +2602,8 @@
             "0.238346",
             "0.139735"
         ],
-        "description": "Field carrying balanced context information in the audit or AI response envelope.",
-        "model": "Audit mapper",
+        "description": "Likelihood of a balanced, non-risky context.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.bodyPartDominance": {
@@ -2618,8 +2618,8 @@
             "0.029981",
             "0.002416"
         ],
-        "description": "Field carrying body part dominance information in the audit or AI response envelope.",
-        "model": "Audit mapper",
+        "description": "Composition score for how much of the frame is dominated by a specific body part. A higher value means close-up on body parts. A lower value means full body or facial focus.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.borderlineContext": {
@@ -2634,8 +2634,8 @@
             "0.154814",
             "0.397477"
         ],
-        "description": "Field carrying borderline context information in the audit or AI response envelope.",
-        "model": "Audit mapper",
+        "description": "Likelihood of borderline context.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.buttEmphasisPose": {
@@ -2650,8 +2650,8 @@
             "0.00089",
             "0.000189"
         ],
-        "description": "Field carrying butt emphasis pose information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Posing that emphasizes the buttocks (e.g. arched back facing away). A higher value means strong posing cues. A lower value means neutral posture.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.buttFocus": {
@@ -2666,8 +2666,8 @@
             "6.6e-05",
             "0.001304"
         ],
-        "description": "Field carrying butt focus information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Focus on the buttocks area. A higher value means buttocks dominate the framing. A lower value means focus elsewhere.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.buttocksVisible": {
@@ -2682,8 +2682,8 @@
             "0.000445",
             "0.005365"
         ],
-        "description": "Field carrying buttocks visible information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Likelihood of exposed buttocks (unclothed or minimally covered). A higher value means exposed buttocks. A lower value means covered.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.cameraObjectification": {
@@ -2698,8 +2698,8 @@
             "0.011689",
             "0.009074"
         ],
-        "description": "Field carrying camera objectification information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Raw AI signal extracted from image analysis models: cameraObjectification. Lower means weaker evidence; higher means stronger evidence.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "rawSignals.cameraObjectificationStrong": {
@@ -2714,8 +2714,8 @@
             "0.000765",
             "0.00417"
         ],
-        "description": "Field carrying camera objectification strong information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Raw AI signal extracted from image analysis models: cameraObjectificationStrong. Lower means weaker evidence; higher means stronger evidence.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "rawSignals.chestFocus": {
@@ -2730,8 +2730,8 @@
             "0.029981",
             "0.002416"
         ],
-        "description": "Field carrying chest focus information in the audit or AI response envelope.",
-        "model": "Audit mapper",
+        "description": "Composition score for tight framing on the chest/breast area. A higher value means camera focus is centered on the chest. A lower value means a wide shot or focus elsewhere.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.coveredButtShapeVisible": {
@@ -2746,8 +2746,8 @@
             "0.00298",
             "0.000361"
         ],
-        "description": "Field carrying covered butt shape visible information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Likelihood of the shape of the buttocks being highly visible through tight clothing (like leggings or spandex). A higher value means prominent shape definition. A lower value means loose clothing.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.editorialSafe": {
@@ -2762,8 +2762,8 @@
             "0.004097",
             "0.013765"
         ],
-        "description": "Field carrying editorial safe information in the audit or AI response envelope.",
-        "model": "Audit mapper",
+        "description": "CLIP score representing safe editorial fashion context.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.explicitContext": {
@@ -2778,8 +2778,8 @@
             "0.052066",
             "0.296813"
         ],
-        "description": "Field carrying explicit context information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Likelihood of explicit context.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "rawSignals.explicitLingerieIntent": {
@@ -2794,8 +2794,8 @@
             "0.006381",
             "0.027473"
         ],
-        "description": "Field carrying explicit lingerie intent information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Raw AI signal extracted from image analysis models: explicitLingerieIntent. Lower means weaker evidence; higher means stronger evidence.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "rawSignals.explicitPosePatterns": {
@@ -2810,8 +2810,8 @@
             "0.000348",
             "0.008474"
         ],
-        "description": "Field carrying explicit pose patterns information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Raw AI signal extracted from image analysis models: explicitPosePatterns. Lower means weaker evidence; higher means stronger evidence.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "rawSignals.exploitativeCropping": {
@@ -2826,8 +2826,8 @@
             "0.003921",
             "0.038614"
         ],
-        "description": "Field carrying exploitative cropping information in the audit or AI response envelope.",
-        "model": "Audit mapper",
+        "description": "Raw AI signal extracted from image analysis models: exploitativeCropping. Lower means weaker evidence; higher means stronger evidence.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.faceVisible": {
@@ -2842,8 +2842,8 @@
             "0.285566",
             "0.868223"
         ],
-        "description": "Field carrying face visible information in the audit or AI response envelope.",
-        "model": "Audit mapper",
+        "description": "Likelihood of a face being visible in the image frame. A higher value means a face is visible. A lower value means face is hidden or cropped.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.fetishStyling": {
@@ -2858,8 +2858,8 @@
             "0.010774",
             "0.0246"
         ],
-        "description": "Field carrying fetish styling information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Raw AI signal extracted from image analysis models: fetishStyling. Lower means weaker evidence; higher means stronger evidence.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.fullBodyVisible": {
@@ -2874,8 +2874,8 @@
             "0.256949",
             "0.001955"
         ],
-        "description": "Field carrying full body visible information in the audit or AI response envelope.",
-        "model": "Audit mapper",
+        "description": "Likelihood of a full body view in the image frame. A higher value means the entire body is visible. A lower value means close-up or crop.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.genitalOutline": {
@@ -2890,8 +2890,8 @@
             "2.8e-05",
             "0.000232"
         ],
-        "description": "Field carrying genital outline information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "YOLO detector score for visible outlines of genitals through tight clothing (like leggings or swimwear). A higher value means strong evidence of genital contours. A lower value means no visible contours.",
+        "model": "YOLO Detector",
         "badge": "risk-evidence"
     },
     "rawSignals.genitalsVisible": {
@@ -2906,8 +2906,8 @@
             "0.003039",
             "0.000409"
         ],
-        "description": "Field carrying genitals visible information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "YOLO detector score for visible genitals (unclothed). A higher value means clear genital exposure. A lower value means covered.",
+        "model": "YOLO Detector",
         "badge": "risk-evidence"
     },
     "rawSignals.glamourPhoto": {
@@ -2922,8 +2922,8 @@
             "2.8e-05",
             "0.004432"
         ],
-        "description": "Field carrying glamour photo information in the audit or AI response envelope.",
-        "model": "Audit mapper",
+        "description": "Likelihood of glamour, boudoir, or pin-up style photography. A higher value means stylized studio/bedroom shoot. A lower value means natural outdoor/family photo.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.groinFocus": {
@@ -2938,8 +2938,8 @@
             "0.001541",
             "0.000895"
         ],
-        "description": "Field carrying groin focus information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Composition score for tight framing on the groin area. A higher value means camera focus is centered on the groin. A lower value means a wide shot.",
+        "model": "YOLO Detector",
         "badge": "context"
     },
     "rawSignals.hentaiContext": {
@@ -2952,8 +2952,8 @@
         "examples": [
             "0"
         ],
-        "description": "Field carrying hentai context information in the audit or AI response envelope.",
-        "model": "Audit mapper",
+        "description": "Likelihood of hentai or cartoon pornography context.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.lingerieBra": {
@@ -2968,8 +2968,8 @@
             "0.000259",
             "0.020205"
         ],
-        "description": "Field carrying lingerie bra information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "YOLO detection score for lingerie bra. A higher value means clear presence of undergarments. A lower value means standard clothing.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.lingeriePanty": {
@@ -2984,8 +2984,8 @@
             "0.00078",
             "0.004239"
         ],
-        "description": "Field carrying lingerie panty information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "YOLO detection score for lingerie panty. A higher value means clear presence of undergarments. A lower value means standard clothing.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.microBikini": {
@@ -3000,8 +3000,8 @@
             "0.065882",
             "0.000159"
         ],
-        "description": "Field carrying micro bikini information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "YOLO score for micro-bikini swimwear. A higher value means extremely small swimwear. A lower value means standard swimwear or full clothing.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.minimalCoveragePresentation": {
@@ -3016,8 +3016,8 @@
             "0.003424",
             "0.030735"
         ],
-        "description": "Field carrying minimal coverage presentation information in the audit or AI response envelope.Lower: less safety/context support. Higher: more safe, covered, editorial, balanced, or confidence support; can reduce enforcement pressure unless explicit hard rules fire.",
-        "model": "Audit mapper",
+        "description": "Raw AI signal extracted from image analysis models: minimalCoveragePresentation. Lower means weaker evidence; higher means stronger evidence.",
+        "model": "Derived Builder (AIP)",
         "badge": "safe-suppressor"
     },
     "rawSignals.modelDisagreement": {
@@ -3032,8 +3032,8 @@
             "0.922303",
             "0.919678"
         ],
-        "description": "Field carrying model disagreement information in the audit or AI response envelope.Lower: model decision is cleaner. Higher: more disagreement, crop/occlusion risk, or need for human review.",
-        "model": "Audit mapper",
+        "description": "Measures disagreement across the different models (e.g., Falconsai says SFW but CLIP says Porn). A higher value means models are highly conflicted, requiring human review. A lower value means models are in consensus.",
+        "model": "Derived Builder (AIP)",
         "badge": "review-risk"
     },
     "rawSignals.nippleVisible": {
@@ -3048,8 +3048,8 @@
             "0.001381",
             "0.004273"
         ],
-        "description": "Field carrying nipple visible information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "YOLO detector score for visible nipples (unclothed). A higher value means clear visible nipple. A lower value means covered or clothed.",
+        "model": "YOLO Detector",
         "badge": "risk-evidence"
     },
     "rawSignals.nonObjectifyingSensual": {
@@ -3064,8 +3064,8 @@
             "0.11177",
             "0.000116"
         ],
-        "description": "Field carrying non objectifying sensual information in the audit or AI response envelope.",
-        "model": "Audit mapper",
+        "description": "CLIP score representing non-objectifying, tasteful sensual modeling.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.objectificationRisk": {
@@ -3080,8 +3080,8 @@
             "0.00088",
             "0.01123"
         ],
-        "description": "Field carrying objectification risk information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Measures the degree of camera objectification, where the camera focuses specifically on intimate body parts (like breasts or buttocks) while cropping out or ignoring the face. A higher value indicates an objectifying, voyeuristic, or tight crop on sensitive zones. A lower value indicates a respectful, tasteful portrait showing the face and environment.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "rawSignals.overallConfidence": {
@@ -3096,8 +3096,8 @@
             "0.71552",
             "0.519968"
         ],
-        "description": "Field carrying overall confidence information in the audit or AI response envelope.Lower: less safety/context support. Higher: more safe, covered, editorial, balanced, or confidence support; can reduce enforcement pressure unless explicit hard rules fire.",
-        "model": "Audit mapper",
+        "description": "Measures the model's self-reported confidence in its decision. A higher value means the models agree and the visual evidence is clear. A lower value means high ambiguity, bad quality, or crop/occlusion uncertainty.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.provocativePose": {
@@ -3112,8 +3112,8 @@
             "0.003773",
             "0.000564"
         ],
-        "description": "Field carrying provocative pose information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Likelihood of a provocative or suggestive pose.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.safeContextSuppressor": {
@@ -3128,8 +3128,8 @@
             "0.238346",
             "0.139735"
         ],
-        "description": "Field carrying safe context suppressor information in the audit or AI response envelope.",
-        "model": "Audit mapper",
+        "description": "Suppression score based on safe contexts (like family, athletic, or public settings) which reduces risk enforcement.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.safeSwimwearContext": {
@@ -3144,8 +3144,8 @@
             "0.080919",
             "0.09664"
         ],
-        "description": "Field carrying safe swimwear context information in the audit or AI response envelope.",
-        "model": "Audit mapper",
+        "description": "Likelihood of a safe swimwear context (e.g., beach, pool, active sports).",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.seductivePose": {
@@ -3160,8 +3160,8 @@
             "0.000198",
             "0.003304"
         ],
-        "description": "Field carrying seductive pose information in the audit or AI response envelope.",
-        "model": "Audit mapper",
+        "description": "CLIP score for seductive or provocative posing.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.seeThrough": {
@@ -3176,8 +3176,8 @@
             "7.5e-05",
             "0.005697"
         ],
-        "description": "Field carrying see through information in the audit or AI response envelope.",
-        "model": "Audit mapper",
+        "description": "Likelihood of see-through, sheer, or transparent fabrics (like lace, mesh, or wet clothing). A higher value means fabric is highly transparent. A lower value means opaque clothing.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.sexualizedPose": {
@@ -3192,8 +3192,8 @@
             "0.000351",
             "0.005673"
         ],
-        "description": "Field carrying sexualized pose information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Overall probability of a sexualized or seductive pose. A higher value means provocative positioning. A lower value means natural, candid, or athletic posture.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "rawSignals.skinExposureTotal": {
@@ -3208,8 +3208,8 @@
             "0.490561",
             "0.461857"
         ],
-        "description": "Field carrying skin exposure total information in the audit or AI response envelope.",
-        "model": "Audit mapper",
+        "description": "Total percentage of exposed skin in the frame. A higher value means high skin exposure (like swimwear or nakedness). A lower value means low skin exposure (like jackets or pants).",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.tastefulIntent": {
@@ -3224,8 +3224,8 @@
             "0.11177",
             "0.010364"
         ],
-        "description": "Field carrying tasteful intent information in the audit or AI response envelope.Lower: less safety/context support. Higher: more safe, covered, editorial, balanced, or confidence support; can reduce enforcement pressure unless explicit hard rules fire.",
-        "model": "Audit mapper",
+        "description": "CLIP score representing tasteful aesthetic intent.",
+        "model": "Derived Builder (AIP)",
         "badge": "safe-suppressor"
     },
     "rawSignals.thong": {
@@ -3240,8 +3240,8 @@
             "0.00104",
             "9.1e-05"
         ],
-        "description": "Field carrying thong information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "YOLO score for thong underwear or swimwear. A higher value means high visibility of thong straps/rear. A lower value means full coverage bottoms.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.underboobVisible": {
@@ -3256,8 +3256,8 @@
             "0.000204",
             "0.030823"
         ],
-        "description": "Field carrying underboob visible information in the audit or AI response envelope.",
-        "model": "Audit mapper",
+        "description": "Likelihood of visible underboob (exposure of the lower curve of the breast). A higher value means visible underboob. A lower value means covered.",
+        "model": "Derived Builder (AIP)",
         "badge": "context"
     },
     "rawSignals.vulgarityRisk": {
@@ -3271,8 +3271,8 @@
             "0.024362",
             "0"
         ],
-        "description": "Field carrying vulgarity risk information in the audit or AI response envelope.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Measures the overall vulgarity or exploitative nature of the image framing. A higher value indicates vulgar posing, suggestive clothing adjustments, or exploitative focus on private parts. A lower value indicates a standard, polite, and safe presentation.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "reasonCodes": {
@@ -3285,8 +3285,8 @@
         "examples": [
             "list(len=2)"
         ],
-        "description": "Field carrying reason codes information in the audit or AI response envelope.List field; more entries means more evidence, matches, regions, or trace steps.",
-        "model": "Audit row / response metadata",
+        "description": "The list of policy rule IDs or leaf names that matched during evaluation (e.g. POLICY_LEAF_SAFE_CLOTHES, nipples_main_reject_yolo). Explains which rule triggered the final outcome.",
+        "model": "Audit Row Metadata",
         "badge": "context"
     },
     "riskAxes.cameraObjectificationRisk": {
@@ -3301,8 +3301,8 @@
             "0.011689",
             "0.009074"
         ],
-        "description": "Risk axis for camera objectification risk; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Measures objectifying camera intent. A higher value indicates close-up focus on intimate regions (breasts, groin, buttocks). A lower value indicates wide portraits or environmental shots.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "riskAxes.explicitLingerieIntentRisk": {
@@ -3317,8 +3317,8 @@
             "0.006381",
             "0.027473"
         ],
-        "description": "Risk axis for explicit lingerie intent risk; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Measures the likelihood that the image represents explicit lingerie modeling. A higher value indicates an erotic boudoir setting or lingerie presentation. A lower value indicates activewear, standard swimwear, or everyday catalog fashion.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "riskAxes.explicitnessRisk": {
@@ -3333,8 +3333,8 @@
             "0.151822",
             "0.007806"
         ],
-        "description": "Risk axis for explicitness risk; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Measures the likelihood of explicit sexual content or direct exposure of private parts. A higher value (near 1.0) means unshielded genitals or nipples are highly visible. A lower value (near 0.0) means safe presentation. For example, explicit pornographic photos will have values above 0.9, while everyday fashion photos will stay near 0.0.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "riskAxes.fetishStylingRisk": {
@@ -3349,8 +3349,8 @@
             "0.010774",
             "0.0246"
         ],
-        "description": "Risk axis for fetish styling risk; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Measures the presence of fetishistic styling (bondage, leather, latex, highly sexualized alternative styles). A higher value indicates strong fetish indicators. A lower value indicates standard retail clothing.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "riskAxes.minimalCoveragePresentationRisk": {
@@ -3365,8 +3365,8 @@
             "0.003424",
             "0.030735"
         ],
-        "description": "Risk axis for minimal coverage presentation risk; used to rank safety concern and review priority.Lower: less safety/context support. Higher: more safe, covered, editorial, balanced, or confidence support; can reduce enforcement pressure unless explicit hard rules fire.",
-        "model": "Audit mapper",
+        "description": "Measures minimal clothing coverage. A higher value indicates extremely small clothing (like micro-bikinis, pasties, or thongs). A lower value indicates full clothing coverage.",
+        "model": "Derived Builder (AIP)",
         "badge": "safe-suppressor"
     },
     "riskAxes.nudityRisk": {
@@ -3381,8 +3381,8 @@
             "0.157459",
             "0.027438"
         ],
-        "description": "Risk axis for nudity risk; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Measures the probability of exposed body nudity. A higher value (near 1.0) means strong evidence of exposed private parts (breasts, genitals, or buttocks). A lower value (near 0.0) means fully clothed. For example, a completely naked body will have a value near 1.0, a bikini or lingerie model will have a moderate-to-high value (0.4 to 0.8), and a person in jeans and a jacket will have a value near 0.0.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "riskAxes.objectificationRisk": {
@@ -3397,8 +3397,8 @@
             "0.00088",
             "0.01123"
         ],
-        "description": "Risk axis for objectification risk; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Measures the degree of camera objectification, where the camera focuses specifically on intimate body parts (like breasts or buttocks) while cropping out or ignoring the face. A higher value indicates an objectifying, voyeuristic, or tight crop on sensitive zones. A lower value indicates a respectful, tasteful portrait showing the face and environment.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "riskAxes.policySensitivityRisk": {
@@ -3413,8 +3413,8 @@
             "0.039261",
             "0.008732"
         ],
-        "description": "Risk axis for policy sensitivity risk; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Measures overall policy sensitivity. A higher value indicates that multiple borderline or sensitive indicators are present, increasing the chance of review. A lower value means a clear safe status.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "riskAxes.provocativePoseRisk": {
@@ -3429,8 +3429,8 @@
             "0.003773",
             "0.000564"
         ],
-        "description": "Risk axis for provocative pose risk; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Measures the probability that the subject is in a provocative or suggestive pose. A higher value indicates explicit pose patterns like arched backs, hands on hips/clothing adjustments, or chest/butt emphasis. A lower value indicates standard static posture.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "riskAxes.reviewPriority": {
@@ -3445,8 +3445,8 @@
             "0.397477",
             "0.334381"
         ],
-        "description": "Risk axis for review priority; used to rank safety concern and review priority.Lower: model decision is cleaner. Higher: more disagreement, crop/occlusion risk, or need for human review.",
-        "model": "Audit mapper",
+        "description": "Measures human review priority. A higher value indicates extreme model disagreement, crop uncertainty, or borderline risk scores, indicating a high need for manual verification. A lower value means a stable automated outcome.",
+        "model": "Derived Builder (AIP)",
         "badge": "review-risk"
     },
     "riskAxes.safeContextSuppressor": {
@@ -3461,8 +3461,8 @@
             "0.238346",
             "0.139735"
         ],
-        "description": "Risk axis for safe context suppressor; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Measures the presence of safe, balancing contexts (like beaches, athletic fields, outdoor sports, family portraits). A higher value indicates strong safe-context evidence which suppresses enforcement actions on borderline swimwear. A lower value indicates indoor bedrooms, studios, or context-free framing.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "riskAxes.sexualizationRisk": {
@@ -3477,8 +3477,8 @@
             "0.004042",
             "0.020441"
         ],
-        "description": "Risk axis for sexualization risk; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Measures the level of sexual suggestiveness, provocative presentation, or erotic framing. A higher value indicates highly provocative posing (like arched backs, chest/butt emphasis) or seductive framing. A lower value indicates neutral, professional, or everyday lifestyle posing. For example, boudoir photography will score near 0.8, while a standard headshot or group photo will score near 0.0.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "riskAxes.suggestivenessRisk": {
@@ -3493,8 +3493,8 @@
             "0.039002",
             "0.094452"
         ],
-        "description": "Risk axis for suggestiveness risk; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Measures the presence of suggestive elements that do not cross into explicit nudity. A higher value indicates suggestive clothing (like short skirts, tight swimwear, plunging necklines) or sensual postures. A lower value indicates a fully safe, conservative presentation. For example, an activewear catalog or beach swimwear photo will have moderate values (0.3 to 0.6), whereas a corporate headshot will score near 0.0.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "riskAxes.vulgarityRisk": {
@@ -3508,8 +3508,8 @@
             "0.024362",
             "0"
         ],
-        "description": "Risk axis for vulgarity risk; used to rank safety concern and review priority.Lower: weaker risky evidence. Higher: stronger risky evidence and more chance of flag/reject depending on policy thresholds.",
-        "model": "Audit mapper",
+        "description": "Measures the overall vulgarity or exploitative nature of the image framing. A higher value indicates vulgar posing, suggestive clothing adjustments, or exploitative focus on private parts. A lower value indicates a standard, polite, and safe presentation.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "secondaryCategory": {
@@ -3524,8 +3524,8 @@
             "uncertain_sexualized",
             "neutral"
         ],
-        "description": "Field carrying secondary category information in the audit or AI response envelope.Categorical/context value; compare against policy rules and category definitions.",
-        "model": "Audit row / response metadata",
+        "description": "The second-highest content category candidate, populated if its confidence score is at least 0.12, showing secondary elements like borderline swimwear in a suggestive photo.",
+        "model": "Audit Row Metadata",
         "badge": "context"
     },
     "semanticTags": {
@@ -3539,8 +3539,8 @@
             "list(len=0)",
             "list(len=2)"
         ],
-        "description": "Field carrying semantic tags information in the audit or AI response envelope.List field; more entries means more evidence, matches, regions, or trace steps.",
-        "model": "Audit row / response metadata",
+        "description": "A list of semantic tags (e.g., SWIMWEAR, PORNOGRAPHY, EXPLICIT) extracted from CLIP zero-shot classification to help categorize image content.",
+        "model": "Audit Row Metadata",
         "badge": "context"
     },
     "sexualizationLevel": {
@@ -3554,8 +3554,8 @@
             "HIGH",
             "LOW"
         ],
-        "description": "Field carrying sexualization level information in the audit or AI response envelope.Categorical/context value; compare against policy rules and category definitions.",
-        "model": "Audit row / response metadata",
+        "description": "A categorical rating of sexual suggestiveness: LOW, MEDIUM, or HIGH. Derived from the suggestiveness and sexualization risk axes.",
+        "model": "Derived Builder (AIP)",
         "badge": "risk-evidence"
     },
     "sourceType": {
@@ -3568,8 +3568,8 @@
         "examples": [
             "UPLOAD_PORTFOLIO"
         ],
-        "description": "Field carrying source type information in the audit or AI response envelope.Categorical/context value; compare against policy rules and category definitions.",
-        "model": "Audit row / response metadata",
+        "description": "The context of the image upload (e.g. UPLOAD_PORTFOLIO). Helps classify which feature or user action triggered the moderation call.",
+        "model": "Audit Row Metadata",
         "badge": "context"
     },
     "uncertainty.cropUncertainty": {
@@ -3584,8 +3584,8 @@
             "0.002865",
             "0.019434"
         ],
-        "description": "Uncertainty signal for crop uncertainty; used to decide when human review is safer.Lower: model decision is cleaner. Higher: more disagreement, crop/occlusion risk, or need for human review.",
-        "model": "Audit row / response metadata",
+        "description": "Measures whether the image is tightly cropped in a way that hides critical context. A higher value means tight cropping on a body part. A lower value means full-frame context.",
+        "model": "Derived Builder (AIP)",
         "badge": "review-risk"
     },
     "uncertainty.modelDisagreement": {
@@ -3600,8 +3600,8 @@
             "0.922303",
             "0.919678"
         ],
-        "description": "Uncertainty signal for model disagreement; used to decide when human review is safer.Lower: model decision is cleaner. Higher: more disagreement, crop/occlusion risk, or need for human review.",
-        "model": "Audit row / response metadata",
+        "description": "Measures disagreement across the different models (e.g., Falconsai says SFW but CLIP says Porn). A higher value means models are highly conflicted, requiring human review. A lower value means models are in consensus.",
+        "model": "Derived Builder (AIP)",
         "badge": "review-risk"
     },
     "uncertainty.occlusionUncertainty": {
@@ -3616,8 +3616,8 @@
             "0.224307",
             "0.211818"
         ],
-        "description": "Uncertainty signal for occlusion uncertainty; used to decide when human review is safer.Lower: model decision is cleaner. Higher: more disagreement, crop/occlusion risk, or need for human review.",
-        "model": "Audit row / response metadata",
+        "description": "Measures whether sensitive parts are partially blocked or hidden (e.g., hands, hair, or shadows blocking a region). A higher value means high occlusion, making detection less certain. A lower value means a clear, unoccluded view.",
+        "model": "Derived Builder (AIP)",
         "badge": "review-risk"
     },
     "uncertainty.overallConfidence": {
@@ -3632,8 +3632,8 @@
             "0.71552",
             "0.519968"
         ],
-        "description": "Uncertainty signal for overall confidence; used to decide when human review is safer.Lower: less safety/context support. Higher: more safe, covered, editorial, balanced, or confidence support; can reduce enforcement pressure unless explicit hard rules fire.",
-        "model": "Audit row / response metadata",
+        "description": "Measures the model's self-reported confidence in its decision. A higher value means the models agree and the visual evidence is clear. A lower value means high ambiguity, bad quality, or crop/occlusion uncertainty.",
+        "model": "Derived Builder (AIP)",
         "badge": "review-risk"
     },
     "uncertainty.reviewRecommended": {
@@ -3648,8 +3648,8 @@
             "0.691462",
             "0.839747"
         ],
-        "description": "Uncertainty signal for review recommended; used to decide when human review is safer.Lower: model decision is cleaner. Higher: more disagreement, crop/occlusion risk, or need for human review.",
-        "model": "Audit row / response metadata",
+        "description": "Measures the recommendation score for human review. A higher value means manual verification is highly recommended due to borderline indicators. A lower value means automated approval/rejection is highly reliable.",
+        "model": "Derived Builder (AIP)",
         "badge": "review-risk"
     }
 };
