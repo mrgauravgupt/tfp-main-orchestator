@@ -3716,12 +3716,12 @@
     }
     
     function escapeRegExp(string) {
-      return string.replace(/[.*+?^${}()|[\]\]/g, '\$&');
+      return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     }
     
     // Render range visualizer HTML
     function getRangeVisualizer(field) {
-      if (field.min === null || field.max === null || field.avg === null) {
+      if (typeof field.min !== 'number' || typeof field.max !== 'number' || typeof field.avg !== 'number') {
         return '<span style="color: var(--text-muted); font-size: 0.8rem;">N/A (Non-numeric)</span>';
       }
       
