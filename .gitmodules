@@ -6,6 +6,6 @@
 	path = tfp-image-moderation-service
 	url = git@github.com:mrgauravgupt/ai-inference-platform.git
 
-[submodule "tfp-workspace"]
-	path = tfp-workspace
+[submodule "tfpphotographers"]
+	path = tfpphotographers
 	url = git@github.com:mrgauravgupt/tfpphotographers.com.git
