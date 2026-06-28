@@ -3032,7 +3032,7 @@
             "0.922303",
             "0.919678"
         ],
-        "description": "Measures the degree of disagreement or conflict across different visual models. A higher value indicates that models are highly conflicted, requiring human review. A lower value indicates models are in consensus.",
+        "description": "Measures the degree of conflict or prediction mismatch between different active AI models (e.g. YOLO, NudeNet, Falconsai/Marqo, and CLIP) when analyzing the same image. In multi-model setups, models look at different visual features: YOLO detects localized private parts (like nipples or genitals) while Falconsai evaluates broad image context for NSFW styling. Model disagreement happens when these perspectives contradict each other. A higher value means the models strongly disagree\u2014for example, a broad classifier predicts the image is highly explicit, but the object detector finds zero exposed private parts (typical in tight activewear or swimsuit photos). This conflict triggers a review recommendation. A lower value means all models are in agreement (e.g., they all agree the image is completely safe and clothed, or they all agree it contains clear nudity).",
         "model": "Derived Builder (AIP)",
         "badge": "review-risk"
     },
@@ -3600,7 +3600,7 @@
             "0.922303",
             "0.919678"
         ],
-        "description": "Measures the degree of disagreement or conflict across different visual models. A higher value indicates that models are highly conflicted, requiring human review. A lower value indicates models are in consensus.",
+        "description": "Measures the degree of conflict or prediction mismatch between different active AI models (e.g. YOLO, NudeNet, Falconsai/Marqo, and CLIP) when analyzing the same image. In multi-model setups, models look at different visual features: YOLO detects localized private parts (like nipples or genitals) while Falconsai evaluates broad image context for NSFW styling. Model disagreement happens when these perspectives contradict each other. A higher value means the models strongly disagree\u2014for example, a broad classifier predicts the image is highly explicit, but the object detector finds zero exposed private parts (typical in tight activewear or swimsuit photos). This conflict triggers a review recommendation. A lower value means all models are in agreement (e.g., they all agree the image is completely safe and clothed, or they all agree it contains clear nudity).",
         "model": "Derived Builder (AIP)",
         "badge": "review-risk"
     },
