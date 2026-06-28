@@ -166,9 +166,9 @@
     
     /* Main Content */
     main {
-      max-width: 1400px;
+      max-width: 1600px;
       margin: 0 auto;
-      padding: 40px 6%;
+      padding: 30px 20px;
     }
     
     /* Search & Filter Section */
@@ -305,12 +305,13 @@
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: 16px;
-      overflow: hidden;
+      overflow-x: auto; /* Enable horizontal scrolling if table is wider than viewport */
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     }
     
     table {
       width: 100%;
+      min-width: 1200px; /* Prevent columns from being squeezed too much */
       border-collapse: collapse;
       text-align: left;
     }
@@ -381,14 +382,18 @@
     /* Field Name Styling */
     .field-path {
       font-family: 'Fira Code', monospace;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 600;
       color: #34d399; /* Light Emerald */
-      word-break: break-all;
       cursor: pointer;
-      display: inline-flex;
-      align-items: center;
+      display: flex;
+      align-items: flex-start;
       gap: 6px;
+    }
+    
+    .field-path span {
+      word-break: break-all;
+      white-space: normal;
     }
     
     .field-path:hover {
@@ -3887,7 +3892,7 @@
           <tr data-path="${field.path}">
             <td>
               <div class="field-path" onclick="copyToClipboard('${field.path}')" title="Click to copy path">
-                ${highlightedPath}
+                <span>${highlightedPath}</span>
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m-5 4h5m-5 4h5m-2 5h2"></path>
                 </svg>
