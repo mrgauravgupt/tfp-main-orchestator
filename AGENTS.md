@@ -82,6 +82,15 @@
 - Keep the app, collage worker, and image moderation worker pointed at the same VPS DB target so they can share the same state for moderation and collage generation.
 - Use localhost only for local and development workflows unless a task explicitly asks for an isolated override.
 
+## Queue And Background Worker Audit Rule
+
+- Do not flag the current PostgreSQL-backed queue/outbox model as a BullMQ/Redis migration requirement by default.
+- The app intentionally uses database-backed job state for domain workflows where queue state must stay close to moderation, upload, report, opportunity, event, contest, and collage records.
+- `event_outbox`, worker polling, retry fields, stale-processing recovery, and `FOR UPDATE SKIP LOCKED` are valid architectural choices in this workspace, not audit findings on their own.
+- BullMQ/Redis should be recommended only when there is measured operational pain: backlog/latency under load, expensive DB polling, missing dead-letter/operator visibility that cannot be solved simply, many worker pools, complex delayed retries, or a real need for Bull Board-style queue operations.
+- Prefer first improving the existing DB-backed model with health checks, backlog/failure queries, terminal failed/dead-letter states, indexes, stale-job recovery, and operator docs before proposing a queue migration.
+- When comparing queue options, treat PostgreSQL consistency and inspectability as strengths for this product, especially because UAT services share one VPS PostgreSQL state source.
+
 ## VPS vs OCI Rule
 
 - Do not confuse the Contabo VPS with Oracle Cloud Infrastructure.
