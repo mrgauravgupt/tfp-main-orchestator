@@ -59,7 +59,7 @@ Adjust the staged files and commit message to match the actual change.
 cd /Users/hexa/Desktop/tfp-main-orchestator
 git fetch origin
 git status --short --branch
-git add tfp-image-moderation-service IMAGE_MODERATION_DEPLOYMENT_GUIDE.md
+git add tfp-image-moderation-service docs/operations/IMAGE_MODERATION_DEPLOYMENT_GUIDE.md
 git commit -m "docs(moderation): document deployment flow"
 git push origin main
 ```
