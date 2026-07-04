@@ -66,22 +66,20 @@ Required before go-live:
 - Keep `expose_playground_ui=false` and `expose_openapi=false` in production.
 - If folder-ops must be public, add CSRF/origin checks, edge allowlisting/VPN, rate limiting, and restricted static report exposure first.
 
-### 3. Collage service test/runtime path uses host Node
+## Resolved During Follow-Up
 
-Evidence:
+### Collage service test/runtime path now uses Node 24 harness
 
-- `tfp-collage-service/package.json` requires `node >=24`.
-- `pnpm test` failed on this host with `node: bad option: --test`, because `/usr/local/bin/node` is v16.13.1.
-- The same test suite passed with the bundled Node 24 runtime: 21 tests passed.
+Previous evidence:
 
-Risk:
+- `tfp-collage-service/package.json` required `node >=24`, but `pnpm test` previously failed on this host with `node: bad option: --test` because `/usr/local/bin/node` was v16.13.1.
+- The suite passed only when manually run with a Node 24 binary.
 
-- Operators or CI runners using system Node can get false failures or run an unsupported runtime.
+Resolution:
 
-Required before go-live:
-
-- Add or document a Node 24 wrapper for collage service commands, matching the main app's `scripts/pnpm-node20.sh` pattern.
-- Ensure production systemd/Docker/CI uses Node 24.
+- Added `tfp-collage-service/scripts/ensure-node-runtime.sh`, `scripts/run-node.sh`, and `scripts/pnpm-node.sh`.
+- Updated collage service `dev`, `build`, `start`, `test`, `validate`, local start, README commands, VPS deploy build/prune, and systemd `ExecStart` to route through those wrappers.
+- Verified direct `pnpm test` and `bash ./scripts/pnpm-node.sh validate` now pass from the normal shell.
 
 ## Security Review Summary
 
@@ -178,7 +176,6 @@ Passed:
 Failed / intentionally blocking:
 
 - `bash ./scripts/pnpm-node20.sh qa:env:doctor:prod` failed for localhost production DB URLs, missing Redis rate-limit store, and missing observability settings.
-- `pnpm test` in `tfp-collage-service` failed under host Node 16; the suite passes under Node 24.
 
 Not run in this pass:
 
@@ -194,8 +191,6 @@ Before production launch:
 1. Make `qa:env:doctor:prod` pass.
 2. Ensure production runs `web`, `api`, `worker`, and migration job; do not deploy web/API without worker.
 3. Lock production moderation service to internal access with `expose_playground_ui=false` and `expose_openapi=false`.
-4. Confirm collage service runs with Node 24 in CI and deployment.
-5. Run full release gates from `docs/operations/DEPLOYMENT_RUNBOOK.md`.
-6. Restart FE/BE/worker with production-like env and run browser smoke, a11y, and release UI coverage.
-7. Verify public headers, CSP, cookies, HTTPS/HSTS, API CORS, uploads, moderation, reports, auth, admin workflows, and worker queues from the deployed origin.
-
+4. Run full release gates from `docs/operations/DEPLOYMENT_RUNBOOK.md`.
+5. Restart FE/BE/worker with production-like env and run browser smoke, a11y, and release UI coverage.
+6. Verify public headers, CSP, cookies, HTTPS/HSTS, API CORS, uploads, moderation, reports, auth, admin workflows, and worker queues from the deployed origin.
