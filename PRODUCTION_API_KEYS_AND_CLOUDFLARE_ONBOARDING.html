@@ -1,0 +1,893 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TFP Production API Keys and Cloudflare Onboarding</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #18202a;
+      --muted: #5f6b7a;
+      --line: #d9e1ea;
+      --panel: #ffffff;
+      --soft: #f6f8fb;
+      --accent: #0f766e;
+      --accent-soft: #e6f5f2;
+      --warn: #a15c07;
+      --warn-soft: #fff4dd;
+      --danger: #a73535;
+      --danger-soft: #fff0f0;
+      --ok: #23734c;
+      --ok-soft: #edf8f1;
+      --code: #243142;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--soft);
+      line-height: 1.55;
+    }
+
+    a {
+      color: #075ea8;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 32px 22px 56px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #ffffff 0%, #eef7f4 62%, #f7fbff 100%);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 34px;
+      box-shadow: 0 18px 50px rgba(25, 44, 73, 0.08);
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 10px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.02;
+      margin: 0 0 18px;
+      letter-spacing: 0;
+      max-width: 880px;
+    }
+
+    h2 {
+      font-size: 28px;
+      line-height: 1.2;
+      margin: 44px 0 16px;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      font-size: 20px;
+      line-height: 1.3;
+      margin: 24px 0 10px;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .hero p {
+      max-width: 880px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 34px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.78);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 20px 0;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      box-shadow: 0 10px 24px rgba(20, 35, 55, 0.05);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .status {
+      border-left: 5px solid var(--accent);
+    }
+
+    .status.danger {
+      border-left-color: var(--danger);
+      background: var(--danger-soft);
+    }
+
+    .status.warn {
+      border-left-color: var(--warn);
+      background: var(--warn-soft);
+    }
+
+    .status.ok {
+      border-left-color: var(--ok);
+      background: var(--ok-soft);
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 0 6px 6px 0;
+      padding: 4px 8px;
+      border-radius: 6px;
+      background: var(--accent-soft);
+      color: #07574f;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .tag.warn {
+      background: var(--warn-soft);
+      color: var(--warn);
+    }
+
+    .tag.danger {
+      background: var(--danger-soft);
+      color: var(--danger);
+    }
+
+    .section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+      margin: 18px 0;
+      box-shadow: 0 10px 24px rgba(20, 35, 55, 0.04);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 12px 13px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+    }
+
+    th {
+      background: #eef3f8;
+      color: #26384c;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    code {
+      color: var(--code);
+      background: #eef2f7;
+      padding: 2px 5px;
+      border-radius: 5px;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.92em;
+    }
+
+    pre {
+      overflow: auto;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid #d0d9e5;
+      background: #17212f;
+      color: #eef5ff;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    pre code {
+      padding: 0;
+      color: inherit;
+      background: transparent;
+    }
+
+    ul, ol {
+      margin: 10px 0 0 20px;
+      padding: 0;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    .provider {
+      display: grid;
+      grid-template-columns: minmax(190px, 0.8fr) minmax(0, 2.2fr);
+      gap: 18px;
+      padding: 20px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .provider:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .provider-name {
+      font-size: 18px;
+      font-weight: 850;
+      margin: 0 0 6px;
+    }
+
+    .provider-purpose {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .steps {
+      margin-top: 8px;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .callout {
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--accent);
+      border-radius: 8px;
+      padding: 16px;
+      background: #fbfefd;
+      margin: 16px 0;
+    }
+
+    .toc {
+      columns: 2;
+      column-gap: 28px;
+      margin: 0;
+    }
+
+    .toc li {
+      break-inside: avoid;
+    }
+
+    @media (max-width: 860px) {
+      .grid, .grid.two {
+        grid-template-columns: 1fr;
+      }
+
+      .provider {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        columns: 1;
+      }
+
+      .hero, .section {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <p class="eyebrow">TFP production readiness</p>
+      <h1>API Keys, Secrets, and Cloudflare Onboarding</h1>
+      <p>
+        This root-level guide lists every production credential currently expected by the TFP application stack,
+        explains why each one exists, links to the official setup pages, and separates required launch blockers
+        from optional integrations.
+      </p>
+      <div class="meta">
+        <span class="pill">Generated: 2026-07-05</span>
+        <span class="pill">Workspace: /Users/hexa/Desktop/tfp-main-orchestator</span>
+        <span class="pill">No secret values included</span>
+      </div>
+    </section>
+
+    <section class="section status danger">
+      <h2 id="current-status">Current Production Env Status</h2>
+      <p>
+        The production environment still needs credential cleanup before go-live. The local production env doctor
+        currently reports these blockers:
+      </p>
+      <ul>
+        <li><strong>Production database URLs resolve to localhost.</strong> Replace local database targets with the real production PostgreSQL endpoint.</li>
+        <li><strong>Sentry DSNs are missing or invalid.</strong> Create separate backend and browser projects or confirm the intended shared DSN pattern.</li>
+        <li><strong>Axiom token is missing or still a placeholder.</strong> Create a production ingest token and dataset.</li>
+        <li><strong>Redis-backed rate limit store is not configured.</strong> Set <code>RATE_LIMIT_REDIS_URL</code> for multi-instance production rate limiting.</li>
+      </ul>
+      <p class="small">
+        Re-run the validation commands at the end of this document after replacing placeholders. Do not commit real values.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 id="contents">Contents</h2>
+      <ol class="toc">
+        <li><a href="#launch-required">Launch-required credentials</a></li>
+        <li><a href="#conditional">Conditional production credentials</a></li>
+        <li><a href="#cloudflare">Cloudflare onboarding</a></li>
+        <li><a href="#provider-playbook">Provider setup playbook</a></li>
+        <li><a href="#variables">Variable checklist</a></li>
+        <li><a href="#validation">Validation and rotation</a></li>
+      </ol>
+    </section>
+
+    <section class="section" id="launch-required">
+      <h2>Launch-Required Credentials</h2>
+      <div class="grid">
+        <article class="card status danger">
+          <h3>Production database</h3>
+          <p>Required for API, workers, Prisma migrations, moderation state, user activity tracing, reports, uploads, and collage jobs.</p>
+          <span class="tag danger">Required</span>
+          <span class="tag">PostgreSQL</span>
+        </article>
+        <article class="card status danger">
+          <h3>Application secrets</h3>
+          <p>Required for sessions, JWTs, OAuth state, encrypted OAuth tokens, and signed local upload URLs.</p>
+          <span class="tag danger">Required</span>
+          <span class="tag">Generate locally</span>
+        </article>
+        <article class="card status danger">
+          <h3>Sentry and Axiom</h3>
+          <p>Required by production config checks for exception tracing, frontend error visibility, structured logs, and operational investigation.</p>
+          <span class="tag danger">Required</span>
+          <span class="tag">Observability</span>
+        </article>
+        <article class="card status danger">
+          <h3>Redis rate-limit store</h3>
+          <p>Required when production rate limiting is enabled across more than one API process or host.</p>
+          <span class="tag danger">Required</span>
+          <span class="tag">Abuse control</span>
+        </article>
+        <article class="card status danger">
+          <h3>Email provider</h3>
+          <p>Required for verification, password reset, account notifications, operator alerts, and user lifecycle messaging.</p>
+          <span class="tag danger">Required</span>
+          <span class="tag">Resend</span>
+        </article>
+        <article class="card status danger">
+          <h3>Object storage and CDN</h3>
+          <p>Required for user uploads, moderation evidence, private artifacts, image delivery, and cacheable media URLs.</p>
+          <span class="tag danger">Required</span>
+          <span class="tag">Backblaze B2</span>
+          <span class="tag">ImageKit</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="conditional">
+      <h2>Conditional Production Credentials</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Integration</th>
+            <th>When Needed</th>
+            <th>Primary Variables</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google, Apple, Meta OAuth</td>
+            <td>Required only when <code>FEATURE_SOCIAL_LOGIN=true</code>. At least one provider must be configured.</td>
+            <td><code>GOOGLE_CLIENT_ID</code>, <code>GOOGLE_CLIENT_SECRET</code>, <code>APPLE_CLIENT_ID</code>, <code>APPLE_TEAM_ID</code>, <code>APPLE_KEY_ID</code>, <code>APPLE_PRIVATE_KEY</code>, <code>META_CLIENT_ID</code>, <code>META_CLIENT_SECRET</code></td>
+          </tr>
+          <tr>
+            <td>Remote moderation and translation services</td>
+            <td>Required when the app calls external TFP services for image moderation, translation, or collage generation.</td>
+            <td><code>MODERATION_REMOTE_URL</code>, <code>MODERATION_REMOTE_AUTH_TOKEN</code>, <code>TRANSLATION_REMOTE_AUTH_TOKEN</code>, <code>COLLAGE_SERVICE_API_KEY</code>, service-side <code>AIP__SECURITY__INTERNAL_API_KEY</code></td>
+          </tr>
+          <tr>
+            <td>AI model providers</td>
+            <td>Required when Gemini, Groq, or another LLM-backed feature is enabled.</td>
+            <td><code>GEMINI_API_KEY</code>, <code>GROQ_API_KEY</code>, <code>TRANSLATION_GEMINI_API_KEY</code></td>
+          </tr>
+          <tr>
+            <td>Direct image moderation providers</td>
+            <td>Required only if production uses Google Vision or AWS Rekognition instead of the remote moderation service.</td>
+            <td><code>GOOGLE_APPLICATION_CREDENTIALS</code>, <code>AWS_ACCESS_KEY_ID</code>, <code>AWS_SECRET_ACCESS_KEY</code>, <code>AWS_REGION</code></td>
+          </tr>
+          <tr>
+            <td>Search and analytics</td>
+            <td>Required only when Meilisearch or Mixpanel paths are enabled in production.</td>
+            <td><code>MEILISEARCH_HOST</code>, <code>MEILISEARCH_MASTER_KEY</code>, <code>PUBLIC_MIXPANEL_TOKEN</code></td>
+          </tr>
+          <tr>
+            <td>Maps, location, weather, media enrichment</td>
+            <td>Required only for enabled discovery or enrichment features.</td>
+            <td><code>GEOAPIFY_API_KEY</code>, <code>OPENCAGE_API_KEY</code>, <code>OPENTRIPMAP_API_KEY</code>, <code>GOOGLE_MAPS_API_KEY</code>, <code>STADIAMAPS_API_KEY</code>, <code>OPENWEATHER_API_KEY</code>, <code>PEXELS_API_KEY</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" id="cloudflare">
+      <h2>Cloudflare Onboarding</h2>
+      <div class="callout">
+        <strong>Production recommendation:</strong> Cloudflare should front the public web and API domains before launch.
+        It gives DNS control, TLS policy, WAF rules, rate limiting at the edge, cache rules for static assets, bot controls,
+        and optional Turnstile challenges for abuse-prone forms.
+      </div>
+
+      <div class="grid two">
+        <article class="card">
+          <h3>Domain and DNS setup</h3>
+          <ol>
+            <li>Create or use a Cloudflare account.</li>
+            <li>Add the production domain from <a href="https://developers.cloudflare.com/fundamentals/manage-domains/add-site/">Cloudflare Add Site</a>.</li>
+            <li>Review imported DNS records and add missing records from <a href="https://developers.cloudflare.com/dns/manage-dns-records/how-to/create-dns-records/">DNS record setup</a>.</li>
+            <li>Update nameservers at the registrar to the nameservers Cloudflare provides.</li>
+            <li>Use proxied records for public web/API hostnames unless a specific service requires DNS-only mode.</li>
+          </ol>
+        </article>
+        <article class="card">
+          <h3>TLS, WAF, and cache</h3>
+          <ol>
+            <li>Set SSL/TLS mode to <a href="https://developers.cloudflare.com/ssl/origin-configuration/ssl-modes/full-strict/">Full (strict)</a> once origin certificates are valid.</li>
+            <li>Enable <a href="https://developers.cloudflare.com/waf/managed-rules/">Managed WAF rules</a>.</li>
+            <li>Create custom WAF rules for admin, auth, upload, and moderation-sensitive endpoints using <a href="https://developers.cloudflare.com/waf/custom-rules/">custom rules</a>.</li>
+            <li>Create edge rate limiting for login, registration, password reset, upload, comments, and report endpoints with <a href="https://developers.cloudflare.com/waf/rate-limiting-rules/">rate limiting rules</a>.</li>
+            <li>Use <a href="https://developers.cloudflare.com/cache/how-to/cache-rules/">Cache Rules</a> for static assets; do not cache authenticated API responses or user-specific HTML.</li>
+          </ol>
+        </article>
+      </div>
+
+      <h3>Recommended DNS records</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Hostname</th>
+            <th>Record Type</th>
+            <th>Purpose</th>
+            <th>Proxy Mode</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>tfpphotographers.com</code></td>
+            <td>A, AAAA, or CNAME depending on host</td>
+            <td>Primary website</td>
+            <td>Proxied</td>
+          </tr>
+          <tr>
+            <td><code>www.tfpphotographers.com</code></td>
+            <td>CNAME</td>
+            <td>Canonical web alias</td>
+            <td>Proxied</td>
+          </tr>
+          <tr>
+            <td><code>api.tfpphotographers.com</code></td>
+            <td>A, AAAA, or CNAME depending on host</td>
+            <td>Public API origin</td>
+            <td>Proxied</td>
+          </tr>
+          <tr>
+            <td><code>cdn.tfpphotographers.com</code></td>
+            <td>CNAME</td>
+            <td>Image CDN or media alias if used</td>
+            <td>Depends on provider requirements</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Cloudflare API token</h3>
+      <p>
+        The app does not require a Cloudflare runtime token by default. Create a Cloudflare API token only if CI/deploy scripts
+        need to automate DNS, purge cache, manage WAF rules, or call Cloudflare APIs.
+      </p>
+      <ol>
+        <li>Open <a href="https://developers.cloudflare.com/fundamentals/api/get-started/create-token/">Create API Token</a>.</li>
+        <li>Use the narrowest template or custom token possible.</li>
+        <li>Scope it to the single production zone.</li>
+        <li>Grant only required permissions, such as Zone DNS Edit, Zone Cache Purge, or WAF Read/Edit when automation needs it.</li>
+        <li>Store as <code>CLOUDFLARE_API_TOKEN</code> only in deployment secrets, not in source files.</li>
+      </ol>
+
+      <h3>Turnstile option</h3>
+      <p>
+        Add Cloudflare Turnstile if registration, login, password reset, comments, contact, or upload forms receive abuse.
+        Start at <a href="https://developers.cloudflare.com/turnstile/get-started/">Turnstile Get Started</a> and use the
+        widget guidance from <a href="https://developers.cloudflare.com/turnstile/concepts/widget/">Turnstile widget concepts</a>.
+      </p>
+      <p>
+        Suggested variables: <code>TURNSTILE_SITE_KEY</code> for frontend rendering and <code>TURNSTILE_SECRET_KEY</code>
+        for server-side verification. Add these only when the app code validates Turnstile tokens.
+      </p>
+    </section>
+
+    <section class="section" id="provider-playbook">
+      <h2>Provider Setup Playbook</h2>
+
+      <div class="provider">
+        <div>
+          <p class="provider-name">PostgreSQL</p>
+          <p class="provider-purpose">Primary transactional database for users, uploads, moderation, reports, audit trails, jobs, and app state.</p>
+        </div>
+        <div>
+          <p><strong>Variables:</strong> <code>DATABASE_URL</code>, <code>DATABASE_DIRECT_URL</code>, <code>SHADOW_DATABASE_URL</code>.</p>
+          <ol class="steps">
+            <li>Create a production PostgreSQL instance with backups, monitoring, and network restrictions.</li>
+            <li>Create a least-privilege app user and a separate migration/direct user if your hosting model supports it.</li>
+            <li>Set pooled and direct URLs in the production secret store.</li>
+            <li>Run migrations from the deployment workflow, then run the environment doctor.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="provider">
+        <div>
+          <p class="provider-name">Application Secrets</p>
+          <p class="provider-purpose">Cryptographic secrets for sessions, JWTs, OAuth CSRF state, encrypted OAuth tokens, and signed upload URLs.</p>
+        </div>
+        <div>
+          <p><strong>Variables:</strong> <code>JWT_SECRET</code>, <code>COOKIE_SECRET</code>, <code>OAUTH_STATE_SECRET</code>, <code>OAUTH_TOKEN_ENCRYPTION_SECRET</code>, <code>STORAGE_LOCAL_UPLOAD_SIGNING_SECRET</code>.</p>
+          <p>Generate a unique value for each variable:</p>
+          <pre><code>openssl rand -base64 48</code></pre>
+          <p class="small">Do not reuse values across UAT and production. Do not reuse one generated value for multiple variables.</p>
+        </div>
+      </div>
+
+      <div class="provider">
+        <div>
+          <p class="provider-name">Sentry</p>
+          <p class="provider-purpose">Backend and frontend exception capture, stack traces, release tracking, and incident triage.</p>
+        </div>
+        <div>
+          <p><strong>Variables:</strong> <code>SENTRY_DSN</code>, <code>PUBLIC_SENTRY_DSN</code>, optional <code>SENTRY_AUTH_TOKEN</code> for source maps.</p>
+          <ol class="steps">
+            <li>Create backend and frontend projects using <a href="https://docs.sentry.io/product/sentry-basics/integrate-backend/getting-started/">Sentry backend setup</a> and <a href="https://docs.sentry.io/product/sentry-basics/integrate-frontend/create-new-project/">Sentry frontend project setup</a>.</li>
+            <li>Copy each project DSN from the project settings. Sentry explains DSNs in <a href="https://docs.sentry.io/concepts/key-terms/dsn-explainer/">DSN Explainer</a>.</li>
+            <li>Create an auth token only if the build uploads source maps. Use <a href="https://docs.sentry.io/account/auth-tokens/">Sentry auth tokens</a> and the <a href="https://docs.sentry.io/platforms/javascript/guides/astro/sourcemaps/">Astro source maps guide</a>.</li>
+            <li>Set release, environment, and sampling values in production configuration.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="provider">
+        <div>
+          <p class="provider-name">Axiom</p>
+          <p class="provider-purpose">Structured production logs used for request tracing, abuse investigation, IP/user correlation, and audit evidence.</p>
+        </div>
+        <div>
+          <p><strong>Variables:</strong> <code>AXIOM_TOKEN</code>, <code>AXIOM_DATASET</code>.</p>
+          <ol class="steps">
+            <li>Create a production dataset using <a href="https://axiom.co/docs/restapi/endpoints/createDataset">Axiom Create Dataset</a> or the Axiom UI.</li>
+            <li>Create a token from <a href="https://axiom.co/docs/reference/tokens">Axiom Tokens</a> with ingest access to that dataset.</li>
+            <li>Confirm ingest behavior with <a href="https://axiom.co/docs/restapi/ingest">Axiom Ingest</a>.</li>
+            <li>Use a production-only dataset name such as <code>tfp-production</code>.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="provider">
+        <div>
+          <p class="provider-name">Redis</p>
+          <p class="provider-purpose">Shared rate-limit and abuse-control state across API instances.</p>
+        </div>
+        <div>
+          <p><strong>Variable:</strong> <code>RATE_LIMIT_REDIS_URL</code>.</p>
+          <ol class="steps">
+            <li>Create a managed Redis database. Common options include <a href="https://upstash.com/docs/redis/overall/getstarted">Upstash Redis</a> or <a href="https://redis.io/docs/latest/operate/rc/databases/create-database/">Redis Cloud database setup</a>.</li>
+            <li>Copy the TLS Redis connection URL into the production secret store.</li>
+            <li>Restrict network access where supported and set usage alerts.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="provider">
+        <div>
+          <p class="provider-name">Resend</p>
+          <p class="provider-purpose">Transactional email for verification, password reset, notifications, and account flows.</p>
+        </div>
+        <div>
+          <p><strong>Variables:</strong> <code>RESEND_API_KEY</code>, <code>EMAIL_FROM</code>, <code>SUPPORT_EMAIL</code>, <code>ADMIN_ALERT_EMAIL</code>.</p>
+          <ol class="steps">
+            <li>Add and verify the sending domain from <a href="https://resend.com/docs/dashboard/domains/introduction">Resend Domains</a>.</li>
+            <li>Create an API key using <a href="https://resend.com/docs/dashboard/api-keys/introduction">Resend API Keys</a> or <a href="https://resend.com/docs/create-an-api-key">Create an API Key</a>.</li>
+            <li>Add the DNS records Resend requires through Cloudflare DNS.</li>
+            <li>Use a restricted production key if your Resend plan supports scoped keys.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="provider">
+        <div>
+          <p class="provider-name">Backblaze B2</p>
+          <p class="provider-purpose">Object storage for uploads, private moderation artifacts, generated media, and evidence files.</p>
+        </div>
+        <div>
+          <p><strong>Variables:</strong> <code>B2_ACCESS_KEY_ID</code>, <code>B2_SECRET_ACCESS_KEY</code>, <code>B2_BUCKET_NAME</code>, <code>B2_PRIVATE_BUCKET_NAME</code>, <code>BACKBLAZE_*</code>, <code>STORAGE_S3_*</code>.</p>
+          <ol class="steps">
+            <li>Create production public and private buckets.</li>
+            <li>Create limited application keys from <a href="https://www.backblaze.com/docs/cloud-storage-application-keys">Backblaze Application Keys</a>.</li>
+            <li>If the app uses S3-compatible clients, follow <a href="https://www.backblaze.com/docs/cloud-storage-s3-compatible-app-keys">S3-compatible application keys</a>.</li>
+            <li>Use separate keys for app runtime, workers, and operational tooling when practical.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="provider">
+        <div>
+          <p class="provider-name">ImageKit</p>
+          <p class="provider-purpose">Image CDN, transformations, upload signing, and optimized media delivery.</p>
+        </div>
+        <div>
+          <p><strong>Variables:</strong> <code>IMAGEKIT_PUBLIC_KEY</code>, <code>IMAGEKIT_PRIVATE_KEY</code>, <code>IMAGEKIT_URL_ENDPOINT</code>, optional <code>IMAGEKIT_UPLOAD_FOLDER</code>.</p>
+          <ol class="steps">
+            <li>Create an ImageKit account and media source.</li>
+            <li>Copy public/private keys from <a href="https://imagekit.io/docs/api-keys">ImageKit API Keys</a>.</li>
+            <li>Review request signing and API behavior in <a href="https://imagekit.io/docs/api-overview">ImageKit API Overview</a>.</li>
+            <li>Keep the private key server-only.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="provider">
+        <div>
+          <p class="provider-name">Geoapify</p>
+          <p class="provider-purpose">Geocoding, map tiles, place search, and location enrichment.</p>
+        </div>
+        <div>
+          <p><strong>Variable:</strong> <code>GEOAPIFY_API_KEY</code>.</p>
+          <ol class="steps">
+            <li>Create a project through <a href="https://www.geoapify.com/get-started-with-maps-api/">Geoapify Get Started</a>.</li>
+            <li>Copy the API key and restrict it where provider controls allow.</li>
+            <li>Review <a href="https://www.geoapify.com/maps-api/">Maps API</a> and <a href="https://apidocs.geoapify.com/docs/place-details/">Place Details API</a> if those features are enabled.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="provider">
+        <div>
+          <p class="provider-name">Google OAuth</p>
+          <p class="provider-purpose">Social login with Google when enabled.</p>
+        </div>
+        <div>
+          <p><strong>Variables:</strong> <code>GOOGLE_CLIENT_ID</code>, <code>GOOGLE_CLIENT_SECRET</code>.</p>
+          <ol class="steps">
+            <li>Create or select a Google Cloud project.</li>
+            <li>Configure OAuth consent and authorized domains.</li>
+            <li>Create a Web OAuth client using <a href="https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid">Google API client ID setup</a>.</li>
+            <li>Manage client credentials from <a href="https://support.google.com/cloud/answer/15549257?hl=en">Google OAuth client management</a>.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="provider">
+        <div>
+          <p class="provider-name">Apple Sign In</p>
+          <p class="provider-purpose">Social login with Apple when enabled.</p>
+        </div>
+        <div>
+          <p><strong>Variables:</strong> <code>APPLE_CLIENT_ID</code>, <code>APPLE_TEAM_ID</code>, <code>APPLE_KEY_ID</code>, <code>APPLE_PRIVATE_KEY</code>.</p>
+          <ol class="steps">
+            <li>Enable Sign in with Apple in the Apple Developer account.</li>
+            <li>Create the private key using <a href="https://developer.apple.com/help/account/capabilities/create-a-sign-in-with-apple-private-key/">Apple private key setup</a>.</li>
+            <li>Configure service ID, redirect URLs, and domain association.</li>
+            <li>Keep the private key server-only and rotate through Apple Developer tooling.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="provider">
+        <div>
+          <p class="provider-name">Meta Login</p>
+          <p class="provider-purpose">Facebook/Meta social login when enabled.</p>
+        </div>
+        <div>
+          <p><strong>Variables:</strong> <code>META_CLIENT_ID</code>, <code>META_CLIENT_SECRET</code>.</p>
+          <ol class="steps">
+            <li>Create a Meta app from <a href="https://developers.facebook.com/documentation/development/create-an-app">Create an App</a>.</li>
+            <li>Add Facebook Login and configure OAuth redirect URLs.</li>
+            <li>Follow <a href="https://developers.facebook.com/documentation/facebook-login/security">Facebook Login Security</a> for redirect URI validation and app secret handling.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="provider">
+        <div>
+          <p class="provider-name">Gemini and Groq</p>
+          <p class="provider-purpose">Optional AI generation, translation, moderation assistance, or internal automation features.</p>
+        </div>
+        <div>
+          <p><strong>Variables:</strong> <code>GEMINI_API_KEY</code>, <code>TRANSLATION_GEMINI_API_KEY</code>, <code>GROQ_API_KEY</code>.</p>
+          <ol class="steps">
+            <li>Create Gemini keys from <a href="https://ai.google.dev/gemini-api/docs/api-key">Gemini API key docs</a>.</li>
+            <li>Restrict Google API keys using <a href="https://docs.cloud.google.com/api-keys/docs/add-restrictions-api-keys">Google API key restrictions</a>.</li>
+            <li>Create Groq keys from <a href="https://console.groq.com/keys">Groq API Keys</a> and review <a href="https://console.groq.com/docs/quickstart">Groq Quickstart</a>.</li>
+            <li>Use separate keys per environment and per feature owner where possible.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="provider">
+        <div>
+          <p class="provider-name">Google Vision or AWS Rekognition</p>
+          <p class="provider-purpose">Direct image moderation provider path if the app does not use the remote moderation service.</p>
+        </div>
+        <div>
+          <p><strong>Variables:</strong> <code>GOOGLE_APPLICATION_CREDENTIALS</code>, <code>AWS_ACCESS_KEY_ID</code>, <code>AWS_SECRET_ACCESS_KEY</code>, <code>AWS_REGION</code>.</p>
+          <ol class="steps">
+            <li>For Google Vision, follow <a href="https://docs.cloud.google.com/vision/docs/setup">Vision setup</a> and <a href="https://docs.cloud.google.com/vision/docs/authentication">Vision authentication</a>.</li>
+            <li>For AWS Rekognition, create an IAM user or role with the minimum Rekognition permissions needed by the worker.</li>
+            <li>Prefer workload identity or instance roles over long-lived static keys when hosting supports it.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="provider">
+        <div>
+          <p class="provider-name">Maps, Weather, and Enrichment</p>
+          <p class="provider-purpose">Optional discovery, event context, place metadata, weather, and media enrichment.</p>
+        </div>
+        <div>
+          <p><strong>Variables:</strong> <code>OPENCAGE_API_KEY</code>, <code>OPENTRIPMAP_API_KEY</code>, <code>OPENWEATHER_API_KEY</code>, <code>PEXELS_API_KEY</code>, <code>STADIAMAPS_API_KEY</code>.</p>
+          <ol class="steps">
+            <li>OpenCage: use <a href="https://opencagedata.com/guides/how-to-create-a-new-api-key">create a new API key</a> and review <a href="https://opencagedata.com/api">OpenCage API docs</a>.</li>
+            <li>OpenTripMap: create a key from <a href="https://dev.opentripmap.org/">OpenTripMap API</a>.</li>
+            <li>OpenWeather: create a key from <a href="https://openweathermap.org/appid">OpenWeather API key</a>.</li>
+            <li>Pexels: request a key from <a href="https://www.pexels.com/api/">Pexels API</a> or the <a href="https://help.pexels.com/hc/en-us/articles/900004904026-How-do-I-get-an-API-key">Pexels key help page</a>.</li>
+            <li>Stadia Maps: use <a href="https://client.stadiamaps.com/signup/">Stadia signup</a> and <a href="https://docs.stadiamaps.com/authentication/">Stadia authentication</a>.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="variables">
+      <h2>Copy-Paste Variable Checklist</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Variables</th>
+            <th>Launch Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Database</td>
+            <td><code>DATABASE_URL</code>, <code>DATABASE_DIRECT_URL</code>, <code>SHADOW_DATABASE_URL</code></td>
+            <td><span class="tag danger">Required</span></td>
+          </tr>
+          <tr>
+            <td>Core app secrets</td>
+            <td><code>JWT_SECRET</code>, <code>COOKIE_SECRET</code>, <code>OAUTH_STATE_SECRET</code>, <code>OAUTH_TOKEN_ENCRYPTION_SECRET</code>, <code>STORAGE_LOCAL_UPLOAD_SIGNING_SECRET</code></td>
+            <td><span class="tag danger">Required</span></td>
+          </tr>
+          <tr>
+            <td>Observability</td>
+            <td><code>SENTRY_DSN</code>, <code>PUBLIC_SENTRY_DSN</code>, <code>AXIOM_TOKEN</code>, <code>AXIOM_DATASET</code>, optional <code>SENTRY_AUTH_TOKEN</code></td>
+            <td><span class="tag danger">Required</span></td>
+          </tr>
+          <tr>
+            <td>Abuse controls</td>
+            <td><code>RATE_LIMIT_REDIS_URL</code>, optional <code>TURNSTILE_SITE_KEY</code>, <code>TURNSTILE_SECRET_KEY</code></td>
+            <td><span class="tag danger">Required Redis</span><span class="tag warn">Optional Turnstile</span></td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td><code>RESEND_API_KEY</code>, <code>EMAIL_FROM</code>, <code>SUPPORT_EMAIL</code>, <code>ADMIN_ALERT_EMAIL</code></td>
+            <td><span class="tag danger">Required</span></td>
+          </tr>
+          <tr>
+            <td>Storage and images</td>
+            <td><code>B2_ACCESS_KEY_ID</code>, <code>B2_SECRET_ACCESS_KEY</code>, <code>B2_BUCKET_NAME</code>, <code>B2_PRIVATE_BUCKET_NAME</code>, <code>IMAGEKIT_PUBLIC_KEY</code>, <code>IMAGEKIT_PRIVATE_KEY</code>, <code>IMAGEKIT_URL_ENDPOINT</code></td>
+            <td><span class="tag danger">Required</span></td>
+          </tr>
+          <tr>
+            <td>Cloudflare automation</td>
+            <td><code>CLOUDFLARE_API_TOKEN</code>, optional <code>CLOUDFLARE_ZONE_ID</code>, <code>CLOUDFLARE_ACCOUNT_ID</code></td>
+            <td><span class="tag warn">Only if automated</span></td>
+          </tr>
+          <tr>
+            <td>OAuth</td>
+            <td><code>GOOGLE_CLIENT_ID</code>, <code>GOOGLE_CLIENT_SECRET</code>, <code>APPLE_CLIENT_ID</code>, <code>APPLE_TEAM_ID</code>, <code>APPLE_KEY_ID</code>, <code>APPLE_PRIVATE_KEY</code>, <code>META_CLIENT_ID</code>, <code>META_CLIENT_SECRET</code></td>
+            <td><span class="tag warn">If social login enabled</span></td>
+          </tr>
+          <tr>
+            <td>AI and moderation</td>
+            <td><code>MODERATION_REMOTE_URL</code>, <code>MODERATION_REMOTE_AUTH_TOKEN</code>, <code>TRANSLATION_REMOTE_AUTH_TOKEN</code>, <code>COLLAGE_SERVICE_API_KEY</code>, <code>GEMINI_API_KEY</code>, <code>GROQ_API_KEY</code>, <code>GOOGLE_APPLICATION_CREDENTIALS</code>, <code>AWS_ACCESS_KEY_ID</code>, <code>AWS_SECRET_ACCESS_KEY</code></td>
+            <td><span class="tag danger">Required by selected provider</span></td>
+          </tr>
+          <tr>
+            <td>Location and enrichment</td>
+            <td><code>GEOAPIFY_API_KEY</code>, <code>OPENCAGE_API_KEY</code>, <code>OPENTRIPMAP_API_KEY</code>, <code>GOOGLE_MAPS_API_KEY</code>, <code>STADIAMAPS_API_KEY</code>, <code>OPENWEATHER_API_KEY</code>, <code>PEXELS_API_KEY</code></td>
+            <td><span class="tag warn">Feature-dependent</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" id="validation">
+      <h2>Validation and Rotation</h2>
+      <div class="grid two">
+        <article class="card">
+          <h3>Validate after updates</h3>
+          <pre><code>cd /Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers
+bash ./scripts/pnpm-node20.sh qa:env:doctor:prod
+bash ./scripts/pnpm-node20.sh db:generate
+bash ./scripts/pnpm-node20.sh typecheck</code></pre>
+          <p class="small">
+            The env doctor is the primary gate for missing production secrets. Keep running it until it passes with production-safe targets.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Storage and rotation rules</h3>
+          <ul>
+            <li>Store real production values only in the deployment secret store or host-level protected environment files.</li>
+            <li>Use separate UAT and production credentials for every provider.</li>
+            <li>Give each token the smallest useful scope and one owner.</li>
+            <li>Rotate immediately after contractor access, suspected exposure, or provider console compromise.</li>
+            <li>Enable billing alerts and quota alerts on every paid provider.</li>
+            <li>Document who owns each provider account and the recovery email or admin group.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="callout">
+        <strong>Tracing wrong activity:</strong> keep Axiom and Sentry enabled, keep API access logs structured, and preserve request
+        metadata such as user ID, session ID, route, action, IP source, Cloudflare country/region/city headers, user agent,
+        upload/comment identifiers, and moderation/report IDs. Never log raw passwords, full OAuth tokens, private keys,
+        payment details, or full bearer tokens.
+      </div>
+    </section>
+  </main>
+</body>
+</html>
