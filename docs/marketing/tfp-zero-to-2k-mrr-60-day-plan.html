@@ -1,0 +1,1352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TFP Photographers 60-Day Go-Live Growth Plan</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172033;
+      --muted: #5c667a;
+      --soft: #eef3f8;
+      --paper: #ffffff;
+      --line: #dbe4ee;
+      --brand: #0f766e;
+      --brand-dark: #115e59;
+      --blue: #2563eb;
+      --violet: #7c3aed;
+      --amber: #b45309;
+      --red: #b91c1c;
+      --green: #15803d;
+      --slate: #334155;
+      --shadow: 0 18px 55px rgba(15, 23, 42, 0.12);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        linear-gradient(180deg, rgba(15, 118, 110, 0.08), transparent 420px),
+        #f7fafc;
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    a {
+      color: var(--brand-dark);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .page {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 32px 0 64px;
+    }
+
+    .hero {
+      background:
+        linear-gradient(135deg, rgba(15, 118, 110, 0.94), rgba(37, 99, 235, 0.9)),
+        #0f766e;
+      color: #fff;
+      border-radius: 16px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero:after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      top: -120px;
+      width: 360px;
+      height: 360px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transform: rotate(18deg);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      font-weight: 800;
+      opacity: 0.88;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 4.2rem);
+      max-width: 820px;
+      letter-spacing: 0;
+    }
+
+    .hero-lede {
+      max-width: 840px;
+      margin: 18px 0 0;
+      font-size: 1.08rem;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .hero-stat {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius);
+      padding: 16px;
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: 4px;
+    }
+
+    .hero-stat span {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.9rem;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 18px 0 28px;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      padding: 12px 0;
+      background: rgba(247, 250, 252, 0.92);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--paper);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    section {
+      margin-top: 24px;
+    }
+
+    .section-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
+      padding: 26px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .icon {
+      width: 36px;
+      height: 36px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--soft);
+      color: var(--brand-dark);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .section-title h2 {
+      font-size: clamp(1.35rem, 2vw, 2rem);
+    }
+
+    .subtle {
+      color: var(--muted);
+      margin: 6px 0 0;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .mini-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      background: #fff;
+    }
+
+    .mini-card h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .mini-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: var(--soft);
+      color: var(--slate);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .tag.green {
+      background: rgba(21, 128, 61, 0.11);
+      color: var(--green);
+    }
+
+    .tag.amber {
+      background: rgba(180, 83, 9, 0.12);
+      color: var(--amber);
+    }
+
+    .tag.red {
+      background: rgba(185, 28, 28, 0.1);
+      color: var(--red);
+    }
+
+    .tag.blue {
+      background: rgba(37, 99, 235, 0.1);
+      color: var(--blue);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #fff;
+      font-size: 0.94rem;
+    }
+
+    th,
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--slate);
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .callout {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 12px;
+      border-radius: var(--radius);
+      padding: 16px;
+      border: 1px solid var(--line);
+      background: #f8fafc;
+      margin: 16px 0;
+    }
+
+    .callout strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .callout p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .callout.warning {
+      border-color: rgba(180, 83, 9, 0.35);
+      background: rgba(180, 83, 9, 0.08);
+    }
+
+    .callout.good {
+      border-color: rgba(21, 128, 61, 0.28);
+      background: rgba(21, 128, 61, 0.07);
+    }
+
+    .metric-stack {
+      display: grid;
+      gap: 10px;
+    }
+
+    .metric {
+      display: grid;
+      grid-template-columns: 110px 1fr 74px;
+      gap: 10px;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+
+    .bar {
+      height: 10px;
+      border-radius: 999px;
+      background: #e2e8f0;
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--brand), var(--blue));
+    }
+
+    .roadmap {
+      display: grid;
+      gap: 14px;
+    }
+
+    .week {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 14px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .week-label {
+      font-weight: 900;
+      color: var(--brand-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 0.78rem;
+    }
+
+    .week h3 {
+      margin-bottom: 8px;
+    }
+
+    ul,
+    ol {
+      margin: 8px 0 0 20px;
+      padding: 0;
+    }
+
+    li {
+      margin: 5px 0;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .checklist label {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      gap: 8px;
+      align-items: start;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 10px;
+      background: #fff;
+      font-size: 0.93rem;
+    }
+
+    .print-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 14px;
+    }
+
+    button {
+      border: 0;
+      background: var(--brand);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: var(--radius);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .source-list {
+      columns: 2;
+      column-gap: 26px;
+      font-size: 0.9rem;
+    }
+
+    code {
+      background: #eef2f7;
+      border: 1px solid #dbe4ee;
+      border-radius: 5px;
+      padding: 2px 5px;
+      font-size: 0.88em;
+    }
+
+    .nowrap {
+      white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .grid-2,
+      .grid-3,
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .week {
+        grid-template-columns: 1fr;
+      }
+
+      .metric {
+        grid-template-columns: 1fr;
+      }
+
+      .source-list {
+        columns: 1;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      .nav,
+      .print-actions {
+        display: none;
+      }
+
+      .section-card,
+      .hero {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      a {
+        color: #000;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Go-live growth, revenue, ads, and product roadmap</p>
+        <h1>TFP Photographers: 0 to $2k/month plan in 60 days</h1>
+        <p class="hero-lede">
+          This plan is built from the current repository state plus current ad and contest policy checks.
+          It assumes a marketing budget of about Rs.5,000 per month, so paid ads are used only as signal tests.
+          The real path to roughly $2k/month is founder-led sales, sponsored contests, referrals, SEO, and fast revenue-feature shipping.
+        </p>
+        <div class="hero-grid" aria-label="Plan summary metrics">
+          <div class="hero-stat">
+            <strong>Rs.5,000/mo</strong>
+            <span>Paid marketing ceiling</span>
+          </div>
+          <div class="hero-stat">
+            <strong>Rs.190k/mo</strong>
+            <span>Approx. $2k revenue target at USD/INR 95.4</span>
+          </div>
+          <div class="hero-stat">
+            <strong>8 weeks</strong>
+            <span>After go-live execution window</span>
+          </div>
+          <div class="hero-stat">
+            <strong>Web first</strong>
+            <span>Current product is SSR web, not native app</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="nav" aria-label="Report sections">
+      <a href="#decision">01 Decision</a>
+      <a href="#features">02 Feature Audit</a>
+      <a href="#revenue">03 Revenue Features</a>
+      <a href="#ads">04 Rs.5k Ad Plan</a>
+      <a href="#ad-copy">05 Ad Copy</a>
+      <a href="#countries">06 Countries</a>
+      <a href="#watch-ad">07 Watch Ad Idea</a>
+      <a href="#roadmap">08 60-Day Roadmap</a>
+      <a href="#metrics">09 Metrics</a>
+      <a href="#checklist">10 Daily Steps</a>
+      <a href="#sources">Sources</a>
+    </nav>
+
+    <section id="decision" class="section-card">
+      <div class="section-head">
+        <div class="section-title">
+          <span class="icon">01</span>
+          <div>
+            <h2>Executive Decision</h2>
+            <p class="subtle">The direct answer before the detailed plan.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout good">
+        <span class="icon">OK</span>
+        <div>
+          <strong>Launch as a web-first creator marketplace, not an app-install campaign.</strong>
+          <p>
+            The current product is an Astro SSR web app with strong public routes. With Rs.5,000/month,
+            sending paid traffic to specific web pages is more practical than paying for app installs.
+            Build native app and AdMob only after you prove contest retention and paid conversion.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="mini-card">
+          <h3>Best first customer</h3>
+          <p>Photographers who need models, models who need portfolio shoots, and small creative academies/studios that can sponsor a challenge.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Best first monetization</h3>
+          <p>Subscriptions, sponsored contests, featured listings, verification/profile boosts, and event/opportunity promotion.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Worst first monetization</h3>
+          <p>Forcing users to watch ads before they can participate. It adds friction, creates policy risk, and will not reach $2k/month quickly.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section-card">
+      <div class="section-head">
+        <div class="section-title">
+          <span class="icon">02</span>
+          <div>
+            <h2>Feature Audit: What Exists and What Needs Improvement</h2>
+            <p class="subtle">Repository-grounded inventory checked on July 6, 2026.</p>
+          </div>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Current state</th>
+            <th>Revenue / growth improvement needed</th>
+            <th>Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Public discovery</strong></td>
+            <td>Home, search, profiles, opportunities, events, contests, SEO/OG/schema routes exist.</td>
+            <td>Add campaign-specific landing pages: city pages, role pages, contest landing pages, sponsor page, pricing page, and UTM analytics.</td>
+            <td><span class="tag green">P0</span></td>
+          </tr>
+          <tr>
+            <td><strong>Profiles and portfolios</strong></td>
+            <td>Portfolio uploads, avatar/cover, public profile, badges, role signals, referral share are present.</td>
+            <td>Add paid verification, portfolio ranking boost, profile completion score, profile view analytics, and "hire/contact" lead intent.</td>
+            <td><span class="tag green">P0</span></td>
+          </tr>
+          <tr>
+            <td><strong>Opportunities</strong></td>
+            <td>Creation, roles, applications, moderation, collage generation, submissions, credits, and lifecycle logic exist.</td>
+            <td>Sell featured opportunity placement, urgent casting boost, and creator analytics. Add saved-search alerts for users.</td>
+            <td><span class="tag green">P0</span></td>
+          </tr>
+          <tr>
+            <td><strong>Events</strong></td>
+            <td>Events, RSVP, entry-fee rules, location, cover image, moderation, and listing routes exist.</td>
+            <td>Payments are not integrated. Add paid event ticket links or external payment CTA first, then native checkout after legal/payment work.</td>
+            <td><span class="tag amber">P1</span></td>
+          </tr>
+          <tr>
+            <td><strong>Contests</strong></td>
+            <td>Contest creation, prizes, banner/resource files, submissions, reactions, one vote/user/contest, and admin winner selection exist.</td>
+            <td>Normal users cannot create contests by default. Add sponsored contest packages, public official rules, sponsor slots, judging criteria, and winner announcement flow.</td>
+            <td><span class="tag green">P0</span></td>
+          </tr>
+          <tr>
+            <td><strong>Subscriptions</strong></td>
+            <td>FREE / PRO / PRO_PLUS quota enforcement exists. Billing does not exist yet. Tiers are manual/admin-set.</td>
+            <td>Add Razorpay/Stripe billing, pricing page, upgrade prompts inside quota-blocked states, invoices, cancellation, and admin payment status.</td>
+            <td><span class="tag green">P0</span></td>
+          </tr>
+          <tr>
+            <td><strong>Referral</strong></td>
+            <td>Referral code creation, referral capture at signup/OAuth, profile WhatsApp share, admin referral counts, and manual awards exist.</td>
+            <td>Automate referral rewards: profile boost credit, extra opportunity slot, badge, or one month PRO after verified invited user completes profile.</td>
+            <td><span class="tag green">P0</span></td>
+          </tr>
+          <tr>
+            <td><strong>Messaging and notifications</strong></td>
+            <td>Direct messaging, notifications, feed, applications, RSVP and contest updates exist.</td>
+            <td>Add "responded within X hours" trust signals and notification nudges tied to conversion: complete profile, enter contest, invite 3 creators.</td>
+            <td><span class="tag amber">P1</span></td>
+          </tr>
+          <tr>
+            <td><strong>Trust, safety, moderation</strong></td>
+            <td>AI/manual moderation, reports, appeals, admin workspace, content status and legal docs exist.</td>
+            <td>Make trust visible on landing pages: 18+, skill-based contests, moderation reviewed, report abuse, safe collaboration checklist.</td>
+            <td><span class="tag amber">P1</span></td>
+          </tr>
+          <tr>
+            <td><strong>Analytics</strong></td>
+            <td>Telemetry utility and web vitals exist; no clear growth dashboard was found.</td>
+            <td>Add event tracking for ad landing views, signup, profile completed, first upload, first contest submission, first referral share, first paid upgrade.</td>
+            <td><span class="tag green">P0</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout warning">
+        <span class="icon">!</span>
+        <div>
+          <strong>Main risk: revenue features are behind the product quality.</strong>
+          <p>
+            The marketplace foundation is strong, but the path to paid revenue is not wired yet.
+            Do not spend heavily before pricing, checkout, sponsor packages, and conversion analytics exist.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="revenue" class="section-card">
+      <div class="section-head">
+        <div class="section-title">
+          <span class="icon">03</span>
+          <div>
+            <h2>Revenue Generation Features to Add</h2>
+            <p class="subtle">Build these in this order. The goal is cash collection, not vanity traffic.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="mini-card">
+          <h3>1. Pricing and checkout</h3>
+          <p><strong>Build:</strong> `/pricing`, `/checkout`, `/billing`, upgrade CTA in quota blocks. Use Razorpay first for India, Stripe later for global cards.</p>
+          <div class="tag-row">
+            <span class="tag green">Must ship before ads scale</span>
+            <span class="tag blue">Web page</span>
+          </div>
+        </div>
+        <div class="mini-card">
+          <h3>2. Sponsored contest package</h3>
+          <p><strong>Build:</strong> `/sponsor-a-contest`, sponsor logo slots, sponsor CTA, official rules, prize value disclosure, sponsor lead form.</p>
+          <div class="tag-row">
+            <span class="tag green">Fastest $2k path</span>
+            <span class="tag blue">Web page + admin</span>
+          </div>
+        </div>
+        <div class="mini-card">
+          <h3>3. Featured listings / boosts</h3>
+          <p><strong>Build:</strong> paid boost for profile, opportunity, event, and contest. Always mark as Sponsored or Featured.</p>
+          <div class="tag-row">
+            <span class="tag green">Low build cost</span>
+            <span class="tag blue">Web + API</span>
+          </div>
+        </div>
+        <div class="mini-card">
+          <h3>4. Referral reward automation</h3>
+          <p><strong>Build:</strong> automatic boost credit when referred user verifies email and completes profile/upload. Use existing referral tables.</p>
+          <div class="tag-row">
+            <span class="tag green">Cheap acquisition</span>
+            <span class="tag blue">API + profile UI</span>
+          </div>
+        </div>
+        <div class="mini-card">
+          <h3>5. Creator analytics</h3>
+          <p><strong>Build:</strong> views, clicks, applications, saves, messages, contest submissions, conversion funnel by listing.</p>
+          <div class="tag-row">
+            <span class="tag amber">Makes PRO valuable</span>
+            <span class="tag blue">Dashboard</span>
+          </div>
+        </div>
+        <div class="mini-card">
+          <h3>6. Verified creator badge</h3>
+          <p><strong>Build:</strong> manual verification queue plus paid verification review fee. Include ID/KYC only after privacy/legal review.</p>
+          <div class="tag-row">
+            <span class="tag amber">Trust upsell</span>
+            <span class="tag blue">Admin + profile</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:22px;">Recommended pricing for first 60 days</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Offer</th>
+            <th>Price</th>
+            <th>Buyer</th>
+            <th>Why it converts</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PRO</td>
+            <td>Rs.499/month</td>
+            <td>Individual photographer/model/creator</td>
+            <td>More opportunities/events, profile priority, analytics, referral rewards.</td>
+          </tr>
+          <tr>
+            <td>PRO_PLUS</td>
+            <td>Rs.1,499/month</td>
+            <td>Working photographers, agencies, stylists, schools</td>
+            <td>More active listings, featured credits, faster support, analytics.</td>
+          </tr>
+          <tr>
+            <td>Featured profile/listing</td>
+            <td>Rs.299 for 7 days</td>
+            <td>Anyone seeking visibility</td>
+            <td>Small impulse purchase, easy to understand, no subscription commitment.</td>
+          </tr>
+          <tr>
+            <td>Sponsored contest</td>
+            <td>Rs.4,999 to Rs.9,999</td>
+            <td>Camera shops, academies, studios, makeup brands, local venues</td>
+            <td>They buy exposure, community engagement, submissions, and brand placement.</td>
+          </tr>
+          <tr>
+            <td>Event promotion pack</td>
+            <td>Rs.1,999</td>
+            <td>Workshop organizer or venue</td>
+            <td>Featured event placement, email/social mention, RSVP push.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:22px;">$2k/month revenue mix that can work</h3>
+      <div class="metric-stack" aria-label="Revenue target mix">
+        <div class="metric"><strong>25 sponsors</strong><div class="bar"><span style="width:65%"></span></div><span>Rs.124,975</span></div>
+        <div class="metric"><strong>60 PRO</strong><div class="bar"><span style="width:16%"></span></div><span>Rs.29,940</span></div>
+        <div class="metric"><strong>20 PRO_PLUS</strong><div class="bar"><span style="width:16%"></span></div><span>Rs.29,980</span></div>
+        <div class="metric"><strong>25 boosts</strong><div class="bar"><span style="width:4%"></span></div><span>Rs.7,475</span></div>
+      </div>
+      <p class="subtle">
+        Total: about Rs.192,370/month, roughly $2,016/month at USD/INR 95.4. This requires sales outreach.
+        It is not realistic from Rs.5,000/month ads alone.
+      </p>
+    </section>
+
+    <section id="ads" class="section-card">
+      <div class="section-head">
+        <div class="section-title">
+          <span class="icon">04</span>
+          <div>
+            <h2>Marketing Plan Under Rs.5,000/month</h2>
+            <p class="subtle">Paid ads are for signal. Community and sales do the heavy lifting.</p>
+          </div>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Budget line</th>
+            <th>Month 1</th>
+            <th>Month 2</th>
+            <th>How to run it</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Meta / Instagram traffic</strong></td>
+            <td>Rs.3,000</td>
+            <td>Rs.2,500</td>
+            <td>One campaign, two ad sets max, four creatives max. Send to contest or opportunity page, not homepage.</td>
+          </tr>
+          <tr>
+            <td><strong>Retargeting</strong></td>
+            <td>Rs.0 until pixel/event tracking works</td>
+            <td>Rs.1,000</td>
+            <td>Only retarget visitors who viewed contest/opportunity pages but did not register or submit.</td>
+          </tr>
+          <tr>
+            <td><strong>Google Search exact match</strong></td>
+            <td>Rs.1,000</td>
+            <td>Rs.1,000</td>
+            <td>Use exact long-tail keywords only: "free photography contest India", "TFP model shoot India", "photography collaboration".</td>
+          </tr>
+          <tr>
+            <td><strong>Creator/community incentives</strong></td>
+            <td>Rs.1,000</td>
+            <td>Rs.500</td>
+            <td>Small prize, feature, certificate, or sponsored boost credits. Avoid cash claims unless legal/prize terms are ready.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout warning">
+        <span class="icon">AD</span>
+        <div>
+          <strong>Do not run Google App Campaigns at this budget.</strong>
+          <p>
+            Google recommends daily app-campaign budgets at 50x target CPI or 10x target CPA. Rs.5,000/month is too small for app-install learning.
+            Use web traffic and exact search until retention and paid conversion are proven.
+          </p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:22px;">Meta campaign setup</h3>
+      <ol>
+        <li>Create one campaign named <code>TFP Contest Launch - India - Web Traffic</code>.</li>
+        <li>Objective: traffic or leads. Use traffic first if no conversion events exist; switch to leads/conversions after events are reliable.</li>
+        <li>Daily budget: Rs.100/day for 30 days, or Rs.150/day for 20 stronger days. Do not split into many ad sets.</li>
+        <li>Ad set 1: India top creative cities: Bengaluru, Mumbai, Delhi NCR, Pune, Hyderabad, Chennai, Kolkata, Kochi.</li>
+        <li>Age: 18-34 first; exclude under-18 because contest terms are 18+.</li>
+        <li>Interests: photography, portrait photography, fashion photography, modeling, makeup artist, camera, Lightroom, Photoshop.</li>
+        <li>Placements: Instagram Reels, Stories, Feed; Facebook Feed only if CPC is low.</li>
+        <li>Landing page: specific contest page or opportunities page with UTM, not homepage.</li>
+        <li>Kill rule after 72 hours: pause creative if CTR below 1%, CPC above Rs.10, or signup rate below 5%.</li>
+      </ol>
+    </section>
+
+    <section id="ad-copy" class="section-card">
+      <div class="section-head">
+        <div class="section-title">
+          <span class="icon">05</span>
+          <div>
+            <h2>What to Show in Ads</h2>
+            <p class="subtle">Use real product pages, clear promises, and no misleading prize language.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="mini-card">
+          <h3>Ad 1: Photographer contest</h3>
+          <p><strong>Visual:</strong> 9:16 before/after portrait, creator name card, "Free Portrait Challenge".</p>
+          <p><strong>Copy:</strong> "Enter a skill-based photo challenge. Upload one portrait, get seen by local creators, and build your TFP profile."</p>
+          <p><strong>CTA:</strong> Enter free contest</p>
+          <p><strong>Click:</strong> Web contest detail page, e.g. <code>/en-IN/contests/&lt;slug&gt;</code></p>
+        </div>
+        <div class="mini-card">
+          <h3>Ad 2: Model portfolio</h3>
+          <p><strong>Visual:</strong> split screen: model profile, portfolio grid, opportunity card.</p>
+          <p><strong>Copy:</strong> "Find portfolio-building TFP shoots. Create a profile, discover photographers, and apply to verified opportunities."</p>
+          <p><strong>CTA:</strong> Find shoots</p>
+          <p><strong>Click:</strong> <code>/en-IN/opportunities</code> with UTM</p>
+        </div>
+        <div class="mini-card">
+          <h3>Ad 3: Sponsor pitch</h3>
+          <p><strong>Visual:</strong> contest card with sponsor logo placeholder and submission gallery.</p>
+          <p><strong>Copy:</strong> "Sponsor a themed photo challenge for photographers and models. Get brand placement, entries, and community reach."</p>
+          <p><strong>CTA:</strong> Sponsor a challenge</p>
+          <p><strong>Click:</strong> new <code>/sponsor-a-contest</code> or <code>/contact?intent=sponsor-contest</code></p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:22px;">Creative rules</h3>
+      <ul>
+        <li>Show the actual app surface: contest card, profile, submission gallery, opportunities list.</li>
+        <li>Use one promise per ad. Do not say "earn money" unless payments/prizes/legal terms are live and compliant.</li>
+        <li>Put "18+ skill-based contest" in contest ads when prizes are involved.</li>
+        <li>Every prize ad must show prize value, eligibility, start/end date, and link to official contest terms.</li>
+        <li>For Meta/Instagram promotions, include platform release language in the contest terms and ad landing page.</li>
+      </ul>
+    </section>
+
+    <section id="countries" class="section-card">
+      <div class="section-head">
+        <div class="section-title">
+          <span class="icon">06</span>
+          <div>
+            <h2>Country Strategy</h2>
+            <p class="subtle">Do not split Rs.5,000 across too many countries. Sequence them.</p>
+          </div>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Market</th>
+            <th>Paid ads?</th>
+            <th>Why / how</th>
+            <th>Landing page</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>India</strong></td>
+            <td><span class="tag green">Yes, primary</span></td>
+            <td>Existing legal docs and region assumptions are India-first. Best for founder outreach, WhatsApp communities, and first sponsors.</td>
+            <td><code>/en-IN/contests</code>, <code>/en-IN/opportunities</code>, city pages when built.</td>
+          </tr>
+          <tr>
+            <td><strong>Nepal, Sri Lanka, Bangladesh</strong></td>
+            <td><span class="tag amber">Organic first</span></td>
+            <td>Use creator communities and SEO. Paid tests only if organic signups appear. Avoid prize-heavy contest ads until local rules are reviewed.</td>
+            <td>Localized public listing pages and creator profile pages.</td>
+          </tr>
+          <tr>
+            <td><strong>Philippines, Indonesia</strong></td>
+            <td><span class="tag amber">Small tests later</span></td>
+            <td>Large creator markets, but only test after onboarding local moderators/ambassadors and checking contest terms.</td>
+            <td>English landing pages; avoid local prize promises initially.</td>
+          </tr>
+          <tr>
+            <td><strong>US, UK, Canada, EU</strong></td>
+            <td><span class="tag red">No paid ads yet</span></td>
+            <td>Higher CPC and stricter contest disclosures. Use SEO only until payment, rules, privacy, and regional terms are mature.</td>
+            <td>Public SEO pages only.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="watch-ad" class="section-card">
+      <div class="section-head">
+        <div class="section-title">
+          <span class="icon">07</span>
+          <div>
+            <h2>"Watch an Ad to Participate in Contest" Recommendation</h2>
+            <p class="subtle">Short answer: do not use this as the launch mechanic.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout warning">
+        <span class="icon">NO</span>
+        <div>
+          <strong>Do not make ad-watching mandatory for Phase 1 contest entry.</strong>
+          <p>
+            Your own contest terms say Phase 1 entry is free and skill-based. Mandatory rewarded ads add friction, create policy and legal complexity,
+            and distract from the real revenue levers: subscriptions, boosts, and sponsors.
+          </p>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Idea</th>
+            <th>Use now?</th>
+            <th>Safe version</th>
+            <th>Unsafe version</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Watch ad to enter contest</td>
+            <td><span class="tag red">No</span></td>
+            <td>If tested later, make it optional, clearly disclosed, skip/dismiss allowed, with a free alternative entry route.</td>
+            <td>Blocking entry unless ad is watched, especially where prize is cash/gift card/physical reward.</td>
+          </tr>
+          <tr>
+            <td>Watch ad for profile boost credit</td>
+            <td><span class="tag amber">Later</span></td>
+            <td>Non-transferable in-platform visibility credit with frequency caps and no cash value.</td>
+            <td>Promising money, gift cards, or transferable rewards for ads.</td>
+          </tr>
+          <tr>
+            <td>Watch ad for extra contest submission</td>
+            <td><span class="tag red">No</span></td>
+            <td>Not recommended because repository rules enforce one submission per user per contest.</td>
+            <td>Breaking the one-submission rule and damaging fairness.</td>
+          </tr>
+          <tr>
+            <td>Watch ad after submission</td>
+            <td><span class="tag amber">Maybe</span></td>
+            <td>Optional "support the platform" style placement is risky if it nudges the user. Prefer normal display/sponsor ads.</td>
+            <td>Misleading users that watching improves judging odds.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:22px;">If you later build rewarded ads</h3>
+      <ul>
+        <li>Build this in app only after a native Android/iOS app exists, because AdMob rewarded ads are app-oriented.</li>
+        <li>Use server-side verification and store one reward event per user/action.</li>
+        <li>Reward must be non-transferable and usable only inside TFP.</li>
+        <li>Show clear text before the ad: "Watch one ad to receive one profile boost credit. This does not affect judging or prize odds."</li>
+        <li>Frequency cap: max 2 rewarded ads per user/day and max 10/month at first.</li>
+        <li>Do not use rewarded ads in flows with cash/gift-card/real-money prizes until legal review is complete.</li>
+      </ul>
+    </section>
+
+    <section id="roadmap" class="section-card">
+      <div class="section-head">
+        <div class="section-title">
+          <span class="icon">08</span>
+          <div>
+            <h2>60-Day Roadmap After Go-Live</h2>
+            <p class="subtle">Every week has product, marketing, sales, and measurement steps.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="roadmap">
+        <article class="week">
+          <div class="week-label">Week 1</div>
+          <div>
+            <h3>Launch foundation</h3>
+            <ul>
+              <li>Ship pricing page, sponsor inquiry page, and conversion analytics events.</li>
+              <li>Create one flagship free skill contest with clear rules, judging criteria, 18+ eligibility, and no misleading prize claims.</li>
+              <li>Manually recruit 50 photographers, 50 models, 10 makeup artists/stylists, and 5 sponsors from local communities.</li>
+              <li>Start Instagram content: 2 Reels/day, 1 carousel/day, 10 story replies/day.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="week">
+          <div class="week-label">Week 2</div>
+          <div>
+            <h3>First paid signal test</h3>
+            <ul>
+              <li>Run Rs.100/day Meta traffic to the contest page for 7 days.</li>
+              <li>Test two creatives: photographer contest and model opportunities.</li>
+              <li>DM 20 photography academies/camera stores/studios with sponsor offer.</li>
+              <li>Publish 5 SEO pages: "TFP shoots in Bengaluru", "TFP shoots in Mumbai", "Photography contests India", "Models for portfolio shoot", "Photographer collaboration India".</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="week">
+          <div class="week-label">Week 3</div>
+          <div>
+            <h3>Activation and referrals</h3>
+            <ul>
+              <li>Push every new user to complete profile, upload 3 images, and share referral link on WhatsApp.</li>
+              <li>Give manual "Founding Creator" badge to high-quality early users.</li>
+              <li>Add founder-led onboarding calls for first 20 serious photographers/models.</li>
+              <li>Pause any paid creative above Rs.10 CPC or below 5% signup conversion.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="week">
+          <div class="week-label">Week 4</div>
+          <div>
+            <h3>First revenue push</h3>
+            <ul>
+              <li>Sell 5 sponsored contest/event packs at Rs.4,999 each.</li>
+              <li>Offer early PRO at Rs.399/month for first 100 paying users, then move to Rs.499.</li>
+              <li>Launch featured profile/listing for Rs.299/week.</li>
+              <li>Publish winner/submission showcase and tag every participant.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="week">
+          <div class="week-label">Week 5</div>
+          <div>
+            <h3>Retargeting and sponsor proof</h3>
+            <ul>
+              <li>Start Rs.50/day retargeting to visitors who did not register or submit.</li>
+              <li>Create sponsor proof page: reach, signups, submissions, top cities, examples.</li>
+              <li>Contact 50 sponsors with proof and offer two packages: Rs.4,999 starter, Rs.9,999 featured.</li>
+              <li>Launch second contest with sponsor/category theme.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="week">
+          <div class="week-label">Week 6</div>
+          <div>
+            <h3>Subscription conversion</h3>
+            <ul>
+              <li>Add upgrade prompts where users hit opportunity/event quota or want featured placement.</li>
+              <li>Publish creator analytics preview to make PRO tangible.</li>
+              <li>Email/WhatsApp all active users: "Unlock more listings + visibility this month".</li>
+              <li>Run exact-match Google Search for Rs.1,000/month only on high-intent keywords.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="week">
+          <div class="week-label">Week 7</div>
+          <div>
+            <h3>Country expansion test</h3>
+            <ul>
+              <li>Review analytics by country. If India is still dominant, keep paid ads India-only.</li>
+              <li>If organic signups exist in Nepal/Sri Lanka/Bangladesh, create no-prize portfolio challenge pages for those markets.</li>
+              <li>Recruit one local ambassador per promising country before paid ads.</li>
+              <li>Do not run cash/prize ads outside India without local terms review.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="week">
+          <div class="week-label">Week 8</div>
+          <div>
+            <h3>Scale what converted</h3>
+            <ul>
+              <li>Keep only the top ad creative and top two cities by signup-to-submission conversion.</li>
+              <li>Close enough sponsors/subscribers to reach the Rs.190k/month run-rate target.</li>
+              <li>Convert manual founder sales scripts into repeatable CRM pipeline.</li>
+              <li>Decide next build: native app/rewarded ads only if retention is strong; otherwise continue web revenue features.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="metrics" class="section-card">
+      <div class="section-head">
+        <div class="section-title">
+          <span class="icon">09</span>
+          <div>
+            <h2>Metrics and Stop Rules</h2>
+            <p class="subtle">Numbers to watch every day.</p>
+          </div>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Good</th>
+            <th>Warning</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Meta CPC</td>
+            <td>Under Rs.6</td>
+            <td>Above Rs.10</td>
+            <td>Pause creative, test new first 2 seconds of video, tighten landing page.</td>
+          </tr>
+          <tr>
+            <td>Landing signup rate</td>
+            <td>8%+</td>
+            <td>Under 5%</td>
+            <td>Change CTA from generic register to "Enter free contest" or "Find shoots".</td>
+          </tr>
+          <tr>
+            <td>Signup to profile completion</td>
+            <td>50%+</td>
+            <td>Under 30%</td>
+            <td>Simplify onboarding; show profile completion checklist.</td>
+          </tr>
+          <tr>
+            <td>Signup to first upload/submission</td>
+            <td>20%+</td>
+            <td>Under 10%</td>
+            <td>Make upload/submission CTA visible on contest and profile pages.</td>
+          </tr>
+          <tr>
+            <td>Referral shares per active creator</td>
+            <td>2+</td>
+            <td>Under 0.5</td>
+            <td>Show WhatsApp referral CTA after profile completion and submission.</td>
+          </tr>
+          <tr>
+            <td>Paid conversion</td>
+            <td>2%-4% active users</td>
+            <td>Under 1%</td>
+            <td>Improve PRO value: analytics, boosts, limits, sponsor visibility.</td>
+          </tr>
+          <tr>
+            <td>Sponsor close rate</td>
+            <td>10%+ of warm outreach</td>
+            <td>Under 4%</td>
+            <td>Lower first package to Rs.2,999 or add stronger proof/reporting.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="checklist" class="section-card">
+      <div class="section-head">
+        <div class="section-title">
+          <span class="icon">10</span>
+          <div>
+            <h2>Daily Operating Checklist</h2>
+            <p class="subtle">Use this every day for the first 60 days.</p>
+          </div>
+        </div>
+        <div class="print-actions">
+          <button type="button" onclick="window.print()">Print / Save PDF</button>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <h3>Founder sales</h3>
+          <div class="checklist">
+            <label><input type="checkbox"> DM 20 photographers/models/stylists with one useful message, not a spam pitch.</label>
+            <label><input type="checkbox"> Contact 10 sponsors: academies, studios, camera shops, makeup brands, venues.</label>
+            <label><input type="checkbox"> Ask every active creator for 2 referrals and give a visible badge/boost credit.</label>
+            <label><input type="checkbox"> Post one winner/submission/creator spotlight.</label>
+          </div>
+        </div>
+        <div>
+          <h3>Growth operations</h3>
+          <div class="checklist">
+            <label><input type="checkbox"> Check CPC, CTR, signup rate, profile completion, upload/submission rate.</label>
+            <label><input type="checkbox"> Reply to every Instagram/WhatsApp/comment within 12 hours.</label>
+            <label><input type="checkbox"> Approve/moderate pending high-quality content quickly.</label>
+            <label><input type="checkbox"> Publish or improve one SEO page or creator story.</label>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:22px;">Exact landing-page routing</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>User intent</th>
+            <th>Click should go to</th>
+            <th>Why</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Enter contest</td>
+            <td><code>/en-IN/contests/&lt;slug&gt;?utm_source=meta&amp;utm_campaign=contest_launch</code></td>
+            <td>Lowest friction: user sees contest, prizes/rules, submissions, and submit CTA.</td>
+          </tr>
+          <tr>
+            <td>Find shoots</td>
+            <td><code>/en-IN/opportunities?utm_source=meta&amp;utm_campaign=find_shoots</code></td>
+            <td>Users can browse value before registration.</td>
+          </tr>
+          <tr>
+            <td>Create profile</td>
+            <td><code>/en-IN/register?intent=portfolio&amp;utm_source=instagram</code></td>
+            <td>Use only when ad promise is profile creation, not contest entry.</td>
+          </tr>
+          <tr>
+            <td>Sponsor challenge</td>
+            <td><code>/en-IN/sponsor-a-contest</code> or <code>/en-IN/contact?intent=sponsor-contest</code></td>
+            <td>Business buyer needs package, proof, and contact form.</td>
+          </tr>
+          <tr>
+            <td>Upgrade plan</td>
+            <td><code>/en-IN/pricing</code></td>
+            <td>Required before subscription ads. Do not send paid traffic to hidden/admin-set tiers.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="sources" class="section-card">
+      <div class="section-head">
+        <div class="section-title">
+          <span class="icon">SRC</span>
+          <div>
+            <h2>Sources and Repository Evidence</h2>
+            <p class="subtle">Use these links to refresh the plan before execution.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Repository evidence</h3>
+      <ul>
+        <li><code>tfpphotographers/README.md</code>: product modules, subscription limits, and "No billing integration exists yet".</li>
+        <li><code>tfpphotographers/AGENTS.md</code>: routes, product domains, contest rules, public discovery requirements.</li>
+        <li><code>tfpphotographers/docs/photography-portfolio-contest-frd.md</code>: functional requirements and route inventory.</li>
+        <li><code>tfpphotographers/docs/legal/CONTEST_TERMS.md</code>: skill-based, free-entry, 18+ Phase 1 contest terms.</li>
+        <li><code>tfpphotographers/apps/api/src/utils/subscription-policy.ts</code>: quota enforcement and admin-only contest creation behavior when monthly contest limit is 0.</li>
+        <li><code>tfpphotographers/packages/config/src/config-sections.ts</code>: default contest monthly limits are 0 for FREE/PRO/PRO_PLUS.</li>
+        <li><code>tfpphotographers/packages/database/prisma/schema.prisma</code>: referral, contest, event fee, opportunity, and subscription-tier data model.</li>
+      </ul>
+
+      <h3>External policy and budget sources</h3>
+      <ul class="source-list">
+        <li><a href="https://support.google.com/admob/answer/7313578?hl=en">Google AdMob rewarded ads policy</a></li>
+        <li><a href="https://developers.google.com/admob/android/rewarded">Google rewarded ads developer docs</a></li>
+        <li><a href="https://support.google.com/google-ads/answer/6385083?hl=en">Google Ads average daily budgets</a></li>
+        <li><a href="https://support.google.com/google-ads/answer/9176652?hl=en">Google App campaign budget guidance</a></li>
+        <li><a href="https://support.google.com/googleplay/android-developer/answer/9877032?hl=en">Google Play real-money gambling, games, and contests policy</a></li>
+        <li><a href="https://developer.apple.com/app-store/review/guidelines/">Apple App Store Review Guidelines, contests and sweepstakes</a></li>
+        <li><a href="https://help.instagram.com/179379842258600/">Instagram Promotion Guidelines</a></li>
+        <li><a href="https://transparency.meta.com/policies/ad-standards/restricted-goods-services/gambling-games/">Meta online gambling and gaming ad policy</a></li>
+        <li><a href="https://www.gamblingcommission.gov.uk/public-and-players/guide/page/free-draws-and-prize-competitions">UK Gambling Commission: free draws and prize competitions</a></li>
+        <li><a href="https://competition-bureau.canada.ca/en/deceptive-marketing-practices/types-deceptive-marketing-practices/promotional-contests">Competition Bureau Canada: promotional contests</a></li>
+        <li><a href="https://www.google.com/finance/beta/quote/USD-INR">Google Finance USD/INR reference used for rough $2k conversion</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
