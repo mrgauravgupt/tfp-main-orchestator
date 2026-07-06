@@ -408,7 +408,7 @@
           <p>Required for user uploads, moderation evidence, private artifacts, image delivery, and cacheable media URLs.</p>
           <span class="tag danger">Required</span>
           <span class="tag">Backblaze B2</span>
-          <span class="tag">ImageKit</span>
+          <span class="tag">Cloudflare or ImageKit</span>
         </article>
       </div>
     </section>
@@ -427,7 +427,7 @@
           <tr>
             <td>Google, Apple, Meta OAuth</td>
             <td>Required only when <code>FEATURE_SOCIAL_LOGIN=true</code>. At least one provider must be configured.</td>
-            <td><code>GOOGLE_CLIENT_ID</code>, <code>GOOGLE_CLIENT_SECRET</code>, <code>APPLE_CLIENT_ID</code>, <code>APPLE_TEAM_ID</code>, <code>APPLE_KEY_ID</code>, <code>APPLE_PRIVATE_KEY</code>, <code>META_CLIENT_ID</code>, <code>META_CLIENT_SECRET</code></td>
+            <td><code>GOOGLE_OAUTH_CLIENT_ID</code>, <code>GOOGLE_OAUTH_CLIENT_SECRET</code>, <code>APPLE_OAUTH_CLIENT_ID</code>, <code>APPLE_OAUTH_TEAM_ID</code>, <code>APPLE_OAUTH_KEY_ID</code>, <code>APPLE_OAUTH_PRIVATE_KEY</code>, <code>META_OAUTH_CLIENT_ID</code>, <code>META_OAUTH_CLIENT_SECRET</code></td>
           </tr>
           <tr>
             <td>Remote moderation and translation services</td>
@@ -437,12 +437,12 @@
           <tr>
             <td>AI model providers</td>
             <td>Required when Gemini, Groq, or another LLM-backed feature is enabled.</td>
-            <td><code>GEMINI_API_KEY</code>, <code>GROQ_API_KEY</code>, <code>TRANSLATION_GEMINI_API_KEY</code></td>
+            <td><code>GEMINI_STUDIO_API_KEY</code>, <code>GROQ_API_KEY</code></td>
           </tr>
           <tr>
             <td>Direct image moderation providers</td>
             <td>Required only if production uses Google Vision or AWS Rekognition instead of the remote moderation service.</td>
-            <td><code>GOOGLE_APPLICATION_CREDENTIALS</code>, <code>AWS_ACCESS_KEY_ID</code>, <code>AWS_SECRET_ACCESS_KEY</code>, <code>AWS_REGION</code></td>
+            <td><code>GOOGLE_CLOUD_PROJECT_ID</code>, <code>GOOGLE_APPLICATION_CREDENTIALS</code>, <code>AWS_ACCESS_KEY_ID</code>, <code>AWS_SECRET_ACCESS_KEY</code>, <code>AWS_MODERATION_REGION</code></td>
           </tr>
           <tr>
             <td>Location autocomplete and reverse geocoding</td>
@@ -542,8 +542,7 @@
         widget guidance from <a href="https://developers.cloudflare.com/turnstile/concepts/widget/">Turnstile widget concepts</a>.
       </p>
       <p>
-        Suggested variables: <code>TURNSTILE_SITE_KEY</code> for frontend rendering and <code>TURNSTILE_SECRET_KEY</code>
-        for server-side verification. Add these only when the app code validates Turnstile tokens.
+        Do not add Turnstile variables to the production app environment until the application validates Turnstile tokens end to end.
       </p>
     </section>
 
@@ -632,7 +631,7 @@
           <p class="provider-purpose">Transactional email for verification, password reset, notifications, and account flows.</p>
         </div>
         <div>
-          <p><strong>Variables:</strong> <code>RESEND_API_KEY</code>, <code>EMAIL_FROM</code>, <code>SUPPORT_EMAIL</code>, <code>ADMIN_ALERT_EMAIL</code>.</p>
+          <p><strong>Variables:</strong> <code>RESEND_API_KEY</code>, <code>EMAIL_FROM</code>, <code>EMAIL_FROM_NAME</code>.</p>
           <ol class="steps">
             <li>Add and verify the sending domain from <a href="https://resend.com/docs/dashboard/domains/introduction">Resend Domains</a>.</li>
             <li>Create an API key using <a href="https://resend.com/docs/dashboard/api-keys/introduction">Resend API Keys</a> or <a href="https://resend.com/docs/create-an-api-key">Create an API Key</a>.</li>
@@ -660,16 +659,16 @@
 
       <div class="provider">
         <div>
-          <p class="provider-name">ImageKit</p>
-          <p class="provider-purpose">Image CDN, transformations, upload signing, and optimized media delivery.</p>
+          <p class="provider-name">Image Delivery</p>
+          <p class="provider-purpose">Provider-neutral transformed image delivery through Cloudflare Image Transformations or ImageKit.</p>
         </div>
         <div>
-          <p><strong>Variables:</strong> <code>IMAGEKIT_PUBLIC_KEY</code>, <code>IMAGEKIT_PRIVATE_KEY</code>, <code>IMAGEKIT_URL_ENDPOINT</code>, optional <code>IMAGEKIT_UPLOAD_FOLDER</code>.</p>
+          <p><strong>Variables:</strong> <code>IMAGE_DELIVERY_PROVIDER</code>, <code>IMAGE_DELIVERY_BASE_URL</code>, optional <code>CLOUDFLARE_IMAGE_DELIVERY_URL</code>.</p>
           <ol class="steps">
-            <li>Create an ImageKit account and media source.</li>
-            <li>Copy public/private keys from <a href="https://imagekit.io/docs/api-keys">ImageKit API Keys</a>.</li>
-            <li>Review request signing and API behavior in <a href="https://imagekit.io/docs/api-overview">ImageKit API Overview</a>.</li>
-            <li>Keep the private key server-only.</li>
+            <li>For Cloudflare, proxy a media hostname such as <code>cdn.tfpphotographers.com</code> and use <a href="https://developers.cloudflare.com/images/transform-images/">Cloudflare Image Transformations</a>.</li>
+            <li>For ImageKit, create a URL endpoint and connect it to the B2 public origin using <a href="https://imagekit.io/docs/">ImageKit delivery docs</a>.</li>
+            <li>Set <code>IMAGE_DELIVERY_PROVIDER</code> to <code>cloudflare</code> or <code>imagekit</code>.</li>
+            <li>Set <code>IMAGE_DELIVERY_BASE_URL</code> to the public delivery hostname.</li>
           </ol>
         </div>
       </div>
@@ -695,7 +694,7 @@
           <p class="provider-purpose">Social login with Google when enabled.</p>
         </div>
         <div>
-          <p><strong>Variables:</strong> <code>GOOGLE_CLIENT_ID</code>, <code>GOOGLE_CLIENT_SECRET</code>.</p>
+          <p><strong>Variables:</strong> <code>GOOGLE_OAUTH_CLIENT_ID</code>, <code>GOOGLE_OAUTH_CLIENT_SECRET</code>.</p>
           <ol class="steps">
             <li>Create or select a Google Cloud project.</li>
             <li>Configure OAuth consent and authorized domains.</li>
@@ -711,7 +710,7 @@
           <p class="provider-purpose">Social login with Apple when enabled.</p>
         </div>
         <div>
-          <p><strong>Variables:</strong> <code>APPLE_CLIENT_ID</code>, <code>APPLE_TEAM_ID</code>, <code>APPLE_KEY_ID</code>, <code>APPLE_PRIVATE_KEY</code>.</p>
+          <p><strong>Variables:</strong> <code>APPLE_OAUTH_CLIENT_ID</code>, <code>APPLE_OAUTH_TEAM_ID</code>, <code>APPLE_OAUTH_KEY_ID</code>, <code>APPLE_OAUTH_PRIVATE_KEY</code>.</p>
           <ol class="steps">
             <li>Enable Sign in with Apple in the Apple Developer account.</li>
             <li>Create the private key using <a href="https://developer.apple.com/help/account/capabilities/create-a-sign-in-with-apple-private-key/">Apple private key setup</a>.</li>
@@ -727,7 +726,7 @@
           <p class="provider-purpose">Facebook/Meta social login when enabled.</p>
         </div>
         <div>
-          <p><strong>Variables:</strong> <code>META_CLIENT_ID</code>, <code>META_CLIENT_SECRET</code>.</p>
+          <p><strong>Variables:</strong> <code>META_OAUTH_CLIENT_ID</code>, <code>META_OAUTH_CLIENT_SECRET</code>.</p>
           <ol class="steps">
             <li>Create a Meta app from <a href="https://developers.facebook.com/documentation/development/create-an-app">Create an App</a>.</li>
             <li>Add Facebook Login and configure OAuth redirect URLs.</li>
@@ -742,7 +741,7 @@
           <p class="provider-purpose">Optional AI generation, translation, moderation assistance, or internal automation features.</p>
         </div>
         <div>
-          <p><strong>Variables:</strong> <code>GEMINI_API_KEY</code>, <code>TRANSLATION_GEMINI_API_KEY</code>, <code>GROQ_API_KEY</code>.</p>
+          <p><strong>Variables:</strong> <code>GEMINI_STUDIO_API_KEY</code>, <code>GROQ_API_KEY</code>.</p>
           <ol class="steps">
             <li>Create Gemini keys from <a href="https://ai.google.dev/gemini-api/docs/api-key">Gemini API key docs</a>.</li>
             <li>Restrict Google API keys using <a href="https://docs.cloud.google.com/api-keys/docs/add-restrictions-api-keys">Google API key restrictions</a>.</li>
@@ -758,7 +757,7 @@
           <p class="provider-purpose">Direct image moderation provider path if the app does not use the remote moderation service.</p>
         </div>
         <div>
-          <p><strong>Variables:</strong> <code>GOOGLE_APPLICATION_CREDENTIALS</code>, <code>AWS_ACCESS_KEY_ID</code>, <code>AWS_SECRET_ACCESS_KEY</code>, <code>AWS_REGION</code>.</p>
+          <p><strong>Variables:</strong> <code>GOOGLE_CLOUD_PROJECT_ID</code>, <code>GOOGLE_APPLICATION_CREDENTIALS</code>, <code>AWS_ACCESS_KEY_ID</code>, <code>AWS_SECRET_ACCESS_KEY</code>, <code>AWS_MODERATION_REGION</code>.</p>
           <ol class="steps">
             <li>For Google Vision, follow <a href="https://docs.cloud.google.com/vision/docs/setup">Vision setup</a> and <a href="https://docs.cloud.google.com/vision/docs/authentication">Vision authentication</a>.</li>
             <li>For AWS Rekognition, create an IAM user or role with the minimum Rekognition permissions needed by the worker.</li>
@@ -811,17 +810,17 @@
           </tr>
           <tr>
             <td>Abuse controls</td>
-            <td><code>RATE_LIMIT_REDIS_URL</code>, optional <code>TURNSTILE_SITE_KEY</code>, <code>TURNSTILE_SECRET_KEY</code></td>
-            <td><span class="tag danger">Required Redis</span><span class="tag warn">Optional Turnstile</span></td>
+            <td><code>RATE_LIMIT_REDIS_URL</code></td>
+            <td><span class="tag danger">Required Redis</span></td>
           </tr>
           <tr>
             <td>Email</td>
-            <td><code>RESEND_API_KEY</code>, <code>EMAIL_FROM</code>, <code>SUPPORT_EMAIL</code>, <code>ADMIN_ALERT_EMAIL</code></td>
+            <td><code>RESEND_API_KEY</code>, <code>EMAIL_FROM</code>, <code>EMAIL_FROM_NAME</code></td>
             <td><span class="tag danger">Required</span></td>
           </tr>
           <tr>
             <td>Storage and images</td>
-            <td><code>B2_ACCESS_KEY_ID</code>, <code>B2_SECRET_ACCESS_KEY</code>, <code>B2_BUCKET_NAME</code>, <code>B2_PRIVATE_BUCKET_NAME</code>, <code>IMAGEKIT_PUBLIC_KEY</code>, <code>IMAGEKIT_PRIVATE_KEY</code>, <code>IMAGEKIT_URL_ENDPOINT</code></td>
+            <td><code>B2_ACCESS_KEY_ID</code>, <code>B2_SECRET_ACCESS_KEY</code>, <code>B2_BUCKET_NAME</code>, <code>B2_PRIVATE_BUCKET_NAME</code>, <code>IMAGE_DELIVERY_PROVIDER</code>, <code>IMAGE_DELIVERY_BASE_URL</code></td>
             <td><span class="tag danger">Required</span></td>
           </tr>
           <tr>
@@ -831,12 +830,12 @@
           </tr>
           <tr>
             <td>OAuth</td>
-            <td><code>GOOGLE_CLIENT_ID</code>, <code>GOOGLE_CLIENT_SECRET</code>, <code>APPLE_CLIENT_ID</code>, <code>APPLE_TEAM_ID</code>, <code>APPLE_KEY_ID</code>, <code>APPLE_PRIVATE_KEY</code>, <code>META_CLIENT_ID</code>, <code>META_CLIENT_SECRET</code></td>
+            <td><code>GOOGLE_OAUTH_CLIENT_ID</code>, <code>GOOGLE_OAUTH_CLIENT_SECRET</code>, <code>APPLE_OAUTH_CLIENT_ID</code>, <code>APPLE_OAUTH_TEAM_ID</code>, <code>APPLE_OAUTH_KEY_ID</code>, <code>APPLE_OAUTH_PRIVATE_KEY</code>, <code>META_OAUTH_CLIENT_ID</code>, <code>META_OAUTH_CLIENT_SECRET</code></td>
             <td><span class="tag warn">If social login enabled</span></td>
           </tr>
           <tr>
             <td>AI and moderation</td>
-            <td><code>MODERATION_REMOTE_URL</code>, <code>MODERATION_REMOTE_AUTH_TOKEN</code>, <code>TRANSLATION_REMOTE_AUTH_TOKEN</code>, <code>COLLAGE_SERVICE_API_KEY</code>, <code>GEMINI_API_KEY</code>, <code>GROQ_API_KEY</code>, <code>GOOGLE_APPLICATION_CREDENTIALS</code>, <code>AWS_ACCESS_KEY_ID</code>, <code>AWS_SECRET_ACCESS_KEY</code></td>
+            <td><code>MODERATION_REMOTE_URL</code>, <code>MODERATION_REMOTE_AUTH_TOKEN</code>, <code>TRANSLATION_REMOTE_AUTH_TOKEN</code>, <code>COLLAGE_SERVICE_API_KEY</code>, <code>GEMINI_STUDIO_API_KEY</code>, <code>GROQ_API_KEY</code>, <code>GOOGLE_APPLICATION_CREDENTIALS</code>, <code>AWS_ACCESS_KEY_ID</code>, <code>AWS_SECRET_ACCESS_KEY</code></td>
             <td><span class="tag danger">Required by selected provider</span></td>
           </tr>
           <tr>
