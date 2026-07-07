@@ -7,9 +7,12 @@
 - If both root and nested workspaces changed, update and commit in both repositories.
 - For cross-repo operator work, prefer the checked-in menu and runbook paths first:
   - `tfpphotographers/scripts/manage-tfp.sh`
+  - `tfpphotographers/scripts/manage-tfp-mobile.sh`
   - `tfpphotographers/scripts/start-app.sh`
   - `tfpphotographers/tests/create-data/README.md`
   - `tfpphotographers/docs/operations/AGENT_RUNTIME_AND_SEED_GUIDE.md`
+  - `tfpphotographers/docs/mobile/mobile-app-design-guide.md`
+  - `tfpphotographers/docs/mobile/mobile-app-implementation-todo.md`
 
 ## Commit Preference
 - For this workspace, commit completed work by default unless the user explicitly says not to.
@@ -44,6 +47,7 @@
   - app-local: `apps/<app>/tests/**`
   - workspace-level: `tests/**` for cross-app E2E/contract flows
 - Keep API and web unit/integration tests in app-local test roots (`apps/api/tests/**`, `apps/web/tests/**`).
+- Mobile currently keeps pure domain tests under `apps/mobile/src/**/__tests__` to keep Expo-facing rules close to the native implementation; if mobile component/E2E coverage expands, add app-local `apps/mobile/tests/**` and document the command here.
 - When creating or updating test scripts/flows, update `/Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/tests/README.md` in the same change so script usage stays discoverable.
 - When changing browser seed assets/configs/commands, also update `/Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/tests/seed/README.md`.
 
