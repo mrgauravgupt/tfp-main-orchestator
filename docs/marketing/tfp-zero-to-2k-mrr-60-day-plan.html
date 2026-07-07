@@ -519,11 +519,12 @@
     <header class="hero">
       <div class="hero-content">
         <p class="eyebrow">Go-live growth, revenue, ads, and product roadmap</p>
-        <h1>TFP Photographers: 0 to $2k/month plan in 60 days</h1>
+        <h1>TFP Photographers: liquidity-first path to $2k/month</h1>
         <p class="hero-lede">
           This plan is built from the current repository state plus current ad and contest policy checks.
           It assumes a marketing budget of about Rs.5,000 per month, so paid ads are used only as signal tests.
-          The real path to roughly $2k/month is founder-led sales, sponsored contests, referrals, SEO, and fast revenue-feature shipping.
+          The corrected strategy is marketplace liquidity first: make creation, participation, messaging, and referrals free until creators are active,
+          then monetize sponsored contests, small boosts, verification, AI tools, and finally subscriptions.
         </p>
         <div class="hero-grid" aria-label="Plan summary metrics">
           <div class="hero-stat">
@@ -531,8 +532,8 @@
             <span>Paid marketing ceiling</span>
           </div>
           <div class="hero-stat">
-            <strong>Rs.190k/mo</strong>
-            <span>Approx. $2k revenue target at USD/INR 95.4</span>
+            <strong>5k users</strong>
+            <span>First real monetization gate</span>
           </div>
           <div class="hero-stat">
             <strong>8 weeks</strong>
@@ -574,11 +575,23 @@
       <div class="callout good">
         <span class="icon">OK</span>
         <div>
-          <strong>Launch as a web-first creator marketplace, not an app-install campaign.</strong>
+          <strong>Launch as a free, web-first creator marketplace until liquidity is visible.</strong>
           <p>
             The current product is an Astro SSR web app with strong public routes. With Rs.5,000/month,
             sending paid traffic to specific web pages is more practical than paying for app installs.
-            Build native app and AdMob only after you prove contest retention and paid conversion.
+            Build native app, AdMob, and subscription-heavy monetization only after creators repeatedly find contests,
+            shoots, collaborators, and profile visibility valuable.
+          </p>
+        </div>
+      </div>
+
+      <div class="callout warning">
+        <span class="icon">REV</span>
+        <div>
+          <strong>Review correction accepted: do not monetize before network effects.</strong>
+          <p>
+            Subscriptions and paid boosts only convert when there is an audience to reach. The first target should be daily active creators,
+            completed profiles, uploads, applications, submissions, messages, and referrals. Revenue starts with sponsors and optional low-friction perks.
           </p>
         </div>
       </div>
@@ -589,12 +602,12 @@
           <p>Photographers who need models, models who need portfolio shoots, and small creative academies/studios that can sponsor a challenge.</p>
         </div>
         <div class="mini-card">
-          <h3>Best first monetization</h3>
-          <p>Subscriptions, sponsored contests, featured listings, verification/profile boosts, and event/opportunity promotion.</p>
+          <h3>Best first growth loop</h3>
+          <p>Free contests, free opportunities, free applications, portfolio uploads, WhatsApp referrals, founder badges, and city ambassadors.</p>
         </div>
         <div class="mini-card">
           <h3>Worst first monetization</h3>
-          <p>Forcing users to watch ads before they can participate. It adds friction, creates policy risk, and will not reach $2k/month quickly.</p>
+          <p>Forcing subscriptions, paid boosts, or watch-ads before users experience value. Ads before liquidity destroy retention.</p>
         </div>
       </div>
     </section>
@@ -615,7 +628,7 @@
           <tr>
             <th>Feature</th>
             <th>Current state</th>
-            <th>Revenue / growth improvement needed</th>
+            <th>Liquidity / revenue improvement needed</th>
             <th>Priority</th>
           </tr>
         </thead>
@@ -629,13 +642,13 @@
           <tr>
             <td><strong>Profiles and portfolios</strong></td>
             <td>Portfolio uploads, avatar/cover, public profile, badges, role signals, referral share are present.</td>
-            <td>Add paid verification, portfolio ranking boost, profile completion score, profile view analytics, and "hire/contact" lead intent.</td>
+            <td>Add profile completion score, founder badge, referral ladder, profile view analytics, and later paid verification/ranking boost.</td>
             <td><span class="tag green">P0</span></td>
           </tr>
           <tr>
             <td><strong>Opportunities</strong></td>
             <td>Creation, roles, applications, moderation, collage generation, submissions, credits, and lifecycle logic exist.</td>
-            <td>Sell featured opportunity placement, urgent casting boost, and creator analytics. Add saved-search alerts for users.</td>
+            <td>Keep creation and applications free early. Add saved-search alerts first, then featured opportunity placement only after supply/demand exists.</td>
             <td><span class="tag green">P0</span></td>
           </tr>
           <tr>
@@ -647,19 +660,19 @@
           <tr>
             <td><strong>Contests</strong></td>
             <td>Contest creation, prizes, banner/resource files, submissions, reactions, one vote/user/contest, and admin winner selection exist.</td>
-            <td>Normal users cannot create contests by default. Add sponsored contest packages, public official rules, sponsor slots, judging criteria, and winner announcement flow.</td>
+            <td>Temporarily make official/platform contests free to join. Add sponsor slots, official rules, judging criteria, sponsor reporting, and winner showcase.</td>
             <td><span class="tag green">P0</span></td>
           </tr>
           <tr>
             <td><strong>Subscriptions</strong></td>
             <td>FREE / PRO / PRO_PLUS quota enforcement exists. Billing does not exist yet. Tiers are manual/admin-set.</td>
-            <td>Add Razorpay/Stripe billing, pricing page, upgrade prompts inside quota-blocked states, invoices, cancellation, and admin payment status.</td>
-            <td><span class="tag green">P0</span></td>
+            <td>Do not lead with subscriptions. Keep billing design ready, but defer checkout until daily active creators and listing liquidity are proven.</td>
+            <td><span class="tag amber">P2</span></td>
           </tr>
           <tr>
             <td><strong>Referral</strong></td>
             <td>Referral code creation, referral capture at signup/OAuth, profile WhatsApp share, admin referral counts, and manual awards exist.</td>
-            <td>Automate referral rewards: profile boost credit, extra opportunity slot, badge, or one month PRO after verified invited user completes profile.</td>
+            <td>Automate referral milestones: invite 3 for Founder badge, 10 for featured profile credit, 25 for verified badge, 50 for future PRO.</td>
             <td><span class="tag green">P0</span></td>
           </tr>
           <tr>
@@ -686,10 +699,10 @@
       <div class="callout warning">
         <span class="icon">!</span>
         <div>
-          <strong>Main risk: revenue features are behind the product quality.</strong>
+          <strong>Main risk: monetization can outrun marketplace liquidity.</strong>
           <p>
-            The marketplace foundation is strong, but the path to paid revenue is not wired yet.
-            Do not spend heavily before pricing, checkout, sponsor packages, and conversion analytics exist.
+            The marketplace foundation is strong, but visibility has no paid value until creators and listings are active.
+            Keep the first growth loop free, measure liquidity, and monetize only optional sponsor/perk layers.
           </p>
         </div>
       </div>
@@ -700,117 +713,117 @@
         <div class="section-title">
           <span class="icon">03</span>
           <div>
-            <h2>Revenue Generation Features to Add</h2>
-            <p class="subtle">Build these in this order. The goal is cash collection, not vanity traffic.</p>
+            <h2>Liquidity-First Revenue Sequence</h2>
+            <p class="subtle">Build value and network effects first. Monetize optional power, visibility, trust, and sponsor demand later.</p>
           </div>
         </div>
       </div>
 
       <div class="grid-2">
         <div class="mini-card">
-          <h3>1. Pricing and checkout</h3>
-          <p><strong>Build:</strong> `/pricing`, `/checkout`, `/billing`, upgrade CTA in quota blocks. Use Razorpay first for India, Stripe later for global cards.</p>
+          <h3>1. Founding Creator Program</h3>
+          <p><strong>Build:</strong> Founder badge, profile frame, early feature access, city leaderboard, exclusive free contests, and a public founding creator wall.</p>
           <div class="tag-row">
-            <span class="tag green">Must ship before ads scale</span>
-            <span class="tag blue">Web page</span>
+            <span class="tag green">0-5k users</span>
+            <span class="tag blue">Profile + landing page</span>
           </div>
         </div>
         <div class="mini-card">
-          <h3>2. Sponsored contest package</h3>
-          <p><strong>Build:</strong> `/sponsor-a-contest`, sponsor logo slots, sponsor CTA, official rules, prize value disclosure, sponsor lead form.</p>
-          <div class="tag-row">
-            <span class="tag green">Fastest $2k path</span>
-            <span class="tag blue">Web page + admin</span>
-          </div>
-        </div>
-        <div class="mini-card">
-          <h3>3. Featured listings / boosts</h3>
-          <p><strong>Build:</strong> paid boost for profile, opportunity, event, and contest. Always mark as Sponsored or Featured.</p>
-          <div class="tag-row">
-            <span class="tag green">Low build cost</span>
-            <span class="tag blue">Web + API</span>
-          </div>
-        </div>
-        <div class="mini-card">
-          <h3>4. Referral reward automation</h3>
-          <p><strong>Build:</strong> automatic boost credit when referred user verifies email and completes profile/upload. Use existing referral tables.</p>
+          <h3>2. Referral ladder</h3>
+          <p><strong>Build:</strong> invite 3 creators for Founder badge, 10 for a featured profile day, 25 for verified badge, 50 for future PRO credit.</p>
           <div class="tag-row">
             <span class="tag green">Cheap acquisition</span>
-            <span class="tag blue">API + profile UI</span>
+            <span class="tag blue">Use existing referral tables</span>
           </div>
         </div>
         <div class="mini-card">
-          <h3>5. Creator analytics</h3>
-          <p><strong>Build:</strong> views, clicks, applications, saves, messages, contest submissions, conversion funnel by listing.</p>
+          <h3>3. Sponsored contest package</h3>
+          <p><strong>Build:</strong> sponsor logo slots, sponsor CTA, official rules, prize value disclosure, sponsor lead form, and sponsor performance report.</p>
           <div class="tag-row">
-            <span class="tag amber">Makes PRO valuable</span>
-            <span class="tag blue">Dashboard</span>
+            <span class="tag green">Best early revenue</span>
+            <span class="tag blue">Brand-funded</span>
           </div>
         </div>
         <div class="mini-card">
-          <h3>6. Verified creator badge</h3>
-          <p><strong>Build:</strong> manual verification queue plus paid verification review fee. Include ID/KYC only after privacy/legal review.</p>
+          <h3>4. Micro boosts after liquidity</h3>
+          <p><strong>Build:</strong> Rs.49 profile highlight for 24 hours, Rs.99 featured opportunity for 7 days, Rs.199 featured contest after active traffic exists.</p>
           <div class="tag-row">
-            <span class="tag amber">Trust upsell</span>
-            <span class="tag blue">Admin + profile</span>
+            <span class="tag amber">5k+ users</span>
+            <span class="tag blue">Optional perk</span>
+          </div>
+        </div>
+        <div class="mini-card">
+          <h3>5. Verification and AI tools</h3>
+          <p><strong>Build:</strong> Rs.199 verification badge, Rs.99 AI portfolio review, AI caption ideas, pose suggestions, and profile improvement score.</p>
+          <div class="tag-row">
+            <span class="tag amber">2k-10k users</span>
+            <span class="tag blue">High perceived value</span>
+          </div>
+        </div>
+        <div class="mini-card">
+          <h3>6. Subscriptions later</h3>
+          <p><strong>Build:</strong> Rs.199 PRO and Rs.499 PRO_PLUS only after visibility, analytics, priority, and AI tools are proven useful.</p>
+          <div class="tag-row">
+            <span class="tag amber">10k+ users</span>
+            <span class="tag blue">Do not lead with this</span>
           </div>
         </div>
       </div>
 
-      <h3 style="margin-top:22px;">Recommended pricing for first 60 days</h3>
+      <h3 style="margin-top:22px;">Recommended pricing by marketplace stage</h3>
       <table>
         <thead>
           <tr>
-            <th>Offer</th>
-            <th>Price</th>
-            <th>Buyer</th>
-            <th>Why it converts</th>
+            <th>Stage</th>
+            <th>Pricing</th>
+            <th>What stays free</th>
+            <th>Why</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>PRO</td>
-            <td>Rs.499/month</td>
-            <td>Individual photographer/model/creator</td>
-            <td>More opportunities/events, profile priority, analytics, referral rewards.</td>
+            <td>0-5,000 users</td>
+            <td>Rs.0 for all core marketplace actions</td>
+            <td>Profiles, uploads, opportunities, applications, contests, submissions, messaging.</td>
+            <td>Remove friction and build liquidity. Daily active creators is the main KPI.</td>
           </tr>
           <tr>
-            <td>PRO_PLUS</td>
-            <td>Rs.1,499/month</td>
-            <td>Working photographers, agencies, stylists, schools</td>
-            <td>More active listings, featured credits, faster support, analytics.</td>
+            <td>5,000-20,000 users</td>
+            <td>Rs.49-Rs.199 optional micro purchases</td>
+            <td>Core usage remains free.</td>
+            <td>Sell convenience and visibility only after there is enough traffic to value visibility.</td>
           </tr>
           <tr>
-            <td>Featured profile/listing</td>
-            <td>Rs.299 for 7 days</td>
-            <td>Anyone seeking visibility</td>
-            <td>Small impulse purchase, easy to understand, no subscription commitment.</td>
+            <td>20,000+ users</td>
+            <td>PRO Rs.199/month, PRO_PLUS Rs.499/month</td>
+            <td>Free tier remains genuinely usable.</td>
+            <td>Subscription value is clearer when analytics, priority, AI tools, and reach exist.</td>
           </tr>
           <tr>
-            <td>Sponsored contest</td>
-            <td>Rs.4,999 to Rs.9,999</td>
-            <td>Camera shops, academies, studios, makeup brands, local venues</td>
-            <td>They buy exposure, community engagement, submissions, and brand placement.</td>
+            <td>Any time after sponsor proof</td>
+            <td>Sponsored contest Rs.4,999-Rs.9,999</td>
+            <td>Contest entry remains free to participants.</td>
+            <td>Brands pay to reach creators; participants should not pay to create the audience.</td>
           </tr>
           <tr>
-            <td>Event promotion pack</td>
-            <td>Rs.1,999</td>
-            <td>Workshop organizer or venue</td>
-            <td>Featured event placement, email/social mention, RSVP push.</td>
+            <td>50,000+ users</td>
+            <td>Optional rewarded ads for cosmetic/convenience perks</td>
+            <td>No ad required for entry, upload, application, messaging, or voting.</td>
+            <td>Ads should never block marketplace value. Use them only for optional bonus features.</td>
           </tr>
         </tbody>
       </table>
 
-      <h3 style="margin-top:22px;">$2k/month revenue mix that can work</h3>
+      <h3 style="margin-top:22px;">$2k/month revenue mix after liquidity exists</h3>
       <div class="metric-stack" aria-label="Revenue target mix">
-        <div class="metric"><strong>25 sponsors</strong><div class="bar"><span style="width:65%"></span></div><span>Rs.124,975</span></div>
-        <div class="metric"><strong>60 PRO</strong><div class="bar"><span style="width:16%"></span></div><span>Rs.29,940</span></div>
-        <div class="metric"><strong>20 PRO_PLUS</strong><div class="bar"><span style="width:16%"></span></div><span>Rs.29,980</span></div>
-        <div class="metric"><strong>25 boosts</strong><div class="bar"><span style="width:4%"></span></div><span>Rs.7,475</span></div>
+        <div class="metric"><strong>18 sponsors</strong><div class="bar"><span style="width:75%"></span></div><span>Rs.143,982</span></div>
+        <div class="metric"><strong>200 boosts</strong><div class="bar"><span style="width:10%"></span></div><span>Rs.19,800</span></div>
+        <div class="metric"><strong>150 AI reviews</strong><div class="bar"><span style="width:8%"></span></div><span>Rs.14,850</span></div>
+        <div class="metric"><strong>60 verified</strong><div class="bar"><span style="width:6%"></span></div><span>Rs.11,940</span></div>
       </div>
       <p class="subtle">
-        Total: about Rs.192,370/month, roughly $2,016/month at USD/INR 95.4. This requires sales outreach.
-        It is not realistic from Rs.5,000/month ads alone.
+        Total: about Rs.190,572/month, roughly $2k/month at USD/INR 95.4. This is a post-liquidity target.
+        It should not be treated as a Day-1 subscription target.
       </p>
     </section>
 
@@ -998,7 +1011,7 @@
           <strong>Do not make ad-watching mandatory for Phase 1 contest entry.</strong>
           <p>
             Your own contest terms say Phase 1 entry is free and skill-based. Mandatory rewarded ads add friction, create policy and legal complexity,
-            and distract from the real revenue levers: subscriptions, boosts, and sponsors.
+            and distract from the real early levers: liquidity, referrals, founder status, sponsor-funded contests, and optional perks.
           </p>
         </div>
       </div>
@@ -1022,7 +1035,7 @@
           <tr>
             <td>Watch ad for profile boost credit</td>
             <td><span class="tag amber">Later</span></td>
-            <td>Non-transferable in-platform visibility credit with frequency caps and no cash value.</td>
+            <td>Only after liquidity exists: non-transferable in-platform visibility credit with frequency caps and no cash value.</td>
             <td>Promising money, gift cards, or transferable rewards for ads.</td>
           </tr>
           <tr>
@@ -1032,10 +1045,10 @@
             <td>Breaking the one-submission rule and damaging fairness.</td>
           </tr>
           <tr>
-            <td>Watch ad after submission</td>
+            <td>Watch ad for AI bonus</td>
             <td><span class="tag amber">Maybe</span></td>
-            <td>Optional "support the platform" style placement is risky if it nudges the user. Prefer normal display/sponsor ads.</td>
-            <td>Misleading users that watching improves judging odds.</td>
+            <td>Optional bonus AI caption, pose suggestion, or extra portfolio review after the user has already received core value.</td>
+            <td>Any hint that watching an ad improves judging, ranking, prize odds, or eligibility.</td>
           </tr>
         </tbody>
       </table>
@@ -1045,7 +1058,7 @@
         <li>Build this in app only after a native Android/iOS app exists, because AdMob rewarded ads are app-oriented.</li>
         <li>Use server-side verification and store one reward event per user/action.</li>
         <li>Reward must be non-transferable and usable only inside TFP.</li>
-        <li>Show clear text before the ad: "Watch one ad to receive one profile boost credit. This does not affect judging or prize odds."</li>
+        <li>Show clear text before the ad: "Watch one ad to receive one optional profile boost credit. This does not affect contest entry, judging, or prize odds."</li>
         <li>Frequency cap: max 2 rewarded ads per user/day and max 10/month at first.</li>
         <li>Do not use rewarded ads in flows with cash/gift-card/real-money prizes until legal review is complete.</li>
       </ul>
@@ -1057,7 +1070,7 @@
           <span class="icon">08</span>
           <div>
             <h2>60-Day Roadmap After Go-Live</h2>
-            <p class="subtle">Every week has product, marketing, sales, and measurement steps.</p>
+            <p class="subtle">The first two months optimize for creator liquidity, not subscription revenue.</p>
           </div>
         </div>
       </div>
@@ -1068,9 +1081,10 @@
           <div>
             <h3>Launch foundation</h3>
             <ul>
-              <li>Ship pricing page, sponsor inquiry page, and conversion analytics events.</li>
+              <li>Keep profiles, uploads, opportunities, applications, contests, submissions, and messaging free.</li>
+              <li>Ship sponsor inquiry page, founder landing page, referral ladder copy, and conversion analytics events.</li>
               <li>Create one flagship free skill contest with clear rules, judging criteria, 18+ eligibility, and no misleading prize claims.</li>
-              <li>Manually recruit 50 photographers, 50 models, 10 makeup artists/stylists, and 5 sponsors from local communities.</li>
+              <li>Manually recruit 50 photographers, 50 models, 10 makeup artists/stylists, and 5 ambassador candidates from local communities.</li>
               <li>Start Instagram content: 2 Reels/day, 1 carousel/day, 10 story replies/day.</li>
             </ul>
           </div>
@@ -1083,7 +1097,7 @@
             <ul>
               <li>Run Rs.100/day Meta traffic to the contest page for 7 days.</li>
               <li>Test two creatives: photographer contest and model opportunities.</li>
-              <li>DM 20 photography academies/camera stores/studios with sponsor offer.</li>
+              <li>DM 20 photography academies/camera stores/studios with a free first sponsor conversation, not a hard sales pitch.</li>
               <li>Publish 5 SEO pages: "TFP shoots in Bengaluru", "TFP shoots in Mumbai", "Photography contests India", "Models for portfolio shoot", "Photographer collaboration India".</li>
             </ul>
           </div>
@@ -1095,7 +1109,8 @@
             <h3>Activation and referrals</h3>
             <ul>
               <li>Push every new user to complete profile, upload 3 images, and share referral link on WhatsApp.</li>
-              <li>Give manual "Founding Creator" badge to high-quality early users.</li>
+              <li>Give manual "Founding Creator" badge to the first high-quality users and show it publicly on profile cards.</li>
+              <li>Start referral milestones: invite 3, 10, 25, and 50 creators for non-cash status and visibility rewards.</li>
               <li>Add founder-led onboarding calls for first 20 serious photographers/models.</li>
               <li>Pause any paid creative above Rs.10 CPC or below 5% signup conversion.</li>
             </ul>
@@ -1105,11 +1120,11 @@
         <article class="week">
           <div class="week-label">Week 4</div>
           <div>
-            <h3>First revenue push</h3>
+            <h3>Liquidity proof and first sponsor close</h3>
             <ul>
-              <li>Sell 5 sponsored contest/event packs at Rs.4,999 each.</li>
-              <li>Offer early PRO at Rs.399/month for first 100 paying users, then move to Rs.499.</li>
-              <li>Launch featured profile/listing for Rs.299/week.</li>
+              <li>Publish proof: active creators, profiles completed, uploads, applications, submissions, messages, referrals, and top cities.</li>
+              <li>Close 1-2 sponsor-funded contests if proof is strong; otherwise keep sponsor conversations warm until Week 5.</li>
+              <li>Do not launch subscriptions yet. If monetization is needed, test manual sponsored contest only.</li>
               <li>Publish winner/submission showcase and tag every participant.</li>
             </ul>
           </div>
@@ -1122,7 +1137,7 @@
             <ul>
               <li>Start Rs.50/day retargeting to visitors who did not register or submit.</li>
               <li>Create sponsor proof page: reach, signups, submissions, top cities, examples.</li>
-              <li>Contact 50 sponsors with proof and offer two packages: Rs.4,999 starter, Rs.9,999 featured.</li>
+              <li>Contact 50 sponsors with proof and offer Rs.4,999 starter / Rs.9,999 featured contests only if liquidity metrics look credible.</li>
               <li>Launch second contest with sponsor/category theme.</li>
             </ul>
           </div>
@@ -1131,11 +1146,11 @@
         <article class="week">
           <div class="week-label">Week 6</div>
           <div>
-            <h3>Subscription conversion</h3>
+            <h3>Optional creator tools</h3>
             <ul>
-              <li>Add upgrade prompts where users hit opportunity/event quota or want featured placement.</li>
-              <li>Publish creator analytics preview to make PRO tangible.</li>
-              <li>Email/WhatsApp all active users: "Unlock more listings + visibility this month".</li>
+              <li>Prototype AI portfolio review, AI captions, pose ideas, and profile improvement score.</li>
+              <li>Test tiny optional purchases manually: Rs.49 profile highlight or Rs.99 AI review for users who already completed profiles.</li>
+              <li>Email/WhatsApp active users: "Improve your profile and get more collaborations this month".</li>
               <li>Run exact-match Google Search for Rs.1,000/month only on high-intent keywords.</li>
             </ul>
           </div>
@@ -1160,9 +1175,9 @@
             <h3>Scale what converted</h3>
             <ul>
               <li>Keep only the top ad creative and top two cities by signup-to-submission conversion.</li>
-              <li>Close enough sponsors/subscribers to reach the Rs.190k/month run-rate target.</li>
+              <li>Scale ambassador and referral loops in cities where users are actually applying, messaging, and submitting.</li>
               <li>Convert manual founder sales scripts into repeatable CRM pipeline.</li>
-              <li>Decide next build: native app/rewarded ads only if retention is strong; otherwise continue web revenue features.</li>
+              <li>Decide next build: sponsor reporting, referral automation, AI tools, or micro boosts. Native app/rewarded ads stay much later.</li>
             </ul>
           </div>
         </article>
@@ -1191,16 +1206,16 @@
         </thead>
         <tbody>
           <tr>
-            <td>Meta CPC</td>
-            <td>Under Rs.6</td>
-            <td>Above Rs.10</td>
-            <td>Pause creative, test new first 2 seconds of video, tighten landing page.</td>
+            <td>Daily active creators</td>
+            <td>Rising weekly</td>
+            <td>Flat or falling</td>
+            <td>Stop monetization work and improve onboarding, creator outreach, and contest/opportunity supply.</td>
           </tr>
           <tr>
-            <td>Landing signup rate</td>
-            <td>8%+</td>
-            <td>Under 5%</td>
-            <td>Change CTA from generic register to "Enter free contest" or "Find shoots".</td>
+            <td>Liquidity action rate</td>
+            <td>30%+ active users apply, submit, upload, message, or refer weekly</td>
+            <td>Under 15%</td>
+            <td>Make the first useful action obvious: upload 3 images, enter contest, apply to shoot, invite 3 creators.</td>
           </tr>
           <tr>
             <td>Signup to profile completion</td>
@@ -1218,19 +1233,19 @@
             <td>Referral shares per active creator</td>
             <td>2+</td>
             <td>Under 0.5</td>
-            <td>Show WhatsApp referral CTA after profile completion and submission.</td>
+            <td>Show founder milestone rewards and WhatsApp referral CTA after profile completion and contest submission.</td>
           </tr>
           <tr>
-            <td>Paid conversion</td>
-            <td>2%-4% active users</td>
-            <td>Under 1%</td>
-            <td>Improve PRO value: analytics, boosts, limits, sponsor visibility.</td>
+            <td>Meta CPC</td>
+            <td>Under Rs.6</td>
+            <td>Above Rs.10</td>
+            <td>Pause creative, test new first 2 seconds of video, tighten landing page.</td>
           </tr>
           <tr>
             <td>Sponsor close rate</td>
-            <td>10%+ of warm outreach</td>
+            <td>10%+ of warm outreach after proof</td>
             <td>Under 4%</td>
-            <td>Lower first package to Rs.2,999 or add stronger proof/reporting.</td>
+            <td>Do not discount blindly. Improve proof: active creators, submissions, audience fit, city/category focus.</td>
           </tr>
         </tbody>
       </table>
@@ -1255,15 +1270,15 @@
           <h3>Founder sales</h3>
           <div class="checklist">
             <label><input type="checkbox"> DM 20 photographers/models/stylists with one useful message, not a spam pitch.</label>
-            <label><input type="checkbox"> Contact 10 sponsors: academies, studios, camera shops, makeup brands, venues.</label>
-            <label><input type="checkbox"> Ask every active creator for 2 referrals and give a visible badge/boost credit.</label>
+            <label><input type="checkbox"> Recruit or activate one city ambassador candidate.</label>
+            <label><input type="checkbox"> Ask every active creator for 2 referrals and show the next founder milestone.</label>
             <label><input type="checkbox"> Post one winner/submission/creator spotlight.</label>
           </div>
         </div>
         <div>
           <h3>Growth operations</h3>
           <div class="checklist">
-            <label><input type="checkbox"> Check CPC, CTR, signup rate, profile completion, upload/submission rate.</label>
+            <label><input type="checkbox"> Check daily active creators, profile completion, uploads, applications, submissions, messages, referrals.</label>
             <label><input type="checkbox"> Reply to every Instagram/WhatsApp/comment within 12 hours.</label>
             <label><input type="checkbox"> Approve/moderate pending high-quality content quickly.</label>
             <label><input type="checkbox"> Publish or improve one SEO page or creator story.</label>
@@ -1304,7 +1319,7 @@
           <tr>
             <td>Upgrade plan</td>
             <td><code>/en-IN/pricing</code></td>
-            <td>Required before subscription ads. Do not send paid traffic to hidden/admin-set tiers.</td>
+            <td>Use later. Do not send early paid traffic to subscription tiers before creator liquidity exists.</td>
           </tr>
         </tbody>
       </table>
