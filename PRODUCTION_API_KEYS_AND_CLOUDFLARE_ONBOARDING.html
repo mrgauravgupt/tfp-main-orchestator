@@ -1,885 +1,189 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TFP Production API Keys and Cloudflare Onboarding</title>
-  <style>
-    :root {
-      color-scheme: light;
-      --ink: #18202a;
-      --muted: #5f6b7a;
-      --line: #d9e1ea;
-      --panel: #ffffff;
-      --soft: #f6f8fb;
-      --accent: #0f766e;
-      --accent-soft: #e6f5f2;
-      --warn: #a15c07;
-      --warn-soft: #fff4dd;
-      --danger: #a73535;
-      --danger-soft: #fff0f0;
-      --ok: #23734c;
-      --ok-soft: #edf8f1;
-      --code: #243142;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background: var(--soft);
-      line-height: 1.55;
-    }
-
-    a {
-      color: #075ea8;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-    }
-
-    .page {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 32px 22px 56px;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, #ffffff 0%, #eef7f4 62%, #f7fbff 100%);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 34px;
-      box-shadow: 0 18px 50px rgba(25, 44, 73, 0.08);
-    }
-
-    .eyebrow {
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin: 0 0 10px;
-    }
-
-    h1 {
-      font-size: clamp(34px, 5vw, 58px);
-      line-height: 1.02;
-      margin: 0 0 18px;
-      letter-spacing: 0;
-      max-width: 880px;
-    }
-
-    h2 {
-      font-size: 28px;
-      line-height: 1.2;
-      margin: 44px 0 16px;
-      letter-spacing: 0;
-    }
-
-    h3 {
-      font-size: 20px;
-      line-height: 1.3;
-      margin: 24px 0 10px;
-      letter-spacing: 0;
-    }
-
-    p {
-      margin: 0 0 14px;
-    }
-
-    .hero p {
-      max-width: 880px;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 22px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      min-height: 34px;
-      padding: 7px 11px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.78);
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin: 20px 0;
-    }
-
-    .grid.two {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 18px;
-      box-shadow: 0 10px 24px rgba(20, 35, 55, 0.05);
-    }
-
-    .card h3 {
-      margin-top: 0;
-    }
-
-    .status {
-      border-left: 5px solid var(--accent);
-    }
-
-    .status.danger {
-      border-left-color: var(--danger);
-      background: var(--danger-soft);
-    }
-
-    .status.warn {
-      border-left-color: var(--warn);
-      background: var(--warn-soft);
-    }
-
-    .status.ok {
-      border-left-color: var(--ok);
-      background: var(--ok-soft);
-    }
-
-    .tag {
-      display: inline-block;
-      margin: 0 6px 6px 0;
-      padding: 4px 8px;
-      border-radius: 6px;
-      background: var(--accent-soft);
-      color: #07574f;
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .tag.warn {
-      background: var(--warn-soft);
-      color: var(--warn);
-    }
-
-    .tag.danger {
-      background: var(--danger-soft);
-      color: var(--danger);
-    }
-
-    .section {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 24px;
-      margin: 18px 0;
-      box-shadow: 0 10px 24px rgba(20, 35, 55, 0.04);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    th, td {
-      border-bottom: 1px solid var(--line);
-      padding: 12px 13px;
-      text-align: left;
-      vertical-align: top;
-      font-size: 14px;
-    }
-
-    th {
-      background: #eef3f8;
-      color: #26384c;
-      font-size: 12px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    tr:last-child td {
-      border-bottom: 0;
-    }
-
-    code {
-      color: var(--code);
-      background: #eef2f7;
-      padding: 2px 5px;
-      border-radius: 5px;
-      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-      font-size: 0.92em;
-    }
-
-    pre {
-      overflow: auto;
-      padding: 16px;
-      border-radius: 8px;
-      border: 1px solid #d0d9e5;
-      background: #17212f;
-      color: #eef5ff;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    pre code {
-      padding: 0;
-      color: inherit;
-      background: transparent;
-    }
-
-    ul, ol {
-      margin: 10px 0 0 20px;
-      padding: 0;
-    }
-
-    li {
-      margin: 7px 0;
-    }
-
-    .provider {
-      display: grid;
-      grid-template-columns: minmax(190px, 0.8fr) minmax(0, 2.2fr);
-      gap: 18px;
-      padding: 20px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .provider:first-of-type {
-      border-top: 0;
-      padding-top: 0;
-    }
-
-    .provider-name {
-      font-size: 18px;
-      font-weight: 850;
-      margin: 0 0 6px;
-    }
-
-    .provider-purpose {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .steps {
-      margin-top: 8px;
-    }
-
-    .small {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .callout {
-      border: 1px solid var(--line);
-      border-left: 5px solid var(--accent);
-      border-radius: 8px;
-      padding: 16px;
-      background: #fbfefd;
-      margin: 16px 0;
-    }
-
-    .toc {
-      columns: 2;
-      column-gap: 28px;
-      margin: 0;
-    }
-
-    .toc li {
-      break-inside: avoid;
-    }
-
-    @media (max-width: 860px) {
-      .grid, .grid.two {
-        grid-template-columns: 1fr;
-      }
-
-      .provider {
-        grid-template-columns: 1fr;
-      }
-
-      .toc {
-        columns: 1;
-      }
-
-      .hero, .section {
-        padding: 20px;
-      }
-    }
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TFP UAT Credential Control Plane</title>
+<style>
+:root{--navy:#07131f;--navy2:#0b1d2b;--ivory:#f4f0e5;--paper:#fffdf6;--ink:#12202a;--muted:#65717a;--cyan:#23d7ea;--amber:#f5b942;--red:#ef5b49;--green:#32d39b;--line:#cfd4ce;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--sans:"Arial Narrow","Avenir Next Condensed","Franklin Gothic Medium",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--ink);font:16px/1.58 Georgia,serif}a{color:#075e75;text-underline-offset:3px}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--amber);outline-offset:3px}button{font:700 12px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.shell{max-width:1440px;margin:auto}.mast{background:var(--navy);color:var(--ivory);padding:24px clamp(20px,5vw,76px) 56px;position:relative;overflow:hidden}.mast:after{content:"";position:absolute;width:420px;height:420px;border:1px solid #1f5363;transform:rotate(32deg);right:-110px;top:-240px}.topline{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #29414f;padding-bottom:14px;font:700 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#9eb1bc}.no-secret{color:var(--cyan)}h1,h2,h3,h4{font-family:var(--sans);line-height:1.03;margin:0}h1{font-size:clamp(52px,8vw,112px);letter-spacing:-.045em;max-width:1050px;margin:46px 0 22px;text-transform:uppercase}.deck{max-width:810px;color:#b9c7cd;font-size:19px;margin:0}.hero-meta{display:flex;flex-wrap:wrap;gap:14px 30px;margin-top:30px;font:12px var(--mono);color:#dce6e9}.hero-meta b{color:var(--cyan)}.controls{position:sticky;top:0;z-index:10;background:#fffdf5eb;backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:12px clamp(20px,5vw,76px);display:flex;gap:10px;align-items:center}.controls input{flex:1;max-width:440px;background:white;border:1px solid #9da8a7;padding:11px 13px;font:14px var(--mono)}.chip,.print{border:1px solid #7d8989;background:transparent;padding:11px 12px;color:var(--ink)}.chip.active{background:var(--navy);color:white;border-color:var(--navy)}main{padding:0 clamp(20px,5vw,76px) 80px}.rail{margin-top:-28px;position:relative;z-index:2;background:var(--paper);border:1px solid #aeb8b6;box-shadow:9px 9px 0 #b9c7c3;display:grid;grid-template-columns:1.3fr repeat(4,1fr)}.rail>div{padding:22px;border-right:1px solid var(--line)}.rail>div:last-child{border:0}.rail-label{font:800 12px var(--sans);letter-spacing:.11em;text-transform:uppercase}.rail strong{display:block;font:800 clamp(32px,4vw,55px) var(--sans);margin-top:10px}.rail small{color:var(--muted)}.cyan{color:#007e92}.amber{color:#9b6500}.red{color:#b02d1c}.section{padding:70px 0 0}.kicker{font:800 12px var(--mono);color:#08798b;letter-spacing:.12em;text-transform:uppercase;border-top:4px solid var(--ink);padding-top:12px;margin-bottom:14px}.section h2{font-size:clamp(36px,5vw,68px);letter-spacing:-.035em;max-width:900px}.intro{font-size:18px;color:#4e5a61;max-width:820px;margin:14px 0 30px}.sequence{counter-reset:step;display:grid;grid-template-columns:repeat(7,1fr);border-top:1px solid #84908e;border-bottom:1px solid #84908e}.sequence article{padding:22px 14px;border-right:1px solid var(--line);min-height:170px}.sequence article:last-child{border:0}.sequence article:before{counter-increment:step;content:"0" counter(step);display:block;font:800 28px var(--mono);color:#8f9b99;margin-bottom:26px}.sequence h3{font-size:20px}.sequence p{font-size:13px;color:var(--muted)}.dependency{background:var(--navy);color:white;padding:30px;margin-top:28px;display:grid;grid-template-columns:1fr 2fr;gap:30px}.dependency h3{font-size:32px}.map{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;font:700 12px var(--mono)}.node{border:1px solid #527081;padding:12px}.node.active{border-color:var(--cyan);color:var(--cyan)}.arrow{color:var(--amber)}.table-wrap{overflow:auto;border:1px solid #aeb8b6;background:var(--paper)}table{border-collapse:collapse;width:100%;min-width:1050px}th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:13px}th{position:sticky;top:58px;background:var(--navy);color:white;font:800 11px var(--sans);letter-spacing:.1em;text-transform:uppercase}td{font-size:14px}code,.vars{font:12px var(--mono);color:#075e75}.status{display:inline-flex;gap:7px;align-items:center;font:800 11px var(--sans);letter-spacing:.07em;text-transform:uppercase}.status:before{content:"";width:8px;height:8px;background:currentColor;box-shadow:0 0 0 3px #0001}.configured{color:#007f87}.missing{color:#b43b2b}.choice{color:#966200}.playbooks{border-top:1px solid #8f9997}.playbook{border-bottom:1px solid #8f9997;background:var(--paper)}summary{list-style:none;display:grid;grid-template-columns:64px 1fr auto;gap:18px;align-items:center;padding:22px;cursor:pointer}summary::-webkit-details-marker{display:none}.num{font:800 22px var(--mono);color:#7b8988}.playbook summary h3{font-size:26px}.action{font:800 11px var(--sans);color:#08798b;letter-spacing:.1em;text-transform:uppercase}.playbook[open] summary{background:#e8f2ef}.playbook[open] .num{color:#007f87}.body{padding:8px 22px 30px 104px;display:grid;grid-template-columns:1fr 1fr;gap:26px}.body h4{font-size:15px;text-transform:uppercase;letter-spacing:.08em;margin:16px 0 8px}.body ul,.body ol{padding-left:20px}.body li{margin:6px 0}.callout{border-left:4px solid var(--amber);background:#fff5d9;padding:12px 15px}.official{font-family:var(--mono);font-size:12px}.templates{display:grid;grid-template-columns:1fr 1fr;gap:18px}.codebox{background:var(--navy);color:#d7e8ea;border-top:5px solid var(--cyan);position:relative}.codebox h3{padding:17px 18px;font-size:18px;color:white}.codebox pre{white-space:pre-wrap;overflow:auto;margin:0;padding:18px;font:12px/1.7 var(--mono);border-top:1px solid #284352}.copy{position:absolute;right:12px;top:11px;border:1px solid #4c6a79;background:#0b2534;color:var(--cyan);padding:8px}.notyet{background:#ffe7df;border:1px solid #dc8e7d;padding:26px;display:grid;grid-template-columns:260px 1fr;gap:25px}.notyet h3{font-size:34px;color:#8e281e}.checklist{columns:2;column-gap:22px}.check{break-inside:avoid;display:flex;gap:12px;background:var(--paper);border-top:1px solid #9aa5a3;padding:14px}.check input{width:19px;height:19px;accent-color:#007e92}.commands{background:#101d27;color:#d5e2e6;padding:22px;font:13px/1.8 var(--mono);overflow:auto}.policy{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid #aeb8b6}.policy article{padding:22px;border-right:1px solid var(--line)}.policy article:last-child{border:0}.policy h3{font-size:22px;margin-bottom:10px}.sources{columns:2}.sources li{break-inside:avoid;margin:8px 0}.footer{background:var(--navy);color:#9db0ba;padding:30px clamp(20px,5vw,76px);font:12px var(--mono)}.hidden{display:none!important}
+@media(max-width:900px){.rail{grid-template-columns:1fr 1fr}.rail>div{border-bottom:1px solid var(--line)}.sequence{grid-template-columns:1fr 1fr}.dependency,.body,.templates,.notyet{grid-template-columns:1fr}.body{padding-left:22px}.policy{grid-template-columns:1fr}.policy article{border-right:0;border-bottom:1px solid var(--line)}.controls{flex-wrap:wrap}.controls input{max-width:none;width:100%}.checklist,.sources{columns:1}}
+@media(max-width:560px){h1{font-size:46px}.rail,.sequence{grid-template-columns:1fr}.mast{padding-bottom:45px}.section{padding-top:50px}.playbook summary{grid-template-columns:44px 1fr}.action{display:none}.body{display:block}.dependency{padding:20px}}
+@media(prefers-reduced-motion:no-preference){.mast h1{animation:rise .6s ease-out}.rail{animation:rise .7s .15s both}@keyframes rise{from{opacity:0;transform:translateY(18px)}}}
+@media print{.controls,.copy{display:none!important}.mast{padding:22px;color:#111;background:white;border-bottom:3px solid #111}.mast:after{display:none}.deck,.hero-meta,.topline{color:#333}.rail{margin:15px 0;box-shadow:none}.section{padding-top:28px}.playbook .body{display:grid!important}.playbook{break-inside:avoid}.dependency,.commands,.codebox{background:white;color:#111;border:1px solid #555}.codebox h3,.node.active{color:#111}a{color:#111}.checklist{columns:1}}
+</style>
 </head>
-<body>
-  <main class="page">
-    <section class="hero">
-      <p class="eyebrow">TFP production readiness</p>
-      <h1>API Keys, Secrets, and Cloudflare Onboarding</h1>
-      <p>
-        This root-level guide lists every production credential currently expected by the TFP application stack,
-        explains why each one exists, links to the official setup pages, and separates required launch blockers
-        from optional integrations.
-      </p>
-      <div class="meta">
-        <span class="pill">Generated: 2026-07-05</span>
-        <span class="pill">Workspace: /Users/hexa/Desktop/tfp-main-orchestator</span>
-        <span class="pill">No secret values included</span>
-      </div>
-    </section>
+<body><div class="shell">
+<header class="mast">
+ <div class="topline"><span>TFP / Operations dossier 07—15—2026</span><span class="no-secret">● No secrets captured</span></div>
+ <h1>UAT credential<br>control plane</h1>
+ <p class="deck">The operator’s field guide for standing up the complete TFP application, moderation pipeline, and collage service on one secured VPS—without creating accounts the active runtime does not use.</p>
+ <div class="hero-meta"><span>ENVIRONMENT <b>UAT</b></span><span>INSPECTED <b>.env.uat.local · .env.uat · .env.deploy.uat.local</b></span><span>RESULT <b>PRESENCE, NOT VALIDITY</b></span></div>
+</header>
+<nav class="controls" aria-label="Guide filters">
+ <input id="search" type="search" placeholder="Filter providers, variables, actions…" aria-label="Search guide">
+ <button class="chip active" data-filter="all">All</button><button class="chip" data-filter="now">Create now</button><button class="chip" data-filter="optional">Optional</button><button class="chip" data-filter="legacy">Do not create</button><button class="print" onclick="print()">Print</button>
+</nav>
+<main>
+<section class="rail" aria-label="Readiness summary">
+ <div><span class="rail-label">Decision</span><strong>7</strong><small>operator actions before QA</small></div>
+ <div><span class="rail-label cyan">Active external</span><strong class="cyan">6</strong><small>Cloudflare, B2, Resend, Sentry, Axiom, Geoapify</small></div>
+ <div><span class="rail-label amber">Internal secrets</span><strong class="amber">7+</strong><small>generated locally; selected values align</small></div>
+ <div><span class="rail-label cyan">Present</span><strong class="cyan">23</strong><small>key fields detected; validate live</small></div>
+ <div><span class="rail-label red">Missing</span><strong class="red">8</strong><small>all optional for the selected UAT path</small></div>
+</section>
 
-    <section class="section status danger">
-      <h2 id="current-status">Current Production Env Status</h2>
-      <p>
-        The production environment still needs credential cleanup before go-live. The local production env doctor
-        currently reports these blockers:
-      </p>
-      <ul>
-        <li><strong>Production database URLs resolve to localhost.</strong> Replace local database targets with the real production PostgreSQL endpoint.</li>
-        <li><strong>Sentry DSNs are missing or invalid.</strong> Create separate backend and browser projects or confirm the intended shared DSN pattern.</li>
-        <li><strong>Axiom token is missing or still a placeholder.</strong> Create a production ingest token and dataset.</li>
-        <li><strong>Redis-backed rate limit store is not configured.</strong> Set <code>RATE_LIMIT_REDIS_URL</code> for multi-instance production rate limiting.</li>
-      </ul>
-      <p class="small">
-        Re-run the validation commands at the end of this document after replacing placeholders. Do not commit real values.
-      </p>
-    </section>
+<section class="section"><p class="kicker">01 / The five-second answer</p><h2>Create or validate these—in this order.</h2><p class="intro">Cloudflare is the secure front door. Storage and mail establish the runtime foundation. Internal secrets connect the services. Observability and the selected map provider complete the UAT control surface.</p>
+ <div class="sequence">
+  <article><h3>Cloudflare</h3><p>Zone, Tunnel, Access allowlist and one-hour sessions.</p></article>
+  <article><h3>Backblaze B2</h3><p>Two buckets or explicit public/private policy; scoped key.</p></article>
+  <article><h3>Resend</h3><p>Verified sending subdomain and sending-only key.</p></article>
+  <article><h3>Internal secrets</h3><p>Independent random values; align only service-pair secrets.</p></article>
+  <article><h3>Sentry</h3><p>Runtime DSNs; auth token only for source maps.</p></article>
+  <article><h3>Axiom</h3><p>UAT dataset and ingest-only token.</p></article>
+  <article><h3>Geoapify</h3><p>Validate selected map key and restrict its use.</p></article>
+ </div>
+ <div class="dependency"><div><h3>One host.<br>One guarded URL.</h3><p>Public traffic terminates at Access. Everything else remains private.</p></div><div class="map" aria-label="Provider dependency map"><span class="node active">QA USER</span><span class="arrow">→</span><span class="node active">CF ACCESS</span><span class="arrow">→</span><span class="node">TUNNEL</span><span class="arrow">→</span><span class="node">WEB + API</span><span class="arrow">→</span><span class="node active">B2</span><span class="node active">RESEND</span><span class="node">POSTGRES</span><span class="node">MODERATION</span><span class="node">COLLAGE</span></div></div>
+</section>
 
-    <section class="section">
-      <h2 id="contents">Contents</h2>
-      <ol class="toc">
-        <li><a href="#launch-required">Launch-required credentials</a></li>
-        <li><a href="#conditional">Conditional production credentials</a></li>
-        <li><a href="#cloudflare">Cloudflare onboarding</a></li>
-        <li><a href="#provider-playbook">Provider setup playbook</a></li>
-        <li><a href="#variables">Variable checklist</a></li>
-        <li><a href="#validation">Validation and rotation</a></li>
-      </ol>
-    </section>
+<section class="section" id="matrix"><p class="kicker">02 / Audited provider matrix</p><h2>Presence is not proof.</h2><p class="intro">“Configured” means a non-empty value was detected. It does not mean the credential is valid, unexpired, least-privileged, or accepted by the live provider.</p>
+<div class="table-wrap"><table><thead><tr><th>Provider / category</th><th>Active selection</th><th>Variables</th><th>Presence</th><th>Action</th><th>Cost / security note</th></tr></thead><tbody>
+<tr data-cat="now"><td>Cloudflare · access edge</td><td>Recommended UAT gate</td><td class="vars">Tunnel token / credentials (outside app env)</td><td><span class="status choice">Create</span></td><td>Zone + Tunnel + email allowlist</td><td>Dashboard setup needs no broad API token.</td></tr>
+<tr data-cat="now"><td>Backblaze B2 · storage</td><td><code>STORAGE_PROVIDER=backblaze</code></td><td class="vars">B2_ENDPOINT, B2_ACCESS_KEY_ID, B2_SECRET_ACCESS_KEY, B2_BUCKET_NAME, B2_PRIVATE_BUCKET_NAME, B2_REGION, B2_PUBLIC_URL, B2_CORS_ALLOWED_ORIGINS</td><td><span class="status configured">Configured</span></td><td>Validate bucket-scoped key, endpoint, CORS</td><td>Least privilege; never use master key.</td></tr>
+<tr data-cat="now"><td>Resend · email</td><td><code>EMAIL_PROVIDER=resend</code></td><td class="vars">RESEND_API_KEY, EMAIL_FROM, EMAIL_FROM_NAME</td><td><span class="status configured">Configured</span></td><td>Verify sending domain + test delivery</td><td>Sending-only key; align SPF/DKIM/DMARC.</td></tr>
+<tr data-cat="now"><td>Internal · cryptography</td><td>Required</td><td class="vars">JWT_SECRET, COOKIE_SECRET, OAUTH_STATE_SECRET, OAUTH_TOKEN_ENCRYPTION_SECRET, STORAGE_LOCAL_UPLOAD_SIGNING_SECRET, AIP_INTERNAL_API_KEY, MODERATION_REMOTE_AUTH_TOKEN, COLLAGE_SERVICE_API_KEY</td><td><span class="status configured">Configured</span></td><td>Validate independence and required alignment</td><td>No vendor account; rotate as a coordinated change.</td></tr>
+<tr data-cat="now"><td>Sentry · errors</td><td>Runtime telemetry</td><td class="vars">SENTRY_DSN, PUBLIC_SENTRY_DSN, SENTRY_AUTH_TOKEN</td><td><span class="status configured">DSNs configured</span><br><span class="status missing">Auth token missing</span></td><td>Validate events; create auth token only for source maps</td><td>DSNs are identifiers, still manage intentionally.</td></tr>
+<tr data-cat="now"><td>Axiom · logs</td><td>Runtime telemetry</td><td class="vars">AXIOM_TOKEN, AXIOM_DATASET</td><td><span class="status configured">Configured</span></td><td>Validate ingest into UAT dataset</td><td>Use dataset-scoped ingest token, never PAT.</td></tr>
+<tr data-cat="now"><td>Geoapify · maps</td><td><code>MAP_PROVIDER=geoapify</code></td><td class="vars">GEOAPIFY_API_KEY</td><td><span class="status configured">Configured</span></td><td>Restrict and live-test</td><td>Monitor quota and referrer/IP restrictions.</td></tr>
+<tr data-cat="now"><td>Remote moderation · self-hosted</td><td><code>remote-http / STRICT</code></td><td class="vars">MODERATION_REMOTE_AUTH_TOKEN, AIP_INTERNAL_API_KEY, AIP__SECURITY__INTERNAL_API_KEY</td><td><span class="status configured">Configured</span></td><td>Align shared secret; keep port private</td><td>No Google Vision/AWS key required.</td></tr>
+<tr data-cat="now"><td>Collage · self-hosted</td><td><code>OPPORTUNITY_COLLAGE_GENERATION_ENABLED=true</code></td><td class="vars">COLLAGE_SERVICE_API_KEY</td><td><span class="status configured">Configured</span></td><td>Align app/service key; validate DB + B2</td><td>No third-party collage account.</td></tr>
+<tr data-cat="optional"><td>Gemini / Groq · AI tooling</td><td>Conditional</td><td class="vars">GEMINI_STUDIO_API_KEY, GROQ_API_KEY</td><td><span class="status configured">Configured</span></td><td>Keep only if selected service/tool uses them</td><td>Set spend/quota controls.</td></tr>
+<tr data-cat="optional"><td>Google / Apple / Meta · OAuth</td><td><code>FEATURE_SOCIAL_LOGIN=false</code></td><td class="vars">GOOGLE_OAUTH_CLIENT_ID, GOOGLE_OAUTH_CLIENT_SECRET, APPLE_OAUTH_CLIENT_ID, APPLE_OAUTH_TEAM_ID, APPLE_OAUTH_KEY_ID, APPLE_OAUTH_PRIVATE_KEY, META_OAUTH_CLIENT_ID, META_OAUTH_CLIENT_SECRET</td><td><span class="status missing">Missing—optional</span></td><td>Do not create until feature enabled</td><td>Exact callback URLs must match UAT domain.</td></tr>
+<tr data-cat="optional"><td>GA4 · analytics</td><td>Disabled / absent</td><td class="vars">PUBLIC_GA4_MEASUREMENT_ID</td><td><span class="status missing">Missing—optional</span></td><td>Create only with analytics + consent plan</td><td>Consider QA noise and privacy.</td></tr>
+<tr data-cat="optional"><td>Redis / Upstash · rate limits</td><td>Not required for single instance</td><td class="vars">RATE_LIMIT_REDIS_URL</td><td><span class="status missing">Missing—optional</span></td><td>Defer until multi-instance need</td><td>Postgres domain queues do not require BullMQ.</td></tr>
+<tr data-cat="optional"><td>ImageKit / CF Images · delivery</td><td>Only if selected</td><td class="vars">IMAGEKIT_PUBLIC_KEY, IMAGEKIT_PRIVATE_KEY</td><td><span class="status configured">ImageKit present</span></td><td>Do not conflate delivery with B2 storage</td><td>Enable only the chosen transform layer.</td></tr>
+<tr data-cat="optional"><td>Google Vision / AWS Rekognition</td><td>Alternate moderation only</td><td class="vars">GOOGLE_VISION_API_KEY / AWS credentials</td><td><span class="status missing">Vision missing—optional</span></td><td>Create only if switching provider</td><td>Remote HTTP is active.</td></tr>
+<tr data-cat="legacy"><td>OpenCage, OpenTripMap, Google Maps, Stadia, OpenWeather, Pexels, Google Translate, Meilisearch, Mixpanel</td><td>Legacy / fallback / tooling</td><td class="vars">Provider-specific variables</td><td><span class="status configured">Several present</span></td><td>Do not create or rotate by default</td><td>Require an explicit selected code path first.</td></tr>
+</tbody></table></div></section>
 
-    <section class="section" id="launch-required">
-      <h2>Launch-Required Credentials</h2>
-      <div class="grid">
-        <article class="card status danger">
-          <h3>Production database</h3>
-          <p>Required for API, workers, Prisma migrations, moderation state, user activity tracing, reports, uploads, and collage jobs.</p>
-          <span class="tag danger">Required</span>
-          <span class="tag">PostgreSQL</span>
-        </article>
-        <article class="card status danger">
-          <h3>Application secrets</h3>
-          <p>Required for sessions, JWTs, OAuth state, encrypted OAuth tokens, and signed local upload URLs.</p>
-          <span class="tag danger">Required</span>
-          <span class="tag">Generate locally</span>
-        </article>
-        <article class="card status danger">
-          <h3>Sentry and Axiom</h3>
-          <p>Required by production config checks for exception tracing, frontend error visibility, structured logs, and operational investigation.</p>
-          <span class="tag danger">Required</span>
-          <span class="tag">Observability</span>
-        </article>
-        <article class="card status danger">
-          <h3>Redis rate-limit store</h3>
-          <p>Required when production rate limiting is enabled across more than one API process or host.</p>
-          <span class="tag danger">Required</span>
-          <span class="tag">Abuse control</span>
-        </article>
-        <article class="card status danger">
-          <h3>Email provider</h3>
-          <p>Required for verification, password reset, account notifications, operator alerts, and user lifecycle messaging.</p>
-          <span class="tag danger">Required</span>
-          <span class="tag">Resend</span>
-        </article>
-        <article class="card status danger">
-          <h3>Object storage and CDN</h3>
-          <p>Required for user uploads, moderation evidence, private artifacts, image delivery, and cacheable media URLs.</p>
-          <span class="tag danger">Required</span>
-          <span class="tag">Backblaze B2</span>
-          <span class="tag">Cloudflare or ImageKit</span>
-        </article>
-      </div>
-    </section>
+<section class="section"><p class="kicker">03 / Setup playbooks</p><h2>From dashboard click to revocation.</h2><p class="intro">Open a playbook, complete its steps, and record only the variable name—not its value—in tickets or QA notes.</p>
+<div class="playbooks">
+<details class="playbook" data-cat="now" open><summary><span class="num">01</span><h3>Cloudflare · secure front door</h3><span class="action">Create now</span></summary><div class="body"><div><h4>Why + dashboard path</h4><ol><li>Add the UAT domain/zone to Cloudflare and activate nameservers.</li><li>Zero Trust → Networks → Tunnels: create <strong>TFP-UAT</strong>, install <code>cloudflared</code> on the VPS, map <code>uat.example.com</code> to the local web gateway.</li><li>Access → Applications: create a self-hosted app for that hostname.</li><li>Policy: Allow only explicit QA emails; use email OTP; set session duration to one hour; default deny.</li><li>Firewall the origin so app/service ports are not public. Keep SSH key-only and separately restricted.</li></ol><p class="callout">The Tunnel token/credentials are secrets. They are distinct from a generic Cloudflare API token. Dashboard-managed DNS and Tunnel setup does not need a broad runtime token.</p></div><div><h4>Least privilege + verification</h4><ul><li>If CI must automate DNS, create a scoped API token limited to the UAT zone and only necessary DNS permissions.</li><li>Do not use Global API Key.</li><li>Visit in a signed-out browser: the Access login must appear.</li><li>Test an allowed email, a denied email, logout, and one-hour expiry.</li><li>Verify direct origin IP and ports 3000/4000/7001/7003 are unreachable.</li><li>Rotate by creating a new Tunnel token, updating the service, verifying, then revoking the old credential.</li></ul><p class="official"><a target="_blank" rel="noopener noreferrer" href="https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/">Tunnel docs</a> · <a target="_blank" rel="noopener noreferrer" href="https://developers.cloudflare.com/cloudflare-one/access-controls/policies/">Access policies</a> · <a target="_blank" rel="noopener noreferrer" href="https://developers.cloudflare.com/cloudflare-one/access-controls/access-settings/session-management/">Sessions</a> · <a target="_blank" rel="noopener noreferrer" href="https://developers.cloudflare.com/fundamentals/api/get-started/create-token/">API tokens</a></p></div></div></details>
+<details class="playbook" data-cat="now"><summary><span class="num">02</span><h3>Backblaze B2 · storage</h3><span class="action">Validate now</span></summary><div class="body"><div><h4>Create and scope</h4><ol><li>B2 Cloud Storage → Buckets: create/confirm UAT public and private buckets.</li><li>Application Keys → Add a New Application Key.</li><li>Restrict to the exact bucket(s) and only required read/write/list/delete capabilities.</li><li>Record S3 endpoint and region from Backblaze—not a guessed hostname.</li><li>Configure CORS only for the exact UAT origin if browser-direct access is required.</li></ol><p class="vars">B2_ENDPOINT · B2_ACCESS_KEY_ID · B2_SECRET_ACCESS_KEY · B2_BUCKET_NAME · B2_PRIVATE_BUCKET_NAME · B2_REGION · B2_PUBLIC_URL · B2_CORS_ALLOWED_ORIGINS</p></div><div><h4>Verify + rotate</h4><ul><li>Upload, read, and delete a disposable object through the application.</li><li>Confirm private objects cannot be fetched anonymously.</li><li>Confirm allowed origin works and an unlisted origin fails.</li><li>Create replacement scoped key, deploy both halves, test, then revoke old key.</li></ul><p class="official"><a target="_blank" rel="noopener noreferrer" href="https://www.backblaze.com/docs/cloud-storage-s3-compatible-app-keys">S3 app keys</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.backblaze.com/docs/cloud-storage-s3-compatible-api">S3 API</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.backblaze.com/docs/cloud-storage-cross-origin-resource-sharing-rules">CORS</a></p></div></div></details>
+<details class="playbook" data-cat="now"><summary><span class="num">03</span><h3>Resend · transactional email</h3><span class="action">Validate now</span></summary><div class="body"><div><h4>Domain + key</h4><ol><li>Domains → Add Domain: use a dedicated sending subdomain such as <code>mail.uat.example.com</code>.</li><li>Add Resend’s DNS records in Cloudflare; keep mail records DNS-only where directed.</li><li>Wait for verification; add DMARC deliberately.</li><li>API Keys → Create API Key: choose sending access and restrict to the verified domain where available.</li></ol><p class="vars">EMAIL_PROVIDER=resend · RESEND_API_KEY · EMAIL_FROM · EMAIL_FROM_NAME</p></div><div><h4>Verify + rotate</h4><ul><li>Send password-reset and invite emails to a controlled inbox.</li><li>Confirm From domain, links, SPF/DKIM results and UAT base URL.</li><li>Create new sending-only key, deploy, send a canary email, revoke old key.</li></ul><p class="official"><a target="_blank" rel="noopener noreferrer" href="https://resend.com/docs/dashboard/api-keys/introduction">API keys</a> · <a target="_blank" rel="noopener noreferrer" href="https://resend.com/docs/dashboard/domains/introduction">Domains</a></p></div></div></details>
+<details class="playbook" data-cat="now"><summary><span class="num">04</span><h3>Internal secrets · service trust</h3><span class="action">Generate / align</span></summary><div class="body"><div><h4>Generate independently</h4><p>Run <code>openssl rand -base64 48</code> once for every unrelated purpose. Never reuse JWT, cookie, OAuth, upload-signing, moderation, or collage secrets.</p><p class="vars">JWT_SECRET · COOKIE_SECRET · OAUTH_STATE_SECRET · OAUTH_TOKEN_ENCRYPTION_SECRET · STORAGE_LOCAL_UPLOAD_SIGNING_SECRET</p><p>Store values only in the approved VPS environment file or secret manager with owner-only permissions.</p></div><div><h4>Required alignment exceptions</h4><ul><li><code>MODERATION_REMOTE_AUTH_TOKEN</code> in the app must match the moderation service’s <code>AIP__SECURITY__INTERNAL_API_KEY</code> (and the intended <code>AIP_INTERNAL_API_KEY</code> alias where configured).</li><li><code>COLLAGE_SERVICE_API_KEY</code> must match between caller and collage service.</li><li>Rotate shared secrets with an overlap/two-key strategy if supported; otherwise coordinate a short maintenance window.</li></ul><p class="callout">Never paste a secret into chat, source control, screenshots, tickets, shell history, or this guide.</p></div></div></details>
+<details class="playbook" data-cat="now"><summary><span class="num">05</span><h3>Sentry · application errors</h3><span class="action">Validate now</span></summary><div class="body"><div><h4>Runtime setup</h4><ol><li>Create or select UAT projects for backend and browser.</li><li>Project Settings → Client Keys (DSN): place backend and public/browser DSNs in their respective variables.</li><li>Set environment/release tags to distinguish UAT from production.</li></ol><p class="vars">SENTRY_DSN · PUBLIC_SENTRY_DSN</p></div><div><h4>Auth token boundary</h4><p><code>SENTRY_AUTH_TOKEN</code> is <strong>not required for runtime capture</strong>. Create a project-scoped token only if CI/build uploads source maps; keep it out of the runtime container.</p><ul><li>Trigger a controlled test event from backend and browser.</li><li>Confirm environment, release and redaction.</li><li>Rotate DSN/token in project settings; revoke the old token after a successful build.</li></ul><p class="official"><a target="_blank" rel="noopener noreferrer" href="https://docs.sentry.io/api/guides/create-auth-token/">Auth token guide</a></p></div></div></details>
+<details class="playbook" data-cat="now"><summary><span class="num">06</span><h3>Axiom · structured logs</h3><span class="action">Validate now</span></summary><div class="body"><div><h4>Create safely</h4><ol><li>Datasets → New Dataset: create a dedicated UAT dataset with suitable retention.</li><li>Settings → API Tokens: create a basic/dataset-scoped token with ingest capability only for that dataset.</li><li>Never use a Personal Access Token in the runtime.</li></ol><p class="vars">AXIOM_TOKEN · AXIOM_DATASET</p></div><div><h4>Verify + rotate</h4><ul><li>Generate one application request and confirm a structured event arrives.</li><li>Check secrets/auth headers are redacted.</li><li>Create replacement ingest token, deploy, observe a new event, revoke old token.</li></ul><p class="official"><a target="_blank" rel="noopener noreferrer" href="https://axiom.co/docs/reference/tokens">Tokens</a> · <a target="_blank" rel="noopener noreferrer" href="https://axiom.co/docs/reference/datasets">Datasets</a> · <a target="_blank" rel="noopener noreferrer" href="https://axiom.co/docs/restapi/ingest">Ingest</a></p></div></div></details>
+<details class="playbook" data-cat="now"><summary><span class="num">07</span><h3>Geoapify · selected map provider</h3><span class="action">Validate now</span></summary><div class="body"><div><h4>Key setup</h4><ol><li>Geoapify Projects → select/create the UAT project.</li><li>Create/copy the project API key.</li><li>Apply allowed-domain/referrer or IP restrictions where supported for the actual request path.</li><li>Set quota alerts and avoid committing a browser-visible key with unrestricted scope.</li></ol><p class="vars">MAP_PROVIDER=geoapify · GEOAPIFY_API_KEY</p></div><div><h4>Verify + rotate</h4><ul><li>Test address/map lookup from the UAT hostname.</li><li>Confirm requests from an unauthorized origin fail when restrictions support it.</li><li>Create new project key, deploy, test, revoke old key.</li></ul><p class="official"><a target="_blank" rel="noopener noreferrer" href="https://www.geoapify.com/get-started-with-maps-api/">Geoapify setup</a></p></div></div></details>
+<details class="playbook" data-cat="now"><summary><span class="num">08</span><h3>Remote moderation + collage · self-hosted</h3><span class="action">Validate alignment</span></summary><div class="body"><div><h4>No public provider required</h4><p>The active moderation selection is <code>remote-http</code> with <code>MODERATION_ENABLED=true</code> and <code>STRICT</code>. Collage is also self-hosted. Both need private service networking, database/storage access, and aligned shared secrets—not Google Vision, AWS, or a collage SaaS account.</p></div><div><h4>Verify</h4><ul><li>Keep moderation/collage ports bound privately or behind the internal gateway.</li><li>Call health endpoints without secrets where supported.</li><li>Run a controlled upload → moderation → persistence → collage flow.</li><li>Verify unauthorized service requests return 401/403.</li></ul></div></div></details>
+<details class="playbook" data-cat="optional"><summary><span class="num">09</span><h3>Gemini + Groq · conditional AI tools</h3><span class="action">Optional</span></summary><div class="body"><div><p>Keys are present, but the main app’s active translation provider is <code>remote-http</code>. Retain these only when the self-hosted translation implementation or a named manual feature uses them. Add provider-side quotas and billing alerts.</p><p class="vars">GEMINI_STUDIO_API_KEY · GROQ_API_KEY</p></div><div><p>Validate with the smallest supported request, inspect usage, then rotate using create → deploy → verify → revoke.</p><p class="official"><a target="_blank" rel="noopener noreferrer" href="https://ai.google.dev/gemini-api/docs/api-key">Gemini keys</a> · <a target="_blank" rel="noopener noreferrer" href="https://console.groq.com/keys">Groq keys</a></p></div></div></details>
+<details class="playbook" data-cat="optional"><summary><span class="num">10</span><h3>OAuth trio · Google, Apple, Meta</h3><span class="action">Disabled</span></summary><div class="body"><div><p><code>FEATURE_SOCIAL_LOGIN=false</code>; no account creation is required. When enabled, create separate UAT apps/clients, list the exact HTTPS origin, callback URI and privacy URLs, and never reuse production credentials.</p></div><div><p>Test success, denial, state mismatch and revoked consent. Rotate client secrets without changing client IDs where supported.</p><p class="official"><a target="_blank" rel="noopener noreferrer" href="https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid">Google</a> · <a target="_blank" rel="noopener noreferrer" href="https://developer.apple.com/help/account/capabilities/configure-sign-in-with-apple-for-the-web/">Apple</a> · <a target="_blank" rel="noopener noreferrer" href="https://developers.facebook.com/docs/facebook-login/">Meta</a></p></div></div></details>
+<details class="playbook" data-cat="optional"><summary><span class="num">11</span><h3>GA4 + Redis + image delivery</h3><span class="action">Optional</span></summary><div class="body"><div><h4>GA4</h4><p>Create a UAT web stream only with an intentional analytics/consent plan. Keep QA data separate. <a target="_blank" rel="noopener noreferrer" href="https://support.google.com/analytics/answer/9539598">GA4 setup</a>.</p><h4>Redis / Upstash</h4><p>Needed only for distributed rate limits across multiple app instances. Single-instance UAT can defer it. PostgreSQL-backed domain workflows are intentional and do not imply BullMQ/Redis.</p></div><div><h4>Image delivery</h4><p>ImageKit or Cloudflare transformations are delivery/transform options, not the B2 system of record. Select one explicitly before creating new credentials. Restrict private keys to server use and allowed origins for public delivery.</p></div></div></details>
+<details class="playbook" data-cat="optional"><summary><span class="num">12</span><h3>Alternate moderation · Vision / Rekognition</h3><span class="action">Optional</span></summary><div class="body"><div><p>Create credentials only if <code>ACTIVE_MODERATION_PROVIDER</code> changes from <code>remote-http</code>. Use a dedicated Google project/service identity or AWS IAM role/user limited to Rekognition actions and UAT resources.</p></div><div><p>Test with policy-approved fixtures; verify denial when permissions are removed; rotate using provider IAM procedures.</p><p class="official"><a target="_blank" rel="noopener noreferrer" href="https://cloud.google.com/vision/docs/setup">Google Vision</a> · <a target="_blank" rel="noopener noreferrer" href="https://docs.aws.amazon.com/rekognition/latest/dg/setting-up.html">AWS Rekognition</a></p></div></div></details>
+</div></section>
 
-    <section class="section" id="conditional">
-      <h2>Conditional Production Credentials</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Integration</th>
-            <th>When Needed</th>
-            <th>Primary Variables</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Google, Apple, Meta OAuth</td>
-            <td>Required only when <code>FEATURE_SOCIAL_LOGIN=true</code>. At least one provider must be configured.</td>
-            <td><code>GOOGLE_OAUTH_CLIENT_ID</code>, <code>GOOGLE_OAUTH_CLIENT_SECRET</code>, <code>APPLE_OAUTH_CLIENT_ID</code>, <code>APPLE_OAUTH_TEAM_ID</code>, <code>APPLE_OAUTH_KEY_ID</code>, <code>APPLE_OAUTH_PRIVATE_KEY</code>, <code>META_OAUTH_CLIENT_ID</code>, <code>META_OAUTH_CLIENT_SECRET</code></td>
-          </tr>
-          <tr>
-            <td>Remote moderation and translation services</td>
-            <td>Required when the app calls external TFP services for image moderation, translation, or collage generation.</td>
-            <td><code>MODERATION_REMOTE_URL</code>, <code>MODERATION_REMOTE_AUTH_TOKEN</code>, <code>TRANSLATION_REMOTE_AUTH_TOKEN</code>, <code>COLLAGE_SERVICE_API_KEY</code>, service-side <code>AIP__SECURITY__INTERNAL_API_KEY</code></td>
-          </tr>
-          <tr>
-            <td>AI model providers</td>
-            <td>Required when Gemini, Groq, or another LLM-backed feature is enabled.</td>
-            <td><code>GEMINI_STUDIO_API_KEY</code>, <code>GROQ_API_KEY</code></td>
-          </tr>
-          <tr>
-            <td>Direct image moderation providers</td>
-            <td>Required only if production uses Google Vision or AWS Rekognition instead of the remote moderation service.</td>
-            <td><code>GOOGLE_CLOUD_PROJECT_ID</code>, <code>GOOGLE_APPLICATION_CREDENTIALS</code>, <code>AWS_ACCESS_KEY_ID</code>, <code>AWS_SECRET_ACCESS_KEY</code>, <code>AWS_MODERATION_REGION</code></td>
-          </tr>
-          <tr>
-            <td>Location autocomplete and reverse geocoding</td>
-            <td>Required only when the app should call Geoapify instead of falling back to Nominatim.</td>
-            <td><code>GEOAPIFY_API_KEY</code></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+<section class="section" data-cat="legacy"><p class="kicker">04 / Restraint list</p><div class="notyet"><h3>Do not create these yet.</h3><div><p><strong>OpenCage, OpenTripMap, Google Maps, Stadia Maps, OpenWeather, Pexels, Google Translate API, Meilisearch and Mixpanel</strong> appear as alternate, older, or tooling paths. Existing values should not trigger renewal or new account work.</p><p>Create or rotate one only after a named feature plan selects its code path, establishes ownership, documents cost/quota, and adds an explicit verification test.</p></div></div></section>
 
-    <section class="section" id="cloudflare">
-      <h2>Cloudflare Onboarding</h2>
-      <div class="callout">
-        <strong>Production recommendation:</strong> Cloudflare should front the public web and API domains before launch.
-        It gives DNS control, TLS policy, WAF rules, rate limiting at the edge, cache rules for static assets, bot controls,
-        and optional Turnstile challenges for abuse-prone forms.
-      </div>
+<section class="section"><p class="kicker">05 / Safe templates</p><h2>Placeholders only. Copy with confidence.</h2><p class="intro">Replace every angle-bracket placeholder directly in the secured VPS environment. Never fill this HTML file with actual values.</p><div class="templates">
+<div class="codebox"><h3>Application UAT</h3><button class="copy">Copy</button><pre>EMAIL_PROVIDER=resend
+RESEND_API_KEY=&lt;secret:resend-uat-sending-key&gt;
+EMAIL_FROM=&lt;verified-uat-sender&gt;
+EMAIL_FROM_NAME=TFP UAT
 
-      <div class="grid two">
-        <article class="card">
-          <h3>Domain and DNS setup</h3>
-          <ol>
-            <li>Create or use a Cloudflare account.</li>
-            <li>Add the production domain from <a href="https://developers.cloudflare.com/fundamentals/manage-domains/add-site/">Cloudflare Add Site</a>.</li>
-            <li>Review imported DNS records and add missing records from <a href="https://developers.cloudflare.com/dns/manage-dns-records/how-to/create-dns-records/">DNS record setup</a>.</li>
-            <li>Update nameservers at the registrar to the nameservers Cloudflare provides.</li>
-            <li>Use proxied records for public web/API hostnames unless a specific service requires DNS-only mode.</li>
-          </ol>
-        </article>
-        <article class="card">
-          <h3>TLS, WAF, and cache</h3>
-          <ol>
-            <li>Set SSL/TLS mode to <a href="https://developers.cloudflare.com/ssl/origin-configuration/ssl-modes/full-strict/">Full (strict)</a> once origin certificates are valid.</li>
-            <li>Enable <a href="https://developers.cloudflare.com/waf/managed-rules/">Managed WAF rules</a>.</li>
-            <li>Create custom WAF rules for admin, auth, upload, and moderation-sensitive endpoints using <a href="https://developers.cloudflare.com/waf/custom-rules/">custom rules</a>.</li>
-            <li>Create edge rate limiting for login, registration, password reset, upload, comments, and report endpoints with <a href="https://developers.cloudflare.com/waf/rate-limiting-rules/">rate limiting rules</a>.</li>
-            <li>Use <a href="https://developers.cloudflare.com/cache/how-to/cache-rules/">Cache Rules</a> for static assets; do not cache authenticated API responses or user-specific HTML.</li>
-          </ol>
-        </article>
-      </div>
+STORAGE_PROVIDER=backblaze
+B2_ENDPOINT=&lt;backblaze-s3-endpoint&gt;
+B2_REGION=&lt;bucket-region&gt;
+B2_ACCESS_KEY_ID=&lt;bucket-scoped-key-id&gt;
+B2_SECRET_ACCESS_KEY=&lt;bucket-scoped-secret&gt;
+B2_BUCKET_NAME=&lt;uat-public-bucket&gt;
+B2_PRIVATE_BUCKET_NAME=&lt;uat-private-bucket&gt;
+B2_PUBLIC_URL=&lt;https-media-url&gt;
+B2_CORS_ALLOWED_ORIGINS=https://&lt;uat-hostname&gt;
 
-      <h3>Recommended DNS records</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Hostname</th>
-            <th>Record Type</th>
-            <th>Purpose</th>
-            <th>Proxy Mode</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>tfpphotographers.com</code></td>
-            <td>A, AAAA, or CNAME depending on host</td>
-            <td>Primary website</td>
-            <td>Proxied</td>
-          </tr>
-          <tr>
-            <td><code>www.tfpphotographers.com</code></td>
-            <td>CNAME</td>
-            <td>Canonical web alias</td>
-            <td>Proxied</td>
-          </tr>
-          <tr>
-            <td><code>api.tfpphotographers.com</code></td>
-            <td>A, AAAA, or CNAME depending on host</td>
-            <td>Public API origin</td>
-            <td>Proxied</td>
-          </tr>
-          <tr>
-            <td><code>cdn.tfpphotographers.com</code></td>
-            <td>CNAME</td>
-            <td>Image CDN or media alias if used</td>
-            <td>Depends on provider requirements</td>
-          </tr>
-        </tbody>
-      </table>
+MAP_PROVIDER=geoapify
+GEOAPIFY_API_KEY=&lt;restricted-uat-key&gt;
 
-      <h3>Cloudflare API token</h3>
-      <p>
-        The app does not require a Cloudflare runtime token by default. Create a Cloudflare API token only if CI/deploy scripts
-        need to automate DNS, purge cache, manage WAF rules, or call Cloudflare APIs.
-      </p>
-      <ol>
-        <li>Open <a href="https://developers.cloudflare.com/fundamentals/api/get-started/create-token/">Create API Token</a>.</li>
-        <li>Use the narrowest template or custom token possible.</li>
-        <li>Scope it to the single production zone.</li>
-        <li>Grant only required permissions, such as Zone DNS Edit, Zone Cache Purge, or WAF Read/Edit when automation needs it.</li>
-        <li>Store as <code>CLOUDFLARE_API_TOKEN</code> only in deployment secrets, not in source files.</li>
-      </ol>
+SENTRY_DSN=&lt;backend-uat-dsn&gt;
+PUBLIC_SENTRY_DSN=&lt;browser-uat-dsn&gt;
+AXIOM_TOKEN=&lt;dataset-ingest-only-token&gt;
+AXIOM_DATASET=&lt;uat-dataset&gt;</pre></div>
+<div class="codebox"><h3>Internal trust</h3><button class="copy">Copy</button><pre>JWT_SECRET=&lt;independent-random-48-byte-value&gt;
+COOKIE_SECRET=&lt;independent-random-48-byte-value&gt;
+OAUTH_STATE_SECRET=&lt;independent-random-48-byte-value&gt;
+OAUTH_TOKEN_ENCRYPTION_SECRET=&lt;independent-random-48-byte-value&gt;
+STORAGE_LOCAL_UPLOAD_SIGNING_SECRET=&lt;independent-random-48-byte-value&gt;
 
-      <h3>Turnstile option</h3>
-      <p>
-        Add Cloudflare Turnstile if registration, login, password reset, comments, contact, or upload forms receive abuse.
-        Start at <a href="https://developers.cloudflare.com/turnstile/get-started/">Turnstile Get Started</a> and use the
-        widget guidance from <a href="https://developers.cloudflare.com/turnstile/concepts/widget/">Turnstile widget concepts</a>.
-      </p>
-      <p>
-        Do not add Turnstile variables to the production app environment until the application validates Turnstile tokens end to end.
-      </p>
-    </section>
+# Same secret on app and moderation service only
+MODERATION_REMOTE_AUTH_TOKEN=&lt;moderation-shared-secret&gt;
+AIP_INTERNAL_API_KEY=&lt;moderation-shared-secret&gt;
+AIP__SECURITY__INTERNAL_API_KEY=&lt;moderation-shared-secret&gt;
 
-    <section class="section" id="provider-playbook">
-      <h2>Provider Setup Playbook</h2>
+# Same secret on app and collage service only
+COLLAGE_SERVICE_API_KEY=&lt;collage-shared-secret&gt;</pre></div>
+</div></section>
 
-      <div class="provider">
-        <div>
-          <p class="provider-name">PostgreSQL</p>
-          <p class="provider-purpose">Primary transactional database for users, uploads, moderation, reports, audit trails, jobs, and app state.</p>
-        </div>
-        <div>
-          <p><strong>Variables:</strong> <code>DATABASE_URL</code>, <code>DATABASE_DIRECT_URL</code>, <code>SHADOW_DATABASE_URL</code>.</p>
-          <ol class="steps">
-            <li>Create a production PostgreSQL instance with backups, monitoring, and network restrictions.</li>
-            <li>Create a least-privilege app user and a separate migration/direct user if your hosting model supports it.</li>
-            <li>Set pooled and direct URLs in the production secret store.</li>
-            <li>Run migrations from the deployment workflow, then run the environment doctor.</li>
-          </ol>
-        </div>
-      </div>
+<section class="section"><p class="kicker">06 / Verification</p><h2>Prove the configuration before QA.</h2><p class="intro">Run from the <code>tfpphotographers</code> workspace. Use the repository’s Node wrapper. Do not append secret-bearing headers to saved shell history.</p>
+<pre class="commands"># Inspect environment contract (does not prove provider acceptance)
+bash ./scripts/pnpm-node20.sh qa:env:doctor
 
-      <div class="provider">
-        <div>
-          <p class="provider-name">Application Secrets</p>
-          <p class="provider-purpose">Cryptographic secrets for sessions, JWTs, OAuth CSRF state, encrypted OAuth tokens, and signed upload URLs.</p>
-        </div>
-        <div>
-          <p><strong>Variables:</strong> <code>JWT_SECRET</code>, <code>COOKIE_SECRET</code>, <code>OAUTH_STATE_SECRET</code>, <code>OAUTH_TOKEN_ENCRYPTION_SECRET</code>, <code>STORAGE_LOCAL_UPLOAD_SIGNING_SECRET</code>.</p>
-          <p>Generate a unique value for each variable:</p>
-          <pre><code>openssl rand -base64 48</code></pre>
-          <p class="small">Do not reuse values across UAT and production. Do not reuse one generated value for multiple variables.</p>
-        </div>
-      </div>
+# Public edge — placeholders only
+curl -I https://&lt;uat-hostname&gt;
+curl -fsS https://&lt;uat-hostname&gt;/health
 
-      <div class="provider">
-        <div>
-          <p class="provider-name">Sentry</p>
-          <p class="provider-purpose">Backend and frontend exception capture, stack traces, release tracking, and incident triage.</p>
-        </div>
-        <div>
-          <p><strong>Variables:</strong> <code>SENTRY_DSN</code>, <code>PUBLIC_SENTRY_DSN</code>, optional <code>SENTRY_AUTH_TOKEN</code> for source maps.</p>
-          <ol class="steps">
-            <li>Create backend and frontend projects using <a href="https://docs.sentry.io/product/sentry-basics/integrate-backend/getting-started/">Sentry backend setup</a> and <a href="https://docs.sentry.io/product/sentry-basics/integrate-frontend/create-new-project/">Sentry frontend project setup</a>.</li>
-            <li>Copy each project DSN from the project settings. Sentry explains DSNs in <a href="https://docs.sentry.io/concepts/key-terms/dsn-explainer/">DSN Explainer</a>.</li>
-            <li>Create an auth token only if the build uploads source maps. Use <a href="https://docs.sentry.io/account/auth-tokens/">Sentry auth tokens</a> and the <a href="https://docs.sentry.io/platforms/javascript/guides/astro/sourcemaps/">Astro source maps guide</a>.</li>
-            <li>Set release, environment, and sampling values in production configuration.</li>
-          </ol>
-        </div>
-      </div>
+# Internal service health from the VPS, using the actual checked-in health paths
+curl -fsS http://127.0.0.1:&lt;moderation-private-port&gt;/&lt;health-path&gt;
+curl -fsS http://127.0.0.1:&lt;collage-private-port&gt;/&lt;health-path&gt;
 
-      <div class="provider">
-        <div>
-          <p class="provider-name">Axiom</p>
-          <p class="provider-purpose">Structured production logs used for request tracing, abuse investigation, IP/user correlation, and audit evidence.</p>
-        </div>
-        <div>
-          <p><strong>Variables:</strong> <code>AXIOM_TOKEN</code>, <code>AXIOM_DATASET</code>.</p>
-          <ol class="steps">
-            <li>Create a production dataset using <a href="https://axiom.co/docs/restapi/endpoints/createDataset">Axiom Create Dataset</a> or the Axiom UI.</li>
-            <li>Create a token from <a href="https://axiom.co/docs/reference/tokens">Axiom Tokens</a> with ingest access to that dataset.</li>
-            <li>Confirm ingest behavior with <a href="https://axiom.co/docs/restapi/ingest">Axiom Ingest</a>.</li>
-            <li>Use a production-only dataset name such as <code>tfp-production</code>.</li>
-          </ol>
-        </div>
-      </div>
+# Confirm sensitive ports are NOT public from a separate machine
+nc -vz &lt;vps-ip&gt; 3000
+nc -vz &lt;vps-ip&gt; 4000
+nc -vz &lt;vps-ip&gt; 7001
+nc -vz &lt;vps-ip&gt; 7003</pre>
+<p class="callout">The health paths are placeholders because they must match the deployed service version. Use checked-in runbooks or systemd unit configuration to identify them; do not invent an endpoint.</p>
+</section>
 
-      <div class="provider">
-        <div>
-          <p class="provider-name">Redis</p>
-          <p class="provider-purpose">Shared rate-limit and abuse-control state across API instances.</p>
-        </div>
-        <div>
-          <p><strong>Variable:</strong> <code>RATE_LIMIT_REDIS_URL</code>.</p>
-          <ol class="steps">
-            <li>Create a managed Redis database. Common options include <a href="https://upstash.com/docs/redis/overall/getstarted">Upstash Redis</a> or <a href="https://redis.io/docs/latest/operate/rc/databases/create-database/">Redis Cloud database setup</a>.</li>
-            <li>Copy the TLS Redis connection URL into the production secret store.</li>
-            <li>Restrict network access where supported and set usage alerts.</li>
-          </ol>
-        </div>
-      </div>
+<section class="section"><p class="kicker">07 / Persistent launch checklist</p><h2>QA opens only after every gate is green.</h2><p class="intro">Selections persist in this browser’s local storage. They contain no credentials.</p><div class="checklist" id="checklist">
+<label class="check"><input type="checkbox"><span>Cloudflare Access denies an unlisted email.</span></label>
+<label class="check"><input type="checkbox"><span>Allowed QA email completes OTP and session expires in one hour.</span></label>
+<label class="check"><input type="checkbox"><span>Direct origin and internal service ports are blocked publicly.</span></label>
+<label class="check"><input type="checkbox"><span>SSH is key-only and restricted; database listens privately.</span></label>
+<label class="check"><input type="checkbox"><span>B2 public upload/read and private-object denial verified.</span></label>
+<label class="check"><input type="checkbox"><span>Resend domain verified; password reset and invite delivered.</span></label>
+<label class="check"><input type="checkbox"><span>Sentry receives redacted browser and backend test events.</span></label>
+<label class="check"><input type="checkbox"><span>Axiom receives structured logs with no credentials.</span></label>
+<label class="check"><input type="checkbox"><span>Geoapify works from UAT and quota controls are set.</span></label>
+<label class="check"><input type="checkbox"><span>Unauthorized moderation and collage calls fail.</span></label>
+<label class="check"><input type="checkbox"><span>Upload → moderation → DB → collage E2E flow passes.</span></label>
+<label class="check"><input type="checkbox"><span>Backup and restore path, rotation owners and expiry dates recorded.</span></label>
+</div></section>
 
-      <div class="provider">
-        <div>
-          <p class="provider-name">Resend</p>
-          <p class="provider-purpose">Transactional email for verification, password reset, notifications, and account flows.</p>
-        </div>
-        <div>
-          <p><strong>Variables:</strong> <code>RESEND_API_KEY</code>, <code>EMAIL_FROM</code>, <code>EMAIL_FROM_NAME</code>.</p>
-          <ol class="steps">
-            <li>Add and verify the sending domain from <a href="https://resend.com/docs/dashboard/domains/introduction">Resend Domains</a>.</li>
-            <li>Create an API key using <a href="https://resend.com/docs/dashboard/api-keys/introduction">Resend API Keys</a> or <a href="https://resend.com/docs/create-an-api-key">Create an API Key</a>.</li>
-            <li>Add the DNS records Resend requires through Cloudflare DNS.</li>
-            <li>Use a restricted production key if your Resend plan supports scoped keys.</li>
-          </ol>
-        </div>
-      </div>
+<section class="section"><p class="kicker">08 / Secret handling policy</p><h2>Keep the blast radius small.</h2><div class="policy">
+<article><h3>Store</h3><p>Use the deployment secret store or root-owned VPS environment files with least-readable permissions. Keep UAT separate from production. Never commit <code>.env.*.local</code>.</p></article>
+<article><h3>Transmit</h3><p>Never share values in chat, tickets, screenshots or email. Prefer provider invitations and a password manager. Avoid command-line arguments and history for secrets.</p></article>
+<article><h3>Rotate</h3><p>Record owner, purpose, scope, creation and review date. Prefer create → deploy → verify → revoke. Revoke immediately on suspected disclosure and inspect provider audit logs.</p></article>
+</div></section>
 
-      <div class="provider">
-        <div>
-          <p class="provider-name">Backblaze B2</p>
-          <p class="provider-purpose">Object storage for uploads, private moderation artifacts, generated media, and evidence files.</p>
-        </div>
-        <div>
-          <p><strong>Variables:</strong> <code>B2_ACCESS_KEY_ID</code>, <code>B2_SECRET_ACCESS_KEY</code>, <code>B2_BUCKET_NAME</code>, <code>B2_PRIVATE_BUCKET_NAME</code>, <code>BACKBLAZE_*</code>, <code>STORAGE_S3_*</code>.</p>
-          <ol class="steps">
-            <li>Create production public and private buckets.</li>
-            <li>Create limited application keys from <a href="https://www.backblaze.com/docs/cloud-storage-application-keys">Backblaze Application Keys</a>.</li>
-            <li>If the app uses S3-compatible clients, follow <a href="https://www.backblaze.com/docs/cloud-storage-s3-compatible-app-keys">S3-compatible application keys</a>.</li>
-            <li>Use separate keys for app runtime, workers, and operational tooling when practical.</li>
-          </ol>
-        </div>
-      </div>
-
-      <div class="provider">
-        <div>
-          <p class="provider-name">Image Delivery</p>
-          <p class="provider-purpose">Provider-neutral transformed image delivery through Cloudflare Image Transformations or ImageKit.</p>
-        </div>
-        <div>
-          <p><strong>Variables:</strong> <code>IMAGE_DELIVERY_PROVIDER</code>, <code>IMAGE_DELIVERY_BASE_URL</code>, optional <code>CLOUDFLARE_IMAGE_DELIVERY_URL</code>.</p>
-          <ol class="steps">
-            <li>For Cloudflare, proxy a media hostname such as <code>cdn.tfpphotographers.com</code> and use <a href="https://developers.cloudflare.com/images/transform-images/">Cloudflare Image Transformations</a>.</li>
-            <li>For ImageKit, create a URL endpoint and connect it to the B2 public origin using <a href="https://imagekit.io/docs/">ImageKit delivery docs</a>.</li>
-            <li>Set <code>IMAGE_DELIVERY_PROVIDER</code> to <code>cloudflare</code> or <code>imagekit</code>.</li>
-            <li>Set <code>IMAGE_DELIVERY_BASE_URL</code> to the public delivery hostname.</li>
-          </ol>
-        </div>
-      </div>
-
-      <div class="provider">
-        <div>
-          <p class="provider-name">Geoapify</p>
-          <p class="provider-purpose">Geocoding, map tiles, place search, and location enrichment.</p>
-        </div>
-        <div>
-          <p><strong>Variable:</strong> <code>GEOAPIFY_API_KEY</code>.</p>
-          <ol class="steps">
-            <li>Create a project through <a href="https://www.geoapify.com/get-started-with-maps-api/">Geoapify Get Started</a>.</li>
-            <li>Copy the API key and restrict it where provider controls allow.</li>
-            <li>Review <a href="https://www.geoapify.com/maps-api/">Maps API</a> and <a href="https://apidocs.geoapify.com/docs/place-details/">Place Details API</a> if those features are enabled.</li>
-          </ol>
-        </div>
-      </div>
-
-      <div class="provider">
-        <div>
-          <p class="provider-name">Google OAuth</p>
-          <p class="provider-purpose">Social login with Google when enabled.</p>
-        </div>
-        <div>
-          <p><strong>Variables:</strong> <code>GOOGLE_OAUTH_CLIENT_ID</code>, <code>GOOGLE_OAUTH_CLIENT_SECRET</code>.</p>
-          <ol class="steps">
-            <li>Create or select a Google Cloud project.</li>
-            <li>Configure OAuth consent and authorized domains.</li>
-            <li>Create a Web OAuth client using <a href="https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid">Google API client ID setup</a>.</li>
-            <li>Manage client credentials from <a href="https://support.google.com/cloud/answer/15549257?hl=en">Google OAuth client management</a>.</li>
-          </ol>
-        </div>
-      </div>
-
-      <div class="provider">
-        <div>
-          <p class="provider-name">Apple Sign In</p>
-          <p class="provider-purpose">Social login with Apple when enabled.</p>
-        </div>
-        <div>
-          <p><strong>Variables:</strong> <code>APPLE_OAUTH_CLIENT_ID</code>, <code>APPLE_OAUTH_TEAM_ID</code>, <code>APPLE_OAUTH_KEY_ID</code>, <code>APPLE_OAUTH_PRIVATE_KEY</code>.</p>
-          <ol class="steps">
-            <li>Enable Sign in with Apple in the Apple Developer account.</li>
-            <li>Create the private key using <a href="https://developer.apple.com/help/account/capabilities/create-a-sign-in-with-apple-private-key/">Apple private key setup</a>.</li>
-            <li>Configure service ID, redirect URLs, and domain association.</li>
-            <li>Keep the private key server-only and rotate through Apple Developer tooling.</li>
-          </ol>
-        </div>
-      </div>
-
-      <div class="provider">
-        <div>
-          <p class="provider-name">Meta Login</p>
-          <p class="provider-purpose">Facebook/Meta social login when enabled.</p>
-        </div>
-        <div>
-          <p><strong>Variables:</strong> <code>META_OAUTH_CLIENT_ID</code>, <code>META_OAUTH_CLIENT_SECRET</code>.</p>
-          <ol class="steps">
-            <li>Create a Meta app from <a href="https://developers.facebook.com/documentation/development/create-an-app">Create an App</a>.</li>
-            <li>Add Facebook Login and configure OAuth redirect URLs.</li>
-            <li>Follow <a href="https://developers.facebook.com/documentation/facebook-login/security">Facebook Login Security</a> for redirect URI validation and app secret handling.</li>
-          </ol>
-        </div>
-      </div>
-
-      <div class="provider">
-        <div>
-          <p class="provider-name">Gemini and Groq</p>
-          <p class="provider-purpose">Optional AI generation, translation, moderation assistance, or internal automation features.</p>
-        </div>
-        <div>
-          <p><strong>Variables:</strong> <code>GEMINI_STUDIO_API_KEY</code>, <code>GROQ_API_KEY</code>.</p>
-          <ol class="steps">
-            <li>Create Gemini keys from <a href="https://ai.google.dev/gemini-api/docs/api-key">Gemini API key docs</a>.</li>
-            <li>Restrict Google API keys using <a href="https://docs.cloud.google.com/api-keys/docs/add-restrictions-api-keys">Google API key restrictions</a>.</li>
-            <li>Create Groq keys from <a href="https://console.groq.com/keys">Groq API Keys</a> and review <a href="https://console.groq.com/docs/quickstart">Groq Quickstart</a>.</li>
-            <li>Use separate keys per environment and per feature owner where possible.</li>
-          </ol>
-        </div>
-      </div>
-
-      <div class="provider">
-        <div>
-          <p class="provider-name">Google Vision or AWS Rekognition</p>
-          <p class="provider-purpose">Direct image moderation provider path if the app does not use the remote moderation service.</p>
-        </div>
-        <div>
-          <p><strong>Variables:</strong> <code>GOOGLE_CLOUD_PROJECT_ID</code>, <code>GOOGLE_APPLICATION_CREDENTIALS</code>, <code>AWS_ACCESS_KEY_ID</code>, <code>AWS_SECRET_ACCESS_KEY</code>, <code>AWS_MODERATION_REGION</code>.</p>
-          <ol class="steps">
-            <li>For Google Vision, follow <a href="https://docs.cloud.google.com/vision/docs/setup">Vision setup</a> and <a href="https://docs.cloud.google.com/vision/docs/authentication">Vision authentication</a>.</li>
-            <li>For AWS Rekognition, create an IAM user or role with the minimum Rekognition permissions needed by the worker.</li>
-            <li>Prefer workload identity or instance roles over long-lived static keys when hosting supports it.</li>
-          </ol>
-        </div>
-      </div>
-
-      <div class="provider">
-        <div>
-          <p class="provider-name">Location</p>
-          <p class="provider-purpose">Geoapify-backed location autocomplete and reverse geocoding, with Nominatim fallback in code.</p>
-        </div>
-        <div>
-          <p><strong>Variable:</strong> <code>GEOAPIFY_API_KEY</code>.</p>
-          <ol class="steps">
-            <li>Create a project through <a href="https://www.geoapify.com/get-started-with-maps-api/">Geoapify Get Started</a>.</li>
-            <li>Set rate limits and alerts in the provider dashboard.</li>
-            <li>Use the app database for nearest-user/content ranking; use Geoapify only to resolve user-entered locations to coordinates.</li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="variables">
-      <h2>Copy-Paste Variable Checklist</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Category</th>
-            <th>Variables</th>
-            <th>Launch Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Database</td>
-            <td><code>DATABASE_URL</code>, <code>DATABASE_DIRECT_URL</code>, <code>SHADOW_DATABASE_URL</code></td>
-            <td><span class="tag danger">Required</span></td>
-          </tr>
-          <tr>
-            <td>Core app secrets</td>
-            <td><code>JWT_SECRET</code>, <code>COOKIE_SECRET</code>, <code>OAUTH_STATE_SECRET</code>, <code>OAUTH_TOKEN_ENCRYPTION_SECRET</code>, <code>STORAGE_LOCAL_UPLOAD_SIGNING_SECRET</code></td>
-            <td><span class="tag danger">Required</span></td>
-          </tr>
-          <tr>
-            <td>Observability</td>
-            <td><code>SENTRY_DSN</code>, <code>PUBLIC_SENTRY_DSN</code>, <code>AXIOM_TOKEN</code>, <code>AXIOM_DATASET</code>, optional <code>SENTRY_AUTH_TOKEN</code></td>
-            <td><span class="tag danger">Required</span></td>
-          </tr>
-          <tr>
-            <td>Abuse controls</td>
-            <td><code>RATE_LIMIT_REDIS_URL</code></td>
-            <td><span class="tag danger">Required Redis</span></td>
-          </tr>
-          <tr>
-            <td>Email</td>
-            <td><code>RESEND_API_KEY</code>, <code>EMAIL_FROM</code>, <code>EMAIL_FROM_NAME</code></td>
-            <td><span class="tag danger">Required</span></td>
-          </tr>
-          <tr>
-            <td>Storage and images</td>
-            <td><code>B2_ACCESS_KEY_ID</code>, <code>B2_SECRET_ACCESS_KEY</code>, <code>B2_BUCKET_NAME</code>, <code>B2_PRIVATE_BUCKET_NAME</code>, <code>IMAGE_DELIVERY_PROVIDER</code>, <code>IMAGE_DELIVERY_BASE_URL</code></td>
-            <td><span class="tag danger">Required</span></td>
-          </tr>
-          <tr>
-            <td>Cloudflare automation</td>
-            <td><code>CLOUDFLARE_API_TOKEN</code>, optional <code>CLOUDFLARE_ZONE_ID</code>, <code>CLOUDFLARE_ACCOUNT_ID</code></td>
-            <td><span class="tag warn">Only if automated</span></td>
-          </tr>
-          <tr>
-            <td>OAuth</td>
-            <td><code>GOOGLE_OAUTH_CLIENT_ID</code>, <code>GOOGLE_OAUTH_CLIENT_SECRET</code>, <code>APPLE_OAUTH_CLIENT_ID</code>, <code>APPLE_OAUTH_TEAM_ID</code>, <code>APPLE_OAUTH_KEY_ID</code>, <code>APPLE_OAUTH_PRIVATE_KEY</code>, <code>META_OAUTH_CLIENT_ID</code>, <code>META_OAUTH_CLIENT_SECRET</code></td>
-            <td><span class="tag warn">If social login enabled</span></td>
-          </tr>
-          <tr>
-            <td>AI and moderation</td>
-            <td><code>MODERATION_REMOTE_URL</code>, <code>MODERATION_REMOTE_AUTH_TOKEN</code>, <code>TRANSLATION_REMOTE_AUTH_TOKEN</code>, <code>COLLAGE_SERVICE_API_KEY</code>, <code>GEMINI_STUDIO_API_KEY</code>, <code>GROQ_API_KEY</code>, <code>GOOGLE_APPLICATION_CREDENTIALS</code>, <code>AWS_ACCESS_KEY_ID</code>, <code>AWS_SECRET_ACCESS_KEY</code></td>
-            <td><span class="tag danger">Required by selected provider</span></td>
-          </tr>
-          <tr>
-            <td>Location</td>
-            <td><code>GEOAPIFY_API_KEY</code></td>
-            <td><span class="tag warn">Recommended for production autocomplete</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="section" id="validation">
-      <h2>Validation and Rotation</h2>
-      <div class="grid two">
-        <article class="card">
-          <h3>Validate after updates</h3>
-          <pre><code>cd /Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers
-bash ./scripts/pnpm-node20.sh qa:env:doctor:prod
-bash ./scripts/pnpm-node20.sh db:generate
-bash ./scripts/pnpm-node20.sh typecheck</code></pre>
-          <p class="small">
-            The env doctor is the primary gate for missing production secrets. Keep running it until it passes with production-safe targets.
-          </p>
-        </article>
-        <article class="card">
-          <h3>Storage and rotation rules</h3>
-          <ul>
-            <li>Store real production values only in the deployment secret store or host-level protected environment files.</li>
-            <li>Use separate UAT and production credentials for every provider.</li>
-            <li>Give each token the smallest useful scope and one owner.</li>
-            <li>Rotate immediately after contractor access, suspected exposure, or provider console compromise.</li>
-            <li>Enable billing alerts and quota alerts on every paid provider.</li>
-            <li>Document who owns each provider account and the recovery email or admin group.</li>
-          </ul>
-        </article>
-      </div>
-
-      <div class="callout">
-        <strong>Tracing wrong activity:</strong> keep Axiom and Sentry enabled, keep API access logs structured, and preserve request
-        metadata such as user ID, session ID, route, action, IP source, Cloudflare country/region/city headers, user agent,
-        upload/comment identifiers, and moderation/report IDs. Never log raw passwords, full OAuth tokens, private keys,
-        payment details, or full bearer tokens.
-      </div>
-    </section>
-  </main>
-</body>
-</html>
+<section class="section"><p class="kicker">09 / Official sources</p><h2>Provider truth, one click away.</h2><ul class="sources">
+<li><a target="_blank" rel="noopener noreferrer" href="https://developers.cloudflare.com/cloudflare-one/access-controls/policies/">Cloudflare Access policies</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://developers.cloudflare.com/cloudflare-one/access-controls/access-settings/session-management/">Cloudflare session management</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/">Cloudflare Tunnel</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.backblaze.com/docs/cloud-storage-s3-compatible-app-keys">Backblaze S3 application keys</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://resend.com/docs/dashboard/api-keys/introduction">Resend API keys</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://resend.com/docs/dashboard/domains/introduction">Resend domains</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://docs.sentry.io/api/guides/create-auth-token/">Sentry auth tokens</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://axiom.co/docs/reference/tokens">Axiom tokens</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://axiom.co/docs/reference/datasets">Axiom datasets</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.geoapify.com/get-started-with-maps-api/">Geoapify maps API</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://ai.google.dev/gemini-api/docs/api-key">Gemini API key</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://console.groq.com/keys">Groq keys</a></li>
+</ul></section>
+</main>
+<footer class="footer">TFP UAT CREDENTIAL CONTROL PLANE · AUDIT DATE 2026-07-15 · STATUS REFLECTS VARIABLE PRESENCE ONLY · THIS ARTIFACT CONTAINS NO SECRET VALUES</footer>
+</div>
+<script>
+const search=document.querySelector('#search'),chips=[...document.querySelectorAll('.chip')],filterables=[...document.querySelectorAll('[data-cat]')];let active='all';
+function filter(){const q=search.value.trim().toLowerCase();filterables.forEach(el=>{const cat=el.dataset.cat||'';el.classList.toggle('hidden',!(active==='all'||cat===active)||!el.textContent.toLowerCase().includes(q))})}
+search.addEventListener('input',filter);chips.forEach(c=>c.addEventListener('click',()=>{chips.forEach(x=>x.classList.remove('active'));c.classList.add('active');active=c.dataset.filter;filter()}));
+document.querySelectorAll('.copy').forEach(btn=>btn.addEventListener('click',async()=>{const text=btn.parentElement.querySelector('pre').innerText;try{await navigator.clipboard.writeText(text);btn.textContent='Copied'}catch(e){const r=document.createRange();r.selectNodeContents(btn.parentElement.querySelector('pre'));getSelection().removeAllRanges();getSelection().addRange(r);btn.textContent='Selected'}setTimeout(()=>btn.textContent='Copy',1600)}));
+const checks=[...document.querySelectorAll('#checklist input')],saved=JSON.parse(localStorage.getItem('tfp-uat-checks')||'[]');checks.forEach((c,i)=>{c.checked=!!saved[i];c.addEventListener('change',()=>localStorage.setItem('tfp-uat-checks',JSON.stringify(checks.map(x=>x.checked))))});
+</script>
+</body></html>
