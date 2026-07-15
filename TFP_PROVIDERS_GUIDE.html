@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TFP Photographers — External Providers & Services Guide</title>
+  <style>
+    :root {
+      --bg: #07050f; --surface: #100d1c; --surface2: #18142b; --border: #2a2545;
+      --accent: #7c5cfc; --accent2: #c084fc; --accent3: #38bdf8;
+      --green: #34d399; --yellow: #fbbf24; --red: #f87171; --orange: #fb923c;
+      --text: #e2dff8; --muted: #8b87ab; --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, -apple-system, sans-serif; line-height: 1.6; }
+    header { background: linear-gradient(135deg, #0d0a1e 0%, #1a0a35 50%, #0a1628 100%); border-bottom: 1px solid var(--border); padding: 48px 40px; position: relative; overflow: hidden; }
+    header::before { content:''; position:absolute; top:-80px; left:-80px; width:400px; height:400px; background:radial-gradient(circle,rgba(124,92,252,0.15) 0%,transparent 70%); pointer-events:none; }
+    header::after { content:''; position:absolute; bottom:-60px; right:-60px; width:350px; height:350px; background:radial-gradient(circle,rgba(56,189,248,0.08) 0%,transparent 70%); pointer-events:none; }
+    .header-inner { max-width:1200px; margin:0 auto; position:relative; z-index:1; }
+    .header-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(124,92,252,0.15); border:1px solid rgba(124,92,252,0.3); border-radius:999px; padding:4px 14px; font-size:12px; font-weight:600; color:var(--accent2); letter-spacing:.05em; text-transform:uppercase; margin-bottom:16px; }
+    h1 { font-size:clamp(28px,4vw,44px); font-weight:800; background:linear-gradient(135deg,#fff 0%,var(--accent2) 60%,var(--accent3) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:12px; line-height:1.2; }
+    .subtitle { color:var(--muted); font-size:16px; max-width:680px; }
+    .stats-row { display:flex; gap:32px; flex-wrap:wrap; margin-top:32px; }
+    .stat { display:flex; align-items:center; gap:10px; }
+    .stat-num { font-size:28px; font-weight:800; background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .stat-label { color:var(--muted); font-size:13px; }
+    nav { background:var(--surface); border-bottom:1px solid var(--border); padding:0 40px; position:sticky; top:0; z-index:100; }
+    .nav-inner { max-width:1200px; margin:0 auto; display:flex; overflow-x:auto; }
+    nav a { display:flex; align-items:center; gap:8px; padding:14px 18px; color:var(--muted); text-decoration:none; font-size:13px; font-weight:500; border-bottom:2px solid transparent; white-space:nowrap; transition:color .2s,border-color .2s; }
+    nav a:hover { color:var(--text); border-color:var(--accent); }
+    main { max-width:1200px; margin:0 auto; padding:40px 40px 80px; }
+    .section-header { margin:60px 0 24px; padding-bottom:16px; border-bottom:1px solid var(--border); }
+    .section-tag { font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); margin-bottom:6px; }
+    .section-header h2 { font-size:22px; font-weight:700; color:var(--text); display:flex; align-items:center; gap:10px; }
+    .cards { display:grid; gap:20px; }
+    .card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; transition:border-color .2s,box-shadow .2s; }
+    .card:hover { border-color:rgba(124,92,252,0.4); box-shadow:0 0 0 1px rgba(124,92,252,0.1),0 8px 32px rgba(0,0,0,.3); }
+    .card-header { display:flex; align-items:flex-start; gap:16px; padding:22px 24px 18px; border-bottom:1px solid var(--border); }
+    .card-logo { width:48px; height:48px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; background:var(--surface2); border:1px solid var(--border); }
+    .card-meta { flex:1; min-width:0; }
+    .card-name { font-size:17px; font-weight:700; color:var(--text); margin-bottom:3px; }
+    .card-category { font-size:12px; color:var(--muted); display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+    .badge { display:inline-flex; align-items:center; border-radius:999px; padding:2px 10px; font-size:11px; font-weight:600; letter-spacing:.04em; }
+    .badge-required { background:rgba(248,113,113,0.15); color:var(--red); border:1px solid rgba(248,113,113,0.25); }
+    .badge-optional { background:rgba(251,191,36,0.12); color:var(--yellow); border:1px solid rgba(251,191,36,0.2); }
+    .badge-production { background:rgba(124,92,252,0.12); color:var(--accent2); border:1px solid rgba(124,92,252,0.2); }
+    .badge-dev { background:rgba(52,211,153,0.1); color:var(--green); border:1px solid rgba(52,211,153,0.2); }
+    .badge-builtin { background:rgba(56,189,248,0.1); color:var(--accent3); border:1px solid rgba(56,189,248,0.2); }
+    .card-body { padding:20px 24px; display:grid; gap:16px; }
+    .card-purpose { font-size:14px; color:var(--muted); line-height:1.7; }
+    .card-purpose strong { color:var(--text); }
+    .info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; }
+    .info-box { background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:12px 14px; }
+    .info-box-label { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin-bottom:6px; }
+    .info-box-value { font-size:13px; color:var(--text); font-weight:500; }
+    .info-box-value a { color:var(--accent3); text-decoration:none; }
+    .env-keys { display:flex; flex-direction:column; gap:6px; }
+    .env-key { display:flex; align-items:center; gap:8px; background:rgba(0,0,0,.3); border:1px solid var(--border); border-radius:6px; padding:6px 10px; font-family:'SF Mono','Monaco','Cascadia Code',monospace; font-size:12px; }
+    .env-key-name { color:var(--accent3); flex:1; }
+    .env-key-note { color:var(--muted); font-size:11px; }
+    .env-key-req { color:var(--red); font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+    .env-key-opt { color:var(--yellow); font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+    .steps { display:flex; flex-direction:column; gap:10px; }
+    .step { display:flex; gap:12px; align-items:flex-start; }
+    .step-num { width:24px; height:24px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; background:rgba(124,92,252,0.2); border:1px solid rgba(124,92,252,0.4); font-size:11px; font-weight:700; color:var(--accent2); }
+    .step-text { font-size:13px; color:var(--muted); line-height:1.6; padding-top:2px; }
+    .step-text a { color:var(--accent3); }
+    .step-text code { background:rgba(0,0,0,.35); border:1px solid var(--border); border-radius:4px; padding:1px 5px; font-family:'SF Mono',monospace; font-size:11px; color:var(--accent2); }
+    .used-in { display:flex; gap:6px; flex-wrap:wrap; }
+    .app-tag { font-size:11px; padding:3px 9px; border-radius:6px; font-weight:600; background:rgba(56,189,248,0.08); border:1px solid rgba(56,189,248,0.2); color:var(--accent3); }
+    .note { background:rgba(251,191,36,0.06); border:1px solid rgba(251,191,36,0.2); border-left:3px solid var(--yellow); border-radius:0 8px 8px 0; padding:10px 14px; font-size:13px; color:var(--muted); }
+    .note strong { color:var(--yellow); }
+    .info-note { background:rgba(56,189,248,0.05); border:1px solid rgba(56,189,248,0.15); border-left:3px solid var(--accent3); border-radius:0 8px 8px 0; padding:10px 14px; font-size:13px; color:var(--muted); }
+    .info-note strong { color:var(--accent3); }
+    .table-wrap { overflow-x:auto; }
+    table { width:100%; border-collapse:collapse; font-size:13px; }
+    th { background:var(--surface2); color:var(--muted); font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.08em; padding:10px 16px; text-align:left; border-bottom:1px solid var(--border); }
+    td { padding:11px 16px; border-bottom:1px solid rgba(42,37,69,0.5); vertical-align:top; }
+    tr:hover td { background:rgba(255,255,255,.02); }
+    td code { background:rgba(0,0,0,.4); border:1px solid var(--border); border-radius:4px; padding:1px 6px; font-family:'SF Mono',monospace; font-size:11px; color:var(--accent2); }
+    td a { color:var(--accent3); text-decoration:none; }
+    footer { border-top:1px solid var(--border); padding:32px 40px; text-align:center; color:var(--muted); font-size:12px; }
+    .footer-inner { max-width:1200px; margin:0 auto; }
+    @media (max-width:680px) { header,main,nav { padding-left:20px; padding-right:20px; } }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="header-badge">📸 TFP Photographers Platform</div>
+    <h1>External Providers &amp; Services Guide</h1>
+    <p class="subtitle">A comprehensive reference of every third-party service wired into the TFP stack — what each provider does, which env keys it needs, and exactly how to set it up from scratch.</p>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-num">15+</div><div class="stat-label">External Providers</div></div>
+      <div class="stat"><div class="stat-num">3</div><div class="stat-label">Microservices</div></div>
+      <div class="stat"><div class="stat-num">4</div><div class="stat-label">Apps (API, Web, Mobile, AIP)</div></div>
+    </div>
+  </div>
+</header>
+<nav>
+  <div class="nav-inner">
+    <a href="#database">🗄️ Database</a>
+    <a href="#storage">📦 Storage</a>
+    <a href="#email">📧 Email</a>
+    <a href="#auth">🔐 OAuth</a>
+    <a href="#moderation">🛡️ Moderation</a>
+    <a href="#ai">🤖 AI / LLMs</a>
+    <a href="#location">📍 Location</a>
+    <a href="#observability">📊 Observability</a>
+    <a href="#cdn">🌐 CDN</a>
+    <a href="#cache">⚡ Cache</a>
+    <a href="#quickref">📋 Quick Ref</a>
+  </div>
+</nav>
+<main>
+
+  <!-- DATABASE -->
+  <div class="section-header" id="database">
+    <div class="section-tag">Data Layer</div>
+    <h2>🗄️ Database</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">🐘</div>
+        <div class="card-meta">
+          <div class="card-name">PostgreSQL + Prisma ORM</div>
+          <div class="card-category"><span class="badge badge-required">Required</span> Primary Database</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> The single source of truth for all application data — users, profiles, opportunities, events, contests, moderation cases, messages, notifications, referrals, the event outbox for background jobs, and collage job state. Prisma ORM handles migrations, the type-safe query layer, and DB instrumentation via OpenTelemetry. PostgreSQL's <code>FOR UPDATE SKIP LOCKED</code> is used for queue-safe worker polling without a separate queue broker.</div>
+        <div class="info-grid">
+          <div class="info-box"><div class="info-box-label">Provider</div><div class="info-box-value">Self-hosted PostgreSQL 15+</div></div>
+          <div class="info-box"><div class="info-box-label">ORM</div><div class="info-box-value">Prisma 6 (@prisma/client)</div></div>
+          <div class="info-box"><div class="info-box-label">UAT Host</div><div class="info-box-value">Contabo VPS — 13.140.189.236</div></div>
+          <div class="info-box"><div class="info-box-label">Download</div><div class="info-box-value"><a href="https://www.postgresql.org/download/" target="_blank">postgresql.org/download</a></div></div>
+        </div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">DATABASE_URL</span><span class="env-key-req">required</span><span class="env-key-note">postgresql://user:pass@host:5432/dbname</span></div>
+          <div class="env-key"><span class="env-key-name">DATABASE_DIRECT_URL</span><span class="env-key-opt">optional</span><span class="env-key-note">Direct connection bypassing PgBouncer</span></div>
+          <div class="env-key"><span class="env-key-name">SHADOW_DATABASE_URL</span><span class="env-key-opt">dev only</span><span class="env-key-note">Required for prisma migrate dev</span></div>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Install PostgreSQL locally: <a href="https://postgresapp.com" target="_blank">Postgres.app (macOS)</a> or <code>brew install postgresql@16</code></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Create databases: <code>createdb tfp_photographers</code> and <code>createdb tfp_photographers_shadow</code></div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Run migrations: <code>pnpm db:migrate:dev</code> from the tfpphotographers/ workspace</div></div>
+        </div>
+        <div class="used-in"><span class="app-tag">api</span><span class="app-tag">collage-service</span><span class="app-tag">image-moderation-service</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STORAGE -->
+  <div class="section-header" id="storage">
+    <div class="section-tag">File &amp; Object Storage</div>
+    <h2>📦 Storage Providers</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">🪣</div>
+        <div class="card-meta">
+          <div class="card-name">Backblaze B2</div>
+          <div class="card-category"><span class="badge badge-production">Production</span> Object Storage (S3-compatible)</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> Stores all user-uploaded images — profile pictures, portfolio photos, opportunity cover images, moodboard images, and collage output files. Uses the AWS SDK v3 S3-compatible API. Supports presigned upload and download URLs, and server-side object copies for the collage service.</div>
+        <div class="info-grid">
+          <div class="info-box"><div class="info-box-label">Sign Up</div><div class="info-box-value"><a href="https://www.backblaze.com/sign-up/cloud-storage" target="_blank">backblaze.com/sign-up</a></div></div>
+          <div class="info-box"><div class="info-box-label">Pricing</div><div class="info-box-value">Free 10 GB / $6 per TB/month after</div></div>
+          <div class="info-box"><div class="info-box-label">SDK</div><div class="info-box-value">@aws-sdk/client-s3, @aws-sdk/s3-request-presigner</div></div>
+        </div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">STORAGE_PROVIDER</span><span class="env-key-req">required</span><span class="env-key-note">Set to "backblaze"</span></div>
+          <div class="env-key"><span class="env-key-name">B2_ACCESS_KEY_ID</span><span class="env-key-req">required</span><span class="env-key-note">keyID from the generated Application Key</span></div>
+          <div class="env-key"><span class="env-key-name">B2_SECRET_ACCESS_KEY</span><span class="env-key-req">required</span><span class="env-key-note">applicationKey value (shown once on creation)</span></div>
+          <div class="env-key"><span class="env-key-name">B2_BUCKET_NAME</span><span class="env-key-req">required</span><span class="env-key-note">Public bucket name for user uploads</span></div>
+          <div class="env-key"><span class="env-key-name">B2_ENDPOINT</span><span class="env-key-req">required</span><span class="env-key-note">e.g. s3.us-east-005.backblazeb2.com</span></div>
+          <div class="env-key"><span class="env-key-name">B2_REGION</span><span class="env-key-req">required</span><span class="env-key-note">e.g. us-east-005</span></div>
+          <div class="env-key"><span class="env-key-name">B2_PUBLIC_URL</span><span class="env-key-opt">optional</span><span class="env-key-note">CDN-fronted public URL for the bucket</span></div>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Sign up at <a href="https://www.backblaze.com/sign-up/cloud-storage" target="_blank">backblaze.com</a></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Go to <strong>B2 Cloud Storage → Buckets → Create a Bucket</strong>. Set visibility to Public.</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Go to <strong>Account → App Keys → Add a New Application Key</strong>. Scope it to the bucket, enable all capabilities.</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">Copy the <code>keyID</code> → B2_ACCESS_KEY_ID and <code>applicationKey</code> → B2_SECRET_ACCESS_KEY (shown once only).</div></div>
+          <div class="step"><div class="step-num">5</div><div class="step-text">Set CORS rules on the bucket to allow your app's origin for presigned upload requests.</div></div>
+        </div>
+        <div class="used-in"><span class="app-tag">api</span><span class="app-tag">collage-service</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">💾</div>
+        <div class="card-meta">
+          <div class="card-name">Local Filesystem Storage</div>
+          <div class="card-category"><span class="badge badge-dev">Dev / Test Only</span> Local Object Storage</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> A zero-dependency local disk adapter for development and CI. Stores files at apps/api/tmp/storage and serves them via the API's /uploads path. Supports HMAC-signed presigned upload tokens so the upload flow works identically to production.</div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">STORAGE_PROVIDER</span><span class="env-key-req">required</span><span class="env-key-note">Set to "local"</span></div>
+          <div class="env-key"><span class="env-key-name">STORAGE_LOCAL_UPLOAD_SIGNING_SECRET</span><span class="env-key-req">required</span><span class="env-key-note">HMAC secret for presigned tokens</span></div>
+          <div class="env-key"><span class="env-key-name">STORAGE_LOCAL_ROOT_PATH</span><span class="env-key-opt">optional</span><span class="env-key-note">Defaults to apps/api/tmp/storage</span></div>
+          <div class="env-key"><span class="env-key-name">STORAGE_LOCAL_PUBLIC_BASE_URL</span><span class="env-key-opt">optional</span><span class="env-key-note">Defaults to http://localhost:4000</span></div>
+        </div>
+        <div class="note"><strong>Note:</strong> No external sign-up needed. Ships with the repo and is auto-selected in local dev mode.</div>
+        <div class="used-in"><span class="app-tag">api (dev/test)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMAIL -->
+  <div class="section-header" id="email">
+    <div class="section-tag">Transactional Email</div>
+    <h2>📧 Email Provider</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">✉️</div>
+        <div class="card-meta">
+          <div class="card-name">Resend</div>
+          <div class="card-category"><span class="badge badge-production">Production</span> Transactional Email API</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> Sends all transactional emails — account verification, password reset links, opportunity notifications, event alerts, and moderation outcome emails. The ResendAdapter wraps the official <code>resend</code> npm package and sends HTML + plain-text emails.</div>
+        <div class="info-grid">
+          <div class="info-box"><div class="info-box-label">Sign Up</div><div class="info-box-value"><a href="https://resend.com/signup" target="_blank">resend.com/signup</a></div></div>
+          <div class="info-box"><div class="info-box-label">Free Tier</div><div class="info-box-value">3,000 emails/month, 100/day</div></div>
+          <div class="info-box"><div class="info-box-label">SDK</div><div class="info-box-value">resend (npm)</div></div>
+        </div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">EMAIL_PROVIDER</span><span class="env-key-req">required</span><span class="env-key-note">Set to "resend" in production</span></div>
+          <div class="env-key"><span class="env-key-name">RESEND_API_KEY</span><span class="env-key-req">required</span><span class="env-key-note">Starts with re_</span></div>
+          <div class="env-key"><span class="env-key-name">EMAIL_FROM</span><span class="env-key-req">required</span><span class="env-key-note">Verified sender, e.g. noreply@tfpphotographers.com</span></div>
+          <div class="env-key"><span class="env-key-name">EMAIL_FROM_NAME</span><span class="env-key-opt">optional</span><span class="env-key-note">Display name, e.g. "TFP Photographers"</span></div>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Sign up at <a href="https://resend.com/signup" target="_blank">resend.com/signup</a></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Go to <strong>Domains → Add Domain</strong> and verify tfpphotographers.com with DNS records</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Go to <strong>API Keys → Create API Key</strong> with Sending access. Copy key → RESEND_API_KEY</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">Set EMAIL_FROM to your verified domain address</div></div>
+        </div>
+        <div class="used-in"><span class="app-tag">api</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">🖨️</div>
+        <div class="card-meta">
+          <div class="card-name">Console Email Adapter</div>
+          <div class="card-category"><span class="badge badge-dev">Dev Only</span> Local Email Sink</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> Prints email content to stdout instead of sending. Used in local/test environments. Automatically used when EMAIL_PROVIDER=console.</div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">EMAIL_PROVIDER</span><span class="env-key-req">required</span><span class="env-key-note">Set to "console" for local dev</span></div>
+        </div>
+        <div class="note"><strong>Note:</strong> Will throw a startup error in production. Only valid for NODE_ENV=development or test.</div>
+        <div class="used-in"><span class="app-tag">api (dev/test)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OAUTH -->
+  <div class="section-header" id="auth">
+    <div class="section-tag">Authentication</div>
+    <h2>🔐 Social OAuth Providers</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">G</div>
+        <div class="card-meta">
+          <div class="card-name">Google OAuth 2.0</div>
+          <div class="card-category"><span class="badge badge-optional">Optional</span> Social Sign-In</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> Allows users to sign in with their Google account. The API implements the full OAuth 2.0 PKCE flow, verifies the id_token against Google's JWKS endpoint, and provisions or links a local user account. Only active when FEATURE_SOCIAL_LOGIN=true.</div>
+        <div class="info-grid">
+          <div class="info-box"><div class="info-box-label">Console</div><div class="info-box-value"><a href="https://console.cloud.google.com/apis/credentials" target="_blank">Google Cloud Console → Credentials</a></div></div>
+          <div class="info-box"><div class="info-box-label">Cost</div><div class="info-box-value">Free</div></div>
+        </div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">FEATURE_SOCIAL_LOGIN</span><span class="env-key-req">required</span><span class="env-key-note">Set to "true" to enable all social login</span></div>
+          <div class="env-key"><span class="env-key-name">GOOGLE_OAUTH_CLIENT_ID</span><span class="env-key-req">required</span><span class="env-key-note">From OAuth 2.0 client credentials</span></div>
+          <div class="env-key"><span class="env-key-name">GOOGLE_OAUTH_CLIENT_SECRET</span><span class="env-key-req">required</span><span class="env-key-note">From OAuth 2.0 client credentials</span></div>
+          <div class="env-key"><span class="env-key-name">GOOGLE_OAUTH_REDIRECT_URI</span><span class="env-key-req">required</span><span class="env-key-note">Must be in the OAuth client's authorized URIs</span></div>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Go to <a href="https://console.cloud.google.com" target="_blank">console.cloud.google.com</a> → Create/select a project</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Navigate to <strong>APIs &amp; Services → OAuth consent screen</strong>. Set authorized domain, scopes: email, profile, openid</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Go to <strong>Credentials → Create Credentials → OAuth client ID</strong>. Type: Web application. Add redirect URI.</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">Copy the Client ID and Client Secret to the env vars above</div></div>
+        </div>
+        <div class="used-in"><span class="app-tag">api</span><span class="app-tag">web</span><span class="app-tag">mobile</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">🍎</div>
+        <div class="card-meta">
+          <div class="card-name">Apple Sign In</div>
+          <div class="card-category"><span class="badge badge-optional">Optional</span> Social Sign-In</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> Allows users to sign in with their Apple ID. The API creates a JWT client secret signed with the Apple ES256 private key, exchanges auth codes with Apple's token endpoint, and verifies ID tokens using Apple's JWKS. Required for any iOS app published to the App Store.</div>
+        <div class="info-grid">
+          <div class="info-box"><div class="info-box-label">Console</div><div class="info-box-value"><a href="https://developer.apple.com/account/resources/identifiers/list" target="_blank">Apple Developer → Identifiers</a></div></div>
+          <div class="info-box"><div class="info-box-label">Cost</div><div class="info-box-value">$99/year Apple Developer Program</div></div>
+        </div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">APPLE_OAUTH_CLIENT_ID</span><span class="env-key-req">required</span><span class="env-key-note">Services ID, e.g. com.tfpphotographers.siwa</span></div>
+          <div class="env-key"><span class="env-key-name">APPLE_OAUTH_TEAM_ID</span><span class="env-key-req">required</span><span class="env-key-note">10-character Team ID from Apple Developer</span></div>
+          <div class="env-key"><span class="env-key-name">APPLE_OAUTH_KEY_ID</span><span class="env-key-req">required</span><span class="env-key-note">Key ID from Sign In with Apple key</span></div>
+          <div class="env-key"><span class="env-key-name">APPLE_OAUTH_PRIVATE_KEY</span><span class="env-key-req">required</span><span class="env-key-note">Full PEM key content (escape newlines as \n)</span></div>
+          <div class="env-key"><span class="env-key-name">APPLE_OAUTH_REDIRECT_URI</span><span class="env-key-req">required</span><span class="env-key-note">Must be registered in Apple's Services ID config</span></div>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Join the <a href="https://developer.apple.com/programs/" target="_blank">Apple Developer Program</a> ($99/year)</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Create an App ID for your bundle ID in <strong>Certificates, Identifiers &amp; Profiles → Identifiers</strong></div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Create a <strong>Services ID</strong> (e.g. com.tfpphotographers.siwa), enable Sign In with Apple, configure redirect URI</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">Go to <strong>Keys → + → Sign In with Apple</strong>. Download the .p8 private key file (only downloadable once)</div></div>
+          <div class="step"><div class="step-num">5</div><div class="step-text">Fill in APPLE_OAUTH_KEY_ID, APPLE_OAUTH_TEAM_ID, and APPLE_OAUTH_PRIVATE_KEY (with \n newlines)</div></div>
+        </div>
+        <div class="used-in"><span class="app-tag">api</span><span class="app-tag">web</span><span class="app-tag">mobile</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">F</div>
+        <div class="card-meta">
+          <div class="card-name">Meta (Facebook) OAuth</div>
+          <div class="card-category"><span class="badge badge-optional">Optional</span> Social Sign-In</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> Allows users to sign in with their Facebook account. The API exchanges the auth code via the Facebook Graph API, validates the access token against the debug token endpoint, and fetches the user profile with email and photo.</div>
+        <div class="info-grid">
+          <div class="info-box"><div class="info-box-label">Console</div><div class="info-box-value"><a href="https://developers.facebook.com/apps/" target="_blank">Meta for Developers → My Apps</a></div></div>
+          <div class="info-box"><div class="info-box-label">Graph API</div><div class="info-box-value">v25.0 (configurable)</div></div>
+        </div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">META_OAUTH_CLIENT_ID</span><span class="env-key-req">required</span><span class="env-key-note">App ID from Meta App Dashboard</span></div>
+          <div class="env-key"><span class="env-key-name">META_OAUTH_CLIENT_SECRET</span><span class="env-key-req">required</span><span class="env-key-note">App Secret from Meta App Dashboard</span></div>
+          <div class="env-key"><span class="env-key-name">META_OAUTH_REDIRECT_URI</span><span class="env-key-req">required</span><span class="env-key-note">Must be whitelisted in Meta App → Facebook Login</span></div>
+          <div class="env-key"><span class="env-key-name">META_OAUTH_GRAPH_VERSION</span><span class="env-key-opt">optional</span><span class="env-key-note">Defaults to v25.0</span></div>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Go to <a href="https://developers.facebook.com/apps/" target="_blank">developers.facebook.com</a> → Create App (Consumer or Business)</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Add <strong>Facebook Login</strong> product. Set your redirect URI in Facebook Login → Settings.</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Go to <strong>App Settings → Basic</strong>. Copy App ID → META_OAUTH_CLIENT_ID and App Secret → META_OAUTH_CLIENT_SECRET</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">Required permissions: email, public_profile. Submit for App Review before going live.</div></div>
+        </div>
+        <div class="used-in"><span class="app-tag">api</span><span class="app-tag">web</span><span class="app-tag">mobile</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODERATION -->
+  <div class="section-header" id="moderation">
+    <div class="section-tag">Content Safety</div>
+    <h2>🛡️ Image Moderation Providers</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">🏠</div>
+        <div class="card-meta">
+          <div class="card-name">TFP Image Moderation Service (AIP) — Self-Hosted</div>
+          <div class="card-category"><span class="badge badge-production">Primary / Production</span> Self-Hosted AI Inference</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> The primary moderation backend. A custom Python FastAPI microservice running YOLOv8, NudeNet 3.4, CLIP, and NLLB-200 models locally. The main API calls it over HTTP to score images for adult content and violence. Runs on the Contabo VPS at port 7001. Also doubles as the translation backend when ACTIVE_TRANSLATION_PROVIDER=remote-http.</div>
+        <div class="info-grid">
+          <div class="info-box"><div class="info-box-label">Runtime</div><div class="info-box-value">Python 3.11 + FastAPI + PyTorch + ONNX</div></div>
+          <div class="info-box"><div class="info-box-label">UAT URL</div><div class="info-box-value">http://13.140.189.236:7001</div></div>
+          <div class="info-box"><div class="info-box-label">Models</div><div class="info-box-value">YOLOv8, NudeNet 3.4, CLIP, NLLB-200</div></div>
+          <div class="info-box"><div class="info-box-label">Repo</div><div class="info-box-value">tfp-image-moderation-service/</div></div>
+        </div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">ACTIVE_MODERATION_PROVIDER</span><span class="env-key-req">required</span><span class="env-key-note">Set to "remote-http"</span></div>
+          <div class="env-key"><span class="env-key-name">MODERATION_REMOTE_URL</span><span class="env-key-req">required</span><span class="env-key-note">e.g. http://13.140.189.236:7001</span></div>
+          <div class="env-key"><span class="env-key-name">MODERATION_REMOTE_AUTH_TOKEN</span><span class="env-key-req">required</span><span class="env-key-note">Matches AIP__SECURITY__INTERNAL_API_KEY on the service</span></div>
+          <div class="env-key"><span class="env-key-name">AIP__SECURITY__INTERNAL_API_KEY</span><span class="env-key-req">service-side</span><span class="env-key-note">Set in tfp-image-moderation-service/.env</span></div>
+        </div>
+        <div class="info-note"><strong>No external sign-up needed.</strong> This is a self-hosted service in your own repo. Deploy on a VPS with &ge;4 GB RAM for YOLO + NudeNet models.</div>
+        <div class="used-in"><span class="app-tag">api</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">👁️</div>
+        <div class="card-meta">
+          <div class="card-name">Google Cloud Vision API</div>
+          <div class="card-category"><span class="badge badge-optional">Optional — Alt Provider</span> SafeSearch Detection</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> Alternative image moderation using Google Cloud Vision's SafeSearch and text detection APIs. Maps VERY_UNLIKELY→VERY_LIKELY likelihood scores to 0–1 confidence values for ADULT, RACY, VIOLENCE, MEDICAL, and SPOOF categories.</div>
+        <div class="info-grid">
+          <div class="info-box"><div class="info-box-label">Console</div><div class="info-box-value"><a href="https://console.cloud.google.com/apis/library/vision.googleapis.com" target="_blank">Google Cloud → Vision API</a></div></div>
+          <div class="info-box"><div class="info-box-label">Pricing</div><div class="info-box-value">1,000 units/month free; $1.50/1,000 after</div></div>
+          <div class="info-box"><div class="info-box-label">SDK</div><div class="info-box-value">@google-cloud/vision</div></div>
+        </div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">ACTIVE_MODERATION_PROVIDER</span><span class="env-key-req">required</span><span class="env-key-note">Set to "google-vision"</span></div>
+          <div class="env-key"><span class="env-key-name">GOOGLE_APPLICATION_CREDENTIALS</span><span class="env-key-req">required</span><span class="env-key-note">Path to service account JSON file</span></div>
+          <div class="env-key"><span class="env-key-name">GOOGLE_CLOUD_PROJECT_ID</span><span class="env-key-opt">optional</span><span class="env-key-note">GCP project ID (read from credentials file if omitted)</span></div>
+          <div class="env-key"><span class="env-key-name">GOOGLE_VISION_API_KEY</span><span class="env-key-opt">optional</span><span class="env-key-note">API key alternative to service account</span></div>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Go to <a href="https://console.cloud.google.com" target="_blank">console.cloud.google.com</a> → Create or select a project</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Enable the <strong>Cloud Vision API</strong> in APIs &amp; Services → Library</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Go to <strong>IAM &amp; Admin → Service Accounts → Create</strong>. Grant Cloud Vision API User role.</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">Click the service account → <strong>Keys → Add Key → JSON</strong>. Download the file. Set path in GOOGLE_APPLICATION_CREDENTIALS.</div></div>
+        </div>
+        <div class="used-in"><span class="app-tag">api</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">☁️</div>
+        <div class="card-meta">
+          <div class="card-name">AWS Rekognition</div>
+          <div class="card-category"><span class="badge badge-optional">Optional — Alt Provider</span> Cloud AI Moderation</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> Alternative cloud image moderation using AWS Rekognition's DetectModerationLabels API. Maps Rekognition's hierarchical label taxonomy (Explicit Nudity, Violence, etc.) into the standard TFP ADULT/RACY/VIOLENCE scores.</div>
+        <div class="info-grid">
+          <div class="info-box"><div class="info-box-label">Console</div><div class="info-box-value"><a href="https://console.aws.amazon.com/rekognition/" target="_blank">AWS Console → Rekognition</a></div></div>
+          <div class="info-box"><div class="info-box-label">Pricing</div><div class="info-box-value">5,000 images/month free (12 mo); $0.001/image after</div></div>
+          <div class="info-box"><div class="info-box-label">SDK</div><div class="info-box-value">@aws-sdk/client-rekognition</div></div>
+        </div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">ACTIVE_MODERATION_PROVIDER</span><span class="env-key-req">required</span><span class="env-key-note">Set to "aws-rekognition"</span></div>
+          <div class="env-key"><span class="env-key-name">AWS_ACCESS_KEY_ID</span><span class="env-key-req">required</span><span class="env-key-note">IAM user or role access key</span></div>
+          <div class="env-key"><span class="env-key-name">AWS_SECRET_ACCESS_KEY</span><span class="env-key-req">required</span><span class="env-key-note">IAM user or role secret key</span></div>
+          <div class="env-key"><span class="env-key-name">AWS_MODERATION_REGION</span><span class="env-key-opt">optional</span><span class="env-key-note">e.g. us-east-1</span></div>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Create an AWS account at <a href="https://aws.amazon.com" target="_blank">aws.amazon.com</a></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Create an IAM user with programmatic access. Attach the AmazonRekognitionReadOnlyAccess policy.</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Copy the Access Key ID and Secret Access Key to the env vars above.</div></div>
+        </div>
+        <div class="used-in"><span class="app-tag">api</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI / LLMs -->
+  <div class="section-header" id="ai">
+    <div class="section-tag">Artificial Intelligence</div>
+    <h2>🤖 AI &amp; LLM Providers</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">💎</div>
+        <div class="card-meta">
+          <div class="card-name">Google Gemini (AI Studio)</div>
+          <div class="card-category"><span class="badge badge-optional">Optional</span> Translation + Manual Image Analysis</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> Used in two modules: (1) <strong>Translation</strong> — gemini-2.5-flash translates UI strings into 40+ locale variants; (2) <strong>Manual Image Analysis</strong> — GeminiVisionManualProvider calls generateContent with image data for admin-triggered second-opinion content scoring.</div>
+        <div class="info-grid">
+          <div class="info-box"><div class="info-box-label">Sign Up</div><div class="info-box-value"><a href="https://aistudio.google.com/app/apikey" target="_blank">aistudio.google.com/apikey</a></div></div>
+          <div class="info-box"><div class="info-box-label">Free Tier</div><div class="info-box-value">15 RPM / 1M tokens/day (Gemini Flash)</div></div>
+          <div class="info-box"><div class="info-box-label">Default Models</div><div class="info-box-value">gemini-2.5-flash (translation &amp; vision)</div></div>
+        </div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">GEMINI_STUDIO_API_KEY</span><span class="env-key-opt">optional</span><span class="env-key-note">Starts with AIza</span></div>
+          <div class="env-key"><span class="env-key-name">GEMINI_TRANSLATION_MODEL</span><span class="env-key-opt">optional</span><span class="env-key-note">Defaults to gemini-2.5-flash</span></div>
+          <div class="env-key"><span class="env-key-name">GEMINI_IMAGE_ANALYSIS_MODEL</span><span class="env-key-opt">optional</span><span class="env-key-note">Model for manual vision analysis</span></div>
+          <div class="env-key"><span class="env-key-name">GEMINI_BASE_URL</span><span class="env-key-opt">optional</span><span class="env-key-note">Defaults to https://generativelanguage.googleapis.com/v1beta</span></div>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Visit <a href="https://aistudio.google.com/app/apikey" target="_blank">aistudio.google.com/app/apikey</a></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Click <strong>Create API Key</strong>. Select a Google Cloud project or create a new one.</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Copy the key (starts with AIza) → GEMINI_STUDIO_API_KEY</div></div>
+        </div>
+        <div class="used-in"><span class="app-tag">api (translation)</span><span class="app-tag">api (manual moderation)</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">⚡</div>
+        <div class="card-meta">
+          <div class="card-name">Groq</div>
+          <div class="card-category"><span class="badge badge-optional">Optional</span> Translation + Manual Image Analysis</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> Ultra-fast LLM inference via the Groq Chat Completions API, used for: (1) <strong>Translation</strong> — fast locale string translation; (2) <strong>Manual Image Analysis</strong> — GroqVisionManualProvider sends base64 image data for admin content review.</div>
+        <div class="info-grid">
+          <div class="info-box"><div class="info-box-label">Sign Up</div><div class="info-box-value"><a href="https://console.groq.com" target="_blank">console.groq.com</a></div></div>
+          <div class="info-box"><div class="info-box-label">Free Tier</div><div class="info-box-value">Rate-limited free tier available</div></div>
+          <div class="info-box"><div class="info-box-label">API Base</div><div class="info-box-value">https://api.groq.com/openai/v1</div></div>
+        </div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">GROQ_API_KEY</span><span class="env-key-opt">optional</span><span class="env-key-note">Starts with gsk_</span></div>
+          <div class="env-key"><span class="env-key-name">GROQ_BASE_URL</span><span class="env-key-opt">optional</span><span class="env-key-note">Defaults to https://api.groq.com/openai/v1</span></div>
+          <div class="env-key"><span class="env-key-name">GROQ_TRANSLATION_MODEL</span><span class="env-key-opt">optional</span><span class="env-key-note">Model for translation tasks</span></div>
+          <div class="env-key"><span class="env-key-name">GROQ_IMAGE_ANALYSIS_MODEL</span><span class="env-key-opt">optional</span><span class="env-key-note">Model for vision analysis (must support images)</span></div>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Sign up at <a href="https://console.groq.com" target="_blank">console.groq.com</a></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Go to <strong>API Keys → Create API Key</strong>. Name it (e.g. "tfp-production").</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Copy the key (starts with gsk_) → GROQ_API_KEY</div></div>
+        </div>
+        <div class="used-in"><span class="app-tag">api (translation)</span><span class="app-tag">api (manual moderation)</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">🤗</div>
+        <div class="card-meta">
+          <div class="card-name">HuggingFace / NLLB-200 (On-device Translation)</div>
+          <div class="card-category"><span class="badge badge-builtin">Self-Hosted Models</span> On-device Inference</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> On-device multilingual translation using Facebook's NLLB-200-distilled-600M model. The image moderation service runs CTranslate2-converted NLLB-200 for low-latency translation without API costs. Models auto-download from HuggingFace Hub on first boot.</div>
+        <div class="info-grid">
+          <div class="info-box"><div class="info-box-label">Models</div><div class="info-box-value">NLLB-200-distilled-600M (CTranslate2)</div></div>
+          <div class="info-box"><div class="info-box-label">Cost</div><div class="info-box-value">Free — runs on your own hardware</div></div>
+          <div class="info-box"><div class="info-box-label">Hub</div><div class="info-box-value"><a href="https://huggingface.co" target="_blank">huggingface.co</a></div></div>
+        </div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">AIP__FEATURE_FLAGS__ALLOW_MODEL_DOWNLOADS</span><span class="env-key-opt">service-side</span><span class="env-key-note">Set to "true" to allow auto-download on first boot</span></div>
+          <div class="env-key"><span class="env-key-name">AIP__MODELS__TRANSLATION__NLLB__CONVERTED_MODEL_DIR</span><span class="env-key-opt">service-side</span><span class="env-key-note">Local path to CTranslate2 NLLB model</span></div>
+        </div>
+        <div class="info-note"><strong>Note:</strong> No API key needed. Models download from HuggingFace Hub automatically on first boot when ALLOW_MODEL_DOWNLOADS=true.</div>
+        <div class="used-in"><span class="app-tag">image-moderation-service</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOCATION -->
+  <div class="section-header" id="location">
+    <div class="section-tag">Maps &amp; Geocoding</div>
+    <h2>📍 Location Providers</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">🗺️</div>
+        <div class="card-meta">
+          <div class="card-name">Geoapify</div>
+          <div class="card-category"><span class="badge badge-optional">Optional</span> Geocoding + Autocomplete + Reverse Geocoding</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> Powers location autocomplete and reverse-geocoding across all apps. When users type a city/venue in opportunity, event, or profile forms, the GeoapifyLocationProvider queries the Geoapify Geocoding API and returns structured city/region/country suggestions.</div>
+        <div class="info-grid">
+          <div class="info-box"><div class="info-box-label">Sign Up</div><div class="info-box-value"><a href="https://www.geoapify.com/get-started-with-maps-api" target="_blank">geoapify.com — Get Started</a></div></div>
+          <div class="info-box"><div class="info-box-label">Free Tier</div><div class="info-box-value">3,000 requests/day free forever</div></div>
+          <div class="info-box"><div class="info-box-label">API Used</div><div class="info-box-value">Geocoding Autocomplete v1, Reverse v1</div></div>
+        </div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">MAP_PROVIDER</span><span class="env-key-opt">optional</span><span class="env-key-note">Set to "geoapify" (default)</span></div>
+          <div class="env-key"><span class="env-key-name">GEOAPIFY_API_KEY</span><span class="env-key-opt">optional</span><span class="env-key-note">API key from Geoapify dashboard</span></div>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Sign up at <a href="https://www.geoapify.com" target="_blank">geoapify.com</a></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Go to <strong>My Projects → Create a Project</strong></div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Under the project, go to <strong>API Keys</strong>. Copy the key → GEOAPIFY_API_KEY</div></div>
+        </div>
+        <div class="used-in"><span class="app-tag">api</span><span class="app-tag">web</span><span class="app-tag">mobile</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">🔍</div>
+        <div class="card-meta">
+          <div class="card-name">Nominatim (OpenStreetMap)</div>
+          <div class="card-category"><span class="badge badge-builtin">Free / No Key</span> Fallback Geocoding</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> A fallback location provider using OpenStreetMap's Nominatim geocoding service. No API key required; uses a configurable User-Agent header per Nominatim policy.</div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">MAP_PROVIDER</span><span class="env-key-opt">optional</span><span class="env-key-note">Set to "nominatim" to use this provider</span></div>
+          <div class="env-key"><span class="env-key-name">NOMINATIM_USER_AGENT</span><span class="env-key-opt">optional</span><span class="env-key-note">Required by Nominatim policy — use your app domain</span></div>
+        </div>
+        <div class="used-in"><span class="app-tag">api</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">🌍</div>
+        <div class="card-meta">
+          <div class="card-name">Cloudflare IP Geolocation Headers</div>
+          <div class="card-category"><span class="badge badge-builtin">Infrastructure</span> Request-Level Geolocation</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> When requests flow through Cloudflare, it injects geolocation headers (CF-IPCountry, CF-Region, CF-City). The API reads these to auto-resolve the user's region and locale, enabling correct i18n defaults and currency selection without requiring manual user input.</div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">CF_COUNTRY_HEADER</span><span class="env-key-opt">optional</span><span class="env-key-note">Default: CF-IPCountry</span></div>
+          <div class="env-key"><span class="env-key-name">CF_REGION_HEADER</span><span class="env-key-opt">optional</span><span class="env-key-note">Default: CF-Region</span></div>
+          <div class="env-key"><span class="env-key-name">CF_CITY_HEADER</span><span class="env-key-opt">optional</span><span class="env-key-note">Default: CF-City</span></div>
+        </div>
+        <div class="info-note"><strong>Automatic when using Cloudflare.</strong> Enable under your Cloudflare zone → Network → IP Geolocation. No API key required.</div>
+        <div class="used-in"><span class="app-tag">api</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OBSERVABILITY -->
+  <div class="section-header" id="observability">
+    <div class="section-tag">Monitoring &amp; Error Tracking</div>
+    <h2>📊 Observability Stack</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">🪲</div>
+        <div class="card-meta">
+          <div class="card-name">Sentry</div>
+          <div class="card-category"><span class="badge badge-optional">Recommended for Production</span> Error Tracking &amp; Performance</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> Real-time error and exception capture across all three apps: (1) <strong>API (Node.js)</strong> — @sentry/node with Prisma integration; (2) <strong>Web (Astro)</strong> — @sentry/astro with Session Replay on client and server; (3) <strong>Mobile (React Native)</strong> — @sentry/react-native for crash reporting. Also uploads source maps during web builds.</div>
+        <div class="info-grid">
+          <div class="info-box"><div class="info-box-label">Sign Up</div><div class="info-box-value"><a href="https://sentry.io/signup/" target="_blank">sentry.io/signup</a></div></div>
+          <div class="info-box"><div class="info-box-label">Free Tier</div><div class="info-box-value">5,000 errors/month, 10k performance events</div></div>
+          <div class="info-box"><div class="info-box-label">SDKs</div><div class="info-box-value">@sentry/node, @sentry/astro, @sentry/react-native</div></div>
+        </div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">SENTRY_DSN</span><span class="env-key-opt">optional</span><span class="env-key-note">Server-side DSN for API and Astro server</span></div>
+          <div class="env-key"><span class="env-key-name">PUBLIC_SENTRY_DSN</span><span class="env-key-opt">optional</span><span class="env-key-note">Client-side DSN for web app (browser &amp; SSR)</span></div>
+          <div class="env-key"><span class="env-key-name">SENTRY_AUTH_TOKEN</span><span class="env-key-opt">optional</span><span class="env-key-note">Required for source map uploads during astro build</span></div>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Sign up at <a href="https://sentry.io/signup/" target="_blank">sentry.io/signup</a> (free tier, no credit card)</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Create two projects: one for <strong>Node.js</strong> (API), one for <strong>Astro / JavaScript</strong> (Web).</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">In each project: <strong>Settings → Client Keys (DSN)</strong>. Copy the DSN URL.</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">For source maps: <strong>Settings → Auth Tokens → Create Token</strong> with project:releases scope → SENTRY_AUTH_TOKEN.</div></div>
+        </div>
+        <div class="used-in"><span class="app-tag">api</span><span class="app-tag">web</span><span class="app-tag">mobile</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">📡</div>
+        <div class="card-meta">
+          <div class="card-name">Axiom</div>
+          <div class="card-category"><span class="badge badge-optional">Recommended for Production</span> Structured Log Aggregation</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> Receives all production API structured logs via Pino's @axiomhq/pino transport. Runs in a worker thread so the main event loop is never blocked. Logs include trace/span correlation IDs for pivoting from a log entry into the OTEL trace. Only active in production when valid token + dataset are configured.</div>
+        <div class="info-grid">
+          <div class="info-box"><div class="info-box-label">Sign Up</div><div class="info-box-value"><a href="https://app.axiom.co" target="_blank">app.axiom.co</a></div></div>
+          <div class="info-box"><div class="info-box-label">Free Tier</div><div class="info-box-value">500 GB ingest/month, 90-day retention</div></div>
+          <div class="info-box"><div class="info-box-label">SDK</div><div class="info-box-value">@axiomhq/pino</div></div>
+        </div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">AXIOM_TOKEN</span><span class="env-key-opt">optional</span><span class="env-key-note">API token from Axiom dashboard</span></div>
+          <div class="env-key"><span class="env-key-name">AXIOM_DATASET</span><span class="env-key-opt">optional</span><span class="env-key-note">Dataset name, e.g. tfp-api-logs</span></div>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Sign up at <a href="https://app.axiom.co" target="_blank">app.axiom.co</a>. Free plan, no credit card.</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Create a <strong>Dataset</strong> (e.g. tfp-api-logs) in the Axiom console.</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Go to <strong>Settings → API Tokens → New API Token</strong>. Set ingest permissions on your dataset.</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">Copy the token → AXIOM_TOKEN. Set AXIOM_DATASET=tfp-api-logs.</div></div>
+        </div>
+        <div class="used-in"><span class="app-tag">api</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">🔭</div>
+        <div class="card-meta">
+          <div class="card-name">OpenTelemetry (OTEL)</div>
+          <div class="card-category"><span class="badge badge-optional">Optional</span> Distributed Tracing</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> Distributed tracing via OTLP HTTP exporter. Instruments Fastify routes, Prisma queries, and Node.js HTTP calls automatically. Trace/span IDs are injected into every Pino log line for log-to-trace correlation. Compatible with Grafana Tempo, Jaeger, Honeycomb, Datadog, etc.</div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">OTEL_ENABLED</span><span class="env-key-opt">optional</span><span class="env-key-note">Enable server-side tracing</span></div>
+          <div class="env-key"><span class="env-key-name">OTEL_EXPORTER_OTLP_ENDPOINT</span><span class="env-key-opt">optional</span><span class="env-key-note">OTLP collector base URL</span></div>
+          <div class="env-key"><span class="env-key-name">OTEL_EXPORTER_OTLP_TRACES_ENDPOINT</span><span class="env-key-opt">optional</span><span class="env-key-note">Specific traces path if different from base</span></div>
+          <div class="env-key"><span class="env-key-name">PUBLIC_OTEL_ENABLED</span><span class="env-key-opt">optional</span><span class="env-key-note">Enable browser-side OTEL tracing</span></div>
+          <div class="env-key"><span class="env-key-name">PUBLIC_OTEL_TRACES_ENDPOINT</span><span class="env-key-opt">optional</span><span class="env-key-note">OTLP HTTP endpoint for browser traces</span></div>
+        </div>
+        <div class="used-in"><span class="app-tag">api</span><span class="app-tag">web</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">📈</div>
+        <div class="card-meta">
+          <div class="card-name">Google Analytics 4 (GA4)</div>
+          <div class="card-category"><span class="badge badge-optional">Optional</span> Web Analytics</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> Web page analytics (page views, user sessions, events). Configured via env flag and measurement ID in the web app. Disabled by default.</div>
+        <div class="info-grid">
+          <div class="info-box"><div class="info-box-label">Sign Up</div><div class="info-box-value"><a href="https://analytics.google.com" target="_blank">analytics.google.com</a></div></div>
+          <div class="info-box"><div class="info-box-label">Cost</div><div class="info-box-value">Free</div></div>
+        </div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">PUBLIC_GA4_ENABLED</span><span class="env-key-opt">optional</span><span class="env-key-note">Set to "true" to enable GA4</span></div>
+          <div class="env-key"><span class="env-key-name">PUBLIC_GA4_MEASUREMENT_ID</span><span class="env-key-opt">optional</span><span class="env-key-note">Format: G-XXXXXXXXXX</span></div>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Go to <a href="https://analytics.google.com" target="_blank">analytics.google.com</a> → Admin → Create Property</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Under the property: <strong>Data Streams → Web → Add stream</strong>. Enter your website URL.</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Copy the Measurement ID (format: G-XXXXXXXXXX) → PUBLIC_GA4_MEASUREMENT_ID</div></div>
+        </div>
+        <div class="used-in"><span class="app-tag">web</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CDN -->
+  <div class="section-header" id="cdn">
+    <div class="section-tag">Image Delivery &amp; CDN</div>
+    <h2>🌐 CDN &amp; Image Delivery</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">🔶</div>
+        <div class="card-meta">
+          <div class="card-name">Cloudflare</div>
+          <div class="card-category"><span class="badge badge-production">Production</span> CDN + DDoS + Image Resizing + IP Geo</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> Primary image delivery CDN fronting Backblaze B2. All user-uploaded images are served via cdn.tfpphotographers.com which proxies to B2 with Cloudflare Image Resizing for on-the-fly transformation. Also provides IP geolocation headers, DDoS protection, and SSL/TLS termination. IMAGE_DELIVERY_PROVIDER=cloudflare tells the storage adapter to rewrite B2 URLs to the Cloudflare CDN domain.</div>
+        <div class="info-grid">
+          <div class="info-box"><div class="info-box-label">Sign Up</div><div class="info-box-value"><a href="https://www.cloudflare.com/sign-up/" target="_blank">cloudflare.com/sign-up</a></div></div>
+          <div class="info-box"><div class="info-box-label">Free Tier</div><div class="info-box-value">Free CDN, DDoS protection, SSL, DNS</div></div>
+          <div class="info-box"><div class="info-box-label">Image Resizing</div><div class="info-box-value">Requires Pro plan or Cloudflare Images</div></div>
+        </div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">IMAGE_DELIVERY_PROVIDER</span><span class="env-key-opt">optional</span><span class="env-key-note">Set to "cloudflare"</span></div>
+          <div class="env-key"><span class="env-key-name">IMAGE_DELIVERY_BASE_URL</span><span class="env-key-opt">optional</span><span class="env-key-note">e.g. https://cdn.tfpphotographers.com</span></div>
+          <div class="env-key"><span class="env-key-name">CLOUDFLARE_IMAGE_DELIVERY_URL</span><span class="env-key-opt">optional</span><span class="env-key-note">Same as above — used in CSP directives</span></div>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Sign up at <a href="https://www.cloudflare.com" target="_blank">cloudflare.com</a>. Add your domain and update nameservers.</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Create a CNAME: <code>cdn → YOUR-B2-BUCKET.s3.us-east-005.backblazeb2.com</code>. Enable Proxied (orange cloud).</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Under <strong>Network → IP Geolocation</strong>, enable it for CF-IPCountry headers.</div></div>
+        </div>
+        <div class="used-in"><span class="app-tag">api</span><span class="app-tag">web</span><span class="app-tag">mobile</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">🖼️</div>
+        <div class="card-meta">
+          <div class="card-name">ImageKit (Alternative Image CDN)</div>
+          <div class="card-category"><span class="badge badge-optional">Optional — Alt Provider</span> Image Optimization CDN</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> An alternative image delivery CDN. When IMAGE_DELIVERY_PROVIDER=imagekit, the storage adapter rewrites B2 URLs to the ImageKit CDN. Provides URL-based image transformation (resize, format, quality) without needing Cloudflare Image Resizing. Referenced as an allowed remote pattern in Astro config.</div>
+        <div class="info-grid">
+          <div class="info-box"><div class="info-box-label">Sign Up</div><div class="info-box-value"><a href="https://imagekit.io/registration/" target="_blank">imagekit.io/registration</a></div></div>
+          <div class="info-box"><div class="info-box-label">Free Tier</div><div class="info-box-value">20 GB bandwidth/month, unlimited transformations</div></div>
+        </div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">IMAGE_DELIVERY_PROVIDER</span><span class="env-key-opt">optional</span><span class="env-key-note">Set to "imagekit"</span></div>
+          <div class="env-key"><span class="env-key-name">IMAGE_DELIVERY_BASE_URL</span><span class="env-key-opt">optional</span><span class="env-key-note">e.g. https://ik.imagekit.io/tfpphotographers</span></div>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Sign up at <a href="https://imagekit.io/registration/" target="_blank">imagekit.io</a></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Connect your Backblaze B2 bucket as an <strong>External Storage</strong> origin in ImageKit settings.</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Copy your ImageKit URL endpoint → IMAGE_DELIVERY_BASE_URL</div></div>
+        </div>
+        <div class="used-in"><span class="app-tag">api</span><span class="app-tag">web</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CACHE -->
+  <div class="section-header" id="cache">
+    <div class="section-tag">Caching &amp; Rate Limiting</div>
+    <h2>⚡ Cache &amp; Rate Limiter</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-logo">🔴</div>
+        <div class="card-meta">
+          <div class="card-name">Redis (ioredis)</div>
+          <div class="card-category"><span class="badge badge-optional">Optional — Required for Multi-Instance Production</span> Shared Cache + Rate Limiting</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-purpose"><strong>Purpose:</strong> When RATE_LIMIT_REDIS_URL is set, the API uses Redis via ioredis as a shared rate-limit store and cache backend. This enforces rate limits consistently across multiple API instances. Falls back to in-memory implementations when Redis is absent (fine for single-instance dev).</div>
+        <div class="info-grid">
+          <div class="info-box"><div class="info-box-label">Managed Options</div><div class="info-box-value"><a href="https://upstash.com" target="_blank">Upstash</a>, <a href="https://redis.com/redis-enterprise-cloud/" target="_blank">Redis Cloud</a></div></div>
+          <div class="info-box"><div class="info-box-label">SDK</div><div class="info-box-value">ioredis</div></div>
+        </div>
+        <div class="env-keys">
+          <div class="env-key"><span class="env-key-name">RATE_LIMIT_REDIS_URL</span><span class="env-key-opt">optional</span><span class="env-key-note">redis://user:pass@host:6379</span></div>
+          <div class="env-key"><span class="env-key-name">RATE_LIMIT_ENABLED</span><span class="env-key-opt">optional</span><span class="env-key-note">Enable rate limiting (defaults to true)</span></div>
+          <div class="env-key"><span class="env-key-name">RATE_LIMIT_GLOBAL_MAX</span><span class="env-key-opt">optional</span><span class="env-key-note">Max requests per window globally</span></div>
+        </div>
+        <div class="info-note"><strong>Falls back to in-memory</strong> when no Redis URL is set. Fine for single-instance deployments.</div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Upstash (serverless):</strong> Sign up at <a href="https://upstash.com" target="_blank">upstash.com</a> → Create Database (free) → Copy Redis URL.</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Self-hosted:</strong> <code>docker run -d -p 6379:6379 redis:alpine</code>. Use URL: redis://localhost:6379</div></div>
+        </div>
+        <div class="used-in"><span class="app-tag">api</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK REF TABLE -->
+  <div class="section-header" id="quickref">
+    <div class="section-tag">Summary</div>
+    <h2>📋 Quick Reference — All Providers</h2>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Provider</th><th>Category</th><th>Key Env Variables</th><th>Required?</th><th>Sign Up</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>PostgreSQL + Prisma</strong></td><td>Database</td><td><code>DATABASE_URL</code></td><td><span class="badge badge-required">Required</span></td><td>Self-hosted / any PG provider</td></tr>
+        <tr><td><strong>Backblaze B2</strong></td><td>Storage</td><td><code>B2_ACCESS_KEY_ID</code>, <code>B2_SECRET_ACCESS_KEY</code>, <code>B2_BUCKET_NAME</code></td><td><span class="badge badge-production">Production</span></td><td><a href="https://backblaze.com" target="_blank">backblaze.com</a></td></tr>
+        <tr><td><strong>Resend</strong></td><td>Email</td><td><code>RESEND_API_KEY</code>, <code>EMAIL_FROM</code></td><td><span class="badge badge-production">Production</span></td><td><a href="https://resend.com" target="_blank">resend.com</a></td></tr>
+        <tr><td><strong>Google OAuth</strong></td><td>Auth</td><td><code>GOOGLE_OAUTH_CLIENT_ID</code>, <code>GOOGLE_OAUTH_CLIENT_SECRET</code></td><td><span class="badge badge-optional">Optional</span></td><td><a href="https://console.cloud.google.com" target="_blank">Google Cloud Console</a></td></tr>
+        <tr><td><strong>Apple Sign In</strong></td><td>Auth</td><td><code>APPLE_OAUTH_CLIENT_ID</code>, <code>APPLE_OAUTH_PRIVATE_KEY</code></td><td><span class="badge badge-optional">Optional</span></td><td><a href="https://developer.apple.com" target="_blank">Apple Developer</a></td></tr>
+        <tr><td><strong>Meta (Facebook) OAuth</strong></td><td>Auth</td><td><code>META_OAUTH_CLIENT_ID</code>, <code>META_OAUTH_CLIENT_SECRET</code></td><td><span class="badge badge-optional">Optional</span></td><td><a href="https://developers.facebook.com" target="_blank">Meta for Developers</a></td></tr>
+        <tr><td><strong>TFP AIP (Remote HTTP)</strong></td><td>Moderation — Primary</td><td><code>MODERATION_REMOTE_URL</code>, <code>MODERATION_REMOTE_AUTH_TOKEN</code></td><td><span class="badge badge-production">Primary</span></td><td>Self-hosted (this repo)</td></tr>
+        <tr><td><strong>Google Cloud Vision</strong></td><td>Moderation — Alt</td><td><code>GOOGLE_APPLICATION_CREDENTIALS</code></td><td><span class="badge badge-optional">Optional</span></td><td><a href="https://console.cloud.google.com" target="_blank">Google Cloud Console</a></td></tr>
+        <tr><td><strong>AWS Rekognition</strong></td><td>Moderation — Alt</td><td><code>AWS_ACCESS_KEY_ID</code>, <code>AWS_SECRET_ACCESS_KEY</code></td><td><span class="badge badge-optional">Optional</span></td><td><a href="https://aws.amazon.com" target="_blank">AWS Console</a></td></tr>
+        <tr><td><strong>Google Gemini</strong></td><td>AI / LLM</td><td><code>GEMINI_STUDIO_API_KEY</code></td><td><span class="badge badge-optional">Optional</span></td><td><a href="https://aistudio.google.com/app/apikey" target="_blank">aistudio.google.com</a></td></tr>
+        <tr><td><strong>Groq</strong></td><td>AI / LLM</td><td><code>GROQ_API_KEY</code></td><td><span class="badge badge-optional">Optional</span></td><td><a href="https://console.groq.com" target="_blank">console.groq.com</a></td></tr>
+        <tr><td><strong>HuggingFace / NLLB</strong></td><td>AI — On-device</td><td><code>AIP__FEATURE_FLAGS__ALLOW_MODEL_DOWNLOADS</code></td><td><span class="badge badge-builtin">Self-hosted</span></td><td>No sign-up (auto-download)</td></tr>
+        <tr><td><strong>Geoapify</strong></td><td>Location</td><td><code>GEOAPIFY_API_KEY</code></td><td><span class="badge badge-optional">Optional</span></td><td><a href="https://www.geoapify.com" target="_blank">geoapify.com</a></td></tr>
+        <tr><td><strong>Nominatim (OSM)</strong></td><td>Location — Fallback</td><td><code>NOMINATIM_USER_AGENT</code></td><td><span class="badge badge-builtin">No Key</span></td><td>No sign-up needed</td></tr>
+        <tr><td><strong>Cloudflare</strong></td><td>CDN + IP Geo</td><td><code>IMAGE_DELIVERY_BASE_URL</code>, <code>CF_COUNTRY_HEADER</code></td><td><span class="badge badge-production">Production</span></td><td><a href="https://cloudflare.com" target="_blank">cloudflare.com</a></td></tr>
+        <tr><td><strong>ImageKit</strong></td><td>Image CDN — Alt</td><td><code>IMAGE_DELIVERY_PROVIDER</code>, <code>IMAGE_DELIVERY_BASE_URL</code></td><td><span class="badge badge-optional">Optional</span></td><td><a href="https://imagekit.io" target="_blank">imagekit.io</a></td></tr>
+        <tr><td><strong>Sentry</strong></td><td>Error Tracking</td><td><code>SENTRY_DSN</code>, <code>PUBLIC_SENTRY_DSN</code>, <code>SENTRY_AUTH_TOKEN</code></td><td><span class="badge badge-optional">Recommended</span></td><td><a href="https://sentry.io" target="_blank">sentry.io</a></td></tr>
+        <tr><td><strong>Axiom</strong></td><td>Log Aggregation</td><td><code>AXIOM_TOKEN</code>, <code>AXIOM_DATASET</code></td><td><span class="badge badge-optional">Recommended</span></td><td><a href="https://app.axiom.co" target="_blank">app.axiom.co</a></td></tr>
+        <tr><td><strong>OpenTelemetry</strong></td><td>Distributed Tracing</td><td><code>OTEL_ENABLED</code>, <code>OTEL_EXPORTER_OTLP_ENDPOINT</code></td><td><span class="badge badge-optional">Optional</span></td><td>Bring your own collector</td></tr>
+        <tr><td><strong>Google Analytics 4</strong></td><td>Web Analytics</td><td><code>PUBLIC_GA4_ENABLED</code>, <code>PUBLIC_GA4_MEASUREMENT_ID</code></td><td><span class="badge badge-optional">Optional</span></td><td><a href="https://analytics.google.com" target="_blank">analytics.google.com</a></td></tr>
+        <tr><td><strong>Redis (ioredis)</strong></td><td>Cache + Rate Limit</td><td><code>RATE_LIMIT_REDIS_URL</code></td><td><span class="badge badge-optional">Optional</span></td><td><a href="https://upstash.com" target="_blank">Upstash</a> or self-host</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</main>
+<footer>
+  <div class="footer-inner">
+    Generated from live codebase analysis &mdash; TFP Photographers Platform &copy; 2026 &nbsp;|&nbsp;
+    Apps: <strong>api</strong> (Fastify + Prisma), <strong>web</strong> (Astro), <strong>mobile</strong> (Expo + React Native), <strong>tfp-image-moderation-service</strong> (Python FastAPI), <strong>tfp-collage-service</strong> (Fastify)
+  </div>
+</footer>
+</body>
+</html>
