@@ -3,7 +3,7 @@
 This workspace deploys three cooperating services:
 
 - `tfpphotographers`: Astro/Fastify main application.
-- `tfp-image-moderation-service`: internal AI moderation API and optional moderation worker.
+- `tfp-moderation-service`: internal AI moderation API and optional moderation worker.
 - `tfp-collage-service`: collage API and optional collage worker.
 
 ## Required Production Secrets
@@ -54,7 +54,7 @@ bash scripts/vps/deploy-both-services.sh
 For service-local deployment:
 
 ```bash
-bash tfp-image-moderation-service/scripts/vps/deploy-interactive.sh
+bash tfp-moderation-service/scripts/vps/deploy-interactive.sh
 bash tfp-collage-service/scripts/vps/deploy-interactive.sh
 ```
 

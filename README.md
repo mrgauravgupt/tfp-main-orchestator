@@ -51,7 +51,7 @@ The orchestration layer coordinates three main subprojects, each serving a disti
   - Stateful background worker polling approved opportunities, applying focus-metadata, stitching layouts to a 16:9 canvas, and writing back to B2/S3.
 * **Documentation**: See [tfp-collage-service/README.md](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-collage-service/README.md).
 
-### 3. [TFP Image Moderation Service](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-image-moderation-service)
+### 3. [TFP Moderation Service](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-moderation-service)
 * **Role**: Signal-only AI inference engine for automated moderation and translation.
 * **Tech Stack**: FastAPI (Python), Uvicorn, Nginx, CTranslate2.
 * **Models Hosted**:
@@ -62,7 +62,7 @@ The orchestration layer coordinates three main subprojects, each serving a disti
   - `rules` (Local keyword/regex matching engine)
   - `nllb` (CTranslate2 distilled translation)
 * **Key Features**: High-performance image and text analysis, translation, external PostgreSQL-driven moderation job worker.
-* **Documentation**: See [tfp-image-moderation-service/README.md](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-image-moderation-service/README.md).
+* **Documentation**: See [tfp-moderation-service/README.md](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-moderation-service/README.md).
 
 ---
 
@@ -74,7 +74,7 @@ The orchestrator deploys UAT services to the Contabo VPS behind Nginx reverse pr
 | :--- | :---: | :---: | :--- | :--- | :--- |
 | **Main App / Web** | `4321` | — | Node.js / Astro SSR | Dev / UAT / Prod | `tfp-web` |
 | **Main App / API** | `4000` | — | Node.js / Fastify | Dev / UAT / Prod | `tfp-api` |
-| **Moderation Service** | `7001` | `7002` | Python / FastAPI / Uvicorn | `it` (dev) / `uat` / `prod` | `tfp-image-moderation-service` |
+| **Moderation Service** | `7001` | `7002` | Python / FastAPI / Uvicorn | `it` (dev) / `uat` / `prod` | `tfp-moderation-service` |
 | **Collage Service** | `7003` | `7004` | Node.js / Fastify | `it` (dev) / `uat` / `prod` | `tfp-collage-service` |
 
 ### VPS vs OCI Hosts
@@ -199,8 +199,8 @@ To run the helper microservices locally:
 cd tfp-collage-service
 pnpm dev
 
-# Run Image Moderation Service locally (runs FastAPI app on port 7001)
-cd tfp-image-moderation-service
+# Run Moderation Service locally (runs FastAPI app on port 7001)
+cd tfp-moderation-service
 uv run ai-inference-api
 ```
 
