@@ -160,9 +160,9 @@ Host-side checks:
 
 ```bash
 ssh root@13.140.189.236
-systemctl status tfp-image-moderation-service --no-pager
+systemctl status tfp-moderation-service --no-pager
 systemctl status tfp-collage-service --no-pager
-journalctl -u tfp-image-moderation-service -n 100 --no-pager
+journalctl -u tfp-moderation-service -n 100 --no-pager
 journalctl -u tfp-collage-service -n 100 --no-pager
 nginx -t
 ```

@@ -2,8 +2,8 @@
 	path = tfp-collage-service
 	url = git@github.com:mrgauravgupt/tfp-collage-service.git
 
-[submodule "tfp-image-moderation-service"]
-	path = tfp-image-moderation-service
+[submodule "tfp-moderation-service"]
+	path = tfp-moderation-service
 	url = git@github.com:mrgauravgupt/ai-inference-platform.git
 
 [submodule "tfpphotographers"]

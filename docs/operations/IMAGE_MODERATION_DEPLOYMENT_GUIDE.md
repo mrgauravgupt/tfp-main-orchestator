@@ -1,23 +1,23 @@
 # Image Moderation Deployment Guide
 
-This guide documents the current Contabo UAT deployment flow for `tfp-image-moderation-service`.
+This guide documents the current Contabo UAT deployment flow for `tfp-moderation-service`.
 
 ## Target
 
-- Service repo: `tfp-image-moderation-service`
+- Service repo: `tfp-moderation-service`
 - UAT host: `13.140.189.236`
 - SSH user: `root`
 - Public service URL: `http://13.140.189.236:7001`
 - Private app port: `7002`
-- Systemd service: `tfp-image-moderation-service`
-- Deploy wrapper: `tfp-image-moderation-service/scripts/vps/deploy-prod-7001.sh`
+- Systemd service: `tfp-moderation-service`
+- Deploy wrapper: `tfp-moderation-service/scripts/vps/deploy-prod-7001.sh`
 
 ## 1. Review Local State
 
 ```bash
 cd /Users/hexa/Desktop/tfp-main-orchestator
 git status --short --branch
-git -C tfp-image-moderation-service status --short --branch
+git -C tfp-moderation-service status --short --branch
 ```
 
 If both the nested service and root gitlink changed, commit the nested service first, then commit the root gitlink.
@@ -25,12 +25,12 @@ If both the nested service and root gitlink changed, commit the nested service f
 ## 2. Validate Policy And Tests
 
 ```bash
-cd /Users/hexa/Desktop/tfp-main-orchestator/tfp-image-moderation-service
+cd /Users/hexa/Desktop/tfp-main-orchestator/tfp-moderation-service
 uv run python - <<'PY'
 from pathlib import Path
-from tfp_image_moderation_service.moderation_policy import RawEnvelopePolicyEvaluator
+from tfp_moderation_service.moderation_policy import RawEnvelopePolicyEvaluator
 
-path = Path("src/tfp_image_moderation_service/policies/policy_ai_inference_raw_envelope.yml")
+path = Path("src/tfp_moderation_service/policies/policy_ai_inference_raw_envelope.yml")
 policy = RawEnvelopePolicyEvaluator.from_file(path)
 print(f"loaded policy: {policy.policy_id} v{policy.version}")
 PY
@@ -43,10 +43,10 @@ For a quick policy-only deploy, at minimum run the policy load check.
 ## 3. Commit And Push The Service
 
 ```bash
-cd /Users/hexa/Desktop/tfp-main-orchestator/tfp-image-moderation-service
+cd /Users/hexa/Desktop/tfp-main-orchestator/tfp-moderation-service
 git fetch origin
 git status --short --branch
-git add config/base.yaml src/tfp_image_moderation_service/policies/policy_ai_inference_raw_envelope.yml tests/unit/test_updated_policy.py
+git add config/base.yaml src/tfp_moderation_service/policies/policy_ai_inference_raw_envelope.yml tests/unit/test_updated_policy.py
 git commit -m "fix(moderation): tune CLIP sexual act policy"
 git push origin main
 ```
@@ -59,7 +59,7 @@ Adjust the staged files and commit message to match the actual change.
 cd /Users/hexa/Desktop/tfp-main-orchestator
 git fetch origin
 git status --short --branch
-git add tfp-image-moderation-service docs/operations/IMAGE_MODERATION_DEPLOYMENT_GUIDE.md
+git add tfp-moderation-service docs/operations/IMAGE_MODERATION_DEPLOYMENT_GUIDE.md
 git commit -m "docs(moderation): document deployment flow"
 git push origin main
 ```
@@ -69,7 +69,7 @@ git push origin main
 Use the service-local deploy wrapper. It loads root deploy env when available and targets the current Contabo UAT service host by default.
 
 ```bash
-cd /Users/hexa/Desktop/tfp-main-orchestator/tfp-image-moderation-service
+cd /Users/hexa/Desktop/tfp-main-orchestator/tfp-moderation-service
 bash scripts/vps/deploy-prod-7001.sh uat
 ```
 
@@ -85,7 +85,7 @@ bash scripts/vps/deploy-prod-7001.sh uat
 ```bash
 curl -fsS http://13.140.189.236:7001/health/live
 
-cd /Users/hexa/Desktop/tfp-main-orchestator/tfp-image-moderation-service
+cd /Users/hexa/Desktop/tfp-main-orchestator/tfp-moderation-service
 bash scripts/vps/diagnose-prod.sh --since "30 minutes ago" --lines 300
 ```
 
@@ -103,14 +103,14 @@ Host-level fallback:
 
 ```bash
 ssh root@13.140.189.236 \
-  'rm -rf /srv/tfp-image-moderation-service/current/.runtime/*/cache/image-responses/* && systemctl restart tfp-image-moderation-service'
+  'rm -rf /srv/tfp-moderation-service/current/.runtime/*/cache/image-responses/* && systemctl restart tfp-moderation-service'
 ```
 
 Use the API path when the internal API key is available. Use the host-level fallback when the local shell does not have the token.
 
 ## 8. Retest Images
 
-After cache clear, rerun the same images through `/api/v1/analyze-image` or the folder moderation launcher so the new CLIP prompts and policy rules are evaluated from fresh inference output.
+After cache clear, rerun the same images through `/api/v1/analyze/image` or the folder moderation launcher so the new CLIP prompts and policy rules are evaluated from fresh inference output.
 
 Expected new CLIP fields live under:
 
