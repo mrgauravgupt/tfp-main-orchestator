@@ -48,8 +48,8 @@ export DEPLOY_PORT="${DEPLOY_PORT:-22}"
 export AIP_DEPLOY_HOST="${AIP_DEPLOY_HOST:-$DEPLOY_HOST}"
 export AIP_DEPLOY_USER="${AIP_DEPLOY_USER:-$DEPLOY_USER}"
 export AIP_DEPLOY_PORT="${AIP_DEPLOY_PORT:-$DEPLOY_PORT}"
-export AIP_DEPLOY_PATH="${AIP_DEPLOY_PATH:-/srv/tfp-image-moderation-service/current}"
-export AIP_SERVICE_NAME="${AIP_SERVICE_NAME:-tfp-image-moderation-service}"
+export AIP_DEPLOY_PATH="${AIP_DEPLOY_PATH:-/srv/tfp-moderation-service/current}"
+export AIP_SERVICE_NAME="${AIP_SERVICE_NAME:-tfp-moderation-service}"
 export AIP_NGINX_PORT="${AIP_NGINX_PORT:-7001}"
 export AIP_APP_PORT="${AIP_APP_PORT:-7002}"
 export AIP_EXPOSE_PLAYGROUND_UI="${AIP_EXPOSE_PLAYGROUND_UI:-auto}"
@@ -144,7 +144,7 @@ EOF
 }
 
 echo "═══════════════════════════════════════════════════════════════════════════════"
-echo "  VPS Deployment: TFP Image Moderation Service + TFP Collage Service"
+echo "  VPS Deployment: TFP Moderation Service + TFP Collage Service"
 echo "═══════════════════════════════════════════════════════════════════════════════"
 echo ""
 echo "Deployment Configuration:"
@@ -153,7 +153,7 @@ echo "  User:              $DEPLOY_USER"
 echo "  Port:              $DEPLOY_PORT"
 echo "  Apply migrations:  $APPLY_TFP_MIGRATIONS"
 echo ""
-echo "TFP Image Moderation Service:"
+echo "TFP Moderation Service:"
 echo "  Deploy:            $DEPLOY_AI"
 echo "  Path:              $AIP_DEPLOY_PATH"
 echo "  Service:           $AIP_SERVICE_NAME"
@@ -183,9 +183,9 @@ fi
 
 # Deploy TFP Image Moderation Service and DB-driven workers.
 if [[ "$DEPLOY_AI" == "true" ]]; then
-  echo "📦 Deploying TFP Image Moderation Service..."
-  bash "$ROOT_DIR/tfp-image-moderation-service/scripts/vps/deploy-interactive.sh" "$DEPLOY_ENV"
-  echo "✅ TFP Image Moderation Service deployment complete"
+  echo "📦 Deploying TFP Moderation Service..."
+  bash "$ROOT_DIR/tfp-moderation-service/scripts/vps/deploy-interactive.sh" "$DEPLOY_ENV"
+  echo "✅ TFP Moderation Service deployment complete"
   echo ""
 fi
 
@@ -209,5 +209,5 @@ echo "  Health Check:  http://$DEPLOY_HOST:$AIP_NGINX_PORT/health/live"
 echo ""
 echo "To deploy only one service, use:"
 echo "  DEPLOY_AI=false bash $0        # Deploy only tfp-collage-service"
-echo "  DEPLOY_COLLAGE=false bash $0   # Deploy only tfp-image-moderation-service"
+echo "  DEPLOY_COLLAGE=false bash $0   # Deploy only tfp-moderation-service"
 echo ""
