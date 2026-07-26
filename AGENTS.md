@@ -1,5 +1,12 @@
 # Workspace-Wide Agent Notes
 
+## Fast Orientation
+
+- Read `RULES.md` for non-negotiable deployment and event-outbox safety rules.
+- Read `MEMORY.md` for the current cross-repository architecture and runtime-evidence baseline.
+- For product work, then read `tfpphotographers/docs/agent-index.json` and the nested repository `AGENTS.md`.
+- The durable-event and release-gate guide is `tfpphotographers/docs/architecture/EVENT_OUTBOX_AND_DEPLOYMENT_READINESS.md`.
+
 ## Scope
 - Primary workspace root: `/Users/hexa/Desktop/tfp-main-orchestator`.
 - Main application workspace: `/Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers`.
