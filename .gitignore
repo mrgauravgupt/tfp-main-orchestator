@@ -9,6 +9,11 @@ tmp/
 tfp-legacy/
 .run-state/
 
+# Local agent setup backups and temporary analysis
+.agent-setup-backup/
+.agent-tmp/
+.gemini/local/
+
 # Local deploy secrets
 .env.deploy*.local
 

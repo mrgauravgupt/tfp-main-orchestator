@@ -1,0 +1,23 @@
+# Sensitive configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+**/credentials.json
+**/service-account*.json
+**/oauth_creds.json
+**/mcp_config.json
+**/.secrets/**
+**/secrets/**
+
+# Generated and local-only artifacts
+**/node_modules/**
+**/dist/**
+**/build/**
+**/coverage/**
+**/.cache/**
+.agent-setup-backup/**
+.agent-tmp/**
