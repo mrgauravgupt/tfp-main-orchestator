@@ -190,3 +190,11 @@ ps aux | grep node
 # Force stop all running TFP services
 pnpm app:stop
 ```
+
+---
+
+## 7. Pre-Commit & Due Diligence Validation
+Before finalizing any code modification or completing a feature task, agents MUST consult and follow the detailed checklist located at:
+`tfpphotographers/docs/operations/AGENT_DUE_DILIGENCE.md`
+
+This ensures tests pass, architectures align, and accessibility/internationalization criteria are met before commits are generated.

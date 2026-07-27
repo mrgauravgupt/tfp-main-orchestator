@@ -6,6 +6,7 @@
 - Read `MEMORY.md` for the current cross-repository architecture and runtime-evidence baseline.
 - For product work, then read `tfpphotographers/docs/agent-index.json` and the nested repository `AGENTS.md`.
 - The durable-event and release-gate guide is `tfpphotographers/docs/architecture/EVENT_OUTBOX_AND_DEPLOYMENT_READINESS.md`.
+- The required pre-commit checks and validation flow is in `tfpphotographers/docs/operations/AGENT_DUE_DILIGENCE.md`.
 
 ## Scope
 - Primary workspace root: `/Users/hexa/Desktop/tfp-main-orchestator`.
