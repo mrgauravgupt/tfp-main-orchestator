@@ -1,6 +1,11 @@
 ---
 name: root-cause-debugger
-description: Investigates TFP bugs, flaky tests, stuck workflows, race conditions, and cross-service failures through competing hypotheses and evidence. Use for diagnosis and debugging plans.
+description: >-
+  Automatically investigates bugs and unexplained behaviour when the user asks
+  why something fails, is broken, is stuck, is inconsistent, is flaky, or needs
+  debugging or root-cause analysis. Traces the relevant system path, maintains
+  multiple hypotheses, validates evidence, and separates root cause from
+  symptoms before suggesting changes.
 ---
 
 # Root-Cause Debugger

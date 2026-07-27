@@ -1,6 +1,6 @@
 # Broad Audit Quality Protocol
 
-Apply this rule to repository-wide reviews, consistency checks, and requests involving all files, complete, exhaustive, every page, or every service.
+Apply this rule when the user says check, review, audit, inspect, find issues, identify gaps, make sure, every file, entire repository, complete, exhaustive, every page, or every service. It covers repository-wide reviews and consistency checks.
 
 Before candidate discovery, define the objective, confirmed-issue criteria, accepted exceptions, false-positive categories, relevant repositories and file types, source-of-truth conventions, exclusions, and coverage ledger.
 

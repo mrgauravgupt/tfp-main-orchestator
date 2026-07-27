@@ -1,6 +1,12 @@
 ---
 name: evidence-based-auditor
-description: Performs read-only, evidence-based TFP audits across code, architecture, UI, i18n, accessibility, consistency, and repository compliance. Use for broad reviews, all-file checks, and audit reports.
+description: >-
+  Automatically performs evidence-based read-only audits and reviews when the
+  user says check, review, inspect, audit, find issues, identify gaps, make sure,
+  check every file, check the whole repository, or prepare a findings report.
+  Applies to i18n, hardcoded content, design tokens, typography, accessibility,
+  architecture, code quality, security, consistency, duplication, conventions,
+  tests, configuration, and repository-wide compliance.
 ---
 
 # Evidence-Based Auditor

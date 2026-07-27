@@ -8,7 +8,8 @@ Use for investigations and reviews where source must not change.
 4. Build a coverage ledger before scanning.
 5. Discover candidates with appropriate semantic and mechanical methods.
 6. Validate each reported finding in context; classify rejected and unresolved candidates explicitly.
-7. Reconcile coverage and re-review severe findings.
-8. Generate only approved report artifacts, record final status, and state limitations.
+7. Stop and reassess if evidence contradicts definitions, generated files dominate, scope expands, or read-only integrity is threatened.
+8. Reconcile coverage and re-review severe findings.
+9. Generate only approved report artifacts, record final status, and reconcile requested audit requirements with evidence and limitations.
 
 Do not implement fixes, run codemods, reformat source, update dependencies, or create commits.

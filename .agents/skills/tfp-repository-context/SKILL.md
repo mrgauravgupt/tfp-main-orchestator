@@ -1,6 +1,6 @@
 ---
 name: tfp-repository-context
-description: Provides TFP repository boundaries, sources of truth, validation conventions, and cross-repository safety guidance for engineering tasks.
+description: Automatically provides TFP repository boundaries, sources of truth, validation conventions, and cross-repository safety guidance for ordinary requests involving the TFP web, API, mobile, collage, moderation, shared packages, tests, QA, deployment, or cross-repository work.
 ---
 
 # TFP Repository Context

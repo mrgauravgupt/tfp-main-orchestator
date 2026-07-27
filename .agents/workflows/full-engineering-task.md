@@ -1,6 +1,17 @@
 # Full Engineering Task
 
-Run the task through these phases and show the gate output before moving to the next phase.
+Run the task through these phases and show concise gate output before moving to the next phase. Hidden reasoning is neither requested nor exposed; use observable evidence and decisions instead.
+
+## Mandatory quality-gate outputs
+
+For every non-trivial task, record:
+
+- **Gate A — Task contract:** mode, objective, scope, permitted edits, success criteria, required evidence, and non-goals.
+- **Gate B — Context brief:** applicable instructions, repository state, architecture, sources of truth, abstractions, boundaries, validation mechanisms, and known unknowns. Do not scan broadly or edit until this is grounded in inspected files.
+- **Gate C — Evidence/hypothesis ledger:** audit classifications and coverage; debugging hypotheses with confirming/contradicting evidence; or implementation current/intended behaviour, contracts, alternatives, and compatibility.
+- **Gate D — Execution plan:** selected approach, rationale, affected files/components, steps, risks, validation, and stop-and-reassess conditions. Do not edit source before this gate.
+- **Gate E — Verification ledger:** requirement, evidence, validation performed, result, and remaining unknowns.
+- **Gate F — Independent review:** challenge assumptions, missed scope, false positives, regression risk, unnecessary work, weak validation, and unsupported claims.
 
 ## 1. Classify
 
@@ -34,6 +45,6 @@ Run focused checks first, then broader checks proportional to risk. Use browser,
 
 Compare results with the original hypothesis. Investigate contradictions and newly affected surfaces before claiming success.
 
-## 9. Report
+## 9. Report and reconcile
 
-Report files changed, evidence, commands and results, coverage, confirmed findings, rejected or uncertain candidates, external blockers, and remaining risks. Never imply runtime or production proof from static checks alone.
+Reconcile every requirement with implementation or finding evidence, validation evidence, status, and limitation. Report files changed, commands and results, coverage, confirmed findings, rejected or uncertain candidates, external blockers, and remaining risks. Never imply runtime or production proof from static checks alone.

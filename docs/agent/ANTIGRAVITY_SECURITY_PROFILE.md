@@ -6,6 +6,10 @@ Enable Strict Mode, terminal sandboxing, and workspace isolation. Keep sandbox n
 
 Strict Mode forces review for terminal, browser JavaScript, and artifact execution; it also disables non-workspace file access and enables sandboxing with network denied. Verify effective settings in the Antigravity UI after reopening the project.
 
+Use **Planning Mode** as the normal Antigravity mode and keep **Artifact Review** on **Request Review**. Reserve Fast Mode for genuinely trivial, localized tasks. For multi-file, architecture, security, database, migration, deployment, or cross-repository work, review the implementation plan before edits begin.
+
 ## Repository protections
 
 `.geminiignore` and `.gitignore` exclude local credential and agent-backup paths. They supplement, but do not replace, UI permission boundaries. Never place secrets in reports, rules, workflows, skills, or generated documentation.
+
+Keep implementation-plan review enabled for multi-file, architecture, security, database, migration, deployment, and cross-repository work. Review gates should require observable evidence and plans, never hidden reasoning.

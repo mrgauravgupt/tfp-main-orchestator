@@ -11,3 +11,5 @@
 | Deployment | Redacted configuration evidence, health/smoke checks, and rollback evidence; static checks alone are insufficient |
 
 Use the actual scripts in `COMMAND_CATALOGUE.md`; report unavailable runtime, browser, device, infrastructure, or production proof separately.
+
+A passing build, formatter, typecheck, or isolated test is only one layer of evidence. Completion requires requirement-by-requirement reconciliation and proportional validation of the affected surface.

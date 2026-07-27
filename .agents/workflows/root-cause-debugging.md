@@ -8,4 +8,5 @@ Use for bugs, flaky behaviour, failed tests, incidents, and unexplained state. D
 4. Maintain multiple hypotheses; list confirming and contradicting evidence for each.
 5. Run focused non-destructive checks that discriminate between hypotheses.
 6. Separate root cause, trigger, symptom, amplifying condition, and unrelated observations.
-7. Produce the smallest safe fix plan, regression test strategy, confidence, and remaining risks.
+7. Stop and reassess when evidence invalidates a hypothesis, an unexpected contract changes, or the investigation requires secrets or destructive operations.
+8. Produce the smallest safe fix plan, regression test strategy, requirement reconciliation, confidence, and remaining risks.

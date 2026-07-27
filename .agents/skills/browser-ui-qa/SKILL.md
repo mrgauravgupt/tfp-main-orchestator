@@ -1,6 +1,9 @@
 ---
 name: browser-ui-qa
-description: Performs browser-based TFP UI, responsive, interaction, accessibility, visual consistency, and console/network verification. Use when tasks affect pages, components, forms, navigation, responsive layouts, or browser runtime behaviour.
+description: >-
+  Automatically performs browser and UI verification when a request affects
+  pages, forms, layouts, responsiveness, desktop, tablet, mobile, accessibility,
+  navigation, interaction, browser runtime, console errors, or visual behaviour.
 ---
 
 # Browser UI QA
