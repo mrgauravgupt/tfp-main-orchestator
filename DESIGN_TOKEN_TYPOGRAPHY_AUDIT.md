@@ -6,6 +6,65 @@
 
 **Method:** source-of-truth tracing, generator/output reconciliation, deterministic repository gates, and contextual review of each reported candidate. This is a static audit; it does not claim browser or email-client rendering proof.
 
+## Remediation update — 2026-07-29
+
+**Final verdict:** the confirmed SSOT/design-token violations identified by this audit are remediated and the complete design-token gate is green. The implementation is build- and typecheck-ready, and the affected web surfaces passed desktop, tablet, and mobile browser comparison without a material visual regression.
+
+The original findings remain below as the evidence record. Their current status is:
+
+| Original finding | Status | Result |
+| --- | --- | --- |
+| Three failing web token checks | Resolved | Both letter-spacing values now use named generated roles; icon CSS moved to the shared SCSS component layer. |
+| Mobile audit blind spots and 104 exact scale duplicates | Resolved | Audit now covers token-scale spacing/radius and numeric letter-spacing; exact matches were migrated to `spacing`, `radii`, and typography tokens. |
+| Email brand-token duplication | Resolved | Email presentation tokens derive shared brand colors from `shared/design-tokens` while retaining inline email CSS for client compatibility. |
+| Incomplete generated typography projection | Resolved for confirmed shared roles | Shared line-height and named web/mobile letter-spacing roles now generate into TypeScript and SCSS outputs. |
+| Opportunity presentation duplication | Resolved | Category/compensation labels, budget formatting, preview limit, and typed public status variants now have one web/shared contract. |
+| Full raw web typography inventory | Classification backlog, not a confirmed defect list | No mechanical 565-declaration rewrite was performed. Responsive/display values require semantic ownership decisions; bulk substitution would be high-risk design churn. |
+
+### Impacted areas
+
+- Shared token authoring and generation: JSON source, generated TypeScript, generated SCSS, line-height, and letter-spacing roles.
+- Web presentation: typography variables, recommendation/home roles, global icon styles, opportunity cards/detail/list/create labels, and quick-request client-script ownership.
+- Native presentation: shared spacing/radius consumption across 29 mobile presentation files plus mobile letter-spacing ownership.
+- Backend-rendered UI: transactional email brand colors and email-only presentation values.
+- Shared contracts/tests: typed public content statuses, opportunity presentation tests, and structured-location activation fixtures.
+- Not impacted: database schema/migrations, API routes, durable event/outbox behavior, storage, moderation, or deployment configuration.
+
+### Before/after browser evidence
+
+Routes `/en-in` and `/en-in/opportunities` were captured at 1440×900, 1024×768, and 390×844 after restarting both FE and BE. All six after-state checks returned HTTP 200 with no console errors, no page errors, no horizontal overflow, `Inter` at 16px, and three opportunity cards where expected.
+
+- Tablet home was byte-identical before/after.
+- Remaining RMS pixel deltas were 0.048–0.247 on a 0–255 channel scale; inspection found no geometry, hierarchy, wrapping, or component regression.
+- Evidence is stored under `tfpphotographers/test-results/reports/ssot-token-baseline/` as paired `before-*` and `after-*` screenshots.
+
+### Post-remediation validation
+
+```text
+bash ./scripts/pnpm-node20.sh qa:design-tokens
+# passed: 336 web files, 113 mobile files, 97 mobile implementation files, inline assets
+
+bash ./scripts/pnpm-node20.sh typecheck
+# passed across the monorepo; web: 0 errors, 0 warnings, 23 pre-existing hints
+
+bash ./scripts/pnpm-node20.sh build
+# passed: shared, config, storage, i18n, database, moderation, email, uploads, API, and web
+
+bash ./scripts/pnpm-node20.sh --filter email test
+# 12/12 passed
+
+bash ./scripts/pnpm-node20.sh --filter shared test
+# 39/39 passed
+
+bash ./scripts/pnpm-node20.sh --filter mobile test
+# 104/104 passed
+
+bash ./scripts/pnpm-node20.sh --filter mobile run doctor
+# 18/18 passed
+```
+
+The repository-wide web test command still reports 11 pre-existing search/listing/home contract failures in files outside this remediation, and the architecture lint reports the pre-existing `middleware.ts` 464-line result against a 425-line cap. ESLint itself passes. These baseline items prevent claiming that every unrelated repository gate is green, but they are not regressions from this SSOT change and should be handled as a separate bounded UI/middleware task.
+
 ## Executive summary
 
 The repository has a useful cross-platform token pipeline, but it is only a **partial SSOT** today:
