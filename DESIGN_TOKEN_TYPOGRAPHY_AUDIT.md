@@ -1,160 +1,142 @@
-# Exhaustive Visual Design Token & Typography Audit
-**Classification**: High Priority / Leadership Review  
-**Methodology**: Pure AI-Driven Semantic Codebase Inspection (AST Analysis, No Regex Scripts)  
-**Target**: `apps/web`, `apps/mobile`, `packages/shared`  
-**Compliance Standard**: 100% Token Adherence (Zero magic numbers, zero untokenized hex colors, zero inline styles)
+# SSOT Typography, Design Token, and DRY Audit
 
----
+**Date:** 2026-07-29
 
-## 1. Executive Summary
+**Scope:** `tfpphotographers/apps/web`, `apps/mobile`, `apps/api`, `packages/shared`, and `packages/email`
 
-An **exhaustive, pure AI-verified semantic audit** was performed across the entire frontend architecture (306 source files). The audit evaluated visual design token discipline, layout variables, typography mapping, and component purity.
+**Method:** source-of-truth tracing, generator/output reconciliation, deterministic repository gates, and contextual review of each reported candidate. This is a static audit; it does not claim browser or email-client rendering proof.
 
-### High-Level Assessment
-1. **Web Component Purity**: **Exceptional (99.8%)**. Across 124 `.astro` files, there are **0** inline style attributes, **0** inline `<style>` blocks, and **0** Tailwind arbitrary overrides.
-2. **Mobile Typography & Color**: **Exceptional (100%)**. Across all React Native screens and components, there are **0** raw hex colors and **0** untokenized font sizes.
-3. **Primary Technical Debts**:
-   - The shared JSON/TS token contract (`packages/shared/src/design-tokens.ts`) lacks light-mode semantic themes and display-scale typography.
-   - Web SCSS architecture suffers from static `$variable` vs dynamic `var(--)` conflicts.
-   - Mobile `StyleSheet.create` objects heavily rely on magic layout numbers (`gap: 12`, `padding: 16`) rather than the `spacing.*` token scale.
+## Executive summary
 
----
+The repository has a useful cross-platform token pipeline, but it is only a **partial SSOT** today:
 
-## 2. Section 1: Web Application (`apps/web`)
+- `packages/shared/design-tokens.json` is the authored source for shared atomics.
+- `scripts/design-tokens/sync.mjs` generates the TypeScript contract and the web SCSS bridge.
+- Mobile consumes that generated TypeScript contract through `shared/design-tokens`.
+- Web adds a larger SCSS semantic and component layer, while transactional email has a separate set of visual literals.
 
-### A. Astro Markup Purity (100% Layout Pass)
-AI AST analysis of `apps/web/src/pages/**/*.astro` and `apps/web/src/components/**/*.astro` confirms absolute structural separation of concerns. Styling is entirely delegated to SCSS.
+The checked-in design-token gate is currently **red with three confirmed web violations**. More importantly, it reports a mobile pass while omitting layout and `letterSpacing` checks, even though **104 declarations exactly repeat existing shared spacing/radius values**. The backend API has no presentation layer of its own; the relevant backend-rendered visual surface is the `email` package, whose HTML templates repeat brand, color, spacing, and typography values outside the shared contract.
 
-- **Embedded `<style>` blocks**: **0** found across 124 files.
-- **Inline `style="..."` attributes**: **0** found.
-- **Hardcoded RGB/Hex Strings**: **1** found (in a third-party configuration object).
+| Priority | Confirmed findings |
+| --- | ---: |
+| P1 | 3 |
+| P2 | 2 |
+| P3 | 0 |
 
-#### Finding: Untokenized Hex in QR Code Configuration
-* **File**: [`apps/web/src/pages/profile/referrals.astro`](file:///Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/apps/web/src/pages/profile/referrals.astro#L49)
-* **Proof (Line 49)**:
-  ```typescript
-  const qrSvg = signupUrl
-    ? await QRCode.toString(signupUrl, {
-        type: 'svg',
-        errorCorrectionLevel: 'M',
-        margin: 0,
-        width: 640,
-        color: { dark: '#000000', light: '#ffffff' }, // <-- Untokenized Hex Bypasses
-      })
-    : '';
-  ```
-* **Remediation**: Map to imported standard palette: `color: { dark: REFERRAL_PRINT_PALETTE.dark, light: REFERRAL_PRINT_PALETTE.light }`.
+No P0 issue was found. The P1 items should be handled before calling the design system compliant or enforcing the existing gate in required CI.
 
-### B. SCSS Architecture Discrepancies
-Analysis of `apps/web/src/styles/**/*.scss` reveals that while semantic variables are used, there are instances of hardcoded values bypassing the shared token sync script.
-
-#### Finding: Untokenized Clamp Typography & Font Sizes
-* **File**: [`apps/web/src/styles/foundation/_typography.scss`](file:///Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/apps/web/src/styles/foundation/_typography.scss#L71)
-* **Proof (Line 71 & 100)**:
-  ```scss
-  $type-page-header-size: clamp(20px, 4vw, 28px) !default; // <-- Raw px values
-  // ...
-  $type-micro-size: 10px !default; // <-- Raw px value
-  ```
-* **Remediation**: Map `20px`/`28px` to `var(--type-title-3-size)` fluid scales managed by the core token generator.
-
-#### Finding: Arbitrary SCSS Z-Index Integers
-* **File**: [`apps/web/src/styles/base.scss`](file:///Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/apps/web/src/styles/base.scss#L353)
-* **Proof (Line 353)**:
-  ```scss
-  .some-component {
-    z-index: 1; // <-- Bypasses $z-index-base and --z-dropdown
-  }
-  ```
-* **Remediation**: Use CSS custom properties emitted from the unified layout token script (e.g., `z-index: var(--z-base)`).
-
----
-
-## 3. Section 2: Mobile Application (`apps/mobile`)
-
-### A. Color & Typography (100% Pass)
-* **AI Verification**: All custom UI components in `presentation/components` and `presentation/screens` were semantically evaluated. **Zero** instances of `#` hex strings and **zero** numeric `fontSize` overrides were found. All typography wraps `<TfpText>`.
-
-### B. Layout Magic Numbers
-Mobile `StyleSheet.create` heavily relies on untokenized integers for geometries. This prevents dynamic scaling (e.g., tablet adaptations) and bypasses the central `design-tokens.ts` spacing scale.
-
-#### Finding: Untokenized Gaps, Radii, and Paddings
-* **File**: [`apps/mobile/src/presentation/components/AppHeader.tsx`](file:///Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/apps/mobile/src/presentation/components/AppHeader.tsx#L87-L105)
-* **Proof (Lines 93, 105, 124)**:
-  ```tsx
-  const styles = StyleSheet.create({
-    header: {
-      minHeight: 52,
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      gap: 12, // <-- Untokenized Gap (Should be spacing.md)
-    },
-    logo: {
-      width: 36,
-      height: 36,
-      borderRadius: 10, // <-- Untokenized Radius (Should be radii.md)
-    },
-    locationChip: {
-      // ...
-      paddingHorizontal: 8, // <-- Untokenized Padding (Should be spacing.sm)
-    }
-  });
-  ```
-* **Remediation**: Import `spacing` and `radii` from `theme/tokens.ts` and replace magic numbers globally (e.g., `paddingHorizontal: spacing.sm`).
-
----
-
-## 4. Section 3: Shared Core Tokens (`packages/shared`)
-
-### Finding: Missing Barrel Export for Upstream Resolution
-* **File**: [`packages/shared/src/index.ts`](file:///Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/packages/shared/src/index.ts)
-* **Defect**: The root entrypoint does not `export * from './design-tokens.js'`. Apps attempting to import core visual definitions directly from `shared` experience resolution errors.
-
-### Finding: Missing Semantic Theme (Light Mode)
-* **File**: [`packages/shared/src/design-tokens.ts`](file:///Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/packages/shared/src/design-tokens.ts)
-* **Proof**:
-  ```typescript
-  export const colors = {
-    bg: "#05030a", // <-- Hardcoded to Dark Mode
-    surface: "#0d0713", 
-  }
-  ```
-* **Defect**: Lacks a semantic theme contract (`theme.light`, `theme.dark`). This tightly couples the entire mobile and web application strictly to a dark-mode palette without inversion logic.
-
----
-
-## 5. Prioritized Remediation Roadmap
+## Actual SSOT map
 
 ```mermaid
-flowchart TD
-    A["Phase 1: Shared Architecture"] --> B["Phase 2: Mobile Layout Refactor"]
-    B --> C["Phase 3: Web SCSS Modernization"]
-    C --> D["Phase 4: Automated CI/CD Gates"]
-
-    subgraph "Phase 1: Shared Architecture"
-        A1["Re-export design-tokens.ts in shared/index.ts"]
-        A2["Add light-mode semantic color tokens"]
-        A3["Expand sync.mjs to map Spacing/Radii/Z-Index"]
-    end
-
-    subgraph "Phase 2: Mobile Layout Refactor"
-        B1["Audit and replace padding: 10/12/16/18 with spacing.*"]
-        B2["Audit and replace borderRadius: 6/10/24 with radii.*"]
-        B3["Audit and replace gap: 8/12 with spacing.*"]
-    end
-
-    subgraph "Phase 3: Web SCSS Modernization"
-        C1["Convert SCSS clamp() to CSS Custom Properties"]
-        C2["Refactor arbitrary z-index integers to --z-* variables"]
-        C3["Replace rgba() with CSS color-mix()"]
-    end
-
-    subgraph "Phase 4: CI/CD Gates"
-        D1["Implement Stylelint block on raw hex/px in .scss"]
-        D2["Implement ESLint plugin for React Native StyleSheet literals"]
-    end
+flowchart LR
+  A["packages/shared/design-tokens.json\nAuthored shared atomics"] --> B["scripts/design-tokens/sync.mjs"]
+  B --> C["packages/shared/src/design-tokens.ts\nGenerated TypeScript"]
+  B --> D["apps/web/.../_cross-platform-tokens.scss\nGenerated SCSS bridge"]
+  C --> E["apps/mobile/.../theme/tokens.ts"]
+  D --> F["Web foundation, semantic tokens, CSS variables"]
+  F --> G["Web pages and components"]
+  H["packages/email/src/templates/definitions.ts\nIndependent literals"] --> I["HTML email rendered by API"]
 ```
 
-## 6. Conclusion
-The frontend applications demonstrate exceptional maturity regarding color and typography isolation, significantly outperforming industry baselines for strict markup purity (0 inline styles). The primary technical debt resides strictly in **Mobile layout geometry magic numbers** and **Web SCSS variable architecture**. Executing the 4-Phase Roadmap will yield a 100% robust, dynamically themeable cross-platform design system.
+The diagram intentionally does not imply that all web or email decisions must be identical to native values. It identifies ownership: shared values should have one declared source, while platform-specific values need an explicit, testable extension contract.
+
+## Confirmed findings
+
+### P1 — The repository design-token gate fails today
+
+**Evidence.** `pnpm qa:design-tokens` fails with three violations:
+
+1. [`_recommended-for-you.scss`](tfpphotographers/apps/web/src/styles/components/_recommended-for-you.scss:71) sets `letter-spacing: 0.04em` directly.
+2. [`home.scss`](tfpphotographers/apps/web/src/styles/pages/home.scss:828) sets `letter-spacing: -0.02em` directly after applying a shared title mixin.
+3. [`Icon.astro`](tfpphotographers/apps/web/src/components/Icon.astro:360) contains a component `<style>` block not allowlisted by the audit.
+
+The gate deliberately flags direct letter-spacing and non-allowlisted style blocks in [`design-token-audit.mjs`](tfpphotographers/scripts/qa/design-token-audit.mjs:92) and [`design-token-audit.mjs`](tfpphotographers/scripts/qa/design-token-audit.mjs:138). Therefore this is a confirmed compliance failure, not merely a stylistic preference.
+
+**Impact.** The required token quality command cannot pass, so CI cannot distinguish new drift from the known baseline. The two letter-spacing values also bypass the typographic token vocabulary.
+
+**Remediation.** First decide whether each value is an existing semantic role or a new named role; do not substitute a near value merely to make the check green. Add the approved role to the typography contract, consume it through a CSS variable/mixin, and move the global icon rules to a shared SCSS primitive or add a narrow documented exception if the component owns those rules.
+
+**Post-fix check.** `bash ./scripts/pnpm-node20.sh qa:design-tokens`.
+
+### P1 — Mobile passes its gate while bypassing available layout and letter-spacing tokens
+
+**Evidence.** The mobile audit only checks raw colors and numeric `fontSize`/`lineHeight` ([`mobile-design-token-audit.mjs`](tfpphotographers/scripts/qa/mobile-design-token-audit.mjs:9), [`mobile-design-token-audit.mjs`](tfpphotographers/scripts/qa/mobile-design-token-audit.mjs:55)); it does not inspect `gap`, padding, margin, radius, or `letterSpacing`.
+
+- A scoped scan found **104** `gap`, padding, margin, or `borderRadius` literals equal to an existing shared spacing/radius token across 26 presentation files. For example, [`CreateQuickRequestScreen.tsx`](tfpphotographers/apps/mobile/src/presentation/screens/CreateQuickRequestScreen.tsx:51) uses `gap: 8`, `gap: 4`, and `padding: 8` while importing only `colors` and `radii`; these map directly to `spacing.sm` and `spacing.xs` in [`design-tokens.json`](tfpphotographers/packages/shared/design-tokens.json:59).
+- [`CreatorOnboardingScreen.tsx`](tfpphotographers/apps/mobile/src/presentation/screens/CreatorOnboardingScreen.tsx:200) uses `letterSpacing: 1.1`, but the audit has no letter-spacing rule.
+- The standalone mobile command passes across 97 implementation files, so the green result is incomplete rather than proof of full token compliance.
+
+**Impact.** Changes to the shared spacing/radius or typography vocabulary do not reach every native consumer. The current test result creates false confidence and permits new drift.
+
+**Remediation.** Extend the mobile audit to flag only literals that equal a declared token on token-governed properties, with a justified per-line exception mechanism for genuine component geometry. Include numeric `letterSpacing`. Then migrate the 104 exact-value matches in small component batches, beginning with shared components and high-density files such as `AccountScreens.tsx`, `SearchScreen.tsx`, and `cards.tsx`. Values without a semantic counterpart (for example `gap: 9`) require a design decision; they are not automatically violations.
+
+**Post-fix check.** `bash ./scripts/pnpm-node20.sh qa:design-tokens:mobile`, plus the full `qa:design-tokens` command.
+
+### P1 — Transactional email duplicates visual tokens outside the shared contract
+
+**Evidence.** [`design-tokens.json`](tfpphotographers/packages/shared/design-tokens.json:7) declares the primary color as `#d61f69`, but [`definitions.ts`](tfpphotographers/packages/email/src/templates/definitions.ts:40) duplicates it in `statusColors`, and the same renderer repeats `#d61f69`, `#f2d28a`, `#ffffff`, email typography sizes, line heights, paddings, and radii in its CTA and shell markup ([`definitions.ts`](tfpphotographers/packages/email/src/templates/definitions.ts:58), [`definitions.ts`](tfpphotographers/packages/email/src/templates/definitions.ts:62)). The API sends through this package, for example via [`email-service.ts`](tfpphotographers/apps/api/src/utils/email-service.ts:3).
+
+**Impact.** A brand or type-scale change can update web/mobile but leave transactional email visually stale. The current email test also asserts a raw brand literal ([`email.test.ts`](tfpphotographers/packages/email/tests/email.test.ts:71)), which cements the duplicate source.
+
+**False-positive analysis.** Inline styles are correct for broad email-client compatibility. The violation is not inline email CSS; it is the duplicated ownership of shared brand values and the unstructured template constants.
+
+**Remediation.** Add a typed email presentation-token object that derives shared colors from `shared/design-tokens` and holds email-only values (Arial fallback, Outlook-safe layout, email width) in one named object. Render inline CSS from that object and update tests to assert named derived output rather than raw literals. Do not import web SCSS or use unsupported CSS variables in email.
+
+**Post-fix check.** `bash ./scripts/pnpm-node20.sh --filter email test` and a targeted rendered-email snapshot/client compatibility check.
+
+### P2 — Web consumer styles can bypass the typography system at scale
+
+**Evidence.** The web foundation defines shared type roles and emits CSS variables ([`_typography.scss`](tfpphotographers/apps/web/src/styles/foundation/_typography.scss:13), [`_css-vars.scss`](tfpphotographers/apps/web/src/styles/foundation/_css-vars.scss:315)); shared mixins consume those variables ([`_mixins.typography.scss`](tfpphotographers/apps/web/src/styles/primitives/_mixins.typography.scss:3)). However, the current gate has no `font-size` or `line-height` policy. A scoped inventory found **208 raw `font-size`**, **205 raw numeric `line-height`**, and **152 non-variable `letter-spacing`** declarations under `apps/web/src/styles`; these are candidates, not 565 independently confirmed defects.
+
+Concrete consumer bypasses include the home page's direct responsive size and line-height declarations ([`home.scss`](tfpphotographers/apps/web/src/styles/pages/home.scss:213), [`home.scss`](tfpphotographers/apps/web/src/styles/pages/home.scss:237)) and direct size/line-height declarations in [`contest-submissions.scss`](tfpphotographers/apps/web/src/styles/pages/contest-submissions.scss:18). Some responsive display styles may be valid web-specific extensions, but their ownership is currently indistinguishable from accidental magic values.
+
+**Impact.** The type scale can drift page by page, while a centralized typography edit cannot reliably propagate.
+
+**Remediation.** Define a policy before bulk conversion: (1) a named shared token/mixin for cross-platform roles, (2) an explicit web-only responsive role for approved fluid values, or (3) a documented local exception. Teach the web audit to reject raw consumer `font-size`, `line-height`, and `letter-spacing` values outside the foundation/token files and approved exceptions. Migrate repeated home, profile-edit, contest, and card patterns into shared roles first.
+
+**Post-fix check.** `bash ./scripts/pnpm-node20.sh qa:design-tokens`, `bash ./scripts/pnpm-node20.sh --filter web typecheck`, and visual regression coverage at desktop, tablet, and mobile breakpoints.
+
+### P2 — The generator does not project the full shared typography contract into web SCSS
+
+**Evidence.** The source schema includes `lineHeight` and `fixedLineHeight` ([`design-tokens.json`](tfpphotographers/packages/shared/design-tokens.json:123)), but the SCSS output in [`sync.mjs`](tfpphotographers/scripts/design-tokens/sync.mjs:78) emits only family, weights, and font sizes. Web line-height, fluid role sizes, and letter-spacing are authored separately in [`_typography.scss`](tfpphotographers/apps/web/src/styles/foundation/_typography.scss:25). That separation is why the generated bridge cannot represent the complete type contract.
+
+**Impact.** This is an ownership gap, not evidence that every web-specific role must be identical to React Native. It prevents the project from declaring which values are shared and which are intentional platform extensions.
+
+**Remediation.** Evolve the JSON schema to have explicit `typography.shared`, `typography.web`, and `typography.mobile` sections. Generate shared line-height values and named web roles into `_cross-platform-tokens.scss`; keep only deliberate web-only fluid formulas in `typography.web`. Add a generator contract test that validates every generated key and rejects unclassified type roles.
+
+**Post-fix check.** `bash ./scripts/pnpm-node20.sh design-tokens:check` plus a focused snapshot/contract test for generated SCSS and TypeScript.
+
+## Verified non-findings and exclusions
+
+- `apps/api/src` contains no CSS/HTML presentation definitions in the reviewed source. It should not receive design tokens merely for symmetry; its relevant visual output is `packages/email`.
+- `shared/design-tokens` is a valid package subpath export in [`packages/shared/package.json`](tfpphotographers/packages/shared/package.json:26). A root-barrel export is not required for the mobile import path, so the older claim that this export is missing is incorrect.
+- The JSON source and its generated TypeScript/SCSS outputs are currently synchronized: `design-tokens:check` passes.
+- A color literal in a known palette-definition file and inline HTML/CSS required for email compatibility are not, by themselves, violations. The finding is duplicate or unclassified ownership.
+- This report does not classify domain-specific API constants, database values, route configuration, or business rules as “design token” violations. Those need a separate backend architecture/DRY audit with different evidence criteria.
+
+## Remediation order
+
+1. **Restore a trustworthy gate.** Resolve the three web failures and add narrow exceptions only when their owner is documented.
+2. **Close mobile blind spots.** Add layout and letter-spacing detection, then migrate exact token duplicates in shared-component batches.
+3. **Centralize email presentation tokens.** Derive shared colors and name email-specific fallbacks/layout values without sacrificing email-client compatibility.
+4. **Classify the full typography contract.** Generate the shared portion and explicitly own responsive web roles.
+5. **Make compliance measurable.** Run the full token suite in CI only after its baseline is clean; retain candidate inventories separately from confirmed violations.
+
+## Commands and observed results
+
+```text
+bash ./scripts/pnpm-node20.sh design-tokens:check
+# passed
+
+bash ./scripts/pnpm-node20.sh qa:design-tokens
+# failed: 3 confirmed violations (two letter-spacing bypasses; Icon.astro style block)
+
+bash ./scripts/pnpm-node20.sh qa:design-tokens:mobile
+# passed across 97 implementation files; known coverage gap documented above
+```
+
+## Appendix: scope and confidence
+
+- **High confidence:** the three gate failures, the mobile audit coverage gap, the 104 exact shared-layout literal matches, and the independent email template values.
+- **Medium confidence:** the full web raw-type inventory is a governance gap. Individual values need classification before removal because responsive rendering can be intentionally web-specific.
+- **Not claimed:** exhaustive runtime rendering correctness, email-client behavior, contrast compliance, or an audit of every non-visual backend DRY concern.
