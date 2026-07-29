@@ -61,9 +61,15 @@ bash ./scripts/pnpm-node20.sh --filter mobile test
 
 bash ./scripts/pnpm-node20.sh --filter mobile run doctor
 # 18/18 passed
+
+bash ./scripts/pnpm-node20.sh test:web
+# 64 files passed; 357/357 tests passed
+
+bash ./scripts/pnpm-node20.sh lint
+# passed: architecture boundaries, ESLint, web and API lint/type diagnostics
 ```
 
-The repository-wide web test command still reports 11 pre-existing search/listing/home contract failures in files outside this remediation, and the architecture lint reports the pre-existing `middleware.ts` 464-line result against a 425-line cap. ESLint itself passes. These baseline items prevent claiming that every unrelated repository gate is green, but they are not regressions from this SSOT change and should be handled as a separate bounded UI/middleware task.
+The earlier search/listing/home test drift was corrected to assert the current shared mixin/component contracts instead of obsolete duplicated page markup. Middleware response/error helpers were also extracted so the architecture line cap passes without changing routing, security-header, locale, privacy, or error behavior.
 
 ## Executive summary
 
