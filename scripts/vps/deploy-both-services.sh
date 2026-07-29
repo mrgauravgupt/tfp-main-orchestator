@@ -78,8 +78,8 @@ if [[ "$DEPLOY_ENV" != "local" ]]; then
     echo "Set AIP_INTERNAL_API_KEY before deploying image moderation to $DEPLOY_ENV." >&2
     exit 1
   fi
-  if [[ "$DEPLOY_COLLAGE" == "true" && -z "${COLLAGE_SERVICE_API_KEY:-}" ]]; then
-    echo "Set COLLAGE_SERVICE_API_KEY before deploying collage service to $DEPLOY_ENV." >&2
+  if [[ "$DEPLOY_COLLAGE" == "true" && -z "${IMAGE_PROCESSING_SERVICE_API_KEY:-}" ]]; then
+    echo "Set IMAGE_PROCESSING_SERVICE_API_KEY before deploying image processing to $DEPLOY_ENV." >&2
     exit 1
   fi
 fi
@@ -163,13 +163,13 @@ echo "  Moderation Worker: $AIP_ENABLE_MODERATION_WORKER"
 echo "  Internal API auth: $([[ -n "${AIP_INTERNAL_API_KEY:-}" ]] && printf configured || printf missing)"
 echo "  Playground UI:     $AIP_EXPOSE_PLAYGROUND_UI"
 echo ""
-echo "TFP Collage Service:"
+echo "TFP Image Processing Service:"
 echo "  Deploy:            $DEPLOY_COLLAGE"
 echo "  Path:              $COLLAGE_DEPLOY_PATH"
 echo "  Service:           $COLLAGE_SERVICE_NAME"
 echo "  Nginx Port:        $COLLAGE_NGINX_PORT (VPS loopback only)"
 echo "  App Port:          $COLLAGE_APP_PORT (private)"
-echo "  API auth:          $([[ -n "${COLLAGE_SERVICE_API_KEY:-}" ]] && printf configured || printf missing)"
+echo "  API auth:          $([[ -n "${IMAGE_PROCESSING_SERVICE_API_KEY:-}" ]] && printf configured || printf missing)"
 echo ""
 echo "═══════════════════════════════════════════════════════════════════════════════"
 echo ""
