@@ -32,6 +32,17 @@ Historical audit documents explain context; they do not override current code.
 
 - Production services bind privately and are exposed only through the intended reverse proxy.
 - Deploy with the unprivileged `tfpdeploy` account. Root is explicit break-glass/bootstrap only.
+- Internet-facing UAT and production hosts must deny unauthorized **outbound**
+  SSH traffic to public TCP port `22` by default. If a workload genuinely needs
+  outbound SSH, prefer HTTPS over port `443` or add a narrow, reviewed
+  destination allowlist. Do not confuse this egress control with administrative
+  **inbound** SSH, which must be key-only, restricted to trusted operator
+  sources or a private access path, and use an unprivileged account with direct
+  root login disabled.
+- UAT is non-production, not a lower-security exception. Before reconnecting a
+  suspended or potentially compromised host, preserve evidence, apply the
+  outbound SSH deny at the provider or host firewall, rotate credentials, and
+  rebuild from a trusted image when compromise cannot be excluded.
 - Every folder-operations mutation needs the internal API key plus the destructive-action password; keep the surface private at the edge.
 - Worker shutdown must stop polling, drain active work within the configured grace period, then rely on database leases for crash recovery.
 - A production release requires a redacted strict configuration check and a disposable restore drill; neither may be inferred from repository state.

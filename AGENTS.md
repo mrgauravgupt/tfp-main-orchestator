@@ -119,6 +119,9 @@
 
 ## UAT VPS and Deployment Target (Contabo)
 
+- **Environment boundary**: This host is for private UAT only. The TFP product
+  has not been launched publicly from this VPS; nevertheless, apply the same
+  host-security baseline expected of an internet-reachable production host.
 - **UAT Host Details**:
   - **Display Name / Host**: `uat` (Contabo VPS 20)
   - **IP Address**: `13.140.189.236`
@@ -131,6 +134,21 @@
   - **Collage public port**: `7003` (proxies to local app port `7004`)
     - URL: `http://13.140.189.236:7003`
   - **Private app ports**: `7002` and `7004` (not exposed publicly)
+- **SSH network boundary**:
+  - Treat the August 2026 `SSH_BRUTE_FORCE` report as alleged outbound traffic
+    from the VPS; the root cause remains unproven until host and provider logs
+    can be correlated.
+  - Deny new outbound connections to public TCP port `22` by default before
+    restoring general network access. Allow only explicitly reviewed destination
+    addresses when a real deployment dependency requires SSH; prefer HTTPS over
+    port `443` where possible.
+  - Do not implement this as a blanket two-way port-22 closure. Administrative
+    inbound SSH remains a separate control and must be key-only, restricted to
+    trusted operator sources or a private access path, use an unprivileged
+    deployment account, and disable direct root login after recovery/bootstrap.
+  - On reactivation or migration, preserve evidence first, inspect auth and
+    process persistence, rotate credentials and application secrets, and rebuild
+    from a trusted image if compromise cannot be excluded.
 
 ## VPS Folder Moderation Audit And Reviewer Flow
 

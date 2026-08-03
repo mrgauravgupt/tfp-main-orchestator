@@ -26,6 +26,28 @@ These cannot be proven by static code alone and must be recorded per deployment:
 - backup checksum plus successful restore to a disposable database;
 - worker-drain behavior against an isolated UAT job.
 
+## 2026-08 Contabo UAT incident boundary
+
+- Contabo VPS `13.140.189.236` hosts private UAT only; the TFP product is not
+  live or publicly launched from this VPS. UAT status does not reduce the host
+  hardening requirement.
+- A provider complaint alleged outbound `SSH_BRUTE_FORCE` traffic from the VPS.
+  The complaint identifies the source IP but does not prove the responsible
+  process, account, or person; root cause requires preserved VPS and provider
+  network evidence.
+- Before any reactivation or migration, deny new outbound connections to public
+  TCP port `22` by default at the provider or host firewall. Use HTTPS over
+  `443`, or a narrow destination allowlist, for any legitimate outbound
+  deployment dependency.
+- Outbound TCP/22 containment is distinct from inbound administration. Inbound
+  SSH must be key-only, limited to trusted operator sources or private access,
+  use an unprivileged deployment account, and disable direct root login after
+  break-glass recovery.
+- Preserve the disk and logs before remediation; inspect `sshd`/auth journals,
+  processes, containers, cron and systemd persistence, accounts, authorized
+  keys, and outbound network evidence. Rotate credentials and secrets and
+  rebuild from a trusted image whenever compromise cannot be excluded.
+
 ## Design System & Architecture Auditing Rules
 
 - **Context-Aware Boundaries**: Do not blindly enforce a Single Source of Truth (SSOT) from the database (`schema.prisma`) to the frontend if a shared contract is intentionally used instead. For instance, moderation reasons and shared boundary validations (e.g., normalizers) correctly live in shared TypeScript contracts, not Prisma schemas or Zod.
