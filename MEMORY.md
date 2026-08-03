@@ -16,6 +16,40 @@
 - Moderation folder operations require the internal service key and a separate step-up password for every mutation. The API port remains private behind the VPS proxy.
 - Deployment defaults to `tfpdeploy`; `root` is a deliberate break-glass override only.
 
+## 2026-08 pre-production hardening baseline
+
+- Production object storage has three independent roles: private media,
+  public immutable renditions, and database backups. Each role requires its
+  own bucket-scoped Backblaze key; production configuration rejects generic
+  credential fallback and rejects reuse of the private/public bucket or key.
+- Backblaze CORS configuration is an operator-only action. Private media may
+  use authenticated `GET`, `HEAD`, and `PUT`; public media is read-only from
+  the browser. Production rejects localhost/non-HTTPS origins. CORS admin
+  credentials must not be injected into an application process.
+- PostgreSQL backup automation creates a custom-format dump, SHA-256 checksum,
+  and manifest, uploads all three to the dedicated B2 backup bucket with
+  server-side encryption, and supports Object Lock retention when the bucket
+  was created with Object Lock enabled. The production gate checks backup
+  freshness; restore verifies the checksum before SQL and runs database
+  invariants afterwards.
+- `tfp-collage-service` now has one durable background path only: the
+  `image_processing_jobs` worker. The retired opportunity-row collage polling
+  worker and its `COLLAGE_*WORKER*` compatibility configuration were removed.
+  Keep storage behind its explicit private/public bindings instead of adding
+  generic S3 fields back to the application config. The production application
+  gate requires an explicit `COLLAGE_SERVICE_URL` and independent strong
+  `COLLAGE_SERVICE_API_KEY`; the legacy environment names remain at this HTTP
+  compatibility boundary only.
+- UAT and production moderation processes must bind to loopback, keep internal
+  API-key enforcement enabled, and use a non-placeholder key of at least 32
+  characters. The moderation worker consumes `TFP_DATABASE_URL` and scoped
+  `B2_PRIVATE_*` values; shared/generic B2 credential aliases are local-only.
+- No static validation proves a production deployment. Before launch, procure
+  the production hosts and role-scoped credentials, run the production env
+  doctor, deploy through the private access/reverse-proxy boundary, create a
+  real backup, restore it into a disposable database, and record runtime health
+  and worker-drain evidence.
+
 ## Remaining runtime evidence
 
 These cannot be proven by static code alone and must be recorded per deployment:
