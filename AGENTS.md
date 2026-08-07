@@ -87,11 +87,11 @@
 - **Database Consistency**: If schema or migration changes are made by Codex, regenerate the Prisma client using `pnpm db:generate` and run migrations with `pnpm db:migrate`.
 - **State Synchronization**: Document all active changes, new ports, or configuration variables in `MEMORY.md` and `AGENTS.md` to ensure both Antigravity and Codex read the same single source of truth.
 
-## VPS Database Rule
+## OCI UAT Database Rule
 
-- UAT for the TFP stack uses PostgreSQL on the Contabo VPS, not a local developer database.
-- Local operator scripts should reach the UAT database through an SSH tunnel to the VPS local Postgres listener (`127.0.0.1:5432` on the VPS), not through a developer-local fallback.
-- Keep the app, collage worker, and image moderation worker pointed at the same VPS DB target so they can share the same state for moderation and collage generation.
+- UAT for the TFP stack uses PostgreSQL installed on the OCI UAT host, bound to `127.0.0.1:5432`; it does not use Contabo or a developer-local fallback.
+- Local operator scripts that need direct database access must SSH-forward to the OCI host-local PostgreSQL listener through `ubuntu@161.118.161.98`.
+- Keep the app, collage worker, and image moderation worker pointed at the same OCI host-local PostgreSQL database so they share moderation and collage state.
 - Use localhost only for local and development workflows unless a task explicitly asks for an isolated override.
 
 ## Queue And Background Worker Audit Rule
@@ -101,43 +101,36 @@
 - `event_outbox`, worker polling, retry fields, stale-processing recovery, and `FOR UPDATE SKIP LOCKED` are valid architectural choices in this workspace, not audit findings on their own.
 - BullMQ/Redis should be recommended only when there is measured operational pain: backlog/latency under load, expensive DB polling, missing dead-letter/operator visibility that cannot be solved simply, many worker pools, complex delayed retries, or a real need for Bull Board-style queue operations.
 - Prefer first improving the existing DB-backed model with health checks, backlog/failure queries, terminal failed/dead-letter states, indexes, stale-job recovery, and operator docs before proposing a queue migration.
-- When comparing queue options, treat PostgreSQL consistency and inspectability as strengths for this product, especially because UAT services share one VPS PostgreSQL state source.
+- When comparing queue options, treat PostgreSQL consistency and inspectability as strengths for this product, especially because UAT services share one OCI PostgreSQL state source.
 
-## VPS vs OCI Rule
+## OCI vs Retired Contabo Rule
 
-- Do not confuse the Contabo VPS with Oracle Cloud Infrastructure.
-- Contabo VPS is the current UAT service host and deploy target for the checked-in `scripts/vps` flow.
-- OCI is a separate Oracle Cloud account/tenancy used for Always Free Ampere A1 acquisition experiments and future ARM64 deployment planning.
-- The root OCI helper is `scripts/oci/acquire-a1-free.sh`; it requests `VM.Standard.A1.Flex` at `2 OCPU / 12 GB RAM` and retries `Out of host capacity`.
-- Current known OCI free-tier VM state from June 23, 2026:
-  - `aip-mumbai-e2-micro-new`
-  - public IP `140.245.30.133`
-  - shape `VM.Standard.E2.1.Micro`
-  - tagged `free-tier-retained=true`
-- The OCI E2 micro is not the Contabo VPS and is not the public UAT service host.
-- Never use `13.140.189.236` as an OCI host. That IP belongs to the Contabo VPS UAT target.
+- OCI is the current and only UAT deployment target. Use `scripts/oci/*` for full-stack UAT orchestration; service-local `scripts/vps/*` names are provider-neutral legacy names and must receive the OCI host/user explicitly.
+- The active host is the Always Free Ampere instance `tfp-a1-free-2ocpu-12gb` at `161.118.161.98`, shape `VM.Standard.A1.Flex`, with `2 OCPU / 12 GB RAM` in `ap-mumbai-1`.
+- The older OCI E2 micro `aip-mumbai-e2-micro-new` at `140.245.30.133` is retained separately and is not the UAT deployment target.
+- Contabo `13.140.189.236` is retired from UAT. Do not deploy, tunnel, seed, moderate, or run database operations against it unless the user explicitly authorizes a historical incident/recovery task.
+- The acquisition helper `scripts/oci/acquire-a1-free.sh` remains available for capacity management; it is not the deployment entrypoint.
 
-## UAT VPS and Deployment Target (Contabo)
+## UAT Deployment Target (OCI Always Free)
 
 - **Environment boundary**: This host is for private UAT only. The TFP product
-  has not been launched publicly from this VPS; nevertheless, apply the same
+  has not been launched publicly from this instance; nevertheless, apply the same
   host-security baseline expected of an internet-reachable production host.
 - **UAT Host Details**:
-  - **Display Name / Host**: `uat` (Contabo VPS 20)
-  - **IP Address**: `13.140.189.236`
-  - **Default User**: `root` (Option A: quick first deploy using root)
-  - **Region**: `EU`
-  - **SSH Access**: Key-based (`id_ed25519` from Mac client, added to `/root/.ssh/authorized_keys`)
-- **UAT Service Ports and URLs**:
-  - **Image Moderation public port**: `7001` (proxies to local app port `7002`)
-    - URL: `http://13.140.189.236:7001`
-  - **Collage public port**: `7003` (proxies to local app port `7004`)
-    - URL: `http://13.140.189.236:7003`
-  - **Private app ports**: `7002` and `7004` (not exposed publicly)
+  - **Display Name**: `tfp-a1-free-2ocpu-12gb`
+  - **Public IPv4**: `161.118.161.98`
+  - **Private IPv4**: `10.0.1.114`
+  - **Shape**: `VM.Standard.A1.Flex` (`2 OCPU / 12 GB RAM`, ARM64)
+  - **Region / AD**: `ap-mumbai-1` / `lqoG:AP-MUMBAI-1-AD-1`
+  - **OS / SSH user**: Ubuntu ARM64 / `ubuntu`
+  - **Public tester URL**: `https://uat.tfpphotographers.com`
+  - **Cloudflare tunnel**: `tfp-oci-uat` -> `http://localhost:8080`
+- **Private service listeners**: PostgreSQL `5432`, API `4000`, web `8080`, moderation `7001/7002`, and collage `7003/7004` bind only to `127.0.0.1`.
+- **Public ingress**: application ports are closed at OCI and the host firewall. Only key-based administrative SSH is retained; tester traffic must pass Cloudflare Access and Tunnel.
 - **SSH network boundary**:
   - Treat the August 2026 `SSH_BRUTE_FORCE` report as alleged outbound traffic
-    from the VPS; the root cause remains unproven until host and provider logs
-    can be correlated.
+    from the retired Contabo VPS; the root cause remains unproven until host and
+    provider logs can be correlated. It is historical context, not OCI evidence.
   - Deny new outbound connections to public TCP port `22` by default before
     restoring general network access. Allow only explicitly reviewed destination
     addresses when a real deployment dependency requires SSH; prefer HTTPS over
@@ -150,15 +143,8 @@
     process persistence, rotate credentials and application secrets, and rebuild
     from a trusted image if compromise cannot be excluded.
 
-## VPS Folder Moderation Audit And Reviewer Flow
+## Folder Moderation Boundary
 
-- Canonical local-to-VPS launcher: `tfpphotographers/scripts/vps/run-folder-moderation.sh`.
-- VPS working directory: `/srv/tfp-folder-moderation/tfpphotographers`.
-- VPS image drop/source directory: `/srv/tfp-folder-moderation/images`.
-- VPS report directory: `/srv/tfp-folder-moderation/reports`.
-- The launcher targets the Contabo VPS (`13.140.189.236`) and the moderation endpoint at `http://127.0.0.1:7001` from the VPS. Do not route this flow to OCI.
-- If `MODERATION_REMOTE_AUTH_TOKEN` is not explicitly set, the launcher should load it from `/etc/systemd/system/tfp-moderation-service.service` via `AIP__SECURITY__INTERNAL_API_KEY`. A run where every row is `401 unauthorized` means this auth token was missing or wrong; stop the run and fix auth before retrying.
-- Final downloadable audit JSON must preserve full `rawEnvelope` and `providerRawResponse` fields for policy debugging. The final writer streams large JSON files row-by-row; do not replace it with a single full `JSON.stringify(...)`, which can fail with `Invalid string length` on large raw payloads.
-- Partial checkpoints and isolated reviewer chunks intentionally strip `rawEnvelope` and `providerRawResponse` to keep review pages small and loadable. Do not use those compact artifacts to judge whether the model/provider returned all policy fields.
-- Local download flow should copy the VPS raw artifact first as `folder-moderation-audit-v1-vps-raw-<stamp>.json`, then create any local path-rewritten/review variants separately.
-- Review page generation is intentionally separate from raw audit preservation. `build-folder-moderation-reviewers.sh` and `build-isolated-reviewer-route.ts` create compact reviewer artifacts/pages; they are not the canonical raw evidence source.
+- Folder moderation is not deployed to OCI UAT. `/srv/tfp-folder-moderation` must remain absent, and no images, raw reports, reviewer chunks, or generated folder-audit artifacts may be transferred by normal UAT deployment.
+- The legacy `tfpphotographers/scripts/vps/run-folder-moderation.sh` flow is retired with Contabo and must not be used without explicit, separately scoped authorization.
+- If folder moderation is reintroduced later, it needs a new private-storage design and a dedicated runbook; do not silently point the legacy wrapper at OCI.

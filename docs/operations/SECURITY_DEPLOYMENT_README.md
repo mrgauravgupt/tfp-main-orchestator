@@ -48,8 +48,12 @@ Do not use those local overrides in UAT or production.
 From the workspace root:
 
 ```bash
-bash scripts/vps/deploy-both-services.sh
+bash scripts/oci/deploy-both-services.sh
 ```
+
+Current UAT target: OCI `tfp-a1-free-2ocpu-12gb` at `161.118.161.98`.
+The service-local `scripts/vps` path names are provider-neutral compatibility
+names; Contabo is retired.
 
 For service-local deployment:
 

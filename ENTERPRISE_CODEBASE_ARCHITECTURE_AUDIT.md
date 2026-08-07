@@ -1,5 +1,10 @@
 # Enterprise Codebase Architecture Audit
 
+> **Historical infrastructure snapshot:** The topology below reflects the July
+> 2026 audit date. Current private UAT runs on OCI instance
+> `tfp-a1-free-2ocpu-12gb` (`161.118.161.98`) through Cloudflare tunnel
+> `tfp-oci-uat`. Contabo is retired; see `docs/operations/deploy.md`.
+
 **Repository**: TFP Photographers Multi-Service Platform  
 **Audit Date**: 2026-07-26  
 **Audited Branch/Commit**: `1efc2806fa39c0909b2d65789aa2d959bbf68670` (tfp-main-orchestator)  

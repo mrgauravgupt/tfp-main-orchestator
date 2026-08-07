@@ -35,7 +35,6 @@ sudo apt-get install -y --no-install-recommends \
   nginx iptables-persistent netfilter-persistent python3
 
 for unit in \
-  cloudflared.service \
   tfp-uat-db-tunnel.service \
   tfp-main-uat-api.service \
   tfp-main-uat-worker.service \

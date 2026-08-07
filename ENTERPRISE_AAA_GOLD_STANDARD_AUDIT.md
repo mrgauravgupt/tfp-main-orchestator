@@ -1,5 +1,10 @@
 # 🏛️ Enterprise AAA Gold-Standard Application Architecture and Codebase Audit
 
+> **Historical infrastructure snapshot:** Hosting statements reflect the July
+> 2026 audit. Current private UAT runs on OCI instance
+> `tfp-a1-free-2ocpu-12gb` (`161.118.161.98`) through `tfp-oci-uat`; Contabo is
+> retired. Use `docs/operations/deploy.md` for current deployment facts.
+
 **Workspace:** `/Users/hexa/Desktop/tfp-main-orchestator`  
 **Audit date:** 2026-07-27  
 **Audit mode:** Repository-wide, static, read-only review of the current working tree  
@@ -117,7 +122,7 @@ The intended domain boundary is documented and partially enforced. Routes are pr
 - **Search:** discovery is deterministic and provider-portable, using intent parsing, taxonomy, PostgreSQL FTS/trigram, and geo ranking rather than unnecessary vector/LLM infrastructure.
 - **Configuration:** production secrets, duplicate secrets, observability credentials, storage configuration, rate-limit Redis, real email providers, moderation providers, and public app URLs are validated.
 - **Testing:** the main repository has broad unit/integration coverage, security validation, CodeQL, gitleaks, dependency review, audit gates, accessibility/smoke jobs, and targeted outbox integration tests.
-- **Operations:** deployment/runbook documentation explicitly separates Contabo UAT from OCI, treats environment proof honestly, and documents rollback, tunnels, security, and durable-event readiness.
+- **Operations:** deployment/runbook documentation treats environment proof honestly and documents rollback, tunnels, security, and durable-event readiness. Current hosting facts are maintained separately from this audit snapshot.
 
 ---
 

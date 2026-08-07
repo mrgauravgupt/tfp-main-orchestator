@@ -15,5 +15,5 @@ export COLLAGE_DEPLOY_HOST="$DEPLOY_HOST"
 export COLLAGE_DEPLOY_USER="$DEPLOY_USER"
 export APPLY_TFP_MIGRATIONS=false
 
-bash "$ROOT_DIR/scripts/oci/configure-uat-db-tunnel.sh"
+# PostgreSQL is host-local on OCI. Never reconnect this deployment to Contabo.
 bash "$ROOT_DIR/scripts/vps/deploy-both-services.sh"

@@ -1,5 +1,9 @@
 # TFPTeam Multi-Project AI Workforce Implementation Plan
 
+> **Historical plan:** Provider and sizing recommendations are a June 2026
+> planning snapshot, not current TFP UAT instructions. Current UAT runs on OCI
+> Always Free; see `docs/operations/deploy.md`.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use `superpowers:subagent-driven-development` (recommended) or `superpowers:executing-plans` to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Build a standalone, secure, cost-controlled, multi-project AI workforce that can monitor products, research opportunities, create and review code, run QA/UAT, coordinate deployments, support customers, and surface legal, privacy, security, and business decisions for human approval.

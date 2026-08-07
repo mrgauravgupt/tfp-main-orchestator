@@ -1,194 +1,137 @@
-# TFP UAT Redeployment Runbook
+# OCI UAT Deployment Runbook
 
-## Current UAT Host
+## Current target
 
-| Item | Value |
+| Item | Current UAT value |
 | --- | --- |
-| Provider | Contabo VPS |
-| Public IPv4 | `13.140.189.236` |
-| SSH user | `root` |
-| SSH key installed | local `~/.ssh/id_ed25519.pub` copied into `/root/.ssh/authorized_keys` |
-| Moderation public port | `7001` |
-| Moderation private app port | `7002` |
-| Collage public port | `7003` |
-| Collage private app port | `7004` |
-| PostgreSQL | host-local `127.0.0.1:5432` on the VPS |
+| Provider | Oracle Cloud Infrastructure Always Free |
+| Instance | `tfp-a1-free-2ocpu-12gb` |
+| Shape | `VM.Standard.A1.Flex` — `2 OCPU / 12 GB RAM`, ARM64 |
+| Region / AD | `ap-mumbai-1` / `lqoG:AP-MUMBAI-1-AD-1` |
+| Public / private IPv4 | `161.118.161.98` / `10.0.1.114` |
+| OS / SSH | Ubuntu ARM64 / `ubuntu@161.118.161.98` |
+| Tester URL | `https://uat.tfpphotographers.com` |
+| Cloudflare tunnel | `tfp-oci-uat` -> `http://localhost:8080` |
+| PostgreSQL | OCI-host-local `127.0.0.1:5432` |
 
-Public traffic reaches nginx first. Nginx forwards `:7001` to the moderation API on `127.0.0.1:7002` and `:7003` to the collage API on `127.0.0.1:7004`.
+Contabo `13.140.189.236` is retired. Do not use it for application deployment,
+database tunnels, moderation, collage, seed operations, or folder processing.
+The older OCI E2 micro `140.245.30.133` is also not the UAT target.
 
-## SSH Access
+## Private topology
 
-The deployed root key is the existing local key:
+The OCI security list and host firewall expose no application port. Services
+listen only on loopback:
 
-```bash
-ls -la ~/.ssh
-cat ~/.ssh/id_ed25519.pub
-ssh root@13.140.189.236
-```
+| Component | Listener |
+| --- | --- |
+| PostgreSQL | `127.0.0.1:5432` |
+| Main API | `127.0.0.1:4000` |
+| Main web gateway | `127.0.0.1:8080` |
+| Moderation proxy / app | `127.0.0.1:7001` / `127.0.0.1:7002` |
+| Collage proxy / app | `127.0.0.1:7003` / `127.0.0.1:7004` |
 
-On the VPS, the key must be present with strict permissions:
+Only key-based administrative SSH is retained. Testers reach the app through
+Cloudflare Access and the outbound-only tunnel.
 
-```bash
-mkdir -p /root/.ssh
-chmod 700 /root/.ssh
-nano /root/.ssh/authorized_keys
-chmod 600 /root/.ssh/authorized_keys
-```
+## Deployment entrypoints
 
-In nano, save with `Ctrl+O`, press `Enter`, then exit with `Ctrl+X`.
-
-To set or rotate the root password from the VPS console or an existing SSH session:
-
-```bash
-passwd root
-```
-
-## Runtime Secrets And Env
-
-Do not commit secrets. UAT runtime values live in ignored local env files, primarily:
+From the orchestrator root, a deliberately fresh full-stack UAT deployment is:
 
 ```bash
-tfpphotographers/.env.uat.local
+bash scripts/oci/deploy-all-uat.sh
 ```
 
-The UAT env must point at the Contabo host:
+This bootstrap resets the disposable UAT database and runtime directories. It
+must be used only when a fresh UAT is intended. It transfers minimal committed
+runtime sources and explicitly excludes folder-moderation images and reports.
+
+For an ordinary application-only release that preserves the active database and
+services:
 
 ```bash
-VPS_DEPLOY_HOST=13.140.189.236
-VPS_DEPLOY_USER=root
-DEPLOY_HOST=13.140.189.236
-DEPLOY_USER=root
-MODERATION_REMOTE_URL=http://13.140.189.236:7001
-TRANSLATION_REMOTE_URL=http://13.140.189.236:7001
-COLLAGE_SERVICE_URL=http://13.140.189.236:7003
-AIP_EXPOSE_PLAYGROUND_UI=true
+cd tfpphotographers
+UAT_DEPLOY_HOST=161.118.161.98 \
+UAT_DEPLOY_USER=ubuntu \
+UAT_REQUIRE_CLOUDFLARED=true \
+UAT_DELETE_JSON_REPORTS=false \
+  bash scripts/vps/deploy-main-uat.sh
 ```
 
-Keep these secret values aligned across the main app, moderation service, and collage service:
+The `scripts/vps` directory name is historical and provider-neutral. Current
+UAT defaults resolve to OCI; the compatibility `scripts/vps/deploy-all-uat.sh`
+delegates to `scripts/oci/deploy-all-uat.sh`.
 
-- `AIP_INTERNAL_API_KEY`
-- `MODERATION_REMOTE_AUTH_TOKEN`
-- `COLLAGE_SERVICE_API_KEY`
-- `DATABASE_URL`
-- `DIRECT_URL`
-- `SHADOW_DATABASE_URL`
-- B2/S3 bucket credentials
-
-## Service Deployment
-
-Use the generic VPS wrapper from the orchestrator root:
+Deploy only moderation and collage without reconnecting any remote database:
 
 ```bash
-cd /Users/hexa/Desktop/tfp-main-orchestator
-bash scripts/vps/deploy-both-services.sh
+OCI_DEPLOY_HOST=161.118.161.98 \
+OCI_DEPLOY_USER=ubuntu \
+  bash scripts/oci/deploy-both-services.sh
 ```
 
-Target one service when needed:
+## Secrets and storage
+
+Runtime values belong in ignored `.env.uat.local` files or a secret manager.
+Never commit or print them. The OCI runtime uses:
+
+- independent bucket-scoped Backblaze keys for private and public buckets;
+- fresh host-local PostgreSQL;
+- distinct moderation and collage internal API keys;
+- no storage master/admin key inside an application process.
+
+## Folder-moderation exclusion
+
+Folder moderation is not part of OCI UAT. Normal deployment must keep
+`/srv/tfp-folder-moderation` absent and must not transfer source image folders,
+raw moderation reports, reviewer chunks, screenshots, or generated audit
+artifacts. Legacy remote folder-moderation scripts are disabled by default.
+
+## Cloudflare configuration
+
+- Tunnel: `tfp-oci-uat`
+- Route: `uat.tfpphotographers.com` -> `http://localhost:8080`
+- Catch-all: `http_status:404`
+- Access application: `TFP UAT`
+- Policy: `Approved UAT testers`
+- Session duration: 6 hours
+
+Approved email addresses are maintained in Cloudflare Access, not in the
+application deployment scripts.
+
+## Verification
+
+Host-side:
 
 ```bash
-DEPLOY_AI=false bash scripts/vps/deploy-both-services.sh
-DEPLOY_COLLAGE=false bash scripts/vps/deploy-both-services.sh
+ssh ubuntu@161.118.161.98
+systemctl is-active cloudflared postgresql@16-main \
+  tfp-main-uat-api tfp-main-uat-web tfp-main-uat-worker \
+  tfp-moderation-service tfp-moderation-service-moderation-worker@1 \
+  tfp-collage-service
+sudo ss -lntp | grep -E '127\.0\.0\.1:(4000|5432|7001|7002|7003|7004|8080)'
+test ! -e /srv/tfp-folder-moderation
+curl -fsS http://127.0.0.1:4000/health
 ```
 
-The operator path is `scripts/vps`.
-
-## Database
-
-UAT PostgreSQL is installed on the Contabo VPS and listens locally on the host:
-
-- database: `tfp_photographers_uat`
-- shadow database: `tfp_photographers_uat_shadow`
-- app role: `tfp_user`
-
-For local migration work, use the checked-in app migration wrapper and the UAT env file. If laptop access needs a tunnel:
+External:
 
 ```bash
-ssh -L 15433:127.0.0.1:5432 root@13.140.189.236
+curl -I https://uat.tfpphotographers.com
 ```
 
-Then point the local command at `127.0.0.1:15433` for the duration of that session.
+An unauthenticated request must redirect to Cloudflare Access. Direct public
+connections to `4000`, `5432`, `7001-7004`, and `8080` must fail.
 
-## Folder Moderation Overnight Job
-
-The folder moderation host scripts now use generic VPS naming and default to the Contabo host. The image folder is synced from:
+For temporary laptop database administration, use an SSH local forward to the
+OCI loopback listener and scope the database URL override to that command:
 
 ```bash
-tfpphotographers/scripts/qa/test-folder-moderation/Images
+ssh -N -L 15432:127.0.0.1:5432 ubuntu@161.118.161.98
 ```
 
-to:
+## Rollback
 
-```bash
-/srv/tfp-folder-moderation/images
-```
-
-Install or refresh the overnight cron:
-
-```bash
-cd /Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers
-bash scripts/vps/install-folder-moderation-cron.sh
-```
-
-Run the same flow immediately:
-
-```bash
-bash scripts/vps/run-folder-moderation.sh
-```
-
-Download the latest JSON and rewrite paths for local report viewing:
-
-```bash
-bash scripts/vps/download-folder-moderation-json.sh
-```
-
-The remote cron currently runs at `23:00` in the VPS timezone and writes reports under:
-
-```bash
-/srv/tfp-folder-moderation/reports
-```
-
-## Health Checks
-
-```bash
-curl -fsS http://13.140.189.236:7001/health/live
-curl -fsS http://13.140.189.236:7001/health/ready
-curl -fsS http://13.140.189.236:7003/health/live
-curl -fsS http://13.140.189.236:7001/tfp-collage-service/health/live
-```
-
-Host-side checks:
-
-```bash
-ssh root@13.140.189.236
-systemctl status tfp-moderation-service --no-pager
-systemctl status tfp-collage-service --no-pager
-journalctl -u tfp-moderation-service -n 100 --no-pager
-journalctl -u tfp-collage-service -n 100 --no-pager
-nginx -t
-```
-
-## AI Interface
-
-The AI service UI is enabled for UAT with:
-
-```bash
-AIP_EXPOSE_PLAYGROUND_UI=true
-```
-
-Open:
-
-```text
-http://13.140.189.236:7001/
-```
-
-## Deploying `tfpphotographers` With Limited Users
-
-Yes, the main `tfpphotographers` app can be deployed for limited users.
-
-Recommended UAT gate:
-
-- Put Cloudflare Access, nginx basic auth, or an IP allowlist in front of the web app.
-- Disable or restrict public registration at the app level.
-- Seed or invite only the users who should test.
-
-Do not rely on an unlisted URL as the only access control.
+UAT releases are disposable. Redeploy a pushed application commit as a fresh
+release, repeat listener and health checks, and leave Cloudflare Access/Tunnel
+unchanged. Never point rollback tooling at the retired Contabo host.

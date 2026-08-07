@@ -39,10 +39,20 @@ fi
 
 load_service_deploy_env "$ROOT_DIR" "$DEPLOY_ENV"
 
-# Generic VPS deployment configuration.
-export DEPLOY_HOST="${DEPLOY_HOST:-${VPS_DEPLOY_HOST:-13.140.189.236}}"
-export DEPLOY_USER="${DEPLOY_USER:-${VPS_DEPLOY_USER:-root}}"
+# The historical scripts/vps name is provider-neutral. UAT now targets OCI.
+if [[ "$DEPLOY_ENV" == "uat" ]]; then
+  export DEPLOY_HOST="${DEPLOY_HOST:-${VPS_DEPLOY_HOST:-${OCI_UAT_HOST:-161.118.161.98}}}"
+  export DEPLOY_USER="${DEPLOY_USER:-${VPS_DEPLOY_USER:-${OCI_UAT_USER:-ubuntu}}}"
+else
+  export DEPLOY_HOST="${DEPLOY_HOST:-${VPS_DEPLOY_HOST:-}}"
+  export DEPLOY_USER="${DEPLOY_USER:-${VPS_DEPLOY_USER:-tfpdeploy}}"
+fi
 export DEPLOY_PORT="${DEPLOY_PORT:-22}"
+
+if [[ -z "$DEPLOY_HOST" ]]; then
+  echo "Set DEPLOY_HOST for non-UAT deployments; no retired provider is used as a fallback." >&2
+  exit 1
+fi
 
 # TFP Image Moderation Service configuration
 export AIP_DEPLOY_HOST="${AIP_DEPLOY_HOST:-$DEPLOY_HOST}"
@@ -144,7 +154,7 @@ EOF
 }
 
 echo "═══════════════════════════════════════════════════════════════════════════════"
-echo "  VPS Deployment: TFP Moderation Service + TFP Collage Service"
+echo "  Remote Deployment: TFP Moderation Service + TFP Collage Service"
 echo "═══════════════════════════════════════════════════════════════════════════════"
 echo ""
 echo "Deployment Configuration:"
@@ -157,7 +167,7 @@ echo "TFP Moderation Service:"
 echo "  Deploy:            $DEPLOY_AI"
 echo "  Path:              $AIP_DEPLOY_PATH"
 echo "  Service:           $AIP_SERVICE_NAME"
-echo "  Nginx Port:        $AIP_NGINX_PORT (VPS loopback only)"
+echo "  Nginx Port:        $AIP_NGINX_PORT (host loopback only)"
 echo "  App Port:          $AIP_APP_PORT (private)"
 echo "  Moderation Worker: $AIP_ENABLE_MODERATION_WORKER"
 echo "  Internal API auth: $([[ -n "${AIP_INTERNAL_API_KEY:-}" ]] && printf configured || printf missing)"
@@ -167,7 +177,7 @@ echo "TFP Image Processing Service:"
 echo "  Deploy:            $DEPLOY_COLLAGE"
 echo "  Path:              $COLLAGE_DEPLOY_PATH"
 echo "  Service:           $COLLAGE_SERVICE_NAME"
-echo "  Nginx Port:        $COLLAGE_NGINX_PORT (VPS loopback only)"
+echo "  Nginx Port:        $COLLAGE_NGINX_PORT (host loopback only)"
 echo "  App Port:          $COLLAGE_APP_PORT (private)"
 echo "  API auth:          $([[ -n "${IMAGE_PROCESSING_SERVICE_API_KEY:-}" ]] && printf configured || printf missing)"
 echo ""
@@ -203,9 +213,9 @@ echo "  ✅ All deployments complete!"
 echo "═══════════════════════════════════════════════════════════════════════════════"
 echo ""
 echo "Service URLs:"
-echo "  AI Inference:  http://127.0.0.1:$AIP_NGINX_PORT/ (from VPS)"
-echo "  Collage:       http://127.0.0.1:$COLLAGE_NGINX_PORT/ (from VPS)"
-echo "  Health Check:  http://127.0.0.1:$AIP_NGINX_PORT/health/live (from VPS)"
+echo "  AI Inference:  http://127.0.0.1:$AIP_NGINX_PORT/ (from target host)"
+echo "  Collage:       http://127.0.0.1:$COLLAGE_NGINX_PORT/ (from target host)"
+echo "  Health Check:  http://127.0.0.1:$AIP_NGINX_PORT/health/live (from target host)"
 echo ""
 echo "To deploy only one service, use:"
 echo "  DEPLOY_AI=false bash $0        # Deploy only tfp-collage-service"

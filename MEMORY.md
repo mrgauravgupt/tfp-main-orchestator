@@ -13,7 +13,7 @@
 - The PostgreSQL-backed `event_outbox` is intentional. It uses `FOR UPDATE SKIP LOCKED`, retry state, terminal `FAILED`, and stale-processing recovery. Do not propose Redis/BullMQ merely because an outbox exists.
 - Domain transitions must use the transaction-scoped enqueue helper. Do not reintroduce post-commit event emission for moderation transitions.
 - TypeScript worker shutdown drains active jobs with a bounded timeout; Python moderation worker handles SIGTERM/SIGINT by stopping new polling and finishing the active batch.
-- Moderation folder operations require the internal service key and a separate step-up password for every mutation. The API port remains private behind the VPS proxy.
+- Moderation folder operations require the internal service key and a separate step-up password for every mutation. Folder moderation is not installed on OCI UAT; all service ports remain private and loopback-only.
 - Deployment defaults to `tfpdeploy`; `root` is a deliberate break-glass override only.
 
 ## 2026-08 pre-production hardening baseline
@@ -60,11 +60,22 @@ These cannot be proven by static code alone and must be recorded per deployment:
 - backup checksum plus successful restore to a disposable database;
 - worker-drain behavior against an isolated UAT job.
 
-## 2026-08 Contabo UAT incident boundary
+## 2026-08 OCI UAT migration and retired Contabo boundary
 
-- Contabo VPS `13.140.189.236` hosts private UAT only; the TFP product is not
-  live or publicly launched from this VPS. UAT status does not reduce the host
-  hardening requirement.
+- OCI instance `tfp-a1-free-2ocpu-12gb` (`161.118.161.98`,
+  `VM.Standard.A1.Flex`, `2 OCPU / 12 GB RAM`, `ap-mumbai-1`) is the current
+  private UAT host. It runs fresh host-local PostgreSQL plus the main app,
+  moderation worker/API, collage service, and `tfp-oci-uat` Cloudflare Tunnel.
+- Contabo VPS `13.140.189.236` is retired from UAT and must not be used for
+  deployments, database tunnels, folder moderation, or application traffic.
+- The older OCI E2 micro `aip-mumbai-e2-micro-new` at `140.245.30.133` remains
+  separate and is not the UAT target.
+- No folder-moderation images, reports, reviewer artifacts, or workspace were
+  migrated to OCI; `/srv/tfp-folder-moderation` must remain absent.
+- All UAT service ports bind to loopback. The public tester path is only
+  `https://uat.tfpphotographers.com` through Cloudflare Access and tunnel
+  `tfp-oci-uat`; administrative SSH remains a separate key-only control.
+- Historical Contabo incident evidence below is retained for audit context only.
 - A provider complaint alleged outbound `SSH_BRUTE_FORCE` traffic from the VPS.
   The complaint identifies the source IP but does not prove the responsible
   process, account, or person; root cause requires preserved VPS and provider

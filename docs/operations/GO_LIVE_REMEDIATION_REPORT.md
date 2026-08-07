@@ -1,5 +1,10 @@
 # Production Readiness Remediation Report
 
+> **Historical report:** Provider endpoints in this June 2026 remediation record
+> describe the state at that time. Current UAT is OCI
+> `tfp-a1-free-2ocpu-12gb` (`161.118.161.98`) with loopback-only services;
+> Contabo is retired. See `docs/operations/deploy.md`.
+
 Generated: 2026-06-28
 
 ## Scope
@@ -28,7 +33,7 @@ Secrets were treated as external inputs. Code, runtime scripts, package metadata
   - `@opentelemetry/core >= 2.8.0`
   - `@babel/core >= 7.29.6`
 - Aligned translation SSOT to bulk pretranslation with approval-only provider triggers.
-- Updated tracked env templates to the current Contabo UAT endpoints:
+- At the time of this report, updated tracked env templates to the then-current Contabo UAT endpoints (now retired):
   - moderation/translation: `http://13.140.189.236:7001`
   - collage: `http://13.140.189.236:7003`
 - Replaced stale developer-local absolute paths in QA and moderation helper scripts with repo-relative resolution.

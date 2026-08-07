@@ -133,7 +133,7 @@
         <div class="info-grid">
           <div class="info-box"><div class="info-box-label">Provider</div><div class="info-box-value">Self-hosted PostgreSQL 15+</div></div>
           <div class="info-box"><div class="info-box-label">ORM</div><div class="info-box-value">Prisma 6 (@prisma/client)</div></div>
-          <div class="info-box"><div class="info-box-label">UAT Host</div><div class="info-box-value">Contabo VPS — 13.140.189.236</div></div>
+          <div class="info-box"><div class="info-box-label">UAT Host</div><div class="info-box-value">OCI Always Free — tfp-a1-free-2ocpu-12gb — 161.118.161.98</div></div>
           <div class="info-box"><div class="info-box-label">Download</div><div class="info-box-value"><a href="https://www.postgresql.org/download/" target="_blank">postgresql.org/download</a></div></div>
         </div>
         <div class="env-keys">
@@ -380,16 +380,16 @@
         </div>
       </div>
       <div class="card-body">
-        <div class="card-purpose"><strong>Purpose:</strong> The primary moderation backend. A custom Python FastAPI microservice running YOLOv8, NudeNet 3.4, CLIP, and NLLB-200 models locally. The main API calls it over HTTP to score images for adult content and violence. Runs on the Contabo VPS at port 7001. Also doubles as the translation backend when ACTIVE_TRANSLATION_PROVIDER=remote-http.</div>
+        <div class="card-purpose"><strong>Purpose:</strong> The primary moderation backend. A custom Python FastAPI microservice running YOLOv8, NudeNet 3.4, CLIP, and NLLB-200 models locally. The main API calls it over OCI-host-local HTTP to score images for adult content and violence. It listens only on 127.0.0.1:7001. It also doubles as the translation backend when ACTIVE_TRANSLATION_PROVIDER=remote-http.</div>
         <div class="info-grid">
           <div class="info-box"><div class="info-box-label">Runtime</div><div class="info-box-value">Python 3.11 + FastAPI + PyTorch + ONNX</div></div>
-          <div class="info-box"><div class="info-box-label">UAT URL</div><div class="info-box-value">http://13.140.189.236:7001</div></div>
+          <div class="info-box"><div class="info-box-label">UAT URL</div><div class="info-box-value">http://127.0.0.1:7001 (OCI host only)</div></div>
           <div class="info-box"><div class="info-box-label">Models</div><div class="info-box-value">YOLOv8, NudeNet 3.4, CLIP, NLLB-200</div></div>
           <div class="info-box"><div class="info-box-label">Repo</div><div class="info-box-value">tfp-image-moderation-service/</div></div>
         </div>
         <div class="env-keys">
           <div class="env-key"><span class="env-key-name">ACTIVE_MODERATION_PROVIDER</span><span class="env-key-req">required</span><span class="env-key-note">Set to "remote-http"</span></div>
-          <div class="env-key"><span class="env-key-name">MODERATION_REMOTE_URL</span><span class="env-key-req">required</span><span class="env-key-note">e.g. http://13.140.189.236:7001</span></div>
+          <div class="env-key"><span class="env-key-name">MODERATION_REMOTE_URL</span><span class="env-key-req">required</span><span class="env-key-note">OCI UAT: http://127.0.0.1:7001</span></div>
           <div class="env-key"><span class="env-key-name">MODERATION_REMOTE_AUTH_TOKEN</span><span class="env-key-req">required</span><span class="env-key-note">Matches AIP__SECURITY__INTERNAL_API_KEY on the service</span></div>
           <div class="env-key"><span class="env-key-name">AIP__SECURITY__INTERNAL_API_KEY</span><span class="env-key-req">service-side</span><span class="env-key-note">Set in tfp-image-moderation-service/.env</span></div>
         </div>

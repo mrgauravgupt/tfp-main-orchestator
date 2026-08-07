@@ -68,66 +68,46 @@ The orchestration layer coordinates three main subprojects, each serving a disti
 
 ## Service Deployment Matrix
 
-The orchestrator deploys UAT services to the Contabo VPS behind Nginx reverse proxies.
+The orchestrator deploys the complete private UAT stack to the OCI Always Free Ampere host. Nginx and every application service listen only on loopback; Cloudflare Tunnel is the tester ingress.
 
-| Service | Port (Public) | Port (Private) | Runtime | Profile Map | Service Name |
+| Service | Loopback Port | Internal App Port | Runtime | Profile Map | Service Name |
 | :--- | :---: | :---: | :--- | :--- | :--- |
-| **Main App / Web** | `4321` | — | Node.js / Astro SSR | Dev / UAT / Prod | `tfp-web` |
-| **Main App / API** | `4000` | — | Node.js / Fastify | Dev / UAT / Prod | `tfp-api` |
+| **Main App / Web** | `8080` | — | Node.js / Astro SSR | Dev / UAT / Prod | `tfp-main-uat-web` |
+| **Main App / API** | `4000` | — | Node.js / Fastify | Dev / UAT / Prod | `tfp-main-uat-api` |
 | **Moderation Service** | `7001` | `7002` | Python / FastAPI / Uvicorn | `it` (dev) / `uat` / `prod` | `tfp-moderation-service` |
 | **Collage Service** | `7003` | `7004` | Node.js / Fastify | `it` (dev) / `uat` / `prod` | `tfp-collage-service` |
 
-### VPS vs OCI Hosts
+### Current OCI UAT Host
 
-Keep these hosting targets separate:
+- Instance: `tfp-a1-free-2ocpu-12gb`
+- Public/private IP: `161.118.161.98` / `10.0.1.114`
+- Shape: `VM.Standard.A1.Flex`, `2 OCPU / 12 GB RAM`, ARM64
+- Region: `ap-mumbai-1`
+- SSH: `ubuntu@161.118.161.98`
+- Tester URL: `https://uat.tfpphotographers.com`
+- Tunnel: `tfp-oci-uat` -> `http://localhost:8080`
+- Database and app/service ports: loopback-only on the OCI host
 
-- **Contabo VPS UAT**: `13.140.189.236`
-  - Current checked-in `scripts/vps` deployment target.
-  - Public moderation endpoint: `http://13.140.189.236:7001`.
-  - Public collage endpoint: `http://13.140.189.236:7003`.
-- **Oracle Cloud Infrastructure (OCI)**:
-  - Separate Oracle tenancy for Always Free Ampere A1 acquisition and future ARM64 deployment planning.
-  - Current known OCI micro VM: `aip-mumbai-e2-micro-new`, public IP `140.245.30.133`, shape `VM.Standard.E2.1.Micro`.
-  - A1 acquisition helper: [scripts/oci/acquire-a1-free.sh](file:///Users/hexa/Desktop/tfp-main-orchestator/scripts/oci/acquire-a1-free.sh).
-  - Safe Always Free target: `VM.Standard.A1.Flex` with `2 OCPU / 12 GB RAM`.
-
-Do not use the Contabo VPS IP when checking OCI state, and do not treat the OCI E2 micro as the UAT service host.
+Use [scripts/oci/deploy-all-uat.sh](file:///Users/hexa/Desktop/tfp-main-orchestator/scripts/oci/deploy-all-uat.sh) for a fresh full-stack deployment. The older OCI E2 micro at `140.245.30.133` is not the UAT host. Contabo `13.140.189.236` is retired and must not be used as a deployment or database target.
 
 ---
 
-### Folder Moderation Audit Artifacts
+### Folder Moderation Exclusion
 
-The folder moderation audit runs against the Contabo VPS UAT moderation service and writes artifacts under `/srv/tfp-folder-moderation/reports`.
-
-- **Run on VPS from local wrapper**: `cd tfpphotographers && bash ./scripts/vps/run-folder-moderation.sh`
-- **VPS workspace**: `/srv/tfp-folder-moderation/tfpphotographers`
-- **VPS images**: `/srv/tfp-folder-moderation/images`
-- **VPS reports**: `/srv/tfp-folder-moderation/reports`
-- **Raw download expectation**: the completed downloadable `folder-moderation-audit-v1-*.json` must include full `rawEnvelope` and `providerRawResponse` values.
-- **Review-page expectation**: isolated reviewer JSON/chunks intentionally remove heavy raw payloads so the browser review page can load quickly.
-- **Auth gotcha**: if all processed rows are errors with `401 unauthorized`, the launcher did not resolve the internal moderation API key. The wrapper should load `AIP__SECURITY__INTERNAL_API_KEY` from the VPS systemd service when `MODERATION_REMOTE_AUTH_TOKEN` is absent.
-- **Large JSON gotcha**: full raw audit JSON must be streamed when written. A single `JSON.stringify` over the entire payload can fail with `Invalid string length`.
-
-Use the raw VPS/downloaded JSON for policy-field completeness debugging. Use the reviewer page only for human outcome review.
+Normal OCI UAT deployments intentionally exclude folder moderation. `/srv/tfp-folder-moderation`, source images, reports, reviewer chunks, and raw audit payloads must not be transferred. The old Contabo-backed wrapper is retired and requires an explicit future redesign before reuse.
 
 ---
 
 ## Shared DevOps & Deployment Scripting
 
-Deployments are orchestrated from the root using automated, interactive shell wrappers located in [scripts/vps](file:///Users/hexa/Desktop/tfp-main-orchestator/scripts/vps).
+OCI UAT deployments are orchestrated from [scripts/oci](file:///Users/hexa/Desktop/tfp-main-orchestator/scripts/oci). Service-local scripts retain their historical `scripts/vps` directory name but receive the OCI host and user from the OCI wrapper.
 
 ### Deploying Both Microservices (Recommended)
-To run a unified, interactive deployment for both the Collage and Moderation services:
+To deploy the complete fresh UAT stack:
 ```bash
-bash scripts/vps/deploy-both-services.sh
+bash scripts/oci/deploy-all-uat.sh
 ```
-This script will:
-1. Prompt you to choose the environment: `local` (1), `UAT` (2), or `PROD` (3).
-2. Load the matching environment variables from [tfpphotographers](file:///Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers) (e.g., `.env.production.local`).
-3. Run database migrations on the target database (e.g., creating external image moderation job tables).
-4. SSH into the VPS host, sync the code repositories, install dependencies via `pnpm` (Collage) and `uv` (Moderation).
-5. Build and configure Systemd service scripts and Nginx routing blocks.
-6. Verify service health and print live endpoints.
+This bootstraps fresh OCI-local PostgreSQL, deploys only required application/service payloads, preserves the folder-moderation exclusion, and verifies loopback listeners.
 
 ### Targeted Service Deployment
 You can disable deployment of individual services using flags:
@@ -141,7 +121,7 @@ DEPLOY_COLLAGE=false bash scripts/vps/deploy-both-services.sh
 
 ### OCI A1 Capacity Acquisition
 
-OCI free-tier capacity is managed separately from the VPS deployment flow. To run the background acquisition loop on macOS:
+OCI free-tier capacity acquisition is managed separately from the active OCI UAT deployment flow. To run the background acquisition loop on macOS:
 
 ```bash
 scripts/oci/acquire-a1-free.sh --daemon
@@ -174,7 +154,7 @@ bash scripts/setup-env.sh --target all
 
 This writes ignored runtime files in `tfpphotographers`:
 - `.env.local`: local PostgreSQL, local filesystem storage, local moderation at `http://127.0.0.1:7001`, local collage at `http://127.0.0.1:4001`.
-- `.env.uat.local`: Contabo VPS UAT PostgreSQL, UAT B2 bucket/prefix, UAT moderation/collage endpoints.
+- `.env.uat.local`: OCI host-local UAT PostgreSQL, UAT B2 bucket/prefix, and loopback moderation/collage endpoints.
 - `.env.production.local`: production PostgreSQL placeholder, production B2 bucket/prefix, production moderation/collage endpoints.
 
 The command will not overwrite existing files unless `--force` is passed. UAT and production files intentionally contain `REPLACE_*` placeholders for secrets that must be filled from the secure runtime source.
