@@ -20,6 +20,37 @@ canonical_service_env() {
   esac
 }
 
+rewrite_service_postgres_host() {
+  local raw_url="${1:-}"
+  local host_override="${2:-}"
+  local port_override="${3:-5432}"
+  [[ -n "$raw_url" && -n "$host_override" ]] || {
+    printf '%s' "$raw_url"
+    return 0
+  }
+
+  python3 - "$raw_url" "$host_override" "$port_override" <<'PY'
+import sys
+from urllib.parse import quote, unquote, urlsplit, urlunsplit
+
+raw, host, port = sys.argv[1:4]
+parsed = urlsplit(raw)
+if not parsed.scheme or not parsed.path:
+    raise SystemExit("Invalid PostgreSQL URL supplied to deploy host override")
+
+username = unquote(parsed.username or "")
+password = unquote(parsed.password or "")
+auth = ""
+if username:
+    auth = quote(username, safe="")
+    if password:
+        auth += ":" + quote(password, safe="")
+    auth += "@"
+
+print(urlunsplit((parsed.scheme, f"{auth}{host}:{port}", parsed.path, parsed.query, parsed.fragment)))
+PY
+}
+
 source_env_file_if_present() {
   local env_file="$1"
   [[ -f "$env_file" ]] || return 0
@@ -69,6 +100,15 @@ load_service_deploy_env() {
   # exports while keeping real secrets out of git.
   source_env_file_if_present "$root_dir/.env.deploy.local"
   source_env_file_if_present "$root_dir/.env.deploy.${env_file_suffix}.local"
+
+  if [[ -n "${DEPLOY_DATABASE_HOST_OVERRIDE:-}" ]]; then
+    local database_port_override="${DEPLOY_DATABASE_PORT_OVERRIDE:-5432}"
+    DATABASE_URL="$(rewrite_service_postgres_host "${DATABASE_URL:-}" "$DEPLOY_DATABASE_HOST_OVERRIDE" "$database_port_override")"
+    DATABASE_DIRECT_URL="$(rewrite_service_postgres_host "${DATABASE_DIRECT_URL:-${DATABASE_URL:-}}" "$DEPLOY_DATABASE_HOST_OVERRIDE" "$database_port_override")"
+    SHADOW_DATABASE_URL="$(rewrite_service_postgres_host "${SHADOW_DATABASE_URL:-}" "$DEPLOY_DATABASE_HOST_OVERRIDE" "$database_port_override")"
+    TFP_DATABASE_URL="$(rewrite_service_postgres_host "${TFP_DATABASE_URL:-${DATABASE_URL:-}}" "$DEPLOY_DATABASE_HOST_OVERRIDE" "$database_port_override")"
+    export DATABASE_URL DATABASE_DIRECT_URL SHADOW_DATABASE_URL TFP_DATABASE_URL
+  fi
 
   export DEPLOY_HOST="${DEPLOY_HOST:-${VPS_DEPLOY_HOST:-13.140.189.236}}"
   export DEPLOY_USER="${DEPLOY_USER:-${VPS_DEPLOY_USER:-root}}"
