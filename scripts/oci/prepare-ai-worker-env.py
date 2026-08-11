@@ -81,6 +81,10 @@ def main() -> None:
         "TFP_V2_WORKER_MAX_CONCURRENCY": "2",
         "TFP_V2_WORKER_MAX_ATTEMPTS": "36",
         "TFP_V2_WORKER_STALE_SECONDS": "300",
+        "TFP_V2_TRANSLATION_CONVERTED_MODEL_DIR": (
+            "/srv/tfp-ai-inference-service/shared/models/m2m100-418m-ct2"
+        ),
+        "TFP_V2_TRANSLATION_BEAM_SIZE": "4",
     })
     print(f"Prepared {target} without printing secrets")
 
