@@ -3,7 +3,8 @@
 This workspace deploys three cooperating services:
 
 - `tfpphotographers`: Astro/Fastify main application.
-- `tfp-moderation-service`: internal AI moderation API and optional moderation worker.
+- `tfp-ai-inference-service`: stateless image, text, and translation inference API.
+- `tfp-moderation-service`: retained V1 rollback codebase, not deployed by default.
 - `tfp-collage-service`: collage API and optional collage worker.
 
 ## Required Production Secrets
@@ -48,7 +49,7 @@ Do not use those local overrides in UAT or production.
 From the workspace root:
 
 ```bash
-bash scripts/oci/deploy-both-services.sh
+bash scripts/oci/deploy-all-uat.sh
 ```
 
 Current UAT target: OCI `tfp-a1-free-2ocpu-12gb` at `161.118.161.98`.
@@ -58,7 +59,7 @@ names; Contabo is retired.
 For service-local deployment:
 
 ```bash
-bash tfp-moderation-service/scripts/vps/deploy-interactive.sh
+bash tfp-ai-inference-service/scripts/deploy-uat.sh
 bash tfp-collage-service/scripts/vps/deploy-interactive.sh
 ```
 

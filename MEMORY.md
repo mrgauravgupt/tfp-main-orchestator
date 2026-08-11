@@ -3,7 +3,8 @@
 ## Repository map
 
 - `tfpphotographers/`: main Astro, Fastify, Prisma, PostgreSQL product monorepo.
-- `tfp-moderation-service/`: FastAPI inference and folder-operations service.
+- `tfp-ai-inference-service/`: active stateless FastAPI image/text/translation service.
+- `tfp-moderation-service/`: unchanged legacy V1 rollback and folder-operations service.
 - `tfp-collage-service/`: Node collage worker service.
 - This root repository coordinates deployment scripts and records nested Git revisions.
 
@@ -12,6 +13,9 @@
 - The validated architecture audit is in `VALIDATED_AUDIT_AND_IMPLEMENTATION_PLAN.md`; use it as a prioritized backlog, not as proof of live runtime state.
 - The PostgreSQL-backed `event_outbox` is intentional. It uses `FOR UPDATE SKIP LOCKED`, retry state, terminal `FAILED`, and stale-processing recovery. Do not propose Redis/BullMQ merely because an outbox exists.
 - Domain transitions must use the transaction-scoped enqueue helper. Do not reintroduce post-commit event emission for moderation transitions.
+- Approved opportunities/events/contests enqueue a reference-only `process_translation`
+  outbox job. Translation runs independently after approval, populates revision-scoped
+  `TranslationCache`, and retries without re-running moderation.
 - TypeScript worker shutdown drains active jobs with a bounded timeout; Python moderation worker handles SIGTERM/SIGINT by stopping new polling and finishing the active batch.
 - Moderation folder operations require the internal service key and a separate step-up password for every mutation. Folder moderation is not installed on OCI UAT; all service ports remain private and loopback-only.
 - Deployment defaults to `tfpdeploy`; `root` is a deliberate break-glass override only.

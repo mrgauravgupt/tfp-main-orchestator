@@ -17,18 +17,15 @@ graph TD
 
     subgraph "Auxiliary Microservices"
         CollageService[TFP Collage Service<br/>Fastify / TS]
-        ModerationService[TFP Image Moderation Service<br/>FastAPI / Python]
+        InferenceService[TFP AI Inference Service<br/>FastAPI / Python]
     end
 
     CollageService <-->|Async Polling & Write| Postgres
     CollageService -->|Fetch Images| Storage
     CollageService -->|Upload Collages| Storage
 
-    ModerationService <-->|Moderation Jobs Queue| Postgres
-    ModerationService -->|Download Media| Storage
-
     FastifyAPI <-->|Ad-hoc HTTP Requests| CollageService
-    FastifyAPI <-->|Ad-hoc HTTP Requests| ModerationService
+    FastifyAPI -->|Authenticated inference HTTP| InferenceService
 ```
 
 ---
@@ -51,18 +48,18 @@ The orchestration layer coordinates three main subprojects, each serving a disti
   - Stateful background worker polling approved opportunities, applying focus-metadata, stitching layouts to a 16:9 canvas, and writing back to B2/S3.
 * **Documentation**: See [tfp-collage-service/README.md](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-collage-service/README.md).
 
-### 3. [TFP Moderation Service](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-moderation-service)
-* **Role**: Signal-only AI inference engine for automated moderation and translation.
-* **Tech Stack**: FastAPI (Python), Uvicorn, Nginx, CTranslate2.
-* **Models Hosted**:
-  - `falconsai` (NSFW image detection)
-  - `nudenet` (Intimate body-part detection with bounding boxes)
-  - `clip` (Zero-shot semantic prompt classification)
-  - `toxic_bert` (Text toxicity classifier)
-  - `rules` (Local keyword/regex matching engine)
-  - `nllb` (CTranslate2 distilled translation)
-* **Key Features**: High-performance image and text analysis, translation, external PostgreSQL-driven moderation job worker.
-* **Documentation**: See [tfp-moderation-service/README.md](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-moderation-service/README.md).
+### 3. [TFP AI Inference Service](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-ai-inference-service)
+* **Role**: Stateless image moderation, text-safety, and translation inference.
+* **Tech Stack**: FastAPI, OpenRouter/Qwen vision, ToxicBERT, and M2M100.
+* **Key Features**: metadata-free 600px image submission, strict binary image output,
+  local CPU text/translation models, internal authentication, bounded concurrency, and
+  privacy-safe telemetry.
+* **State boundary**: The TFP app owns PostgreSQL jobs, decisions, retries, and
+  `TranslationCache`; the inference service never reads or writes the product database.
+* **Documentation**: See [tfp-ai-inference-service/README.md](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-ai-inference-service/README.md).
+
+`tfp-moderation-service` is retained unchanged as the V1 rollback codebase. It is not
+part of the default OCI UAT deployment.
 
 ---
 
@@ -74,7 +71,7 @@ The orchestrator deploys the complete private UAT stack to the OCI Always Free A
 | :--- | :---: | :---: | :--- | :--- | :--- |
 | **Main App / Web** | `8080` | — | Node.js / Astro SSR | Dev / UAT / Prod | `tfp-main-uat-web` |
 | **Main App / API** | `4000` | — | Node.js / Fastify | Dev / UAT / Prod | `tfp-main-uat-api` |
-| **Moderation Service** | `7001` | `7002` | Python / FastAPI / Uvicorn | `it` (dev) / `uat` / `prod` | `tfp-moderation-service` |
+| **AI Inference Service** | `7011` | — | Python / FastAPI / Uvicorn | Local / UAT / Prod | `tfp-ai-inference-service` |
 | **Collage Service** | `7003` | `7004` | Node.js / Fastify | `it` (dev) / `uat` / `prod` | `tfp-collage-service` |
 
 ### Current OCI UAT Host
@@ -102,7 +99,7 @@ Normal OCI UAT deployments intentionally exclude folder moderation. `/srv/tfp-fo
 
 OCI UAT deployments are orchestrated from [scripts/oci](file:///Users/hexa/Desktop/tfp-main-orchestator/scripts/oci). Service-local scripts retain their historical `scripts/vps` directory name but receive the OCI host and user from the OCI wrapper.
 
-### Deploying Both Microservices (Recommended)
+### Deploying the Full UAT Stack (Recommended)
 To deploy the complete fresh UAT stack:
 ```bash
 bash scripts/oci/deploy-all-uat.sh
@@ -115,8 +112,8 @@ You can disable deployment of individual services using flags:
 # Deploy ONLY the Collage Service
 DEPLOY_AI=false bash scripts/vps/deploy-both-services.sh
 
-# Deploy ONLY the Moderation Service
-DEPLOY_COLLAGE=false bash scripts/vps/deploy-both-services.sh
+# Deploy ONLY the AI inference service
+bash tfp-ai-inference-service/scripts/deploy-uat.sh
 ```
 
 ### OCI A1 Capacity Acquisition
@@ -153,7 +150,7 @@ bash scripts/setup-env.sh --target all
 ```
 
 This writes ignored runtime files in `tfpphotographers`:
-- `.env.local`: local PostgreSQL, local filesystem storage, local moderation at `http://127.0.0.1:7001`, local collage at `http://127.0.0.1:4001`.
+- `.env.local`: local PostgreSQL, local filesystem storage, configurable V1/V2 inference URL, and local collage at `http://127.0.0.1:4001`.
 - `.env.uat.local`: OCI host-local UAT PostgreSQL, UAT B2 bucket/prefix, and loopback moderation/collage endpoints.
 - `.env.production.local`: production PostgreSQL placeholder, production B2 bucket/prefix, production moderation/collage endpoints.
 
@@ -179,9 +176,10 @@ To run the helper microservices locally:
 cd tfp-collage-service
 pnpm dev
 
-# Run Moderation Service locally (runs FastAPI app on port 7001)
-cd tfp-moderation-service
-uv run ai-inference-api
+# Run AI Inference Service locally (FastAPI on loopback port 7011)
+cd tfp-ai-inference-service
+uv sync --extra local-ml
+uv run tfp-ai-inference-api
 ```
 
 ---

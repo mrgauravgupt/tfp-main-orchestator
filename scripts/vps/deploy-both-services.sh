@@ -94,6 +94,15 @@ if [[ "$DEPLOY_ENV" != "local" ]]; then
   fi
 fi
 
+if [[ "$DEPLOY_ENV" == "uat" && "$DEPLOY_AI" == "true" && "${ALLOW_LEGACY_MODERATION_UAT_DEPLOY:-false}" != "true" ]]; then
+  cat >&2 <<'MSG'
+The default OCI UAT stack uses tfp-ai-inference-service on 127.0.0.1:7011.
+This script's AI path deploys the legacy V1 rollback service. Set
+ALLOW_LEGACY_MODERATION_UAT_DEPLOY=true only for an explicit rollback.
+MSG
+  exit 1
+fi
+
 apply_tfp_migrations() {
   local migration_name="20260611000100_external_image_moderation_jobs"
   local migration_file="$ROOT_DIR/tfpphotographers/packages/database/prisma/migrations/$migration_name/migration.sql"
@@ -154,7 +163,7 @@ EOF
 }
 
 echo "═══════════════════════════════════════════════════════════════════════════════"
-echo "  Remote Deployment: TFP Moderation Service + TFP Collage Service"
+echo "  Remote Deployment: Legacy Moderation (optional) + TFP Collage Service"
 echo "═══════════════════════════════════════════════════════════════════════════════"
 echo ""
 echo "Deployment Configuration:"
@@ -163,7 +172,7 @@ echo "  User:              $DEPLOY_USER"
 echo "  Port:              $DEPLOY_PORT"
 echo "  Apply migrations:  $APPLY_TFP_MIGRATIONS"
 echo ""
-echo "TFP Moderation Service:"
+echo "Legacy TFP Moderation Service:"
 echo "  Deploy:            $DEPLOY_AI"
 echo "  Path:              $AIP_DEPLOY_PATH"
 echo "  Service:           $AIP_SERVICE_NAME"

@@ -28,7 +28,7 @@ listen only on loopback:
 | PostgreSQL | `127.0.0.1:5432` |
 | Main API | `127.0.0.1:4000` |
 | Main web gateway | `127.0.0.1:8080` |
-| Moderation proxy / app | `127.0.0.1:7001` / `127.0.0.1:7002` |
+| AI inference service | `127.0.0.1:7011` |
 | Collage proxy / app | `127.0.0.1:7003` / `127.0.0.1:7004` |
 
 Only key-based administrative SSH is retained. Testers reach the app through
@@ -62,13 +62,15 @@ The `scripts/vps` directory name is historical and provider-neutral. Current
 UAT defaults resolve to OCI; the compatibility `scripts/vps/deploy-all-uat.sh`
 delegates to `scripts/oci/deploy-all-uat.sh`.
 
-Deploy only moderation and collage without reconnecting any remote database:
+Deploy only the stateless AI inference service:
 
 ```bash
-OCI_DEPLOY_HOST=161.118.161.98 \
-OCI_DEPLOY_USER=ubuntu \
-  bash scripts/oci/deploy-both-services.sh
+bash tfp-ai-inference-service/scripts/deploy-uat.sh
 ```
+
+Deploy only collage with the legacy combined wrapper by setting `DEPLOY_AI=false`.
+Deploying V1 moderation to UAT is a rollback-only action and additionally requires
+`ALLOW_LEGACY_MODERATION_UAT_DEPLOY=true`.
 
 ## Secrets and storage
 
@@ -77,7 +79,7 @@ Never commit or print them. The OCI runtime uses:
 
 - independent bucket-scoped Backblaze keys for private and public buckets;
 - fresh host-local PostgreSQL;
-- distinct moderation and collage internal API keys;
+- distinct inference and collage internal API keys;
 - no storage master/admin key inside an application process.
 
 ## Folder-moderation exclusion
@@ -107,9 +109,9 @@ Host-side:
 ssh ubuntu@161.118.161.98
 systemctl is-active cloudflared postgresql@16-main \
   tfp-main-uat-api tfp-main-uat-web tfp-main-uat-worker \
-  tfp-moderation-service tfp-moderation-service-moderation-worker@1 \
+  tfp-ai-inference-service \
   tfp-collage-service
-sudo ss -lntp | grep -E '127\.0\.0\.1:(4000|5432|7001|7002|7003|7004|8080)'
+sudo ss -lntp | grep -E '127\.0\.0\.1:(4000|5432|7003|7004|7011|8080)'
 test ! -e /srv/tfp-folder-moderation
 curl -fsS http://127.0.0.1:4000/health
 ```
@@ -121,7 +123,7 @@ curl -I https://uat.tfpphotographers.com
 ```
 
 An unauthenticated request must redirect to Cloudflare Access. Direct public
-connections to `4000`, `5432`, `7001-7004`, and `8080` must fail.
+connections to `4000`, `5432`, `7003-7004`, `7011`, and `8080` must fail.
 
 For temporary laptop database administration, use an SSH local forward to the
 OCI loopback listener and scope the database URL override to that command:
@@ -132,6 +134,8 @@ ssh -N -L 15432:127.0.0.1:5432 ubuntu@161.118.161.98
 
 ## Rollback
 
-UAT releases are disposable. Redeploy a pushed application commit as a fresh
-release, repeat listener and health checks, and leave Cloudflare Access/Tunnel
-unchanged. Never point rollback tooling at the retired Contabo host.
+UAT releases are disposable. Redeploy a pushed application commit as a fresh release,
+repeat listener and health checks, and leave Cloudflare Access/Tunnel unchanged. To
+temporarily roll back inference, explicitly deploy V1, point `MODERATION_REMOTE_URL` and
+`TRANSLATION_REMOTE_URL` to `http://127.0.0.1:7001`, and restart API/worker. Never run
+both image job consumers or point rollback tooling at the retired Contabo host.

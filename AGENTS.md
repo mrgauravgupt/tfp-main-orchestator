@@ -125,7 +125,7 @@
   - **OS / SSH user**: Ubuntu ARM64 / `ubuntu`
   - **Public tester URL**: `https://uat.tfpphotographers.com`
   - **Cloudflare tunnel**: `tfp-oci-uat` -> `http://localhost:8080`
-- **Private service listeners**: PostgreSQL `5432`, API `4000`, web `8080`, moderation `7001/7002`, and collage `7003/7004` bind only to `127.0.0.1`.
+- **Private service listeners**: PostgreSQL `5432`, API `4000`, web `8080`, AI inference `7011`, and collage `7003/7004` bind only to `127.0.0.1`. Ports `7001/7002` are legacy V1 rollback only.
 - **Public ingress**: application ports are closed at OCI and the host firewall. Only key-based administrative SSH is retained; tester traffic must pass Cloudflare Access and Tunnel.
 - **SSH network boundary**:
   - Treat the August 2026 `SSH_BRUTE_FORCE` report as alleged outbound traffic

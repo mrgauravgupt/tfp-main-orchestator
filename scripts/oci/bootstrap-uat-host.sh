@@ -43,6 +43,7 @@ for unit in \
   tfp-image-moderation-service-moderation-worker@1.service \
   tfp-moderation-service.service \
   tfp-moderation-service-moderation-worker@1.service \
+  tfp-ai-inference-service.service \
   tfp-collage-service.service; do
   sudo systemctl disable --now "$unit" >/dev/null 2>&1 || true
 done
@@ -56,6 +57,7 @@ sudo rm -f \
   /etc/systemd/system/tfp-image-moderation-service-moderation-worker@.service \
   /etc/systemd/system/tfp-moderation-service.service \
   /etc/systemd/system/tfp-moderation-service-moderation-worker@.service \
+  /etc/systemd/system/tfp-ai-inference-service.service \
   /etc/systemd/system/tfp-collage-service.service
 sudo systemctl daemon-reload
 
@@ -63,6 +65,7 @@ sudo rm -rf -- \
   /srv/tfp-main-uat \
   /srv/tfp-image-moderation-service \
   /srv/tfp-moderation-service \
+  /srv/tfp-ai-inference-service \
   /srv/tfp-collage-service \
   /srv/tfp-folder-moderation
 rm -f "$HOME/.ssh/tfp-uat-db-tunnel" "$HOME/.ssh/tfp-uat-db-tunnel.pub"
@@ -160,8 +163,8 @@ sudo rm -f \
 if ! sudo iptables -C OUTPUT -p tcp --dport 22 -m conntrack --ctstate NEW -j REJECT 2>/dev/null; then
   sudo iptables -I OUTPUT 1 -p tcp --dport 22 -m conntrack --ctstate NEW -j REJECT
 fi
-if ! sudo iptables -C INPUT ! -i lo -p tcp -m multiport --dports 80,4000,5432,7001:7004,8080,11434 -j DROP 2>/dev/null; then
-  sudo iptables -I INPUT 1 ! -i lo -p tcp -m multiport --dports 80,4000,5432,7001:7004,8080,11434 -j DROP
+if ! sudo iptables -C INPUT ! -i lo -p tcp -m multiport --dports 80,4000,5432,7001:7004,7011,8080,11434 -j DROP 2>/dev/null; then
+  sudo iptables -I INPUT 1 ! -i lo -p tcp -m multiport --dports 80,4000,5432,7001:7004,7011,8080,11434 -j DROP
 fi
 sudo netfilter-persistent save >/dev/null
 

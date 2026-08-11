@@ -9,3 +9,6 @@
 [submodule "tfpphotographers"]
 	path = tfpphotographers
 	url = git@github.com:mrgauravgupt/tfpphotographers.com.git
+[submodule "tfp-ai-inference-service"]
+	path = tfp-ai-inference-service
+	url = git@github.com:mrgauravgupt/tfp-ai-inference-service.git

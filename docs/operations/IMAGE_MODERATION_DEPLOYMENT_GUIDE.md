@@ -1,66 +1,71 @@
-# Image Moderation Deployment Guide — OCI UAT
+# AI Inference Deployment Guide — OCI UAT
 
-## Target
+## Active service
 
-- OCI instance: `tfp-a1-free-2ocpu-12gb`
-- SSH: `ubuntu@161.118.161.98`
-- Shape: `VM.Standard.A1.Flex`, `2 OCPU / 12 GB RAM`, ARM64
-- Repository: `tfp-moderation-service`
-- Nginx/app listeners: `127.0.0.1:7001` / `127.0.0.1:7002`
-- API service: `tfp-moderation-service.service`
-- Worker: `tfp-moderation-service-moderation-worker@1.service`
-- Shared database: OCI-local PostgreSQL at `127.0.0.1:5432`
+- OCI: `tfp-a1-free-2ocpu-12gb` (`ubuntu@161.118.161.98`, ARM64)
+- Repository: `tfp-ai-inference-service`
+- Listener: `127.0.0.1:7011`
+- Unit: `tfp-ai-inference-service.service`
+- State: stateless; product jobs and results stay in the TFP PostgreSQL database
 
-The moderation endpoint has no public URL. The main application calls the
-loopback proxy from the same OCI host. Contabo `13.140.189.236` is retired.
+The service has no public route. The main API, app worker, and collage worker call it
+over loopback with an internal key. Contabo is retired. The legacy
+`tfp-moderation-service` repository is a rollback option and is not deployed by default.
+
+## Capabilities
+
+- OpenRouter/Qwen image moderation using a metadata-free 600px rendition and strict
+  `{"explicit": 0|1}` schema;
+- local rules plus ToxicBERT text moderation;
+- local M2M100 translation;
+- local Pillow edge-saliency visual focus for the collage contract.
 
 ## Validate locally
 
 ```bash
-cd /Users/hexa/Desktop/tfp-main-orchestator/tfp-moderation-service
+cd /Users/hexa/Desktop/tfp-main-orchestator/tfp-ai-inference-service
+uv sync --extra local-ml
 uv run ruff check .
 uv run pytest -q
 ```
 
 ## Deploy
 
-For a service-only release that preserves the existing database and app:
+Use the service-only immutable release script when the database and app must remain:
 
 ```bash
-cd /Users/hexa/Desktop/tfp-main-orchestator/tfp-moderation-service
-AIP_DEPLOY_HOST=161.118.161.98 \
-AIP_DEPLOY_USER=ubuntu \
-  bash scripts/vps/deploy-prod-7001.sh uat
+cd /Users/hexa/Desktop/tfp-main-orchestator/tfp-ai-inference-service
+bash scripts/deploy-uat.sh
 ```
 
-The `scripts/vps` name is historical and provider-neutral. For the `uat`
-profile its current default host is OCI.
+Use `bash scripts/oci/deploy-all-uat.sh` from the orchestrator root only for an explicitly
+authorized destructive UAT rebuild. It recreates the disposable UAT databases and runtime
+directories before deploying inference, app, and collage.
 
-## Required security controls
+## Required controls
 
-- `AIP__SECURITY__REQUIRE_INTERNAL_API_KEY=true`
-- a non-placeholder internal API key of at least 32 characters
-- loopback-only Nginx and Uvicorn listeners
-- one moderation worker on this 2-OCPU host unless load evidence supports more
-- bucket-scoped private storage credentials only
-- no folder-moderation workspace or reports
+- production settings validation and a 32+ character internal key;
+- OpenRouter key, ZDR, data-collection denial, and no implicit model fallback;
+- loopback binding, dedicated `tfpai` account, hardened systemd unit, and memory limit;
+- bounded input size/pixels/concurrency/timeouts/retries;
+- model downloads only during provisioning, then offline cache use;
+- no folder-moderation images, workspaces, reports, or reviewer artifacts.
 
 ## Verify on OCI
 
 ```bash
 ssh ubuntu@161.118.161.98
-systemctl is-active tfp-moderation-service.service \
-  tfp-moderation-service-moderation-worker@1.service
-curl -fsS http://127.0.0.1:7001/health/live
-sudo ss -lntp | grep -E '127\.0\.0\.1:700(1|2)'
+systemctl is-active tfp-ai-inference-service.service
+sudo ss -lntp | grep -E '127\.0\.0\.1:7011'
 test ! -e /srv/tfp-folder-moderation
 ```
 
-Do not test the moderation service through the public OCI IP. A failure to
-connect externally is the expected private-origin result.
+Use the internal key without printing it to call authenticated `/health/ready` and focused
+approved/rejected image, text, translation, and visual-focus probes. An external connection
+to port `7011` must fail.
 
-## Cache and report boundary
+## Rollback
 
-Service response/model caches may persist when required by runtime performance.
-Folder images, raw reports, reviewer pages, and policy-audit artifacts are not
-part of the OCI UAT deployment and must not be synced.
+An explicit rollback may deploy V1, change `MODERATION_REMOTE_URL` and
+`TRANSLATION_REMOTE_URL` to `http://127.0.0.1:7001`, then restart the app API and worker.
+Do not enable V1's database worker while the app worker owns moderation jobs.
