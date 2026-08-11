@@ -222,9 +222,21 @@ echo "  ✅ All deployments complete!"
 echo "═══════════════════════════════════════════════════════════════════════════════"
 echo ""
 echo "Service URLs:"
-echo "  AI Inference:  http://127.0.0.1:$AIP_NGINX_PORT/ (from target host)"
-echo "  Collage:       http://127.0.0.1:$COLLAGE_NGINX_PORT/ (from target host)"
-echo "  Health Check:  http://127.0.0.1:$AIP_NGINX_PORT/health/live (from target host)"
+if [[ "$DEPLOY_AI" == "true" ]]; then
+  echo "  Legacy moderation V1: http://127.0.0.1:$AIP_NGINX_PORT/ (from target host)"
+  echo "  V1 health:            http://127.0.0.1:$AIP_NGINX_PORT/health/live"
+else
+  echo "  Legacy moderation V1: not deployed"
+fi
+if [[ "$DEPLOY_COLLAGE" == "true" ]]; then
+  echo "  Collage:              http://127.0.0.1:$COLLAGE_NGINX_PORT/ (from target host)"
+  echo "  Collage health:       http://127.0.0.1:$COLLAGE_NGINX_PORT/health/live"
+else
+  echo "  Collage:              not deployed"
+fi
+if [[ "$DEPLOY_ENV" == "uat" ]]; then
+  echo "  Active AI V2:         http://127.0.0.1:7011/ (deployed separately)"
+fi
 echo ""
 echo "To deploy only one service, use:"
 echo "  DEPLOY_AI=false bash $0        # Deploy only tfp-collage-service"
