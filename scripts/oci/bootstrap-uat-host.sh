@@ -44,6 +44,7 @@ for unit in \
   tfp-moderation-service.service \
   tfp-moderation-service-moderation-worker@1.service \
   tfp-ai-inference-service.service \
+  tfp-ai-inference-worker.service \
   tfp-collage-service.service; do
   sudo systemctl disable --now "$unit" >/dev/null 2>&1 || true
 done
@@ -58,6 +59,7 @@ sudo rm -f \
   /etc/systemd/system/tfp-moderation-service.service \
   /etc/systemd/system/tfp-moderation-service-moderation-worker@.service \
   /etc/systemd/system/tfp-ai-inference-service.service \
+  /etc/systemd/system/tfp-ai-inference-worker.service \
   /etc/systemd/system/tfp-collage-service.service
 sudo systemctl daemon-reload
 for retired_unit in \

@@ -13,9 +13,19 @@
 - The validated architecture audit is in `VALIDATED_AUDIT_AND_IMPLEMENTATION_PLAN.md`; use it as a prioritized backlog, not as proof of live runtime state.
 - The PostgreSQL-backed `event_outbox` is intentional. It uses `FOR UPDATE SKIP LOCKED`, retry state, terminal `FAILED`, and stale-processing recovery. Do not propose Redis/BullMQ merely because an outbox exists.
 - Domain transitions must use the transaction-scoped enqueue helper. Do not reintroduce post-commit event emission for moderation transitions.
+- `tfp-ai-inference-service` is the only consumer of slow AI request events:
+  `process_moderation` and `process_translation`. It claims with `FOR UPDATE SKIP LOCKED`,
+  uses a dedicated least-privilege `tfp_ai_worker` role, and atomically completes each
+  request while inserting a deterministic application-result event. The TFP worker owns
+  only `apply_ai_moderation_result` and `apply_ai_translation_result`; it applies existing
+  policy/domain/cache transitions and never waits for an AI provider.
 - Approved opportunities/events/contests enqueue a reference-only `process_translation`
-  outbox job. Translation runs independently after approval, populates revision-scoped
-  `TranslationCache`, and retries without re-running moderation.
+  job containing entity/revision and an immutable locale plan, but no authored content.
+  V2 translates the exact approved revision; TFP persists revision-scoped
+  `TranslationCache` and entity maps from the result event.
+- Exactly one request consumer may be active. V2 rollback means disabling its worker
+  before enabling the V1 database worker. Do not run V1 and V2 against the same request
+  rows.
 - TypeScript worker shutdown drains active jobs with a bounded timeout; Python moderation worker handles SIGTERM/SIGINT by stopping new polling and finishing the active batch.
 - Moderation folder operations require the internal service key and a separate step-up password for every mutation. Folder moderation is not installed on OCI UAT; all service ports remain private and loopback-only.
 - Deployment defaults to `tfpdeploy`; `root` is a deliberate break-glass override only.
