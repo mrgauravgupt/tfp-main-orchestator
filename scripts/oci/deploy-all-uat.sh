@@ -19,7 +19,7 @@ UAT_REQUIRE_CLOUDFLARED="${OCI_UAT_REQUIRE_CLOUDFLARED:-true}" \
 OCI_UAT_HOST="$DEPLOY_HOST" \
 OCI_UAT_USER="$DEPLOY_USER" \
 OCI_UAT_PORT="$DEPLOY_PORT" \
-  bash "$ROOT_DIR/tfp-ai-inference-service/scripts/deploy-uat.sh"
+  bash "$ROOT_DIR/tfp-ai-interface/scripts/deploy-uat.sh"
 
 DEPLOY_HOST="$DEPLOY_HOST" \
 DEPLOY_USER="$DEPLOY_USER" \

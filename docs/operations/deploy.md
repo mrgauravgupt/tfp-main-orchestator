@@ -65,7 +65,7 @@ delegates to `scripts/oci/deploy-all-uat.sh`.
 Deploy only the stateless AI inference service:
 
 ```bash
-bash tfp-ai-inference-service/scripts/deploy-uat.sh
+bash tfp-ai-interface/scripts/deploy-uat.sh
 ```
 
 Deploy only collage with the legacy combined wrapper by setting `DEPLOY_AI=false`.
@@ -109,7 +109,7 @@ Host-side:
 ssh ubuntu@161.118.161.98
 systemctl is-active cloudflared postgresql@16-main \
   tfp-main-uat-api tfp-main-uat-web tfp-main-uat-worker \
-  tfp-ai-inference-service \
+  tfp-ai-interface \
   tfp-collage-service
 sudo ss -lntp | grep -E '127\.0\.0\.1:(4000|5432|7003|7004|7011|8080)'
 test ! -e /srv/tfp-folder-moderation

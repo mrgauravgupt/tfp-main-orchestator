@@ -96,7 +96,7 @@ fi
 
 if [[ "$DEPLOY_ENV" == "uat" && "$DEPLOY_AI" == "true" && "${ALLOW_LEGACY_MODERATION_UAT_DEPLOY:-false}" != "true" ]]; then
   cat >&2 <<'MSG'
-The default OCI UAT stack uses tfp-ai-inference-service on 127.0.0.1:7011.
+The default OCI UAT stack uses tfp-ai-interface on 127.0.0.1:7011.
 This script's AI path deploys the legacy V1 rollback service. Set
 ALLOW_LEGACY_MODERATION_UAT_DEPLOY=true only for an explicit rollback.
 MSG

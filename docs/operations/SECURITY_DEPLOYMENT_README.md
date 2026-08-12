@@ -3,7 +3,7 @@
 This workspace deploys three cooperating services:
 
 - `tfpphotographers`: Astro/Fastify main application.
-- `tfp-ai-inference-service`: stateless image, text, and translation inference API.
+- `tfp-ai-interface`: stateless image, text, and translation inference API.
 - `tfp-moderation-service`: retained V1 rollback codebase, not deployed by default.
 - `tfp-collage-service`: collage API and optional collage worker.
 
@@ -59,7 +59,7 @@ names; Contabo is retired.
 For service-local deployment:
 
 ```bash
-bash tfp-ai-inference-service/scripts/deploy-uat.sh
+bash tfp-ai-interface/scripts/deploy-uat.sh
 bash tfp-collage-service/scripts/vps/deploy-interactive.sh
 ```
 

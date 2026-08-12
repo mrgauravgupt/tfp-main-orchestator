@@ -48,7 +48,7 @@ The orchestration layer coordinates three main subprojects, each serving a disti
   - Stateful background worker polling approved opportunities, applying focus-metadata, stitching layouts to a 16:9 canvas, and writing back to B2/S3.
 * **Documentation**: See [tfp-collage-service/README.md](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-collage-service/README.md).
 
-### 3. [TFP AI Inference Service](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-ai-inference-service)
+### 3. [TFP AI Inference Service](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-ai-interface)
 * **Role**: Stateless image moderation, text-safety, and translation inference.
 * **Tech Stack**: FastAPI, OpenRouter/Qwen vision, ToxicBERT, and M2M100.
 * **Key Features**: metadata-free 600px image submission, strict binary image output,
@@ -56,7 +56,7 @@ The orchestration layer coordinates three main subprojects, each serving a disti
   privacy-safe telemetry.
 * **State boundary**: The TFP app owns PostgreSQL jobs, decisions, retries, and
   `TranslationCache`; the inference service never reads or writes the product database.
-* **Documentation**: See [tfp-ai-inference-service/README.md](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-ai-inference-service/README.md).
+* **Documentation**: See [tfp-ai-interface/README.md](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-ai-interface/README.md).
 
 `tfp-moderation-service` is retained unchanged as the V1 rollback codebase. It is not
 part of the default OCI UAT deployment.
@@ -71,7 +71,7 @@ The orchestrator deploys the complete private UAT stack to the OCI Always Free A
 | :--- | :---: | :---: | :--- | :--- | :--- |
 | **Main App / Web** | `8080` | — | Node.js / Astro SSR | Dev / UAT / Prod | `tfp-main-uat-web` |
 | **Main App / API** | `4000` | — | Node.js / Fastify | Dev / UAT / Prod | `tfp-main-uat-api` |
-| **AI Inference Service** | `7011` | — | Python / FastAPI / Uvicorn | Local / UAT / Prod | `tfp-ai-inference-service` |
+| **AI Inference Service** | `7011` | — | Python / FastAPI / Uvicorn | Local / UAT / Prod | `tfp-ai-interface` |
 | **Collage Service** | `7003` | `7004` | Node.js / Fastify | `it` (dev) / `uat` / `prod` | `tfp-collage-service` |
 
 ### Current OCI UAT Host
@@ -113,7 +113,7 @@ You can disable deployment of individual services using flags:
 DEPLOY_AI=false bash scripts/vps/deploy-both-services.sh
 
 # Deploy ONLY the AI inference service
-bash tfp-ai-inference-service/scripts/deploy-uat.sh
+bash tfp-ai-interface/scripts/deploy-uat.sh
 ```
 
 ### OCI A1 Capacity Acquisition
@@ -177,7 +177,7 @@ cd tfp-collage-service
 pnpm dev
 
 # Run AI Inference Service locally (FastAPI on loopback port 7011)
-cd tfp-ai-inference-service
+cd tfp-ai-interface
 uv sync --extra local-ml
 uv run tfp-ai-inference-api
 ```

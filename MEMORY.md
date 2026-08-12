@@ -3,7 +3,7 @@
 ## Repository map
 
 - `tfpphotographers/`: main Astro, Fastify, Prisma, PostgreSQL product monorepo.
-- `tfp-ai-inference-service/`: active stateless FastAPI image/text/translation service.
+- `tfp-ai-interface/`: active stateless FastAPI image/text/translation service.
 - `tfp-moderation-service/`: unchanged legacy V1 rollback and folder-operations service.
 - `tfp-collage-service/`: Node collage worker service.
 - This root repository coordinates deployment scripts and records nested Git revisions.
@@ -13,7 +13,7 @@
 - The validated architecture audit is in `VALIDATED_AUDIT_AND_IMPLEMENTATION_PLAN.md`; use it as a prioritized backlog, not as proof of live runtime state.
 - The PostgreSQL-backed `event_outbox` is intentional. It uses `FOR UPDATE SKIP LOCKED`, retry state, terminal `FAILED`, and stale-processing recovery. Do not propose Redis/BullMQ merely because an outbox exists.
 - Domain transitions must use the transaction-scoped enqueue helper. Do not reintroduce post-commit event emission for moderation transitions.
-- `tfp-ai-inference-service` is the only consumer of slow AI request events:
+- `tfp-ai-interface` is the only consumer of slow AI request events:
   `process_moderation` and `process_translation`. It claims with `FOR UPDATE SKIP LOCKED`,
   uses a dedicated least-privilege `tfp_ai_worker` role, and atomically completes each
   request while inserting a deterministic application-result event. The TFP worker owns

@@ -9,6 +9,6 @@ Commands below are confirmed from checked-in manifests or README files. Use repo
 | Mobile | `bash ./scripts/manage-tfp-mobile.sh validate`, `test`, `typecheck`, `doctor` | `tfpphotographers/AGENTS.md`, `package.json` |
 | UI QA | `qa:design-tokens`, `qa:ui:capture:smoke`, `qa:ui:analyze:strict` through the Node wrapper | `tfpphotographers/package.json` |
 | Collage | `bash ./scripts/pnpm-node.sh exec tsc`; `NODE_ENV=test bash ./scripts/run-node.sh --test dist/tests/*.test.js` | `tfp-collage-service/package.json` |
-| AI inference | `uv sync --extra local-ml`, `uv run ruff check .`, `uv run pytest -q` | `tfp-ai-inference-service/README.md` |
+| AI inference | `uv sync --extra local-ml`, `uv run ruff check .`, `uv run pytest -q` | `tfp-ai-interface/README.md` |
 
 Database reset, migration, seed, deployment, and VPS commands are destructive or environment-mutating. Use only under explicit authorization and the relevant runbook.
