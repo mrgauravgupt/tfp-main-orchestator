@@ -94,7 +94,7 @@ if ! id tfpapp >/dev/null 2>&1; then
   sudo useradd --system --gid tfpapp --home-dir /srv/tfp-main-uat --shell /usr/sbin/nologin tfpapp
 fi
 if id tfpai >/dev/null 2>&1; then
-  sudo usermod --home-dir /srv/tfp-ai-interface tfpai
+  sudo usermod --home /srv/tfp-ai-interface tfpai
 fi
 
 sudo systemctl enable --now postgresql
