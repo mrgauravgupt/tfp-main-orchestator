@@ -57,7 +57,7 @@ def main() -> None:
     database = parsed.path.lstrip("/")
     if not database:
         raise SystemExit("The app UAT DATABASE_URL is missing")
-    existing_worker_url = urlsplit(current.get("TFP_V2_DATABASE_URL", ""))
+    existing_worker_url = urlsplit(current.get("TFP_AI_DATABASE_URL", ""))
     password = existing_worker_url.password or secrets.token_urlsafe(36)
     worker_netloc = f"tfp_ai_worker:{quote(password, safe='')}@127.0.0.1:5432"
     worker_url = urlunsplit(("postgresql", worker_netloc, f"/{database}", "schema=public", ""))
@@ -69,22 +69,28 @@ def main() -> None:
         return value
 
     update_env(target, {
-        "TFP_V2_WORKER_ENABLED": "true",
-        "TFP_V2_DATABASE_URL": worker_url,
-        "TFP_V2_STORAGE_ENDPOINT": required("B2_ENDPOINT", "BACKBLAZE_ENDPOINT"),
-        "TFP_V2_STORAGE_REGION": app_values.get("B2_REGION") or app_values.get("BACKBLAZE_REGION") or "us-east-005",
-        "TFP_V2_STORAGE_BUCKET": required("B2_PRIVATE_BUCKET_NAME", "B2_BUCKET_NAME", "BACKBLAZE_BUCKET_NAME"),
-        "TFP_V2_STORAGE_ACCESS_KEY_ID": required("B2_PRIVATE_ACCESS_KEY_ID", "B2_ACCESS_KEY_ID", "BACKBLAZE_KEY_ID"),
-        "TFP_V2_STORAGE_SECRET_ACCESS_KEY": required("B2_PRIVATE_SECRET_ACCESS_KEY", "B2_SECRET_ACCESS_KEY", "BACKBLAZE_APP_KEY"),
-        "TFP_V2_WORKER_POLL_SECONDS": "2",
-        "TFP_V2_WORKER_BATCH_SIZE": "4",
-        "TFP_V2_WORKER_MAX_CONCURRENCY": "2",
-        "TFP_V2_WORKER_MAX_ATTEMPTS": "36",
-        "TFP_V2_WORKER_STALE_SECONDS": "300",
-        "TFP_V2_TRANSLATION_CONVERTED_MODEL_DIR": (
+        "TFP_AI_ENVIRONMENT": "production",
+        "TFP_AI_REQUIRE_INTERNAL_API_KEY": "true",
+        "TFP_AI_INTERNAL_API_KEY": required(
+            "AIP_INTERNAL_API_KEY",
+            "AIP__SECURITY__INTERNAL_API_KEY",
+        ),
+        "TFP_AI_WORKER_ENABLED": "true",
+        "TFP_AI_DATABASE_URL": worker_url,
+        "TFP_AI_STORAGE_ENDPOINT": required("B2_ENDPOINT", "BACKBLAZE_ENDPOINT"),
+        "TFP_AI_STORAGE_REGION": app_values.get("B2_REGION") or app_values.get("BACKBLAZE_REGION") or "us-east-005",
+        "TFP_AI_STORAGE_BUCKET": required("B2_PRIVATE_BUCKET_NAME", "B2_BUCKET_NAME", "BACKBLAZE_BUCKET_NAME"),
+        "TFP_AI_STORAGE_ACCESS_KEY_ID": required("B2_PRIVATE_ACCESS_KEY_ID", "B2_ACCESS_KEY_ID", "BACKBLAZE_KEY_ID"),
+        "TFP_AI_STORAGE_SECRET_ACCESS_KEY": required("B2_PRIVATE_SECRET_ACCESS_KEY", "B2_SECRET_ACCESS_KEY", "BACKBLAZE_APP_KEY"),
+        "TFP_AI_WORKER_POLL_SECONDS": "2",
+        "TFP_AI_WORKER_BATCH_SIZE": "4",
+        "TFP_AI_WORKER_MAX_CONCURRENCY": "2",
+        "TFP_AI_WORKER_MAX_ATTEMPTS": "36",
+        "TFP_AI_WORKER_STALE_SECONDS": "300",
+        "TFP_AI_TRANSLATION_CONVERTED_MODEL_DIR": (
             "/srv/tfp-ai-interface/shared/models/m2m100-418m-ct2"
         ),
-        "TFP_V2_TRANSLATION_BEAM_SIZE": "4",
+        "TFP_AI_TRANSLATION_BEAM_SIZE": "4",
     })
     print(f"Prepared {target} without printing secrets")
 
