@@ -49,17 +49,20 @@ The orchestration layer coordinates three main subprojects, each serving a disti
 * **Documentation**: See [tfp-collage-service/README.md](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-collage-service/README.md).
 
 ### 3. [TFP AI Inference Service](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-ai-interface)
-* **Role**: Stateless image moderation, text-safety, and translation inference.
+* **Role**: Private inference API and isolated PostgreSQL-backed AI job worker
+  for image moderation, text safety, and translation.
 * **Tech Stack**: FastAPI, OpenRouter/Qwen vision, ToxicBERT, and M2M100.
 * **Key Features**: metadata-free 600px image submission, strict binary image output,
   local CPU text/translation models, internal authentication, bounded concurrency, and
   privacy-safe telemetry.
-* **State boundary**: The TFP app owns PostgreSQL jobs, decisions, retries, and
-  `TranslationCache`; the inference service never reads or writes the product database.
+* **State boundary**: The app owns product policy and domain state.
+  `tfp-ai-interface` claims only `process_moderation` and
+  `process_translation` requests through a least-privilege database role and
+  atomically emits result events; the app worker applies those results.
 * **Documentation**: See [tfp-ai-interface/README.md](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-ai-interface/README.md).
 
-`tfp-moderation-service` is retained unchanged as the V1 rollback codebase. It is not
-part of the default OCI UAT deployment.
+`tfp-moderation-service` is a retained historical checkout and is not part of
+active deployment or runtime orchestration.
 
 ---
 
@@ -97,7 +100,7 @@ Normal OCI UAT deployments intentionally exclude folder moderation. `/srv/tfp-fo
 
 ## Shared DevOps & Deployment Scripting
 
-OCI UAT deployments are orchestrated from [scripts/oci](file:///Users/hexa/Desktop/tfp-main-orchestator/scripts/oci). Service-local scripts retain their historical `scripts/vps` directory name but receive the OCI host and user from the OCI wrapper.
+OCI UAT deployments are orchestrated from [scripts/oci](file:///Users/hexa/Desktop/tfp-main-orchestator/scripts/oci). The full-stack entrypoint calls the main app, AI inference, and collage deploy scripts directly.
 
 ### Deploying the Full UAT Stack (Recommended)
 To deploy the complete fresh UAT stack:
@@ -107,13 +110,10 @@ bash scripts/oci/deploy-all-uat.sh
 This bootstraps fresh OCI-local PostgreSQL, deploys only required application/service payloads, preserves the folder-moderation exclusion, and verifies loopback listeners.
 
 ### Targeted Service Deployment
-You can disable deployment of individual services using flags:
+Deploy an individual service through its owned entrypoint:
 ```bash
-# Deploy ONLY the Collage Service
-DEPLOY_AI=false bash scripts/vps/deploy-both-services.sh
-
-# Deploy ONLY the AI inference service
 bash tfp-ai-interface/scripts/deploy-uat.sh
+bash tfp-collage-service/scripts/deploy/deploy.sh uat
 ```
 
 ### OCI A1 Capacity Acquisition
@@ -150,9 +150,9 @@ bash scripts/setup-env.sh --target all
 ```
 
 This writes ignored runtime files in `tfpphotographers`:
-- `.env.local`: local PostgreSQL, local filesystem storage, configurable V1/V2 inference URL, and local collage at `http://127.0.0.1:4001`.
-- `.env.uat.local`: OCI host-local UAT PostgreSQL, UAT B2 bucket/prefix, and loopback moderation/collage endpoints.
-- `.env.production.local`: production PostgreSQL placeholder, production B2 bucket/prefix, production moderation/collage endpoints.
+- `.env.local`: local PostgreSQL, local filesystem storage, `tfp-ai-interface` on `127.0.0.1:7011`, and local collage on `127.0.0.1:7003/7004`.
+- `.env.uat.local`: OCI host-local UAT PostgreSQL, UAT B2 bucket/prefix, and loopback AI/collage endpoints.
+- `.env.production.local`: production PostgreSQL placeholder, production B2 bucket/prefix, and production AI/collage endpoints.
 
 The command will not overwrite existing files unless `--force` is passed. UAT and production files intentionally contain `REPLACE_*` placeholders for secrets that must be filled from the secure runtime source.
 

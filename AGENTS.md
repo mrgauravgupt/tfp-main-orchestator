@@ -57,7 +57,7 @@
 - Keep API and web unit/integration tests in app-local test roots (`apps/api/tests/**`, `apps/web/tests/**`).
 - Mobile currently keeps pure domain tests under `apps/mobile/src/**/__tests__` to keep Expo-facing rules close to the native implementation; if mobile component/E2E coverage expands, add app-local `apps/mobile/tests/**` and document the command here.
 - When creating or updating test scripts/flows, update `/Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/tests/README.md` in the same change so script usage stays discoverable.
-- When changing browser seed assets/configs/commands, also update `/Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/tests/seed/README.md`.
+- When changing browser seed assets/configs/commands, also update `/Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/tests/create-data/README.md`.
 
 ## Reporting Expectations
 - Final responses should include:
@@ -105,7 +105,7 @@
 
 ## OCI vs Retired Contabo Rule
 
-- OCI is the current and only UAT deployment target. Use `scripts/oci/*` for full-stack UAT orchestration; service-local `scripts/vps/*` names are provider-neutral legacy names and must receive the OCI host/user explicitly.
+- OCI is the current and only UAT deployment target. Use root `scripts/oci/*` for full-stack UAT orchestration and service-local `scripts/deploy/*` for each deployable.
 - The active host is the Always Free Ampere instance `tfp-a1-free-2ocpu-12gb` at `161.118.161.98`, shape `VM.Standard.A1.Flex`, with `2 OCPU / 12 GB RAM` in `ap-mumbai-1`.
 - The older OCI E2 micro `aip-mumbai-e2-micro-new` at `140.245.30.133` is retained separately and is not the UAT deployment target.
 - Contabo `13.140.189.236` is retired from UAT. Do not deploy, tunnel, seed, moderate, or run database operations against it unless the user explicitly authorizes a historical incident/recovery task.
@@ -125,7 +125,7 @@
   - **OS / SSH user**: Ubuntu ARM64 / `ubuntu`
   - **Public tester URL**: `https://uat.tfpphotographers.com`
   - **Cloudflare tunnel**: `tfp-oci-uat` -> `http://localhost:8080`
-- **Private service listeners**: PostgreSQL `5432`, API `4000`, web `8080`, AI inference `7011`, and collage `7003/7004` bind only to `127.0.0.1`. Ports `7001/7002` are legacy V1 rollback only.
+- **Private service listeners**: PostgreSQL `5432`, API `4000`, web `8080`, AI inference `7011`, and collage `7003/7004` bind only to `127.0.0.1`. There is no V1 moderation runtime.
 - **Public ingress**: application ports are closed at OCI and the host firewall. Only key-based administrative SSH is retained; tester traffic must pass Cloudflare Access and Tunnel.
 - **SSH network boundary**:
   - Treat the August 2026 `SSH_BRUTE_FORCE` report as alleged outbound traffic
@@ -146,5 +146,5 @@
 ## Folder Moderation Boundary
 
 - Folder moderation is not deployed to OCI UAT. `/srv/tfp-folder-moderation` must remain absent, and no images, raw reports, reviewer chunks, or generated folder-audit artifacts may be transferred by normal UAT deployment.
-- The legacy `tfpphotographers/scripts/vps/run-folder-moderation.sh` flow is retired with Contabo and must not be used without explicit, separately scoped authorization.
+- No folder-moderation launcher exists in the active repositories. Reintroducing one requires explicit, separately scoped authorization.
 - If folder moderation is reintroduced later, it needs a new private-storage design and a dedicated runbook; do not silently point the legacy wrapper at OCI.

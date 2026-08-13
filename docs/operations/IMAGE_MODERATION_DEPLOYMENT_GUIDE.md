@@ -6,11 +6,12 @@
 - Repository: `tfp-ai-interface`
 - Listener: `127.0.0.1:7011`
 - Unit: `tfp-ai-interface.service`
-- State: stateless; product jobs and results stay in the TFP PostgreSQL database
+- State: isolated worker uses a least-privilege PostgreSQL role to claim AI
+  requests and emit result events; product policy remains in the main app
 
 The service has no public route. The main API, app worker, and collage worker call it
-over loopback with an internal key. Contabo is retired. The legacy
-`tfp-moderation-service` repository is a rollback option and is not deployed by default.
+over loopback with an internal key. Contabo and the former moderation service
+are not part of active deployment.
 
 ## Capabilities
 
@@ -18,7 +19,7 @@ over loopback with an internal key. Contabo is retired. The legacy
   `{"explicit": 0|1}` schema;
 - local rules plus ToxicBERT text moderation;
 - local M2M100 translation;
-- local Pillow edge-saliency visual focus for the collage contract.
+- fixed center focus in collage; no visual-focus inference call.
 
 ## Validate locally
 
@@ -61,11 +62,10 @@ test ! -e /srv/tfp-folder-moderation
 ```
 
 Use the internal key without printing it to call authenticated `/health/ready` and focused
-approved/rejected image, text, translation, and visual-focus probes. An external connection
+approved/rejected image, text, and translation probes. An external connection
 to port `7011` must fail.
 
 ## Rollback
 
-An explicit rollback may deploy V1, change `MODERATION_REMOTE_URL` and
-`TRANSLATION_REMOTE_URL` to `http://127.0.0.1:7001`, then restart the app API and worker.
-Do not enable V1's database worker while the app worker owns moderation jobs.
+Deploy a previously verified `tfp-ai-interface` commit and restart its API and
+worker. Do not run two AI request consumers against the same PostgreSQL rows.

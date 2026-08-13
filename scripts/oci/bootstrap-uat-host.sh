@@ -173,8 +173,8 @@ sudo rm -f \
 if ! sudo iptables -C OUTPUT -p tcp --dport 22 -m conntrack --ctstate NEW -j REJECT 2>/dev/null; then
   sudo iptables -I OUTPUT 1 -p tcp --dport 22 -m conntrack --ctstate NEW -j REJECT
 fi
-if ! sudo iptables -C INPUT ! -i lo -p tcp -m multiport --dports 80,4000,5432,7001:7004,7011,8080,11434 -j DROP 2>/dev/null; then
-  sudo iptables -I INPUT 1 ! -i lo -p tcp -m multiport --dports 80,4000,5432,7001:7004,7011,8080,11434 -j DROP
+if ! sudo iptables -C INPUT ! -i lo -p tcp -m multiport --dports 80,4000,5432,7003,7004,7011,8080 -j DROP 2>/dev/null; then
+  sudo iptables -I INPUT 1 ! -i lo -p tcp -m multiport --dports 80,4000,5432,7003,7004,7011,8080 -j DROP
 fi
 sudo netfilter-persistent save >/dev/null
 

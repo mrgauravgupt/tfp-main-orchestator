@@ -175,7 +175,7 @@ Use these diagnostic recipes when experiencing connection, build, or verificatio
   * Ensure sibling services are running on their assigned ports:
     * Astro Frontend: `http://localhost:3000`
     * Fastify API Backend: `http://localhost:4000` (Health check: `http://localhost:4000/health`)
-    * Collage Service: `http://localhost:4001` (Health check: `http://localhost:4001/health/live`)
+    * Collage Service: `http://localhost:7003` (Health check: `http://localhost:7003/health/live`)
     * Image Moderation: `http://localhost:7001` (Health check: `http://localhost:7001/health/live`)
 
 ### 6.2 Workspace Diagnostic Checklist

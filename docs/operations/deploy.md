@@ -55,12 +55,12 @@ UAT_DEPLOY_HOST=161.118.161.98 \
 UAT_DEPLOY_USER=ubuntu \
 UAT_REQUIRE_CLOUDFLARED=true \
 UAT_DELETE_JSON_REPORTS=false \
-  bash scripts/vps/deploy-main-uat.sh
+  bash scripts/deploy/deploy-main-uat.sh
 ```
 
-The `scripts/vps` directory name is historical and provider-neutral. Current
-UAT defaults resolve to OCI; the compatibility `scripts/vps/deploy-all-uat.sh`
-delegates to `scripts/oci/deploy-all-uat.sh`.
+The main application owns its service-local deployment implementation under
+`scripts/deploy/deploy-main-uat.sh`; the orchestrator passes the explicit OCI
+host and user.
 
 Deploy only the stateless AI inference service:
 
@@ -68,9 +68,14 @@ Deploy only the stateless AI inference service:
 bash tfp-ai-interface/scripts/deploy-uat.sh
 ```
 
-Deploy only collage with the legacy combined wrapper by setting `DEPLOY_AI=false`.
-Deploying V1 moderation to UAT is a rollback-only action and additionally requires
-`ALLOW_LEGACY_MODERATION_UAT_DEPLOY=true`.
+Deploy only collage:
+
+```bash
+bash tfp-collage-service/scripts/deploy/deploy.sh uat
+```
+
+There is no active combined or V1 moderation deployment branch. The retained
+`tfp-moderation-service` checkout is not part of UAT orchestration.
 
 ## Secrets and storage
 
@@ -134,8 +139,8 @@ ssh -N -L 15432:127.0.0.1:5432 ubuntu@161.118.161.98
 
 ## Rollback
 
-UAT releases are disposable. Redeploy a pushed application commit as a fresh release,
-repeat listener and health checks, and leave Cloudflare Access/Tunnel unchanged. To
-temporarily roll back inference, explicitly deploy V1, point `MODERATION_REMOTE_URL` and
-`TRANSLATION_REMOTE_URL` to `http://127.0.0.1:7001`, and restart API/worker. Never run
-both image job consumers or point rollback tooling at the retired Contabo host.
+UAT releases are disposable. Redeploy a pushed application commit as a fresh
+release, repeat listener and health checks, and leave Cloudflare Access/Tunnel
+unchanged. Roll back `tfp-ai-interface` by deploying a previously verified
+commit of that service; never run two image-job consumers or point tooling at
+the retired Contabo host.

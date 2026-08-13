@@ -4,7 +4,8 @@
 
 - `tfpphotographers/`: main Astro, Fastify, Prisma, PostgreSQL product monorepo.
 - `tfp-ai-interface/`: active stateless FastAPI image/text/translation service.
-- `tfp-moderation-service/`: unchanged legacy V1 rollback and folder-operations service.
+- `tfp-moderation-service/`: retained historical checkout; excluded from active
+  deployment and runtime orchestration.
 - `tfp-collage-service/`: Node collage worker service.
 - This root repository coordinates deployment scripts and records nested Git revisions.
 
@@ -23,11 +24,10 @@
   job containing entity/revision and an immutable locale plan, but no authored content.
   V2 translates the exact approved revision; TFP persists revision-scoped
   `TranslationCache` and entity maps from the result event.
-- Exactly one request consumer may be active. V2 rollback means disabling its worker
-  before enabling the V1 database worker. Do not run V1 and V2 against the same request
-  rows.
+- Exactly one AI request consumer may be active: `tfp-ai-interface`.
 - TypeScript worker shutdown drains active jobs with a bounded timeout; Python moderation worker handles SIGTERM/SIGINT by stopping new polling and finishing the active batch.
-- Moderation folder operations require the internal service key and a separate step-up password for every mutation. Folder moderation is not installed on OCI UAT; all service ports remain private and loopback-only.
+- Folder moderation is not part of the active product or OCI UAT deployment.
+  All service ports remain private and loopback-only.
 - Deployment defaults to `tfpdeploy`; `root` is a deliberate break-glass override only.
 
 ## 2026-08 pre-production hardening baseline
