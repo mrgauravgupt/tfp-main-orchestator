@@ -43,6 +43,8 @@ for unit in \
   tfp-image-moderation-service-moderation-worker@1.service \
   tfp-moderation-service.service \
   tfp-moderation-service-moderation-worker@1.service \
+  tfp-ai-inference-service.service \
+  tfp-ai-inference-worker.service \
   tfp-ai-interface.service \
   tfp-ai-interface-worker.service \
   tfp-collage-service.service; do
@@ -58,6 +60,8 @@ sudo rm -f \
   /etc/systemd/system/tfp-image-moderation-service-moderation-worker@.service \
   /etc/systemd/system/tfp-moderation-service.service \
   /etc/systemd/system/tfp-moderation-service-moderation-worker@.service \
+  /etc/systemd/system/tfp-ai-inference-service.service \
+  /etc/systemd/system/tfp-ai-inference-worker.service \
   /etc/systemd/system/tfp-ai-interface.service \
   /etc/systemd/system/tfp-ai-interface-worker.service \
   /etc/systemd/system/tfp-collage-service.service
@@ -67,6 +71,8 @@ for retired_unit in \
   tfp-image-moderation-service-moderation-worker@1.service \
   tfp-moderation-service.service \
   tfp-moderation-service-moderation-worker@1.service \
+  tfp-ai-inference-service.service \
+  tfp-ai-inference-worker.service \
   tfp-moderation-service-v2.service; do
   sudo systemctl reset-failed "$retired_unit" >/dev/null 2>&1 || true
 done
@@ -75,6 +81,7 @@ sudo rm -rf -- \
   /srv/tfp-main-uat \
   /srv/tfp-image-moderation-service \
   /srv/tfp-moderation-service \
+  /srv/tfp-ai-inference-service \
   /srv/tfp-ai-interface \
   /srv/tfp-collage-service \
   /srv/tfp-folder-moderation

@@ -87,6 +87,7 @@ def main() -> None:
         "TFP_AI_WORKER_MAX_CONCURRENCY": "2",
         "TFP_AI_WORKER_MAX_ATTEMPTS": "36",
         "TFP_AI_WORKER_STALE_SECONDS": "300",
+        "TFP_AI_LOCAL_MODEL_CACHE_DIR": "/srv/tfp-ai-interface/shared/models",
         "TFP_AI_TRANSLATION_CONVERTED_MODEL_DIR": (
             "/srv/tfp-ai-interface/shared/models/m2m100-418m-ct2"
         ),
