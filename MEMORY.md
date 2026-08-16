@@ -115,3 +115,10 @@ These cannot be proven by static code alone and must be recorded per deployment:
 - **Transactional Emails**: The `packages/email` transactional templates are a major visual surface. When auditing design tokens, check if backend email literals (colors, typography) are bypassing `design-tokens.json`.
 - **Token Generation Sync**: The token sync script (`scripts/design-tokens/sync.mjs`) is intentionally lossy or currently incomplete (e.g., misses `cardGeometry` and some colors). Consider this before flagging components for "bypassing" tokens they don't actually have access to.
 - **Mobile vs. Web QA Gates**: Remember that `qa:design-tokens` for web tests different patterns than `mobile-design-token-audit.mjs`. The mobile audit currently misses layout drift (padding, margins, radii, letter-spacing), meaning mobile code could have hardcoded layouts without failing the build.
+
+## E2E Testing & Audit Methodology
+
+- **Test Layer Hierarchy**: The E2E suite is layered (strict-human, domain, journey, smoke, visual, a11y, uat). **Never assume a feature is uncovered** just because it is missing from one layer (e.g., domain). Many critical flows (opportunity application state transitions, RSVP lifecycles, contest submissions) are covered fully in the `strict-human` suite.
+- **Architectural Isolation**: The `strict-human` suite intentionally isolates itself from Prisma and direct API helpers, relying strictly on the browser and OTP bridge. Do not flag this as a "missing integration safety net."
+- **Do Not Invent Gaps**: Do not list unlaunched capabilities or disabled flows (e.g., OAuth, password reset, payment/subscriptions, WebSocket notifications) as E2E coverage gaps.
+- **Always Verify Source & CI**: Before claiming a route/module is untested or un-gated, verify the module exists (`find`) and check CI gates (`.github/workflows/`). The SSOT for coverage numbers lies in the `coverage-matrix.json`, `route-coverage.json`, and `api-source-coverage.json` files.
