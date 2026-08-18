@@ -38,6 +38,7 @@
 - After completing each meaningful fix in a repo with a configured remote, push the commit promptly unless the user explicitly says not to.
 - If work happens on a branch, merge it back into `main` promptly after validation unless the user explicitly says not to. `main` should remain updated with completed work.
 - For browser, UI, integration, or end-to-end work that depends on the running app, always restart both FE and BE first.
+- **Mandatory Live Visual Verification**: Always run the application (web or mobile) and inspect impacted pages/screens either by computer use or by capturing and inspecting screenshots. Never guess, assume, or infer visual correctness from static checks or tests alone.
 - Treat restart order as mandatory for any fresh UI verification pass: stop stale processes, restart services, confirm FE and BE health, then test.
 - For destructive seed/reset work, use the checked-in launcher flow:
   - `bash ./scripts/start-app.sh reset <env>`

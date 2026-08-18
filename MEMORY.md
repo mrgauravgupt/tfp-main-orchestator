@@ -116,6 +116,11 @@ These cannot be proven by static code alone and must be recorded per deployment:
 - **Token Generation Sync**: The token sync script (`scripts/design-tokens/sync.mjs`) is intentionally lossy or currently incomplete (e.g., misses `cardGeometry` and some colors). Consider this before flagging components for "bypassing" tokens they don't actually have access to.
 - **Mobile vs. Web QA Gates**: Remember that `qa:design-tokens` for web tests different patterns than `mobile-design-token-audit.mjs`. The mobile audit currently misses layout drift (padding, margins, radii, letter-spacing), meaning mobile code could have hardcoded layouts without failing the build.
 
+## Mandatory Live Visual Verification Rule
+
+- **Always Run and Check Live**: Whenever making changes that impact web or mobile UI/pages/components/styles/flows, you MUST run the application (FE/BE or mobile Metro/simulator) and visually validate the impacted pages either by computer use or by taking and viewing screenshots.
+- **Never Infer Visual State**: Do not rely solely on static checks or code inspection. Inspect live rendering, layout, fonts, badges, icons, and contrast in the running browser or mobile simulator before concluding work.
+
 ## E2E Testing & Audit Methodology
 
 - **Test Layer Hierarchy**: The E2E suite is layered (strict-human, domain, journey, smoke, visual, a11y, uat). **Never assume a feature is uncovered** just because it is missing from one layer (e.g., domain). Many critical flows (opportunity application state transitions, RSVP lifecycles, contest submissions) are covered fully in the `strict-human` suite.

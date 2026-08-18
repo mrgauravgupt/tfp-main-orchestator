@@ -16,6 +16,7 @@ Historical audit documents explain context; they do not override current code.
 - Keep `main` releasable. Do not merge experimental work without targeted validation.
 - Treat the orchestrator and each nested service repository as separate Git repositories. Commit and push each affected repository, then commit updated gitlinks in this root repository.
 - Before finalizing any feature or committing code, all agents must complete the due diligence checklist outlined in `tfpphotographers/docs/operations/AGENT_DUE_DILIGENCE.md`.
+- **Mandatory Live Visual Verification**: Always run the app (web FE/BE or mobile Metro/simulator) and validate impacted screens live via direct computer interaction or screenshots. Never conclude work or assume correctness from static checks alone.
 - Never print or commit secrets, bearer tokens, presigned URLs, provider raw moderation payloads, or production connection strings.
 - Never use destructive database reset, seed, delete, or production restore commands without an explicitly scoped request.
 - Runtime proof is not implied by a passing static test. Record redacted evidence for production configuration, edge exposure, rate limiting, and restore drills.
