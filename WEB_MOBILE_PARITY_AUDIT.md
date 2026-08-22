@@ -1,8 +1,8 @@
 # WEB <-> MOBILE FULL PARITY AUDIT REPORT
 
 > **Forensic Software Audit & Parity Inspection**
-> **Document Version:** 1.0.0
-> **Date of Execution:** 21 August 2026
+> **Document Version:** 1.4.0
+> **Date of Execution:** 22 August 2026
 > **Audit Target:** TFP Responsive Web (`apps/web`) & TFP Native Mobile (`apps/mobile`)
 > **Execution Mode:** STRICTLY READ-ONLY (Zero Application Files Modified)
 
@@ -20,7 +20,7 @@
 | **Mobile Application Root** | `tfpphotographers/apps/mobile` (Expo SDK 51 + React Native 0.74 + TypeScript) |
 | **Shared Contracts & Design System** | `tfpphotographers/packages/shared`, `packages/i18n`, `packages/config` |
 | **Primary Comparison Viewport** | 402 pt/px (iPhone 17 Pro baseline), with 320, 375, 390, 430 mobile viewports |
-| **Audit Date & Timestamp** | 2026-08-21T22:26:00+05:30 |
+| **Audit Date & Timestamp** | 2026-08-22T12:05:00+05:30 |
 | **Audit Scope** | 100% of Authored Source, Configuration, and Asset Files across Web, Mobile, and Shared Packages |
 
 ## 2. Read-Only Audit Contract
@@ -35,10 +35,10 @@ This audit was performed under an absolute **STRICT READ-ONLY CONTRACT**:
 
 The TFP Photographers responsive Web application and native Expo Mobile application demonstrate strong alignment on core brand tokens, shared REST API data endpoints (`/api/v1/*`), and bottom navigation geometry (Opportunities, Contests, Events). Recent synchronization efforts (such as the cross-platform design token generator `packages/shared/src/design-tokens.ts` and shared icon primitives `packages/shared/src/icons.ts`) have unified the fundamental palette and typography scales.
 
-However, this exhaustive forensic audit identified **20 distinct parity and consistency findings** across routes, icon mappings, localization catalogs, form workflows, token structures, and deep-link resolution:
-- **5 High Severity Findings:** Broken legal route deep-links (`/privacy`, `/terms`, etc. returning `null`), missing mobile brand icon mappings (`google`, `apple`, `facebook`, `github` falling back to generic `ImagePlus`), onboarding wizard structural divergence (1-step compact form vs 2-step multi-screen wizard), and duplicated domain creation enums / status mappers bypassing SSOT.
-- **8 Medium Severity Findings:** Discrepancies in icon vector geometry (`location.detect` rendering a pin rather than a target crosshair), 4 divergent i18n keys with conflicting copy, hardcoded English hero taglines, differing referral print palettes, undeclared elevation/shadow tokens, and missing dedicated contest submission gallery routes.
-- **6 Low Severity Findings:** Hardcoded English filter labels (`Portfolio`), duplicate asset files under differing filenames, single-image vs multi-frame hero carousel states, and minor default accessibility attribute variances.
+However, this exhaustive forensic audit identified **34 distinct parity and consistency findings** across component alignment, spacing, padding, margins, borders, choice chip accents, empty states, overlays/modals, background surfaces, bottom navigation, header controls, icon mappings, localization catalogs, form workflows, token structures, and deep-link resolution:
+- **7 High Severity Findings:** Broken legal route deep-links (`/privacy`, `/terms`, etc. returning `null`), missing mobile brand icon mappings (`google`, `apple`, `facebook`, `github` falling back to generic `ImagePlus`), onboarding wizard structural divergence (1-step compact form vs 2-step multi-screen wizard), bottom navigation shell/icon divergence (5-tab native shell vs 4-tab public navigation with glyph mismatch), mobile 100+ locale selector illusion (only 3 catalogs bundled), and duplicated domain creation enums / status mappers bypassing SSOT.
+- **12 Medium Severity Findings:** Choice chip active accent color divergence (Pink `#ec4899` on Web vs Gold `#f2d28a` on Mobile), empty state localization namespaces and icons across domain listings, modal vs destructive push navigation for auth gates and reporting overlays, icon vector geometry divergences (`location.detect` rendering a pin rather than a target crosshair), 4 divergent i18n keys with conflicting copy, hardcoded English hero taglines and header titles, differing referral print palettes, undeclared elevation/shadow tokens, header action divergence (locale modal vs settings navigation), and missing dedicated contest submission gallery routes.
+- **14 Low Severity Findings:** Screen gutter horizontal padding variance (16px Web vs 12px Mobile), card interior padding differences (16-20px Web vs 12px Mobile), extra decorative icon bubbles and borders on Mobile detail cards, vertical section spacing differences (24px Web vs 16px Mobile), form field label typography & contrast differences, hardcoded fallback strings in CreatorCard, card background surface elevation contrast nuances, gallery lightbox navigation icon differences (arrows vs chevrons), hardcoded English filter labels (`Portfolio`), duplicate asset files under differing filenames, single-image vs multi-frame hero carousel states, date picker native adapters, and minor default accessibility attribute variances.
 - **1 Justified Platform Difference:** Creator Directory (`/profile`) being placed in Mobile Search rather than a dedicated directory tab.
 
 ## 4. Findings Count by Severity
@@ -47,11 +47,11 @@ However, this exhaustive forensic audit identified **20 distinct parity and cons
 | --- | --- | --- | --- |
 | **BLOCKER** | 0 | Total application breakage or fatal runtime crash | None identified |
 | **CRITICAL** | 0 | Severe data loss or security vulnerability | None identified |
-| **HIGH** | 5 | User-facing route failure, missing brand icons, or form contract mismatch | Legal links broken on mobile; brand OAuth icons fallback to ImagePlus; onboarding form asks for unexpected fields; creation enums duplicated |
-| **MEDIUM** | 8 | Visual/semantic divergence, token drift, or differing i18n copy | Icon glyph differences; conflicting catalog translations; hardcoded hero taglines; referral palette divergence; shadow scale drift |
-| **LOW** | 6 | Minor asset duplicates, hardcoded label in filters, carousel state differences | Byte-duplicate assets under different names; hardcoded "Portfolio" chip; hero image carousel vs static hero |
+| **HIGH** | 7 | User-facing route failure, missing brand icons, form contract mismatch, or shell navigation divergence | Legal links broken on mobile; brand OAuth icons fallback to ImagePlus; onboarding form asks for unexpected fields; bottom nav tabs switch icons between screens; locale selector displays 100+ languages but supports only 3; creation enums duplicated |
+| **MEDIUM** | 12 | Visual/semantic divergence, token drift, differing i18n copy, chip active accent mismatch, empty state namespace drift, or overlay modal mismatch | Choice chips active state uses Pink on Web vs Gold on Mobile; empty state copy key namespaces duplicated; auth/report triggers modal on web but navigates away on mobile; icon glyph differences; conflicting catalog translations; hardcoded hero taglines & header titles; referral palette divergence; shadow scale drift |
+| **LOW** | 14 | Component alignment nuances, gutter & padding differences, decorative borders, hardcoded fallback strings, minor asset duplicates, carousel state differences, lightbox icon variances, surface elevation nuances | Screen gutter padding 16px vs 12px; card padding 16-20px vs 12px; extra decorative icon bubbles on mobile; section gap 24px vs 16px; form field label font-weight/color difference; hardcoded 'Chat with creator' props; card elevation contrast nuance; byte-duplicate assets under different names; hardcoded "Portfolio" chip; hero image carousel vs static hero; gallery lightbox arrows vs chevrons |
 | **INFO / JUSTIFIED** | 1 | Platform-specific justified architecture difference | Creator discovery integrated into search tab on mobile vs separate `/profile` directory on web |
-| **TOTAL FINDINGS** | **20** | **100% Evidence-Backed Findings** | **Complete Parity Coverage** |
+| **TOTAL FINDINGS** | **34** | **100% Evidence-Backed Findings** | **Complete Parity Coverage** |
 
 ## 5. Coverage & Completeness
 
@@ -167,6 +167,8 @@ TFP Photographers uses a centralized JSON design token specification in `package
 | Border Strong | `rgba(255,255,255,0.22)` | `colors.borderStrong` | `crossPlatformDesignTokens.colors.borderStrong` | **EXACT MATCH** | `rgba(255,255,255,0.22)` |
 | Glass Surface | `rgba(13,7,19,0.72)` | `colors.surfaceGlass` | `crossPlatformDesignTokens.colors.surfaceGlass` | **EXACT MATCH** | `rgba(13,7,19,0.72)` |
 | Referral Print Palette | `REFERRAL_PRINT_PALETTE` (`standalone-palettes.ts:5`) | `referralPalette` (`referral-palette.ts:5`) | *(None - unshared)* | **TOKEN DRIFT** *(F-TOKEN-01)* | Web: `{dark, light}`; Mobile: `{ink, paper, border, panel, muted, copy}` |
+| Card Surface Elevation | `$raw-bg-surface` (`#0d0713`) | `colors.surfaceElevated` (`#151021`) | `colors.surface` vs `colors.surfaceElevated` | **CONTRAST DRIFT** *(F-BG-01)* | Web cards rest on `#0d0713`; Mobile cards default to elevated `#151021` |
+| Choice Chip Active Color| Primary Pink tint (`rgba(214,31,105,0.15)`) | Gold tint (`colors.goldSoft`) | Pink vs Gold active state | **ACCENT DRIFT** *(F-TOKEN-03)* | Web chips highlight with Brand Pink; Mobile chips highlight with Gold |
 
 ## 9. Typography Matrix
 
@@ -178,6 +180,7 @@ TFP Photographers uses a centralized JSON design token specification in `package
 | **Tab Label** | `font-size: 11px` | `typography.size.tabLabel` | 11 | 13 | 500 Medium | **EXACT MATCH** |
 | **Caption** | `font-size: 12px` | `typography.size.caption` | 12 | 16 | 400 Regular | **EXACT MATCH** |
 | **Meta** | `font-size: 13px` | `typography.size.meta` | 13 | 18 | 400 / 500 | **EXACT MATCH** |
+| **Form Field Label** | `font-size: 13px` (`type-label`) | `font-size: 12px` (`caption`) | 13 vs 12 | 18 vs 16 | 600 vs 400 | **TYPO DRIFT** *(F-ALIGN-01)* |
 | **Body Small** | `font-size: 14px` | `typography.size.bodySmall` | 14 | 20 | 400 Regular | **EXACT MATCH** |
 | **Control / Input** | `font-size: 15px` | `typography.size.control` | 15 | 22 | 400 Regular | **EXACT MATCH** |
 | **Body Regular** | `font-size: 16px` | `typography.size.body` | 16 | 22 | 400 Regular | **EXACT MATCH** |
@@ -192,28 +195,32 @@ TFP Photographers uses a centralized JSON design token specification in `package
 | **Display Small** | `font-size: 36px` | `typography.size.displaySmall` | 36 | 44 | 800 ExtraBold | **EXACT MATCH** |
 | **Display Large** | `font-size: 48px` | `typography.size.display` | 48 | 56 | 800 ExtraBold | **EXACT MATCH** |
 
-## 10. Spacing/Radius/Shadow Matrix
+## 10. Spacing/Radius/Shadow & Layout Geometry Matrix
 
-| Dimension Token | Web CSS / SCSS | Mobile Token (`theme/tokens.ts`) | Numerical Value | Match Status |
-| --- | --- | --- | --- | --- |
-| `spacing.hairline` | `0.0625rem` (1px) | `spacing.hairline` | 1 pt/px | **EXACT MATCH** |
-| `spacing.xs` | `0.25rem` (4px) | `spacing.xs` | 4 pt/px | **EXACT MATCH** |
-| `spacing.sm` | `0.5rem` (8px) | `spacing.sm` | 8 pt/px | **EXACT MATCH** |
-| `spacing.md` | `0.75rem` (12px) | `spacing.md` | 12 pt/px | **EXACT MATCH** |
-| `spacing.lg` | `1rem` (16px) | `spacing.lg` | 16 pt/px | **EXACT MATCH** |
-| `spacing.xl` | `1.25rem` (20px) | `spacing.xl` | 20 pt/px | **EXACT MATCH** |
-| `spacing.xxl` | `1.5rem` (24px) | `spacing.xxl` | 24 pt/px | **EXACT MATCH** |
-| `spacing.xxxl` | `2rem` (32px) | `spacing.xxxl` | 32 pt/px | **EXACT MATCH** |
-| `radii.xs` | `0.25rem` (4px) | `radii.xs` | 4 pt/px | **EXACT MATCH** |
-| `radii.sm` | `0.375rem` (6px) | `radii.sm` | 6 pt/px | **EXACT MATCH** |
-| `radii.md` | `0.5rem` (8px) | `radii.md` | 8 pt/px | **EXACT MATCH** |
-| `radii.lg` | `0.75rem` (12px) | `radii.lg` | 12 pt/px | **EXACT MATCH** |
-| `radii.xl` | `1rem` (16px) | `radii.xl` | 16 pt/px | **EXACT MATCH** |
-| `radii.pill` | `999px` | `radii.pill` | 999 pt/px | **EXACT MATCH** |
-| `radii.xxl` | `1.5rem` (24px) | `radii.xxl` | 24 pt/px | **EXACT MATCH** |
-| `radii.full` | `9999px` | `radii.full` | 9999 pt/px | **EXACT MATCH** |
-| Card Shadow | `var(--shadow-overlay)` | `shadows.card` (`elevation: 8`) | Web: CSS box-shadow; Mobile: Elevation 8 | **TOKEN DRIFT** *(F-TOKEN-02)* |
-| Floating Action Shadow | `var(--button-primary-shadow)` | `shadows.floatingAction` (`elevation: 12`) | Web: CSS glow; Mobile: Elevation 12 | **TOKEN DRIFT** *(F-TOKEN-02)* |
+| Dimension Token / Area | Web CSS / SCSS | Mobile Token / StyleSheet | Numerical Comparison | Match Status | Observation / Finding |
+| --- | --- | --- | --- | --- | --- |
+| `spacing.hairline` | `0.0625rem` (1px) | `spacing.hairline` | 1 pt/px | **EXACT MATCH** | Identical |
+| `spacing.xs` | `0.25rem` (4px) | `spacing.xs` | 4 pt/px | **EXACT MATCH** | Identical |
+| `spacing.sm` | `0.5rem` (8px) | `spacing.sm` | 8 pt/px | **EXACT MATCH** | Identical |
+| `spacing.md` | `0.75rem` (12px) | `spacing.md` | 12 pt/px | **EXACT MATCH** | Identical |
+| `spacing.lg` | `1rem` (16px) | `spacing.lg` | 16 pt/px | **EXACT MATCH** | Identical |
+| `spacing.xl` | `1.25rem` (20px) | `spacing.xl` | 20 pt/px | **EXACT MATCH** | Identical |
+| `spacing.xxl` | `1.5rem` (24px) | `spacing.xxl` | 24 pt/px | **EXACT MATCH** | Identical |
+| `spacing.xxxl` | `2rem` (32px) | `spacing.xxxl` | 32 pt/px | **EXACT MATCH** | Identical |
+| `radii.xs` | `0.25rem` (4px) | `radii.xs` | 4 pt/px | **EXACT MATCH** | Identical |
+| `radii.sm` | `0.375rem` (6px) | `radii.sm` | 6 pt/px | **EXACT MATCH** | Identical |
+| `radii.md` | `0.5rem` (8px) | `radii.md` | 8 pt/px | **EXACT MATCH** | Identical |
+| `radii.lg` | `0.75rem` (12px) | `radii.lg` | 12 pt/px | **EXACT MATCH** | Identical |
+| `radii.xl` | `1rem` (16px) | `radii.xl` | 16 pt/px | **EXACT MATCH** | Identical |
+| `radii.pill` | `999px` | `radii.pill` | 999 pt/px | **EXACT MATCH** | Identical |
+| `radii.xxl` | `1.5rem` (24px) | `radii.xxl` | 24 pt/px | **EXACT MATCH** | Identical |
+| `radii.full` | `9999px` | `radii.full` | 9999 pt/px | **EXACT MATCH** | Identical |
+| **Screen Gutter Padding** | `padding: 0 $space-4` (`16px`) | `paddingHorizontal: spacing.md` (`12px`) | 16px vs 12px | **LAYOUT DRIFT** *(F-LAYOUT-01)* | Mobile screen horizontal margin is 4px narrower than Web |
+| **Card Interior Padding** | `padding: $space-4` / `$space-5` (`16-20px`) | `padding: spacing.sm + 4` (`12px`) | 16-20px vs 12px | **LAYOUT DRIFT** *(F-LAYOUT-02)* | Web cards have 4-8px more interior padding |
+| **Vertical Section Gap** | `margin-bottom: $space-6` (`24px`) | `gap: spacing.lg` (`16px`) | 24px vs 16px | **LAYOUT DRIFT** *(F-LAYOUT-03)* | Web detail sections spaced by 24px; Mobile uses 16px gap |
+| **Detail Card Icon Bubble**| No wrapper / naked SVG | 36x36px bubble (`border: 1px`, `bg: primarySoft`) | Naked vs Bordered Bubble | **BORDER DRIFT** *(F-BORDER-01)* | Mobile adds extra decorative border & bubble around detail icons |
+| Card Shadow | `var(--shadow-overlay)` | `shadows.card` (`elevation: 8`) | Web: CSS box-shadow; Mobile: Elevation 8 | **TOKEN DRIFT** *(F-TOKEN-02)* | Platform shadow specification divergence |
+| Floating Action Shadow | `var(--button-primary-shadow)` | `shadows.floatingAction` (`elevation: 12`) | Web: CSS glow; Mobile: Elevation 12 | **TOKEN DRIFT** *(F-TOKEN-02)* | Platform shadow specification divergence |
 
 ## 11. Icon Parity Matrix
 
@@ -228,7 +235,9 @@ TFP Photographers uses a centralized JSON design token specification in `package
 | `trophy` | Vector renderer | Vector Svg | `CROSS_PLATFORM_ICON_VECTORS.trophy` | **EXACT MATCH** | Identical cup + pedestal paths |
 | `user` | Vector renderer | Vector Svg | `CROSS_PLATFORM_ICON_VECTORS.user` | **EXACT MATCH** | Identical user avatar head + shoulders |
 | `users` | Vector renderer | Vector Svg | `CROSS_PLATFORM_ICON_VECTORS.users` | **EXACT MATCH** | Identical multi-user heads + shoulders |
-| `search` | Inline SVG (`Icon.astro:73-77`) | Lucide `Search` (`Icon.tsx:107`) | Lucide Lucide | **EXACT MATCH** | Circle lens + handle |
+| `home` | Inline SVG (`Icon.astro:220`) | Lucide `Home` (`Icon.tsx:70`) | Lucide | **EXACT MATCH** | House glyph |
+| `layout-grid` | Vector renderer | Vector Svg | `CROSS_PLATFORM_ICON_VECTORS['layout-grid']` | **EXACT MATCH** | 4-square grid glyph |
+| `search` | Inline SVG (`Icon.astro:73-77`) | Lucide `Search` (`Icon.tsx:107`) | Lucide | **EXACT MATCH** | Circle lens + handle |
 | `search.advanced` | Inline SVG (`Icon.astro:79-85`) | Lucide `SlidersHorizontal` (`Icon.tsx:108`) | Lucide | **GEOMETRY MISMATCH** *(F-ICON-02)* | Web uses 2 horizontal rails with offset dots; Mobile uses standard 3-rail sliders |
 | `location.detect` | Inline SVG (`Icon.astro:98-100`) | Lucide `MapPin` (`Icon.tsx:97`) | Crosshair vs Pin | **GLYPH MISMATCH** *(F-ICON-02)* | Web renders target crosshairs with concentric circle; Mobile maps to `MapPin` |
 | `location.value` | Inline SVG (`Icon.astro:92-96`) | Lucide `MapPin` (`Icon.tsx:98`) | MapPin | **EXACT MATCH** | Standard location pin |
@@ -237,6 +246,7 @@ TFP Photographers uses a centralized JSON design token specification in `package
 | `facebook` | Inline SVG (`Icon.astro:145-154`) | `undefined` -> fallback `ImagePlus` | Unmapped | **ICON MISMATCH** *(F-ICON-01)* | Mobile lacks Facebook icon in `ICON_ADAPTER`, falling back to `ImagePlus` |
 | `github` | Inline SVG (`Icon.astro:166-176`) | `undefined` -> fallback `ImagePlus` | Unmapped | **ICON MISMATCH** *(F-ICON-01)* | Mobile lacks GitHub icon in `ICON_ADAPTER`, falling back to `ImagePlus` |
 | `arrow-up` | Inline SVG (`Icon.astro:181-185`) | `undefined` -> fallback `ImagePlus` | Unmapped | **ICON MISMATCH** *(F-ICON-01)* | Mobile lacks `arrow-up` in `ICON_ADAPTER`, falling back to `ImagePlus` |
+| `chevron-left` / `arrow-left` in Lightbox | `arrow-left` (`GalleryLightbox.astro:91`) | `chevron-left` (`ManagedImageGallery.tsx:85`) | Arrow vs Chevron | **GLYPH MISMATCH** *(F-GALLERY-01)* | Web uses straight arrow in gallery lightbox; Mobile uses chevron |
 
 ## 12. Image/Asset Parity Matrix
 
@@ -261,8 +271,11 @@ TFP Photographers uses a centralized JSON design token specification in `package
 | `onboarding.owns_studio` | `"I own or manage a studio / creative space"` | `"I own or manage a studio or creative space"` | Form Label | **COPY MISMATCH** *(F-COPY-01)* |
 | `onboarding.step2_body` | `"We show an approximate locality publicly. Your browser location is optional."` | `"Search manually below. Device location permission is not required."` | Helper Text | **COPY MISMATCH** *(F-COPY-01)* |
 | Hero Tagline | `{t('home.hero_title_accent')}` (Localizable) | Hardcoded `"Connect. Collaborate. Create."` (`HomeScreen.tsx:157-159`) | Header Copy | **HARDCODED COPY** *(F-COPY-02)* |
+| Header Title Text | `{t('layout.brand_short')}` ("TFP") | Hardcoded `"TFP PLATFORM"` (`StackHeader.tsx:39`) | Header Title | **HARDCODED COPY** *(F-HEAD-01)* |
 | Search Filter Chip | `{formatCreatorTaxonomyLabel(...)}` | Hardcoded `<TfpText>Portfolio</TfpText>` (`SearchScreen.tsx:493`) | Filter Chip | **HARDCODED COPY** *(F-COPY-03)* |
-| Supported Locales | 100+ languages supported in `catalogs/languages/*.json` | 3 languages bundled (`en_IN`, `hi_IN`, `ne_NP`) in `mobile.ts:32-36` | Catalog Coverage | **STATE GAP** *(F-I18N-01)* |
+| Creator Card Action Props | Hardcoded fallback defaults `"Chat with creator"`, `"Sign in to chat"` | Localized translation props passed from screen | Creator Card | **HARDCODED COPY** *(F-COPY-04)* |
+| Supported Locales in Selector | 100+ languages supported in `catalogs/languages/*.json` | 100+ in UI selector, but only 3 dictionaries bundled (`en_IN`, `hi_IN`, `ne_NP`) in `mobile.ts:32-36` | Catalog Coverage | **STATE GAP** *(F-I18N-02)* |
+| Empty State Domain Namespaces | `listing.no_items_found`, `activity.empty_title`, `messages.empty_title` | `mobile.opportunities.unavailableTitle`, `mobile.events.unavailableTitle`, `mobile.inbox.noMessagesTitle` | Empty State Copy | **NAMESPACE DRIFT** *(F-EMPTY-01)* |
 
 ## 14. Navigation/Route/Link Matrix
 
@@ -283,6 +296,36 @@ TFP Photographers uses a centralized JSON design token specification in `package
 | `/contest-terms` | `/contest-terms` | `mapPlatformHrefToMobileRoute` | `null` | **ROUTE GAP** *(F-ROUTE-01)* | Omitted from `DIRECT_NATIVE_PATHS` |
 | `/contact` | `/contact` | `mapPlatformHrefToMobileRoute` | `null` | **ROUTE GAP** *(F-ROUTE-01)* | Omitted from `DIRECT_NATIVE_PATHS` |
 | `/grievance` | `/grievance` | `mapPlatformHrefToMobileRoute` | `null` | **ROUTE GAP** *(F-ROUTE-01)* | Omitted from `DIRECT_NATIVE_PATHS` |
+
+### 14.1 Forensic Bottom Navigation & Icon Comparison
+
+A comprehensive audit of the bottom navigation architectures revealed significant structural and visual divergence between Web and Mobile:
+
+#### 1. Destination Anatomy & Item Inventory
+- **Responsive Web (`SiteHeader.astro:488-497`):** Implements a single persistent 4-item public navigation bar rendered across mobile viewports:
+  1. `Home` (`href: '/'` | `icon: 'layout-grid'` | `labelKey: 'nav.home'`)
+  2. `Opportunities` (`href: '/opportunities'` | `icon: 'camera'` | `labelKey: 'nav.opportunities'`)
+  3. `Contests` (`href: '/contests'` | `icon: 'trophy'` | `labelKey: 'nav.contests'`)
+  4. `Events` (`href: '/events'` | `icon: 'calendar'` | `labelKey: 'nav.events'`)
+- **Native Mobile:** Employs **two distinct navigation bars** that switch dynamically depending on whether the user is on a Tab root or a Pushed discovery screen:
+  1. **Expo Router Tab Shell (`app/(tabs)/_layout.tsx`):** 5 native tabs on root destinations (`/`, `/search`, `/create`, `/inbox`, `/profile`):
+     - Tab 1: `Home` (`icon: 'home'`, size 19)
+     - Tab 2: `Search` (`icon: 'search'`, size 19)
+     - Tab 3: `Create` (`icon: 'plus'`, size 24, circular floating action button with `colors.primary` background, `translateY: -13`, `elevation: 12`)
+     - Tab 4: `Inbox` (`icon: 'messages'`, size 19)
+     - Tab 5: `Profile` (`icon: 'user'`, size 19)
+  2. **Universal Bottom Nav (`UniversalBottomNav.tsx`):** 4-item floating bar rendered by `Screen.tsx` on pushed public discovery routes (`/opportunities`, `/events`, `/contests`, and their details):
+     - Tab 1: `Home` (`icon: 'layout-grid'`, size 24)
+     - Tab 2: `Opportunities` (`icon: 'camera'`, size 24)
+     - Tab 3: `Contests` (`icon: 'trophy'`, size 24)
+     - Tab 4: `Events` (`icon: 'calendar'`, size 24)
+
+#### 2. Bottom Nav Icon & State Mismatches (`F-NAV-01`)
+- **Home Icon Glyph Drift:** When a user is on the Mobile Home tab, the icon is a house glyph (`home`). When navigating to Opportunities or Events, the bottom bar switches to `UniversalBottomNav`, changing the Home icon into a 4-square grid (`layout-grid`)!
+- **Active Indicator & Color Tokens:**
+  - Web uses Gold `#f2d28a` (inactive) and Primary Pink `#ec4899` (active).
+  - Mobile `(tabs)` uses Muted Gray `#94a3b8` (inactive) and Primary Light `#ec4899` with a soft pink container pill (`rgba(236,72,153,0.14)`).
+  - Mobile `UniversalBottomNav` uses Gold `#f2d28a` (inactive) and Cyan `#5ee7ff` with a radial gradient glow, cyan border (`rgba(94,231,255,0.36)`), and cyan elevation shadow (`elevation: 5`).
 
 ## 15. Screen-by-Screen Findings
 
@@ -308,11 +351,14 @@ TFP Photographers uses a centralized JSON design token specification in `package
 - **Discrepancies:**
   1. Web `create.astro:66-79` contains hardcoded English fallback records for `rateTypeLabels` and `experienceLabels`.
   2. Mobile `OpportunityDraftFields.tsx:9-16` imports duplicated options from `creation-options.ts` rather than `packages/config` or `packages/shared` *(F-SSOT-01)*.
+  3. Empty state on Web uses `icon="camera.flash"` and shared key `listing.no_items_found`; Mobile uses `icon="camera"` and custom key `mobile.opportunities.unavailableTitle` *(F-EMPTY-01)*.
 
 ### 15.4 Event Screens (`/events/*`)
 - **Web Source:** `apps/web/src/pages/events/index.astro` (278 lines), `[slug].astro` (890 lines), `create.astro` (480 lines)
 - **Mobile Source:** `apps/mobile/src/presentation/screens/EventScreens.tsx` (585 lines), `EventDraftFields.tsx` (152 lines)
 - **Parity Status:** HIGH PARITY. Both render event list with category filters, hero with date badge, about tab, gallery tab, attendee counter, location map, and creator panel.
+- **Discrepancies:**
+  1. Empty state key on Mobile uses `mobile.events.unavailableTitle` vs Web's `listing.no_items_found` *(F-EMPTY-01)*.
 
 ### 15.5 Contest Screens (`/contests/*`)
 - **Web Source:** `apps/web/src/pages/contests/index.astro` (215 lines), `[slug].astro` (878 lines), `submissions/index.astro` (180 lines)
@@ -320,6 +366,7 @@ TFP Photographers uses a centralized JSON design token specification in `package
 - **Parity Status:** HIGH PARITY. Both render contest prize pools, countdown badges, submission lightbox modal, and submission entry forms.
 - **Discrepancies:**
   1. Web has a dedicated route `/contests/[slug]/submissions/index.astro` for browsing all contest submissions; Mobile embeds the gallery exclusively in the contest detail tab *(F-ROUTE-02)*.
+  2. Empty state key on Mobile uses `mobile.contests.unavailableTitle` vs Web's `listing.no_items_found` *(F-EMPTY-01)*.
 
 ### 15.6 Profile & Onboarding Screens (`/profile/*`)
 - **Web Source:** `apps/web/src/pages/profile/[username].astro` (620 lines), `edit.astro` (580 lines), `CompactSignupForm.astro` (76 lines)
@@ -335,6 +382,7 @@ TFP Photographers uses a centralized JSON design token specification in `package
 - **Parity Status:** HIGH PARITY. Both platforms enter the exact same passwordless OTP login and verification contract (`/auth/email-code/request` and `/auth/email-code/verify`). `register`, `forgot-password`, and `reset-password` cleanly route into the passwordless workflow on both platforms.
 - **Discrepancies:**
   1. Brand OAuth icons (`google`, `apple`, `facebook`, `github`) render as custom SVGs on Web but fall back to `ImagePlus` on Mobile due to missing mappings in `ICON_ADAPTER` (`Icon.tsx:192`) *(F-ICON-01)*.
+  2. Web supports in-place `AuthModal.astro` for in-context authentication; Mobile always navigates away via `router.push('/auth/login')` *(F-MODAL-01)*.
 
 ### 15.8 Legal, Policy & Help Screens (`/legal/*`, `/help`)
 - **Web Source:** `apps/web/src/pages/legal.astro` (78 lines), `privacy.astro`, `terms.astro`, `guidelines.astro`, `disclaimer.astro`, `dmca.astro`, `ai-transparency.astro`, `contest-terms.astro`, `grievance.astro`, `contact.astro`
@@ -354,29 +402,76 @@ TFP Photographers uses a centralized JSON design token specification in `package
 ### 16.2 Entity Cards (`OpportunityCard`, `EventCard`, `ContestCard`, `CreatorCard` vs `cards.tsx`)
 - **Web:** `apps/web/src/components/OpportunityCard.astro`, `EventCard.astro`, `ContestCard.astro`, `profile/CreatorCard.astro`.
 - **Mobile:** `apps/mobile/src/presentation/components/cards.tsx` (929 lines).
-- **Parity:** HIGH PARITY. Card layout, image aspect ratios, badges, and metadata rows match the responsive web 402px viewport contract.
+- **Discrepancies:**
+  1. Web cards use `$raw-bg-surface` (`#0d0713`); Mobile cards use `colors.surfaceElevated` (`#151021`) as their background surface *(F-BG-01)*.
+  2. Web cards use 16-20px inner padding; Mobile cards use 12px inner padding *(F-LAYOUT-02)*.
 
-### 16.3 Form Controls (`TextInput.astro`, `SelectControl.astro` vs `FormControls.tsx`)
-- **Web:** `apps/web/src/components/TextInput.astro` (98 lines), `SelectControl.astro` (38 lines).
+### 16.3 Form Controls & Choice Chips (`TextInput.astro`, `SelectControl.astro` vs `FormControls.tsx`)
+- **Web:** `apps/web/src/components/TextInput.astro` (98 lines), `SelectControl.astro` (38 lines), `_role-chip.scss`.
 - **Mobile:** `apps/mobile/src/presentation/components/FormControls.tsx` (276 lines).
-- **Parity:** HIGH PARITY across field labels, placeholder colors (`colors.textTertiary`), error messages, and helper text.
+- **Discrepancies:**
+  1. Web form labels use SemiBold 13px with `#e2e8f0` text; Mobile form labels use Regular 12px with `#94a3b8` text *(F-ALIGN-01)*.
+  2. Selected choice chips on Web highlight with Primary Pink (`#ec4899`); selected choice chips on Mobile highlight with Gold (`#f2d28a`) *(F-TOKEN-03)*.
 
 ### 16.4 Header & Navigation Shell (`SiteHeader.astro`, `AppFooter.astro` vs `AppHeader.tsx`, `StackHeader.tsx`, `AppFooter.tsx`)
 - **Web:** `apps/web/src/components/SiteHeader.astro` (499 lines), `AppFooter.astro` (92 lines).
 - **Mobile:** `apps/mobile/src/presentation/components/AppHeader.tsx` (35 lines), `StackHeader.tsx` (347 lines), `AppFooter.tsx` (96 lines).
-- **Parity:** HIGH PARITY. Mobile renders brand header and footer links matching the web public layout contract.
+- **Discrepancies:**
+  1. Title string on mobile stack header hardcodes `"TFP PLATFORM"` (`StackHeader.tsx:39`) instead of `{t('layout.brand_short')}` *(F-HEAD-01)*.
+  2. Language action button on web header opens `CountryModal.astro`; mobile header navigates away to `/settings` *(F-HEAD-01)*.
 
-## 17. State-Parity Findings
+### 16.5 Detail Sections, Layout & Icon Bubbles (`DetailInfoCard.astro` vs `DetailComponents.tsx`)
+- **Web:** `apps/web/src/components/detail/DetailInfoCard.astro` (28 lines), `DetailSplitHero.astro` (110 lines).
+- **Mobile:** `apps/mobile/src/presentation/components/DetailComponents.tsx` (656 lines).
+- **Discrepancies:**
+  1. Screen horizontal gutter is 16px on Web vs 12px on Mobile (`Screen.tsx:119`) *(F-LAYOUT-01)*.
+  2. Vertical content section gap is 24px on Web vs 16px on Mobile (`Screen.tsx:121`) *(F-LAYOUT-03)*.
+  3. Mobile adds an extra enclosed 36x36px bubble with border around detail icons (`infoCardIconContainer`) that Web does not render *(F-BORDER-01)*.
+  4. Web `CreatorCard.astro:35-36` contains hardcoded English fallback strings *(F-COPY-04)*.
 
-| State Scenario | Web Implementation | Mobile Implementation | Parity Assessment |
-| --- | --- | --- | --- |
-| **Loading / Skeleton** | SSR / CSS skeleton placeholders | `Skeleton.tsx` (`SkeletonCard`, `SkeletonHeader`) | **EXACT PARITY** |
-| **Empty Results State** | `DetailMediaEmptyState.astro` / `ListingShell.astro` | `EmptyState.tsx` (icon + title + body + CTA) | **EXACT PARITY** |
-| **API Error / Offline** | `ErrorCard.astro` with retry action | `ErrorStateScreens.tsx` + `NetworkStatusBanner.tsx` | **EXACT PARITY** |
-| **404 Not Found** | `apps/web/src/pages/404.astro` | `apps/mobile/app/+not-found.tsx` (`NotFoundScreen`) | **EXACT PARITY** |
-| **Fatal 500 Error** | `apps/web/src/pages/500.astro` | Root Error Boundary (`FatalErrorScreen`) | **EXACT PARITY** |
-| **Unauthenticated Gate** | Redirect to `/login?redirect=...` | Push to `/auth/login` or show auth prompt modal | **EXACT PARITY** |
-| **Owner vs Viewer State**| Server-rendered owner action buttons / modals | React Query session-gated actions / buttons | **EXACT PARITY** |
+### 16.6 Gallery & Lightbox (`GalleryLightbox.astro` vs `ManagedImageGallery.tsx`)
+- **Web:** `apps/web/src/components/gallery/GalleryLightbox.astro` (116 lines). Uses `arrow-left` and `arrow-right` icons for image navigation.
+- **Mobile:** `apps/mobile/src/presentation/components/ManagedImageGallery.tsx` (135 lines). Uses `chevron-left` and `chevron-right` icons *(F-GALLERY-01)*.
+
+## 17. Forensic Empty States, Overlays & Backgrounds Analysis
+
+### 17.1 Empty States Parity Matrix
+
+| Domain / Screen | Web Component & Token | Mobile Component & Token | Icon Parity | Copy / Namespace Parity | Status / Finding |
+| --- | --- | --- | --- | --- | --- |
+| **Opportunities Listing Empty** | `DetailMediaEmptyState.astro` (`camera.flash`) | `EmptyState.tsx` (`camera`) | `camera.flash` vs `camera` | `listing.no_items_found` vs `mobile.opportunities.unavailableTitle` | **NAMESPACE DRIFT** *(F-EMPTY-01)* |
+| **Events Listing Empty** | `DetailMediaEmptyState.astro` (`calendar`) | `EmptyState.tsx` (`calendar`) | **EXACT MATCH** | `listing.no_items_found` vs `mobile.events.unavailableTitle` | **NAMESPACE DRIFT** *(F-EMPTY-01)* |
+| **Contests Listing Empty** | `DetailMediaEmptyState.astro` (`trophy`) | `EmptyState.tsx` (`trophy`) | **EXACT MATCH** | `listing.no_items_found` vs `mobile.contests.unavailableTitle` | **NAMESPACE DRIFT** *(F-EMPTY-01)* |
+| **Search Results Empty** | `DetailMediaEmptyState.astro` (`search`) | `EmptyState.tsx` (`search` / `users`) | **EXACT MATCH** | `search.empty_title` + `search.empty_copy` vs `creator_discovery.empty_title` | **EXACT MATCH** |
+| **Activity / Notifications Empty**| `DetailMediaEmptyState.astro` (`bell`) | `EmptyState.tsx` (`inbox`) | `bell` vs `inbox` | `activity.empty_title` vs `mobile.inbox.noActivityTitle` | **NAMESPACE DRIFT** *(F-EMPTY-01)* |
+| **Messages / Inbox Empty** | `messages.astro` (`messages`) | `InboxScreen.tsx` (`inbox`) | `messages` vs `inbox` | `messages.empty_title` vs `mobile.inbox.noMessagesTitle` | **NAMESPACE DRIFT** *(F-EMPTY-01)* |
+| **Quick Requests Empty** | `quick-requests/index.astro` (`inbox`) | `QuickRequestsScreen.tsx` (`file-text`) | `inbox` vs `file-text` | `quick_requests.no_requests_yet` | **EXACT MATCH** |
+| **Saved Searches Empty** | *(Embedded in listing filters)* | `SavedSearchScreen.tsx` (`search`) | `search` | `mobile.search.noSavedSearchesTitle` | **PLATFORM SPECIFIC** |
+| **Creator Portfolio Empty** | `profile/[username].astro` (`image`) | `ManagedImageGallery.tsx` (`image`) | **EXACT MATCH** | `profile.portfolio_empty` | **EXACT MATCH** |
+| **Unauthenticated Gate State** | `AuthModalLink.astro` (In-place modal trigger) | `EmptyState.tsx` (`actionVariant="primary"`, push to `/auth/login`) | `shield` | `common.signInRequired` vs `mobile.auth.loginTitle` | **BEHAVIOR DRIFT** *(F-MODAL-01)* |
+
+### 17.2 Overlays, Modals, Dialogs & Drawers
+
+| Overlay Type | Web Architecture | Mobile Architecture | Interaction Paradigm | Parity Assessment |
+| --- | --- | --- | --- | --- |
+| **Authentication Gate** | `<dialog id="modal-auth">` (`AuthModal.astro`) with `AuthFormBody.astro` | `router.push('/auth/login')` (`AuthScreens.tsx`) | In-place non-destructive modal vs destructive stack push | **MODAL DRIFT** *(F-MODAL-01)* |
+| **Reporting Overlay** | `<dialog id="modal-report">` (`ReportModal.astro`) with reason chips | `router.push('/reports/new')` (`ReportScreen.tsx`) | In-place non-destructive modal vs destructive stack push | **MODAL DRIFT** *(F-MODAL-01)* |
+| **Locale / Country Selector** | `<dialog id="modal-country">` (`CountryModal.astro`) | `<Modal>` within `/settings` (`LanguageSelector.tsx`) | Header in-place dialog vs Settings sub-modal | **INTERACTION DRIFT** *(F-HEAD-01)* |
+| **Image Gallery Lightbox** | `<dialog>` (`GalleryLightbox.astro`) with backdrop blur | `<Modal transparent>` (`ManagedImageGallery.tsx`) with `SafeAreaView` | Fullscreen modal overlay on both | **EXACT MATCH** |
+| **Confirmation Dialogs** | `<dialog id="confirm-dialog">` (`ConfirmDialog.astro`) | `Alert.alert` (Native iOS/Android system sheet) | Web HTML5 dialog vs Native OS Alert | **PLATFORM JUSTIFIED** |
+| **Mobile Header Drawer** | `.mobile-nav` with backdrop overlay (`SiteHeader.astro:446`) | `<Modal>` with `<BlurView intensity={44}>` (`StackHeader.tsx:156`) | Fixed slide-in drawer vs fullscreen blurred modal | **HIGH PARITY** |
+
+### 17.3 Backgrounds, Gradients, Surfaces & Glassmorphism
+
+| Surface Level | Web SCSS Spec | Mobile Tokens (`theme/tokens.ts`) | Effective Color Value | Match Assessment |
+| --- | --- | --- | --- | --- |
+| **Root Page Background** | `$raw-bg-base` / `--bg-base` | `colors.bg` | `#05030a` | **EXACT MATCH** |
+| **Primary Surface** | `$raw-bg-surface` / `--bg-surface` | `colors.surface` | `#0d0713` | **EXACT MATCH** |
+| **Elevated Surface** | `$raw-bg-surface-elevated` | `colors.surfaceElevated` | `#151021` | **EXACT MATCH** |
+| **Surface Hover / Highlight** | `$raw-bg-surface-hover` | `colors.surfaceHover` | `#1f1328` | **EXACT MATCH** |
+| **Glassmorphic Surface** | `backdrop-filter: blur(16px)` + `rgba(13,7,19,0.72)` | `BlurView tint="dark" intensity={36}` + `colors.surfaceGlass` | `rgba(13,7,19,0.72)` | **EXACT MATCH** |
+| **Hero Background Glows** | Radial gradient glows (`rgba(236,72,153,0.15)` & `rgba(180,76,255,0.12)`) | Svg `RadialGradient` glow + `LinearGradient` | `rgba(236,72,153,0.14)` | **EXACT MATCH** |
+| **Card Elevation Layering** | Cards default to `#0d0713`, elevate to `#151021` on hover | Cards default directly to `#151021` (`colors.surfaceElevated`) | `#0d0713` vs `#151021` | **CONTRAST DRIFT** *(F-BG-01)* |
 
 ## 18. SSOT Violations
 
@@ -427,6 +522,11 @@ TFP Photographers uses a centralized JSON design token specification in `package
 | **F-FORM-01** | **HIGH** | HIGH | `COMPONENT_DIVERGENCE` | Creator Onboarding Form | Onboarding structure divergence (1-step vs 2-step wizard) | Consistent onboarding data entry requirements across surfaces | Web uses 1-step compact form; Mobile uses 2-step wizard requiring stage and work preferences | Align mobile onboarding to match web compact form or unify shared onboarding form schema |
 | **F-SSOT-01** | **HIGH** | HIGH | `SSOT_VIOLATION` | Creation Options & Domain Enums | Duplicated creation options in mobile screen directory | Shared domain options should originate from `packages/config` or `packages/shared` | `creation-options.ts:1-35` duplicates enums with independent label keys | Export creation options from `packages/shared` and consume them across both platforms |
 | **F-SSOT-02** | **HIGH** | HIGH | `SSOT_VIOLATION` | Status Localization | Custom status translation key namespace on mobile | Status translation should consume canonical keys in `packages/shared` | Mobile `status-label.ts:6` generates `mobile.statuses.*` keys | Migrate status formatting to shared status helpers in `packages/shared/src/application-status.ts` |
+| **F-NAV-01** | **HIGH** | HIGH | `COMPONENT_DIVERGENCE` | Bottom Navigation Shell & Icons | Dual bottom navigation bars and Home icon glyph mismatch | Single consistent bottom navigation bar & consistent Home icon glyph across surfaces | Mobile switches between 5-tab root (Home icon: house) and 4-tab pushed bar (Home icon: grid) with cyan vs pink active styling | Align native tab icons and styles to unified cross-platform navigation contract |
+| **F-I18N-02** | **HIGH** | HIGH | `STATE_GAP` | Mobile Locale Selector vs Bundled Dictionaries | UI selector shows 100+ languages, but runtime only supports 3 | Selecting any supported language should render translated UI | Only `en_IN`, `hi_IN`, `ne_NP` are bundled; selecting other languages silently falls back to English | Align language selector to bundled catalogs or load full catalogs dynamically |
+| **F-TOKEN-03** | **MEDIUM** | HIGH | `TOKEN_DRIFT` | Choice Chip Active Accent Color | Choice chip active selection accent color divergence | Multi-select choice chips should use unified active selection accent token | Web chips highlight with Brand Pink (`#ec4899`); Mobile chips highlight with Gold (`#f2d28a`) | Standardize active chip selection border and background token in shared design tokens |
+| **F-EMPTY-01** | **MEDIUM** | HIGH | `COPY_MISMATCH` | Empty States Across Listing Domains | Divergent empty state key namespaces & icon choices | Consistent empty state copy keys (`listing.*`, `activity.*`, `messages.*`) and icon semantics | Mobile declares custom `mobile.opportunities.*`, `mobile.events.*`, `mobile.inbox.*` namespaces and divergent icons | Standardize empty state component props and i18n keys across Web and Mobile |
+| **F-MODAL-01** | **MEDIUM** | HIGH | `COMPONENT_DIVERGENCE` | Auth & Reporting Overlays | In-place modal overlay on Web vs destructive screen push on Mobile | Non-destructive modal overlays for in-context actions (Auth, Report) | Web opens non-destructive `<dialog>` modals; Mobile triggers `router.push` which unmounts parent screen | Implement native sheet/modal overlays on Mobile for auth and report actions |
 | **F-ICON-02** | **MEDIUM** | HIGH | `ICON_MISMATCH` | `location.detect` and `search.advanced` | Inconsistent icon glyphs and geometry | `location.detect` should display crosshair target; `search.advanced` should display 2-rail sliders | Mobile maps `location.detect` to `MapPin` and `search.advanced` to `SlidersHorizontal` | Add cross-platform vector geometry to `CROSS_PLATFORM_ICON_VECTORS` in `packages/shared/src/icons.ts` |
 | **F-COPY-01** | **MEDIUM** | HIGH | `COPY_MISMATCH` | Onboarding copy keys in i18n catalogs | Differing text for identical i18n keys | Shared catalog keys should have identical copy across web and mobile | 4 keys (`onboarding.accept_terms`, `onboarding.open_to_label`, `onboarding.owns_studio`, `onboarding.step2_body`) differ | Harmonize `packages/i18n/src/catalogs/languages/en.json` and `catalogs/mobile/en-in.json` |
 | **F-COPY-02** | **MEDIUM** | HIGH | `COPY_MISMATCH` | Home Screen Hero Tagline | Hardcoded English hero tagline strings on Mobile | Hero tagline should be localized via `t('home.hero_title_accent')` | Mobile `HomeScreen.tsx:157-159` hardcodes `Connect. Collaborate. Create.` in TSX | Use `t('home.hero_title_accent')` with styled text spans |
@@ -435,12 +535,21 @@ TFP Photographers uses a centralized JSON design token specification in `package
 | **F-SSOT-03** | **MEDIUM** | HIGH | `SSOT_VIOLATION` | Creator Taxonomy Helpers | Duplicated taxonomy translation logic across platforms | Taxonomy label translation should be implemented once in `packages/shared` | Web and Mobile implement separate translation wrappers | Consolidate taxonomy translation helper in `packages/shared/src/creator-discovery.ts` |
 | **F-ROUTE-02** | **MEDIUM** | HIGH | `ROUTE_GAP` | Contest Submissions Gallery Route | Missing dedicated submissions route on Mobile | Standalone contest submissions URL should be reachable on Mobile | Mobile only embeds submissions inside contest detail tab | Add `/contests/[id]/submissions/index.tsx` route on Mobile if standalone gallery parity is required |
 | **F-I18N-01** | **MEDIUM** | HIGH | `STATE_GAP` | Supported Locale Catalog Bundling | Mobile bundles only 3 locales vs Web's 100+ locales | Multilingual users should experience localized UI on both platforms | Mobile bundles `en_IN`, `hi_IN`, `ne_NP` and defaults all other locales to English | Expand mobile catalog bundling or implement dynamic catalog loading |
+| **F-HEAD-01** | **MEDIUM** | HIGH | `COMPONENT_DIVERGENCE` | Header Title & Locale Action | Header brand title hardcoded; locale action navigates away | Header title should use `{t('layout.brand_short')}`; locale button should open in-place modal | Mobile `StackHeader.tsx:39` hardcodes `"TFP PLATFORM"` and line 148 navigates to `/settings` | Use localized brand string and present in-place language modal on mobile |
+| **F-LAYOUT-01** | **LOW** | HIGH | `LAYOUT_DRIFT` | Screen Gutter Horizontal Padding | Screen horizontal padding variance across surfaces | Consistent edge-to-content gutter padding across viewports | Web uses 16px (`1rem`); Mobile uses 12px (`spacing.md`) | Align base screen container padding to 16px (`spacing.lg`) |
+| **F-LAYOUT-02** | **LOW** | HIGH | `LAYOUT_DRIFT` | Card Interior Content Padding | Card content interior padding variance | Consistent interior spacing breathing room on cards | Web cards use 16-20px padding; Mobile cards use 12px padding | Standardize card padding token in shared card geometry |
+| **F-BORDER-01** | **LOW** | HIGH | `BORDER_DRIFT` | Detail Info Card Decorative Icon Bubble | Extra decorative border & bubble wrapper on Mobile detail icons | Consistent icon presentation on detail info cards | Web renders direct naked icon; Mobile adds 36x36px bordered bubble with `primarySoft` background | Standardize detail info card icon container styling |
+| **F-LAYOUT-03** | **LOW** | HIGH | `LAYOUT_DRIFT` | Vertical Section Content Gaps | Vertical content section gap spacing variance | Consistent vertical rhythm between content blocks on detail screens | Web uses 24px (`$space-6`); Mobile uses 16px (`spacing.lg`) | Align screen vertical layout gap to standard spacing scale |
+| **F-ALIGN-01** | **LOW** | HIGH | `TYPOGRAPHY_DRIFT` | Form Field Label Typography & Contrast | Form label font size, weight, and contrast variance | Consistent form label hierarchy across web and mobile inputs | Web labels use SemiBold 13px `#e2e8f0`; Mobile labels use Regular 12px `#94a3b8` | Align input label typography token hierarchy |
+| **F-COPY-04** | **LOW** | HIGH | `COPY_MISMATCH` | Creator Card Default Prop Strings | Hardcoded fallback strings in CreatorCard component | Component action props should consume localized catalog keys | Web `CreatorCard.astro:35-36` hardcodes `'Chat with creator'` and `'Sign in to chat'` | Replace default string literals with `t('...')` lookups |
+| **F-BG-01** | **LOW** | HIGH | `TOKEN_DRIFT` | Card Background Surface Elevation | Card surface contrast level divergence | Consistent card background surface hierarchy | Web cards rest on `#0d0713` (elevate on hover); Mobile cards default directly to `#151021` | Align base card background token hierarchy across surfaces |
 | **F-COPY-03** | **LOW** | HIGH | `COPY_MISMATCH` | Search Screen Active Filter Tags | Hardcoded "Portfolio" label in search chip | Active filter tags should use localized creator taxonomy labels | Mobile `SearchScreen.tsx:493` renders raw `<TfpText>Portfolio</TfpText>` | Replace raw string with localized translation key |
 | **F-ASSET-01** | **LOW** | HIGH | `IMAGE_MISMATCH` | Brand Wordmark Asset | Differing brand wordmark image dimensions/compression | Identical brand wordmark asset used across all surfaces | Mobile asset (49.5 KB) differs from Web asset (41.4 KB) | Synchronize asset from shared source |
 | **F-ASSET-02** | **LOW** | HIGH | `DRY_VIOLATION` | Home Card Images | Byte-identical assets duplicated under different filenames | Assets should be stored once in shared asset directory | 6 home assets are duplicated across `apps/web/public` and `apps/mobile/assets` | Share common static assets via symlink or monorepo asset package |
 | **F-STATE-01** | **LOW** | HIGH | `STATE_GAP` | Home Hero Image Carousel | Hero carousel animation vs single static hero asset | Multi-frame hero presentation on Web; static single frame on Mobile | Web rotates 5 hero frames; Mobile renders single image | Document as intentional native optimization or implement carousel |
 | **F-FORM-02** | **LOW** | HIGH | `COMPONENT_DIVERGENCE` | Date/Time Picker Form Controls | Platform-specific native date/time pickers vs HTML inputs | Native date selection experience on mobile; HTML5 on web | Web uses `<input type="date">`; Mobile uses native modal dialogs | Platform-specific justified difference; maintain consistent ISO string payloads |
 | **F-A11Y-01** | **LOW** | HIGH | `A11Y_MISMATCH` | Icon Accessibility Defaults | Decorative icons accessibility tree exposure variance | Decorative icons should be hidden from screen readers by default | Web uses `aria-hidden="true"`; Mobile sets `accessible` flag only when label present | Ensure mobile icons without labels default to `importantForAccessibility="no"` |
+| **F-GALLERY-01** | **LOW** | HIGH | `ICON_MISMATCH` | Gallery Lightbox Controls | Arrow vs Chevron icon mismatch in image viewer | Consistent navigation icon vocabulary across lightbox viewers | Web uses `arrow-left`/`arrow-right`; Mobile uses `chevron-left`/`chevron-right` | Standardize lightbox navigation icons across both surfaces |
 | **F-ROUTE-03** | **INFO** | HIGH | `PLATFORM_SPECIFIC_JUSTIFIED` | Creator Directory Tab | Creator directory in Search vs dedicated `/profile` directory | Clean platform-appropriate navigation hierarchy | Web uses separate `/profile` page; Mobile embeds Creators in Search tab | Platform-specific justified navigation decision |
 
 ## 25. Full File Coverage Ledger
