@@ -8,6 +8,15 @@ import sys
 from pathlib import Path
 from urllib.parse import quote, urlsplit, urlunsplit
 
+SHARED_AI_KEY_NAMES = (
+    "TFP_AI_INTERNAL_API_KEY",
+    "MODERATION_REMOTE_AUTH_TOKEN",
+    "TRANSLATION_REMOTE_AUTH_TOKEN",
+    # Compatibility only for existing ignored UAT overlays.
+    "AIP_INTERNAL_API_KEY",
+    "AIP__SECURITY__INTERNAL_API_KEY",
+)
+
 
 def read_env(*paths: Path) -> dict[str, str]:
     values: dict[str, str] = {}
@@ -45,6 +54,21 @@ def update_env(path: Path, updates: dict[str, str]) -> None:
     path.chmod(0o600)
 
 
+def resolve_shared_ai_key(values: dict[str, str]) -> str:
+    configured = {
+        name: values[name]
+        for name in SHARED_AI_KEY_NAMES
+        if values.get(name)
+    }
+    if not configured:
+        raise ValueError(
+            f"Missing required app UAT secret: {' or '.join(SHARED_AI_KEY_NAMES[:3])}"
+        )
+    if len(set(configured.values())) != 1:
+        raise ValueError("Configured app and AI internal authentication secrets must match")
+    return next(iter(configured.values()))
+
+
 def main() -> None:
     root = Path(__file__).resolve().parents[2]
     app_values = read_env(
@@ -71,10 +95,7 @@ def main() -> None:
     update_env(target, {
         "TFP_AI_ENVIRONMENT": "production",
         "TFP_AI_REQUIRE_INTERNAL_API_KEY": "true",
-        "TFP_AI_INTERNAL_API_KEY": required(
-            "AIP_INTERNAL_API_KEY",
-            "AIP__SECURITY__INTERNAL_API_KEY",
-        ),
+        "TFP_AI_INTERNAL_API_KEY": resolve_shared_ai_key(app_values),
         "TFP_AI_WORKER_ENABLED": "true",
         "TFP_AI_DATABASE_URL": worker_url,
         "TFP_AI_STORAGE_ENDPOINT": required("B2_ENDPOINT", "BACKBLAZE_ENDPOINT"),
@@ -88,6 +109,7 @@ def main() -> None:
         "TFP_AI_WORKER_MAX_ATTEMPTS": "36",
         "TFP_AI_WORKER_STALE_SECONDS": "300",
         "TFP_AI_LOCAL_MODEL_CACHE_DIR": "/srv/tfp-ai-interface/shared/models",
+        "TFP_AI_LOCAL_MODELS_PRELOAD": "true",
         "TFP_AI_TRANSLATION_CONVERTED_MODEL_DIR": (
             "/srv/tfp-ai-interface/shared/models/m2m100-418m-ct2"
         ),
@@ -99,6 +121,6 @@ def main() -> None:
 if __name__ == "__main__":
     try:
         main()
-    except OSError as exc:
+    except (OSError, ValueError) as exc:
         print(f"Failed to prepare V2 worker environment: {exc}", file=sys.stderr)
         raise SystemExit(1) from exc

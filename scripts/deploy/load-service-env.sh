@@ -74,7 +74,11 @@ source_env_file_if_present() {
 load_service_deploy_env() {
   local root_dir="$1"
   local deploy_env="$2"
-  local tfp_env_file="${TFP_ENV_FILE:-$root_dir/tfpphotographers/.env.${deploy_env}.local}"
+  local default_tfp_env_file="$root_dir/tfpphotographers/.env.${deploy_env}.local"
+  if [[ "$deploy_env" == "local" ]]; then
+    default_tfp_env_file="$root_dir/tfpphotographers/.env.local"
+  fi
+  local tfp_env_file="${TFP_ENV_FILE:-$default_tfp_env_file}"
 
   source_env_file_if_present "$tfp_env_file"
   source_env_file_if_present "$root_dir/.env.deploy.local"
