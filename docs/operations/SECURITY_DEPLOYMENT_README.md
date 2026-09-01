@@ -4,7 +4,8 @@ This workspace deploys three cooperating services:
 
 - `tfpphotographers`: Astro/Fastify main application.
 - `tfp-ai-interface`: private inference API and isolated AI request worker.
-- `tfp-collage-service`: collage API and optional collage worker.
+- `tfp-collage-service`: isolated image-processing API/worker; the repository
+  and systemd unit retain this compatibility name.
 
 ## Required Production Secrets
 
@@ -31,10 +32,11 @@ fails that validation.
 
 - Image moderation requires the internal API key in UAT/prod.
 - Image moderation OpenAPI is disabled in UAT/prod.
-- Image moderation playground/folder-ops UI is disabled by default in UAT/prod.
-- Collage service requires `COLLAGE_SERVICE_API_KEY` in UAT/prod.
-- Collage service blocks `file:` URLs, `data:` URLs, redirects, localhost, private IPs, and oversized image responses in UAT/prod.
-- Collage CORS is allow-list based when `COLLAGE_ALLOWED_ORIGINS` is configured.
+- The active AI service has no folder-operations UI or deployment path; folder
+  moderation remains excluded from UAT.
+- The image-processing service requires `COLLAGE_SERVICE_API_KEY` in UAT/prod.
+- The image-processing service blocks `file:` URLs, `data:` URLs, redirects, localhost, private IPs, and oversized image responses in UAT/prod.
+- Image-processing CORS is allow-list based when `COLLAGE_ALLOWED_ORIGINS` is configured.
 
 Local development remains flexible through explicit local settings:
 
@@ -65,7 +67,7 @@ bash tfp-ai-interface/scripts/deploy-uat.sh
 bash tfp-collage-service/scripts/deploy/deploy.sh uat
 ```
 
-The main app and collage deploy wrappers load their service-owned environment
+The main app and image-processing deploy wrappers load their service-owned environment
 files. The AI interface deploy reads `tfp-ai-interface/.env.uat.local`. Keep
 `TFP_AI_INTERNAL_API_KEY`, `MODERATION_REMOTE_AUTH_TOKEN`,
 `COLLAGE_SERVICE_API_KEY`, database, and storage settings aligned in those
@@ -85,8 +87,8 @@ The environment summary shows non-secret status for:
 - active moderation provider
 - moderation remote URL
 - image moderation API key configured/missing
-- collage service URL
-- collage service API key configured/missing
+- image-processing service URL
+- image-processing service API key configured/missing
 
 Run the environment doctor after env changes:
 

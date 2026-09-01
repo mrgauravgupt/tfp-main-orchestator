@@ -3,15 +3,21 @@
 ## Repository map
 
 - `tfpphotographers/`: main Astro, Fastify, Prisma, PostgreSQL product monorepo.
-- `tfp-ai-interface/`: active stateless FastAPI image/text/translation service.
+- `tfp-ai-interface/`: active private FastAPI image/text/translation API and
+  isolated PostgreSQL request worker; it does not own product domain state.
 - `tfp-moderation-service/`: retained historical checkout; excluded from active
   deployment and runtime orchestration.
-- `tfp-collage-service/`: Node collage worker service.
+- `tfp-collage-service/`: Node image-processing worker service; the repository
+  and unit retain the historical collage compatibility name.
 - This root repository coordinates deployment scripts and records nested Git revisions.
 
 ## 2026 deployment-readiness baseline
 
-- The validated architecture audit is in `VALIDATED_AUDIT_AND_IMPLEMENTATION_PLAN.md`; use it as a prioritized backlog, not as proof of live runtime state.
+- The canonical moderation, worker-ownership, event-outbox, deployment, and
+  rollback contract is
+  `tfpphotographers/docs/architecture/EVENT_OUTBOX_AND_DEPLOYMENT_READINESS.md`.
+  Historical audit snapshots are not current runtime evidence and are not
+  retained as competing architecture documents.
 - The PostgreSQL-backed `event_outbox` is intentional. It uses `FOR UPDATE SKIP LOCKED`, retry state, terminal `FAILED`, and stale-processing recovery. Do not propose Redis/BullMQ merely because an outbox exists.
 - Domain transitions must use the transaction-scoped enqueue helper. Do not reintroduce post-commit event emission for moderation transitions.
 - `tfp-ai-interface` is the only consumer of slow AI request events:
@@ -163,4 +169,3 @@ These cannot be proven by static code alone and must be recorded per deployment:
   3. **Tier 3 (Live Notifications, Active Nav Radial Glows, Real-Time Status Dots)**: Cyan (`#5ee7ff` / `colors.cyan` / `var(--accent-cyan)`).
 - **Bottom-Up Leaf Component Auditing**: In addition to top-down screen walkthroughs, systematically audit the core presentation component library primitives (`apps/mobile/src/presentation/components/*`) against web SCSS component tokens. Fixing a token in a shared leaf component (`PillDropdown.tsx`, `cards.tsx`, `SectionHeader.tsx`, etc.) automatically enforces DRY parity across dozens of screens.
 - **Color Invariant Assertions in Presentation Contract Tests**: When writing component tests, assert semantic color invariants on icons and text links (e.g. `expect(icon.props.color).toBe(colors.gold)`) so token drift cannot silently regress without failing CI.
-

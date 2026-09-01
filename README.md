@@ -12,20 +12,22 @@ The following diagram illustrates how the user-facing client, Astro SSR frontend
 graph TD
     Client[Browser / Client] <-->|HTTP / HTTPS| AstroWeb[Astro SSR Web App<br/>apps/web]
     AstroWeb <-->|Internal HTTP/JSON| FastifyAPI[Fastify Core API<br/>apps/api]
-    FastifyAPI <-->|Prisma Client| Postgres[(PostgreSQL Database)]
+    FastifyAPI -->|Domain state + request event<br/>one Prisma transaction| Postgres[(PostgreSQL Database)]
     FastifyAPI <-->|S3 API| Storage[(Backblaze B2 / S3 Object Storage)]
 
-    subgraph "Auxiliary Microservices"
-        CollageService[TFP Collage Service<br/>Fastify / TS]
-        InferenceService[TFP AI Inference Service<br/>FastAPI / Python]
+    subgraph "Isolated Workers and Private Services"
+        AppWorker[TFP Application Result Worker]
+        ImageWorker[TFP Image Processing Worker<br/>Fastify / TypeScript]
+        AIWorker[TFP AI Job Worker<br/>Python]
+        InferenceService[TFP AI Inference API<br/>FastAPI / Python]
     end
 
-    CollageService <-->|Async Polling & Write| Postgres
-    CollageService -->|Fetch Images| Storage
-    CollageService -->|Upload Collages| Storage
-
-    FastifyAPI <-->|Ad-hoc HTTP Requests| CollageService
-    FastifyAPI -->|Authenticated inference HTTP| InferenceService
+    AIWorker <-->|Exclusively claims process_*<br/>atomically emits apply_ai_*| Postgres
+    AIWorker -->|Authenticated loopback inference| InferenceService
+    AppWorker <-->|Exclusively applies AI results| Postgres
+    ImageWorker <-->|Leases image jobs<br/>publishes manifests| Postgres
+    AIWorker -->|Read private source objects| Storage
+    ImageWorker -->|Read sources / write renditions| Storage
 ```
 
 ---
@@ -40,8 +42,8 @@ The orchestration layer coordinates three main subprojects, each serving a disti
 * **Key Features**: Authentication & OAuth, portfolios, contests, event RSVPs, direct messaging, subscriptions (Free, Pro, Pro Plus), and region-gated localization.
 * **Documentation**: See [tfpphotographers/README.md](file:///Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/README.md).
 
-### 2. [TFP Collage Service](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-collage-service)
-* **Role**: Mood-board generation service for collaboration opportunities.
+### 2. [TFP Image Processing Service](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-collage-service)
+* **Role**: Isolated rendition, manifest, lifecycle, and non-blocking opportunity-collage worker. The repository/systemd compatibility name remains `tfp-collage-service`; the runtime package is `tfp-image-processing-service`.
 * **Tech Stack**: Fastify, TypeScript, Node Canvas, PostgreSQL, Backblaze B2.
 * **Key Features**: 
   - Ad-hoc HTTP rendering via `/api/v1/generate-collage`.
@@ -61,6 +63,9 @@ The orchestration layer coordinates three main subprojects, each serving a disti
   atomically emits result events; the app worker applies those results.
 * **Documentation**: See [tfp-ai-interface/README.md](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-ai-interface/README.md).
 
+The canonical moderation, outbox, worker-ownership, deployment, and rollback
+contract is [Durable Moderation, AI Worker, Event Outbox, and Deployment Readiness](file:///Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/docs/architecture/EVENT_OUTBOX_AND_DEPLOYMENT_READINESS.md).
+
 `tfp-moderation-service` is a retained historical checkout and is not part of
 active deployment or runtime orchestration.
 
@@ -75,7 +80,7 @@ The orchestrator deploys the complete private UAT stack to the OCI Always Free A
 | **Main App / Web** | `8080` | — | Node.js / Astro SSR | Dev / UAT / Prod | `tfp-main-uat-web` |
 | **Main App / API** | `4000` | — | Node.js / Fastify | Dev / UAT / Prod | `tfp-main-uat-api` |
 | **AI Inference Service** | `7011` | — | Python / FastAPI / Uvicorn | Local / UAT / Prod | `tfp-ai-interface` |
-| **Collage Service** | `7003` | `7004` | Node.js / Fastify | `it` (dev) / `uat` / `prod` | `tfp-collage-service` |
+| **Image Processing Service** | `7003` | `7004` | Node.js / Fastify | `it` (dev) / `uat` / `prod` | `tfp-collage-service` (compatibility name) |
 
 ### Current OCI UAT Host
 
@@ -172,7 +177,7 @@ This launches:
 
 To run the helper microservices locally:
 ```bash
-# Run Collage Service locally (Fastify app on port 4001)
+# Run the image-processing service locally (compatibility repo name)
 cd tfp-collage-service
 pnpm dev
 
