@@ -2,6 +2,16 @@
 
 This repository is the central orchestrator and superproject for the **TFP (Time For Print) Creative Collaboration Platform**. It manages the main application ecosystem and its specialized, production-ready microservices designed for high-throughput image rendering and AI-powered content moderation.
 
+The cross-repository AI handoff has one machine-readable source of truth:
+[`contracts/ai-outbox.schema.json`](contracts/ai-outbox.schema.json). It defines
+the durable request/result event names and payload discriminators shared by the
+TypeScript application and isolated Python worker. Validate every pinned
+consumer together with:
+
+```bash
+node --test scripts/contracts/validate-ai-outbox-contract.test.mjs
+```
+
 ---
 
 ## System Topology & Architecture
@@ -36,21 +46,21 @@ graph TD
 
 The orchestration layer coordinates three main subprojects, each serving a distinct architectural role in the production pipeline:
 
-### 1. [TFP Photographers Platform](file:///Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers)
+### 1. [TFP Photographers Platform](tfpphotographers/)
 * **Role**: Primary user-facing platform and JSON REST API.
-* **Tech Stack**: [Astro v4 (SSR)](https://astro.build/) frontend, [Fastify](https://fastify.dev/) API backend, [Prisma ORM](https://www.prisma.io/) with PostgreSQL, SCSS, Zod.
+* **Tech Stack**: [Astro v7 (SSR)](https://astro.build/) frontend, [Fastify](https://fastify.dev/) API backend, [Prisma ORM](https://www.prisma.io/) with PostgreSQL, SCSS, Zod.
 * **Key Features**: Authentication & OAuth, portfolios, contests, event RSVPs, direct messaging, subscriptions (Free, Pro, Pro Plus), and region-gated localization.
-* **Documentation**: See [tfpphotographers/README.md](file:///Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/README.md).
+* **Documentation**: See [tfpphotographers/README.md](tfpphotographers/README.md).
 
-### 2. [TFP Image Processing Service](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-collage-service)
+### 2. [TFP Image Processing Service](tfp-collage-service/)
 * **Role**: Isolated rendition, manifest, lifecycle, and non-blocking opportunity-collage worker. The repository/systemd compatibility name remains `tfp-collage-service`; the runtime package is `tfp-image-processing-service`.
 * **Tech Stack**: Fastify, TypeScript, Node Canvas, PostgreSQL, Backblaze B2.
 * **Key Features**: 
   - Ad-hoc HTTP rendering via `/api/v1/generate-collage`.
   - Stateful background worker polling approved opportunities, applying focus-metadata, stitching layouts to a 16:9 canvas, and writing back to B2/S3.
-* **Documentation**: See [tfp-collage-service/README.md](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-collage-service/README.md).
+* **Documentation**: See [tfp-collage-service/README.md](tfp-collage-service/README.md).
 
-### 3. [TFP AI Inference Service](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-ai-interface)
+### 3. [TFP AI Inference Service](tfp-ai-interface/)
 * **Role**: Private inference API and isolated PostgreSQL-backed AI job worker
   for image moderation, text safety, and translation.
 * **Tech Stack**: FastAPI, OpenRouter/Qwen vision, ToxicBERT, and M2M100.
@@ -61,10 +71,10 @@ The orchestration layer coordinates three main subprojects, each serving a disti
   `tfp-ai-interface` claims only `process_moderation` and
   `process_translation` requests through a least-privilege database role and
   atomically emits result events; the app worker applies those results.
-* **Documentation**: See [tfp-ai-interface/README.md](file:///Users/hexa/Desktop/tfp-main-orchestator/tfp-ai-interface/README.md).
+* **Documentation**: See [tfp-ai-interface/README.md](tfp-ai-interface/README.md).
 
 The canonical moderation, outbox, worker-ownership, deployment, and rollback
-contract is [Durable Moderation, AI Worker, Event Outbox, and Deployment Readiness](file:///Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/docs/architecture/EVENT_OUTBOX_AND_DEPLOYMENT_READINESS.md).
+contract is [Durable Moderation, AI Worker, Event Outbox, and Deployment Readiness](tfpphotographers/docs/architecture/EVENT_OUTBOX_AND_DEPLOYMENT_READINESS.md).
 
 `tfp-moderation-service` is a retained historical checkout and is not part of
 active deployment or runtime orchestration.
@@ -93,7 +103,7 @@ The orchestrator deploys the complete private UAT stack to the OCI Always Free A
 - Tunnel: `tfp-oci-uat` -> `http://localhost:8080`
 - Database and app/service ports: loopback-only on the OCI host
 
-Use [scripts/oci/deploy-all-uat.sh](file:///Users/hexa/Desktop/tfp-main-orchestator/scripts/oci/deploy-all-uat.sh) for a fresh full-stack deployment. The older OCI E2 micro at `140.245.30.133` is not the UAT host. Contabo `13.140.189.236` is retired and must not be used as a deployment or database target.
+Use [scripts/oci/deploy-all-uat.sh](scripts/oci/deploy-all-uat.sh) for a fresh full-stack deployment. The older OCI E2 micro at `140.245.30.133` is not the UAT host. Contabo `13.140.189.236` is retired and must not be used as a deployment or database target.
 
 ---
 
@@ -105,7 +115,7 @@ Normal OCI UAT deployments intentionally exclude folder moderation. `/srv/tfp-fo
 
 ## Shared DevOps & Deployment Scripting
 
-OCI UAT deployments are orchestrated from [scripts/oci](file:///Users/hexa/Desktop/tfp-main-orchestator/scripts/oci). The full-stack entrypoint calls the main app, AI inference, and collage deploy scripts directly.
+OCI UAT deployments are orchestrated from [scripts/oci](scripts/oci/). The full-stack entrypoint calls the main app, AI inference, and collage deploy scripts directly.
 
 ### Deploying the Full UAT Stack (Recommended)
 To deploy the complete fresh UAT stack:
@@ -162,7 +172,7 @@ This writes ignored runtime files in `tfpphotographers`:
 The command will not overwrite existing files unless `--force` is passed. UAT and production files intentionally contain `REPLACE_*` placeholders for secrets that must be filled from the secure runtime source.
 
 For the complete secret inventory and exact update locations, see
-[tfpphotographers/docs/operations/ENVIRONMENT_AND_SECRETS_GUIDE.md](file:///Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/docs/operations/ENVIRONMENT_AND_SECRETS_GUIDE.md).
+[tfpphotographers/docs/operations/ENVIRONMENT_AND_SECRETS_GUIDE.md](tfpphotographers/docs/operations/ENVIRONMENT_AND_SECRETS_GUIDE.md).
 
 ### 3. Spin Up Local Stack
 Run the clean local startup script from the main platform folder:
@@ -191,7 +201,7 @@ uv run tfp-ai-inference-api
 
 ## Global Repository & Branch Guidelines
 
-Please review the workspace-wide development rules in [AGENTS.md](file:///Users/hexa/Desktop/tfp-main-orchestator/AGENTS.md). 
+Please review the workspace-wide development rules in [AGENTS.md](AGENTS.md).
 
 > [!IMPORTANT]
 > **Commit and Push Preference**

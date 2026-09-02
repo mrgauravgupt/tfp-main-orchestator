@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tfpphotographers.com/contracts/ai-outbox.schema.json",
+  "title": "TFP AI outbox wire contract",
+  "description": "Canonical cross-repository event names and payload discriminators shared by the TFP application and the isolated tfp-ai-interface worker.",
+  "type": "object",
+  "oneOf": [
+    { "$ref": "#/$defs/processModerationEnvelope" },
+    { "$ref": "#/$defs/processTranslationEnvelope" },
+    { "$ref": "#/$defs/applyModerationResultEnvelope" },
+    { "$ref": "#/$defs/applyTranslationResultEnvelope" }
+  ],
+  "$defs": {
+    "nonEmptyString": { "type": "string", "minLength": 1 },
+    "imageModerationRequest": {
+      "type": "object",
+      "required": ["imageKey", "userId", "uploadId", "sourceType"],
+      "properties": {
+        "imageKey": { "$ref": "#/$defs/nonEmptyString" },
+        "userId": { "$ref": "#/$defs/nonEmptyString" },
+        "uploadId": { "$ref": "#/$defs/nonEmptyString" },
+        "sourceType": { "$ref": "#/$defs/nonEmptyString" }
+      },
+      "additionalProperties": true
+    },
+    "entityModerationRequest": {
+      "type": "object",
+      "required": ["jobType", "sourceEntityType", "sourceEntityId", "userId"],
+      "properties": {
+        "jobType": { "const": "ENTITY" },
+        "sourceEntityType": { "$ref": "#/$defs/nonEmptyString" },
+        "sourceEntityId": { "$ref": "#/$defs/nonEmptyString" },
+        "userId": { "$ref": "#/$defs/nonEmptyString" },
+        "revisionCount": { "type": "integer", "minimum": 0 },
+        "preferredCreatorId": { "$ref": "#/$defs/nonEmptyString" }
+      },
+      "additionalProperties": true
+    },
+    "translationRequest": {
+      "type": "object",
+      "required": [
+        "jobType",
+        "entityType",
+        "entityId",
+        "revision",
+        "sourceLocale",
+        "targetLocales"
+      ],
+      "properties": {
+        "jobType": { "const": "ENTITY_TRANSLATION" },
+        "entityType": { "enum": ["OPPORTUNITY", "EVENT", "CONTEST"] },
+        "entityId": { "$ref": "#/$defs/nonEmptyString" },
+        "revision": { "type": "integer", "minimum": 0 },
+        "sourceLocale": { "$ref": "#/$defs/nonEmptyString" },
+        "targetLocales": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nonEmptyString" },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "textModerationResult": {
+      "type": "object",
+      "required": ["sourceType", "field", "reasons"],
+      "properties": {
+        "sourceType": { "$ref": "#/$defs/nonEmptyString" },
+        "field": { "$ref": "#/$defs/nonEmptyString" },
+        "value": { "type": ["string", "null"] },
+        "assetKey": { "type": ["string", "null"] },
+        "reasons": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nonEmptyString" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "translationResultItem": {
+      "type": "object",
+      "required": ["field", "targetLocale", "translatedText", "model"],
+      "properties": {
+        "field": { "enum": ["title", "description"] },
+        "targetLocale": { "$ref": "#/$defs/nonEmptyString" },
+        "translatedText": { "type": "string" },
+        "model": { "$ref": "#/$defs/nonEmptyString" },
+        "latencyMs": { "type": "number", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "processModerationEnvelope": {
+      "type": "object",
+      "required": ["eventName", "payload"],
+      "properties": {
+        "eventName": { "const": "process_moderation" },
+        "payload": {
+          "oneOf": [
+            { "$ref": "#/$defs/imageModerationRequest" },
+            { "$ref": "#/$defs/entityModerationRequest" }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "processTranslationEnvelope": {
+      "type": "object",
+      "required": ["eventName", "payload"],
+      "properties": {
+        "eventName": { "const": "process_translation" },
+        "payload": { "$ref": "#/$defs/translationRequest" }
+      },
+      "additionalProperties": false
+    },
+    "applyModerationResultEnvelope": {
+      "type": "object",
+      "required": ["eventName", "payload"],
+      "properties": {
+        "eventName": { "const": "apply_ai_moderation_result" },
+        "payload": {
+          "type": "object",
+          "required": ["jobType", "requestId", "request"],
+          "properties": {
+            "jobType": { "enum": ["IMAGE_RESULT", "ENTITY_RESULT"] },
+            "requestId": { "$ref": "#/$defs/nonEmptyString" },
+            "request": {
+              "oneOf": [
+                { "$ref": "#/$defs/imageModerationRequest" },
+                { "$ref": "#/$defs/entityModerationRequest" }
+              ]
+            },
+            "textResults": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/textModerationResult" }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "applyTranslationResultEnvelope": {
+      "type": "object",
+      "required": ["eventName", "payload"],
+      "properties": {
+        "eventName": { "const": "apply_ai_translation_result" },
+        "payload": {
+          "type": "object",
+          "required": ["jobType", "requestId", "request", "translations"],
+          "properties": {
+            "jobType": { "const": "ENTITY_TRANSLATION_RESULT" },
+            "requestId": { "$ref": "#/$defs/nonEmptyString" },
+            "request": { "$ref": "#/$defs/translationRequest" },
+            "translations": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/translationResultItem" }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

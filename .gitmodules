@@ -4,7 +4,7 @@
 
 [submodule "tfp-moderation-service"]
 	path = tfp-moderation-service
-	url = git@github.com:mrgauravgupt/ai-inference-platform.git
+	url = git@github.com:mrgauravgupt/tfp-image-moderation-service.git
 
 [submodule "tfpphotographers"]
 	path = tfpphotographers
