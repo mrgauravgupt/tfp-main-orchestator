@@ -12,3 +12,6 @@
 [submodule "tfp-ai-interface"]
 	path = tfp-ai-interface
 	url = git@github.com:mrgauravgupt/tfp-ai-interface.git
+[submodule "tfp-inhouse-moderation"]
+	path = tfp-inhouse-moderation
+	url = git@github.com:mrgauravgupt/tfp-inhouse-moderation.git
