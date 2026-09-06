@@ -3,6 +3,7 @@
 - **Review date:** 6 September 2026
 - **Review type:** evidence-based application, structure, SOLID, design-pattern, and operability review
 - **Decision rule:** recommend the smallest change that fixes a demonstrated problem; do not add enterprise ceremony for its own sake
+- **Companion audit:** [DRY, modularity, and cleanup audit](./2026-09-06-dry-modularity-and-cleanup-audit.md)
 
 ## Executive verdict
 
