@@ -11,11 +11,13 @@
     { "$ref": "#/$defs/applyTranslationResultEnvelope" }
   ],
   "$defs": {
+    "correlationId": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z0-9._:-]+$" },
     "nonEmptyString": { "type": "string", "minLength": 1 },
     "imageModerationRequest": {
       "type": "object",
       "required": ["imageKey", "userId", "uploadId", "sourceType"],
       "properties": {
+        "correlationId": { "$ref": "#/$defs/correlationId" },
         "imageKey": { "$ref": "#/$defs/nonEmptyString" },
         "userId": { "$ref": "#/$defs/nonEmptyString" },
         "uploadId": { "$ref": "#/$defs/nonEmptyString" },
@@ -27,6 +29,7 @@
       "type": "object",
       "required": ["jobType", "sourceEntityType", "sourceEntityId", "userId"],
       "properties": {
+        "correlationId": { "$ref": "#/$defs/correlationId" },
         "jobType": { "const": "ENTITY" },
         "sourceEntityType": { "$ref": "#/$defs/nonEmptyString" },
         "sourceEntityId": { "$ref": "#/$defs/nonEmptyString" },
@@ -47,6 +50,7 @@
         "targetLocales"
       ],
       "properties": {
+        "correlationId": { "$ref": "#/$defs/correlationId" },
         "jobType": { "const": "ENTITY_TRANSLATION" },
         "entityType": { "enum": ["OPPORTUNITY", "EVENT", "CONTEST"] },
         "entityId": { "$ref": "#/$defs/nonEmptyString" },
@@ -119,6 +123,7 @@
           "type": "object",
           "required": ["jobType", "requestId", "request"],
           "properties": {
+            "correlationId": { "$ref": "#/$defs/correlationId" },
             "jobType": { "enum": ["IMAGE_RESULT", "ENTITY_RESULT"] },
             "requestId": { "$ref": "#/$defs/nonEmptyString" },
             "request": {
@@ -146,6 +151,7 @@
           "type": "object",
           "required": ["jobType", "requestId", "request", "translations"],
           "properties": {
+            "correlationId": { "$ref": "#/$defs/correlationId" },
             "jobType": { "const": "ENTITY_TRANSLATION_RESULT" },
             "requestId": { "$ref": "#/$defs/nonEmptyString" },
             "request": { "$ref": "#/$defs/translationRequest" },
