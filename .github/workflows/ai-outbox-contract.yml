@@ -21,3 +21,5 @@ jobs:
 
       - name: Validate the cross-repository wire contract
         run: node --test scripts/contracts/validate-ai-outbox-contract.test.mjs
+      - name: Check worker integration schemas against application migrations
+        run: node scripts/contracts/worker-test-schema.mjs

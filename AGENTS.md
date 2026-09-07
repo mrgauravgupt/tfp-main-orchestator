@@ -50,6 +50,9 @@
 - **Selective Commits**: Stage, commit, and push only your specific changes. Avoid staging unrelated modified files.
 - **Git Worktree Isolation Option**: Alternatively, if the working tree has complex dirty files, you may choose to execute your work inside a separate `git worktree` and merge back in the end, carefully committing and pushing only your changes.
 - Keep changes minimal, traceable, and production-safe.
+- API proxy trust requires both `TRUST_PROXY_HOPS` and the address allowlist
+  `TRUST_PROXY_CIDRS` (defaults to exact IPv4/IPv6 loopback for OCI). Never
+  restore numeric-only Fastify trust; see the app environment guide.
 
 ## Testing Conventions
 - Prefer test roots over colocated source tests for new work:

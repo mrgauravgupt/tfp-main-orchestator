@@ -1,5 +1,10 @@
 # 🔎 TFP Enterprise Application Improvement Review
 
+> **Update — 7 September:** The confirmed findings below have been remediated.
+> See [remediation and second-review results](./2026-09-07-remediation-and-verification.md)
+> for current fixes, test evidence, and release-certification limits. The body
+> below preserves the original review baseline, not the current open-issue list.
+
 - **Review date:** 6 September 2026
 - **Review type:** evidence-based application, structure, SOLID, design-pattern, and operability review
 - **Decision rule:** recommend the smallest change that fixes a demonstrated problem; do not add enterprise ceremony for its own sake

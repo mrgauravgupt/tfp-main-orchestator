@@ -6,6 +6,10 @@
 - **Companion review:** [Enterprise application improvement review](./2026-09-06-enterprise-application-improvement-review.md)
 - **Decision rule:** remove or consolidate only when the evidence is stronger than the risk; do not create abstractions merely to reduce a line-count metric
 
+> **Update — 7 September:** The functional fixes and focused reuse improvements
+> are now implemented. See [remediation and second-review results](./2026-09-07-remediation-and-verification.md).
+> The planned-fix sections below preserve the original audit baseline.
+
 ## Executive outcome
 
 The active services are **already reasonably DRY and modular**. The application source scan found only **0.12% duplicated lines**, while the scoped AI and collage source scans found no clone groups. Most apparent duplication is intentional: it preserves platform entry points, route compatibility, fixture meaning, or separate trust boundaries.

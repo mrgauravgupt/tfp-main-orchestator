@@ -13,6 +13,11 @@
 
 ## 2026 deployment-readiness baseline
 
+- September 7 remediation and verification evidence is recorded in
+  `docs/reviews/2026-09-07-remediation-and-verification.md`. API proxy trust now
+  combines `TRUST_PROXY_HOPS` with `TRUST_PROXY_CIDRS`, defaulting to exact
+  loopback addresses. Non-loopback proxies need an explicit reviewed allowlist;
+  deployed environment values were not changed by this local remediation.
 - The canonical moderation, worker-ownership, event-outbox, deployment, and
   rollback contract is
   `tfpphotographers/docs/architecture/EVENT_OUTBOX_AND_DEPLOYMENT_READINESS.md`.
