@@ -174,3 +174,29 @@ These cannot be proven by static code alone and must be recorded per deployment:
   3. **Tier 3 (Live Notifications, Active Nav Radial Glows, Real-Time Status Dots)**: Cyan (`#5ee7ff` / `colors.cyan` / `var(--accent-cyan)`).
 - **Bottom-Up Leaf Component Auditing**: In addition to top-down screen walkthroughs, systematically audit the core presentation component library primitives (`apps/mobile/src/presentation/components/*`) against web SCSS component tokens. Fixing a token in a shared leaf component (`PillDropdown.tsx`, `cards.tsx`, `SectionHeader.tsx`, etc.) automatically enforces DRY parity across dozens of screens.
 - **Color Invariant Assertions in Presentation Contract Tests**: When writing component tests, assert semantic color invariants on icons and text links (e.g. `expect(icon.props.color).toBe(colors.gold)`) so token drift cannot silently regress without failing CI.
+
+## Anti-Hallucination & System Audit Calibration Rules (RCA Lessons from 2026-09 Cross-Agent Audit Review)
+
+- **AST & Runtime Branch Tracing Before Reporting Findings**:
+  - Never conclude a service behavior from the existence of a helper function or an early middleware bypass.
+  - In `tfp-collage-service`, the root route `/` branches on `['production', 'prod', 'uat'].includes(config.environment)` to return `{ status: 'ok' }`. The interactive HTML test GUI is served **only in development/local**.
+  - `config.ts` enforces `IMAGE_PROCESSING_SERVICE_API_KEY` of $\ge 32$ characters in UAT/prod; startup throws if missing or weak. Do not claim auth is optional or test forms are exposed in production.
+- **Threat Model & Attacker Ingress Verification Before P0/P1 Severity**:
+  - Do not escalate a code pattern (such as DNS rebinding in `collageMaker.ts`) to P0 Critical without verifying whether an attacker-accessible entrypoint exists.
+  - In `tfp-collage-service`, the durable background worker (`imageProcessingWorker.ts`) reads verified source objects directly as buffers from Backblaze B2/S3 storage via `storage.privateSources.read()`, completely bypassing `fetchImage()`.
+  - The HTTP endpoint `/api/v1/generate-collage` binds strictly to loopback (`127.0.0.1`), is internal-only, and requires an internal API key. DNS rebinding hardening is a defense-in-depth improvement (P2), not an active P0 exploit.
+- **Empirical Measurement vs. Synthetic Model Calculations**:
+  - In `tfp-ai-interface`, `M2M100` is **already converted to and run in CTranslate2 int8 quantization** (`translation.py:117-130`). Never report it as unquantized FP32 consuming 1.7 GB RAM or recommend quantizing with ONNX/optimum.
+  - In `tfp-collage-service`, `imageProcessingWorker.ts:204` processes jobs **serially** (`claimJobs(1)` per loop iteration). Do not hallucinate scenarios with 50 parallel image jobs crashing the 12 GB ARM64 host without verifying concurrency limits.
+- **Transaction Scope & Caller Call-Site Verification**:
+  - Before claiming a database helper leaks locks or has a race condition (e.g. `claimPendingOutboxRows` executing `SELECT ... FOR UPDATE` followed by `UPDATE`), trace every caller in the codebase.
+  - All three outbox callers wrap invocations in `prisma.$transaction(async (tx) => ...)`. Under PostgreSQL's MVCC model, row locks are held until transaction commit/rollback. A single CTE update is an optimization, not a live lock-leak bug.
+- **Probe Endpoint Naming Accuracy**:
+  - The Fastify API exposes `/health` and `/ready` (`apps/api/src/plugins/health.ts`), not `/health/live` and `/health/ready`.
+  - Do not assume Kubernetes/cloud conventions without inspecting actual route registrations.
+- **Preserve Domain Invariants in Code Proposals**:
+  - When proposing SQL query optimizations (e.g. CTE for outbox claims), preserve all existing domain exclusions (`event_name <> process_moderation`, `event_name <> process_translation`, etc.) and stale-processing recovery intervals (`INTERVAL '5 minutes'`).
+  - When proposing fetch replacements, do not drop redirect rejections, byte streaming limits, or content-type checks, and verify imports exist in the module.
+- **No Pseudo-Quantitative Maturity Scores**:
+  - Never invent arbitrary numerical scores (e.g. "7.8/10") or blanket compliance certifications unless evaluating against a formally defined, mathematically reproducible evaluation rubric.
+

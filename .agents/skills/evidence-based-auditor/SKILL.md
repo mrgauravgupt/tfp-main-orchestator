@@ -46,3 +46,34 @@ Do not recommend "Unit of Work framework", "universal EntityResolver", "DLQ tabl
 
 ### 8. Severity arithmetic must be self-consistent
 If the body lists 7 critical findings, the summary table must say 7 — not 5. Recount before publishing. Inconsistent numbers signal the report was not reviewed before delivery.
+
+### 9. Localized inspection without AST/branch tracing (The "First Match" Trap)
+Never infer runtime behavior from where a helper function is defined or where a hook early-returns. Trace the actual router definitions and environment conditionals. For example, if an HTML test page helper exists in a service, check the route handler: does it branch on `NODE_ENV` or `environment === 'production'` to return `{ status: 'ok' }` instead? Check `readConfig()`: does startup throw if secrets are missing in production/UAT?
+
+### 10. Theoretical code pattern vs. exploitable threat model (Severity Inflation)
+A code-level smell (e.g. TOCTOU DNS rebinding, missing rate limiter) is not an automatic "P0 Critical Vulnerability" unless an attacker-accessible entrypoint actually exists in the runtime threat model. Before assigning P0 or P1, trace the data flow:
+- Does the vulnerable code path run on user-submitted input, or only on private, approved storage buffers?
+- Is the endpoint public or bound strictly to loopback behind a 32+ character internal API key?
+If it is on an authenticated internal loopback route and bypassed by background workers, classify it as defense-in-depth / code hardening (P2), not an active P0 exploit.
+
+### 11. Hallucinated synthetic calculations vs. verified code reality
+Never fabricate memory calculations or concurrency models out of thin air:
+- Do not assume a model runs in FP32; check the model loader/converter (e.g. checking for CTranslate2 `int8`, ONNX, or `torch.float16`).
+- Do not assume 50 parallel jobs run concurrently unless the worker actually spawns 50 concurrent tasks. Check the polling loop: does it process serially (`claimJobs(1)`)?
+- Always measure or verify against code constraints before asserting that memory will trigger OOM kills.
+
+### 12. Theoretical interface risk vs. actual caller guarantees
+If a database helper accepts a generic SQL client interface that *could* be invoked outside a transaction, check the callers before claiming an active concurrency bug or lock leak. If all callers wrap the helper in `prisma.$transaction(...)` or `client.query('BEGIN')`, the row lock is held until transaction commit under PostgreSQL's MVCC model. Frame an atomic CTE as an architectural refinement, not a live data-loss defect.
+
+### 13. Broken or regressive code remediation snippets
+Never emit drop-in diffs that omit domain rules, drop existing security checks, or introduce circular/broken imports:
+- If suggesting a SQL CTE, preserve existing domain exclusions (e.g. worker event filters) and stale-job recovery intervals (`INTERVAL '5 minutes'`).
+- If suggesting a fetch replacement, preserve redirect rejection, byte streaming caps, and content-type validations.
+- Verify module exports before writing `import { foo } from './bar.js'`.
+
+### 14. Framework stereotyping & imagined endpoints
+Do not assume standard cloud conventions (e.g. `/health/live` and `/health/ready`) without reading the route registrations. Check `plugins/health.ts` or `routes.ts` directly. The application may use `/health` and `/ready`.
+
+### 15. Arbitrary maturity scoring
+Do not emit arbitrary quantitative scores (e.g. "7.8/10 enterprise maturity") unless explicitly evaluating against a formal, mathematically weighted rubric with empirical test and measurement evidence. Unmeasured scores erode technical credibility.
+

@@ -54,6 +54,15 @@
   `TRUST_PROXY_CIDRS` (defaults to exact IPv4/IPv6 loopback for OCI). Never
   restore numeric-only Fastify trust; see the app environment guide.
 
+## Audit, Code Review & Counter-Verification Standards
+- **Trace Full AST & Runtime Branching**: Never conclude a security weakness or behavioral defect from helper definitions or middleware bypasses alone. Always trace environment conditionals (`isProductionLike`, `config.environment`), router definitions, and startup secret assertions.
+- **Threat Model Verification Before Severity Assignment**: Verify whether an attacker-accessible entrypoint exists before labeling an issue as P0/Critical. Distinguish internal defense-in-depth from active public exploit vectors.
+- **Inspect Concrete Implementations, Not Assumptions**: Check actual model converters and runtime flags (e.g., CTranslate2 `int8` quantization in `translation.py`) and worker polling loops (serial vs concurrent) before calculating memory footprints or claiming OOM risks.
+- **Verify Caller Call-Sites for Concurrency Invariants**: If a database helper accepts a generic client, inspect all callers. If all callers execute inside active transactions (e.g. `prisma.$transaction`), row locks are retained until commit under PostgreSQL MVCC.
+- **Preserve Domain Invariants in Code Proposals**: When drafting proposed fixes, preserve all existing event exclusions, stale recovery intervals, redirect checks, and byte caps. Verify module exports before writing import statements.
+- **Ground Route Names in Code**: Check actual route registrations (e.g. `/health` and `/ready` in `health.ts`) rather than assuming conventional framework defaults.
+- **No Arbitrary Maturity Scores**: Avoid fabricated numerical scores (e.g. "7.8/10") unless evaluating against a formally defined, mathematically reproducible evaluation rubric.
+
 ## Testing Conventions
 - Prefer test roots over colocated source tests for new work:
   - app-local: `apps/<app>/tests/**`
