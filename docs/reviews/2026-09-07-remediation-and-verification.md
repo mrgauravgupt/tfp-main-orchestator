@@ -1,5 +1,7 @@
 # TFP remediation and second-review results
 
+> Historical review snapshot. For the current source-verified backlog, use [the 8 September audit and implementation plan](2026-09-08-deep-architecture-audit-and-implementation-plan.md). Revalidate these older findings before changing code.
+
 **Date:** 7 September 2026 · **Scope:** tfpphotographers API/web, AI interface,
 and collage service. This updates the two 6 September review documents; their
 original findings and line references remain a historical baseline.

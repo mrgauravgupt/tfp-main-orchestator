@@ -1,5 +1,7 @@
 # Gemini change review — 7 September 2026
 
+> Historical review snapshot. For the current source-verified backlog, use [the 8 September audit and implementation plan](2026-09-08-deep-architecture-audit-and-implementation-plan.md). Revalidate these older findings before changing code.
+
 ## Reviewed scope
 
 Reviewed the uncommitted application changes and the associated worker changes

@@ -1,5 +1,7 @@
 # 🧹 TFP DRY, Modularity, and Cleanup Audit
 
+> Historical review snapshot. For the current source-verified backlog, use [the 8 September audit and implementation plan](2026-09-08-deep-architecture-audit-and-implementation-plan.md). Revalidate these older findings before changing code.
+
 - **Audit date:** 6 September 2026
 - **Scope:** `tfpphotographers` backend/frontend/shared packages, `tfp-ai-interface`, and `tfp-collage-service`
 - **Method:** source-clone discovery followed by consumer, package-script, CI, documentation, deployment, test, and Git-history tracing

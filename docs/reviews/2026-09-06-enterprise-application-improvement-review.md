@@ -1,5 +1,7 @@
 # 🔎 TFP Enterprise Application Improvement Review
 
+> Historical review snapshot. For the current source-verified backlog, use [the 8 September audit and implementation plan](2026-09-08-deep-architecture-audit-and-implementation-plan.md). Revalidate these older findings before changing code.
+
 > **Update — 7 September:** The confirmed findings below have been remediated.
 > See [remediation and second-review results](./2026-09-07-remediation-and-verification.md)
 > for current fixes, test evidence, and release-certification limits. The body

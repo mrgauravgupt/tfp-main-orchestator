@@ -1,5 +1,7 @@
 # Implementation checkpoint — 6 September 2026
 
+> Historical review snapshot. For the current source-verified backlog, use [the 8 September audit and implementation plan](2026-09-08-deep-architecture-audit-and-implementation-plan.md). Revalidate these older findings before changing code.
+
 > **Superseded — 7 September:** The scheduled run fired at 03:15:02 IST and
 > continued this batch. Read [remediation and verification](./2026-09-07-remediation-and-verification.md)
 > for current status. The historical checkpoint below must not be treated as a

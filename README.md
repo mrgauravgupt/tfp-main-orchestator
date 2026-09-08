@@ -1,6 +1,8 @@
 # TFP Multi-Service Creative Platform Orchestrator
 
-This repository is the central orchestrator and superproject for the **TFP (Time For Print) Creative Collaboration Platform**. It manages the main application ecosystem and its specialized, production-ready microservices designed for high-throughput image rendering and AI-powered content moderation.
+This repository coordinates the **TFP (Time For Print) Creative Collaboration Platform**, its product application, and its private AI and image-processing services. Runtime readiness and capacity require deployment-specific evidence.
+
+Start with [how TFP works](tfpphotographers/docs/architecture/SYSTEM_GUIDE.md), the [documentation index](docs/README.md), or the [deep code/architecture audit and implementation plan](docs/reviews/2026-09-08-deep-architecture-audit-and-implementation-plan.md).
 
 The cross-repository AI handoff has one machine-readable source of truth:
 [`contracts/ai-outbox.schema.json`](contracts/ai-outbox.schema.json). It defines
@@ -57,14 +59,14 @@ The orchestration layer coordinates three main subprojects, each serving a disti
 * **Tech Stack**: Fastify, TypeScript, Node Canvas, PostgreSQL, Backblaze B2.
 * **Key Features**: 
   - Ad-hoc HTTP rendering via `/api/v1/generate-collage`.
-  - Stateful background worker polling approved opportunities, applying focus-metadata, stitching layouts to a 16:9 canvas, and writing back to B2/S3.
+  - Durable `image_processing_jobs` worker for analysis, renditions, collage, revocation, reconciliation and account-media erasure.
 * **Documentation**: See [tfp-collage-service/README.md](tfp-collage-service/README.md).
 
 ### 3. [TFP AI Inference Service](tfp-ai-interface/)
 * **Role**: Private inference API and isolated PostgreSQL-backed AI job worker
   for image moderation, text safety, and translation.
 * **Tech Stack**: FastAPI, OpenRouter/Qwen vision, ToxicBERT, and M2M100.
-* **Key Features**: metadata-free 600px image submission, strict binary image output,
+* **Key Features**: metadata-free image submission using the size configured in the active provider, strict binary image output,
   local CPU text/translation models, internal authentication, bounded concurrency, and
   privacy-safe telemetry.
 * **State boundary**: The app owns product policy and domain state.
