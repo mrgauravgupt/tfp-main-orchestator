@@ -4,7 +4,7 @@
 
 **Purpose:** one implementation handoff for Gemini and human maintainers.
 
-**Status:** code review and documentation cleanup; application fixes below are **not implemented** by this audit.
+**Status:** implementation and validation in progress under the subsequent authorized remediation. Sections 4–12 retain the original audit evidence; section 14 records current implementation and verification. Production certification remains open.
 
 **Navigate this document**
 
@@ -322,11 +322,11 @@ Existing controls verified in code and to preserve: explicit client-safe shared 
 
 Product `apps/web/src/pages/events/index.astro:45–62` and `opportunities/index.astro:118–135` duplicate coordinate/radius parsing and approximate-location fallback. They already consume shared radius policy, so do not create a second constant. Extract a pure web listing helper that accepts search parameters and resolved location, and returns normalized values. Consider client-safe sharing only if native needs identical input semantics. Keep entity-specific filters in their features. Test zero coordinates, one missing coordinate, invalid/out-of-range radius and approximate-location fallback. This is maintainability work, not a demonstrated user-facing coordinate bug.
 
-### C02 — compiler-confirmed unused bindings
+### C02 — superseded: Astro unused-binding hints are false positives
 
-The full typecheck/lint runs completed with 0 errors, 0 warnings and **26 Astro hints**, each reporting unused bindings. Examples: `apps/web/src/pages/login.astro:12,82,90,113,172,177`, `messages.astro:93`, `register.astro:2`, `admin/mfa.astro:33`, entity edit pages, `profile/index.astro:24–25,45`, `profile/onboarding.astro:3,8–9`, referral and quick-request pages.
+Current executable-source counter-verification found that **all 26 bindings below are used in return/redirect paths**. Examples: `login.astro` uses `verifyPath` in `buildRedirectWithCookies`, `nextPath` in the localized redirect, and `errorPayload` in its error redirect; `messages.astro` uses `response.ok` in the safety redirect; onboarding and quick-request imports are used in their authentication redirects. The current Astro checker emits unused-local hints for those paths despite the actual references.
 
-Remove unused imports/variables only after preserving side-effecting calls. An unused `response` variable can still hold an awaited mutation that must remain. Make this a separate small commit after behavioral fixes, rerun Astro checking, and inspect changed login/edit flows where control flow was touched. Do not delete files based on unused-local hints.
+**Disposition:** preserve all 26 bindings and their side effects. The original recommendation to remove them was not supported by current code. Do not suppress diagnostics globally or delete authentication/navigation behavior to obtain a zero-hint count. Typecheck and lint pass with these known hints; production compilation is validated separately.
 
 Exact baseline hint locations (all 26):
 
@@ -905,3 +905,53 @@ Gemini should keep this document as the work ledger and update the appropriate n
 - Rollout sequence, compatibility period, rollback/recovery behavior and any operator action still required.
 
 Do not equate closing this checklist with enterprise certification. Completion means the agreed application behavior is verified at its actual boundaries and ongoing ownership is clear. The maintenance baseline is reproducible clean-checkout checks, observable failures, documented recovery, explicit package contracts, and one authoritative owner for each business rule/configuration key.
+
+
+### Remediation checkpoint — 8 September 2026
+
+This is a live work ledger, not a release certificate. The main remediation batch is committed as product `2ff7c891`; remaining refactors and external gates stay open. Original root instruction changes and the historical moderation gitlink are unrelated and preserved.
+
+| Findings | Implementation and current proof | Remaining verification |
+| --- | --- | --- |
+| F01/F02/F13 | Collage commit `f5a33e7` pushed. Leased erasure-progress snapshots survive retries; all storage and CDN steps must acknowledge completion; object absence is distinguished from outages; private reads have streaming byte/deadline bounds. 63 tests passed, including real HTTP and PostgreSQL. | Provider/UAT purge and load/RSS evidence |
+| F14 | AI commit `c4dd3ff` pushed. Confirmed missing S3 object is stale work; bucket/auth/outage errors retain retry/error semantics. Ruff and 91 tests passed. | Deployment/runtime revision proof |
+| F03/F15 | API authentication outages return 503 without clearing credentials; worker startup/shutdown cleans all resources despite individual failures. Final full API run: 1,042 tests / 187 files pass. | Local SIGTERM exit 0 and stopping heartbeat verified; drain under load remains. |
+| F04/F07 | Versioned opportunity filters in shared contracts; generic and legacy routes use search-owned commands; capability flags disable unsupported alert types. Durable 100-row keyset pages replace the 500-row ceiling. PostgreSQL tests cover 501 searches, deleted anchors and replay. | Full client/E2E verification; target index migration |
+| F05/F06 | Event IDs reach consumers; deterministic system-message IDs; additive `NotificationDelivery` ledger and provider idempotency key. Failed sends propagate; ambiguous or changed requests require review after the bounded replay window. PostgreSQL concurrency/replay tests pass. | 21 email tests pass including four real-SDK HTTP cases; operator recovery documented. Target migration remains. |
+| F08/F09/F11 | Native locale and region scope requests and query caches; signals and deadlines reach HTTP/body reads; account transitions cancel/clear all query contexts. Mobile 260 tests and typecheck pass. Runtime found an active-observer cache-reset bug: now remove inactive queries and reset/refetch observed queries; QueryObserver regression proves recovery. | iOS/Android locale/legal smoke and production exports pass; broader authenticated journeys remain. |
+| F10/F12 | Shared response registry consumed by web/native; private messages/activity/header expose unavailable/Retry states. Real API response test added for both client parsers; its discovered route-map errors corrected. | 20 real API paths pass through both parsers, including creation-policy/drafts. Headed browser outage/recovery passes for messages, thread, notifications and session; screenshot inspection found and fixed a missing error-page translation key. |
+| F16 | Root CI installs pinned dependencies, builds producer dependencies, executes actual producer AJV tests. Local contract suite: 4 passed. | Hosted CI on the published revisions |
+| F17 | TypeScript AST and Astro compiler inspect native routes, script/frontmatter and reexports; workspace graphs resolve aliases and native exports. Five negative fixtures and current architecture guard pass. Manifest-derived runtime check validates 28 export targets. | Both Hermes exports pass; clean-checkout hosted CI remains. |
+| F18 | Added visible grievance/privacy submission and private status lookup journeys; source/feature maps updated. Guard passes: 17 specs, 99 features, 64 routes, 16 API sources. | Three headed Chromium journeys pass: grievance, privacy, saved-search CRUD. Desktop/mobile screenshots inspected. |
+| F19/F20 | Strict numeric syntax/bounds shared with env doctor; 60 config and 8 doctor tests pass. Event/opportunity/contest authored limits shared across API/native/web, normalization rejects overflow. | Final form and runtime tests; redacted target env doctor |
+| C01 | Events/opportunities consume one pure listing-location helper; zero coordinates, missing axes and invalid radius are covered. | Desktop/mobile listing screenshots inspected; creation-policy schema misclassification found and repaired. |
+| C02 | Superseded by direct source inspection: all 26 reported bindings are used. | Preserve behavior; no deletion |
+| C03/C04 | Existing hotspot and conservative clone/deletion policy retained. | Responsibility-based hotspot decomposition remains pending |
+| C05 | Shared test roots explicitly exclude generated output; build cleans its own dist directory. | 27 shared files / 136 tests pass with a throwing stale dist test present; only source tests were discovered. Owned poison fixture removed. |
+
+Validation uses newly created local audit databases, without resetting the existing TEST/UAT database. Both additive product migrations have been applied to the isolated API audit database and Prisma regenerated. Native/device, performance, backup/restore, strict provider, and deployed-production guarantees are still open. Do not relabel local test passes as those guarantees.
+
+
+### Resume checkpoint — 8 September 2026, 21:32 IST
+
+The same-chat automation `resume-tfp-remediation-at-02-25` is active for two checks on 9 September, at 02:25 and 07:30 IST. Resume this ledger and current Git diffs; do not restart the audit or duplicate a running task. The schedule cannot override account usage limits.
+
+Latest completed verification:
+
+- Full product typecheck and lint pass, retaining 26 inspected Astro false-positive hints (no new warnings/errors).
+- Web: 658 tests / 98 files pass. Mobile: 260 tests / 64 files pass.
+- Actual API-to-both-client roundtrip: 20 routes pass, including all three creation-policy endpoints and opportunity drafts. The initial schema mistakenly classified create-policy as entity detail; live screenshots exposed disabled creation controls, now repaired.
+- Local HTTP loader tests verify failure/malformed response then recovery, market cache separation and no caching of unavailable creation policies.
+- Three strict browser journeys pass and a separate controlled HTTP outage/recovery browser scenario passes. The latter uses a local pass-through proxy, not mocks in the strict-human registry. Final rerun after error-page copy repair is in progress.
+- Mobile guard reconciles 67 cases, 99 web features, 63 route sources, 100 repository methods. Native legal submission remains classified as lower-level contract coverage, not a device pass.
+- Fresh iOS application initially reached a permanent skeleton after stale-session cache invalidation. A direct QueryObserver reproduction showed clear() orphaning active observers. The implementation now resets observed queries and removes inactive ones; a regression proves cancellation, no old-account data and successful current-session delivery. Native rerun is pending because Simulator app-launch/boot services are currently slow/stalled; do not infer a pass from the unit test.
+
+Active local runtime, if still present: fresh isolated API 4100, web 3100, controlled proxy 4101, Metro 8081. `/tmp/tfp-audit-runtime-pids.json` identifies task-owned service processes. `/tmp/tfp-browser-db-name` and `/tmp/tfp-implementation-db-name` identify newly created disposable databases. Default TEST and UAT databases have not been reset. Temporary Playwright config `/tmp/playwright-test-tfp-audit.config.ts` disables destructive global setup and points to the isolated database. `/tmp/playwright-test-tfp-outage.config.ts` runs the controlled outage scenario against the already fresh servers. If these temporary files are missing, reconstruct from current source and the validation recipe in `tfpphotographers/tests/README.md`.
+
+Still to do: finish native iOS/Android runtime verification; final build; publish subsequent validated refactors and update root gitlinks selectively; decompose confirmed responsibility hotspots (C03) one owner at a time with existing behavior tests and visual evidence; verify signal/drain behavior; execute available release gates and explicitly retain provider/UAT/production/restore/performance gates that require external evidence. No claim of complete production readiness has been made. Preserve unrelated root AGENTS.md, MEMORY.md, RULES.md and historical moderation gitlink changes.
+
+
+Checkpoint update, 21:38 IST: iOS and Android strict-human `MOB-E2E-SET-001` both passed against isolated API 4100 (39s and 44s); native screenshots inspected. iOS required waiting for simulator services; Android had an old standalone build and was updated to the installed development APK, then loaded current Metro JavaScript. Both production Hermes exports completed. The Android development overlay reports Reanimated honoring reduced-motion settings, not an application error. Final browser outage rerun after fresh FE/BE restart passed; the error-page Opportunities label is visually corrected. A real app worker handled SIGTERM, exited 0 and wrote stopping heartbeat in 56ms on the isolated database. This is local startup/shutdown proof, not load/drain certification. The final full API run passes: 1,042 tests / 187 files in 123.43 seconds.
+
+
+Published product batch: `2ff7c891` (118 files), following the existing instruction-only `e105fb57` commit. Collage `f5a33e7` and AI `c4dd3ff` are published. Current deterministic totals: API 1,042; web 658; native 260; shared 136; email 21; config 60; env doctor 8; i18n 128; collage 63; AI 91. Typecheck, lint, architecture guards, web build, native exports and representative browser/device/runtime checks pass as detailed above. Next code work is C03 responsibility-based decomposition, followed by its affected checks; F/C entries with external gates stay qualified.

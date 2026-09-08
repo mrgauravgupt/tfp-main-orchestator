@@ -6,7 +6,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const migrations = path.join(root, 'tfpphotographers/packages/database/prisma/migrations');
 const targets = [
   ['tfp-ai-interface/tests/fixtures/worker-schema.sql', ['event_outbox', 'moderation_jobs', 'moderation_results']],
-  ['tfp-collage-service/src/tests/fixtures/worker-schema.sql', ['image_processing_jobs']],
+  ['tfp-collage-service/src/tests/fixtures/worker-schema.sql', ['image_processing_jobs', 'privacy_erasure_requests', 'media_assets', 'media_manifests', 'media_physical_renditions']],
 ];
 const statements = fs.readdirSync(migrations).sort().flatMap((name) => {
   const file = path.join(migrations, name, 'migration.sql');

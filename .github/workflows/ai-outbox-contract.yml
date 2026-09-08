@@ -19,6 +19,25 @@ jobs:
           token: ${{ secrets.TFP_SUBMODULES_TOKEN }}
           submodules: recursive
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: tfpphotographers/.nvmrc
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.30.1
+      - name: Install pinned application dependencies
+        working-directory: tfpphotographers
+        run: pnpm install --frozen-lockfile
+      - name: Build producer runtime dependencies
+        working-directory: tfpphotographers
+        env:
+          DATABASE_URL: postgresql://contract:contract@127.0.0.1:5432/contract
+          DATABASE_DIRECT_URL: postgresql://contract:contract@127.0.0.1:5432/contract
+          NODE_ENV: test
+          TFP_ENV_TARGET: test
+        run: pnpm --filter 'api^...' build
+      - name: Validate real TypeScript producer payloads and schema rejection cases
+        run: node --test scripts/contracts/ai-outbox-payloads.test.mjs
       - name: Validate the cross-repository wire contract
         run: node --test scripts/contracts/validate-ai-outbox-contract.test.mjs
       - name: Check worker integration schemas against application migrations
