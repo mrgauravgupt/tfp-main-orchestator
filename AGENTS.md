@@ -85,13 +85,15 @@
 - **Preserve Environment-Driven Security Boundaries**: Never inject ad-hoc origin exceptions into CSP headers or network configs to bypass a local issue; always ensure policies derive dynamically from canonical environment variables (e.g., `IMAGE_DELIVERY_BASE_URL`).
 
 ## The Standard 7-Stage Remediation & Verification Lifecycle
-1. **Discovery & Environment Tracing (Pre-Edit Inspection)**:
+1. **Discovery & Cross-Layer Dot-Connecting (5-Plane Pre-Edit Triangulation)**:
    - Use targeted shell inspections (`sed -n '<start>,<end>p'`, `rg -n`) to inspect actual configuration, scripts, and component code before modifying files.
+   - Correlate across five planes simultaneously: (1) DOM/view layout, (2) runtime AST and environment conditionals (`NODE_ENV`, `TFP_ENV_TARGET`), (3) transaction and lock boundaries (e.g., `pg_advisory_xact_lock`), (4) host resources and port listeners (`lsof`, disk space, process tables), and (5) edge/network headers.
    - Trace design tokens and calculations directly via Node (e.g. `node -e "const d=require('./packages/shared/design-tokens.json'); console.log(...)"`).
    - Check if an apparent bug is caused by environment configuration (e.g. CSP resolving `IMAGE_DELIVERY_BASE_URL`) rather than hardcoding code-level exceptions.
-2. **Incremental Batch Editing with Fast Typechecking (Fail-Fast)**:
+2. **Incremental Batch Editing with Fast Pre-Flight Syntax & Typechecks (Fail-Fast)**:
    - Make edits in small, logically related batches (3–5 files).
-   - Run `git diff --check` and target app typechecks (`pnpm --filter <app> typecheck`) immediately after each batch to catch syntax/typing issues before expanding scope.
+   - Run zero-cost pre-flight syntax checks: `bash -n <scripts>` for shell scripts, `jq empty <json>` for JSON configs, and `git diff --check` for whitespace anomalies or unresolved merge conflict markers.
+   - Run target app typechecks (`pnpm --filter <app> typecheck`) immediately after each batch to catch syntax/typing issues before expanding scope.
 3. **Deterministic Contract Testing First**:
    - Write fast, lightweight AST/source contract tests (`*.contract.test.ts`) that read component source files directly to assert invariants (no duplicate headings, presence of required fallback props, correct inset bindings).
    - Execute them via Vitest (`vitest run <test-path>`) in milliseconds for instant regression feedback.
@@ -101,10 +103,11 @@
 5. **Mandatory Live Web Runtime Verification**:
    - Restart the local FE+BE stack using the canonical launcher (`bash ./scripts/restart-app.sh local`).
    - Resolve local environment mismatches (e.g. PostgreSQL roles) using documented runtime overrides (`TFP_DB_ADMIN_ROLE=hexa TFP_DB_OWNER=hexa`) rather than destructive database resets or seeds.
+   - Align E2E test timestamp generators with component timezone locality (`Asia/Kolkata` vs UTC) to prevent invisible HTML5 form validation `rangeUnderflow` rejections.
    - Run an automated Playwright probe across desktop (1440x900) and mobile (390x844) checking key routes for: HTTP 200, zero console errors, zero horizontal overflow, zero broken images, and correct tap targets.
 6. **Live Native Device/Simulator Verification**:
    - Boot the target iOS simulator (`xcrun simctl bootstatus <device-id>`), launch the app, and open deep links.
-   - Dismiss developer menus or tooling sheets before capturing screenshots to avoid visual artifact confusion.
+   - Dismiss developer menus, Metro overlays, or tooling sheets before capturing screenshots to avoid visual artifact confusion.
    - Validate scroll clearance and bottom navigation insets using automated flows (e.g. Maestro).
 7. **Exhaustive Caller Audit & Clean Two-Phase Commit**:
    - Search for all callers of modified shared components (`rg -n '<ComponentName'`) to ensure no consumers were missed before committing.

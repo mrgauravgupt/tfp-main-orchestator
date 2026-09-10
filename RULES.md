@@ -44,6 +44,14 @@ This is the concise operational rulebook for humans and AI agents working across
 - **Cross-reference text with catalogs & content fixtures**: When investigating suspected text truncation or missing copy, check the underlying translation catalog (`packages/i18n`) or database fixture, and check scroll position to distinguish content resting below the initial viewport fold from true text truncation.
 - **Calibrate native navigation & safe-area insets**: For mobile scroll views and lists, verify that bottom padding dynamically accommodates safe-area insets and persistent navigation bars (~65–80px) to prevent action buttons and cards from being obscured.
 
+## Cross-layer dot-connecting and pre-flight guardrails
+
+- **Multi-layer root cause triangulation**: Never accept symptoms or single-layer error messages at face value. Correlate across five architectural planes before proposing fixes: (1) DOM/view layout, (2) runtime AST and environment conditionals (`NODE_ENV`, `TFP_ENV_TARGET`), (3) transaction and lock boundaries (e.g., `pg_advisory_xact_lock`), (4) host resources and port listeners (`lsof`, disk space, process tables), and (5) edge/network headers.
+- **Pre-flight syntax & conflict check**: Before running long builds or test suites, execute zero-cost syntax verifications: `bash -n` for shell scripts, `jq empty` for JSON files, and `git diff --check` for whitespace anomalies or unresolved merge conflict markers.
+- **Timezone and form validation parity**: E2E test helpers must build timestamps in the same timezone context as the rendered component (e.g., `Asia/Kolkata` vs UTC) to prevent silent HTML5 `rangeUnderflow` or `rangeOverflow` validation failures that halt form submissions before network requests fire.
+- **Schema reset role grant preservation**: Any script or operation that resets, pushes, or drops the PostgreSQL database schema must immediately re-grant required permissions to background worker roles (e.g., `tfp_ai_worker` on `event_outbox`). Never leave workers unpermissioned after a reset.
+- **Interactive control click targets**: When custom styled inputs use decorative overlays (`<span>`), tests and interactive handlers must target the semantic `<label>` container while asserting the underlying checked state of the input.
+
 ## Event outbox rules
 
 - A state transition that promises a domain event must write the state and its `event_outbox` row with the same Prisma transaction client.

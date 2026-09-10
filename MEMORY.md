@@ -261,3 +261,38 @@ These cannot be proven by static code alone and must be recorded per deployment:
 - **No Pseudo-Quantitative Maturity Scores**:
   - Never invent arbitrary numerical scores (e.g. "7.8/10") or blanket compliance certifications unless evaluating against a formally defined, mathematically reproducible evaluation rubric.
 
+## Forensic Dot-Connecting & Architectural Case Ledger (Learnings from Top 10 Codex Threads)
+
+### 1. The 5-Plane Triangulation Framework (How Codex Connects Dots)
+When diagnosing failures or reviewing architectural defects, never stop at the surface error or local file. Correlate across all five operational planes:
+1. **Presentation & DOM Plane**: Element accessibility, layout containment, and click-target geometry (e.g., required agreement checkbox hidden inside collapsed `<details>`, or decorative custom checkbox `<span>` intercepting clicks on the `<input>`).
+2. **AST & Execution Logic Plane**: Environment conditionals and branching precedence (e.g., `NODE_ENV=production` on UAT rejecting seed admin logins that only permitted `NODE_ENV=development`).
+3. **Database & Transaction Plane**: Concurrency semantics and database role grants (e.g., session-level advisory locks leaking across pooled connections vs `pg_advisory_xact_lock`, and Prisma schema drop wiping `tfp_ai_worker` table grants).
+4. **Host & Process Plane**: Workstation identity, listener ports, process lifecycles, and disk health (e.g., local workstation role `hexa` vs CI role `tfp_user`, detached Astro dev servers creating orphan listeners, and disk exhaustion causing analytics JSONL append failures that cascade into HTTP 500 errors).
+5. **Network & Edge Plane**: Timezone synchronization, reverse proxy trust, and CSP origin derivation (e.g., test runner wall-clock `UTC` vs form `Asia/Kolkata` triggering HTML5 `rangeUnderflow`, and CSP deriving allowed CDN origins dynamically from `IMAGE_DELIVERY_BASE_URL`).
+
+### 2. Historical Case Studies & Ground-Truth Invariants
+- **Case 1: The Silent HTML5 Form `rangeUnderflow` Defect (Thread `01a0859c`)**:
+  - *Symptom:* GitHub Actions CI browser test timed out with no POST request ever sent for event creation.
+  - *Dot Connected:* Runner ran in `TZ=UTC` (18:18 UTC -> 18:48 event time), but form's `min` validation enforced `Asia/Kolkata` (23:48 IST). The browser's native form validation failed with `rangeUnderflow` and silently suppressed the submit event.
+  - *Invariant:* Test timestamp generators must match the component's runtime timezone context.
+- **Case 2: The Prisma Schema Drop Role Grant Erasure (Thread `01a036da`)**:
+  - *Symptom:* After UAT database reset, the AI worker stayed active but processed zero outbox jobs.
+  - *Dot Connected:* Prisma schema reset recreated `public` schema from scratch, silently dropping the `GRANT SELECT, UPDATE ON event_outbox TO tfp_ai_worker`. The worker process was healthy but could not read the table.
+  - *Invariant:* All reset/seed scripts must automatically re-grant worker permissions as part of their reset sequence.
+- **Case 3: Policy Enforcement vs Infrastructure Failure (Thread `01a036da`)**:
+  - *Symptom:* 2 out of 12 seeded events failed to publish, causing seed verification to fail.
+  - *Dot Connected:* Traced moderation logs and found the seed asset was a swimwear event cover flagged for `SAFETY_POLICY`. The system did not fail; the AI model correctly rejected non-compliant content.
+  - *Invariant:* Distinguish content policy rejections from software infrastructure defects; test seed fixtures must comply with active safety policies.
+- **Case 4: Programmatic Dev Server Supervision (Thread `01a07b99`)**:
+  - *Symptom:* E2E test runs frequently left orphaned Astro processes on port 3000, causing subsequent runs to bind to port 3001 and fail.
+  - *Dot Connected:* Detached shell child processes ignore SIGINT/SIGTERM from the parent test runner.
+  - *Invariant:* Use the programmatic Astro dev API in [`playwright-dev.mjs`](file:///Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/apps/web/scripts/playwright-dev.mjs) so server lifecycle is strictly bound to the test process lifecycle.
+- **Case 5: Transaction-Scoped Advisory Locks (Thread `01a07edf`)**:
+  - *Symptom:* Translation worker experienced race conditions where concurrent requests erased unrelated translations.
+  - *Dot Connected:* Session-level advisory locks (`pg_advisory_lock`) persist across database connection pool reuse. Two requests assigned the same pooled connection could acquire the same lock.
+  - *Invariant:* Concurrency locks must be transaction-scoped (`pg_advisory_xact_lock`), automatically releasing on transaction commit or rollback.
+- **Case 6: Centralized Token Architecture & AST Contract Armor (Threads `01a02845` & `01a08926`)**:
+  - *Symptom:* Visual audit reported clipped content and missing margins across dozens of mobile screens.
+  - *Dot Connected:* Each screen attempted to guess bottom padding with arbitrary numbers (`40`, `65`, `72`).
+  - *Invariant:* Create a single shared token `persistentNavigationContentInset` in [`tokens.ts`](file:///Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/apps/mobile/src/presentation/theme/tokens.ts) and write fast AST contract tests (`*.contract.test.ts`) that read component source code to assert that no screen uses arbitrary numbers.
