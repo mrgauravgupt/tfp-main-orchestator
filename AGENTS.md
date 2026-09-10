@@ -55,13 +55,25 @@
   restore numeric-only Fastify trust; see the app environment guide.
 
 ## Audit, Code Review & Counter-Verification Standards
+- **Never Rely on Docs, Comments, or Markdown as Truth**: Markdown documents, docstrings, schema comments, and type definitions are pointers only. The sole sources of truth are current executable code, AST branches, and active configuration defaults. Always trace the actual code before drawing conclusions or proposing changes.
+- **Audit Tests for False Confidence**: Never accept a passing test at face value. Verify that the test actually reaches the code under test (e.g., verifying that test request headers match active configuration like `LOCATION_CLIENT_IP_HEADER_ORDER` rather than getting discarded before fetch). Ensure tests fail when the tested behavior is broken. Avoid shallow mocks that bypass real HTTP/socket behavior.
 - **Trace Full AST & Runtime Branching**: Never conclude a security weakness or behavioral defect from helper definitions or middleware bypasses alone. Always trace environment conditionals (`isProductionLike`, `config.environment`), router definitions, and startup secret assertions.
 - **Threat Model Verification Before Severity Assignment**: Verify whether an attacker-accessible entrypoint exists before labeling an issue as P0/Critical. Distinguish internal defense-in-depth from active public exploit vectors.
 - **Inspect Concrete Implementations, Not Assumptions**: Check actual model converters and runtime flags (e.g., CTranslate2 `int8` quantization in `translation.py`) and worker polling loops (serial vs concurrent) before calculating memory footprints or claiming OOM risks.
 - **Verify Caller Call-Sites for Concurrency Invariants**: If a database helper accepts a generic client, inspect all callers. If all callers execute inside active transactions (e.g. `prisma.$transaction`), row locks are retained until commit under PostgreSQL MVCC.
+- **Cross-Service Schema Synchronization**: When modifying cross-service events or jobs (e.g., `tfp-ai-interface` $\to$ `apps/api`), verify that new metadata is accepted by the consumer's canonical validator. Producer writes without consumer validator support cause terminal outbox job failures.
+- **Privacy in Validation and Observability**: Audit that tracing identifiers are strictly bounded (`^[A-Za-z0-9._:-]{1,128}$`) and that raw schema errors (which can dump received user input/PII) are not logged or stored in `last_error` unredacted.
+- **Resilient Resource Lifecycle**: Verify that connection pools and external clients handle boot errors without orphaned state and that shutdown sequences use `try/finally` across all resources.
 - **Preserve Domain Invariants in Code Proposals**: When drafting proposed fixes, preserve all existing event exclusions, stale recovery intervals, redirect checks, and byte caps. Verify module exports before writing import statements.
 - **Ground Route Names in Code**: Check actual route registrations (e.g. `/health` and `/ready` in `health.ts`) rather than assuming conventional framework defaults.
+- **Precision in Engineering Claims**: Distinguish structural mechanisms from empirical operational guarantees (an index is not proven latency under millions of rows; rate-limit backoff/cooldown is not a 3-state circuit breaker; serial batch processing is not an absolute OOM shield). Run affected downstream consumer tests (e.g. notification event handlers) immediately when domain events change.
 - **No Arbitrary Maturity Scores**: Avoid fabricated numerical scores (e.g. "7.8/10") unless evaluating against a formally defined, mathematically reproducible evaluation rubric.
+- **UI/UX & Visual Audit Rigor (Anti-Visual-False-Positive)**:
+  - **Symptom vs. Root Cause Consolidation**: Never file multiple duplicate defect entries across pages when a shared configuration or layout component is the single root cause (e.g. CSP header omitting CDN origin). Report a single root defect with its complete blast radius.
+  - **Distinguish Intentional Design Patterns from Defects**: Do not classify intentional CSS line-clamping (`line-clamp: 2`, `numberOfLines={2}`), horizontal scroll chip sets, cookie/privacy consent banners, or auth-guard redirects to `/login` as defects.
+  - **Avoid Static Snapshot Fallacy**: Differentiate transient loading, query refetching, or pull-to-refresh states from stuck UI. Trace component lifecycle and network status.
+  - **Verify Translation Catalogs and Seed Fixtures Before Claiming Truncation**: Never claim text is truncated mid-sentence without inspecting the source catalog (`en.json`) or database fixtures. Verify whether text merely extends past the initial viewport fold before scrolling.
+  - **Validate Native Inset Math Against Real Navigation Bars**: When auditing mobile lists, calculate whether `contentContainerStyle` bottom padding accounts for safe-area insets plus persistent tab bars (~65-80px), rather than static/arbitrary 40px offsets.
 
 ## Testing Conventions
 - Prefer test roots over colocated source tests for new work:

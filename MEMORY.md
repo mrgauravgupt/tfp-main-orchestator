@@ -23,6 +23,43 @@
   `tfpphotographers/docs/architecture/EVENT_OUTBOX_AND_DEPLOYMENT_READINESS.md`.
   Historical audit snapshots are not current runtime evidence and are not
   retained as competing architecture documents.
+
+## Real Code over Documentation & Anti-False-Confidence Baseline
+
+- **Never rely on docs, comments, or markdown as proof**:
+  Markdown documentation, docstrings, schema comments, and type definitions are pointers only. The sole sources of truth are current executable code, runtime AST branches, and active configuration defaults. Never assume runtime behavior or architectural enforcement from a comment or markdown file without verifying the actual executable code.
+- **Audit tests against false confidence**:
+  A passing test is meaningless if it passes trivially by bypassing the code under test. For example, testing SSR location fallback with `x-forwarded-for` or `x-real-ip` when `ENV.LOCATION_CLIENT_IP_HEADER_ORDER` defaults strictly to `['CF-Connecting-IP']` caused early return before fetch, creating false confidence that timeouts and fallbacks worked. Always test with active configuration and verify negative cases fail when assertions are inverted.
+- **Cross-service schema symmetry**:
+  When modifying cross-service events or outbox payloads (e.g., `tfp-ai-interface` $\to$ `apps/api`), ensure consumer validators accept new fields before producers emit them. Emitting unvalidated fields causes terminal outbox failure in strict consumer runtimes.
+- **Privacy in validation and observability**:
+  Tracing and correlation identifiers must be strictly bounded (`/^[A-Za-z0-9._:-]{1,128}$/`). Raw schema validation errors (such as Zod error messages) can stringify received values containing sensitive user input or PII; always sanitize or redact validation errors before writing to `event_outbox.last_error` or application logs.
+- **Resilient resource lifecycle management**:
+  Connection pool initializers must cleanly handle boot errors without orphaned state. Shutdown logic (`close()`, `aclose()`) must wrap each resource in `try/finally` so failure in one resource does not abort cleanup of remaining services.
+- **Precision in engineering claims**:
+  Distinguish structural patterns from empirical operational proofs:
+  - An index is not proof of query latency under millions of rows without `EXPLAIN ANALYZE` evidence.
+  - Rate-limiting cooldowns and exponential backoff are not a 3-state circuit breaker.
+  - Serial batch processing limits concurrency but is not an absolute shield against memory exhaustion from oversized single inputs.
+  - When domain events or outbox schemas change, run affected downstream consumers (e.g., notification event handlers) immediately.
+
+## UI/UX and Visual Audit Counter-Verification Baseline (Learnings from Full-Surface Audit)
+
+- **Root cause consolidation over symptom counting**:
+  In audits, multiple broken UI elements often stem from a single configuration or layout source. For example, broken images across 6 major web routes (Home, Opportunities, Events, Contests, Feed, Profile) were all caused by a single defect: `apps/web/src/utils/middleware-support.ts` omitting `cdn-uat.tfpphotographers.com` from CSP `img-src`. Group related symptoms under their single root cause and document the blast radius rather than inflating defect counts.
+- **Distinguish intentional design patterns from defects**:
+  - CSS line-clamping (`line-clamp: 2`, `numberOfLines={2}`) on card titles is deliberate to preserve multi-column grid alignment; it is not a "truncation bug".
+  - Floating/sticky cookie/privacy consent banners ("Privacy choices") are deliberate compliance elements, not blocking modal bugs.
+  - Horizontal chip scrolling (`overflow-x: auto`) and mobile data table horizontal scrolling are intentional responsive solutions to preserve tabular integrity.
+  - Protected route redirection to `/login` when unauthenticated is an intentional auth-guard, not a broken route.
+  - Plaintext rendering of URLs in chat messages is an intentional security hardening measure against unparsed XSS / markdown injection.
+- **Avoid the static snapshot fallacy (transient vs. permanent UI states)**:
+  Screenshots taken at $T=0$ can capture transient in-flight states (such as React Query/Apollo refetching spinners or `<RefreshControl refreshing={true} />` in `Screen.tsx`). Never diagnose transient network/refresh states as permanently "stuck" UI without inspecting component lifecycles and network activity.
+- **Inspect i18n catalogs and data fixtures before claiming string truncation**:
+  Never claim a sentence is "cut off mid-sentence" based on visual screenshots alone. Always check `packages/i18n/src/catalogs/languages/*.json` and seed fixtures. Text ending at the screen bottom is usually positioned below the initial viewport fold prior to scrolling, not truncated in the code.
+- **Native bottom navigation insets require structural margin**:
+  Native `FlatList` and `ScrollView` screens must account for the persistent safe-area bottom navigation bar (~65-80px). Specifying static `paddingBottom: 40` causes the final list item and action buttons to be occluded by the tab bar.
+
 - The PostgreSQL-backed `event_outbox` is intentional. It uses `FOR UPDATE SKIP LOCKED`, retry state, terminal `FAILED`, and stale-processing recovery. Do not propose Redis/BullMQ merely because an outbox exists.
 - Domain transitions must use the transaction-scoped enqueue helper. Do not reintroduce post-commit event emission for moderation transitions.
 - `tfp-ai-interface` is the only consumer of slow AI request events:
