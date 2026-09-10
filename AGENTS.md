@@ -76,6 +76,14 @@
   - **Catalog & Fixture Ground Truth**: Cross-reference suspected text truncation against translation catalogs (`packages/i18n`) and database fixtures to differentiate strings flowing below the initial viewport fold from genuine code truncation.
   - **Native Viewport & Navigation Insets**: On mobile views, calibrate scroll view content padding to properly accommodate device safe-area insets and persistent navigation bars (~65–80px).
 
+## UI Remediation & Code Quality Standards
+- **Centralized Tokens Over Page-Local Magic Numbers**: When fixing layout insets or responsive spacing across multiple screens, introduce a single shared token (e.g., `persistentNavigationContentInset = bottomNavigation.contentHeightPx + spacing.xl;`) in design tokens and verify it in token tests. Never patch multiple screens with arbitrary one-off pixel values.
+- **Shared Component Encapsulation Over Inline Patching**: Encapsulate recurring presentation logic (such as remote image fallback handling) into reusable components (e.g., `ManagedContentImage` on native, `data-image-fallback` on web). Reset state predictably on identity change (`sourceIdentity`), provide localized labels, and avoid repeating error-handling boilerplate across views.
+- **Semantic & Accessible Control Association**: Wrap form inputs and dropdowns in semantic `<label>` containers (e.g., `<label class="admin-filter-field"><span>...</span><select>...</select></label>`). Never leave controls with identical placeholder options (e.g., consecutive "All" dropdowns) without visible, accessible parameter labels.
+- **Decoupled Placement Over Space-Cramming**: When badges, tags, or metadata collide on narrow screens, decouple their positional anchors (e.g., move date badges to bottom of media container) or expand grid items to `flexBasis: '100%'` with `flex: 1` rather than forcing cramped multi-column flex-basis on narrow widths.
+- **Contract Tests for Structural & Visual Invariants**: Guard against UI regressions by writing fast, deterministic contract tests (`*.contract.test.ts`) that read component source files to assert invariants (e.g., presence of semantic headers, absence of duplicate titles, correct inset bindings).
+- **Preserve Environment-Driven Security Boundaries**: Never inject ad-hoc origin exceptions into CSP headers or network configs to bypass a local issue; always ensure policies derive dynamically from canonical environment variables (e.g., `IMAGE_DELIVERY_BASE_URL`).
+
 ## Testing Conventions
 - Prefer test roots over colocated source tests for new work:
   - app-local: `apps/<app>/tests/**`

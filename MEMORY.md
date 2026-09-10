@@ -56,6 +56,19 @@
 - **Native bottom navigation insets**:
   Native `FlatList` and `ScrollView` screens must account for the persistent safe-area bottom navigation bar (~65-80px). Specifying static `paddingBottom: 40` causes the final list item and action buttons to be occluded by the tab bar.
 
+## UI Remediation & Code Quality Implementation Memory (34 Valid Fixes Baseline)
+
+- **Centralized Tokens over Arbitrary Padding**:
+  Solved bottom navigation clearance across all native lists (`opportunity-screen-shared`, `EventScreens`, `ContestScreens`, `AccountScreens`) via one unified token: `persistentNavigationContentInset = bottomNavigation.contentHeightPx + spacing.xl;` in `tokens.ts`. Verified in `tokens.test.ts`.
+- **Reusable Component Encapsulation (`ManagedContentImage`)**:
+  Rather than patching individual views, wrapped native media in `ManagedContentImage.tsx` handling `onError`, resetting state via `sourceIdentity`, and rendering accessible localized fallbacks (`fallbackLabel`). On web, extended `data-image-fallback` to avatars and admin panels via `ui-core.ts`.
+- **Implicit Semantic Form Controls**:
+  Wrapped unlabelled admin filter dropdowns in `<label class="admin-filter-field"><span>...</span><select>...</select></label>`, associating uppercase labels with controls for both visual clarity and screen readers.
+- **Decoupled Positional Anchors & Full Grid Width**:
+  Decoupled colliding badges by anchoring date badges to the bottom of media (`placement="bottom"`) while fee badges stay at the top. Expanded narrow mobile detail metadata from `flexBasis: '46%'` to `flexBasis: '100%'` with `flex: 1` to prevent text truncation and sibling collisions.
+- **Contract Testing as Regression Armor**:
+  Created sub-millisecond AST/source contract tests (`UiAuditRemediation.contract.test.ts`, `ParityStates.contract.test.ts`) that read component source files to assert that bad patterns (like duplicate headings or missing labels) are prevented without requiring heavy end-to-end browser suites.
+
 - The PostgreSQL-backed `event_outbox` is intentional. It uses `FOR UPDATE SKIP LOCKED`, retry state, terminal `FAILED`, and stale-processing recovery. Do not propose Redis/BullMQ merely because an outbox exists.
 - Domain transitions must use the transaction-scoped enqueue helper. Do not reintroduce post-commit event emission for moderation transitions.
 - `tfp-ai-interface` is the only consumer of slow AI request events:
