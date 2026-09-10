@@ -69,6 +69,21 @@
 - **Contract Testing as Regression Armor**:
   Created sub-millisecond AST/source contract tests (`UiAuditRemediation.contract.test.ts`, `ParityStates.contract.test.ts`) that read component source files to assert that bad patterns (like duplicate headings or missing labels) are prevented without requiring heavy end-to-end browser suites.
 
+## Operational Remediation & Verification Patterns (Codex Workflow Baseline)
+
+- **Targeted Line & Calculation Inspection**:
+  Before making changes, inspect exact line ranges (`sed -n '<start>,<end>p'`) and calculate design token geometries via inline Node scripts (`node -e "const d=require('./packages/shared/design-tokens.json'); console.log(...)"`).
+- **Fail-Fast Batch Typechecking**:
+  After modifying 3–5 files, run `git diff --check` and `pnpm --filter <app> typecheck` to detect strict typing errors early before touching other layers.
+- **Automated Web Smoke Assertions**:
+  Use inline Playwright scripts to probe desktop and mobile viewports simultaneously for: HTTP status 200, `consoleErrors.length === 0`, `scrollWidth <= clientWidth`, `brokenImages.length === 0`, and explicit button/target heights.
+- **Simulator Artifact Hygiene**:
+  When capturing native screenshots, actively dismiss developer onboarding sheets, Metro overlays, or tooling menus so visual evidence is completely clean.
+- **Exhaustive Caller Tracing**:
+  Always search for all usages of modified components (`rg -n '<ComponentName'`) before staging to catch secondary callers (such as `CreatorCard.astro` using `ProfileAvatar`) that require the same props.
+- **Two-Phase Submodule Gitlink Discipline**:
+  Stage only scoped files in the nested repository (`tfpphotographers`), verify `git diff --cached --check`, commit, and push. Then stage only the submodule pointer in the root repository, leaving unrelated dirty submodules (`tfp-moderation-service`) untouched.
+
 - The PostgreSQL-backed `event_outbox` is intentional. It uses `FOR UPDATE SKIP LOCKED`, retry state, terminal `FAILED`, and stale-processing recovery. Do not propose Redis/BullMQ merely because an outbox exists.
 - Domain transitions must use the transaction-scoped enqueue helper. Do not reintroduce post-commit event emission for moderation transitions.
 - `tfp-ai-interface` is the only consumer of slow AI request events:

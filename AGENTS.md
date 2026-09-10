@@ -84,6 +84,33 @@
 - **Contract Tests for Structural & Visual Invariants**: Guard against UI regressions by writing fast, deterministic contract tests (`*.contract.test.ts`) that read component source files to assert invariants (e.g., presence of semantic headers, absence of duplicate titles, correct inset bindings).
 - **Preserve Environment-Driven Security Boundaries**: Never inject ad-hoc origin exceptions into CSP headers or network configs to bypass a local issue; always ensure policies derive dynamically from canonical environment variables (e.g., `IMAGE_DELIVERY_BASE_URL`).
 
+## The Standard 7-Stage Remediation & Verification Lifecycle
+1. **Discovery & Environment Tracing (Pre-Edit Inspection)**:
+   - Use targeted shell inspections (`sed -n '<start>,<end>p'`, `rg -n`) to inspect actual configuration, scripts, and component code before modifying files.
+   - Trace design tokens and calculations directly via Node (e.g. `node -e "const d=require('./packages/shared/design-tokens.json'); console.log(...)"`).
+   - Check if an apparent bug is caused by environment configuration (e.g. CSP resolving `IMAGE_DELIVERY_BASE_URL`) rather than hardcoding code-level exceptions.
+2. **Incremental Batch Editing with Fast Typechecking (Fail-Fast)**:
+   - Make edits in small, logically related batches (3–5 files).
+   - Run `git diff --check` and target app typechecks (`pnpm --filter <app> typecheck`) immediately after each batch to catch syntax/typing issues before expanding scope.
+3. **Deterministic Contract Testing First**:
+   - Write fast, lightweight AST/source contract tests (`*.contract.test.ts`) that read component source files directly to assert invariants (no duplicate headings, presence of required fallback props, correct inset bindings).
+   - Execute them via Vitest (`vitest run <test-path>`) in milliseconds for instant regression feedback.
+4. **Comprehensive Static & Build Gates**:
+   - Run the complete package unit suites (`mobile test`, `web test`).
+   - Run workspace linting (`pnpm lint`) and full production builds (`pnpm build`).
+5. **Mandatory Live Web Runtime Verification**:
+   - Restart the local FE+BE stack using the canonical launcher (`bash ./scripts/restart-app.sh local`).
+   - Resolve local environment mismatches (e.g. PostgreSQL roles) using documented runtime overrides (`TFP_DB_ADMIN_ROLE=hexa TFP_DB_OWNER=hexa`) rather than destructive database resets or seeds.
+   - Run an automated Playwright probe across desktop (1440x900) and mobile (390x844) checking key routes for: HTTP 200, zero console errors, zero horizontal overflow, zero broken images, and correct tap targets.
+6. **Live Native Device/Simulator Verification**:
+   - Boot the target iOS simulator (`xcrun simctl bootstatus <device-id>`), launch the app, and open deep links.
+   - Dismiss developer menus or tooling sheets before capturing screenshots to avoid visual artifact confusion.
+   - Validate scroll clearance and bottom navigation insets using automated flows (e.g. Maestro).
+7. **Exhaustive Caller Audit & Clean Two-Phase Commit**:
+   - Search for all callers of modified shared components (`rg -n '<ComponentName'`) to ensure no consumers were missed before committing.
+   - Stage only the scoped files in the nested repository (`git add -- <files>`), verify `git diff --cached --check`, commit, and push.
+   - Verify unrelated dirty submodules remain untouched, stage only the submodule pointer in the root repository, commit, and push.
+
 ## Testing Conventions
 - Prefer test roots over colocated source tests for new work:
   - app-local: `apps/<app>/tests/**`
