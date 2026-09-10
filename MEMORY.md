@@ -43,21 +43,17 @@
   - Serial batch processing limits concurrency but is not an absolute shield against memory exhaustion from oversized single inputs.
   - When domain events or outbox schemas change, run affected downstream consumers (e.g., notification event handlers) immediately.
 
-## UI/UX and Visual Audit Counter-Verification Baseline (Learnings from Full-Surface Audit)
+## UI/UX and Visual Audit Discovery Baseline (Learnings from Full-Surface Audit)
 
-- **Root cause consolidation over symptom counting**:
-  In audits, multiple broken UI elements often stem from a single configuration or layout source. For example, broken images across 6 major web routes (Home, Opportunities, Events, Contests, Feed, Profile) were all caused by a single defect: `apps/web/src/utils/middleware-support.ts` omitting `cdn-uat.tfpphotographers.com` from CSP `img-src`. Group related symptoms under their single root cause and document the blast radius rather than inflating defect counts.
-- **Distinguish intentional design patterns from defects**:
-  - CSS line-clamping (`line-clamp: 2`, `numberOfLines={2}`) on card titles is deliberate to preserve multi-column grid alignment; it is not a "truncation bug".
-  - Floating/sticky cookie/privacy consent banners ("Privacy choices") are deliberate compliance elements, not blocking modal bugs.
-  - Horizontal chip scrolling (`overflow-x: auto`) and mobile data table horizontal scrolling are intentional responsive solutions to preserve tabular integrity.
-  - Protected route redirection to `/login` when unauthenticated is an intentional auth-guard, not a broken route.
-  - Plaintext rendering of URLs in chat messages is an intentional security hardening measure against unparsed XSS / markdown injection.
-- **Avoid the static snapshot fallacy (transient vs. permanent UI states)**:
-  Screenshots taken at $T=0$ can capture transient in-flight states (such as React Query/Apollo refetching spinners or `<RefreshControl refreshing={true} />` in `Screen.tsx`). Never diagnose transient network/refresh states as permanently "stuck" UI without inspecting component lifecycles and network activity.
-- **Inspect i18n catalogs and data fixtures before claiming string truncation**:
-  Never claim a sentence is "cut off mid-sentence" based on visual screenshots alone. Always check `packages/i18n/src/catalogs/languages/*.json` and seed fixtures. Text ending at the screen bottom is usually positioned below the initial viewport fold prior to scrolling, not truncated in the code.
-- **Native bottom navigation insets require structural margin**:
+- **Root cause consolidation with blast-radius mapping**:
+  Multiple broken UI elements across different pages often stem from a single underlying configuration or layout source. For example, broken images across 6 major web routes (Home, Opportunities, Events, Contests, Feed, Profile) all stemmed from `apps/web/src/utils/middleware-support.ts` omitting `cdn-uat.tfpphotographers.com` from CSP `img-src`. Group related symptoms under their single root cause and document the blast radius rather than creating redundant defect tickets.
+- **Contextual evaluation of responsive design patterns**:
+  Evaluate whether responsive mechanisms (such as CSS `line-clamp`, horizontal chip scrolling, dismissible consent banners, and auth guards) are functioning as intended. Check whether clamped text preserves critical interactive actions, whether banners dismiss cleanly without blocking clicks, and whether unauthenticated routes redirect correctly.
+- **Lifecycle and settled state awareness**:
+  Visual captures at $T=0$ can capture transient in-flight states (such as React Query/Apollo refetching spinners or `<RefreshControl refreshing={true} />` in `Screen.tsx`). Inspect component lifecycles and wait for network settlement to accurately differentiate temporary loading animations from frozen or unresponsive interfaces.
+- **Catalog and fixture ground truth**:
+  Cross-reference suspected text truncation against translation catalogs (`packages/i18n/src/catalogs/languages/*.json`) and database fixtures. Differentiate content positioned below the initial viewport fold from genuine code truncation.
+- **Native bottom navigation insets**:
   Native `FlatList` and `ScrollView` screens must account for the persistent safe-area bottom navigation bar (~65-80px). Specifying static `paddingBottom: 40` causes the final list item and action buttons to be occluded by the tab bar.
 
 - The PostgreSQL-backed `event_outbox` is intentional. It uses `FOR UPDATE SKIP LOCKED`, retry state, terminal `FAILED`, and stale-processing recovery. Do not propose Redis/BullMQ merely because an outbox exists.

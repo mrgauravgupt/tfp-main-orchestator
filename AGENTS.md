@@ -68,12 +68,13 @@
 - **Ground Route Names in Code**: Check actual route registrations (e.g. `/health` and `/ready` in `health.ts`) rather than assuming conventional framework defaults.
 - **Precision in Engineering Claims**: Distinguish structural mechanisms from empirical operational guarantees (an index is not proven latency under millions of rows; rate-limit backoff/cooldown is not a 3-state circuit breaker; serial batch processing is not an absolute OOM shield). Run affected downstream consumer tests (e.g. notification event handlers) immediately when domain events change.
 - **No Arbitrary Maturity Scores**: Avoid fabricated numerical scores (e.g. "7.8/10") unless evaluating against a formally defined, mathematically reproducible evaluation rubric.
-- **UI/UX & Visual Audit Rigor (Anti-Visual-False-Positive)**:
-  - **Symptom vs. Root Cause Consolidation**: Never file multiple duplicate defect entries across pages when a shared configuration or layout component is the single root cause (e.g. CSP header omitting CDN origin). Report a single root defect with its complete blast radius.
-  - **Distinguish Intentional Design Patterns from Defects**: Do not classify intentional CSS line-clamping (`line-clamp: 2`, `numberOfLines={2}`), horizontal scroll chip sets, cookie/privacy consent banners, or auth-guard redirects to `/login` as defects.
-  - **Avoid Static Snapshot Fallacy**: Differentiate transient loading, query refetching, or pull-to-refresh states from stuck UI. Trace component lifecycle and network status.
-  - **Verify Translation Catalogs and Seed Fixtures Before Claiming Truncation**: Never claim text is truncated mid-sentence without inspecting the source catalog (`en.json`) or database fixtures. Verify whether text merely extends past the initial viewport fold before scrolling.
-  - **Validate Native Inset Math Against Real Navigation Bars**: When auditing mobile lists, calculate whether `contentContainerStyle` bottom padding accounts for safe-area insets plus persistent tab bars (~65-80px), rather than static/arbitrary 40px offsets.
+- **UI/UX & Visual Audit Discovery Standards**:
+  - **Triangulate Observations with AST/DOM**: Pair visual anomaly detection with code and DOM inspections to verify if an issue is a genuine defect, an unexpected collision, or an intended responsive pattern.
+  - **Root Cause & Blast Radius Architecture**: When an anomaly spans multiple routes or components, trace the shared configuration, layout wrapper, or theme token. Report the root issue as the primary defect and list all affected screens as its blast radius to avoid redundant noise.
+  - **Contextual Pattern Evaluation**: Assess whether responsive patterns (e.g. line-clamping, horizontal scrolling chip bars, dismissible consent banners, and auth-guard redirects) serve user intent or cause usability degradation in edge cases.
+  - **Lifecycle & Settled State Awareness**: Capture and evaluate both transient states (refresh spinners, in-flight refetching) and settled states (network idle) to accurately distinguish expected loading lifecycles from frozen interfaces.
+  - **Catalog & Fixture Ground Truth**: Cross-reference suspected text truncation against translation catalogs (`packages/i18n`) and database fixtures to differentiate strings flowing below the initial viewport fold from genuine code truncation.
+  - **Native Viewport & Navigation Insets**: On mobile views, calibrate scroll view content padding to properly accommodate device safe-area insets and persistent navigation bars (~65–80px).
 
 ## Testing Conventions
 - Prefer test roots over colocated source tests for new work:

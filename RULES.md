@@ -35,14 +35,14 @@ This is the concise operational rulebook for humans and AI agents working across
   - Do not claim a feature or fix is complete if caller call-sites remain unthreaded or end-to-end paths (e.g. browser-to-worker-to-translation) remain partial.
   - Run affected downstream consumer tests (such as notification event handlers) immediately when schemas or events change.
 
-## UI/UX and visual audit rigor
+## UI/UX and visual audit discovery principles
 
-- **Never diagnose from visual pixels alone**: A screenshot is merely a candidate symptom. Before reporting any UI/UX defect, trace the AST, component props, and active styles to verify whether the visual behavior is an intentional design pattern (e.g. multi-line clamping, horizontal chip scroll, standard empty state, auth-guard redirect) or a genuine defect.
-- **Consolidate by architectural root cause, not surface area**: Never report multiple duplicate tickets across different pages when a single underlying cause (e.g. a missing CSP CDN origin, global layout padding, or shared component prop) is responsible. Report one root-cause defect with its complete blast radius / affected surface area.
-- **Differentiate intentional patterns from defects**: Do not flag standard CSS line-clamping (`line-clamp: 2`, `numberOfLines={2}`), dismissible cookie/privacy consent banners, horizontal chip scrolling, or protected-route redirects as bugs.
-- **Avoid the static snapshot fallacy**: Differentiate between transient loading states (e.g. in-flight query refetches, pull-to-refresh spinners) and permanently stuck UI. Verify network and component lifecycles before diagnosing a stall.
-- **Verify ground truth in translation catalogs and database fixtures**: Before claiming text is "cut off mid-sentence" or missing words, verify the actual translation string in `packages/i18n/src/catalogs/languages/*.json` or the database fixture. Distinguish content that extends below the initial viewport fold from genuine string truncation.
-- **Verify native container insets against actual persistent navigation bars**: In native mobile `FlatList` / `ScrollView`, verify that bottom padding accounts for safe-area insets plus the persistent bottom tab bar (~65-80px), not arbitrary 40px insets that clip content.
+- **Triangulate findings (visual observation + code/DOM verification)**: Use visual inspection to detect candidate anomalies, then inspect the DOM, component props, and active styles to understand the mechanism. This confirms whether an anomaly is a genuine layout defect, an edge-case collision, or an intended pattern behaving as designed.
+- **Root-cause analysis with blast-radius mapping**: When an issue appears across multiple screens (e.g. blocked images across routes, or clipped list bottoms across tabs), trace the common parent or configuration. Report the root defect clearly as the primary finding while cataloging all affected routes/screens so developers see both the cause and its full surface impact.
+- **Evaluate design patterns in context**: Assess whether responsive techniques (such as line-clamping, horizontal overflow chips, or dismissible consent banners) are functioning well: verify that clamped text preserves critical actions, that banners dismiss cleanly without blocking interactions, and that auth guards redirect as intended.
+- **Lifecycle & settled state awareness**: When inspecting dynamic screens, observe both transient states (loading spinners, pull-to-refresh indicators) and settled states (network idle, data resolved) to accurately differentiate temporary loading animations from frozen or unresponsive UI.
+- **Cross-reference text with catalogs & content fixtures**: When investigating suspected text truncation or missing copy, check the underlying translation catalog (`packages/i18n`) or database fixture, and check scroll position to distinguish content resting below the initial viewport fold from true text truncation.
+- **Calibrate native navigation & safe-area insets**: For mobile scroll views and lists, verify that bottom padding dynamically accommodates safe-area insets and persistent navigation bars (~65–80px) to prevent action buttons and cards from being obscured.
 
 ## Event outbox rules
 
