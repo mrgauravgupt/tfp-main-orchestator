@@ -296,3 +296,76 @@ When diagnosing failures or reviewing architectural defects, never stop at the s
   - *Symptom:* Visual audit reported clipped content and missing margins across dozens of mobile screens.
   - *Dot Connected:* Each screen attempted to guess bottom padding with arbitrary numbers (`40`, `65`, `72`).
   - *Invariant:* Create a single shared token `persistentNavigationContentInset` in [`tokens.ts`](file:///Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers/apps/mobile/src/presentation/theme/tokens.ts) and write fast AST contract tests (`*.contract.test.ts`) that read component source code to assert that no screen uses arbitrary numbers.
+
+## Strict-Human E2E Program Architecture & False-Confidence RCA (Phase 0 Baseline)
+
+### 1. Root-Cause Analysis of Phase 0 False Confidence
+- **Pipeline Disconnection Defect**:
+  - *Symptom:* `tests/e2e/human/use-case-coverage.json` was created with 100 `WEB-E2E-*` records, but was read solely by `scripts/qa/human-e2e-guard.mjs`.
+  - *Dot Connected:* `tests/e2e/human/support/human-evidence.ts` continued to parse `@feature` from `coverage-matrix.json`. `scripts/qa/generate-human-e2e-report.mjs` mapped use cases from `coverageMatrix.features`. `scripts/qa/verify-human-e2e-release.mjs` certified releases based on the old feature list. The 100 new use cases were completely inert in the release path.
+  - *Invariant:* `use-case-coverage.json` must be the sole canonical business use-case ledger driving `human-evidence.ts`, report generation, and release verification.
+- **Phantom Capability Defect (WebKit Claims)**:
+  - *Symptom:* All 100 ledger records claimed `"browserProjects": ["chromium", "firefox", "webkit", "mobile-chromium"]`.
+  - *Dot Connected:* `playwright.shared.ts` lines 128–132 enforces `supported = new Set(['chromium', 'firefox', 'mobile-chromium'])` and explicitly throws an error if `webkit` is requested. Claiming WebKit was factually untruthful.
+  - *Invariant:* Browser claims must be strictly bound to active executable projects in `playwright.shared.ts`.
+- **Fictitious Entry Route Defect**:
+  - *Symptom:* 21 use cases declared nonexistent URLs (e.g. `/onboarding`, `/settings/profile`, `/settings/notifications`, `/messages/:conversationId`, `/dashboard`).
+  - *Dot Connected:* The static guard checked only that `entryRoute` was a non-empty string, ignoring `route-coverage.json` and active Astro routes in `apps/web/src/pages`. Query parameters (`/messages?with=...`) were wrongly turned into synthetic paths (`/messages/:conversationId`).
+  - *Invariant:* All `entryRoutes` must be normalized and verified against `route-coverage.json`.
+- **Cosmetic Status Inflation ("Implemented" Without Execution)**:
+  - *Symptom:* All 100 ledger records were marked `implemented`, even though specs only asserted titles or partial flows (e.g. `WEB-E2E-PUB-001`, `WEB-E2E-PRO-002`, `WEB-E2E-NOTIF-003`).
+  - *Dot Connected:* File-level presence of a spec was conflated with full behavioral assertion coverage.
+  - *Invariant:* Use cases must remain `planned` until an exact test block annotated with `// @use-case <id>` executes and asserts every declared visible action and postcondition.
+- **Syntactic vs Semantic Guard Checks**:
+  - *Symptom:* `human-e2e-guard.mjs` printed green checks while the ledger was internally disconnected and factually inaccurate.
+  - *Dot Connected:* Guards that only assert type definitions and non-empty string properties give false confidence.
+  - *Invariant:* Guards must be adversarial: cross-checking routes against route registries, browsers against launcher configs, spec annotations against AST test blocks, and backed by automated mutation tests (`human-e2e-guard.test.mjs`).
+
+### 2. Canonical Use-Case Ledger Schema
+Every business use case in `use-case-coverage.json` must adhere to:
+```json
+{
+  "id": "WEB-E2E-OPP-001",
+  "featureIds": ["OPPORTUNITY_DISCOVERY"],
+  "title": "Human-readable business outcome",
+  "domain": "opportunity",
+  "actors": ["guest"],
+  "entryRoutes": ["/opportunities"],
+  "apiRouteSources": ["apps/api/src/modules/opportunity/opportunity-read-routes.ts"],
+  "preconditions": ["Code-grounded prerequisite"],
+  "visibleActions": ["Action actually performed through the browser"],
+  "visiblePostconditions": ["Assertion actually visible to the user"],
+  "persistedPostconditions": ["State proved through visible reload or a later visible journey"],
+  "negativeStates": ["Validation, permission, empty, conflict, or failure state actually tested"],
+  "runtimeProfiles": ["human-local", "human-target"],
+  "browserProjects": ["chromium", "firefox", "mobile-chromium"],
+  "specs": ["opportunity-lifecycle.human.spec.ts"],
+  "status": "implemented",
+  "blocker": null
+}
+```
+
+### 3. Registry Hash Integrity & Commit Binding
+- Every runtime evidence manifest must record:
+  1. Validated application Git commit hash.
+  2. SHA-256 hash of `use-case-coverage.json`.
+  3. SHA-256 hash of `coverage-matrix.json`.
+  4. SHA-256 hash of `route-coverage.json`.
+  5. SHA-256 hash of `api-source-coverage.json`.
+- The release verifier fails immediately if evidence manifests do not match current registry hashes or the active commit.
+
+### 4. Generic Engineering Anti-Patterns and Architectural Invariants (For Future Implementations)
+1. **Semantic Grounding Invariant (Anti-Cosmetic Validation)**:
+   - Static linters, schemas, and guards must never pass based merely on syntactic presence (`typeof x === 'string' && x.length > 0`). Every referenced identifier, route path, module, capability, or configuration key must be cross-referenced against the actual runtime AST, router definitions, and file system.
+2. **Consumer Convergence Principle (Anti-Shadow Registry)**:
+   - Introducing a new ledger or registry is incomplete until all downstream consumers (evidence capture, test harnesses, aggregate report generators, CI/CD release verifiers) are actively wired to consume it. A registry only checked by its own linter is an inert island that creates false confidence.
+3. **Executable Reality Invariant (Anti-Aspirational Claims)**:
+   - Never declare support or compatibility for a platform, browser, operating system, or environment in any specification or ledger unless the current test harness can actively list, execute, and pass tests against that target. Aspirational features must remain classified as `planned` or `unsupported`.
+4. **Granular Test-Block Isolation (Anti-Transitive Fallacy)**:
+   - Status must always be evaluated at the leaf unit of execution (the specific test block or scenario), never inferred transitively from an enclosing file, class, suite, or domain. Partial or filtered executions (`--grep`, `test.only`) must mark unexecuted sibling cases in the same file as `not-run`.
+5. **Bidirectional Execution Traceability (Anti-Annotation Compliance)**:
+   - File-level comments or tags establish traceability links, not behavioral proof. Annotations must be placed directly within executable test blocks, and static guards must verify bidirectional resolution (every ledger item maps to an annotated test block, every code annotation maps to a valid ledger item, and the test block contains explicit assertions validating the declared contract).
+6. **Adversarial Guard Mutation Testing (Testing the Testers)**:
+   - Any custom verification script or guard must be backed by automated fixture-based mutation tests proving that invalid routes, duplicate IDs, missing arrays, unsupported browsers, and orphan annotations actively trigger failures for the intended reasons.
+7. **Black-Box User Parity Invariant (Anti-Synthetic Shortcuts)**:
+   - Strict human end-to-end journeys must exercise real user runtimes through real browser/device interactions. Direct database queries, route interception, synthetic response fulfillment, forced clicks, and DOM property mutations are strictly prohibited. State persistence must be proven by user-visible reloads or subsequent user journeys.

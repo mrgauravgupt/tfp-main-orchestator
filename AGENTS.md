@@ -212,3 +212,30 @@
 - Folder moderation is not deployed to OCI UAT. `/srv/tfp-folder-moderation` must remain absent, and no images, raw reports, reviewer chunks, or generated folder-audit artifacts may be transferred by normal UAT deployment.
 - No folder-moderation launcher exists in the active repositories. Reintroducing one requires explicit, separately scoped authorization.
 - If folder moderation is reintroduced later, it needs a new private-storage design and a dedicated runbook; do not silently point the legacy wrapper at OCI.
+
+## Strict-Human E2E Program Architecture & Use-Case Ledger Governance
+
+- **Canonical Ledger (`tests/e2e/human/use-case-coverage.json`)**:
+  - The business use-case ledger is the single source of truth for use-case execution, evidence, and release certification.
+  - `coverage-matrix.json` is retained solely for feature inventory and compatibility projection; it must never compete for case status, actions, or evidence ownership.
+- **Canonical Schema Requirement**:
+  - Use schema-versioned JSON with explicit typed arrays: `id`, `featureIds`, `title`, `domain`, `actors`, `entryRoutes`, `apiRouteSources`, `preconditions`, `visibleActions`, `visiblePostconditions`, `persistedPostconditions`, `negativeStates`, `runtimeProfiles`, `browserProjects`, `specs`, `status`, `blocker`.
+  - Singular scalar fields (`actor`, `entryRoute`, singular API aliases) are prohibited.
+- **Strict Status Lifecycle**:
+  - `unclassified`: Source behavior unreviewed (fails completion gate).
+  - `planned`: Use case is cataloged with visible actions/postconditions, but automated test block is not yet complete.
+  - `implemented`: Test block exists, is annotated with `// @use-case <id>`, and asserts every action/postcondition claimed.
+  - `runtime-proven`: Passed on every declared browser project and runtime profile for the current application commit, producing verified evidence manifests with matching registry hashes.
+  - `blocked`: Validated product behavior exists but a concrete external dependency prevents execution (must specify blocker reason).
+  - `not-applicable` / `web-only` / `native-only` / `lower-level-only`: Explicit architectural classifications requiring documented justification and lower-level test paths.
+  - Never blanket-label use cases `implemented` or `runtime-proven` to achieve green totals.
+- **Direct Test-Block Traceability (`// @use-case`)**:
+  - Place `// @use-case WEB-E2E-*` directly inside or adjacent to the exact `test(...)` declaration block implementing the case.
+  - Static guards must enforce bidirectional integrity: every implemented case has a matching test-block annotation, every annotation references an existing ledger case, and mapped specs contain the annotation.
+- **Strict Pre-Flight Route & Browser Alignment**:
+  - Every `entryRoutes` item must normalize and strictly match a route defined in `route-coverage.json`. Unknown or synthetic routes (e.g. `/onboarding`, `/settings/*`, `/messages/:conversationId`, `/dashboard`) fail the guard immediately.
+  - `browserProjects` must strictly reflect executable projects defined in `playwright.shared.ts` (`chromium`, `firefox`, `mobile-chromium`). WebKit must be omitted until an executable WebKit launcher is implemented and verified.
+- **Unified Pipeline & Hash Integrity**:
+  - Evidence manifests (`human-evidence.ts`), aggregate reports (`generate-human-e2e-report.mjs`), and release verifiers (`verify-human-e2e-release.mjs`) must consume `use-case-coverage.json`.
+  - Manifests must record SHA-256 hashes of all four registries (`use-case-coverage.json`, `coverage-matrix.json`, `route-coverage.json`, `api-source-coverage.json`) and the validated application git commit.
+  - Partial or focused test runs must calculate status per test block, ensuring unexecuted sibling cases remain `not-run`.

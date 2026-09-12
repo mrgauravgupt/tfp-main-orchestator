@@ -78,3 +78,49 @@ This is the concise operational rulebook for humans and AI agents working across
 - Every folder-operations mutation needs the internal API key plus the destructive-action password; keep the surface private at the edge.
 - Worker shutdown must stop polling, drain active work within the configured grace period, then rely on database leases for crash recovery.
 - A production release requires a redacted strict configuration check and a disposable restore drill; neither may be inferred from repository state.
+
+## Generic Quality, Verification & Anti-False-Confidence Engineering Rules
+
+1. **Single Source of Truth (SSOT) & Single Ownership Principle**:
+   - In any architectural subsystem (use cases, route registries, feature inventories, design tokens, API route maps), exactly ONE canonical artifact owns the state.
+   - Downstream consumers (compilers, linters, test harnesses, evidence collectors, report generators, release gates) must all consume that identical SSOT.
+   - Introducing a ledger or registry that is read only by its own linter is an inert island ("shadow ledger") that creates false confidence. It is incomplete until all consumers, reports, and release verifiers are wired to it.
+   - When secondary compatibility matrices exist, they must be derived or strictly non-overlapping. Never allow parallel registries to independently maintain statuses, actions, or capabilities.
+   - In TFP E2E, `tests/e2e/human/use-case-coverage.json` is the sole canonical business use-case ledger; `coverage-matrix.json` is retained solely for feature inventory and compatibility projection.
+
+2. **Bidirectional Semantic Traceability (The Anti-Cosmetic Rule)**:
+   - Code comments, docstrings, annotations, or file presence are not proof of implementation.
+   - Traceability must be strictly bidirectional: (1) every declared ledger item must map to an exact annotated test block, (2) every code annotation must resolve to a valid ledger entry, and (3) the test block must contain explicit, discriminating assertions verifying every visible action, postcondition, and negative boundary state claimed by the ledger.
+   - Annotations must be placed directly inside or immediately adjacent to the executable test block (e.g. `// @use-case <id>`), not in loose file headers.
+
+3. **Executable Reality Over Aspirational Declarations**:
+   - Never declare compatibility, support, or capability for a platform, browser, operating system, or environment in any specification, contract, or ledger unless the current, active test harness can list, execute, and pass tests against that target.
+   - Targets or features not yet executable must be classified as `planned`, `unsupported`, or `blocked`, never marked `implemented` to satisfy a checklist or pass a count check.
+   - In TFP E2E, `browserProjects` must strictly reflect executable projects defined in `playwright.shared.ts` (`chromium`, `firefox`, `mobile-chromium`). WebKit must never be claimed until executable WebKit launcher support is implemented and verified.
+
+4. **Granular Execution Isolation (Anti-Transitive Fallacy)**:
+   - Status must always be evaluated at the leaf unit of execution (the specific test block, method, or scenario), never inferred transitively from an enclosing file, suite, class, or domain.
+   - Partial, focused, or filtered executions (e.g. `test.only`, `--grep`) must leave unexecuted sibling items in the same file marked `not-run`. A passing subset run must never certify an aggregate suite or release gate.
+
+5. **Adversarial Validation & Negative Contract Testing for Guards**:
+   - Static guards, linters, and verification scripts must not merely check syntactic schema presence (`typeof x === 'string' && x.length > 0`). They must validate semantic truth against underlying ASTs, router declarations, file systems, and runtime configs.
+   - Any validation guard must be accompanied by automated fixture-based mutation tests proving that invalid inputs, duplicate IDs, missing required arrays, nonexistent routes, and orphan annotations actively fail the guard for the exact intended failure reason.
+
+6. **Cryptographic & Git-Anchored Evidence Integrity**:
+   - Release certification gates must cryptographically bind runtime evidence to: (1) the exact Git commit hash of the tested application, and (2) the SHA-256 hashes of all input schemas, registries, and configuration.
+   - If any input registry, code file, or configuration changes, previous evidence is immediately invalidated and cannot certify subsequent releases.
+
+7. **Strict Multi-State Lifecycle Discipline**:
+   - Every requirement, contract, and use case must follow an immutable lifecycle state machine:
+     - `unclassified`: unreviewed (hard gate blocker; must fail CI)
+     - `planned`: documented requirement, pending executable implementation
+     - `implemented`: exact code/test exists, asserts full contract, passes static gates
+     - `runtime-proven`: executed against live runtime with verified, hash-anchored evidence
+     - `blocked`: valid requirement blocked by a specific external dependency (must identify concrete blocker)
+     - `lower-level-only` / `not-applicable`: justified architectural decision backed by lower-level proof
+   - Never inflate status to "implemented" or "complete" to make a metric or dashboard green.
+
+8. **Zero Synthetic Shortcuts in End-to-End Verification**:
+   - Strict E2E journeys must interact with the system strictly through real user surfaces (real DOM, real network requests, real storage, real timers).
+   - Never bypass business logic, authentication, or validation using backdoor DB updates, route interception, forced clicks, DOM property mutations, or test-only product bypasses.
+   - State persistence must be proven through visible reload or a subsequent real user journey, not assumed or mocked.
