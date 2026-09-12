@@ -109,6 +109,10 @@ This is the concise operational rulebook for humans and AI agents working across
 6. **Cryptographic & Git-Anchored Evidence Integrity**:
    - Release certification gates must cryptographically bind runtime evidence to: (1) the exact Git commit hash of the tested application, and (2) the SHA-256 hashes of all input schemas, registries, and configuration.
    - If any input registry, code file, or configuration changes, previous evidence is immediately invalidated and cannot certify subsequent releases.
+   - Keep the tested application revision distinct from the harness revision. An aggregate must derive both from validated frozen child contexts and bind each run entry to its regular child manifest, content hash, context, actual browser result, runtime profile, release, registry hashes, and original evidence.
+   - A browser/profile child is partial diagnostic evidence. Only a compatible aggregate containing every required execution slot may certify; duplicate paths, hashes, run IDs, or slots are invalid.
+   - Diagnostic or verification-skip flags may skip only their named certification step. They must not hide failures from child execution, report generation, aggregate generation, or verification.
+   - Positive certification tests must model the real declared execution Cartesian product, while negative tests must assert the precise failure being exercised. Unsupported browser/transport combinations remain explicit blockers regardless of comments, documentation, or passing unrelated tests.
 
 7. **Strict Multi-State Lifecycle Discipline**:
    - Every requirement, contract, and use case must follow an immutable lifecycle state machine:
