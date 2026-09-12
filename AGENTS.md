@@ -222,12 +222,12 @@
   - Use schema-versioned JSON with explicit typed arrays: `id`, `featureIds`, `title`, `domain`, `actors`, `entryRoutes`, `apiRouteSources`, `preconditions`, `visibleActions`, `visiblePostconditions`, `persistedPostconditions`, `negativeStates`, `runtimeProfiles`, `browserProjects`, `specs`, `status`, `blocker`.
   - Singular scalar fields (`actor`, `entryRoute`, singular API aliases) are prohibited.
 - **Strict Status Lifecycle**:
-  - `unclassified`: Source behavior unreviewed (fails completion gate).
+  - Static values and actors come from `VALID_STATIC_STATUSES` and `VALID_ACTORS` in the shared executable contract; do not duplicate enums in guidance or add unsupported schema values.
   - `planned`: Use case is cataloged with visible actions/postconditions, but automated test block is not yet complete.
   - `implemented`: Test block exists, is annotated with `// @use-case <id>`, and asserts every action/postcondition claimed.
-  - `runtime-proven`: Passed on every declared browser project and runtime profile for the current application commit, producing verified evidence manifests with matching registry hashes.
+  - Runtime proof is derived from every required test variant/browser/profile plus compatible original evidence for the exact revision/context. Never write `runtime-proven` into the static ledger.
   - `blocked`: Validated product behavior exists but a concrete external dependency prevents execution (must specify blocker reason).
-  - `not-applicable` / `web-only` / `native-only` / `lower-level-only`: Explicit architectural classifications requiring documented justification and lower-level test paths.
+  - API/native architectural dispositions are separate from static business-case statuses; source-file presence cannot become passed execution.
   - Never blanket-label use cases `implemented` or `runtime-proven` to achieve green totals.
 - **Direct Test-Block Traceability (`// @use-case`)**:
   - Place `// @use-case WEB-E2E-*` directly inside or adjacent to the exact `test(...)` declaration block implementing the case.
@@ -239,11 +239,4 @@
   - Evidence manifests (`human-evidence.ts`), aggregate reports (`generate-human-e2e-report.mjs`), and release verifiers (`verify-human-e2e-release.mjs`) must consume `use-case-coverage.json`.
   - Manifests must record SHA-256 hashes of all four registries (`use-case-coverage.json`, `coverage-matrix.json`, `route-coverage.json`, `api-source-coverage.json`) and the validated application git commit.
   - Partial or focused test runs must calculate status per test block, ensuring unexecuted sibling cases remain `not-run`.
-- **Rule-to-Enforcement-to-Test Mapping**:
-  - *F1 & F5 (AST Test Block Binding & Ban on Header-Only Annotations)*: `parseSpecTestBlocks` in `scripts/qa/support/human-e2e-contract.mjs` parses AST call expressions. Enforced by `scripts/qa/human-e2e-guard.mjs`. Tested in `scripts/qa/human-e2e-guard.test.mjs`.
-  - *F1 (Ban on Direct HTTP / DOM Mutations in Helpers)*: AST prohibited node inspection in `scripts/qa/human-e2e-guard.mjs`. Tested in `scripts/qa/human-e2e-guard.test.mjs`.
-  - *F2 (Release Verifier Canonical SSOT & Coverage Reconciliation)*: `scripts/qa/verify-human-e2e-release.mjs` independently loads all 4 registries via `loadCanonicalRegistries`, validates commit continuity, rejects unknown use cases, and verifies lower-level API evidence on disk. Tested in `scripts/qa/verify-human-e2e-release.test.mjs`.
-  - *F3 (Commit Provenance & Registry Hash Continuity)*: `run-human-local-e2e.sh` and `run-human-target-e2e-inner.sh` export `GIT_COMMIT` and `E2E_APP_COMMIT`; `tests/e2e/human/support/human-evidence.ts` records real commit and sha256 registry hashes; release verifier strictly matches evidence commit and hashes against run manifest. Tested in `scripts/qa/human-target-runner.test.mjs` and `scripts/qa/verify-human-e2e-release.test.mjs`.
-  - *F4 (Use-Case Truth & Route Fidelity)*: `tests/e2e/human/use-case-coverage.json` audited against real Astro routes and UI implementations (`WEB-E2E-LEG-001` entryRoutes to `/grievance` and `/privacy`; `PUB-001`, `PUB-003`, `PRO-002`, `NOTIF-003` aligned to real DOM actions and postconditions).
-  - *F6 (Discriminating Assertions)*: Concrete discriminating assertions in `legal-request-lifecycle.human.spec.ts` (`TFP-GRV-` vs `TFP-PRV-`), `public-surfaces.human.spec.ts` (hero search and feature cards), `profile-portfolio.human.spec.ts` (`portfolio_deleted=1`), and `contest-lifecycle.human.spec.ts` (resource pack download).
-  - *F7 (Strict Actor & Field Validation)*: Actors validated against `['anonymous', 'member', 'creator', 'admin']`; singular aliases, duplicate array items, and static `runtime-proven` status strictly rejected. Tested in `scripts/qa/support/human-e2e-contract.test.mjs` and `scripts/qa/human-e2e-guard.test.mjs`.
+- **Certification workflow owner**: `tfpphotographers/tests/e2e/README.md#versioned-strict-human-certification-contract` documents versioned context, safe commands and open work; code/tests remain authoritative. Require actual shell parsing, E2E typing, positive CLI/pipeline fixtures and discriminating rejection tests. The operation guard remains pattern-based and has known broader enforcement gaps; do not call it an AST prohibited-node scanner. Discovery is not download/CRUD/persistence proof, and no walkthrough can override failed or unexecuted gates.
