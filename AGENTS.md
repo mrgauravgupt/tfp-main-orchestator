@@ -230,6 +230,8 @@
   - API/native architectural dispositions are separate from static business-case statuses; source-file presence cannot become passed execution.
   - Never blanket-label use cases `implemented` or `runtime-proven` to achieve green totals.
 - **Direct Test-Block Traceability (`// @use-case`)**:
+  - An annotation proves mapping only, not semantic coverage. Cross-check every claimed action, postcondition, persistence condition, and negative state against actual controls and assertions. Missing real behaviors remain planned; remove invented product/storage details instead of inventing tests for them.
+  - Delivered-email OTP proof must request, reject an incorrect code, and verify the recipient-bound delivered code through the actual runtime UI. Seed-login is a separate permitted harness boundary, never a fallback that passes the visible-OTP case. Missing target inbox/capture integration must fail certification explicitly.
   - Place `// @use-case WEB-E2E-*` directly inside or adjacent to the exact `test(...)` declaration block implementing the case.
   - Static guards must enforce bidirectional integrity: every implemented case has a matching test-block annotation, every annotation references an existing ledger case, and mapped specs contain the annotation.
 - **Strict Pre-Flight Route & Browser Alignment**:

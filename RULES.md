@@ -90,6 +90,8 @@ This is the concise operational rulebook for humans and AI agents working across
 
 2. **Bidirectional Semantic Traceability (The Anti-Cosmetic Rule)**:
    - Code comments, docstrings, annotations, or file presence are not proof of implementation.
+   - Test-block mappings are not proof that their ledger prose is true. Audit every claimed action and state against real controls and executable assertions; do not certify untested subsets as whole cases or claim nonexistent timers, input designs, storage records, or audit events.
+   - Protected seed-login may support other strict journeys, but must never substitute for a delivered-email OTP use case. Missing recipient-bound target email capture is a certification blocker and must fail closed, not return a successful bridge result.
    - Traceability must be strictly bidirectional: (1) every declared ledger item must map to an exact annotated test block, (2) every code annotation must resolve to a valid ledger entry, and (3) the test block must contain explicit, discriminating assertions verifying every visible action, postcondition, and negative boundary state claimed by the ledger.
    - Annotations must be placed directly inside or immediately adjacent to the executable test block (e.g. `// @use-case <id>`), not in loose file headers.
 
