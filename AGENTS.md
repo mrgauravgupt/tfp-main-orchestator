@@ -248,3 +248,14 @@
   - Positive verifier fixtures must execute the same representative use case across its real declared browser/profile Cartesian product. Each rejection fixture must assert the intended failure, not merely any non-zero exit.
   - Browser/transport limitations are certification blockers, not documentation exceptions. In particular, the current UAT private-tunnel CORS bypass supports Chromium projects only; do not claim UAT Firefox target proof until an executable compatible transport exists.
 - **Certification workflow owner**: `tfpphotographers/tests/e2e/README.md#versioned-strict-human-certification-contract` documents versioned context, safe commands, and open work; code/tests remain authoritative. Require actual shell parsing, E2E typing, positive CLI/pipeline fixtures, and discriminating rejection tests. The operation guard is a focused AST static policy (`scripts/qa/support/human-e2e-operations.mjs`) with documented limits. Discovery is not download/CRUD/persistence proof, and no walkthrough can override failed or unexecuted gates.
+
+## Frozen Web certification baseline — 3 October 2026
+
+The authorized achievable Web scope is certified at application/harness
+`f19c7ab896a0489e1988e30b015499be6b823b44`: 143 use cases across six
+local/UAT browser slots, 444/444 executions, canonical verifier exit 0.
+Read `tfpphotographers/docs/operations/WEB_DEPLOY_READY_FREEZE.md` before changing Web code,
+harness, fixtures, registries or runtime configuration. Preserve original evidence
+and exclusions; never claim a newer revision certified from these old children.
+Use the manual `test:e2e:human:certify` command after targeted checks and an exact
+UAT deployment. Stop on first failure; do not loop or silently retry full suites.

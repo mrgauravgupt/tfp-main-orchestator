@@ -369,3 +369,14 @@ Every business use case in `use-case-coverage.json` must adhere to:
    - Any custom verification script or guard must be backed by automated fixture-based mutation tests proving that invalid routes, duplicate IDs, missing arrays, unsupported browsers, and orphan annotations actively trigger failures for the intended reasons.
 7. **Black-Box User Parity Invariant (Anti-Synthetic Shortcuts)**:
    - Strict human end-to-end journeys must exercise real user runtimes through real browser/device interactions. Direct database queries, route interception, synthetic response fulfillment, forced clicks, and DOM property mutations are strictly prohibited. State persistence must be proven by user-visible reloads or subsequent user journeys.
+
+## Web acceptance checkpoint — 3 October 2026
+
+Frozen application/harness: `f19c7ab896a0489e1988e30b015499be6b823b44`;
+parent `b60c2bdcff9fbc3951e7060132f9f828bcd15e97`;
+UAT release `20261003T062212Z-f19c7ab8`. All 143 achievable implemented Web
+use cases passed all six local/UAT browser slots (444/444 blocks), with canonical
+verifier exit 0. OAuth and six delivered-email OTP cases are excluded; QR-013
+remains blocked, never passed. Full evidence paths, hashes, future-change rules
+and manual launcher instructions: `tfpphotographers/docs/operations/WEB_DEPLOY_READY_FREEZE.md`.
+This is historical exact-revision proof; verify live deployment before reuse.
