@@ -135,6 +135,15 @@ operator state in `/tmp/tfp-certification-storage-state.json`. Previous run
 state and evidence remain intact. Do not launch overlapping work or reuse any
 older revision's children. Final aggregate/verifier success remains pending.
 
+The authorized sequence is now active:
+`web-certification-20261004T171252Z-7b910601`. Fresh-cache discovery matched all
+77 canonical blocks; local Chromium completed 77/77 and Firefox is progressing.
+Read `/tmp/tfp-certification-storage-state.json` for the detached owner, current
+logs and atomic final status. No overlapping run or source change is permitted.
+The user has authorized autonomous overnight scoped decisions and feasible fixes;
+use low-cost monitoring every 30 minutes and SOL high for confirmed defects and
+final independent evidence review. Production inputs remain external gates.
+
 After source freeze and exact deployment, run one fresh zero-retry sequence from
 the application repository:
 `bash scripts/pnpm-node20.sh test:e2e:human:certify`.
