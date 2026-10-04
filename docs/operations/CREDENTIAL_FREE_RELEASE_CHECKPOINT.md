@@ -215,6 +215,20 @@ sole low-cost owner must use the successful independent OS-session launcher,
 idle-sleep guard, zero retries/maxfail1, serial local three then UAT three and
 mandatory aggregate/verifier. New operator state is
 `/tmp/tfp-certification-portfolio-state.json`; until it exists, launch is pending.
+The sequence is now active as `web-certification-20261004T231200Z-8b409da2`.
+Fresh discovery matched 77 canonical blocks in all three projects, covering all
+146 implemented IDs. Independent OS-session owner PID 65202 is alive; its
+atomic status is still `running`, so no completion is claimed. State records
+the isolated cache, logs, wrapper and status path. Local Chromium is first;
+leave the healthy one-owner serial sequence uninterrupted.
+
+Pre-launch disk review authorized only stale ignored Android intermediate
+compiled files: four named generated directories and eight `.so` files under
+`intermediates/cxx`, last modified about 180 hours earlier with no native build
+running. Cleanup reclaimed 546,553,156 bytes; APKs, source maps, native symbols,
+lint reports/logs and all Web evidence/caches were preserved. Exact inventory:
+`/tmp/tfp-certification-portfolio-cleanup-20261005.json`. Free space was 2.7 GiB
+at launch; monitor it with the compact certification observation.
 `/tmp/tfp-certification-storage-state.json` describes the old stopped run.
 Never infer success from a missing final exit, overlap runs or change source.
 The user has authorized autonomous overnight scoped decisions and feasible fixes;
