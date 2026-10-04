@@ -1,5 +1,17 @@
 # Workspace Memory for Future Agents
 
+## Credential-free preparation checkpoint — 4 October 2026
+
+Current UAT app/harness is `b1a3941558d6f6c341bc8aee0a10787a90019080`,
+release `20261004T104000Z-b1a39415`; stack health and exact marker passed.
+See `docs/operations/CREDENTIAL_FREE_RELEASE_CHECKPOINT.md` for backup/restore,
+service/provider checks, focused download/gallery evidence and remaining gates.
+The previous full run stopped on a Firefox notifications 500; its original
+cause remains unclassified. Reviewed sanitized logging and a focused Firefox
+pass are not a current certificate. Preserve the failure; use one frozen run,
+stop on first failure and never reuse stale child evidence. Production access,
+credentials/operator details and 19 strict configuration inputs remain pending.
+
 ## Repository map
 
 - `tfpphotographers/`: main Astro, Fastify, Prisma, PostgreSQL product monorepo.

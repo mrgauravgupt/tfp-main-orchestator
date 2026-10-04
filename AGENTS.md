@@ -1,5 +1,15 @@
 # Workspace-Wide Agent Notes
 
+## Current credential-free release checkpoint — 4 October 2026
+
+Read `docs/operations/CREDENTIAL_FREE_RELEASE_CHECKPOINT.md` before resuming.
+UAT app is `b1a3941558d6f6c341bc8aee0a10787a90019080`; health/marker passed.
+The original Firefox notifications 500 remains unclassified; reviewed sanitized
+logging and focused success do not certify the current revision. Preserve first
+failure evidence, freeze source, run once and stop on first failure. Production
+host/provider/legal inputs remain external gates; never fill them with invented
+values or weaken validation to claim readiness.
+
 ## Fast Orientation
 
 - Read `RULES.md` for non-negotiable deployment and event-outbox safety rules.
