@@ -135,9 +135,14 @@ operator state in `/tmp/tfp-certification-storage-state.json`. Previous run
 state and evidence remain intact. Do not launch overlapping work or reuse any
 older revision's children. Final aggregate/verifier success remains pending.
 
-The authorized sequence is now active:
-`web-certification-20261004T171252Z-7b910601`. Fresh-cache discovery matched all
-77 canonical blocks; local Chromium completed 77/77 and Firefox is progressing.
+The authorized sequence `web-certification-20261004T171252Z-7b910601` is now
+terminal with status `1`. Fresh-cache discovery matched all 77 canonical blocks;
+all three local browsers passed 77/77. UAT Chromium stopped after 50 passed,
+one failed and 26 not run; UAT Firefox/mobile and aggregate did not start.
+The first failure was `profile-portfolio.human.spec.ts:18`: browser diagnostics
+recorded a signed private object GET blocked by `net::ERR_BLOCKED_BY_ORB`, with
+no HTTP 5xx recorded. Its response/initiator/media lifecycle root cause remains
+under scoped SOL high investigation. No automatic replacement is authorized.
 Read `/tmp/tfp-certification-storage-state.json` for the detached owner, current
 logs and atomic final status. No overlapping run or source change is permitted.
 The user has authorized autonomous overnight scoped decisions and feasible fixes;
