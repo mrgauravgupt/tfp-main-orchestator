@@ -143,6 +143,16 @@ The first failure was `profile-portfolio.human.spec.ts:18`: browser diagnostics
 recorded a signed private object GET blocked by `net::ERR_BLOCKED_BY_ORB`, with
 no HTTP 5xx recorded. Its response/initiator/media lifecycle root cause remains
 under scoped SOL high investigation. No automatic replacement is authorized.
+Read-only review excluded signed-URL expiry and upload failure. The blocked GET
+began before confirmed deletion, but its original response/status/completion
+were not captured; an in-flight deletion race remains a hypothesis.
+A separate defect is confirmed: deletion removed the portfolio row/source while
+its media asset remained approved and active, allowing a later approval event
+to schedule rendition processing for the deleted source. SOL high is authorized
+for one test-bound, sanitized focused network diagnostic and then a minimal
+atomic deletion/media-retirement correction with lifecycle regression tests.
+That correction must not be described as an ORB fix without further evidence.
+No full certification, publication or deployment occurs before root review.
 Read `/tmp/tfp-certification-storage-state.json` for the detached owner, current
 logs and atomic final status. No overlapping run or source change is permitted.
 The user has authorized autonomous overnight scoped decisions and feasible fixes;
