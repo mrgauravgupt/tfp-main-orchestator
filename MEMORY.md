@@ -11,8 +11,16 @@ with run-scoped `PWTEST_CACHE_DIR`, unchanged source and no evidence rewriting.
 Preserve the partial mobile artifacts and private TEST snapshot. Use detached
 execution plus idle-sleep protection; lid-close sleep still requires care.
 
-Current UAT app/harness is `0717ef3e5ad89e7f1574a0ddf0141197003729f0`,
-release `20261004T164812Z-0717ef3e`; stack health and exact marker passed.
+Current UAT app/harness is `27045e137befb3be31c12a13abdcb60b0f7490e5`,
+release `20261004T212219Z-27045e13`; collage `d6fadf54` is deployed as
+`20261004T211904Z-d6fadf54`. Exact source archives and stack health passed.
+The `0717ef3e` full run passed local 3×77, then stopped at UAT 50 passed/
+1 failed/26 not run on private-image ORB. Original ORB remains unclassified.
+The separate confirmed portfolio-retirement defect is corrected in the current
+app/worker with real API/DB/socket-free storage regressions. One focused proof
+is pending; the first selector attempt matched zero tests, so corrected discovery
+must prove exactly one Chromium block before execution. Do not start a new full
+certificate until root accepts that focused evidence.
 Previous recovery at `b1a39415` passed all three local browsers but stopped at
 UAT contest-banner completion with SDK TCP-connect timeouts. SOL high proved a
 bounded adapter-local family-attempt deadline correction with real sockets;

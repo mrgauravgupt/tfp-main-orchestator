@@ -2,10 +2,11 @@
 
 ## Deployment and completed work
 
-Application/harness: `0717ef3e5ad89e7f1574a0ddf0141197003729f0`.
-OCI UAT application release: `20261004T164812Z-0717ef3e`.
+Application/harness: `27045e137befb3be31c12a13abdcb60b0f7490e5`.
+OCI UAT application release: `20261004T212219Z-27045e13`.
 AI revision: `d40ec5809c556b56b12da5e540fa1a092a160a6a`;
-collage revision: `6d324aeab49666af97b737c03b3221f17ff0c057`.
+collage revision: `d6fadf545c74d45282ab9af9f0de7d4d6bf38a92`, release
+`20261004T211904Z-d6fadf54`.
 Exact app marker and stack verification passed: eight active units, six reachable
 loopback endpoints, PostgreSQL ready, private listeners loopback-only and public
 Access boundary HTTP 302. AI/collage deployed production source matched their Git
@@ -153,6 +154,41 @@ for one test-bound, sanitized focused network diagnostic and then a minimal
 atomic deletion/media-retirement correction with lifecycle regression tests.
 That correction must not be described as an ORB fix without further evidence.
 No full certification, publication or deployment occurs before root review.
+Root has now independently accepted the scoped portfolio-retirement correction:
+eight application files, five collage-worker files and the root worker-fixture
+generator. The owner deletion transaction retires media, cancels pending work
+and queues existing revocation; late moderation, approval and publication cannot
+restore it. Rejected publication removes only fresh exact unregistered attempt
+keys, preserving existing, referenced and held objects. API 31/31 and real
+PostgreSQL/Sharp/local-file worker 19/19 tests passed, with discriminating
+mutations restored; typing, guard and fixture checks passed. No migration was
+added. Review evidence is
+`tfpphotographers/test-results/reports/portfolio-retirement-review-20261004T205113Z/review.md`.
+The original ORB remains unclassified: the single read-only CDP diagnostic passed
+without reproducing it. The strengthened exact loaded-image precondition still
+requires post-deployment browser proof.
+
+Low-cost agent `/root/certification_recovery_monitor_low` is the sole owner for
+remaining scoped lint/build checks, scoped app/worker publication and root
+generator/gitlinks, exact UAT deployment/health/restart, then one zero-retry
+focused Chromium portfolio proof. It must stop for independent evidence review
+before any fresh six-child certification. Do not duplicate its work.
+The accepted scope is published: app `27045e13`, collage `d6fadf54`, root
+generator/gitlinks `9e5bbb7`. Scoped lint, API/worker production builds and
+fixture drift checks passed. Exact UAT archive verification matched all 1,168
+application files and 28 collage source files; stack checks passed with eight
+active units, six endpoints, PostgreSQL ready, loopback-only listeners and Access
+302. Deployment's PostgreSQL-specific tests were skipped because its test DB
+variable was unset; the separately executed 19/19 worker result remains the
+actual regression evidence.
+
+Focused runner `uat-profile-portfolio-20261004T212620Z-27045e13` exited 1 before
+browser execution: an anchored selector matched zero full Playwright titles.
+Preserve its log/context as diagnostic, never positive proof. Root reviewed the
+setup cause and authorized one corrected unique unanchored title selection,
+after non-browser discovery proves exactly one Chromium block. The same
+low-cost owner will run the focused proof once and stop; no source change,
+deployment repeat or full certification is authorized by this selector fix.
 Read `/tmp/tfp-certification-storage-state.json` for the detached owner, current
 logs and atomic final status. No overlapping run or source change is permitted.
 The user has authorized autonomous overnight scoped decisions and feasible fixes;

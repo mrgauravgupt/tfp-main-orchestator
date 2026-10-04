@@ -7,11 +7,18 @@ The laptop-interrupted `web-certification-20261004T105142Z-225e59c8` is diagnost
 SOL high traced four invalid CRUD evidence locations to a missing Playwright
 cache source map. Use an isolated run-scoped `PWTEST_CACHE_DIR` for the reviewed
 fresh sequence; do not rewrite old evidence or accept it from passing totals.
-UAT app is `0717ef3e5ad89e7f1574a0ddf0141197003729f0`, release
-`20261004T164812Z-0717ef3e`; health/marker and focused reference download passed.
+UAT app is `27045e137befb3be31c12a13abdcb60b0f7490e5`, release
+`20261004T212219Z-27045e13`; collage is `d6fadf54`, release
+`20261004T211904Z-d6fadf54`. Exact archives and full stack health passed.
+The `0717ef3e` sequence stopped after local 3×77 passed and UAT 50 passed/
+1 failed on a private-image ORB. Original ORB remains unclassified. A separately
+proven portfolio-retirement defect is corrected and tested in the current app
+and worker. One focused proof is pending: its first selector attempt discovered
+zero tests; corrected non-browser discovery must match exactly one block before
+the sole low-cost owner runs it. Stop afterward for review; no full run yet.
 The previous `b1a39415` six-child run stopped on a proven storage TCP-connect
 timeout. SOL high's socket-backed, configurable adapter-local correction is
-published. New frozen certification uses fresh isolated cache; consult
+published. Any new frozen certification uses fresh isolated cache; consult
 `/tmp/tfp-certification-storage-state.json` before starting anything. Focused
 success is not a complete certificate; preserve all prior failure evidence.
 The original Firefox notifications 500 remains unclassified; reviewed sanitized
