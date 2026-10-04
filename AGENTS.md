@@ -270,3 +270,10 @@ continues to use its `TFP_AI_*` environment boundary and versioned binary contra
 See `tfpphotographers/docs/operations/PRODUCTION_RELEASE_PREPARATION.md` for
 migration, retention and remaining live release gates. Do not equate focused
 provider tests with production credentials, bucket ACL proof or new Web evidence.
+
+Production launch preparation also includes the application's
+`qa:release:prepare` offline command. Normal production launch must not inherit
+local fallback secrets or the UAT database tunnel host. Health diagnostics use
+environment-only AI readiness authentication and reject redirects; `/health` is
+a technical Web route outside locale negotiation. Live credentials, bucket policy
+and final exact-revision certification remain external release gates.
