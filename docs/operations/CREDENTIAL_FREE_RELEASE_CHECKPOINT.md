@@ -73,6 +73,17 @@ needed. A detached launcher and macOS idle-sleep assertion keep execution
 independent of chat tool handles. Keep the laptop open and connected: this
 cannot override lid-close sleep. Stop on the first actual failure.
 
+Recovery execution is `web-certification-20261004T124843Z-f5810577`, launched
+detached with idle-sleep protection. Operator state is
+`/tmp/tfp-certification-recovery-state.json`; private log/status files are
+`tfpphotographers/tmp/certification-recovery-20261004T124842Z.log` and `.status`.
+Cache is `tfpphotographers/tmp/human-certification-cache-qtfa4t29`.
+Low-cost monitor: `/root/certification_recovery_monitor_low`.
+At dispatch, one owner was active, local Chromium began 77 tests with one worker,
+and the first test passed. No completion/certification is claimed yet. Do not
+launch another run while this owner is active; a missing final status file means
+unfinished execution, not success.
+
 After source freeze and exact deployment, run one fresh zero-retry sequence from
 the application repository:
 `bash scripts/pnpm-node20.sh test:e2e:human:certify`.
