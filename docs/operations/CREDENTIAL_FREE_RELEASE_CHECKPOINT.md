@@ -189,6 +189,17 @@ setup cause and authorized one corrected unique unanchored title selection,
 after non-browser discovery proves exactly one Chromium block. The same
 low-cost owner will run the focused proof once and stop; no source change,
 deployment repeat or full certification is authorized by this selector fix.
+Corrected non-browser discovery matched exactly one Chromium block and resolved
+PRO-001/002/003. Launcher `uat-profile-media-20261005T002400Z-7fd1c3` then ended
+abruptly before fixture preparation or browser execution: its PID and runner
+were absent, no context/manifest/browser artifacts existed, and its status still
+said `running`. Its final exit is unknown; never interpret that status as a pass.
+The `nohup`/background launch did not survive the short tool invocation reliably.
+Root authorized a new explicit focused recovery checkpoint using an independent
+OS session (`subprocess.Popen(start_new_session=True)`), closed stdin and file
+logging, with a new run ID/cache/status. Preserve the interrupted state/log. This
+is a launcher recovery, not a product retry or full-suite replacement. The
+low-cost owner remains responsible for one focused proof and stops for review.
 Read `/tmp/tfp-certification-storage-state.json` for the detached owner, current
 logs and atomic final status. No overlapping run or source change is permitted.
 The user has authorized autonomous overnight scoped decisions and feasible fixes;
