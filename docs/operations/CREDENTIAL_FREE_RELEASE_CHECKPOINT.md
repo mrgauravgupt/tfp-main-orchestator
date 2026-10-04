@@ -2,8 +2,8 @@
 
 ## Deployment and completed work
 
-Application/harness: `b1a3941558d6f6c341bc8aee0a10787a90019080`.
-OCI UAT application release: `20261004T104000Z-b1a39415`.
+Application/harness: `0717ef3e5ad89e7f1574a0ddf0141197003729f0`.
+OCI UAT application release: `20261004T164812Z-0717ef3e`.
 AI revision: `d40ec5809c556b56b12da5e540fa1a092a160a6a`;
 collage revision: `6d324aeab49666af97b737c03b3221f17ff0c057`.
 Exact app marker and stack verification passed: eight active units, six reachable
@@ -100,6 +100,40 @@ attribute this to reference download or storage without further evidence.
 SOL high's scoped read-only investigation was interrupted by model capacity
 and resumed once. No product/harness edit, service restart, mutation or browser
 rerun is authorized by an unproved timeout diagnosis.
+
+### Reviewed storage transport correction
+
+The API exception was recovered using `journalctl --all`: the SDK exhausted
+three TCP connection attempts, with IPv4 `ETIMEDOUT` and IPv6 `ENETUNREACH`.
+Logging worked; the precise S3 command remains untagged. Same-host real-socket
+comparison found two destination addresses failing with Node's 250 ms family
+attempt timeout and succeeding at 1,000 ms. No continuing provider outage is
+claimed. Sanitized probe evidence is retained under
+`tfpphotographers/test-results/reports/storage-transport-review-20261004/`.
+
+Reviewed commit `0717ef3e` adds canonical
+`STORAGE_CONNECT_ATTEMPT_TIMEOUT_MS` (default 1,000; valid 10–10,000 ms), scoped
+to the application S3 adapter's HTTP/HTTPS agents. Compose forwards overrides;
+templates leave them optional. TLS, SDK retries, upload checks, intent lifecycle
+and private/public credentials are unchanged. Separate AI, collage and backup
+clients are unaffected. Config 93/93, storage 18/18, affected API 25/25 and
+executable runtime wiring 3/3 passed; socket/wiring mutation checks failed as
+intended. Relevant typing/builds, Web/Playwright typing, lint, guard 88/88 and
+diff checks passed. Parent gitlink publication is `e685003`.
+
+Exact UAT release `20261004T164812Z-0717ef3e` passed stack/marker verification.
+Focused `uat-storage-download-20261004T165204Z-0717ef3e` passed once with zero
+retries/failures/flakes/skips: visible reference download, exact filename/content
+and persistence after reload, plus complete before/after desktop/tablet/mobile
+evidence. Root independently inspected context, manifest, catalog, assertions
+and desktop/mobile captures. This is focused proof, not release certification.
+
+One fresh canonical six-child run is authorized on frozen `0717ef3e`, after
+fresh isolated-cache discovery matches all 77 annotated blocks. Low-cost agent
+`/root/certification_recovery_monitor_low` owns launch/monitoring and saves new
+operator state in `/tmp/tfp-certification-storage-state.json`. Previous run
+state and evidence remain intact. Do not launch overlapping work or reuse any
+older revision's children. Final aggregate/verifier success remains pending.
 
 After source freeze and exact deployment, run one fresh zero-retry sequence from
 the application repository:

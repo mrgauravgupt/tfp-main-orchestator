@@ -11,8 +11,16 @@ with run-scoped `PWTEST_CACHE_DIR`, unchanged source and no evidence rewriting.
 Preserve the partial mobile artifacts and private TEST snapshot. Use detached
 execution plus idle-sleep protection; lid-close sleep still requires care.
 
-Current UAT app/harness is `b1a3941558d6f6c341bc8aee0a10787a90019080`,
-release `20261004T104000Z-b1a39415`; stack health and exact marker passed.
+Current UAT app/harness is `0717ef3e5ad89e7f1574a0ddf0141197003729f0`,
+release `20261004T164812Z-0717ef3e`; stack health and exact marker passed.
+Previous recovery at `b1a39415` passed all three local browsers but stopped at
+UAT contest-banner completion with SDK TCP-connect timeouts. SOL high proved a
+bounded adapter-local family-attempt deadline correction with real sockets;
+canonical `STORAGE_CONNECT_ATTEMPT_TIMEOUT_MS` defaults to 1,000 ms. Retry/TLS/
+upload invariants remain unchanged. Focused reference download passed once;
+new six-child certification remains pending. Operator state for its authorized
+launch is `/tmp/tfp-certification-storage-state.json`; never overlap a live run
+or reuse previous revision's children.
 See `docs/operations/CREDENTIAL_FREE_RELEASE_CHECKPOINT.md` for backup/restore,
 service/provider checks, focused download/gallery evidence and remaining gates.
 The previous full run stopped on a Firefox notifications 500; its original
