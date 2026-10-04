@@ -259,3 +259,14 @@ harness, fixtures, registries or runtime configuration. Preserve original eviden
 and exclusions; never claim a newer revision certified from these old children.
 Use the manual `test:e2e:human:certify` command after targeted checks and an exact
 UAT deployment. Stop on first failure; do not loop or silently retry full suites.
+
+
+## Active provider preparation — 4 October 2026
+
+Application and image-processing scoped storage configuration now accepts
+provider-neutral `STORAGE_PRIVATE_*` / `STORAGE_PUBLIC_*` bindings with legacy B2
+compatibility. Backups use separate `BACKUP_STORAGE_*` profiles. The AI service
+continues to use its `TFP_AI_*` environment boundary and versioned binary contract.
+See `tfpphotographers/docs/operations/PRODUCTION_RELEASE_PREPARATION.md` for
+migration, retention and remaining live release gates. Do not equate focused
+provider tests with production credentials, bucket ACL proof or new Web evidence.
