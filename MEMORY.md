@@ -2,6 +2,15 @@
 
 ## Credential-free preparation checkpoint — 4 October 2026
 
+The `web-certification-20261004T105142Z-225e59c8` sequence was interrupted after
+user-confirmed laptop closure. Its completed Chromium/Firefox executions are
+diagnostic, not accepted children: SOL high proved four CRUD source locations
+were corrupted by a missing Playwright cache source map. Fresh-cache non-browser
+discovery matches all 77 canonical blocks. Resume one fresh six-child sequence
+with run-scoped `PWTEST_CACHE_DIR`, unchanged source and no evidence rewriting.
+Preserve the partial mobile artifacts and private TEST snapshot. Use detached
+execution plus idle-sleep protection; lid-close sleep still requires care.
+
 Current UAT app/harness is `b1a3941558d6f6c341bc8aee0a10787a90019080`,
 release `20261004T104000Z-b1a39415`; stack health and exact marker passed.
 See `docs/operations/CREDENTIAL_FREE_RELEASE_CHECKPOINT.md` for backup/restore,

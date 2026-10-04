@@ -3,6 +3,10 @@
 ## Current credential-free release checkpoint — 4 October 2026
 
 Read `docs/operations/CREDENTIAL_FREE_RELEASE_CHECKPOINT.md` before resuming.
+The laptop-interrupted `web-certification-20261004T105142Z-225e59c8` is diagnostic:
+SOL high traced four invalid CRUD evidence locations to a missing Playwright
+cache source map. Use an isolated run-scoped `PWTEST_CACHE_DIR` for the reviewed
+fresh sequence; do not rewrite old evidence or accept it from passing totals.
 UAT app is `b1a3941558d6f6c341bc8aee0a10787a90019080`; health/marker passed.
 The original Firefox notifications 500 remains unclassified; reviewed sanitized
 logging and focused success do not certify the current revision. Preserve first

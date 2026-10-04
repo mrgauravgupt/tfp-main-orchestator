@@ -43,6 +43,36 @@ credentials or signed URLs during recurrence diagnosis.
 
 ## Remaining gates
 
+### Reviewed interruption recovery — 4 October 2026
+
+The user confirmed accidentally closing the laptop. Certification
+`web-certification-20261004T105142Z-225e59c8` lost its owner during local mobile
+execution: last positive test marker 62, no finalized mobile result/manifest;
+logs stopped at 12:11:58 UTC. No UAT child started. Partial reports and the private
+TEST dump/checksum at
+`tfpphotographers/tmp/db-backups/test-tfp_photographers_test-20261004T123855Z.dump`
+are preserved. Canonical scoped cleanup stopped abandoned local services only.
+
+SOL high review found a separate metadata defect in the two completed local
+children. Both executed 77/77, but four CRUD declarations had compiled rather
+than canonical source locations and empty evidence use-case IDs. The official
+aggregate verifier rejects these children despite successful execution and
+superficially complete artifact status. They are diagnostic only.
+
+Playwright's transform cache retained JavaScript but lost its companion source
+map; embedded source matched frozen TypeScript. Default non-browser discovery
+reported lines 67/94/120/146; isolated-cache discovery reported canonical
+85/110/134/158. All 77 blocks matched canonical annotations with fresh cache.
+Why the old map disappeared is unknown; no business/source defect is established.
+
+Reviewed recovery uses unchanged `b1a39415`, a new run-scoped `PWTEST_CACHE_DIR`
+outside hashed source, and one fresh canonical six-child run. Original evidence
+will not be rewritten or spliced; duplicate browser/profile slots cannot repair
+the old children. No code, assertion, retry, security or registry change is
+needed. A detached launcher and macOS idle-sleep assertion keep execution
+independent of chat tool handles. Keep the laptop open and connected: this
+cannot override lid-close sleep. Stop on the first actual failure.
+
 After source freeze and exact deployment, run one fresh zero-retry sequence from
 the application repository:
 `bash scripts/pnpm-node20.sh test:e2e:human:certify`.
