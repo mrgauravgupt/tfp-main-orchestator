@@ -277,3 +277,8 @@ local fallback secrets or the UAT database tunnel host. Health diagnostics use
 environment-only AI readiness authentication and reject redirects; `/health` is
 a technical Web route outside locale negotiation. Live credentials, bucket policy
 and final exact-revision certification remain external release gates.
+
+The OCI AI-worker environment preparer consumes canonical `STORAGE_PRIVATE_*`
+bindings before legacy scoped `B2_PRIVATE_*` bindings. It never uses public or
+account-administration storage credentials. Verify with
+`python3 -m unittest discover -s scripts/oci/tests -p 'test_prepare_ai_worker_env.py'`.

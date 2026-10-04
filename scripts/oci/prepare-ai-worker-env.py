@@ -69,6 +69,26 @@ def resolve_shared_ai_key(values: dict[str, str]) -> str:
     return next(iter(configured.values()))
 
 
+def resolve_private_storage(values: dict[str, str]) -> dict[str, str]:
+    """Use the app's private storage role; never borrow public/admin keys."""
+    def required(*names: str) -> str:
+        value = next((values.get(name, "").strip() for name in names
+                      if values.get(name, "").strip()), "")
+        if not value:
+            raise ValueError(f"Missing required app UAT binding: {' or '.join(names)}")
+        return value
+
+    return {
+        "TFP_AI_STORAGE_ENDPOINT": required("STORAGE_PRIVATE_ENDPOINT", "B2_ENDPOINT", "BACKBLAZE_ENDPOINT"),
+        "TFP_AI_STORAGE_REGION": next((values.get(name, "").strip()
+                                       for name in ("STORAGE_PRIVATE_REGION", "B2_REGION", "BACKBLAZE_REGION")
+                                       if values.get(name, "").strip()), "us-east-005"),
+        "TFP_AI_STORAGE_BUCKET": required("STORAGE_PRIVATE_BUCKET_NAME", "B2_PRIVATE_BUCKET_NAME"),
+        "TFP_AI_STORAGE_ACCESS_KEY_ID": required("STORAGE_PRIVATE_ACCESS_KEY_ID", "B2_PRIVATE_ACCESS_KEY_ID"),
+        "TFP_AI_STORAGE_SECRET_ACCESS_KEY": required("STORAGE_PRIVATE_SECRET_ACCESS_KEY", "B2_PRIVATE_SECRET_ACCESS_KEY"),
+    }
+
+
 def main() -> None:
     root = Path(__file__).resolve().parents[2]
     app_values = read_env(
@@ -86,23 +106,13 @@ def main() -> None:
     worker_netloc = f"tfp_ai_worker:{quote(password, safe='')}@127.0.0.1:5432"
     worker_url = urlunsplit(("postgresql", worker_netloc, f"/{database}", "schema=public", ""))
 
-    def required(*names: str) -> str:
-        value = next((app_values.get(name, "") for name in names if app_values.get(name)), "")
-        if not value:
-            raise SystemExit(f"Missing required app UAT secret: {' or '.join(names)}")
-        return value
-
     update_env(target, {
         "TFP_AI_ENVIRONMENT": "production",
         "TFP_AI_REQUIRE_INTERNAL_API_KEY": "true",
         "TFP_AI_INTERNAL_API_KEY": resolve_shared_ai_key(app_values),
         "TFP_AI_WORKER_ENABLED": "true",
         "TFP_AI_DATABASE_URL": worker_url,
-        "TFP_AI_STORAGE_ENDPOINT": required("B2_ENDPOINT", "BACKBLAZE_ENDPOINT"),
-        "TFP_AI_STORAGE_REGION": app_values.get("B2_REGION") or app_values.get("BACKBLAZE_REGION") or "us-east-005",
-        "TFP_AI_STORAGE_BUCKET": required("B2_PRIVATE_BUCKET_NAME", "B2_BUCKET_NAME", "BACKBLAZE_BUCKET_NAME"),
-        "TFP_AI_STORAGE_ACCESS_KEY_ID": required("B2_PRIVATE_ACCESS_KEY_ID", "B2_ACCESS_KEY_ID", "BACKBLAZE_KEY_ID"),
-        "TFP_AI_STORAGE_SECRET_ACCESS_KEY": required("B2_PRIVATE_SECRET_ACCESS_KEY", "B2_SECRET_ACCESS_KEY", "BACKBLAZE_APP_KEY"),
+        **resolve_private_storage(app_values),
         "TFP_AI_WORKER_POLL_SECONDS": "2",
         "TFP_AI_WORKER_BATCH_SIZE": "4",
         "TFP_AI_WORKER_MAX_CONCURRENCY": "2",
