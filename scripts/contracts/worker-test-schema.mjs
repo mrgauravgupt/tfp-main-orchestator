@@ -6,7 +6,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const migrations = path.join(root, 'tfpphotographers/packages/database/prisma/migrations');
 const targets = [
   ['tfp-ai-interface/tests/fixtures/worker-schema.sql', ['event_outbox', 'moderation_jobs', 'moderation_results']],
-  ['tfp-collage-service/src/tests/fixtures/worker-schema.sql', ['image_processing_jobs', 'privacy_erasure_requests', 'media_assets', 'media_manifests', 'media_physical_renditions']],
+  ['tfp-collage-service/src/tests/fixtures/worker-schema.sql', ['image_processing_jobs', 'privacy_erasure_requests', 'media_assets', 'media_manifests', 'media_physical_renditions', 'media_variant_aliases', 'event_outbox', 'evidence_holds']],
 ];
 const statements = fs.readdirSync(migrations).sort().flatMap((name) => {
   const file = path.join(migrations, name, 'migration.sql');
@@ -20,7 +20,15 @@ const statements = fs.readdirSync(migrations).sort().flatMap((name) => {
 function schemaFor(tables) {
   const tableName = '(?:public\\.)?"?(' + tables.join('|') + ')"?\\b';
   const ownsTable = new RegExp('(?:CREATE TABLE|ALTER TABLE(?: ONLY)?| ON)\\s+' + tableName);
-  const selected = statements.filter((sql) => {
+  const selected = statements.map((sql) => {
+    // Inline domain references must not discard an otherwise owned table.
+    // Keep its columns/checks; domain FK and procedural-trigger behavior is
+    // exercised by the owning application's integration tests.
+    if (!sql.startsWith('CREATE TABLE')) return sql;
+    return sql.replace(/REFERENCES\s+(?:public\.)?"?(\w+)"?\s*\([^)]*\)(?:\s+ON\s+(?:DELETE|UPDATE)\s+(?:RESTRICT|CASCADE|SET NULL|NO ACTION|SET DEFAULT))*/g,
+      (reference, table) => tables.includes(table) ? reference : '');
+  }).filter((sql) => {
+    if (sql.startsWith('CREATE TRIGGER')) return false;
     if (!ownsTable.test(sql)) return false;
     const reference = sql.match(/REFERENCES\s+(?:public\.)?"?(\w+)/);
     return !reference || tables.includes(reference[1]);
