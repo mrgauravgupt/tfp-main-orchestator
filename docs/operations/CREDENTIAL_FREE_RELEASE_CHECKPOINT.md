@@ -200,8 +200,23 @@ OS session (`subprocess.Popen(start_new_session=True)`), closed stdin and file
 logging, with a new run ID/cache/status. Preserve the interrupted state/log. This
 is a launcher recovery, not a product retry or full-suite replacement. The
 low-cost owner remains responsible for one focused proof and stops for review.
-Read `/tmp/tfp-certification-storage-state.json` for the detached owner, current
-logs and atomic final status. No overlapping run or source change is permitted.
+Focused recovery `uat-profile-media-20261005T004000Z-93a2c1` completed with exit 0:
+one Chromium test passed, zero retries/failures/flakes/skips. Root independently
+checked regular context/manifest/evidence files, canonical PRO-001/002/003 source
+mapping, the context content hash, live registry hashes and exact clean app/UAT
+revision. The new loaded-image assertion executed successfully; all six
+before/after breakpoint captures were complete, and desktop/mobile captures
+were visually inspected. This is focused proof, not an ORB root-cause claim or
+a six-child certificate.
+
+Root authorized exactly one fresh canonical six-child sequence on frozen
+`27045e13`, after fresh isolated-cache discovery confirms all 77 blocks. The
+sole low-cost owner must use the successful independent OS-session launcher,
+idle-sleep guard, zero retries/maxfail1, serial local three then UAT three and
+mandatory aggregate/verifier. New operator state is
+`/tmp/tfp-certification-portfolio-state.json`; until it exists, launch is pending.
+`/tmp/tfp-certification-storage-state.json` describes the old stopped run.
+Never infer success from a missing final exit, overlap runs or change source.
 The user has authorized autonomous overnight scoped decisions and feasible fixes;
 use low-cost monitoring every 30 minutes and SOL high for confirmed defects and
 final independent evidence review. Production inputs remain external gates.

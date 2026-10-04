@@ -17,10 +17,13 @@ release `20261004T212219Z-27045e13`; collage `d6fadf54` is deployed as
 The `0717ef3e` full run passed local 3×77, then stopped at UAT 50 passed/
 1 failed/26 not run on private-image ORB. Original ORB remains unclassified.
 The separate confirmed portfolio-retirement defect is corrected in the current
-app/worker with real API/DB/socket-free storage regressions. One focused proof
-is pending; the first selector attempt matched zero tests, so corrected discovery
-must prove exactly one Chromium block before execution. Do not start a new full
-certificate until root accepts that focused evidence.
+app/worker with real API/DB/local-storage regressions. Focused
+`uat-profile-media-20261005T004000Z-93a2c1` passed once with the exact loaded-image
+assertion and complete evidence; root independently accepted hashes, mappings
+and desktop/mobile captures. Selector and interrupted launcher attempts remain
+diagnostic. One fresh exact-revision six-child sequence is authorized after
+77-block discovery. Consult `/tmp/tfp-certification-portfolio-state.json` for
+its owner, log/cache and atomic final exit; absence means unfinished.
 Previous recovery at `b1a39415` passed all three local browsers but stopped at
 UAT contest-banner completion with SDK TCP-connect timeouts. SOL high proved a
 bounded adapter-local family-attempt deadline correction with real sockets;

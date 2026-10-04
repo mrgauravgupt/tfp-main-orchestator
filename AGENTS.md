@@ -13,9 +13,12 @@ UAT app is `27045e137befb3be31c12a13abdcb60b0f7490e5`, release
 The `0717ef3e` sequence stopped after local 3×77 passed and UAT 50 passed/
 1 failed on a private-image ORB. Original ORB remains unclassified. A separately
 proven portfolio-retirement defect is corrected and tested in the current app
-and worker. One focused proof is pending: its first selector attempt discovered
-zero tests; corrected non-browser discovery must match exactly one block before
-the sole low-cost owner runs it. Stop afterward for review; no full run yet.
+and worker. Focused `uat-profile-media-20261005T004000Z-93a2c1` passed once;
+root accepted its exact context, hashes, mapping and desktop/mobile captures.
+Earlier zero-discovery and interrupted launch attempts remain diagnostic.
+One fresh six-child sequence is now authorized after 77-block discovery;
+consult `/tmp/tfp-certification-portfolio-state.json` for its sole owner/status.
+This focused result is not a certificate and does not classify the original ORB.
 The previous `b1a39415` six-child run stopped on a proven storage TCP-connect
 timeout. SOL high's socket-backed, configurable adapter-local correction is
 published. Any new frozen certification uses fresh isolated cache; consult
