@@ -84,6 +84,23 @@ and the first test passed. No completion/certification is claimed yet. Do not
 launch another run while this owner is active; a missing final status file means
 unfinished execution, not success.
 
+Recovery is now terminal: wrapper status `1`, owner absent, no replacement
+started. Local Chromium, Firefox and mobile-chromium each passed 77/77 with
+zero failures/flakes/skips and exit 0. UAT Chromium stopped on test 29 after
+28 passed, one failed and 48 not run; UAT Firefox/mobile did not start.
+Preserve the entire recovery report and first-failure artifacts.
+
+The initiating failure occurred before CON-020's resource-download action,
+during contest **banner upload completion**. Presign returned 200 at
+14:27:19.543 UTC; completion returned 500 with `ETIMEDOUT`. The UAT Web error
+at 14:27:26.029 identifies upstream `/contests/uploads/banner`; API request
+`req-2ot` ended with 500 at 14:27:26.034. Navigation timeout and missing action
+evidence are cascades. The timed-out operation remains unclassified; do not
+attribute this to reference download or storage without further evidence.
+SOL high's scoped read-only investigation was interrupted by model capacity
+and resumed once. No product/harness edit, service restart, mutation or browser
+rerun is authorized by an unproved timeout diagnosis.
+
 After source freeze and exact deployment, run one fresh zero-retry sequence from
 the application repository:
 `bash scripts/pnpm-node20.sh test:e2e:human:certify`.
