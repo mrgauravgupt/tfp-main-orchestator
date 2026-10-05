@@ -10,7 +10,11 @@ affected regressions. Preserve all completed passes and original failures.
 Do not rewrite or splice partial runs into a clean zero-retry certificate;
 the canonical exact-revision six-child acceptance contract remains unchanged.
 Report resumed validation and any outstanding strict-certification gate honestly.
-No browser continuation is authorized while root-cause review remains pending.
+Root later accepted one failed event-gallery diagnostic as affected-flow
+validation only and separately authorized execution of the original unrun UAT
+Chromium blocks. Completed local passes and the failed event-gallery test must
+not be replayed. No further slot is authorized unless the current continuation
+passes, its evidence is accepted, and disk headroom is adequate.
 
 Root reviewed the read-only upload findings and executable XHR handlers and
 authorized one diagnostic execution of only the failed event-gallery case.
@@ -452,3 +456,39 @@ the launch metadata and still says `running`. The launcher is no longer active.
 At root's terminal snapshot, 1.52 GiB remained free; this does not change the
 failure classification. Preserve all artifacts and do not retry or claim
 certification from the local children.
+
+### UAT Chromium continuation of originally unrun blocks — 5 October 2026
+
+Root accepted the one event-gallery diagnostic as completed affected-flow
+validation only. Its original timeout remains unclassified and no permanent
+fix or retry is authorized. The diagnostic evidence is preserved separately;
+it is not a reason to repeat that case.
+
+The continuation selection is derived from the original UAT Chromium
+`results.json`: exactly 40 blocks had no result (36 passed and one failed
+blocks were excluded). The immutable selection file
+`/tmp/tfp-uat-continuation-selection-20261005T094329Z.json` binds each selected
+spec, source line, title and canonical use-case IDs to the original report and
+its manifest/results hashes. It contains 75 unique use-case IDs. A fresh
+isolated Playwright cache and the official Chromium `--list` discovery selected
+exactly those 40 source blocks by spec, line and leaf title, with no extras;
+the exact-match record is
+`/tmp/tfp-uat-continuation-discovery-exact-20261005T094329Z.json` and raw list
+output is `/tmp/tfp-uat-continuation-discovery-v3-20261005T094329Z.log`.
+
+After read-only UAT verification again confirmed the exact deployed app release,
+eight active units, six healthy loopback endpoints, PostgreSQL readiness,
+loopback-only listeners and public Access HTTP 302, one zero-retry, one-worker,
+max-failure-one UAT Chromium continuation was launched as
+`uat-chromium-continuation-20261005T094329Z`. It uses action and full-page
+evidence on frozen app/harness `3cde32e73a9f530d406e443ce68434e49e8e5d6b`,
+release `20261005T050904Z-3cde32e7`, and does not repeat the original 36 passes
+or the failed event-gallery block. The detached owner was PID 46274 at launch;
+report, isolated cache, selection, status, state, wrapper and launcher-log paths
+are recorded in `/tmp/tfp-uat-continuation-state.json`. The launcher log is
+`/tmp/tfp-uat-continuation-launch-20261005T094329Z.log`. At launch, 1.68 GiB was
+free and Playwright discovered exactly 40 tests. This focused child is partial
+diagnostic evidence, not a certificate and cannot be spliced into the earlier
+run. UAT Firefox and mobile remain gated on this child's successful completion,
+evidence acceptance and a fresh disk-headroom check. Stop at any actual failure;
+preserve all artifacts and do not repeat completed tests.
