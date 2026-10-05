@@ -562,3 +562,48 @@ run, service change, permanent source edit, or continuation is authorized before
 root reviews that result. Disk is about 2 GiB free at authorization; apply a fresh
 per-stage space margin check before any run. Preserve the original report and
 all prior evidence.
+
+### Reviewed Firefox diagnostic and remaining UAT slots — 5 October 2026
+
+Root accepted the one-case QR006 lifecycle diagnostic
+`uat-firefox-qr006-telemetry-20261005T131505Z-3cde32e7` at
+`tfpphotographers/test-results/reports/human-target/uat/uat-firefox-qr006-telemetry-20261005T131505Z-3cde32e7/`:
+1/1 passed with zero retries, completing the original assertions and evidence
+against the matching context hash and UAT release. The temporary instrumented
+context was correctly recorded as dirty, and its observer was restored
+byte-for-byte. Across 13 document lifetimes and 200 telemetry module responses,
+the original `undefined` console error did not reproduce. The original failure
+remains unclassified; no permanent source or harness fix is justified.
+
+The 13 blocks left unexecuted when the 77-test UAT Firefox run stopped have now
+been isolated from its original `results.json`: 63 passed and the failed QR006
+block are excluded. Immutable selection
+`/tmp/tfp-uat-firefox-unrun13-selection-20261005T1319Z.json` records the original
+results/manifest/context hashes and 13 exact AST/spec/title/use-case mappings.
+Fresh-cache official discovery matched only those 13 blocks. The one authorized
+zero-retry run `uat-firefox-unrun13-20261005T132100Z` passed 13/13, with 14
+actions and 84 regular evidence captures. Its direct contract audit confirmed
+the exact app/harness `3cde32e73a9f530d406e443ce68434e49e8e5d6b`, release
+`20261005T050904Z-3cde32e7`, context hash, registries and input hash. Context,
+manifest, evidence and atomic status are preserved under
+`tfpphotographers/test-results/reports/human-target/uat/uat-firefox-unrun13-20261005T132100Z/`
+and `/tmp/tfp-uat-firefox-unrun13-state.json`. The child manifest remains
+incomplete; it does not certify a full browser slot or release.
+
+The previously unstarted UAT `mobile-chromium` slot has been launched once as
+`uat-mobile77-continuation-20261005T134700Z`, owner PID 74191. Fresh isolated
+cache discovery and canonical AST validation mapped all 77 blocks across the
+146 implemented IDs; immutable selection is
+`/tmp/tfp-uat-mobile77-selection-20261005T132700Z.json`. It runs against the
+same frozen app/harness and exact UAT release, with zero retries, max-failure
+one and action evidence. At launch, 2,140,213,248 bytes were free against a
+1,455,306,368-byte gate (650 MB report estimate, 256 MiB variance and 512 MiB
+reserve). State, atomic status and launcher log are
+`/tmp/tfp-uat-mobile77-state.json`,
+`/tmp/tfp-uat-mobile77-status-20261005T134700Z.json` and
+`/tmp/tfp-uat-mobile77-launch-20261005T134700Z.log`; report path is
+`tfpphotographers/test-results/reports/human-target/uat/uat-mobile77-continuation-20261005T134700Z/`.
+This owner must stop on its first actual failure. After it completes, stop for
+SOL-high independent review. These children and the diagnostic must not be
+spliced into a strict clean six-child certificate; no aggregate/verifier pass
+or production approval is claimed.
