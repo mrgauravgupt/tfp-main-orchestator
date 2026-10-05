@@ -247,6 +247,24 @@ replay, typing-strategy change, product edit or permanent harness change is
 authorized. Restore temporary instrumentation afterward and report observations
 for review before any new fix or certification. Preserve original evidence and
 never claim a passing diagnostic explains the earlier lost insertion.
+Diagnostic `uat-firefox-compose-diag-20261005T023929Z-14ba6b` passed once with
+zero retries: the connected, enabled and focused textarea received input events,
+changed from length 0 to 38, and passed the exact-value precondition. The original
+loss was not reproduced. Temporary source was restored byte-for-byte; its dirty
+diagnostic context is not certification evidence. Review bundle is the run's
+`diagnostic-review/summary.json`. No product fix is justified.
+
+Root authorized SOL high to evaluate a minimal human-action precondition in the
+affected case: visible click, verified focus, one original fill and exact-value
+verification before submit. This strengthens action proof without insertion
+replay or claiming the unclassified cause fixed. If appropriate, make only the
+scoped harness/README change and fast checks, then stop for diff review; no
+browser run, publication or full replacement is yet authorized.
+Only about 1.1 GiB is free. A fresh six-child report needs more headroom; the
+canonical runner has no resume facility, so do not splice existing passed
+children or launch into avoidable disk exhaustion. The low-cost agent is doing
+one read-only inventory of project-local stale reproducible build outputs;
+all evidence, caches and unrelated data remain protected.
 
 Pre-launch disk review authorized only stale ignored Android intermediate
 compiled files: four named generated directories and eight `.so` files under
