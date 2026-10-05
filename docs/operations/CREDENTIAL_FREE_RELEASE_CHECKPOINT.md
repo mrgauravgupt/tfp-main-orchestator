@@ -324,3 +324,19 @@ six-child sequence is included in this checkpoint. The machine-readable Android
 package compiled-file inventory is
 `/tmp/tfp-android-package-compiled-inventory-0196f95e.json`; no cleanup was
 performed from that inventory.
+
+Root independently accepted the focused run's canonical JSON context hash, live
+four registry hashes, exact clean revision/release, passed count/exit, mapped
+MSG-005/006/007/008 identities and twelve regular captures. Desktop/mobile
+captures were inspected. A separate visual issue remains under SOL high review:
+the messaging page measured 409px at a 390px mobile viewport and showed clipped
+long fixture identity content; desktop measured 1467px at 1440px. Establish the
+valid product name bounds and actual layout cause before any responsive fix.
+No fresh full certification is authorized while that review is pending.
+
+Root reviewed the exact Android dependency compiled-file inventory and authorized
+only its 62 stale regular `.o/.a/.so` intermediate outputs for resource recovery,
+with immediate path/symlink/mtime/inactivity validation and preservation of
+symbols, APKs, maps, logs and all QA evidence. Actual removals/skips must be
+recorded separately in `/tmp/tfp-certification-messaging-cleanup-20261005.json`;
+the inventory and prior evidence remain immutable. No broad dependency cleanup.
