@@ -379,3 +379,18 @@ was not opened and no drawer interaction is claimed. This grep-focused run has
 incomplete suite coverage and is diagnostic, not a release certificate. No new
 six-child certification is authorized until disk headroom is reviewed; preserve
 all prior evidence and stop at the first failure when a future run is authorized.
+
+### Disk gate before final certification
+
+The second read-only generated-output inventory is
+`/tmp/tfp-android-additional-inventory-20261005.json`: only about 91 MB remains
+within the approved Android output scope. Nothing from this inventory was
+deleted; some objects may be the only retained symbol source. Existing complete
+child sizes and the scaled partial Firefox report project about 2,261 MiB for
+six fresh children, plus at least a 512 MiB operating margin. Free space was
+2,001 MiB at the agent measurement and fluctuated to about 2.2 GiB at root
+observation. Require at least 3 GiB available before the one final sequence.
+No runner is active. The safe cleanup pool does not resolve this shortfall;
+additional user-managed disk space is required. Keep all reports, caches,
+archives, symbols and unrelated data intact. The heartbeat remains active and
+will resume the reviewed frozen checkpoint when disk headroom is sufficient.
