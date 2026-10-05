@@ -232,6 +232,21 @@ Preserve the entire run, all traces/screenshots/videos/context/manifests/logs,
 cache and persisted state. SOL high is assigned read-only browser/network/log/
 database/source correlation and a grounded cause/correction table before any
 source change or probe. No automatic replacement or timeout increase.
+Read-only SOL high review found the failure precedes any safety-control action:
+Firefox acknowledged a 38-character fill, but resolved DOM snapshots retained
+an empty textarea and `0/150` counter through the click. No message Web/API POST
+or persisted message/block action occurred. Native required validation is the
+likely submission barrier; the cause of insertion loss remains unclassified.
+An earlier textarea fill in the same test worked. No product, block-logic or
+transport fix is justified by this evidence.
+
+Root authorized exactly one existing-case zero-retry focused UAT Firefox
+diagnostic with temporary read-only focus/input/invalid/connectivity/value-length
+observers and a fail-fast exact-value precondition before submit. No insertion
+replay, typing-strategy change, product edit or permanent harness change is
+authorized. Restore temporary instrumentation afterward and report observations
+for review before any new fix or certification. Preserve original evidence and
+never claim a passing diagnostic explains the earlier lost insertion.
 
 Pre-launch disk review authorized only stale ignored Android intermediate
 compiled files: four named generated directories and eight `.so` files under
