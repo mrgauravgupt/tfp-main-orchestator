@@ -548,7 +548,7 @@ root's failure review. Preserve all artifacts.
 | Evidence | Reviewed conclusion |
 | --- | --- |
 | UAT Firefox case | The QR006 invitation-decline/requester-cancellation business flow completed. The one test failure occurred at the final browser-diagnostics assertion in `quick-request-lifecycle.human.spec.ts:137`. |
-| Telemetry timing | `TelemetryBootstrap.astro` module response was HTTP 200 in about 2 ms; the `undefined` telemetry console error appeared about 34 ms later during reload. |
+| Telemetry timing | The telemetry module request began about 2 ms before reload and had a cached HTTP 200 response; the `undefined` console error appeared 34.277 ms after reload began. These are relative timestamps, not a measured 2 ms response duration. |
 | Captured transport evidence | No corresponding HTTP failure, MIME mismatch, or security-policy failure was captured. This does not explain the error; its cause remains unknown. |
 | Source disposition | The reviewed unload/abort handler does not establish a source defect. No permanent fix is justified by this evidence. Keep the original failed report unchanged. |
 
