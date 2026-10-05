@@ -340,3 +340,19 @@ with immediate path/symlink/mtime/inactivity validation and preservation of
 symbols, APKs, maps, logs and all QA evidence. Actual removals/skips must be
 recorded separately in `/tmp/tfp-certification-messaging-cleanup-20261005.json`;
 the inventory and prior evidence remain immutable. No broad dependency cleanup.
+
+SOL high confirmed the fixture's 46-character name is valid under the real
+80-character self-service limit. Root reviewed and accepted a scoped messaging
+CSS correction: shrink the mobile grid track and panels with `minmax(0, 1fr)` /
+`min-width: 0`, and wrap the complete thread heading. Three compiled CSS checks
+discriminated old behavior; six targeted checks, Web typecheck, lint and diff
+checks passed. Changes are not published and viewport fit is not yet proved.
+One focused local Firefox flow is authorized to verify the correction and collect
+read-only element geometry for the separate admin-header overflow. Restore any
+temporary observation source afterward; stop for root review, no full sequence.
+
+Precise cleanup removed 60 authorized compiled intermediate files, reclaiming
+1,080,276,152 bytes; two files were skipped conservatively. The retained native
+symbol archive hash is unchanged and native Android Git status is clean. Actual
+inventory is `/tmp/tfp-certification-messaging-cleanup-20261005.json`. Free space
+was about 2.0 GiB at root observation; reassess before any full certification.
