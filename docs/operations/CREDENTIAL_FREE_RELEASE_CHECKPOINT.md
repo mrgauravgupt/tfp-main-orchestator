@@ -298,3 +298,29 @@ production access and real operator/provider inputs. Do not relax launch gates.
 OAuth and six delivered-email OTP cases remain excluded. QR-013 remains blocked
 while no customer-facing operator moderation UI exists. Native mobile, folder
 moderation and production mutations are outside this work.
+
+### Messaging safety focused proof — 5 October 2026
+
+Root accepted the focused two-file change as a visible-action precondition only:
+click the compose field, assert focus, fill once, and verify the exact value.
+The earlier Firefox insertion-loss cause remains unclassified. Scoped ESLint
+passed; the already reviewed Playwright typecheck, guard and diff checks were
+reused. Nested app commit `0196f95e42354e05f5ece48d9eaf9a722aeec32d` was pushed
+and deployed through `scripts/deploy/deploy-main-uat.sh` as release
+`20261005T034127Z-0196f95e`, with old remote releases preserved. The deployed
+commit marker and runtime source hash matched; full UAT verification passed
+(eight units, six health endpoints, PostgreSQL, loopback-only listeners, and
+public Access HTTP 302).
+
+One focused zero-retry UAT Firefox run, `uat-firefox-message-precondition-20261005T035000Z-0196f95e`,
+passed its one selected test with complete before/after action evidence for two
+actions at desktop/tablet/mobile (12 regular captures). Its frozen context,
+manifest, result and evidence catalog are under
+`tfpphotographers/test-results/reports/human-target/uat/uat-firefox-message-precondition-20261005T035000Z-0196f95e/`;
+operator state is `/tmp/tfp-uat-firefox-message-precondition-20261005T035000Z-0196f95e.state.json`.
+Root evidence review is pending. This focused proof is diagnostic only: it does
+not explain the earlier insertion loss or certify the release, and no fresh
+six-child sequence is included in this checkpoint. The machine-readable Android
+package compiled-file inventory is
+`/tmp/tfp-android-package-compiled-inventory-0196f95e.json`; no cleanup was
+performed from that inventory.
