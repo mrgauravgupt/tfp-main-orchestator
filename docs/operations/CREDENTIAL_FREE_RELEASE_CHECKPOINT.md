@@ -1,5 +1,17 @@
 # Credential-free release checkpoint — 4 October 2026
 
+## Latest execution policy — 5 October 2026
+
+The user explicitly requires continuation from the failed point and prohibits
+another full-suite restart. This overrides earlier replacement-run authorization.
+After the current failure is diagnosed and a minimal correction independently
+reviewed, execute only the failed case, unexecuted flows and any specifically
+affected regressions. Preserve all completed passes and original failures.
+Do not rewrite or splice partial runs into a clean zero-retry certificate;
+the canonical exact-revision six-child acceptance contract remains unchanged.
+Report resumed validation and any outstanding strict-certification gate honestly.
+No browser continuation is authorized while root-cause review remains pending.
+
 ## Deployment and completed work
 
 Application/harness: `27045e137befb3be31c12a13abdcb60b0f7490e5`.
