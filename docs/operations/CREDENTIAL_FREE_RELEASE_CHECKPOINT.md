@@ -487,8 +487,24 @@ or the failed event-gallery block. The detached owner was PID 46274 at launch;
 report, isolated cache, selection, status, state, wrapper and launcher-log paths
 are recorded in `/tmp/tfp-uat-continuation-state.json`. The launcher log is
 `/tmp/tfp-uat-continuation-launch-20261005T094329Z.log`. At launch, 1.68 GiB was
-free and Playwright discovered exactly 40 tests. This focused child is partial
-diagnostic evidence, not a certificate and cannot be spliced into the earlier
-run. UAT Firefox and mobile remain gated on this child's successful completion,
-evidence acceptance and a fresh disk-headroom check. Stop at any actual failure;
-preserve all artifacts and do not repeat completed tests.
+free and Playwright discovered exactly 40 tests. It completed at 10:15:05 UTC
+with exit 0: 40 passed, 0 failed/flaky/skipped, zero retries. A bounded direct
+contract audit confirmed all 40 results match the immutable spec/line/title
+selection and canonical AST use-case annotations. Its complete 40-case catalog
+has 40 unique evidence IDs, 45 action rows and 270 regular before/after captures
+at desktop/tablet/mobile viewports. Context, manifest, results, catalog and
+capture files are regular non-symlinks; the context binds the exact app/harness,
+UAT release, four registry hashes and input hash. The child report is
+`tfpphotographers/test-results/reports/human-target/uat/uat-chromium-continuation-20261005T094329Z/`;
+status is `/tmp/tfp-uat-continuation-status-20261005T094329Z.json`. Its manifest
+coverage remains `incomplete` because this is a focused child. No aggregate or
+release-verifier pass was generated, and these attempts must not be spliced into
+the failed original sequence or described as certification. Root evidence
+acceptance is pending.
+
+No owner is active. Free space measured 1.44 GiB after this 223,515,864-byte
+report was retained. Conservative remaining UAT Firefox/mobile report estimates
+are about 0.9–1.0 GiB combined, before uncertainty and the 512 MiB operating
+margin; current headroom is insufficient. Do not start either slot until root
+accepts this evidence and a new disk check confirms sufficient margin. Preserve
+all artifacts and do not repeat completed tests.
