@@ -1,6 +1,58 @@
-# Credential-free release checkpoint — 4 October 2026
+# Credential-free release checkpoint — 5 October 2026
 
-## Latest execution policy — 5 October 2026
+## Final independent judgment and handoff
+
+All authorized browser continuation is complete. SOL-high independent review
+found no evidence inconsistencies in the ten reports: context hashes, exact
+revision/release, four registry hashes, canonical AST/use-case mappings and
+before/after capture shapes matched. All eight clean contexts share the current
+inputs hash; the two temporary-observer diagnostic contexts are dirty with
+changed inputs hashes. Original failed attempts remain failed and preserved.
+
+| Evidence | Result | Disposition |
+| --- | --- | --- |
+| Local Chromium / Firefox / mobile | 77 / 77 / 77 passed | Three clean complete children |
+| Original UAT Chromium | 36 passed, 1 failed, 40 not run | Original PUT timeout preserved |
+| Chromium continuation | 40 passed | Disjoint previously unrun blocks |
+| Event-gallery diagnostic | 1 passed | Dirty observer context; cause not explained |
+| Original UAT Firefox | 63 passed, 1 failed, 13 not run | Original telemetry console failure preserved |
+| Firefox continuation | 13 passed | Disjoint previously unrun blocks |
+| UAT mobile | 77 passed; 85 actions / 510 captures | Clean complete execution; exit 0 |
+| QR006 lifecycle diagnostic | 1 passed | Dirty observer context; cause not explained |
+
+There are **460 clean-context passes, two diagnostic passes and two preserved
+original failures**, all with zero retries. These are execution counts, not
+unique business-case counts. Do not claim 462 clean passes, a compatible six-child
+aggregate, canonical verifier success, 100% current-revision certification or
+production approval. Completed tests were not replayed in the continuation.
+The current ledger has 146 implemented and seven blocked cases (six delivered
+email-OTP cases and QR013); OAuth remains outside executable scope.
+
+No runner remains. Preserve source and UAT as a review freeze; further browser
+runs are not authorized by this handoff. The latest user policy prohibits a
+fresh full-suite replacement, while the unchanged strict certificate requires
+fresh compatible clean children. That gate remains pending, not waived.
+
+### Production-access gates
+
+The preserved strict production doctor result dated 4 October lists 19 missing
+inputs: three database URLs, six legal/operator fields, three service URLs,
+four storage credential fields and three backup fields. It is not fresh proof
+of the current production environment. Once that environment exists, run its
+strict doctor and verify host/DNS/TLS/proxy, private/public bucket ACLs/CORS and
+retention, provider delivery, and an independent off-host database/object
+backup restoration. Then deployment and launch smoke/approval remain necessary.
+No production deployment or approval occurred.
+
+The existing manual `test:e2e:human:certify` command in the nested application
+calls `scripts/qa/run-human-web-certification.sh`. It requires fresh evidence;
+do not execute it under the present no-full-rerun policy. `qa:release:prepare`
+is an offline targeted-check command, not live host/provider/recovery proof.
+See `tfpphotographers/docs/operations/PRODUCTION_RELEASE_PREPARATION.md` for the
+actual configuration and launch procedure. Monitoring ends after publication
+of this handoff because all feasible authorized execution and review are complete.
+
+## Historical execution policy — 5 October 2026
 
 The user explicitly requires continuation from the failed point and prohibits
 another full-suite restart. This overrides earlier replacement-run authorization.
@@ -28,8 +80,8 @@ repeat the diagnostic merely because it passes without reproducing the fault.
 
 ## Deployment and completed work
 
-Application/harness: `27045e137befb3be31c12a13abdcb60b0f7490e5`.
-OCI UAT application release: `20261004T212219Z-27045e13`.
+Application/harness: `3cde32e73a9f530d406e443ce68434e49e8e5d6b`.
+OCI UAT application release: `20261005T050904Z-3cde32e7`.
 AI revision: `d40ec5809c556b56b12da5e540fa1a092a160a6a`;
 collage revision: `d6fadf545c74d45282ab9af9f0de7d4d6bf38a92`, release
 `20261004T211904Z-d6fadf54`.

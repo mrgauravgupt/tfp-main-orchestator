@@ -1,44 +1,44 @@
 # Workspace Memory for Future Agents
 
-## Credential-free preparation checkpoint — 4 October 2026
+## Credential-free release handoff — 5 October 2026
 
-The `web-certification-20261004T105142Z-225e59c8` sequence was interrupted after
-user-confirmed laptop closure. Its completed Chromium/Firefox executions are
-diagnostic, not accepted children: SOL high proved four CRUD source locations
-were corrupted by a missing Playwright cache source map. Fresh-cache non-browser
-discovery matches all 77 canonical blocks. Resume one fresh six-child sequence
-with run-scoped `PWTEST_CACHE_DIR`, unchanged source and no evidence rewriting.
-Preserve the partial mobile artifacts and private TEST snapshot. Use detached
-execution plus idle-sleep protection; lid-close sleep still requires care.
+Feasible continuation and SOL-high independent evidence review are complete.
+No browser runner remains and no further tests are authorized under the user's
+no-full-rerun policy. Current clean app/harness is
+`3cde32e73a9f530d406e443ce68434e49e8e5d6b`, deployed UAT release
+`20261005T050904Z-3cde32e7`; collage is `d6fadf54`, release
+`20261004T211904Z-d6fadf54`. Read-only host markers were independently checked.
 
-Current UAT app/harness is `27045e137befb3be31c12a13abdcb60b0f7490e5`,
-release `20261004T212219Z-27045e13`; collage `d6fadf54` is deployed as
-`20261004T211904Z-d6fadf54`. Exact source archives and stack health passed.
-The `0717ef3e` full run passed local 3×77, then stopped at UAT 50 passed/
-1 failed/26 not run on private-image ORB. Original ORB remains unclassified.
-The separate confirmed portfolio-retirement defect is corrected in the current
-app/worker with real API/DB/local-storage regressions. Focused
-`uat-profile-media-20261005T004000Z-93a2c1` passed once with the exact loaded-image
-assertion and complete evidence; root independently accepted hashes, mappings
-and desktop/mobile captures. Selector and interrupted launcher attempts remain
-diagnostic. One fresh exact-revision six-child sequence is authorized after
-77-block discovery. Consult `/tmp/tfp-certification-portfolio-state.json` for
-its owner, log/cache and atomic final exit; absence means unfinished.
-Previous recovery at `b1a39415` passed all three local browsers but stopped at
-UAT contest-banner completion with SDK TCP-connect timeouts. SOL high proved a
-bounded adapter-local family-attempt deadline correction with real sockets;
-canonical `STORAGE_CONNECT_ATTEMPT_TIMEOUT_MS` defaults to 1,000 ms. Retry/TLS/
-upload invariants remain unchanged. Focused reference download passed once;
-new six-child certification remains pending. Operator state for its authorized
-launch is `/tmp/tfp-certification-storage-state.json`; never overlap a live run
-or reuse previous revision's children.
-See `docs/operations/CREDENTIAL_FREE_RELEASE_CHECKPOINT.md` for backup/restore,
-service/provider checks, focused download/gallery evidence and remaining gates.
-The previous full run stopped on a Firefox notifications 500; its original
-cause remains unclassified. Reviewed sanitized logging and a focused Firefox
-pass are not a current certificate. Preserve the failure; use one frozen run,
-stop on first failure and never reuse stale child evidence. Production access,
-credentials/operator details and 19 strict configuration inputs remain pending.
+Local Chromium/Firefox/mobile each passed 77. UAT Chromium has 36 original
+passes plus 40 disjoint continuation passes; UAT Firefox has 63 original passes
+plus 13 disjoint continuation passes. UAT mobile passed 77. The two original
+failed blocks passed only in temporary-observer diagnostics: their contexts are
+dirty and input hashes differ. Totals are 460 clean-context passed executions,
+two diagnostic passes and two preserved original failures, all with zero retries.
+Do not describe these as 462 clean passes or a clean six-child certificate.
+
+SOL high independently checked ten context/manifest bindings, current four
+registry hashes, canonical AST/use-case mappings and capture shapes; all eight
+clean contexts match inputs hash `85131392d65eae16d5e42739628be133b4b91e33754e99a4b7c62da6a1bc52c3`.
+The original browser PUT timeout and telemetry undefined rejection remain
+unclassified. Earlier notifications 500, private-image ORB and insertion loss
+also remain distinct unresolved historical observations. No speculative fix,
+console suppression, rewritten evidence or aggregate splicing is permitted.
+
+Strict certification remains pending: the canonical runner requires fresh
+compatible children and the verifier rejects dirty/failed/duplicate slots.
+The user prohibits another full run; retain this limitation without weakening
+that contract. Production approval is not granted. The preserved 4 October
+strict doctor lists 19 external inputs; actual production host, provider delivery,
+bucket ACL/CORS/retention and independent off-host database/object recovery still
+need live proof. Never invent values or deploy production to close these gates.
+
+Read `docs/operations/CREDENTIAL_FREE_RELEASE_CHECKPOINT.md` for original evidence,
+continuation IDs and launch gates. Preserve historical f19 certification separately,
+all failure caches/reports and unrelated moderation-service/resume changes.
+Manual full certification remains available through `test:e2e:human:certify`,
+but is not authorized to run now. New work must be scoped, reviewed and validated
+against the affected consumers without silently restarting completed suites.
 
 ## Repository map
 
