@@ -542,3 +542,23 @@ status is `/tmp/tfp-uat-firefox-continuation-status-20261005T110854Z.json`.
 No mobile run, aggregate or release-verifier pass exists. Stop browser work here:
 no rerun, replacement, mobile continuation, or source/service mutation pending
 root's failure review. Preserve all artifacts.
+
+#### Firefox telemetry console-error boundary — 5 October 2026
+
+| Evidence | Reviewed conclusion |
+| --- | --- |
+| UAT Firefox case | The QR006 invitation-decline/requester-cancellation business flow completed. The one test failure occurred at the final browser-diagnostics assertion in `quick-request-lifecycle.human.spec.ts:137`. |
+| Telemetry timing | `TelemetryBootstrap.astro` module response was HTTP 200 in about 2 ms; the `undefined` telemetry console error appeared about 34 ms later during reload. |
+| Captured transport evidence | No corresponding HTTP failure, MIME mismatch, or security-policy failure was captured. This does not explain the error; its cause remains unknown. |
+| Source disposition | The reviewed unload/abort handler does not establish a source defect. No permanent fix is justified by this evidence. Keep the original failed report unchanged. |
+
+Root authorized the high-reasoning owner to run exactly one diagnostic of the
+original failed Firefox case: read-only lifecycle, preload-error and resource
+inspection with zero retries, max-failure-one, a fresh isolated cache, exact
+AST test-block discovery, and action evidence. The temporary observer must be
+restored byte-for-byte. This diagnostic is not a retry for certification and
+its pass cannot explain or erase the original failure. No other browser, mobile
+run, service change, permanent source edit, or continuation is authorized before
+root reviews that result. Disk is about 2 GiB free at authorization; apply a fresh
+per-stage space margin check before any run. Preserve the original report and
+all prior evidence.
