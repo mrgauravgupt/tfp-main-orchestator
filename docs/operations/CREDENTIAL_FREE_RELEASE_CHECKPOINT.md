@@ -221,6 +221,17 @@ Fresh discovery matched 77 canonical blocks in all three projects, covering all
 atomic status is still `running`, so no completion is claimed. State records
 the isolated cache, logs, wrapper and status path. Local Chromium is first;
 leave the healthy one-owner serial sequence uninterrupted.
+The same sequence is now terminal with wrapper exit 1 and owner absent. Local
+Chromium, Firefox and mobile plus UAT Chromium each passed 77/77; UAT Firefox
+stopped after 42 passed, one failed and 34 not run. No UAT mobile or aggregate
+started. First failure: messaging-notifications.human.spec.ts:148, block/unblock
+partner safety case. At line 186, after the visible blocked-boundary compose
+submission, waiting for `sent=1` timed out after 30 seconds. Missing action
+evidence is a cascade; the initiating request/state cause is not established.
+Preserve the entire run, all traces/screenshots/videos/context/manifests/logs,
+cache and persisted state. SOL high is assigned read-only browser/network/log/
+database/source correlation and a grounded cause/correction table before any
+source change or probe. No automatic replacement or timeout increase.
 
 Pre-launch disk review authorized only stale ignored Android intermediate
 compiled files: four named generated directories and eight `.so` files under
