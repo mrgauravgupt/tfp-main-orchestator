@@ -356,3 +356,26 @@ Precise cleanup removed 60 authorized compiled intermediate files, reclaiming
 symbol archive hash is unchanged and native Android Git status is clean. Actual
 inventory is `/tmp/tfp-certification-messaging-cleanup-20261005.json`. Free space
 was about 2.0 GiB at root observation; reassess before any full certification.
+
+### Responsive messaging and header focused proof — 5 October 2026
+
+Root accepted the five-file responsive correction for messaging intrinsic sizing
+and desktop header geometry. Web build passed; the previously recorded scoped
+CSS tests, lint, Web typing and diff checks were reused. App commit
+`3cde32e73a9f530d406e443ce68434e49e8e5d6b` was pushed and deployed to main UAT
+as release `20261005T050904Z-3cde32e7`. The exact deployed commit marker matched;
+stack verification passed for eight active units, six loopback health endpoints,
+PostgreSQL readiness, loopback-only private listeners and public Access HTTP 302.
+
+The one focused zero-retry UAT Firefox run
+`uat-firefox-messaging-responsive-20261005T051334Z-3cde32e7` passed 1/1 with no
+failures, flakes or skips. Its clean context binds the exact app/harness commit
+and release; all four registry hashes match. Canonical evidence maps the test to
+MSG-005/006/007/008 and contains twelve regular before/after captures. Recorded
+document widths equal the 1440, 768 and 390 pixel viewports in both conversation
+and blocked-sender states. Root independently accepted the context and reviewed
+desktop/mobile captures. Compact mobile navigation was visible, but the drawer
+was not opened and no drawer interaction is claimed. This grep-focused run has
+incomplete suite coverage and is diagnostic, not a release certificate. No new
+six-child certification is authorized until disk headroom is reviewed; preserve
+all prior evidence and stop at the first failure when a future run is authorized.
