@@ -528,6 +528,17 @@ launcher and log are `/tmp/tfp-uat-firefox-continuation-state.json`,
 `tfpphotographers/test-results/reports/human-target/uat/uat-firefox-continuation-20261005T110854Z/`.
 At launch, free space was 1,512,976,384 bytes versus a 1,235,306,368-byte gate
 including a 430 MB report estimate, 256 MiB variance and 512 MiB reserve. The
-owner is active. Do not launch UAT mobile until Firefox finishes, its evidence
-is accepted, and a fresh disk measurement covers the mobile estimate, variance
-and reserve. Preserve all artifacts; no completed test is to be repeated.
+run terminated at 11:58:07 UTC, exit 1: 63 passed, 1 failed, 0 flaky and 13 not
+run. The first failure was `quick-request-lifecycle.human.spec.ts:137`,
+“persists invitation decline and requester cancellation states”; its browser
+diagnostics reported `Failed to load telemetry module: undefined` from the
+UAT `TelemetryBootstrap.astro` bundle, and the fixture's console-error check
+failed. This is the observed boundary; cause remains for separate read-only
+review. Preserve screenshot, video, trace, action manifest and error context in
+`tfpphotographers/test-results/reports/human-target/uat/uat-firefox-continuation-20261005T110854Z/artifacts/quick-request-lifecycle.hu-33c63-quester-cancellation-states-firefox/`.
+Full report is
+`tfpphotographers/test-results/reports/human-target/uat/uat-firefox-continuation-20261005T110854Z/`;
+status is `/tmp/tfp-uat-firefox-continuation-status-20261005T110854Z.json`.
+No mobile run, aggregate or release-verifier pass exists. Stop browser work here:
+no rerun, replacement, mobile continuation, or source/service mutation pending
+root's failure review. Preserve all artifacts.
