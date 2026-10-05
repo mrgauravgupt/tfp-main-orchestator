@@ -499,12 +499,35 @@ UAT release, four registry hashes and input hash. The child report is
 status is `/tmp/tfp-uat-continuation-status-20261005T094329Z.json`. Its manifest
 coverage remains `incomplete` because this is a focused child. No aggregate or
 release-verifier pass was generated, and these attempts must not be spliced into
-the failed original sequence or described as certification. Root evidence
-acceptance is pending.
+the failed original sequence or described as certification. Root accepted this
+Chromium40 continuation evidence: exact clean app/harness and UAT release,
+context hash, 40/40 passes with zero retries, canonical mapping,
+and all 270 regular captures. Its manifest remains incomplete and it is not a
+strict certification child by itself.
 
-No owner is active. Free space measured 1.44 GiB after this 223,515,864-byte
-report was retained. Conservative remaining UAT Firefox/mobile report estimates
-are about 0.9–1.0 GiB combined, before uncertainty and the 512 MiB operating
-margin; current headroom is insufficient. Do not start either slot until root
-accepts this evidence and a new disk check confirms sufficient margin. Preserve
-all artifacts and do not repeat completed tests.
+#### UAT Firefox continuation — 5 October 2026
+
+The previously unstarted UAT Firefox browser variant is authorized once. A
+fresh isolated-cache `--list` discovery matched all 77 Firefox blocks by
+canonical AST spec/line/title and use-case IDs, covering all 146 implemented
+IDs with the frozen four registry hashes and `inputsHash`. Selection record:
+`/tmp/tfp-uat-firefox-selection-v2-20261005T110854Z.json`; discovery summary and
+raw list are `/tmp/tfp-uat-firefox-discovery-20261005T110854Z.json` and
+`/tmp/tfp-uat-firefox-list-20261005T110854Z.log`. This browser-project variant
+is unstarted; it does not replay the completed UAT Chromium blocks or the
+separate event-gallery diagnostic.
+
+One serial Firefox run launched at 11:15:46 UTC as
+`uat-firefox-continuation-20261005T110854Z`, owner PID 52832, on the exact
+frozen app/harness and UAT release above. It uses zero retries, max-failure-one,
+action/full-page evidence and an isolated cache. State, atomic final status,
+launcher and log are `/tmp/tfp-uat-firefox-continuation-state.json`,
+`/tmp/tfp-uat-firefox-continuation-status-20261005T110854Z.json`,
+`/tmp/tfp-uat-firefox-continuation-launcher-20261005T110854Z.sh` and
+`/tmp/tfp-uat-firefox-continuation-launch-20261005T110854Z.log`; report path is
+`tfpphotographers/test-results/reports/human-target/uat/uat-firefox-continuation-20261005T110854Z/`.
+At launch, free space was 1,512,976,384 bytes versus a 1,235,306,368-byte gate
+including a 430 MB report estimate, 256 MiB variance and 512 MiB reserve. The
+owner is active. Do not launch UAT mobile until Firefox finishes, its evidence
+is accepted, and a fresh disk measurement covers the mobile estimate, variance
+and reserve. Preserve all artifacts; no completed test is to be repeated.
