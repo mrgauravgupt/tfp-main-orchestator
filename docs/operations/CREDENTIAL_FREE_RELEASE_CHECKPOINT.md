@@ -386,7 +386,7 @@ The second read-only generated-output inventory is
 `/tmp/tfp-android-additional-inventory-20261005.json`: only about 91 MB remains
 within the approved Android output scope. Nothing from this inventory was
 deleted; some objects may be the only retained symbol source. Root verified
-5.0 GiB free before launch. Exactly one fresh canonical sequence is now active
+5.0 GiB free before launch. Exactly one fresh canonical sequence was launched
 as `web-certification-20261005T063826Z-e2d64ae9` on clean app/harness
 `3cde32e73a9f530d406e443ce68434e49e8e5d6b`, UAT app release
 `20261005T050904Z-3cde32e7`, and collage release
@@ -401,6 +401,32 @@ is `/tmp/tfp-certification-responsive-status-20261005T063411Z.json`, and live
 state is `/tmp/tfp-certification-responsive-state.json`. The report directory
 is `tfpphotographers/test-results/reports/human-web-certification/web-certification-20261005T063826Z-e2d64ae9/`.
 At launch observation, the local Chromium child had begun and its first test
-passed; this is not a completion or certification claim. Keep source frozen,
-preserve all evidence, and stop at the first actual failure. No more than one
-owner is authorized.
+passed. The terminal outcome is recorded below; no replacement run is
+authorized.
+
+The sequence stopped at its first actual browser failure on 5 October at
+08:28:44 UTC, with launcher exit 1. All three local children completed 77/77
+with zero failures, flakes or skips. Their 77 test blocks each matched the
+canonical AST declaration and evidence use-case IDs; each catalog is complete
+with 77 unique test IDs, 85 action rows and 510 regular before/after captures.
+The three local contexts have distinct run IDs and hashes and share the exact
+frozen revision, registry hashes and input hash. This validates those local
+children only; it does not complete target execution or certification.
+
+UAT Chromium stopped at `event-lifecycle.human.spec.ts:215`, “enforces event
+photo gallery attendance prerequisites and pre-start submission locks”: 36
+passed, 1 failed, 0 flaky, 40 not run, with zero retries. `createEvent` timed
+out waiting for the expected post-submit event URL; browser diagnostics also
+recorded a timed-out event-cover upload request to Backblaze B2. The test then
+failed its evidence-finalization guard because it did not reach a before/after
+action capture. This is the sanitized observed failure; its underlying cause
+remains under separate review. The regular first-failure screenshot, video,
+trace and error-context are preserved with the child report at
+`tfpphotographers/test-results/reports/human-web-certification/web-certification-20261005T063826Z-e2d64ae9/children/uat-chromium/`.
+No UAT Firefox/mobile children, aggregate, or release-verifier pass exist for
+this run. The atomic final status is `/tmp/tfp-certification-responsive-status-20261005T063411Z.json`
+(exit 1, complete); `/tmp/tfp-certification-responsive-state.json` retains
+the launch metadata and still says `running`. The launcher is no longer active.
+At root's terminal snapshot, 1.52 GiB remained free; this does not change the
+failure classification. Preserve all artifacts and do not retry or claim
+certification from the local children.
