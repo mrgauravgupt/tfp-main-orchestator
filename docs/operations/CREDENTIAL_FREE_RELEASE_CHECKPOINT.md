@@ -607,3 +607,17 @@ This owner must stop on its first actual failure. After it completes, stop for
 SOL-high independent review. These children and the diagnostic must not be
 spliced into a strict clean six-child certificate; no aggregate/verifier pass
 or production approval is claimed.
+
+The mobile77 owner completed at 14:39:12 UTC with exit 0: 77 passed, 0 failed,
+flaky or skipped, and zero retries. The bounded audit verified the 77 exact
+selection and canonical AST mappings across 146 use-case IDs, context hash
+`ed7b20d219ccc4128cc4e0c5dba534430c8d7605eb5223b66139b26ca08d8ab5`, exact app,
+harness and UAT release, 77 evidence cases, 85 actions and 510 regular
+non-symlink captures; per-case manifests and registry hashes match the context.
+The child remains `incomplete` and is not a certification. Its report is
+`tfpphotographers/test-results/reports/human-target/uat/uat-mobile77-continuation-20261005T134700Z/`;
+atomic status is `/tmp/tfp-uat-mobile77-status-20261005T134700Z.json`. At the
+terminal snapshot, 0.98 GiB remained free. Stop browser execution and send all
+three continuation children plus the separately instrumented QR006 diagnostic
+to SOL-high for independent judgment. No aggregate, clean six-slot
+certification, or production approval is claimed.
