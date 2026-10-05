@@ -385,12 +385,22 @@ all prior evidence and stop at the first failure when a future run is authorized
 The second read-only generated-output inventory is
 `/tmp/tfp-android-additional-inventory-20261005.json`: only about 91 MB remains
 within the approved Android output scope. Nothing from this inventory was
-deleted; some objects may be the only retained symbol source. Existing complete
-child sizes and the scaled partial Firefox report project about 2,261 MiB for
-six fresh children, plus at least a 512 MiB operating margin. Free space was
-2,001 MiB at the agent measurement and fluctuated to about 2.2 GiB at root
-observation. Require at least 3 GiB available before the one final sequence.
-No runner is active. The safe cleanup pool does not resolve this shortfall;
-additional user-managed disk space is required. Keep all reports, caches,
-archives, symbols and unrelated data intact. The heartbeat remains active and
-will resume the reviewed frozen checkpoint when disk headroom is sufficient.
+deleted; some objects may be the only retained symbol source. Root verified
+5.0 GiB free before launch. Exactly one fresh canonical sequence is now active
+as `web-certification-20261005T063826Z-e2d64ae9` on clean app/harness
+`3cde32e73a9f530d406e443ce68434e49e8e5d6b`, UAT app release
+`20261005T050904Z-3cde32e7`, and collage release
+`20261004T211904Z-d6fadf54`. Fresh non-browser discovery matched all 77
+canonical blocks and all 146 implemented IDs; the four frozen registry hashes
+and run-input hash match the accepted baseline. The isolated cache is
+`/tmp/tfp-certification-cache-responsive-20261005T063411Z`; discovery log is
+`/tmp/tfp-certification-list-responsive-20261005T063411Z.log`. The detached
+owner is PID 17278, launcher log is
+`/tmp/tfp-certification-responsive-launch-20261005T063411Z.log`, final status
+is `/tmp/tfp-certification-responsive-status-20261005T063411Z.json`, and live
+state is `/tmp/tfp-certification-responsive-state.json`. The report directory
+is `tfpphotographers/test-results/reports/human-web-certification/web-certification-20261005T063826Z-e2d64ae9/`.
+At launch observation, the local Chromium child had begun and its first test
+passed; this is not a completion or certification claim. Keep source frozen,
+preserve all evidence, and stop at the first actual failure. No more than one
+owner is authorized.
