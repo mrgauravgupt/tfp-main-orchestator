@@ -12,6 +12,16 @@ the canonical exact-revision six-child acceptance contract remains unchanged.
 Report resumed validation and any outstanding strict-certification gate honestly.
 No browser continuation is authorized while root-cause review remains pending.
 
+Root reviewed the read-only upload findings and executable XHR handlers and
+authorized one diagnostic execution of only the failed event-gallery case.
+The signed browser object PUT had no recorded HTTP response; no upload-complete
+or event-create POST occurred. Current object absence follows expired-intent
+cleanup and does not prove the historical PUT wrote no bytes. No source fix is
+justified yet. The diagnostic may observe sanitized CDP/XHR lifecycle/timings,
+without interception, replay, bypass or changed timeouts. Restore temporary
+observation source byte-for-byte afterward and stop for root review. Do not
+repeat the diagnostic merely because it passes without reproducing the fault.
+
 ## Deployment and completed work
 
 Application/harness: `27045e137befb3be31c12a13abdcb60b0f7490e5`.
