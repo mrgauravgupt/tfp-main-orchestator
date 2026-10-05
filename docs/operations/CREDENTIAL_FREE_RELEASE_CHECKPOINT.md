@@ -1,6 +1,79 @@
 # Credential-free release checkpoint — 5 October 2026
 
-## Final independent judgment and handoff
+## Scoped two-failure follow-up — completed authorized work
+
+The user authorized GPT-6.1 SOL extra-high for analysis/fixes, low-cost read-only
+monitoring and autonomous scoped release decisions. No full strict-human suite
+or completed browser child was replayed. Current clean app/harness is
+`2bc12a2710cc961c0005a8565742e2ae2c8ed763`, UAT release
+`20261005T165154Z-2bc12a27`; parent gitlink commit is `cb77b342`.
+The earlier seven-file upload/telemetry change is `c29faaf0556bba628ec699a4180d9bfc9efa387a`,
+parent `23cbcec`, deployed release `20261005T161637Z-c29faaf0`. The later layout
+commit contains exactly the stylesheet, explicit browser regression and test guide.
+Both prior releases were retained. Collage remains `d6fadf54` / release
+`20261004T211904Z-d6fadf54`; no worker/schema/migration/storage-policy change occurred.
+
+| Boundary | Change and executed proof | Remaining limitation |
+| --- | --- | --- |
+| Browser upload | Finite XHR deadline derived from canonical presign expiry minus presign elapsed time; explicit timeout/abort settlement; safe reporter containment; completion outside transfer fallback so response loss cannot initiate a second upload | Original provider PUT timeout/bytes remain unclassified; timeout/abort do not automatically replay |
+| Telemetry import | Only bounded reason-kind/readiness/visibility/unloading metadata added; existing error arguments, unknown-error reporting and navigation-abort rules preserved | Two bounded real-module navigation/cache probes did not reproduce the undefined rejection; diagnostic improvement is not a root-cause fix |
+| Lower-level regressions | 36/36 actual Chromium/Firefox HTTP/XHR fault tests, including the real event-create/localized form-recovery consumer; executable telemetry contract, web/E2E types, scoped lint, static human guard, production build and diff checks passed | Hermetic faults are not customer/UAT/certification passes |
+| Focused UAT Chromium at c29faaf | `uat-chromium-evt013-fix-20261005T161824Z-c29faaf0`: EVT013 source line 215 passed 1/1 once, zero retries, exit 0; clean exact context/release, live registries and six regular captures; desktop/mobile reviewed | Attendance/pre-start flow does not claim that a pending gallery placeholder proves approved image delivery |
+| Focused UAT Firefox at c29faaf | `uat-firefox-qr006-fix-20261005T163449Z-c29faaf0`: QR006 source line 137 passed 1/1 once, zero retries, exit 0; clean exact context/release, matching hashes and six regular captures | Original telemetry rejection did not recur; this does not establish its cause. Mobile final inspection found document width 544 px at viewport 390 px |
+| Invitation layout at 2bc12a27 | Invitation-only wrapping/shrinking retains full names/statuses and existing tokens. Actual compiled Sass/local Inter in Chromium and Firefox failed four old-CSS mobile/tablet checks, then passed all six viewport checks. Scoped lint/types and one production build passed | Shared card footer/chat/forms and upload/telemetry semantics remain unchanged; no second QR business execution |
+| Read-only live layout at 2bc12a27 | `uat-firefox-qr006-layout-readonly-20261005T165423Z-2bc12a27`: existing cancelled-request visit, attempt 1/retries 0/exit 0; eight invitations, full-character bounds and back control fit at 1440/768/390 px; browser/server errors zero; three regular screenshots audited and desktop/mobile visually reviewed | This is affected layout evidence, not a strict-human business child or aggregate certification |
+
+Both c29faaf business proofs share inputs hash
+`4af1b2abb6785ed662524ec347673ea9ef3e5d02e58485fffcf87cf64509860c`.
+Chromium canonical context hash is
+`fa7ed42af97803013379ea75f743196379e76d4d3bd67910c298aa16d003b673`;
+Firefox context hash is
+`5abc3e640a4c57affbd3172b8c432667ed84527685c1f457f62cc1a0b5379aff`.
+Their manifests remain incomplete. Current read-only layout inputs hash is
+`b286fa4f0fee9c4f2ee8bc36903c8bcf92e8083bc9803d3862c5ccafe5d19f50`,
+context hash `d9601ccdbb25e2f38ec61614bde4f6700f4730c4a0c30579c23f320bc83eb74b`.
+All four live registry hashes remained unchanged. Independent audits are under
+`tfpphotographers/test-results/reports/diagnostic-review/two-failure-fix-20261005-sol-xhigh/`,
+including `supervisor-final-audit.json` and `supervisor-layout-audit.json`.
+The standalone read-only report, context, status and screenshots are under
+`tfpphotographers/test-results/reports/diagnostic-review/uat-firefox-qr006-layout-readonly-20261005T165423Z-2bc12a27/`.
+
+Canonical deployment passed: eight active units, six loopback health endpoints,
+PostgreSQL readiness, loopback-only listeners and public Access HTTP 302. Root
+independently checked exact current release/commit and live FE/BE process cwd
+bindings, and verified the c29faaf release remains retained. The c29faaf deployed
+source archive had all 1,168 blobs checked. The later deployed compiled CSS
+contains the accepted invitation rule. No runner remains; both agents are idle.
+
+The first opt-in Vitest configuration accidentally merged its include with unit
+discovery and ran 116 files/800 unit/lower-level tests once; all passed. The
+configuration was corrected and exact discovery verified. No DB reset/provider
+mutation or full strict-human/customer-flow suite resulted from this mistake,
+and the broader unit suite was not repeated. Normal unit discovery excludes
+browser files; the dedicated command requires pinned Chromium/Firefox and fails
+explicitly if binaries are missing. Commands executed for this scoped work:
+
+```bash
+bash ./scripts/pnpm-node20.sh --filter web test:browser-faults
+bash ./scripts/pnpm-node20.sh --filter web exec vitest run --config vitest.browser.config.ts tests/client/quick-request-invitations.browser.ts
+bash ./scripts/pnpm-node20.sh --filter web typecheck
+bash ./scripts/pnpm-node20.sh --filter web build
+bash ./scripts/oci/verify-uat-stack.sh # run from the parent workspace
+```
+
+The unchanged strict certificate requires six compatible clean complete children
+and aggregate/verifier exit 0. It is not satisfied here; the user prohibits full
+replacements. Never splice old, partial or focused evidence, or erase original
+failures. Older notifications 500, private-image ORB and insertion loss remain
+separate historical unclassified observations. Production approval/deployment did
+not occur. The preserved 4 October strict doctor lists 19 external inputs; actual
+production host/configuration, provider delivery, ACL/CORS/retention, legal/operator
+values and independent off-host database/object restoration still require live
+proof. Do not invent inputs or claim current production readiness from this UAT
+follow-up. No continuing monitor/full test launch is needed for completed scoped
+work; new findings require targeted evidence-led review.
+
+## Historical independent judgment at 3cde32e7
 
 All authorized browser continuation is complete. SOL-high independent review
 found no evidence inconsistencies in the ten reports: context hashes, exact

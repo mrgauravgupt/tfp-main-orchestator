@@ -1,6 +1,41 @@
 # Workspace-Wide Agent Notes
 
-## Credential-free release handoff — 5 October 2026
+## Scoped failure follow-up — 5 October 2026
+
+Analysis and fixes used GPT-6.1 SOL extra-high; low-cost agents monitored read-only.
+The latest user authorized autonomous scoped release decisions. Their no-full-rerun
+policy remains in force: no completed suite or browser child was replayed.
+Current clean app/harness is `2bc12a2710cc961c0005a8565742e2ae2c8ed763`, deployed
+UAT release `20261005T165154Z-2bc12a27`; collage remains `d6fadf54`.
+
+Confirmed upload recovery gaps are fixed: a canonical-presign-expiry-derived XHR
+deadline, explicit timeout/abort settlement, reporter containment and no second
+upload from a lost completion response. Real Chromium/Firefox fault and actual
+local event-form consumer checks passed 36/36. Telemetry adds bounded lifecycle
+diagnostics without suppressing unknown errors or changing known-abort handling.
+Neither original provider timeout nor original undefined rejection has a proven
+initiating cause; do not label observability as a telemetry root-cause fix.
+
+At `c29faaf0556bba628ec699a4180d9bfc9efa387a`, the two affected clean UAT proofs,
+EVT013 Chromium and QR006 Firefox, each passed once, zero retries, exit 0, with
+matching hashes/canonical mappings and six regular captures each. QR006 final
+mobile inspection found invitation overflow. A separate three-file layout fix
+wraps full invitation identities/statuses without changing footer/chat/forms;
+compiled real-browser checks failed four old-CSS viewport checks and passed six
+new-CSS checks. No business flow was replayed for the layout fix.
+
+One read-only UAT Firefox visit of the existing cancelled request on `2bc12a27`
+passed at 1440/768/390 px, all eight full identities/statuses fit, controls remain
+reachable, browser/server errors are zero and three regular captures were audited.
+Root inspected desktop/mobile images, exact live FE/BE revision/release markers,
+context/input/registry hashes and terminal exit. Prior releases remain retained.
+Current layout inputs hash is `b286fa4f0fee9c4f2ee8bc36903c8bcf92e8083bc9803d3862c5ccafe5d19f50`.
+No runner remains. Preserve historical evidence, unrelated moderation/resume
+changes and original unclassified observations. No current six-child certificate
+or production approval exists; old/focused proofs cannot certify the new revision.
+Read the checkpoint for exact run identities, commands and external launch gates.
+
+## Historical credential-free handoff at 3cde32e7 — 5 October 2026
 
 Feasible continuation and SOL-high independent evidence review are complete.
 No browser runner remains and no further tests are authorized under the user's
