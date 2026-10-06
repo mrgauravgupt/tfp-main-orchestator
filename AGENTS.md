@@ -2,45 +2,89 @@
 
 ## Code-first production audit corrections — 6 October 2026
 
-The latest user authorized fixing the three confirmed executable-code findings.
-App `911cafb6e1d7dc7d2a79debb4fdbda940cfa2d2e` is published and deployed at
-UAT `20261006T040609Z-911cafb6`; all 1,168 archived source blobs match Git.
-Worker `4e3e9821cc2d349264b9a61011bf1c38d560bf40` is published; its exact UAT
-deployment and affected media proof are in progress. Both nested trees are clean.
+All three confirmed audit findings are fixed, independently reviewed with
+GPT-6.1 SOL extra-high, published and deployed to UAT. App/harness is clean
+`911cafb6e1d7dc7d2a79debb4fdbda940cfa2d2e`, UAT release
+`20261006T040609Z-911cafb6`. Worker is clean
+`4e3e9821cc2d349264b9a61011bf1c38d560bf40`, release
+`20261006T042235Z-4e3e9821`. Parent publication/gitlinks are `f9addc3`.
+No browser owner remains. No completed suite/browser matrix was restarted.
 
-- Upload failure cleanup must win the real PENDING-to-FAILED database transition
-  before deleting the shared finalized object; competing committed media/outbox
-  remain intact. Nine real PostgreSQL cases, 49 affected consumer checks, types,
-  scoped lint and upload build passed; old source failed five discriminators.
-- Early Web normalization uses existing trusted external host/protocol and retains
-  raw query/hash semantics. Real middleware 20/20 and old-origin discrimination
-  passed; strict guard 88/88, Web typing and deployed production build passed.
-  Read-only UAT navigation passed six desktop/mobile HTTPS redirects, zero errors
-  and six audited/visually inspected captures, without requesting delivered OTP.
-- Worker writes commit exact per-write identity before bytes, fence against
-  retirement and use existing revocation/erasure worklists for interrupted output.
-  Holds/shared references and uncertainty remain preserved. Later success cannot
-  settle older uncertain writes; erasure re-deletes exact keys after late
-  reappearance while remaining incomplete. Real PostgreSQL/Sharp/filesystem/SDK
-  HTTP checks passed 60/60; final affected file passed 16/16; targeted mutations
-  failed the intended cleanup/late-write tests. Types and production build passed.
-  No schema/migration/queue replacement or security suppression occurred.
+- Upload failure cleanup must win the real PENDING-to-FAILED transition before
+  deleting the shared final object. Nine real PostgreSQL cases and 49 affected
+  consumer checks passed; original source failed five intended discriminators.
+  Upload/API types, strict test typing, scoped lint and upload build passed.
+- Web early path normalization uses existing trusted external host/protocol,
+  preserving raw query/hash and API/asset exclusions. Actual middleware passed
+  20/20; restored old-origin transform failed the three intended production
+  cases. Web typing, scoped lint, strict-human guard 88/88 and deployed production
+  build passed. Read-only UAT desktop/mobile navigation passed six HTTPS chains
+  with zero errors; all six regular captures were visually inspected.
+- Worker writes commit exact per-write UUID/key ownership before bytes and fence
+  against retirement. Existing revocation/erasure worklists include interrupted
+  output; holds/shared references stay protected. Later success cannot settle
+  an older unknown write. Existing erasure attempts re-delete exact uncertain
+  keys after late reappearance without acknowledging completion. Real PostgreSQL,
+  Sharp/filesystem and SDK HTTP checks passed 60/60; the final affected file
+  passed 16/16. Both cleanup-removal and late-erasure-reset mutations failed the
+  intended assertions. Types and production build passed. No migration, queue
+  replacement, hidden retry or security/diagnostic suppression occurred.
 
-A fresh strict production doctor on 6 October still reports 19 external input
-gaps: production DB bindings, legal/operator details, service origins, separate
-private/public storage credentials and backup bindings. Host/DNS/TLS, provider
-delivery and ACL/CORS/retention, and independent off-host restoration require
-production access. Never fabricate values or claim production approval.
+Both deployed source archives were checked against actual Git archive content:
+1,168 app blobs and 29 worker blobs matched. Worker archive export-ignore correctly
+omits test sources. Exact worker service cwd matches its release. Full UAT health
+passed: eight active units, six reachable loopback endpoints, ready PostgreSQL,
+loopback-only listeners and public Cloudflare Access 302.
 
-No full suite or completed browser matrix was replayed. Focused evidence cannot
-certify this new revision, and the unchanged strict six-child certificate remains
-pending under the user's no-full-rerun policy. Unknown original provider timeout,
-telemetry rejection and earlier historical observations remain distinct. Historical
-orphaned objects without attempt records were not enumerated/deleted. Remote
-settlement requires provider evidence/operator resolution; retries preserve that
-uncertainty instead of falsely acknowledging erasure. Preserve all old evidence
-and unrelated moderation-service/resume dirt. Evidence is under application
-`test-results/reports/diagnostic-review/production-code-fixes-20261006/`.
+One affected UAT Chromium block, `uat-prod-audit-media-20261006T042632Z-911cafb6`,
+passed 1/1 once, zero retries/failures/flakes/skips, canonical runner exit 0.
+The unchanged profile case reached avatar/cover upload, invalid-file handling,
+exact newly uploaded loaded-image proof, deletion cancel/confirm/persistence and
+public approved loaded images. Root checked regular context/manifest, exact clean
+app/harness/release, live registry/input hashes, canonical PRO001/002/003 mapping,
+one attempt, complete six captures and empty console/page/request/server error
+arrays. Desktop/mobile before/after captures were visually inspected. Context
+hash is `3e1e0c9f3c4a7aab2328359afdc61f505646d66b40a795deacc170b73984527a`;
+inputs hash is `1dba54aea47739ec2dfe1584b5ae71df6caa5f7e9dc5761db7e3a6c440c9df66`.
+The focused manifest remains incomplete; no aggregate/certificate was generated.
+
+Preserve the external launcher's original status: its BaseException handler caught
+successful SystemExit(0) after the canonical child completed and incorrectly wrote
+interrupted/1. This is a proven wrapper bookkeeping error; original manifests,
+results, evidence and status were not rewritten and no browser rerun occurred.
+`/tmp/tfp-prod-audit-media-reviewed-status.json` points to the independent audit and
+correct canonical exit. A first launcher syntax check ran zero tests. A first
+non-browser discovery lacked required origin variables and ran zero tests; both
+setup artifacts remain preserved. Later official fresh-cache discovery matched
+exactly the canonical profile block before its one execution. The earlier local
+Web build completed but its zsh wrapper attempted to assign readonly `status`;
+the deployed production build subsequently supplied definitive exit-zero proof.
+
+Evidence and exact commands/logs are under application
+`test-results/reports/diagnostic-review/production-code-fixes-20261006/`, including
+`supervisor-media-audit.json`, `supervisor-redirect-audit.json`, both source audits
+and `worker-review/review.json`. Worker mutation modules were disposable compiled
+copies; tracked source was never reverted. Disposable PostgreSQL schemas were
+dropped; no UAT reset, provider fault injection or uncertain mutation replay ran.
+
+The fresh 6 October strict production doctor still exits 1 with 19 external input
+gaps: three DB bindings, six legal/operator fields, three service URLs, four
+private/public storage credential fields and three backup bindings. Production
+host/DNS/TLS, provider delivery, bucket ACL/CORS/retention, and independent off-host
+DB/object restoration still require production access. Values were not fabricated;
+production deployment/approval did not occur. Historical orphan objects lacking
+write-intent metadata were not enumerated/deleted. Unknown provider settlement
+needs provider evidence/operator resolution and can leave an existing job terminal.
+
+The unchanged strict certificate requires six compatible complete clean children
+and aggregate/verifier exit 0; this new revision has affected proof only. The user
+prohibits full replacements: never splice historical/partial/focused evidence or
+restart all tests. Original provider timeout, telemetry rejection and earlier
+unclassified observations remain distinct; these three confirmed code corrections
+are not claimed to explain them. Preserve historical f19, all failed reports/caches
+and unrelated moderation-service/resume changes. Manual full certification remains
+available but is not authorized by this scoped work. No continuing monitor or
+further browser launch is needed after the handoff.
 
 
 ## Scoped failure follow-up — 5 October 2026
