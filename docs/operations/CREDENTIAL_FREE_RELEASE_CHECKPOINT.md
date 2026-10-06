@@ -1,4 +1,59 @@
-# Credential-free release checkpoint — 5 October 2026
+# Credential-free release checkpoint — current handoff 6 October 2026
+
+## Current SSOT/adapter release handoff — 6 October 2026
+
+Seven confirmed code-first findings are fixed, independently reviewed using
+GPT-6.1 SOL high, published and deployed to UAT. Current clean revisions/releases:
+
+- App/harness `9df8105d7a24edd7bafe68bd444da43421616a35` /
+  `20261006T105806Z-9df8105d`.
+- Image worker `6272694fe8dfd9211028e83468eb9789cd7eb52a` /
+  `20261006T105210Z-6272694f`.
+- AI interface `96fef1a18cd3cfeffba28f3d170fe451b7985e58` /
+  `20261006T105249Z-96fef1a1`.
+- Parent gitlinks `36d56072ebd99610f28856d2ab9ca88cacebe27e`.
+
+Canonical owners now fence finalized upload linking and held/shared source
+removal, preserve supported worker configuration, reject late terminal-request
+responses, serialize recipient challenge admission, share new-user registration
+policy and sanitize AI failure-code sinks. No migration, queue replacement,
+security suppression or hidden retry was introduced. Current executable code
+and actual consumers remain authoritative; this section records reviewed evidence.
+
+Real PostgreSQL/HTTP/ASGI checks and discriminating mutations, types, scoped lint,
+production builds, architecture guard and strict-human guard 88/88 passed. The
+preserved early combined upload run failed and was followed by a reviewed fix
+and scoped final checks; do not relabel that run as passed. Deployed Git archives
+match 1,174 app / 29 worker / 23 AI blobs. Full UAT health passed.
+
+One affected UAT Chromium child `uat-ssot-affected-20261006T110220Z-9df8105d`
+passed exactly 2/2 once, zero retries/failures/flakes/skips and exit 0. Root and an
+independent SOL high agent audited canonical mappings, regular context/manifest,
+exact clean revision/release and live hashes. Root viewed all twelve before/after
+1440/768/390 captures; relevant diagnostic arrays are empty. Context hash:
+`0b81ef4b9c619027f78d699af20251355d7429037fdddf7fce3cf321a29b7750`;
+inputs hash:
+`da0005c9a1a2c39c7eb117f9a459ee9f46a9df4b7f2771f1fa54d5b17bfada19`.
+
+Current feasible scoped implementation/validation is complete. No browser owner,
+continuing monitor or additional browser launch is required. The focused child
+is incomplete: no six-child aggregate/verifier certificate or production approval
+exists. The user's no-full-rerun policy remains binding. Do not splice or replay
+historical/failed/partial/dirty children. OAuth/delivered-email OTP business cases
+remain excluded; lower-level auth policy/reservation checks are not those passes.
+Original provider timeout, telemetry rejection and earlier unclassified observations
+remain distinct; these seven corrections do not claim to establish their causes.
+
+Fresh production doctor exits 1 with nineteen external input gaps (3 database,
+6 legal/operator, 3 service URLs, 4 scoped storage credential and 3 backup bindings).
+Actual production host/DNS/TLS, provider delivery, bucket ACL/CORS/retention and
+independent off-host database/object restoration remain access-dependent launch
+gates. Never invent values or deploy production to close them. Preserve unrelated
+moderation-service/resume work, historical f19 and all failure reports/caches.
+
+Exact source ownership, checks/commands, commits, runtime proof and limitations:
+`docs/reviews/2026-10-06-ssot-adapter-production-audit.md`. Evidence is under app
+`test-results/reports/diagnostic-review/ssot-architecture-audit-20261006/`.
 
 ## Code-first production audit corrections — 6 October 2026
 
