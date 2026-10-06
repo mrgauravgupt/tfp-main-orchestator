@@ -1,5 +1,48 @@
 # Credential-free release checkpoint — 5 October 2026
 
+## Code-first production audit corrections — 6 October 2026
+
+The latest user authorized fixing the three confirmed executable-code findings.
+App `911cafb6e1d7dc7d2a79debb4fdbda940cfa2d2e` is published and deployed at
+UAT `20261006T040609Z-911cafb6`; all 1,168 archived source blobs match Git.
+Worker `4e3e9821cc2d349264b9a61011bf1c38d560bf40` is published; its exact UAT
+deployment and affected media proof are in progress. Both nested trees are clean.
+
+- Upload failure cleanup must win the real PENDING-to-FAILED database transition
+  before deleting the shared finalized object; competing committed media/outbox
+  remain intact. Nine real PostgreSQL cases, 49 affected consumer checks, types,
+  scoped lint and upload build passed; old source failed five discriminators.
+- Early Web normalization uses existing trusted external host/protocol and retains
+  raw query/hash semantics. Real middleware 20/20 and old-origin discrimination
+  passed; strict guard 88/88, Web typing and deployed production build passed.
+  Read-only UAT navigation passed six desktop/mobile HTTPS redirects, zero errors
+  and six audited/visually inspected captures, without requesting delivered OTP.
+- Worker writes commit exact per-write identity before bytes, fence against
+  retirement and use existing revocation/erasure worklists for interrupted output.
+  Holds/shared references and uncertainty remain preserved. Later success cannot
+  settle older uncertain writes; erasure re-deletes exact keys after late
+  reappearance while remaining incomplete. Real PostgreSQL/Sharp/filesystem/SDK
+  HTTP checks passed 60/60; final affected file passed 16/16; targeted mutations
+  failed the intended cleanup/late-write tests. Types and production build passed.
+  No schema/migration/queue replacement or security suppression occurred.
+
+A fresh strict production doctor on 6 October still reports 19 external input
+gaps: production DB bindings, legal/operator details, service origins, separate
+private/public storage credentials and backup bindings. Host/DNS/TLS, provider
+delivery and ACL/CORS/retention, and independent off-host restoration require
+production access. Never fabricate values or claim production approval.
+
+No full suite or completed browser matrix was replayed. Focused evidence cannot
+certify this new revision, and the unchanged strict six-child certificate remains
+pending under the user's no-full-rerun policy. Unknown original provider timeout,
+telemetry rejection and earlier historical observations remain distinct. Historical
+orphaned objects without attempt records were not enumerated/deleted. Remote
+settlement requires provider evidence/operator resolution; retries preserve that
+uncertainty instead of falsely acknowledging erasure. Preserve all old evidence
+and unrelated moderation-service/resume dirt. Evidence is under application
+`test-results/reports/diagnostic-review/production-code-fixes-20261006/`.
+
+
 ## Scoped two-failure follow-up — completed authorized work
 
 The user authorized GPT-6.1 SOL extra-high for analysis/fixes, low-cost read-only
