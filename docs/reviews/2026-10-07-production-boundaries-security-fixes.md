@@ -18,6 +18,16 @@ exception expansion or browser-test weakening was introduced. Large existing
 transaction-capability stores remain intentionally unchanged; wrapping every
 Prisma call in a new generic repository would not establish a security benefit.
 
+Primary application owners are `apps/api/src/modules/auth/auth.queries.ts`,
+`apps/api/src/modules/user/user.queries.ts`,
+`apps/api/src/modules/message/message.repository.ts`, the event/contest HTTP
+handlers, `scripts/architecture/http-persistence-boundary.mjs`,
+`packages/shared/src/observability-redaction.ts`,
+`apps/api/src/observability/bootstrap.ts` and
+`apps/web/src/scripts/telemetry.client.ts`. Their affected callers/tests,
+`tests/README.md`, `package.json` and `pnpm-lock.yaml` complete the 29-file
+application commit. Worker changes contain only its package manifest and lock.
+
 ## Executed evidence
 
 GPT-6.1 SOL high implemented each batch. Independent SOL high reviews traced the
@@ -76,10 +86,43 @@ listeners and public Access 302). Both deployed ARM64 runtimes report Sharp
 
 One filtered UAT Chromium child covering profile edits, portfolio media and
 two-party messaging is authorized after official discovery selected exactly
-those three canonical blocks. Its results are pending. No full suite/browser
+those three canonical blocks. The first launcher attempt stopped before browser
+execution: discovery-only `PLAYWRIGHT_API_ORIGIN=http://127.0.0.1:4000` was
+inherited into runtime while the canonical runner selected a different owned
+tunnel port. Auth preflight reported ECONNREFUSED; zero tests executed. The
+failed setup report/state and its three isolated QA identities are preserved.
+The second launcher failed the existing 64-character run-ID contract before
+preparing data; it also ran zero browser tests and remains preserved. Root then
+validated a 38-character ID against the actual executable regex, clean revision,
+absence of old owners, Python syntax and canonical owned-port derivation before
+launching `uat-boundary-20261007T112011Z-50c0f1d2` once. It completed at
+11:22:17 UTC with 3/3 passed, zero failures/flakes/skips/retries and exit 0.
+All three blocks were previously unexecuted during the failed setup attempts.
+No product/source correction or service redeployment is justified by these
+operator mistakes. No full suite/browser
 matrix replacement is authorized. It uses one worker, zero retries, complete
-evidence and stop-on-first-failure behavior. The filtered result remains
-incomplete and cannot produce a clean six-child certificate.
+evidence and stop-on-first-failure behavior. Root used the canonical context loader to recompute the live registry/input
+bindings and inspected all twelve desktop/mobile before/after captures. All
+18 desktop/tablet/mobile files are regular and each document width matches its
+viewport; relevant browser/page/request/server diagnostic arrays are empty.
+The exact mappings are AUTH-005; PRO-001/002/003; MSG-002/003/004/009 and
+NOTIF-002/003/004 (eleven IDs across three executed blocks). The final context hash
+is `c7f16a2136a0a6484624ebd3a50481cc61a483d1e9c91ae5df2d85b9a44eab13`;
+inputs hash is `2e7d841e2a408afc904665dc7d3c40084e9e6f5295237859c98b75e2500d7b2a`.
+The filtered result remains incomplete and cannot produce a clean six-child
+certificate. No owner remains and no further browser launch is required.
+
+Independent final SOL high review accepted the scoped release with no blockers,
+while retaining the strict certification/external launch limits. Root visually
+inspected twelve desktop/mobile before/after captures; tablet geometry and
+image dimensions were audited without claiming additional browser interactions.
+
+Final evidence: `supervisor-uat-proof-audit.json`, `uat-source-audit.json`,
+`uat-native-versions.jsonl`, `uat-final-health.log` and the source-bound independent
+reviews under `architecture-security-fixes-20261007/`. Current operator state is
+`/tmp/tfp-production-boundaries-reviewed-state.json`; the original two states
+remain immutable failed setup evidence. Manual full certification is still
+available through `test:e2e:human:certify`, but was not authorized or executed.
 
 ## Remaining production gates
 
@@ -95,3 +138,15 @@ historical, failed, dirty or partial evidence must not be spliced. The user's
 no-full-rerun policy remains in force. Original provider/telemetry and earlier
 unclassified observations are not explained by these unrelated corrections.
 Production values were not fabricated and production was not deployed.
+
+
+## Workspace safety
+
+Only the 29 application files, two worker manifest/lock files, their parent
+Git links and scoped root notes were committed. The root's initial rebase was
+skipped because unrelated moderation-service/resume changes were present;
+origin was fetched, nested repositories were already up to date, and scoped
+main publications were pushed successfully. Unrelated changes, historical
+f19 evidence, original failures and their caches were preserved. No production
+mutation, broad reset/delete, provider fault injection or uncertain mutation
+replay was performed.

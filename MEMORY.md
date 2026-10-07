@@ -1,50 +1,65 @@
 # Workspace Memory for Future Agents
 
-## Database boundaries and trace privacy — active UAT proof, 7 October 2026
+## Database boundaries and trace privacy — completed handoff, 7 October 2026
 
-Three confirmed executable-code audit batches are implemented, independently
-reviewed with GPT-6.1 SOL high, published and deployed. Current application is
+Three confirmed executable-code audit batches are fixed, independently reviewed
+with GPT-6.1 SOL high, published and deployed. Current application is
 `50c0f1d2529acaf5d23021040d9682ec74f217d0`, UAT release
 `20261007T110654Z-50c0f1d2`; worker is
 `c0b61ec6cedebc2c5ddde176717a26824a5ea503`, release
-`20261007T110914Z-c0b61ec6`. AI is unchanged at `96fef1a1`.
+`20261007T110914Z-c0b61ec6`. AI is unchanged at `96fef1a1`. Parent gitlinks were
+published in `9ffcb66`; this handoff updates only scoped root notes.
 
-HTTP handlers/auth hooks now use canonical query/repository/media-gate owners.
-The existing AST guard checks request handlers/hooks but remains bounded within
-a file; composition, subscribers and transaction owners retain database access.
-API/Web trace exports share the canonical sanitizer, preserve correlation/error
-classification and original contexts, and remove sensitive exported metadata.
-Sharp/tooling/DB-instrumentation graph patches retain existing SDK/framework owners.
+HTTP handlers/auth hooks use canonical query/repository/media-gate owners. The
+AST guard checks actual request handlers/hooks, bounded within a file; composition,
+subscribers and existing transaction owners retain appropriate persistence access.
+API/Web trace exports share one sanitizer, preserve correlation/error classification
+and original contexts, and remove sensitive exported metadata. Patch-level Sharp,
+tooling and DB-instrumentation updates retain existing SDK/framework ownership.
 No migration, queue replacement or widened security exception was introduced.
 
 Checks passed: 82 API boundary tests, 32 AST fixtures, 15 API/10 shared/4 Web
 privacy tests, 19 storage/63 affected worker tests, native/graph probes, intended
 mutations, workspace typing/lint/build, Playwright typing and human guard 88/88.
-The actual API bootstrap/pg/HTTP collector proof used local read-only synthetic
-SQL; it is not live external collector/Sentry delivery proof. Strict application
-audit has zero unapproved advisories with five unchanged exceptions expiring
-3 November 2026. Worker production audit has zero advisories.
+Actual API-bootstrap pg/HTTP collector proof used a local synthetic read only;
+it is not live external collector/Sentry delivery proof or a universal guarantee
+for arbitrary future custom free text. Strict application audit has no unapproved
+advisory and five unchanged exceptions expiring 3 November 2026; worker production
+audit has zero advisories. Mandatory worker deploy validation passed 66 tests,
+with four database tests explicitly skipped, not claimed executed.
 
 Deployed Git archives match 1,174 app/29 worker blobs. Both ARM64 runtimes report
-Sharp 0.35.5/librsvg 2.63.2/libvips 8.18.7. Exact running service cwd and full stack
-health passed. No full matrix was restarted. Sole low-cost owner
-`/root/production_boundary_uat_low` is authorized exactly one filtered Chromium
-child for profile edits, portfolio media and two-party messaging. Official fresh
-cache discovery selected exactly those three blocks; runtime result is pending.
-Root owns evidence/desktop/mobile visual acceptance. Do not duplicate its launch
-or mutate shared source/services/DB/cache during execution. Read the actual
-`/tmp/tfp-production-boundaries-state.json` and atomic status when present;
-missing final exit is unfinished, not passed. Preserve all historical evidence.
+Sharp 0.35.5/librsvg 2.63.2/libvips 8.18.7. Exact running service cwd/full stack
+health passed. One filtered UAT Chromium child
+`uat-boundary-20261007T112011Z-50c0f1d2` passed 3/3 once, zero retries/failures/
+flakes/skips, exit 0. Root checked canonical context/live hashes, three blocks /
+eleven IDs, regular complete evidence and empty relevant diagnostic arrays, and
+visually inspected all twelve desktop/mobile before/after captures. All eighteen
+viewport captures fit their document widths. Context hash:
+`c7f16a2136a0a6484624ebd3a50481cc61a483d1e9c91ae5df2d85b9a44eab13`;
+inputs hash:
+`2e7d841e2a408afc904665dc7d3c40084e9e6f5295237859c98b75e2500d7b2a`.
+
+The original fixed-origin launcher failed before auth preflight; the second
+launcher failed the 64-character run-ID contract before preparing identities.
+Both ran zero browser tests and their original states/reports remain preserved.
+Root validated the actual run-ID regex, owned-port derivation, Python syntax,
+exact discovery and absence of old owners before the successful launch. Current
+operator state is `/tmp/tfp-production-boundaries-reviewed-state.json` (exit 0).
+No completed browser matrix was repeated. No runner, continuing monitor or
+additional browser launch is required. Do not rewrite or splice old evidence.
 
 The fresh production doctor still exits 1 for nineteen external input gaps.
 Production host/DNS/TLS, provider delivery, bucket ACL/CORS/retention and independent
-off-host DB/object restoration require production access. The strict six-compatible
-clean-child aggregate/verifier contract is unchanged; scoped evidence cannot
-certify a new revision. The user's no-full-rerun rule remains binding. Original
-unclassified failures are not claimed explained by this batch. Preserve unrelated
-moderation-service/resume changes; production was not deployed/approved.
+off-host DB/object restoration require production access. Strict six-compatible
+complete-clean-child aggregate/verifier certification is pending; this focused
+child cannot certify a new revision. The user's no-full-rerun policy remains
+binding. Original unclassified failures are not claimed explained by this batch.
+Preserve historical f19/all failures and unrelated moderation/resume changes.
+Production values were not invented and production was not deployed/approved.
 
-Exact scope, commands and limits: `docs/reviews/2026-10-07-production-boundaries-security-fixes.md`.
+Exact scope, commands, evidence and limitations:
+`docs/reviews/2026-10-07-production-boundaries-security-fixes.md`.
 
 ## Current SSOT/adapter release handoff — 6 October 2026
 
