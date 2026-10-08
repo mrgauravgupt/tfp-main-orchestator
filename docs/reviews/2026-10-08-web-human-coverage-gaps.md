@@ -56,13 +56,80 @@ bash scripts/run-node20.sh node_modules/typescript/bin/tsc -p tsconfig.playwrigh
 Exact UAT release `20261008T114205Z-3757394f` is deployed. All 1,173 Git-archive
 source blobs match; FE/BE/worker restarted, eight units/six loopback endpoints
 and PostgreSQL readiness/private listeners/public Access health passed.
-Focused Chromium child `uat-web-gaps-20261008T114654Z-3757394f` is active with
-zero retries/maxfail1 and exactly four discovered blocks. State
-`/tmp/tfp-web-human-gaps-state.json` binds the owner/cache/log/report/atomic status.
-Missing final status means unfinished. Only new or
-affected flows are selected; no completed full matrix is repeated. Preserve every
-first failure, original context/manifest and capture. Stop on the first actual
-failure and review its initiating boundary before any correction or rerun.
+Focused Chromium child `uat-web-gaps-20261008T114654Z-3757394f` stopped at the
+first failure: three passed, one failed, zero retries/flakes/skips, exit 1. SEC002,
+SEC007 and CON020 passed; their seven action pairs / 42 regular captures are
+complete. An independent SOL high review accepted the two account blocks and
+root inspected their desktop/mobile captures plus the contest captures. SEC007
+aged naturally for at least 603.534 seconds. Context hash:
+`0f442fcbab14877c948d952f9c00973dcd09808773101c0953fd45cd939241d0`.
+Root's bound evidence audit is `/tmp/tfp-web-gaps-original-reviewed.json`.
+
+| Source / failure | Proven initiating cause | Minimal correction / status |
+| --- | --- | --- |
+| `messaging-notifications.human.spec.ts:151`, preference form hidden after disable/save/reload | Trace proves the browser reload repeated the POST. The successful POST response opens details via `preferenceMessage`; the unconditional summary click then closes it. Saved values and HTTP 200 were healthy; relevant diagnostic arrays were empty. Missing after evidence is a cascade. | Harness-only: use fresh GET visits for all five preference persistence checks, require no stale saved/error feedback, and click summary only when closed. Match NOTIF003 wording to actual navigation. Source and evidence independently accepted; only this failed block recovered 1/1 on a separate clean context. |
+
+State `/tmp/tfp-web-human-gaps-state.json` and its atomic exit remain original;
+the owner is absent. Preserve the failed context/manifest/trace/video/log and
+created-record state. No completed account or contest block will be replayed and
+no full matrix will restart. Recovery evidence will remain a separate child;
+never splice the original failure into a clean certificate.
+
+## Failed-block recovery phase
+
+Root accepted the three-file harness correction and published
+`5ab23b68c2552218106d51424218b8f998c40929`. Final Playwright typing, scoped lint,
+strict-human policy/88 guard fixtures and diff checks passed. Only the spec,
+NOTIF003 navigation wording and tests README changed; product code did not.
+The canonical deploy script's archive path list yields 1,173 identical blobs
+for both revisions, recorded in
+`/tmp/tfp-notification-recovery-runtime-archive-equality.json`. The initial whole
+Git-archive comparison included QA files and reported the three expected QA
+changes; that inventory remains preserved and is not runtime drift proof.
+
+The application remains deployed at `3757394f`; the clean harness is `5ab23b68`.
+FE/BE were restarted before recovery. The first immediate graph check reached
+API before its listener was ready (exit7); the later settled graph check passed
+without a second restart. Both health logs remain preserved.
+Fresh isolated-cache official discovery selected exactly one Chromium block,
+`messaging-notifications.human.spec.ts:16`. Recovery
+`uat-notif-get-20261008T120920Z-5ab23b68` passed 1/1 once with zero retries,
+failures, flakes or skips and canonical/atomic exit 0. Operator state is
+`/tmp/tfp-notification-recovery-state.json`; both durable owners are absent.
+No account, contest or completed full browser matrix was repeated. The clean
+context correctly separates deployed app `3757394f` from harness `5ab23b68`.
+
+Root and independent GPT-6.1 SOL high reviewed canonical AST/seven-ID mapping,
+four live registries/input hash, regular contexts/manifests, attempt1 and two
+complete action pairs / twelve ready captures. Relevant diagnostics are empty.
+Root inspected all recovery desktop/mobile captures, including the localized
+validation alert and unchanged saved schedule. The full flow also asserted
+invalid Web response 200, disabled-state persistence, valid UTC recovery and
+original-schedule restoration. No product defect was inferred from the earlier
+harness failure. Passing traces are not retained by the existing policy: six
+intentional submits/five fresh GET visits are verified in source and passing
+assertions, not an independently preserved recovery network sequence.
+
+Recovery context hash:
+`71f0d23bc28a0c377b20bff99441b1fe85a0defa88ad682efcd1e2e887982521`.
+Recovery inputs hash:
+`30a2b34361bf85c27f24b55ac44311f9cfca44ca01dba3ca44f29f661b804d3a`.
+Root audit: `/tmp/tfp-notification-recovery-reviewed.json`.
+Across the separate original and recovery evidence, ten mapped IDs have passed
+execution, nine complete action pairs and 54 regular captures; root inspected
+all 36 desktop/mobile images. Tablet metadata was audited, not claimed visually
+inspected. The original report remains failed/incomplete, recovery coverage is
+incomplete, and their registry/input hashes differ. No aggregate/verifier success
+was generated and no strict clean certificate is claimed.
+
+Recovery command (executed once through the durable owner):
+
+```bash
+E2E_TARGET_ENV=uat E2E_BROWSERS=chromium E2E_RETRIES=0 E2E_WORKERS=1 E2E_GREP='delivers a two-party message' bash scripts/qa/run-human-target-e2e.sh
+```
+
+No browser runner or continuing monitor is needed. The remaining live inbox
+question is unresolved; no secrets were requested or exposed.
 
 ## Remaining release limits
 

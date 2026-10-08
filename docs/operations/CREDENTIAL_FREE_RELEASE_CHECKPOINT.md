@@ -1,24 +1,37 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
-## Web human-flow corrections — active 8 October 2026
+## Web human-flow corrections — completed scoped handoff 8 October 2026
 
-App `3757394fa5e77985fdd6231c43cdeb37e2e6cf5a` is published. Invalid notification
-preferences now show recoverable localized feedback without replacing saved
-settings; exact reference downloads use a different fixture from the banner.
-Account coverage adds a pre-existing session/public-discovery deletion proof and
-natural 600-second recent-auth expiry/re-auth recovery. Shared policy remains 600.
-Independent SOL high source review and targeted checks passed: Web12, API8,
-guard88, other safe architecture109, types/lint/builds. Official discovery selects
-four affected Chromium blocks only. UAT is deployed at
-`20261008T114205Z-3757394f`; 1,173 archived source blobs and full stack health
-passed. Focused child `uat-web-gaps-20261008T114654Z-3757394f` is active with
-zero retries/maxfail1. Operator state `/tmp/tfp-web-human-gaps-state.json` binds
-its durable owner/cache/log/report/atomic status. Missing exit means unfinished.
-Do not duplicate it, change app inputs or start another matrix.
-The new delayed-email inbox case is blocked on a dedicated isolated recipient
-inbox/receipt reader. OTP/OAuth exclusions, historical failures and strict clean
-six-child certification limits remain. Preserve unrelated moderation/resume work.
-Details: `docs/reviews/2026-10-08-web-human-coverage-gaps.md`.
+Product app `3757394fa5e77985fdd6231c43cdeb37e2e6cf5a` / UAT
+`20261008T114205Z-3757394f` fixes invalid notification preference feedback.
+Coverage strengthens exact reference downloads, independent-session/public-search
+account deletion and natural 600-second recent-auth expiry/re-auth recovery.
+Source review and Web12/API8/guard88/architecture109/types/lint/builds passed.
+
+Original focused child `uat-web-gaps-20261008T114654Z-3757394f` stopped exit1:
+SEC002, SEC007 and CON020 passed once; messaging/preferences failed because a
+POST reload replayed submission and the test closed an already-open panel.
+Original failure/trace/status/context/manifests and created-record state remain.
+
+Harness-only `5ab23b68c2552218106d51424218b8f998c40929` replaces five POST reloads
+with fresh GET visits, guards the summary click and aligns NOTIF003 wording.
+Typing/lint/guard88/diff passed; all 1,173 canonical runtime archive blobs remain
+byte-identical to deployed product. FE/BE restart and settled health passed.
+Only the failed block ran again: `uat-notif-get-20261008T120920Z-5ab23b68`
+passed1/1, zero retries/failures/flakes/skips, exit0. Independent SOL high and root
+audited separate context/hash/mapping/attempt bindings and complete evidence:
+ten mapped IDs, nine action pairs, 54 regular ready captures across both reports.
+Root visually inspected all 36 desktop/mobile captures. No passed recovery trace
+was retained; recovery request counts are not claimed independently measured.
+
+Both durable owners are absent. No continuing monitor or further browser launch
+is needed for this scoped batch. Do not rerun completed flows, splice attempts or
+claim a clean six-child certificate. Quiet-hour recipient delivery needs a real
+isolated inbox; QR013 lacks an operator Web transition. Six delivered-email OTP
+cases and OAuth remain excluded. Production access/inputs, provider/bucket policy,
+independent recovery and strict certification remain launch gates. Preserve all
+historical evidence and unrelated moderation/resume work. Details:
+`docs/reviews/2026-10-08-web-human-coverage-gaps.md`.
 
 ## Principal code audit handoff — 8 October 2026
 
