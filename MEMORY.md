@@ -1,5 +1,36 @@
 # Workspace Memory for Future Agents
 
+## Domain operations — scoped run active, 8 October 2026
+
+Reviewed product/harness `0dac6128432ddd9687f57a2525dbca2fe6dc6975` is published and deployed to UAT
+`20261008T170441Z-0dac6128`. Root independently matched all1,181 Git archive blobs
+and full eight-unit/six-endpoint loopback health. SOL high domain implementations
+and peer reviews preserved schema/outbox/security boundaries. Opportunity edits
+retain application/role identities; contest creation is ADMIN+MFA only regardless
+of quotas; winner/edit locks, shared safe gallery paging, exact reaction/share
+and canonical report-image selection are corrected. Lower-level database/client
+discriminators, types/builds/lint, architecture37 and human guard88 passed.
+
+Exactly one new/affected UAT Chromium child is running: `uat-domain-20261008T170824Z-0dac6128`
+(23 newly authored blocks/25IDs, zero retries/maxfail1/action evidence).
+Read `/tmp/tfp-domain-human-state.json` and its atomic status path before any
+action. Owner PID95377; missing final status is unfinished. Never duplicate
+launch or mutate app source/services/DB/cache while healthy. Completed historical
+flows are not replayed. First actual failure must preserve every original artifact
+and stop for scoped SOL high RCA; only failed/unexecuted/affected continuation
+may be considered after review. No automatic full replacement.
+
+Official fresh-cache discovery exactly matched the canonical AST selection.
+The first preflight lacked the required target-write acknowledgment and ran zero
+browser tests; its output remains preserved. Root audit/operation reconciliation:
+`docs/reviews/2026-10-08-domain-human-flow-audit.md`. Main review/check artifacts:
+`tfpphotographers/test-results/reports/diagnostic-review/domain-human-flow-audit-20261008/`.
+No new business pass, aggregate/verifier certificate or production approval is
+claimed before original evidence review. OAuth/delivered-email OTP/inbox and
+production host/provider/storage/legal/independent recovery gates retain their
+actual limitations. Preserve unrelated moderation/resume dirt and all history.
+
+
 ## Remaining Web gates — completed scoped handoff 8 October 2026
 
 App/harness `cda03ae320b29ee41465959a0347434e822235f9` is published and deployed at UAT
