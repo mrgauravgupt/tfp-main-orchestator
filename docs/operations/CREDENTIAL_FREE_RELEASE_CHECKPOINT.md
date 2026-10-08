@@ -1,5 +1,21 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
+## Remaining Web gate implementation — active 8 October 2026
+
+App `61eb5e7d508ca72d83b3102e194198c23697633a` adds the administrator QuickRequest review queue and fenced
+operator decisions using existing status/revision/time fields, transactional
+manual audit and matching row locks. Independent SOL high code review accepted
+all 21 files after strengthening the new QR013 operator POST proof. Real local
+PostgreSQL24/HTTP7/admin-consumer32 checks, Web783 once, affected typing/lint/
+builds/guards passed; unlocked matching mutation failed its intended assertion.
+Official fresh-cache discovery selected one new Chromium QR013 block. No
+completed browser matrix or flow is authorized to repeat. UAT deployment and
+one focused proof are next; no runtime completion or certificate is claimed.
+User selected manual quiet-hour email checking; NOTIF006 remains unverified.
+Fresh strict production doctor still reports 19 external inputs. Preserve all
+historical evidence and unrelated moderation/resume work. Details:
+`docs/reviews/2026-10-08-remaining-web-gates.md`.
+
 ## Web human-flow corrections — completed scoped handoff 8 October 2026
 
 Product app `3757394fa5e77985fdd6231c43cdeb37e2e6cf5a` / UAT
