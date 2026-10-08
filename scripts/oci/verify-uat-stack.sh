@@ -43,18 +43,26 @@ done
 
 sudo -u postgres pg_isready --host 127.0.0.1 --port 5432 --quiet
 
-required_listeners=(4000 5432 7003 7004 7011 8080)
 listeners="$(ss -ltnH)"
-for port in "${required_listeners[@]}"; do
-  if ! grep -Eq "127\\.0\\.0\\.1:${port}[[:space:]]" <<<"$listeners"; then
-    echo "Required loopback listener is missing: 127.0.0.1:$port" >&2
-    exit 1
-  fi
-  if grep -Eq "(^|[[:space:]])(0\\.0\\.0\\.0|\\[::\\]):${port}[[:space:]]" <<<"$listeners"; then
-    echo "Private UAT port is exposed beyond loopback: $port" >&2
-    exit 1
-  fi
-done
+# Check every binding, including simultaneous loopback and specific-address listeners.
+awk '
+BEGIN { split("4000 5432 7003 7004 7011 8080", required); for (i in required) ports[required[i]]=1 }
+{
+  address=$4; port=address; sub(/^.*:/, "", port)
+  host=address; sub(/:[^:]*$/, "", host)
+  if (port in ports) {
+    if (host != "127.0.0.1" && host != "[::1]" && host != "::1") {
+      print "Private UAT port is exposed beyond loopback: " port > "/dev/stderr"; failed=1
+    }
+    if (host == "127.0.0.1") found[port]=1
+  }
+}
+END {
+  for (port in ports) if (!(port in found)) {
+    print "Required loopback listener is missing: 127.0.0.1:" port > "/dev/stderr"; failed=1
+  }
+  exit failed
+}' <<<"$listeners"
 
 if [[ -e /srv/tfp-folder-moderation ]]; then
   echo "Retired folder-moderation path must remain absent from OCI UAT" >&2

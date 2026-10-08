@@ -1,4 +1,50 @@
-# Credential-free release checkpoint — current handoff, 7 October 2026
+# Credential-free release checkpoint — current handoff, 8 October 2026
+
+## Principal code audit handoff — 8 October 2026
+
+Fourteen code-first findings plus independently discovered deletion/404 branches
+are fixed and published. App `8c6a10f4eb24c3132b20fd937285c0b4caff9b1d` / UAT
+`20261008T084603Z-8c6a10f4`; AI `4e46c6f935e782f3172f7f25c12985e104d3b672` /
+`20261008T084146Z-4e46c6f9`; worker
+`15b48392e46df7bfcfbbb6c7f12adc3d1b0af279` / `20261008T084438Z-15b48392`.
+Published app HEAD is `5f0985554f2f87c2219bd05f69330ab507724ab8`: its separate
+QA-only native ledger/README follow-up leaves all 1,173 deployable runtime archive
+blobs byte-identical to the deployed app commit. No redeployment was needed.
+
+Web/native share the same backend and canonical contracts. Preserve account/origin/
+session upload fencing, held uncertain attempts, completed-deletion classification,
+new OAuth mailbox assurance, durable quiet-hour CAS/monotonic claim identity, bounded
+HTTP/cache/AI budgets and route-template logging (including unmatched 404s). The
+date calendar retains native validity and localized keyboard/focus behavior. The
+optional UI reviewer reserves before admission and confines screenshot references.
+Do not restore private dead facades or source-adjacent generated JS; source export
+checks now reject those companions. Archived original bytes remain in QA evidence.
+
+Independent SOL high reviews and scoped real PostgreSQL/socket/log-sink/storage/
+consumer tests passed. Exact archives match 1,173 app / 23 AI / 29 worker blobs;
+six running service cwd bindings and full UAT health passed. Four read-only UAT
+English/Hindi desktop/mobile captures passed and were inspected. Local calendar
+and native public navigation inspection are separate proof tiers. Complete Web
+unit tests passed 771/771; workspace lint passed. The original complete mobile unit
+run remains 369 passed / one failed. Its stale native census was corrected without
+changing guard code; six targeted guard contracts including the actual CLI passed.
+Three native features remain planned: exact contest download proof, opportunity
+workspace attachment picker/download controls, and complete opportunity gallery
+journey proof. No fabricated implemented/runtime status or full-suite replay.
+Worker mandatory validation passed 67 with four DB skips, never counted executed.
+No completed E2E
+matrix was replayed and no current strict six-child certificate/production approval
+exists. Preserve historical failures/f19, unrelated moderation/resume dirt and the
+user's no-full-rerun policy. No continuing browser/cleanup monitor is required.
+
+Production doctor remains non-zero for nineteen external inputs; production
+host/provider/legal/storage/recovery proof and historical credential revocation/
+rotation remain external launch gates. Machine-assisted new locale text requires
+human linguistic review, especially lower-resource languages. Native authenticated
+upload/deletion business flows were not executed. Read actual source first; this
+handoff does not override executable behavior or assert universal zero defects.
+Details, commands, evidence and limitations:
+`docs/reviews/2026-10-08-principal-code-audit.md`.
 
 ## Database boundaries and trace privacy — completed handoff, 7 October 2026
 
