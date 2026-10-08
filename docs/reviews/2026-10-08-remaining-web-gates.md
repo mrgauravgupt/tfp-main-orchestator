@@ -1,8 +1,15 @@
-# Remaining Web gates — scoped implementation, 8 October 2026
+# Remaining Web gates — completed scoped handoff, 8 October 2026
 
 The user authorized implementation of feasible remaining gates and selected
 manual email-delivery checking. Completed browser flows and matrices must not
 be repeated. Current executable code and tests are authoritative.
+
+Current app/harness is `cda03ae320b29ee41465959a0347434e822235f9`, deployed at UAT
+`20261008T152714Z-cda03ae3`. The final new QR013 child passed once, 1/1 with zero
+retries and complete scoped evidence. Earlier phases below preserve the failures
+and correction history; the final acceptance section records remaining gates.
+All application commands in this report run from
+`/Users/hexa/Desktop/tfp-main-orchestator/tfpphotographers`.
 
 ## Prioritized pre-edit findings
 
@@ -71,7 +78,7 @@ test is inbox-delivery proof. A manual result is separate evidence; it does not
 retroactively make NOTIF006 an implemented automated flow or certify a release.
 OAuth and six delivered-email OTP business cases remain excluded.
 
-## Implementation and verification result
+## Initial implementation and verification phase
 
 App `61eb5e7d508ca72d83b3102e194198c23697633a` is published with 21 scoped files. The existing manual-audit
 persistence helper was moved and reused by both original admin commands and
@@ -110,14 +117,14 @@ Official fresh-cache discovery selects exactly one Chromium block at
 `recovers an operator-returned quick request through owner revision and resubmission`.
 Preflight is `/tmp/tfp-qr013-preflight-state.json`.
 
-UAT is deployed at `20261008T150145Z-61eb5e7d`. All 1,176 canonical
+The initial UAT deployment was `20261008T150145Z-61eb5e7d`. All 1,176 canonical
 Git-archive blobs match; API, worker and Web running cwd bindings match the
 release. Main deployment restarted FE/BE/worker. Full graph health passed: eight
 active units, six loopback endpoints, PostgreSQL ready, private listeners and
 public Access HTTP302. No old release pruning was requested.
 
 Original focused Chromium child `uat-qr-revision-20261008T150540Z-61eb5e7d` stopped at its first failure with zero retries,
-one worker, maxfail1 and complete action evidence. Durable operator state is
+one worker, maxfail1 and enabled action capture. Original after evidence is incomplete. Durable operator state is
 `/tmp/tfp-qr013-proof-state.json`; atomic final status, not PID existence alone,
 owns the result. No completed flow or matrix was replayed. The original failed evidence is preserved; no success is inferred from its completed operator steps.
 No production approval, aggregate success or universal absence of defects is claimed.
@@ -185,4 +192,86 @@ DOM checks, not API persistence or external E2E proof.
 Preserve the initial browser-boundary prototype's invalid ValidityState
 serialization failure and first focus/blur setup failure separately from final
 passing tests. Temporary mutant copies were removed; original product bytes were
-not reverted. Exact publication/deployment and one affected proof remain pending.
+not reverted. At this checkpoint deployment and one affected proof were pending;
+the final phase below completes them.
+
+
+## Final focused verification phase
+
+Exact UAT `20261008T152714Z-cda03ae3` now runs app/harness `cda03ae320b29ee41465959a0347434e822235f9`.
+All 1,176 canonical archive blobs and three running service cwd bindings match.
+FE/BE/worker restarted in the canonical main deployment; all eight units and six
+loopback health endpoints, PostgreSQL, private listeners and public Access HTTP 302
+passed. Older releases were retained.
+
+Fresh isolated-cache official discovery maps exactly QR013 at its canonical
+block line 463. The filtered child `uat-qr-final-20261008T153116Z-cda03ae3` passed 1/1, bound by
+`/tmp/tfp-qr013-final-state.json` to one durable independent OS-session owner,
+zero retries, one worker, maxfail1 and action evidence. Atomic final exit 0 is independently accepted. Both prior failed attempts remain immutable; no completed old flow
+or browser matrix was replayed. Final context/evidence and desktop/mobile visual review are accepted.
+
+
+## Final acceptance and actual remaining gates
+
+The final child passed exactly one test with zero retries/failures/flakes/skips
+and exit 0. Root and an independent GPT-6.1 SOL high reviewer validated the clean
+app/harness revision, exact release, canonical AST mapping to QR013, live four
+registries, input/context hashes, single original attempt and regular unique
+context/manifest/evidence files. One case, two action pairs and twelve captures
+are complete; all 1440/768/390 document widths fit and recorded images loaded.
+Root visually inspected all eight desktop/mobile before/after captures; tablet
+metadata was checked, not claimed visually inspected. Console/page/request/server
+and other relevant diagnostic arrays are empty. The unchanged passing-trace
+retention policy did not preserve a final network trace, so request counts are
+not independently claimed from a retained passing trace. The passing test's
+explicit operator POST 303 and snapshot-change assertion executed, as did empty
+native validation, original-value persistence, revised text and Matching/Open
+persistence through fresh GET. Both earlier failed originals remain failed.
+
+- Final operator state: `/tmp/tfp-qr013-final-state.json` (atomic exit 0, owner absent).
+- Root audit: `/tmp/tfp-qr013-final-reviewed.json`.
+- Context hash: `8c28d000f22faa6c3124b23f53da4b8ccba71e8810ef47440e5dfd27640a8423`.
+- Inputs hash: `6223df79b4291603366ea8c1feef6ad65bbe03e064a421f94a2c35e2afdbf3c1`.
+- Use-case registry: `16915c5988ebadad99db19aba8f7e30e73cb2c65cfa1c144f822f69612991d15`.
+- Feature registry: `57a326d04e8745fd508e7ba4568a8a05a38bcb2530835a65da9203d6c5e05370`.
+- Route registry: `dd5f04e2acf115a8a9e15b3cdebe020eb673e3a6c007ce4542dd822284a9f7ae`.
+- API registry: `4c28e6aa0142163f58ccc352632cd741ee29d59fc6be461f9884ab4bb5463248`.
+
+Focused command (one execution per reviewed revision/context; first failures
+were preserved before any correction):
+
+```bash
+E2E_TARGET_ENV=uat E2E_BROWSERS=chromium E2E_RETRIES=0 E2E_WORKERS=1 E2E_GREP='recovers an operator-returned quick request through owner revision and resubmission' bash scripts/qa/run-human-target-e2e.sh
+```
+
+Targeted verification commands:
+
+```bash
+bash scripts/pnpm-node20.sh --filter api test -- tests/modules/quick-request/quick-request-moderation.routes.test.ts tests/modules/quick-request/quick-request-moderation.postgres.test.ts
+bash scripts/pnpm-node20.sh --filter web exec vitest run tests/features/quick-request-moderation.test.ts
+bash scripts/pnpm-node20.sh --filter web exec vitest run --config vitest.browser.config.ts tests/client/quick-request-revision.browser.ts
+bash scripts/run-node20.sh node_modules/typescript/bin/tsc -p tsconfig.playwright.json --noEmit
+bash scripts/run-node20.sh scripts/qa/human-e2e-guard.mjs
+```
+
+The PostgreSQL command requires an explicit local disposable TEST binding; its
+24 executed checks are separate from the initially skipped run. Shared/API/Web
+production builds and targeted types/lint passed. Mutation logs and setup
+failures are retained under `/tmp/tfp-qr013-*.log`; no mutating UAT fault injection
+or original-source reversion occurred.
+
+The ledger now has 148 implemented and seven blocked cases. Static implementation
+is not runtime certification: this child proves only the QR013 UAT Chromium slot.
+Its other five slots remain not-run and the manifest correctly reports incomplete
+coverage. No compatible six-child aggregate/verifier success exists at this new
+revision, and the user's no-full-rerun policy remains binding.
+
+Remaining external gates: manual quiet-hour inbox receipt; nineteen actual
+production inputs; host/DNS/TLS and provider operation; scoped bucket ACL/CORS/
+retention; credential revocation/rotation; independent off-host DB/object restore.
+OAuth and six delivered-email OTP business cases remain exclusions. Production
+values were not invented and production was not deployed or approved.
+
+All three scoped browser owners are absent. No continuing monitor or additional
+browser launch is needed for this batch. Unrelated moderation-service and resume
+changes, prior states/reports/caches and historical f19 evidence are preserved.

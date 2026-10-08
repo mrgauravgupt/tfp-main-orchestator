@@ -1,25 +1,45 @@
 # Workspace Memory for Future Agents
 
-## Remaining Web gates — reviewed accessibility recovery active 8 October 2026
+## Remaining Web gates — completed scoped handoff 8 October 2026
 
-App `cda03ae320b29ee41465959a0347434e822235f9` publishes the MFA-protected QuickRequest review queue, fenced
-state/revision/timestamp decisions, transactional shared audit and matching lock.
-Real PostgreSQL24/HTTP7/admin32, Web783 once, typing/lint/builds/guards passed.
-Independent SOL high reviews accepted code and strengthened the operator POST
-proof. Only the new QR013 flow ran; no completed browser matrix was repeated.
+App/harness `cda03ae320b29ee41465959a0347434e822235f9` is published and deployed at UAT
+`20261008T152714Z-cda03ae3`. The new administrator QuickRequest review queue uses existing
+MFA authorization and shared contracts. Decisions fence state, owner revision,
+update time, expiry, selected creator and owner activity. Shared manual audit
+commits with the winning transition; matching locks against cancellation.
+No migration, new queue, dependency or global validation rewrite was introduced.
 
-Two original failed attempts remain immutable: initial exact-label lookup
-included the SSR textarea value; a harness-only role correction then exposed
-required-field errors inserted inside the label, changing its accessible name.
-Both new owner/operator fields now use explicit labels, unique IDs and existing
-validation wrappers. Actual-helper Chromium/Firefox2 and targeted Web4 checks,
-mutations of both old wrapping shapes, typing/lint/build/guard passed. Source
-review accepted this five-file correction; global validation/API code is unchanged.
-Exact new UAT deployment and one failed-flow recovery are next. No completed
-certificate or production approval is claimed. Email delivery is manual at the
-user's request; NOTIF006 and 19 external production inputs remain unverified.
-Preserve all evidence, unrelated moderation/resume work and the no-full-rerun
-policy. Details: `docs/reviews/2026-10-08-remaining-web-gates.md`.
+Independent GPT-6.1 SOL high code and evidence reviews accepted the changes.
+Real PostgreSQL 24 / HTTP 7 / existing admin 32 checks, affected typing/lint/builds,
+guards and one Web unit run (783 passed) succeeded. Two actual-helper browser
+checks passed in Chromium/Firefox; restoring old wrapped markup failed intended
+accessible-name assertions in both engines. Initial skipped/setup/unit-filter
+mistakes remain distinct and were not relabeled as proof.
+
+The new QR013 flow's first attempt failed an exact-label lookup; the second
+reached empty validation and exposed label/error-name pollution. Both failed
+contexts, traces, screenshots, logs, caches and created-record states remain.
+Explicit labels, unique IDs and existing field wrappers fix both new controls.
+Only this new/failed flow was selected; no completed old flow or matrix repeated.
+Final child `uat-qr-final-20261008T153116Z-cda03ae3` passed 1/1, zero retries/failures/flakes/skips,
+exit 0. One canonical case, two action pairs and twelve unique regular captures
+are complete; all widths fit and recorded images loaded. Root inspected all
+eight desktop/mobile captures (tablet metadata only). Relevant diagnostic arrays
+are empty. Exact 1,176 deployed source blobs, running cwd markers and full stack
+health passed. All three browser owners are absent; no continuing monitor or
+additional browser launch is required for this scoped batch.
+
+Context hash `8c28d000f22faa6c3124b23f53da4b8ccba71e8810ef47440e5dfd27640a8423`; inputs hash `6223df79b4291603366ea8c1feef6ad65bbe03e064a421f94a2c35e2afdbf3c1`.
+QR013 has one passed UAT Chromium slot; five other slots remain unrun and overall
+coverage is incomplete. Do not splice attempts or claim a clean six-child
+aggregate/verifier certificate or production approval. The ledger maps 155 cases
+(148 implemented, seven blocked); mapping is not runtime proof. User chose manual
+quiet-hour email checking; NOTIF006 remains unverified. OAuth/six delivered-email
+OTP cases stay excluded. Fresh strict production doctor still identifies 19
+external database/legal/service/storage/backup inputs, with actual host/provider/
+bucket policy and independent recovery requiring access. Preserve unrelated
+moderation/resume work, all failures and historical f19 evidence. Details:
+`docs/reviews/2026-10-08-remaining-web-gates.md`.
 
 ## Web human-flow corrections — completed scoped handoff 8 October 2026
 
