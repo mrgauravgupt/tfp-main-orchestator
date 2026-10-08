@@ -1,5 +1,18 @@
 # Workspace Memory for Future Agents
 
+## Verified dead-code cleanup — 8 October 2026
+
+Clean app `5c732cb24059ece0778a7aa58169b2d628258a41` retires 22 unused private
+functions/constants plus exclusive helpers/maps/types, five orphan tests and
+three obsolete files. Active bodies/assertions are preserved; independent SOL
+high consumer review and scoped typing/lint/tests/guards/build checks passed.
+No browser matrix, service restart, DB/storage mutation or UAT deployment ran.
+UAT app remains `20261007T110654Z-50c0f1d2`; old evidence cannot certify this new
+revision. Public contracts/assets, migrations, supported operators, failure evidence
+and unrelated moderation/resume work remain intact. API Ajv is a parent contract-test
+dependency, not unused. Read `docs/reviews/2026-10-08-dead-code-cleanup.md` and the
+preserved application `diagnostic-review/dead-code-cleanup-20261008` evidence.
+
 ## Database boundaries and trace privacy — completed handoff, 7 October 2026
 
 Three confirmed executable-code audit batches are fixed, independently reviewed

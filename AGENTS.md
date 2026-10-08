@@ -1,5 +1,20 @@
 # Workspace-Wide Agent Notes
 
+## Verified dead-code cleanup — 8 October 2026
+
+Application is published clean at `5c732cb24059ece0778a7aa58169b2d628258a41`.
+Nineteen files remove 22 private runtime functions/constants, their orphan helper
+chain/five unit cases and three obsolete setup files (431 deleted lines). An
+independent SOL high review checked imports/framework/package roots and byte-identical
+active statements. Scoped tests, typing, lint, guards and compilation/build passed.
+No completed browser matrix, DB operation or deployment ran. UAT remains the
+7 October release at `50c0f1d2`; no newer certificate/production approval is claimed.
+Do not restore uncalled helpers as competing implementations. Retain public exports,
+registered/direct-URL assets, migrations, operator tools and historical QA evidence
+unless their retirement is separately proven. Details and evidence:
+`docs/reviews/2026-10-08-dead-code-cleanup.md`. Unrelated moderation/resume changes
+remain untouched; no continuing cleanup monitor is needed.
+
 ## Database boundaries and trace privacy — completed handoff, 7 October 2026
 
 Three confirmed executable-code audit batches are fixed, independently reviewed
