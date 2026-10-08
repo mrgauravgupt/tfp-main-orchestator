@@ -1,5 +1,21 @@
 # Workspace-Wide Agent Notes
 
+## Web human-flow corrections — active 8 October 2026
+
+App `3757394fa5e77985fdd6231c43cdeb37e2e6cf5a` is published. Invalid notification
+preferences now show recoverable localized feedback without replacing saved
+settings; exact reference downloads use a different fixture from the banner.
+Account coverage adds a pre-existing session/public-discovery deletion proof and
+natural 600-second recent-auth expiry/re-auth recovery. Shared policy remains 600.
+Independent SOL high source review and targeted checks passed: Web12, API8,
+guard88, other safe architecture109, types/lint/builds. Official discovery selects
+four affected Chromium blocks only. UAT exact deployment and focused runtime
+proof are pending; do not start another matrix or call static mapping runtime proof.
+The new delayed-email inbox case is blocked on a dedicated isolated recipient
+inbox/receipt reader. OTP/OAuth exclusions, historical failures and strict clean
+six-child certification limits remain. Preserve unrelated moderation/resume work.
+Details: `docs/reviews/2026-10-08-web-human-coverage-gaps.md`.
+
 ## Principal code audit handoff — 8 October 2026
 
 Fourteen code-first findings plus independently discovered deletion/404 branches
