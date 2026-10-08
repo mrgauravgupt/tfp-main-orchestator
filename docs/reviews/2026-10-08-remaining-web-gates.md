@@ -108,5 +108,81 @@ blank line in a newly tracked helper before commit.
 Official fresh-cache discovery selects exactly one Chromium block at
 `quick-request-lifecycle.human.spec.ts:463`, titled
 `recovers an operator-returned quick request through owner revision and resubmission`.
-Preflight is `/tmp/tfp-qr013-preflight-state.json`. Runtime verification is pending.
+Preflight is `/tmp/tfp-qr013-preflight-state.json`.
+
+UAT is deployed at `20261008T150145Z-61eb5e7d`. All 1,176 canonical
+Git-archive blobs match; API, worker and Web running cwd bindings match the
+release. Main deployment restarted FE/BE/worker. Full graph health passed: eight
+active units, six loopback endpoints, PostgreSQL ready, private listeners and
+public Access HTTP302. No old release pruning was requested.
+
+Original focused Chromium child `uat-qr-revision-20261008T150540Z-61eb5e7d` stopped at its first failure with zero retries,
+one worker, maxfail1 and complete action evidence. Durable operator state is
+`/tmp/tfp-qr013-proof-state.json`; atomic final status, not PID existence alone,
+owns the result. No completed flow or matrix was replayed. The original failed evidence is preserved; no success is inferred from its completed operator steps.
 No production approval, aggregate success or universal absence of defects is claimed.
+
+
+## Preserved first failure and minimal recovery
+
+| Source snapshot / first failure | Proven initiating cause | Correction / status |
+| --- | --- | --- |
+| Clean app/harness `61eb5e7d`, focused child `uat-qr-revision-20261008T150540Z-61eb5e7d`, exit 1, zero retries. The owner value assertion at line513 found no exact-label locator. | Saved DOM has a label containing both the caption and the textarea's server-rendered initial text. Playwright 1.59.1's exact label-text engine concatenates both. The saved accessibility snapshot and screenshot independently show the correctly named, visible textbox with its original value. Locale caption matches. Operator POST 303, changed snapshot and rejected status passed; owner empty/revision/active assertions were unexecuted. Missing after captures are a cascade. | One harness locator changes to textbox role with exact accessible name; README explains the engine difference. Product and ledger are unchanged. Playwright typing, scoped lint, strict-human guard and diff passed. No timeout, retry, assertion or security weakening. |
+
+Original context/manifest/results/trace/video/screenshots/logs and created-record
+state remain unchanged under the original report and `/tmp/tfp-qr013-proof-state.json`.
+The original atomic result remains exit 1 and its owner is absent.
+
+Harness-only `4d0da4445d5be7c5d7fdd490b9b7fc1cf2cbfc6c` is published. All 1,176
+canonical runtime archive blobs are byte-identical to the deployed app 61eb5e7d;
+no redundant deployment was needed. The equality inventory is in the recovery
+preflight directory. Fresh FE/BE restart and full settled graph health passed.
+Exactly one official fresh-cache recovery discovery maps the same QR013 block.
+Recovery `uat-qr-recovery-20261008T151413Z-4d0da444` stopped on its first failure (exit 1, zero retries); `/tmp/tfp-qr013-recovery-state.json`
+binds the independent OS-session owner, cache, file logs, report and atomic exit.
+It uses zero retries, one worker and maxfail1. This was a reviewed failed-flow rerun;
+no previously completed business flow or browser matrix is repeated. Application
+and harness revisions remain separate, and original/partial evidence will not be
+spliced into a strict clean certificate. The original recovery artifacts remain unchanged; it is not passed evidence.
+
+
+## Newly reached invalid-field accessibility boundary
+
+The recovery reached and filled the correctly named owner textarea, then its
+empty required-field submission exposed a real markup/validation interaction.
+`form-helpers.ts` resolves an input wrapper from canonical field containers or
+its parent element; the newly wrapped label was that fallback. The helper read
+its entire `textContent` (including the SSR initial textarea value), inserted the
+error inside the same label, and used the absent control ID to produce `-error`.
+The saved trace and error-context show that contaminated message becoming part
+of the textbox's accessible name. The field was still visible and required
+validation worked; subsequent lookup and after evidence failures were cascades.
+
+The new administrator select has the same source pattern and no ID, so its
+empty-choice boundary requires the same correction. The minimal product fix is
+limited to both new forms: explicit labels referencing unique control IDs inside
+existing `data-validation-field` wrappers, with errors outside the label. Shared
+validation code, APIs, persistence, retries and timeouts remain unchanged.
+Actual source-derived markup and compiled validation-helper browser checks must
+prove stable names, uncontaminated messages, unique described-by IDs, invalid
+submission blocking and recovery before another focused business execution.
+No full suite, completed old flow, DB reset or historical evidence rewrite is
+permitted. Both original failed attempts remain separate.
+
+
+## Reviewed product accessibility correction
+
+App `cda03ae320b29ee41465959a0347434e822235f9` is published with five scoped files. Both new owner/operator
+controls now use explicit labels and unique IDs in existing validation wrappers.
+Shared validation code, API behavior, constraints, persistence and queue ownership
+remain unchanged. Source-derived markup with the actual compiled helper passed
+in Chromium and Firefox (two tests covering both controls). Each old wrapping
+shape failed its intended accessible-name assertion in both engines. Four target
+Web checks, typing, scoped lint, strict guard and Web production build passed.
+Independent SOL high source review accepted the exact diff. These are isolated
+DOM checks, not API persistence or external E2E proof.
+
+Preserve the initial browser-boundary prototype's invalid ValidityState
+serialization failure and first focus/blur setup failure separately from final
+passing tests. Temporary mutant copies were removed; original product bytes were
+not reverted. Exact publication/deployment and one affected proof remain pending.

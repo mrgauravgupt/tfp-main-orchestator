@@ -1,20 +1,25 @@
 # Workspace-Wide Agent Notes
 
-## Remaining Web gate implementation — active 8 October 2026
+## Remaining Web gates — reviewed accessibility recovery active 8 October 2026
 
-App `61eb5e7d508ca72d83b3102e194198c23697633a` adds the administrator QuickRequest review queue and fenced
-operator decisions using existing status/revision/time fields, transactional
-manual audit and matching row locks. Independent SOL high code review accepted
-all 21 files after strengthening the new QR013 operator POST proof. Real local
-PostgreSQL24/HTTP7/admin-consumer32 checks, Web783 once, affected typing/lint/
-builds/guards passed; unlocked matching mutation failed its intended assertion.
-Official fresh-cache discovery selected one new Chromium QR013 block. No
-completed browser matrix or flow is authorized to repeat. UAT deployment and
-one focused proof are next; no runtime completion or certificate is claimed.
-User selected manual quiet-hour email checking; NOTIF006 remains unverified.
-Fresh strict production doctor still reports 19 external inputs. Preserve all
-historical evidence and unrelated moderation/resume work. Details:
-`docs/reviews/2026-10-08-remaining-web-gates.md`.
+App `cda03ae320b29ee41465959a0347434e822235f9` publishes the MFA-protected QuickRequest review queue, fenced
+state/revision/timestamp decisions, transactional shared audit and matching lock.
+Real PostgreSQL24/HTTP7/admin32, Web783 once, typing/lint/builds/guards passed.
+Independent SOL high reviews accepted code and strengthened the operator POST
+proof. Only the new QR013 flow ran; no completed browser matrix was repeated.
+
+Two original failed attempts remain immutable: initial exact-label lookup
+included the SSR textarea value; a harness-only role correction then exposed
+required-field errors inserted inside the label, changing its accessible name.
+Both new owner/operator fields now use explicit labels, unique IDs and existing
+validation wrappers. Actual-helper Chromium/Firefox2 and targeted Web4 checks,
+mutations of both old wrapping shapes, typing/lint/build/guard passed. Source
+review accepted this five-file correction; global validation/API code is unchanged.
+Exact new UAT deployment and one failed-flow recovery are next. No completed
+certificate or production approval is claimed. Email delivery is manual at the
+user's request; NOTIF006 and 19 external production inputs remain unverified.
+Preserve all evidence, unrelated moderation/resume work and the no-full-rerun
+policy. Details: `docs/reviews/2026-10-08-remaining-web-gates.md`.
 
 ## Web human-flow corrections — completed scoped handoff 8 October 2026
 
