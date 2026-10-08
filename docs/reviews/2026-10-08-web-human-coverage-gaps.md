@@ -53,8 +53,13 @@ bash scripts/run-node20.sh node_modules/typescript/bin/tsc -p tsconfig.playwrigh
 
 ## Runtime phase
 
-Exact UAT publication/deployment and one focused four-block Chromium child are
-pending. FE/BE restart and health verification precede that child. Only new or
+Exact UAT release `20261008T114205Z-3757394f` is deployed. All 1,173 Git-archive
+source blobs match; FE/BE/worker restarted, eight units/six loopback endpoints
+and PostgreSQL readiness/private listeners/public Access health passed.
+Focused Chromium child `uat-web-gaps-20261008T114654Z-3757394f` is active with
+zero retries/maxfail1 and exactly four discovered blocks. State
+`/tmp/tfp-web-human-gaps-state.json` binds the owner/cache/log/report/atomic status.
+Missing final status means unfinished. Only new or
 affected flows are selected; no completed full matrix is repeated. Preserve every
 first failure, original context/manifest and capture. Stop on the first actual
 failure and review its initiating boundary before any correction or rerun.

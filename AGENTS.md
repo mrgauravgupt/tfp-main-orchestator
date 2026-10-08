@@ -9,8 +9,12 @@ Account coverage adds a pre-existing session/public-discovery deletion proof and
 natural 600-second recent-auth expiry/re-auth recovery. Shared policy remains 600.
 Independent SOL high source review and targeted checks passed: Web12, API8,
 guard88, other safe architecture109, types/lint/builds. Official discovery selects
-four affected Chromium blocks only. UAT exact deployment and focused runtime
-proof are pending; do not start another matrix or call static mapping runtime proof.
+four affected Chromium blocks only. UAT is deployed at
+`20261008T114205Z-3757394f`; 1,173 archived source blobs and full stack health
+passed. Focused child `uat-web-gaps-20261008T114654Z-3757394f` is active with
+zero retries/maxfail1. Operator state `/tmp/tfp-web-human-gaps-state.json` binds
+its durable owner/cache/log/report/atomic status. Missing exit means unfinished.
+Do not duplicate it, change app inputs or start another matrix.
 The new delayed-email inbox case is blocked on a dedicated isolated recipient
 inbox/receipt reader. OTP/OAuth exclusions, historical failures and strict clean
 six-child certification limits remain. Preserve unrelated moderation/resume work.
