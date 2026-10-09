@@ -1,5 +1,48 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
+## Domain operations — opportunity workspace flow stopped; eleven remain unexecuted, 9 October 2026
+
+Current published app/harness is `7a412553077257953a8c9747e5a3d92445c9c3f2`,
+deployed UAT `20261009T155321Z-7a412553`; root gitlink `0693a8d`.
+The reviewed search query correction preserves intent matching and existing
+visibility/block/location/geo/mode/role filters while adding a parameterized
+literal-title fallback for events, opportunities and contests. Scoped API search
+checks passed 33 with two explicit skips, API/Web typing and strict human guard
+passed. The wrong-relative-path test invocation ran zero tests and stays diagnostic.
+Focused EVT016 `uat-domain-evt016-20261009T160032Z-7a412553` passed 1/1 once,
+zero retries/failures/flakes/skips. Independent SOL review accepted exact clean
+bindings/live four registries/input hashes/canonical mapping, two action pairs and
+12 unique regular captures; all eight desktop/mobile captures were inspected.
+Context `db9cbb5b56342d3922645eab38b7165cba121df48269732cafc2e02d71e259b3`;
+inputs `56238c30cd982e34a0ab4bde650e4a06bcc033d8006e6d161ee2f9630b3a56c9`.
+The original zero-discovery anchored selector attempt remains preserved.
+
+Continuation `uat-domain-remaining17-20261009T160650Z-7a412553` is TERMINAL
+exit 1 at 16:20:23 UTC, owner 87979 absent: five passed (EVT017–020 and OPP029),
+one failed OPP023, eleven unexecuted with empty result arrays, zero retries.
+Atomic status: `/tmp/tfp-domain-remaining17-recovery-20261009T160650Z-7a412553/focused-status.json`.
+Original manifest/context/results/trace/video/captures/logs/cache are preserved.
+The manifest remains incomplete (five cases/twelve actions); 75 image files are
+not a completed-run certificate. First failure is
+`opportunity-lifecycle.human.spec.ts:629:42`; cause remains pending read-only
+source/trace review by sole GPT-6.1 SOL Ultra owner `opportunity_opp023_rca_ultra`.
+Low monitor `domain_completion_monitor_low` has stopped. No browser/replacement
+is active or authorized during RCA.
+
+Immutable eleven selection:
+`/tmp/tfp-domain-remaining17-recovery-20261009T160650Z-7a412553/original-unexecuted11-selection.json`,
+SHA256 `a1aa6aedfd94680e539c562ee80653605d05b8b497eb501cf1b52c7669d35ef7`.
+Actual original result arrays and disjoint selection were verified. Only an
+independently accepted smallest correction and focused OPP023 proof may precede
+these eleven once. Never rerun the five passes, accepted CON021–025/EVT014–016 or
+full suites; never splice attempts into strict certification. The user's latest
+model choice is GPT-6.1 SOL Ultra for analysis/fixes/independent review and low
+reasoning for monitoring. Preserve all failures, history f19 and unrelated
+moderation/resume work. Strict six-child certification, OAuth/six delivered-email
+OTP/inbox, nineteen external production inputs and actual host/provider/storage/
+legal/independent recovery remain gates; no invented values or production launch.
+
+
 ## Domain operations — event public search stopped; seventeen remain unexecuted, 9 October 2026
 
 Remaining18 runuat-domain-remaining18-20261009T112128Z-6806d9de TERMINAL1 at11:22:44UTC,
