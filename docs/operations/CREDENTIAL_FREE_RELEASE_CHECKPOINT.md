@@ -1,5 +1,27 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
+## Domain operations — fee-clear public readback stopped for diagnosis, 9 October 2026
+
+Productfb4b0c83630cf13bb8cfaa51531384d8af33429d/UAT20261009T093930Z-fb4b0c83
+and clean harness5092356a216794a8f9ea3d740db55ca0c8102bad remain exact. One scoped
+EVT015 run uat-domain-event-date-20261009T105822Z-5092356a terminal1 at11:00:36UTC,
+0passed/1failed/0retry, owner65349 absent. Atomic `/tmp/tfp-domain-event-date-recovery-20261009T105408Z/focused-status.json`
+controls; immutable launchstate preserved. No app browser active. Date/readiness
+corrections passed before first failure484: public `.event-entry-fee-list` remains1
+after the edit form showed the exact fee unchecked and amountempty. Expected0.
+Cause is unclassified pending actual POST/parse/command/query/SSR/cache/moderation
+state source/trace correlation; no weakened fee assertion or automatic rerun.
+`evidence_readiness_review_high` sole SOLhigh feeRCA owner; `event_date_review_high`
+read-only remaining DOM-locator scope, low watcheridles. No shared mutations.
+
+Eighteen original unexecuted remain paused, all original artifacts/cache/states
+intact. Only accepted minimal correction/discriminating proof/complete original
+context+hash+canonicalaction+capture+visual audit may unlock18once. No accepted
+CON021–025/EVT014/fullsuite repeats, mixed evidence splicing or production approval.
+Strict six-child/OAuth/six delivered OTP/inbox/19 external host/provider/storage/
+legal/independent recovery gates remain. Preserve historyf19/unrelated moderation-
+resume work. Root owns publication/exactdeploy ifproductchanges/affectedproof.
+
 ## Domain operations — scoped public event date proof active, 9 October 2026
 
 Exactly ONE failed-EVT015 proof `uat-domain-event-date-20261009T105822Z-5092356a` ACTIVE ownerPID65349.
