@@ -1,5 +1,34 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
+## Domain operations — opportunity publication precondition accepted, 9 October 2026
+
+Root and independent GPT-6.1 SOL Ultra accepted exact two-file diff
+`8ac3e26ec8029fe5311981b0d10d42c0fdc94c7d2354dd1e14780d08e5c6f052`;
+clean published harness `2a641123dfb8e5baf2951b10dce14484c97cf959`.
+OPP023 now uses its existing real-GET visible-title precondition after selected
+participant sign-in and before exact delivery/download/fresh-GET assertions.
+No helper, publication deadline/cadence, product access guard or file assertion changed.
+Original focused failure remains terminal1: owner HTML retains saved delivery,
+same selected actor revised workspace GET404 only2.141s after valid title edit.
+Title edits requeue moderation; detail requires approved/owner/admin access.
+Pending state at that GET is source-derived, eventual approval/download remains
+unproved until the one focused original evidence is accepted.
+
+Typing/scoped lint/strict-human180/diff passed. Product
+`7a412553077257953a8c9747e5a3d92445c9c3f2` / UAT
+`20261009T155321Z-7a412553` retained: runtime archives and all1181 live blobs/three
+cwd match; no redeploy. Fresh preflight
+`/tmp/tfp-domain-opp023-publication-20261009T174000Z/` binds unchanged four registries,
+inputs `000d9e5ae0c0faf40f1bf092d3038a8a4d3d9ac955a0d2b28f20a8f3f66e4e32`.
+No browser pass yet. Only one failed OPP023 proof authorized, eleven originally
+unexecuted remain gated; never repeat accepted flows/fullmatrix or splice certificate.
+Bounded read-only review of eleven unexecuted consumers may identify minimal
+pre-execution harness defects; no shared mutation during active proof.
+Preserve all failures/caches/historyf19/unrelated moderation-resume. Ultra handles
+analysis/fix/review, low monitors only. Strict6child/OAuth/sixdeliveredOTP/inbox/19
+external production host/provider/storage/legal/independent recovery gates remain;
+never invent values, approve/deploy production or delete evidence.
+
 ## Domain operations — reviewed opportunity draft correction, 9 October 2026
 
 OPP023 proof `uat-domain-opp023-20261009T171010Z-fff83169` TERMINATED1 at17:11:58UTC:
