@@ -1,5 +1,31 @@
 # Workspace-Wide Agent Notes
 
+## Domain operations — scoped public event date correction published, 9 October 2026
+
+Clean harness `5092356a216794a8f9ea3d740db55ca0c8102bad` published; product
+`fb4b0c83630cf13bb8cfaa51531384d8af33429d` / UAT `20261009T093930Z-fb4b0c83`
+unchanged. Root+independent SOL high accepted exact two-file diff
+782741c5a7885e101e933af483bafd1988e0375dcb25be8afd338382abdc89b5:
+EVT015 scopes public year/long-month readback to its actual unique visible detail
+card, retaining both assertions. Hero short-month metadata is a valid separate
+startDate, so original broad selector caused strict2 failure. No product/helper/
+expected date/timezone/timeout/security changes; PWtyping/lint/strict180/diff0.
+
+Original image-recovery run uat-domain-event-image-20261009T104826Z-f0fa2e48 is
+terminal1 at10:50:24UTC,0passed/1failed/0retries/owner62121 absent. Atomic image
+readiness succeeded: four actual snapshots13loaded/0pending and three reader
+before captures. Date assertion472 then failed; after evidence is cascade, full
+case remains failed. All original artifacts/cache/launchstate preserved. RCA
+64cfd2a55398d9c50c72f6b7cbfed276b382c31ef8b0f6610f5d90ec13044f63.
+Root owns fresh one-EVT015 preflight/proof only; no browser launched yet. New
+preflight `/tmp/tfp-domain-event-date-recovery-20261009T105408Z/`. Only accepted
+original context/hash/mapping/complete actions/captures/desktop-mobile proof may
+precede18 original unexecuted once. Never repeat accepted CON021–025/EVT014/fullsuite
+or splice strict certificates. All external strict/OAuth/OTP/inbox/19 production
+inputs/host/provider/storage/legal/independent recovery gates remain; preserve
+historyf19/unrelated moderation-resume. No production approval/deployment. Evidence:
+app diagnostic-review/domain-event-public-date-20261009.
+
 ## Domain operations — reviewed image-readiness focused proof active, 9 October 2026
 
 Exactly one EVT015 proof `uat-domain-event-image-20261009T104826Z-f0fa2e48` is active, detachedPID62121.
