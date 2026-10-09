@@ -1,67 +1,48 @@
 # Workspace Memory for Future Agents
 
-## Domain operations — gallery failure preserved, 9 October 2026
+## Domain operations — reviewed gallery proof active, 9 October 2026
 
-Product `092a95ee1a2c8dfc6db07b11d34de0c8c87475da` remains deployed at UAT
-`20261009T071116Z-092a95ee`; clean published harness is `7d1e3e648f09a876f769d9922bb63af0b039549c`.
-All1,181 deployable archive blobs are byte-identical and match live, exact three
-service cwd markers and full-stack health passed. No redeployment was required.
-Initial read-only archive marker/proc-permission setup mistakes are preserved;
-corrected reads passed without source/service mutations or browser execution.
+Product `092a95ee1a2c8dfc6db07b11d34de0c8c87475da` / UAT `20261009T071116Z-092a95ee` is unchanged.
+Clean harness `96ee1cef0cd81f3116a2dcdc93248fe36ba706be` is published. Independent SOL high and root
+accepted exactly three files: two canonical-count readiness awaits in the shared
+public gallery helper, one actual-helper streamed-HTML regression discriminator,
+and tests/README. Both gallery kinds reject the disposable byte-identical old
+helper at3-of12 and complete exact ordered identities with the corrected helper.
+One regression test, Playwright/new-test typing, scoped lint, human180 consistency
+and diff checks passed. No assertion, timeout, provider or product policy weakened.
+All1,181 deployable archive blobs match product and live; running service cwd
+bindings match the retained release. No redeployment was needed.
 
-CON025 recovery `uat-domain-tab-20261009T073958Z-7d1e3e64` finished exit0 at07:41:46UTC,
-1passed/zeroRetries/failures/flakes/skips. Root and independent GPT-6.1 SOL high
-accepted regular original context/manifest/evidence, current four-registry/input
-hashes, exact clean product/harness/release and canonical declaration. Context
-hash `86e4516611f52c1593bfa076927b7d3d72a0ba88a991a2cbd003d3d713990035`; inputs `e8793da075b4b2be9d8e3fdff3a48614d14680d494dbb0ec476026de8e931ec8`.
-Two action pairs/twelve unique regular captures complete; all widths fit and
-recorded images loaded, relevant diagnostics empty. Root viewed all8desktop/mobile
-captures; tablet metadata only. Proof covers rich edit/media replacement, awaited
-normalized tolerant download pixels (mean RGB difference<=6, not binary identity),
-exact legacy canonical URL plus declared tab=about/selected About, deletion cancel/
-confirm and independent public canonical/legacy/directory404/list/search absence.
-The four-file minimal harness correction changes no product behavior; typing,
-scoped lint, human180 consistency, changed consumer contract and diff passed.
-Shared no-store CORS/download correction retains real-socket/consumer evidence;
-original UAT cache reuse was not conclusively captured, no provider policy weakened.
+Exactly one failed EVT014 proof `uat-domain-gallery-20261009T080925Z-96ee1cef` is active, ownerPID39197.
+Read `/tmp/tfp-domain-gallery-recovery-state.json` and authoritative
+`/tmp/tfp-domain-gallery-recovery-20261009T080417Z/focused-status.json`; missing final exit is unfinished.
+Official fresh-cache discovery exactly matched one canonical block/EVT014 and
+project retries0. The first external audit expected retries on listed test objects;
+reporter stores them in project config. Corrected audit read the original discovery
+without repeating it. Inputs `3b7e4336539e2f3e19f54294b36c3102d0ab6cc2963c998730a65dcf0b1e4fe5` and four registries are frozen.
+Root owns the durable independent OS-session/file-log/atomic-status/idle-guard
+runner; low owner watches exact PID exit. Canonical runner owns FE/BE setup and
+scoped fixtures. No overlapping runner or shared source/service/DB/cache mutation.
+Launch free5582991360bytes exceeded the focused resource gate.
 
-Remaining20 continuation `uat-domain-remaining20-20261009T074551Z-7d1e3e64` is TERMINAL exit1 at
-07:47:56UTC:0passed/1failed/19unexecuted (Playwright reports19 skipped after
-maxfail1), zeroRetries. Owner35667 absent; low completion watch stopped.
-Immutable `/tmp/tfp-domain-remaining20-state.json` retains historical running/null;
-authoritative `/tmp/tfp-domain-tab-recovery-20261009T073734Z/unexecuted-status.json` is finished1.
-First EVT014 at event-lifecycle.human.spec.ts317 failed in shared
-public-gallery-actions.ts59: previous-page readback returned only3 of12 original
-exact IDs. Initial low summary incorrectly described an empty array; preserved
-trace corrects it. Full same-navigation200HTML contains12 triggers. Actual
-initiating cause is proved harness readiness: click waits navigation commit, then
-immediate evaluateAll snapshots partly parsed SSR; complete200HTML retains exact
-ordered12. No product loss, authorization or provider failure is supported. All original
-context/manifest/results/trace/video/screenshots/cache remain preserved. Evidence
-catalog is incomplete0cases/0actions; no business pass is inferred from uploads.
-Sole GPT-6.1 SOL high owner `/root/domain_gallery_root_cause_high` completed
-read-only source/trace/navigation/DOM RCA and a minimal discriminating proposal.
-Root independently accepted actual trace/callers and authorized the minimal
-shared helper count readiness before both ID snapshots, preserving exact ordered
-equality/oldest/query/page contracts. Sole SOL high owner implements only helper,
-one deterministic actual-helper streamed-HTML loopback discriminator and README,
-with scoped typing/lint/consistency checks. No application flow, service restart,
-DB/storage mutation, commit/deploy before root exact-diff acceptance. No permanent
-product change or redeployment is justified.19-block immutable selection SHA256
-cc8083f28954df9b6d20053ab799368df32934eae76c02b9c5fc08e16c5640ef.
-Only separately accepted failed-block proof may precede19 remaining original
-unexecuted blocks; completed CON021/022,CON023/024,CON025 and old flows never repeat.
-Selection20/input hashes remain frozen in original launch evidence. Do not splice
-partial/failed contexts or launch automatic replacements. Negative API logs alone
-are not failures. Latest report volume free4,936,532KiB; all evidence retained.
+Original remaining20 stopped1:0passed/1failed/19unexecuted. Its trace proves a
+harness parser-readiness race: immediate returned-page snapshot has3 of ordered12,
+while the same complete200HTML contains12. Original evidence/cache remain intact.
+Immutable original19 selection SHA256cc8083f28954df9b6d20053ab799368df32934eae76c02b9c5fc08e16c5640ef.
+Only independent context/hash/mapping/evidence/desktop-mobile acceptance of this
+proof may precede those19 original unexecuted blocks. Accepted CON021/022,
+CON023/024,CON025 and completed historical flows must never repeat.
 
-Evidence: `docs/reviews/2026-10-08-domain-human-flow-audit.md` and external immutable
-preflight/reviews under `/tmp/tfp-domain-tab-recovery-20261009T073734Z`. Focused/resumed results are incomplete;
-no strict six-compatible-clean-child aggregate/verifier certificate or production
-approval follows. OAuth/six recipient-delivered OTP/inbox and19external production
-inputs plus actual host/provider/storage/legal/independent recovery remain gates.
-Never invent values, approve/deploy production or delete QA evidence. Preserve
-unrelated moderation-service/resume work and historicalf19.
+On actual failure preserve and stop for source-led SOL high review; no automatic
+replacement, hidden retries/sleeps, suppression or uncertain mutation replay.
+No current business pass is claimed before original evidence review. Focused and
+mixed attempts cannot form a strict six-child certificate. OAuth/six delivered-email
+OTP/inbox and nineteen external production inputs plus host/provider/storage/legal/
+independent recovery remain gates. Never invent values or approve/deploy production.
+Preserve historicalf19, all failures and unrelated moderation/resume changes.
+Evidence: docs/reviews/2026-10-08-domain-human-flow-audit.md and
+/tmp/tfp-domain-gallery-recovery-20261009T080417Z; regression/code review evidence is
+in app test-results/reports/diagnostic-review/domain-gallery-readiness-20261009/.
 
 ## Remaining Web gates — completed scoped handoff 8 October 2026
 

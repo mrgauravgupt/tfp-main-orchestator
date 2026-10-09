@@ -471,3 +471,47 @@ Read-only RCA: /tmp/tfp-domain-tab-recovery-20261009T073734Z/gallery-rca.json.
 Original low empty-array summary is corrected by trace to3-of12 exact prefix.
 Original states/results/artifacts/cache remain immutable. No provider CORS/security
 change, product deletion/filter fix, timeout increase or suppression is justified.
+
+## Domain operations — reviewed gallery proof active, 9 October 2026
+
+Product `092a95ee1a2c8dfc6db07b11d34de0c8c87475da` / UAT `20261009T071116Z-092a95ee` is unchanged.
+Clean harness `96ee1cef0cd81f3116a2dcdc93248fe36ba706be` is published. Independent SOL high and root
+accepted exactly three files: two canonical-count readiness awaits in the shared
+public gallery helper, one actual-helper streamed-HTML regression discriminator,
+and tests/README. Both gallery kinds reject the disposable byte-identical old
+helper at3-of12 and complete exact ordered identities with the corrected helper.
+One regression test, Playwright/new-test typing, scoped lint, human180 consistency
+and diff checks passed. No assertion, timeout, provider or product policy weakened.
+All1,181 deployable archive blobs match product and live; running service cwd
+bindings match the retained release. No redeployment was needed.
+
+Exactly one failed EVT014 proof `uat-domain-gallery-20261009T080925Z-96ee1cef` is active, ownerPID39197.
+Read `/tmp/tfp-domain-gallery-recovery-state.json` and authoritative
+`/tmp/tfp-domain-gallery-recovery-20261009T080417Z/focused-status.json`; missing final exit is unfinished.
+Official fresh-cache discovery exactly matched one canonical block/EVT014 and
+project retries0. The first external audit expected retries on listed test objects;
+reporter stores them in project config. Corrected audit read the original discovery
+without repeating it. Inputs `3b7e4336539e2f3e19f54294b36c3102d0ab6cc2963c998730a65dcf0b1e4fe5` and four registries are frozen.
+Root owns the durable independent OS-session/file-log/atomic-status/idle-guard
+runner; low owner watches exact PID exit. Canonical runner owns FE/BE setup and
+scoped fixtures. No overlapping runner or shared source/service/DB/cache mutation.
+Launch free5582991360bytes exceeded the focused resource gate.
+
+Original remaining20 stopped1:0passed/1failed/19unexecuted. Its trace proves a
+harness parser-readiness race: immediate returned-page snapshot has3 of ordered12,
+while the same complete200HTML contains12. Original evidence/cache remain intact.
+Immutable original19 selection SHA256cc8083f28954df9b6d20053ab799368df32934eae76c02b9c5fc08e16c5640ef.
+Only independent context/hash/mapping/evidence/desktop-mobile acceptance of this
+proof may precede those19 original unexecuted blocks. Accepted CON021/022,
+CON023/024,CON025 and completed historical flows must never repeat.
+
+On actual failure preserve and stop for source-led SOL high review; no automatic
+replacement, hidden retries/sleeps, suppression or uncertain mutation replay.
+No current business pass is claimed before original evidence review. Focused and
+mixed attempts cannot form a strict six-child certificate. OAuth/six delivered-email
+OTP/inbox and nineteen external production inputs plus host/provider/storage/legal/
+independent recovery remain gates. Never invent values or approve/deploy production.
+Preserve historicalf19, all failures and unrelated moderation/resume changes.
+Evidence: docs/reviews/2026-10-08-domain-human-flow-audit.md and
+/tmp/tfp-domain-gallery-recovery-20261009T080417Z; regression/code review evidence is
+in app test-results/reports/diagnostic-review/domain-gallery-readiness-20261009/.
