@@ -800,3 +800,36 @@ independent recovery gates remain. Never invent values/approve/deploy production
 delete evidence; preserve historicalf19 and unrelated moderation/resume work.
 Evidence: app diagnostic-review/domain-event-edit-location-20261009 and
 `/tmp/tfp-domain-event-edit-recovery-20261009T093655Z/`.
+
+## Domain operations — focused event edit stopped; image readiness diagnosis pending, 9 October 2026
+
+Current clean app/harness `fb4b0c83630cf13bb8cfaa51531384d8af33429d` / UAT
+`20261009T093930Z-fb4b0c83` remains deployed with all1181 live source blobs/three cwd
+bindings/full health verified. Reviewed three-file selector/label correction and
+PW/Webtyping/strict180/supported lint/build checks passed. No completed flow replay.
+
+Focused `uat-domain-event-edit-20261009T094357Z-fb4b0c83` TERMINAL exit1 at09:45:45UTC, owner51389 absent:
+zero passed/one failed/zero retries. Original state remains immutable running/null;
+atomic `/tmp/tfp-domain-event-edit-recovery-20261009T093655Z/focused-status.json` is authoritative. Primary `human-evidence.ts:202`
+readiness timeout records ten pending images/no failed paths. Evidence is incomplete
+zero cases/actions. Corrected label/selector execution and exact capture phase must
+be classified from original trace; no speculative provider/harness/product cause.
+Every context/manifest/result/trace/video/capture/diagnostic/log/cache remains intact.
+No app browser is running and no replacement or eighteen-flow continuation is
+currently authorized. `domain_gallery_root_cause_high` solely owns bounded SOL high
+read-only source/trace/DOM/timing/readiness RCA with grounded cause/minimal proposal;
+no source/services/DB/storage/browser mutation during diagnosis. Low watcher idles.
+
+Original nineteen failure and immutable eighteen selection SHA256
+08830f0d526215fa9208d11a80ccd520efe49d5024042cbde377f966441b57f2 remain distinct.
+After independently reviewed minimum correction and exact affected proof only those
+eighteen may run once. Accepted CON021–025/EVT014/fullmatrix must never repeat or
+splice into clean certification. External deployment wrapper parser failure remains
+preserved separately: canonical command0, wrapper1/missing original status because
+Release padding uses nine spaces. New reviewed-status plus actual1181 archive/cwd/
+fullhealth0 independently accepted, no deployment repeated. No root-cause claim for
+original image readiness yet. Strict six-child/OAuth/six delivered OTP/inbox/19
+external production host/provider/storage/legal/independent recovery remain gates.
+Never invent production values/approve/deploy production/delete evidence; preserve
+historicalf19 and unrelated moderation/resume work. Evidence: app diagnostic-review/
+domain-event-edit-location-20261009 and `/tmp/tfp-domain-event-edit-recovery-20261009T093655Z/`.
