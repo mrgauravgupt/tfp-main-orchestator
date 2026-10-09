@@ -544,3 +544,50 @@ RCA /tmp/tfp-domain-gallery-recovery-20261009T080417Z/gallery-readiness-rca.json
 SHA256fad41ca427a7b0ab7eecd390855c099bcfac262e59d5adf68c34c3e5782b9269.
 No new business pass, automatic replacement or extra browser proof is authorized.
 EVT014 remains failed and19 original blocks unexecuted; completed flows never repeat.
+
+## Domain operations — reviewed approval readiness proof active, 9 October 2026
+
+Product `092a95ee1a2c8dfc6db07b11d34de0c8c87475da` / UAT `20261009T071116Z-092a95ee` remains unchanged.
+Published clean harness `fca2265f01451af0d6d7f74fc70d18d8476b1faf` has the independently accepted
+three-file approval-readiness batch: one zero-count metadata guard in the actual
+shared helper, new actual-helper loopback regression and tests/README. Exact total,
+loaded/count/unique IDs, strict duplicate locator and business timeout/poll cadence
+remain unchanged. Old source091d0c54...91ed6 fails specifically on missing metadata
+without refresh; corrected event/opportunity helpers perform two real GETs12→13.
+One new test, Playwright/new-test typing, scoped lint, human180/diff passed. Root
+viewed both synthetic captures; they are lower-level proof only. Earlier parser
+regression/source/evidence remain untouched. Independent exact diff accepted:
+9ea97455d05a5c9d74d412f329cbba4bba0a830c1b9bd6c03a9478d27bd113fc.
+All1,181 deployable/live blobs and current service cwd bindings match the retained
+product release. No product or provider policy changed and no redeploy was needed.
+
+Exactly one failed EVT014 proof `uat-domain-gallery-ready-20261009T083252Z-fca2265f` is active, ownerPID41540.
+Read `/tmp/tfp-domain-gallery-approval-state.json` and authoritative
+`/tmp/tfp-domain-gallery-approval-recovery-20261009T083118Z/focused-status.json`; missing final exit is unfinished.
+Official fresh isolated-cache discovery exactly matched one canonical EVT014 block
+and retries0. Inputs `f530109e7a1456391fc9b1988cb6ec85ca3e8f5b763e21a7eb4443b3ceb1e91e`, live four registries unchanged.
+Root sole durable OS-session/file-log/atomic-status/idle-guard runner owner; low
+owner watches exact PID exit. Canonical runner owns FE/BE setup/scoped fixtures.
+No overlap or shared source/services/DB/cache mutation while healthy. Launch free
+5436706816bytes passed focused headroom gate. No business pass yet.
+
+Prior focused96ee run stopped1:0passed/1failed at08:12:24UTC, all evidence retained.
+RCA proves expected approval delay plus harness liveness: SSR08:11:15.243 has12
+loaded unique images/no nav; exact13th approval08:11:23.406703 occurs8.16s later
+while missing metadata locator waits60s on stale SSR. Product pages<=1 omission is
+valid. Earlier accepted parser correction was not reached in that failed attempt.
+Original remaining20 failure/context/cache remain intact. Only independent
+original context/hash/mapping/complete evidence and settled desktop/mobile
+acceptance may precede19 original unexecuted blocks, selection SHA256
+cc8083f28954df9b6d20053ab799368df32934eae76c02b9c5fc08e16c5640ef.
+Accepted CON021/022,CON023/024,CON025 and completed old flows must never repeat.
+
+First actual failure preserves/stops for scoped SOL high source-led review; no
+blind rerun, hidden retry/sleep/replay/suppression/assertion/security weakening.
+Partial/mixed/failed attempts cannot form a strict six-child certificate. OAuth/
+six delivered-email OTP/inbox and nineteen external production inputs plus actual
+host/provider/storage/legal/independent recovery remain gates. Never invent values,
+approve/deploy production or delete QA evidence. Preserve historicalf19 and
+unrelated moderation/resume changes. Evidence: docs/reviews/2026-10-08-domain-human-flow-audit.md,
+app test-results/reports/diagnostic-review/domain-gallery-approval-readiness-20261009/,
+and /tmp/tfp-domain-gallery-approval-recovery-20261009T083118Z/.
