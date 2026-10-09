@@ -1,5 +1,40 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
+## Domain operations — EVT015 accepted; eighteen original unexecuted active, 9 October 2026
+
+Root and independent SOLhigh accepted original EVT015 `uat-domain-event-free-20261009T111201Z-6806d9de`:
+finished0 at11:15:07UTC,1passed/0retry/fail/flake/skip,2actionpairs/12unique regular
+captures. Contextbe08c22aa29253f30b946cfbcf7ef22276a987fd94691d5e08300ca90a04f323;
+inputsf0fa8cb5718822c6f6aa98126d9a1f77b22f211202a8243bbe159e39b6cc6a4c. Exact clean product/harness/release/live4registries/
+canonicalEVT015/completeevidence audited; allwidthsfit/recordedimagesloaded/
+diagnosticarrays0. RootviewedALL8originaldesktopmobile; tabletmetadataonly.
+Rich edit/labelfocus/location/pixelcover/date/rolefee125thenfree/independentpublic
+reload executed. No retained passedtrace/requesttiming/cacheHIT/DBclaims.
+Originalfailedattempts remain truthful; only one current UATChromium slot proven.
+
+ExactlyONE continuation `uat-domain-remaining18-20261009T112128Z-6806d9de` ACTIVE ownerPID69602,
+only18ORIGINALUNEXECUTED declarations/18IDs, immutable selection
+08830f0d526215fa9208d11a80ccd520efe49d5024042cbde377f966441b57f2.
+State `/tmp/tfp-domain-remaining18-state.json`; authoritative atomic
+`/tmp/tfp-domain-remaining18-20261009T104956Z/unexecuted-status.json`. Missingfinalexitunfinished; historicalrunning/null doesnot
+override terminal. Productfb4b0c83630cf13bb8cfaa51531384d8af33429d/UAT20261009T093930Z-fb4b0c83 unchanged,
+clean harness6806d9deb653f954d561284a2138d3337f75f3d1. All1181 archive/liveblobs/3cwd/fullhealth0;
+no redeploy. Officialfreshisolatedcache exact18AST/18IDs, fourregistries/input
+unchanged. Launch7610851328bytesfree exceeds2GiB+256MiB+512MiBreserve.
+ZeroRetries/maxfail1/oneworker/actionevidence. Rootsolerunnerowner;low exactPID
+NOTE_EXIT completion watch. CanonicalrunnerownsFE/BEsetup/scopedfixtures. No overlap
+or sharedsource/services/DB/cachemutationwhilehealthy. No continuationpassyet.
+
+Never repeat accepted CON021–025/EVT014/EVT015/oldcompletedflows/fullmatrix.
+Firstactualfailure preserve/stop/scopedSOLhighsourceledRCA beforeminimalcorrection.
+No blindretry/sleep/replay/suppression/assertionsecurityweakening. Expectednegative
+APIlogs alone notfailure. Afterterminal root+independentSOLhigh audit original
+context/hash/livebindings/canonicalmaps/honestcounts/actionevidence/captures and
+settleddesktopmobile before finalscopedhandoff. No splicedstrictsixchildcertificate;
+OAuth/sixdeliveredOTP/inbox/19externalproductionhost/provider/storage/legal/
+independentrecovery remain gates. Preserve everyreport/cache/state/historyf19/
+unrelated moderation-resume;neverinventvalues/approve/deployproduction/deleteevidence.
+
 ## Domain operations — semantic free-fee readback correction published, 9 October 2026
 
 Exactly ONE focused `uat-domain-event-free-20261009T111201Z-6806d9de` ACTIVE ownerPID67654;
