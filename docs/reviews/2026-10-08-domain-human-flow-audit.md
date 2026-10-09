@@ -282,3 +282,20 @@ Read new state `/tmp/tfp-domain-edit-recovery-state.json` and bound atomic statu
 One attempt/zeroRetries/maxfail1/action evidence; missing status unfinished.
 After independent focused evidence/visual acceptance only20unexecuted may continue.
 Never splice failed/partial contexts into certification or repeat completed flows.
+
+
+## CON025 download failure preserved — 9 October 2026
+
+Focused form recovery `uat-domain-edit-recovery-20261009T031339Z-7eab7deb`
+terminated exit1 at03:15:32UTC:0passed/1failed/zeroRetries. Owner16229 is absent.
+The atomic focused-status.json is authoritative; the immutable historical launch
+snapshot remains running/null and must not be rewritten as current activity.
+
+| Source/failure | Proved cause and limitation | Next scoped step | Status |
+| --- | --- | --- | --- |
+| Public CON025 resource download, spec672 | Thumbnail GET200 JPEG, native fetch CORS/ERR_FAILED, fallback navigation GET200 JPEG with no attachment disposition; download event times out30s. Signed expiry still854s. Actual current policy versus earlier no-CORS cache reuse remains unknown. | Read-only current provider GET policy and fresh-origin response evidence before choosing a minimal delivery/config correction. No CORS weakening or suppression. | SOL high diagnosis only; no new browser or product edit. |
+| finally spec723 / secondary fixture738 | Secondary console guard replaces primary download timeout and prevents following exact-owned fixture cleanup. | Preserve primary error, attach secondary diagnostics, keep guard failure when no primary and guarantee cleanup ordering, with discriminating lifecycle checks. | Scoped harness owner authorized; root exact-diff review required. |
+
+Original results/trace/video/captures/context/manifest/cache remain unchanged.
+Earlier CON021/022 and CON023/024 passes are retained;20original blocks remain
+unexecuted. No aggregate, verifier success or production approval is claimed.

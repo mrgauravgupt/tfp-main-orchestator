@@ -1,10 +1,10 @@
 # Workspace Memory for Future Agents
 
-## Domain operations — preserved continuation and CON025 recovery active, 9 October 2026
+## Domain operations — CON025 download diagnosis, 9 October 2026
 
 Product `0dac6128432ddd9687f57a2525dbca2fe6dc6975` remains deployed as UAT
 `20261008T170441Z-0dac6128`; clean published harness is
-`2ac71bc27208d425151319a2d6073ec11aa61872`. All1,181 deployable blobs remain
+`7eab7deb80fa4c17d441a55072c2c5c044b6fcfb`. All1,181 deployable blobs remain
 byte-identical to product and live UAT; no unnecessary redeployment occurred.
 Reviewed harness corrections preserve exact CUID-derived submission identity,
 unique visible direct Share POST control, actual event cards and results search
@@ -59,17 +59,27 @@ A bounded source review of20unexecuted declarations found no additional confirme
 metadata/duplicate-control collision; this supplies no runtime pass. All1,181
 deployable blobs still match the original product/live UAT, full health passed.
 
-Exactly ONE failed-block proof is active:
-`uat-domain-edit-recovery-20261009T031339Z-7eab7deb`, detachedPID16229. Read
+Focused CON025 proof `uat-domain-edit-recovery-20261009T031339Z-7eab7deb`
+terminated exit1 at03:15:32UTC:0passed/1failed/zeroRetries. Owner16229 is absent;
+its exact process-exit monitor reported completion and stopped. Read immutable
 `/tmp/tfp-domain-edit-recovery-state.json` and authoritative
-`/tmp/tfp-domain-edit-recovery-20261009T031154Z/focused-status.json`; missing final
-status is unfinished. Fresh-cache official discovery matched one CON025 block;
-inputs `d21dd6be736f65823ced0dfbdb3f629b6b242d8c2a488bb9721229f9a1a54cc1`, four
-registries unchanged. ZeroRetries/maxfail1/actionevidence/scopedfreshfixtures.
-Low-cost domain_recovery_monitor_low watches exact owner NOTE_EXIT; root owns
-runner/publication. Do not duplicate/shared-mutate while healthy. Independent
-focused acceptance must precede only20original unexecuted blocks; never repeat
-accepted CON021/022 or passed CON023/024, full suites or old browser children.
+`/tmp/tfp-domain-edit-recovery-20261009T031154Z/focused-status.json`; historical
+running/null launchstate is not current activity. Inputs d21dd6be and four
+registries remain bound to this failed attempt. Preserve every original artifact.
+
+SOL high/root trace review proved the initiating download-event timeout at spec672:
+the same signed source delivered a thumbnail200JPEG, a fetch blocked by CORS,
+then fallback navigation200JPEG without attachment disposition. Expiry was not
+reached. Secondary-page console guard at human.fixture738 masked the primary
+failure in finally and skipped subsequent exact-owned cleanup. Missing after
+captures are cascades. Current provider GET policy versus cached no-CORS response
+reuse is unproved; no speculative CORS weakening or suppression is authorized.
+Contest SOL high owns bounded read-only provider/origin-response diagnosis;
+selector SOL high owns the proved harness primary-error/cleanup-order correction
+and discriminating checks. Root reviews exact diff/proposal before publication
+or any new browser proof. No browser/service/DB/storage mutation or new run now.
+After accepted affected proof, only20original unexecuted blocks may continue;
+never repeat accepted CON021/022, passed CON023/024 or full/browser suites.
 
 Independent final original-evidence/visual review is required after continuation.
 Only scoped root audit/checkpoint/MEMORY/AGENTS notes may be published meanwhile.
