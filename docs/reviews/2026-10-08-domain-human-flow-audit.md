@@ -977,3 +977,11 @@ Strict six-child/OAuth/six deliveredOTP/inbox/19 external production inputs and
 host/provider/storage/legal/independent recovery gates remain. Preserve historyf19
 and unrelated moderation/resume; never invent values/approve/deploy production.
 Evidence app diagnostic-review/domain-event-free-readback-20261009.
+
+## Semantic free-fee focused proof launch
+
+Exactly ONE focused `uat-domain-event-free-20261009T111201Z-6806d9de` ACTIVE ownerPID67654;
+state `/tmp/tfp-domain-event-free-recovery-state.json`, authoritative atomic
+`/tmp/tfp-domain-event-free-recovery-20261009T110723Z/focused-status.json` (missing exit unfinished). Root sole runnerowner,
+low exactPIDNOTE_EXIT monitor; no overlap/sharedsource/service/DB/cache mutations.
+Launch7622844416bytesfree; zeroRetries/maxfail1/actionevidence. No businesspassyet.

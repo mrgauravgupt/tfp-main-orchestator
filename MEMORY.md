@@ -2,6 +2,12 @@
 
 ## Domain operations — semantic free-fee readback correction published, 9 October 2026
 
+Exactly ONE focused `uat-domain-event-free-20261009T111201Z-6806d9de` ACTIVE ownerPID67654;
+state `/tmp/tfp-domain-event-free-recovery-state.json`, authoritative atomic
+`/tmp/tfp-domain-event-free-recovery-20261009T110723Z/focused-status.json` (missing exit unfinished). Root sole runnerowner,
+low exactPIDNOTE_EXIT monitor; no overlap/sharedsource/service/DB/cache mutations.
+Launch7622844416bytesfree; zeroRetries/maxfail1/actionevidence. No businesspassyet.
+
 Clean harness6806d9deb653f954d561284a2138d3337f75f3d1 published; productfb4b0c836/
 UAT20261009T093930Z-fb4b0c83 retained. Root+independentSOLhigh accepted exact2file
 diff7345ed62a2efd2ae02c8b8815c3dc491a41c365d1774f4e019fe32890fbf2fa8,
