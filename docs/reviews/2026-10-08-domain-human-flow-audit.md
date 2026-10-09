@@ -340,3 +340,15 @@ Inputs `98d2f4b9333d0e93954f4efd9cd4397e667eb060293cc0784b3bc136cc91c37e`, four 
 case/zeroRetries/maxfail1/action evidence. Low-cost monitor owns exact process exit
 watch only. No old pass or remaining20 is repeated/launched. Independent evidence
 and settled desktop/mobile acceptance is required before disjoint continuation.
+
+
+## Focused download recovery — preserved later URL failure
+
+`uat-domain-download-20261009T071739Z-092a95ee` terminated exit1 at07:19:32UTC,
+0passed/1failed/zeroRetries; owner32255 absent. Exact file download/pixel assertions
+at675–679 progressed before legacy canonical URL assertion694 failed because the
+actual canonical route also carried default tab=about. Missing after evidence is
+a cascade. The shared finalizer preserved that actual primary error and reached
+cleanup instead of masking it. Source-led SOL high review must classify the
+query-owner behavior before any minimal correction or new proof. All original
+artifacts/state/caches remain immutable;20 remaining blocks never started.

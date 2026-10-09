@@ -6,7 +6,7 @@ Clean published app/harness is `092a95ee1a2c8dfc6db07b11d34de0c8c87475da`.
 Main UAT is deployed as `20261009T071116Z-092a95ee`. Root matched all1,181
 live deployable blobs, exact API/worker/Web running cwd markers, full8unit/6endpoint
 health and loopback-only PostgreSQL/listeners. Exactly one runtime blob changed;
-prior releases remain retained. A new focused CON025 pass is still pending; no
+prior releases remain retained. The focused CON025 proof remains failed; no
 business pass, strict aggregate/verifier certificate or production approval yet.
 
 Root and GPT-6.1 SOL high accepted the nine-file minimal correction. Shared
@@ -38,14 +38,17 @@ over immutable historical running launchstate. Primary spec672 download timeout
 was masked by secondary close guard738, which also skipped later fixture cleanup.
 All original artifacts/cache/context/manifest are preserved. Earlier CON021/022
 and CON023/024 passed once and must not be repeated;20 original blocks remain
-unexecuted. Exactly one affected proof is ACTIVE: `uat-domain-download-20261009T071739Z-092a95ee`,
-detachedowner32255. Read `/tmp/tfp-domain-download-recovery-state.json` and
-`/tmp/tfp-domain-download-recovery-20261009T071404Z/focused-status.json`; missing final status is unfinished.
-Fresh isolated-cache official discovery matched exactly one CON025 declaration.
-Inputs `98d2f4b9333d0e93954f4efd9cd4397e667eb060293cc0784b3bc136cc91c37e` and all four registries are frozen;
-zeroRetries/maxfail1/oneworker/action evidence. Low owner watches exact-process
-NOTE_EXIT, root owns runner. Independently review focused evidence/desktop/mobile
-before only those20 original unexecuted declarations can continue.
+unexecuted. Affected proof `uat-domain-download-20261009T071739Z-092a95ee` terminated exit1
+at07:19:32UTC:0passed/1failed/zeroRetries; owner32255 absent and low monitor
+stopped. Immutable `/tmp/tfp-domain-download-recovery-state.json` is historical;
+authoritative `/tmp/tfp-domain-download-recovery-20261009T071404Z/focused-status.json` is finished1.
+Exact downloaded file/pixel assertions were reached before the later spec694
+legacy-redirect full-URL assertion failed: canonical URL has an additional default
+`tab=about` query. Product versus invalid test expectation remains under source-led
+SOL high review; no new source/probe/20-block launch yet. Primary-error/cleanup
+correction retained the actual URL assertion; missing after evidence is cascade.
+Inputs `98d2f4b9333d0e93954f4efd9cd4397e667eb060293cc0784b3bc136cc91c37e` and all four registries remain bound to this failed
+attempt. Never overwrite originals or repeat prior accepted CON021/022/CON023/024.
 No overlapping owner or source/service/DB/cache mutation during healthy execution.
 
 Lower-level evidence: app `test-results/reports/diagnostic-review/domain-download-cleanup-20261009/`.
