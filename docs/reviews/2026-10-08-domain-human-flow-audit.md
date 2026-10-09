@@ -515,3 +515,19 @@ Preserve historicalf19, all failures and unrelated moderation/resume changes.
 Evidence: docs/reviews/2026-10-08-domain-human-flow-audit.md and
 /tmp/tfp-domain-gallery-recovery-20261009T080417Z; regression/code review evidence is
 in app test-results/reports/diagnostic-review/domain-gallery-readiness-20261009/.
+
+## Focused EVT014 — earlier readiness failure preserved
+
+Run uat-domain-gallery-20261009T080925Z-96ee1cef stopped exit1 at08:12:24UTC,
+0passed/1failed, zeroRetries/fails beyond first/flakes/skips; owner39197 absent.
+Original regular clean context and manifest retain product092a95ee/harness96ee1cef/
+release20261009T071116Z-092a95ee/input3b7e4336539e2f3e19f54294b36c3102d0ab6cc2963c998730a65dcf0b1e4fe5.
+Evidence is incomplete0cases/0actions; all artifacts/cache/status retained.
+First failure is public-gallery-actions.ts36 readiness poll, before corrected
+Previous-page boundary. Predicate checks loaded images, exact count/unique IDs and
+pagination total. The low pagination-text summary alone does not classify which
+condition failed. Root read actual source and verified the existing regex matches
+normal total text; no regex correction is justified. Sole SOL high gallery owner
+performs bounded read-only source/trace/media-state RCA before minimal proposal.
+No replacement, product/harness edit, service or shared-data mutation authorized.
+Nineteen original blocks remain unexecuted and completed predecessors never repeat.

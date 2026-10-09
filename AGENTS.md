@@ -1,6 +1,6 @@
 # Workspace-Wide Agent Notes
 
-## Domain operations — reviewed gallery proof active, 9 October 2026
+## Domain operations — focused gallery failure preserved, 9 October 2026
 
 Product `092a95ee1a2c8dfc6db07b11d34de0c8c87475da` / UAT `20261009T071116Z-092a95ee` is unchanged.
 Clean harness `96ee1cef0cd81f3116a2dcdc93248fe36ba706be` is published. Independent SOL high and root
@@ -13,7 +13,8 @@ and diff checks passed. No assertion, timeout, provider or product policy weaken
 All1,181 deployable archive blobs match product and live; running service cwd
 bindings match the retained release. No redeployment was needed.
 
-Exactly one failed EVT014 proof `uat-domain-gallery-20261009T080925Z-96ee1cef` is active, ownerPID39197.
+Focused EVT014 proof `uat-domain-gallery-20261009T080925Z-96ee1cef` is TERMINAL exit1 at08:12:24UTC,
+0passed/1failed/zeroRetries/flakes/skips; ownerPID39197 absent.
 Read `/tmp/tfp-domain-gallery-recovery-state.json` and authoritative
 `/tmp/tfp-domain-gallery-recovery-20261009T080417Z/focused-status.json`; missing final exit is unfinished.
 Official fresh-cache discovery exactly matched one canonical block/EVT014 and
@@ -35,7 +36,13 @@ CON023/024,CON025 and completed historical flows must never repeat.
 
 On actual failure preserve and stop for source-led SOL high review; no automatic
 replacement, hidden retries/sleeps, suppression or uncertain mutation replay.
-No current business pass is claimed before original evidence review. Focused and
+No current business pass is claimed. Evidence is incomplete0cases/0actions.
+The new failure at public-gallery-actions.ts36 occurs in the earlier readiness
+predicate (loaded images, exact count/IDs and pagination total), before the
+corrected Previous boundary. Low summary identified pagination text; actual
+initiating false predicate remains unproved. Sole SOL high gallery owner reviews
+source/trace and bounded read-only exact media state. No edit/probe/browser/service/
+DB/storage mutation or replacement authorized during diagnosis.19 remain unrun. Focused and
 mixed attempts cannot form a strict six-child certificate. OAuth/six delivered-email
 OTP/inbox and nineteen external production inputs plus host/provider/storage/legal/
 independent recovery remain gates. Never invent values or approve/deploy production.
