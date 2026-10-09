@@ -1,5 +1,29 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
+## Domain operations — event public search stopped; seventeen remain unexecuted, 9 October 2026
+
+Remaining18 runuat-domain-remaining18-20261009T112128Z-6806d9de TERMINAL1 at11:22:44UTC,
+owner69602absent,0passed/1failed/17unexecuted/0retry. Empty result arrays distinguish
+unexecuted from executed skips. Authoritative `/tmp/tfp-domain-remaining18-20261009T104956Z/unexecuted-status.json`;
+immutable launchstate/alloriginalreport/context/manifest/trace/video/capture/log/cache
+preserved. No appbrowser running or replacement authorized. EVT016 firstfailure537
+expects one exact renamed public-search event card; actual searchHTTP200 contains
+zero card markup. Actual EventCard heading is valid H2; no guessedheadingfix.
+`evidence_readiness_review_high` soleSOLhighread-only searchsource/trace/query/error/
+publication root-cause owner; `event_date_review_high` caller/markup census only,
+no duplicated diagnosis or source/services/DB/storage/browser mutation.
+
+Immutable17 originallyunexecuted selection
+`/tmp/tfp-domain-remaining18-20261009T104956Z/original-unexecuted17-selection.json`
+SHA436e504523769c287ae06a91832bbe24d2276f25731d484d017431892e49350e.
+Only independently accepted minimal correction and exactfailedEVT016 proof may
+unlock these17once. AcceptedEVT0151/1/2actions12captures8rootviewed remainscomplete
+for productfb4b/UAT20261009T093930Z-fb4b0c83/harness6806d9deb653f954d561284a2138d3337f75f3d1;
+never repeat EVT015/14/CON021–025/fullsuite or splice strictcertificate. Preserve
+historicalf19/allfailures/unrelatedmoderation-resume. Strict6child/OAuth/sixdelivered
+OTP/inbox/19externalproductioninputs/host/provider/storage/legal/independentrecovery
+gates remain. No inventedvalues/productionapproval/deploy/evidence deletion.
+
 ## Domain operations — EVT015 accepted; eighteen original unexecuted active, 9 October 2026
 
 Root and independent SOLhigh accepted original EVT015 `uat-domain-event-free-20261009T111201Z-6806d9de`:
