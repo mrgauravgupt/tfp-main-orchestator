@@ -1,5 +1,33 @@
 # Workspace Memory for Future Agents
 
+## Domain operations — event edit correction published; focused proof pending, 9 October 2026
+
+Clean app/harness `fb4b0c83630cf13bb8cfaa51531384d8af33429d` is published.
+Root and independent GPT-6.1 SOL high accepted exact three-file diff SHA256
+`e8ebe7e9febc49a5ba1df14e156d35732c08a6aa20708a7ef598d8e17084b3ce`.
+Original EVT015 failed because edit uses `#eventLocation` while its test used the
+create-only `name="locationSearch"`. Actual edit field was already bound. The
+visible label also pointed to nonexistent `location`; one product association now
+matches the canonical LocationPicker ID. Two harness selectors and faithful
+visible/unfocused/label-click/focus preconditions change; helper/deadlines and
+business assertions stay unchanged. Fourteen helper sites traced, thirteen others
+unchanged. Playwright/Web typing, strict180 guard, supported TypeScript lint,
+diff and one Web production build passed. Unsupported Astro ESLint setup exit1
+is preserved separately; Web typing compiles the Astro page. No runtime pass yet.
+
+Root owns exact new UAT deployment/health and one failed EVT015 proof only. New
+preflight `/tmp/tfp-domain-event-edit-recovery-20261009T093655Z/`; no browser yet.
+Original nineteen run remains0passed/1failed/18unexecuted/zeroRetries; its atomic
+status and all original evidence remain unchanged. Immutable eighteen selection
+SHA256 `08830f0d526215fa9208d11a80ccd520efe49d5024042cbde377f966441b57f2`.
+Only after original context/hash/complete action/visual evidence acceptance may
+these eighteen run once. Never repeat accepted CON021–025/EVT014 or a full suite,
+splice evidence, invent production inputs, approve/deploy production or delete QA
+history. Strict six-child/OAuth/six delivered OTP/inbox and nineteen external
+production host/provider/storage/legal/independent-recovery gates remain. Preserve
+historicalf19 and unrelated moderation/resume dirt. Exact source/checks/reviews:
+app `test-results/reports/diagnostic-review/domain-event-edit-location-20261009/`.
+
 ## Domain operations — continuation stopped; event edit diagnosis pending, 9 October 2026
 
 Clean published product/harness `fbfccc850ceb2da547c7f7f195123d6536efafff`
