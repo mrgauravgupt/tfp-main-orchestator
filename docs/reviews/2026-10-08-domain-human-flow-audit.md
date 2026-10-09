@@ -591,3 +591,51 @@ approve/deploy production or delete QA evidence. Preserve historicalf19 and
 unrelated moderation/resume changes. Evidence: docs/reviews/2026-10-08-domain-human-flow-audit.md,
 app test-results/reports/diagnostic-review/domain-gallery-approval-readiness-20261009/,
 and /tmp/tfp-domain-gallery-approval-recovery-20261009T083118Z/.
+
+## Domain operations — gallery business proof accepted; pagination review pending, 9 October 2026
+
+Product `092a95ee1a2c8dfc6db07b11d34de0c8c87475da` / UAT
+`20261009T071116Z-092a95ee` and clean published harness
+`fca2265f01451af0d6d7f74fc70d18d8476b1faf` remain unchanged. The reviewed
+approval guard and parser readiness corrections reuse the actual shared helper;
+exact counts, unique IDs, business deadlines, strict duplicate locators and
+poll cadence remain intact. Discriminating real-helper tests, typing, scoped
+lint, human guard180 and diff checks passed. All 1,181 deployable/live blobs
+and service cwd bindings match the retained product release; no redeploy.
+
+`uat-domain-gallery-ready-20261009T083252Z-fca2265f` finished exit0 at
+08:35:54UTC: one EVT014 declaration passed, zero retries/failures/flakes/skips,
+one attempt, three action pairs and eighteen unique regular captures. Owner
+41540 is absent; no browser is active. Historical launch state remains immutable
+running/null; `/tmp/tfp-domain-gallery-approval-recovery-20261009T083118Z/focused-status.json`
+is authoritative. Root and independent GPT-6.1 SOL high accepted original
+context/manifest/hash bindings, live four registries, exact canonical semantics
+and complete evidence. Context SHA256
+`dfb552c980b821f22eb7cb2ca0384b7d4d3871ccf50cbdd65567741a7c01c9fd`;
+inputs `f530109e7a1456391fc9b1988cb6ec85ca3e8f5b763e21a7eb4443b3ceb1e91e`.
+Root viewed all twelve desktop/mobile captures; tablet metadata only. Ordered
+owner/guest pagination, oldest-image identity, tolerant decoded pixels,
+lightbox/Escape/focus and exact canonical image reporting/duplicate persistence
+executed. Passing trace/request counts or independent DB readback are not claimed.
+
+Visual review separately found functional paging controls rendered as a vertical
+bulleted list. Actual detail-page style imports appear to omit the existing
+canonical pagination mixin. `domain_gallery_root_cause_high` is the sole SOL high
+read-only source/compiled-CSS review owner; no speculative edit or business replay.
+Business acceptance does not approve this visual presentation. Nineteen original
+unexecuted blocks remain paused pending the smallest justified shared-style binding
+and affected visual proof. Immutable selection SHA256
+`cc8083f28954df9b6d20053ab799368df32934eae76c02b9c5fc08e16c5640ef`.
+Accepted CON021/022, CON023/024, CON025 and EVT014 must never repeat.
+
+Original 7d1 parser and 96ee approval failures retain their true exit1 and complete
+artifacts/caches. Existing source-led discriminators prove partial parsing and
+missing-metadata refresh liveness; earlier evidence is unchanged. First actual
+new failure preserves/stops for scoped SOL high review. No blind replacement,
+hidden retry/sleep/replay/suppression or assertion/security weakening.
+Partial/mixed/failed attempts cannot form a strict six-child certificate.
+OAuth/six delivered-email OTP/inbox and nineteen external production inputs plus
+host/provider/storage/legal/independent recovery remain gates. Never invent values,
+approve/deploy production or delete evidence. Preserve historical f19 and unrelated
+moderation/resume changes. Evidence: `docs/reviews/2026-10-08-domain-human-flow-audit.md`
+and `/tmp/tfp-domain-gallery-approval-recovery-20261009T083118Z/`.
