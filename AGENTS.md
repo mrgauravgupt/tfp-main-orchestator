@@ -1,5 +1,45 @@
 # Workspace-Wide Agent Notes
 
+## Domain operations — reviewed opportunity draft correction, 9 October 2026
+
+Published clean harness `fff83169961685015f596cbc7248b99b23f538b8` retains product
+`7a412553077257953a8c9747e5a3d92445c9c3f2` / UAT
+`20261009T155321Z-7a412553`. Root and independent GPT-6.1 SOL Ultra accepted
+four-file diff `56a6403aad3c27f626e9fef34289d53aa1b8db7ce9d610162b67eb9a4c333e89`.
+The OPP023 rejected edit returned409 and fresh server markup retained original
+title/Model/metadata; hydrated browser restored its unsaved draft. The test now
+checks that intended draft, reads saved fields in a fresh supervised owner session,
+and visibly reselects Model before the valid edit. All selected application,
+closed-role, metadata and exact workspace-delivery assertions remain. Shared
+supervised setup closes allocated contexts on initialization failure through
+existing cleanup, preserving primary errors and sanitized secondary diagnostics.
+Portable actual-helper8/8, typing, lint, strict-human180 and diff checks passed;
+the exact historical helper discrimination and initial loader setup failure remain.
+
+The preserved remaining17 run has five actual single-attempt passes, one failed
+OPP023 and eleven empty-results unexecuted blocks. Independent Ultra accepted
+five original bindings/12actions/72regular capture paths, inspected all48
+desktop/mobile captures (tablet24 metadata only). EVT018 and OPP029 include
+loadable rendition placeholders: approval/count/loadability does not prove exact
+fixture thumbnails or eventual rendition readiness. Pending versus failed/degraded
+is unclassified without retained descriptor/network evidence. Narrow postreload
+assertion limits remain recorded; no completed flow is repeated.
+
+Only one OPP023 proof is authorized next; eleven original unexecuted blocks remain
+gated by its independent evidence acceptance. Selection SHA
+`a1aa6aedfd94680e539c562ee80653605d05b8b497eb501cf1b52c7669d35ef7`.
+Preflight `/tmp/tfp-domain-opp023-recovery-20261009T170400Z/` verifies all1181
+live deployable blobs/three running cwd and runtime archive equivalence; no redeploy.
+The first scratch registry-property setup assertion ran no browser; canonical
+`context.registries` was inspected and equality retained in the corrected preflight.
+Inputs `014782cf8e4a28fa9eb7af78cbeecb236559118ba554295d21d3941379f9a202`;
+four registries unchanged. No case pass is claimed before original terminal proof.
+Ultra owns diagnosis/fix/review; low reasoning only monitors exact-owner completion.
+Preserve all originals/historyf19/unrelated moderation-resume; no full/completed
+reruns or spliced strict certificate. Strict six-child/OAuth/six delivered OTP/inbox
+and19 external production host/provider/storage/legal/independent recovery gates
+remain; never invent inputs, approve/deploy production or delete evidence.
+
 ## Domain operations — opportunity workspace flow stopped; eleven remain unexecuted, 9 October 2026
 
 Current published app/harness is `7a412553077257953a8c9747e5a3d92445c9c3f2`,
