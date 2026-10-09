@@ -2,6 +2,14 @@
 
 ## Domain operations — reviewed opportunity draft correction, 9 October 2026
 
+Exactly one OPP023 proof `uat-domain-opp023-20261009T171010Z-fff83169` is active,
+owner98823/supervisor98820. Immutable `/tmp/tfp-domain-opp023-state.json` binds
+the report/cache/logs; authoritative atomic
+`/tmp/tfp-domain-opp023-recovery-20261009T170400Z/focused-status.json` controls
+completion. Low `opp023_completion_monitor_low` owns exact-PID exit monitoring;
+root owns execution. Zero retries/maxfail1/action evidence. Missing exit unfinished.
+No duplicate launch/watch or shared source/services/DB/cache mutation while healthy.
+
 Published clean harness `fff83169961685015f596cbc7248b99b23f538b8` retains product
 `7a412553077257953a8c9747e5a3d92445c9c3f2` / UAT
 `20261009T155321Z-7a412553`. Root and independent GPT-6.1 SOL Ultra accepted
