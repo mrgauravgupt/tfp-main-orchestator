@@ -2,11 +2,19 @@
 
 ## Domain operations — opportunity publication precondition accepted, 9 October 2026
 
-One focused `uat-domain-opp023-ready-20261009T174305Z-2a641123` is active,
-owner9837/supervisor9834. Immutable `/tmp/tfp-domain-opp023-publication-state.json`;
-authoritative atomic `/tmp/tfp-domain-opp023-publication-20261009T174000Z/focused-status.json`.
-Low `opp023_completion_monitor_low` owns exact-PID completion. Missing final exit
-unfinished; do not duplicate/restart or mutate shared source/services/DB/cache.
+Focused `uat-domain-opp023-ready-20261009T174305Z-2a641123` TERMINATED1 at17:54:43UTC,
+zero passed/one failed/zero retries, owner9837/supervisor9834 absent. Immutable
+`/tmp/tfp-domain-opp023-publication-state.json` remains historical running; atomic
+`/tmp/tfp-domain-opp023-publication-20261009T174000Z/focused-status.json` is terminal.
+Existing600000ms real-GET publication precondition at spec13:3 exhausted; no eventual
+participant visibility/download proved. Cause pending bounded read-only actualtrace/
+moderation/outbox/publication RCA by sole Ultra `opp023_publication_review_ultra`.
+No browser replacement/services/source/DB/storage/cache mutation authorized during RCA.
+Canonical regular clean context `c4c2f7dadedcdea4854d3d3512372e8944eccaaa1d7dbf28e3edaf405f57264c`
+matches exact product/harness/release/live registry/input hashes; evidence incomplete.
+Low exact-owner monitor finished. Eleven original unexecuted remain paused; separate
+Ultra owner may prepare scratch-only proposals for six source-confirmed pre-execution
+harness gaps, no tracked changes or completed-flow rerun. All originals preserved.
 Initial immediate post-restart health probe exited7 while API started. A mistakenly
 recorded exit0 JSON is preserved; `full-stack-health-reviewed.json` records actual7
 and settled read-only full-stackhealth0. Launcher was dispatched before that settled
