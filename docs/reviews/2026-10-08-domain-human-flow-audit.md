@@ -833,3 +833,36 @@ external production host/provider/storage/legal/independent recovery remain gate
 Never invent production values/approve/deploy production/delete evidence; preserve
 historicalf19 and unrelated moderation/resume work. Evidence: app diagnostic-review/
 domain-event-edit-location-20261009 and `/tmp/tfp-domain-event-edit-recovery-20261009T093655Z/`.
+
+## Domain operations — atomic image readiness correction published, 9 October 2026
+
+Product `fb4b0c83630cf13bb8cfaa51531384d8af33429d` / UAT
+`20261009T093930Z-fb4b0c83` retained; clean published harness
+`f0fa2e482f96cc8afc21017dec15f6ede5271e65`. Root and independent GPT-6.1 SOL
+high accepted exact three-file diff40a4ffbf684b5fda772e425e122ea029e2281a4fb3173533975c433314c5854b.
+RCA3081d086... proves split readiness snapshot: after early image completion,
+normal map initialization inserts ten images during the existing50ms gap; final
+snapshot rejects them immediately. All ten requests returned200 within111ms; no
+configured deadline or provider failure. Corrected selector/label/focus/autocomplete
+and persisted edit assertions already passed; full EVT015 remains failed.
+
+The final snapshot now waits for and returns the same complete rendered-image
+object, with existing sequencing/50ms/filters/timeouts/failed-path rejection intact;
+JSHandle disposed in finally. Actual old/current compiled-helper loopback check
+specifically rejects old10pending, waits for current13loaded, and retains broken
+path/held1000ms rejection. New test writes unique artifact children and guarantees
+resource cleanup even if artifact writing fails. First setup safety failure and
+prior corrected proof remain distinct; six final scoped checks passed including
+fresh final actual-helper test. No completed business flow or unit suite repeated.
+No product/map/provider/CSS/spec/registry changes or product rebuild/redeploy.
+
+Root owns fresh single-EVT015 discovery/archive/live health preflight in
+`/tmp/tfp-domain-event-image-recovery-20261009T095657Z/`; browser not launched yet.
+After accepted original context/hash/mapping/action/capture/desktop-mobile evidence,
+only18 original unexecuted blocks may run once; immutable selection
+08830f0d526215fa9208d11a80ccd520efe49d5024042cbde377f966441b57f2.
+No accepted CON021–025/EVT014/fullsuite repeats or certificate splicing. Preserve
+all failed evidence/caches/historyf19/unrelated moderation/resume. Strict six-child,
+OAuth/six delivered OTP/inbox/19 external production host/provider/storage/legal/
+independent recovery gates remain; never invent values or approve/deploy production.
+Evidence: app diagnostic-review/domain-evidence-image-readiness-20261009.
