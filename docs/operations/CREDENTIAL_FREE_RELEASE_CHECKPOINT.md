@@ -3,10 +3,11 @@
 ## Domain operations — reviewed download correction, 9 October 2026
 
 Clean published app/harness is `092a95ee1a2c8dfc6db07b11d34de0c8c87475da`.
-The main UAT deployment is in progress; exact release/health/live archive proof
-and a new focused CON025 pass remain pending. Prior deployed product was
-`0dac6128432ddd9687f57a2525dbca2fe6dc6975` / `20261008T170441Z-0dac6128`.
-No product approval, new business pass or aggregate/verifier success is claimed.
+Main UAT is deployed as `20261009T071116Z-092a95ee`. Root matched all1,181
+live deployable blobs, exact API/worker/Web running cwd markers, full8unit/6endpoint
+health and loopback-only PostgreSQL/listeners. Exactly one runtime blob changed;
+prior releases remain retained. A new focused CON025 pass is still pending; no
+business pass, strict aggregate/verifier certificate or production approval yet.
 
 Root and GPT-6.1 SOL high accepted the nine-file minimal correction. Shared
 resource download uses `cache: no-store` to request fresh CORS response headers;
@@ -37,8 +38,14 @@ over immutable historical running launchstate. Primary spec672 download timeout
 was masked by secondary close guard738, which also skipped later fixture cleanup.
 All original artifacts/cache/context/manifest are preserved. Earlier CON021/022
 and CON023/024 passed once and must not be repeated;20 original blocks remain
-unexecuted. After exact deployment/preflight, root may launch exactly one affected
-CON025 proof, independently review evidence/desktop/mobile, then only those20.
+unexecuted. Exactly one affected proof is ACTIVE: `uat-domain-download-20261009T071739Z-092a95ee`,
+detachedowner32255. Read `/tmp/tfp-domain-download-recovery-state.json` and
+`/tmp/tfp-domain-download-recovery-20261009T071404Z/focused-status.json`; missing final status is unfinished.
+Fresh isolated-cache official discovery matched exactly one CON025 declaration.
+Inputs `98d2f4b9333d0e93954f4efd9cd4397e667eb060293cc0784b3bc136cc91c37e` and all four registries are frozen;
+zeroRetries/maxfail1/oneworker/action evidence. Low owner watches exact-process
+NOTE_EXIT, root owns runner. Independently review focused evidence/desktop/mobile
+before only those20 original unexecuted declarations can continue.
 No overlapping owner or source/service/DB/cache mutation during healthy execution.
 
 Lower-level evidence: app `test-results/reports/diagnostic-review/domain-download-cleanup-20261009/`.

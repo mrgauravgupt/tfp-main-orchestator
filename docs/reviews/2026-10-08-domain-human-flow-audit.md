@@ -321,3 +321,22 @@ only their failed/incomplete checks were recovered. Typing/lint/human180/diff pa
 Evidence: app test-results/reports/diagnostic-review/domain-download-cleanup-20261009/.
 Deployment/full exact health and one CON025 proof are pending;20 original blocks
 remain untouched. No strict certificate or production approval follows.
+
+
+## Exact UAT deployment and focused download recovery active
+
+Main UAT `20261009T071116Z-092a95ee` deployed successfully, including production
+builds. All1,181 Git archive blobs match live files; only shared resource-download
+runtime source changed versus0dac. Exact three app service cwd markers and full
+eight-unit/six-endpoint health/loopback boundaries passed. No pending migrations;
+prior releases were retained. Initial archive path discovery used root instead of
+nested source; read-only setup failure and corrected archive proof remain distinct.
+
+One fresh-cache official Chromium discovery exactly matched CON025 before
+`uat-domain-download-20261009T071739Z-092a95ee`, owner32255, launched once. State
+`/tmp/tfp-domain-download-recovery-state.json` binds the atomic status at
+`/tmp/tfp-domain-download-recovery-20261009T071404Z/focused-status.json`; absent final status remains unfinished.
+Inputs `98d2f4b9333d0e93954f4efd9cd4397e667eb060293cc0784b3bc136cc91c37e`, four registries unchanged, one scoped fresh-fixture
+case/zeroRetries/maxfail1/action evidence. Low-cost monitor owns exact process exit
+watch only. No old pass or remaining20 is repeated/launched. Independent evidence
+and settled desktop/mobile acceptance is required before disjoint continuation.
