@@ -1,34 +1,42 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
-## Domain operations — scoped run active, 8 October 2026
+## Domain operations — preserved first failure, 9 October 2026
 
-Reviewed product/harness `0dac6128432ddd9687f57a2525dbca2fe6dc6975` is published and deployed to UAT
-`20261008T170441Z-0dac6128`. Root independently matched all1,181 Git archive blobs
-and full eight-unit/six-endpoint loopback health. SOL high domain implementations
-and peer reviews preserved schema/outbox/security boundaries. Opportunity edits
-retain application/role identities; contest creation is ADMIN+MFA only regardless
-of quotas; winner/edit locks, shared safe gallery paging, exact reaction/share
-and canonical report-image selection are corrected. Lower-level database/client
-discriminators, types/builds/lint, architecture37 and human guard88 passed.
+Published product remains `0dac6128432ddd9687f57a2525dbca2fe6dc6975` at UAT
+`20261008T170441Z-0dac6128`; the 1,181-file source archive and full stack health
+were independently checked before launch. The original scoped child
+`uat-domain-20261008T170824Z-0dac6128` terminated exit1 at 17:09:19 UTC on
+8 October: zero passed, one failed, twenty-two unexecuted, zero retries.
+Owner PID95377 is absent. `/tmp/tfp-domain-human-20261008T170543Z/status.json`
+is authoritative; `/tmp/tfp-domain-human-state.json` retains immutable historical
+launch state and must not be read as a current running owner.
 
-Exactly one new/affected UAT Chromium child is running: `uat-domain-20261008T170824Z-0dac6128`
-(23 newly authored blocks/25IDs, zero retries/maxfail1/action evidence).
-Read `/tmp/tfp-domain-human-state.json` and its atomic status path before any
-action. Owner PID95377; missing final status is unfinished. Never duplicate
-launch or mutate app source/services/DB/cache while healthy. Completed historical
-flows are not replayed. First actual failure must preserve every original artifact
-and stop for scoped SOL high RCA; only failed/unexecuted/affected continuation
-may be considered after review. No automatic full replacement.
+The first helper assertion assumes UUIDs for submission links; executable
+`ContestSubmission` uses CUIDs. The submitted entry and visible link existed.
+Missing before/after evidence is a cascade of that helper failure, not an
+established product failure. SOL high corrected only the helper and README;
+root independently reviewed actual ID generation, routes and all three callers.
+Harness `93e9300b5c6d1cf0ed5e57680e8181bc95144118` is published. Visible-link,
+same-origin exact contest path and exact entry identity assertions remain.
+Playwright typing, scoped lint, strict-human guard and diff checks passed.
+Both revisions' deployable archives are byte-identical; all 1,181 live UAT blobs
+match the original product, so no new deployment is required. Previous workspace
+credit exhaustion made no edits; the resumed correction completed successfully.
+No recovery browser has been launched and no new business pass is claimed.
 
-Official fresh-cache discovery exactly matched the canonical AST selection.
-The first preflight lacked the required target-write acknowledgment and ran zero
-browser tests; its output remains preserved. Root audit/operation reconciliation:
-`docs/reviews/2026-10-08-domain-human-flow-audit.md`. Main review/check artifacts:
-`tfpphotographers/test-results/reports/diagnostic-review/domain-human-flow-audit-20261008/`.
-No new business pass, aggregate/verifier certificate or production approval is
-claimed before original evidence review. OAuth/delivered-email OTP/inbox and
-production host/provider/storage/legal/independent recovery gates retain their
-actual limitations. Preserve unrelated moderation/resume dirt and all history.
+Root must independently review the exact correction, publish scoped harness
+files/gitlink and establish deployable archive equivalence. Then one uniquely
+discovered failed-block proof precedes only the original twenty-two unexecuted
+blocks; completed historical flows/full matrices are never rerun. Every original
+trace/result/context/manifest/cache remains untouched. Read any new
+`/tmp/tfp-domain-recovery-state.json` and its atomic status before acting.
+No partial or failed child may be spliced into strict six-child certification.
+Preserve unrelated moderation/resume work and historical f19 evidence.
+
+Product/database/client checks and operation scope remain documented in
+`docs/reviews/2026-10-08-domain-human-flow-audit.md`. OAuth/six delivered-email
+OTP/inbox, production host/provider/storage/legal and independent recovery gates
+remain explicit. Production values were not invented and approval is not claimed.
 
 
 ## Remaining Web gates — completed scoped handoff 8 October 2026
