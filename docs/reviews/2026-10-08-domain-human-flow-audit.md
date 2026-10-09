@@ -396,3 +396,49 @@ host/provider/storage/legal/independent recovery remain gates. Never invent
 values, approve/deploy production or delete QA evidence. Preserve unrelated
 moderation-service/resume work and historicalf19.
 
+## Domain operations — accepted CON025, remaining20 active, 9 October 2026
+
+Product `092a95ee1a2c8dfc6db07b11d34de0c8c87475da` remains deployed at UAT
+`20261009T071116Z-092a95ee`; clean published harness is `7d1e3e648f09a876f769d9922bb63af0b039549c`.
+All1,181 deployable archive blobs are byte-identical and match live, exact three
+service cwd markers and full-stack health passed. No redeployment was required.
+Initial read-only archive marker/proc-permission setup mistakes are preserved;
+corrected reads passed without source/service mutations or browser execution.
+
+CON025 recovery `uat-domain-tab-20261009T073958Z-7d1e3e64` finished exit0 at07:41:46UTC,
+1passed/zeroRetries/failures/flakes/skips. Root and independent GPT-6.1 SOL high
+accepted regular original context/manifest/evidence, current four-registry/input
+hashes, exact clean product/harness/release and canonical declaration. Context
+hash `86e4516611f52c1593bfa076927b7d3d72a0ba88a991a2cbd003d3d713990035`; inputs `e8793da075b4b2be9d8e3fdff3a48614d14680d494dbb0ec476026de8e931ec8`.
+Two action pairs/twelve unique regular captures complete; all widths fit and
+recorded images loaded, relevant diagnostics empty. Root viewed all8desktop/mobile
+captures; tablet metadata only. Proof covers rich edit/media replacement, awaited
+normalized tolerant download pixels (mean RGB difference<=6, not binary identity),
+exact legacy canonical URL plus declared tab=about/selected About, deletion cancel/
+confirm and independent public canonical/legacy/directory404/list/search absence.
+The four-file minimal harness correction changes no product behavior; typing,
+scoped lint, human180 consistency, changed consumer contract and diff passed.
+Shared no-store CORS/download correction retains real-socket/consumer evidence;
+original UAT cache reuse was not conclusively captured, no provider policy weakened.
+
+Exactly one continuation `uat-domain-remaining20-20261009T074551Z-7d1e3e64` launched, ownerPID35667,
+ONLY20 original unexecuted blocks/20IDs. `/tmp/tfp-domain-remaining20-state.json`
+binds authoritative `/tmp/tfp-domain-tab-recovery-20261009T073734Z/unexecuted-status.json`;
+missing final status unfinished. Fresh isolated-cache official discovery exactly
+matches canonical AST and immutable disjoint selection SHA256
+`10c2ec36cf388d554c3e3820c23c0e2f943d2a2e7383daf1c8c5258bf4b346f5`. ZeroRetries/maxfail1/oneworker/action evidence;
+resource gate4.87GiB free exceeded2GiB conservative report+256MiBvariance+512MiBreserve.
+Root sole runner owner; low owner watches exact process exit only. Runner owns
+FE/BE setup/scoped isolated fixtures. No overlapping launch, healthy restart or
+shared source/service/DB/cache mutation. Accepted CON021/022,CON023/024,CON025 and
+completed historical flows must never repeat. Original failed contexts/caches and
+immutable historical running launch states remain separate; atomic status wins.
+No current20 pass is claimed before original evidence/settled visual acceptance.
+
+Evidence: `docs/reviews/2026-10-08-domain-human-flow-audit.md` and external immutable
+preflight/reviews under `/tmp/tfp-domain-tab-recovery-20261009T073734Z`. Focused/resumed results are incomplete;
+no strict six-compatible-clean-child aggregate/verifier certificate or production
+approval follows. OAuth/six recipient-delivered OTP/inbox and19external production
+inputs plus actual host/provider/storage/legal/independent recovery remain gates.
+Never invent values, approve/deploy production or delete QA evidence. Preserve
+unrelated moderation-service/resume work and historicalf19.
