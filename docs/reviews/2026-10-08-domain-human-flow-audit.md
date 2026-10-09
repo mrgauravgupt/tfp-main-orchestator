@@ -2,6 +2,15 @@
 
 ## Domain operations — exact workspace readiness correction accepted, 9 October 2026
 
+Exactly one focused `uat-domain-opp023-visible-20261009T181426Z-dab1dc2c` is active,
+owner14583/supervisor14580. Immutable `/tmp/tfp-domain-opp023-visible-state.json`;
+authoritative `/tmp/tfp-domain-opp023-visible-20261009T181000Z/focused-status.json`.
+Low `opp023_visible_monitor_low` owns exact-owner completion; root owns execution.
+FE+BE restart0, immediate startup health7 preserved, bounded canonical-style
+startup readiness0 and full settled stackhealth0 completed BEFORE dispatch.
+Zero retries/maxfail1/actions. Missing exit unfinished. No overlap/duplicatewatch
+or shared source/services/DB/cache mutation while healthy; eleven stay gated.
+
 Clean published harness `dab1dc2c3f1db49135559a5cc24d20fe020dbe36`; unchanged product
 `7a412553077257953a8c9747e5a3d92445c9c3f2` / UAT `20261009T155321Z-7a412553`.
 Root and independent Ultra accept exact three-file diff
