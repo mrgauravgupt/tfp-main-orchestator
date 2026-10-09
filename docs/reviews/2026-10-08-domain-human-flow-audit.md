@@ -531,3 +531,16 @@ normal total text; no regex correction is justified. Sole SOL high gallery owner
 performs bounded read-only source/trace/media-state RCA before minimal proposal.
 No replacement, product/harness edit, service or shared-data mutation authorized.
 Nineteen original blocks remain unexecuted and completed predecessors never repeat.
+
+## Confirmed delayed-approval polling blocker and minimal plan
+
+| Severity/source | Actual evidence and root cause | Minimal correction / status |
+| --- | --- | --- |
+| P1 harness liveness, public-gallery-actions.ts24–37 | SSR08:11:15.243 has12 loaded unique images/no nav. Exact ordinal13 approval08:11:23.406703 occurs8.16s later. Missing metadata textContent waits60s on stale SSR and throws rather than allowing refresh. | Zero-count metadata guard returnsfalse before unchanged exact regex/text read. Preserve duplicate locator strictness, loaded/count/ID checks and original poll/timeouts. Root independently accepted; sole SOL high minimal implementation authorized. |
+| Product branch, Pagination.astro | pages<=1 intentionally renders no pagination; exact13 records and approval-success logs establish delayed approval trigger, not upload loss. Current REVOKED state comes from finally cleanup. | No product/media/provider-policy fix or redeployment justified. Later rendition/lightbox/report assertions remain unexecuted. |
+| Regression confidence | Actual readiness helper must reach missing-nav boundary; simple static guard is insufficient. | New actual-helper real-loopback absent-nav then approved-total13 discriminator for both kinds; old disposable source must reject missing locator without refresh. Separate evidence directory preserves earlier discriminator; scoped typing/lint/guard/diff and independent review precede publication. |
+
+RCA /tmp/tfp-domain-gallery-recovery-20261009T080417Z/gallery-readiness-rca.json
+SHA256fad41ca427a7b0ab7eecd390855c099bcfac262e59d5adf68c34c3e5782b9269.
+No new business pass, automatic replacement or extra browser proof is authorized.
+EVT014 remains failed and19 original blocks unexecuted; completed flows never repeat.

@@ -37,12 +37,16 @@ CON023/024,CON025 and completed historical flows must never repeat.
 On actual failure preserve and stop for source-led SOL high review; no automatic
 replacement, hidden retries/sleeps, suppression or uncertain mutation replay.
 No current business pass is claimed. Evidence is incomplete0cases/0actions.
-The new failure at public-gallery-actions.ts36 occurs in the earlier readiness
-predicate (loaded images, exact count/IDs and pagination total), before the
-corrected Previous boundary. Low summary identified pagination text; actual
-initiating false predicate remains unproved. Sole SOL high gallery owner reviews
-source/trace and bounded read-only exact media state. No edit/probe/browser/service/
-DB/storage mutation or replacement authorized during diagnosis.19 remain unrun. Focused and
+The new failure at public-gallery-actions.ts36 is proved missing-pagination
+liveness: full SSR has12 loaded unique images and no nav; thirteenth approval
+occurs8.16s later while metadata.textContent waits60s on the unchanged page.
+Root independently accepted source/trace/exact ordinal approval chronology.
+Product pages<=1 omission is valid; accepted Previous parser fix was not reached.
+Sole SOL high owner is authorized only zero-count metadata guard returningfalse,
+one new actual-helper loopback discriminator and README with scoped checks.
+Existing poll cadence/timeouts/exact total/loaded/unique/strict duplicate assertions
+remain. No business browser/probe/services/DB/storage mutation/publication before
+root independent exact-diff acceptance.19 original blocks remain unrun. Focused and
 mixed attempts cannot form a strict six-child certificate. OAuth/six delivered-email
 OTP/inbox and nineteen external production inputs plus host/provider/storage/legal/
 independent recovery remain gates. Never invent values or approve/deploy production.
