@@ -2,6 +2,17 @@
 
 ## Domain operations — opportunity publication precondition accepted, 9 October 2026
 
+One focused `uat-domain-opp023-ready-20261009T174305Z-2a641123` is active,
+owner9837/supervisor9834. Immutable `/tmp/tfp-domain-opp023-publication-state.json`;
+authoritative atomic `/tmp/tfp-domain-opp023-publication-20261009T174000Z/focused-status.json`.
+Low `opp023_completion_monitor_low` owns exact-PID completion. Missing final exit
+unfinished; do not duplicate/restart or mutate shared source/services/DB/cache.
+Initial immediate post-restart health probe exited7 while API started. A mistakenly
+recorded exit0 JSON is preserved; `full-stack-health-reviewed.json` records actual7
+and settled read-only full-stackhealth0. Launcher was dispatched before that settled
+check; canonical runner independently confirmed health before browser execution.
+No healthy runner restarted and no browser pass is inferred from health alone.
+
 Root and independent GPT-6.1 SOL Ultra accepted exact two-file diff
 `8ac3e26ec8029fe5311981b0d10d42c0fdc94c7d2354dd1e14780d08e5c6f052`;
 clean published harness `2a641123dfb8e5baf2951b10dce14484c97cf959`.
