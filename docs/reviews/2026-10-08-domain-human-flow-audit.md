@@ -866,3 +866,27 @@ all failed evidence/caches/historyf19/unrelated moderation/resume. Strict six-ch
 OAuth/six delivered OTP/inbox/19 external production host/provider/storage/legal/
 independent recovery gates remain; never invent values or approve/deploy production.
 Evidence: app diagnostic-review/domain-evidence-image-readiness-20261009.
+
+## Domain operations — reviewed image-readiness focused proof active, 9 October 2026
+
+Exactly one EVT015 proof `uat-domain-event-image-20261009T104826Z-f0fa2e48` is active, detachedPID62121.
+Read `/tmp/tfp-domain-event-image-recovery-state.json` and authoritative atomic
+`/tmp/tfp-domain-event-image-recovery-20261009T095657Z/focused-status.json`; missing final exit unfinished. Root sole runner owner;
+`domain_completion_monitor_low` owns exact PID NOTE_EXIT read-only completion.
+Product `fb4b0c83630cf13bb8cfaa51531384d8af33429d` / UAT `20261009T093930Z-fb4b0c83` unchanged, clean
+harness `f0fa2e482f96cc8afc21017dec15f6ede5271e65`. All1181 archive/live blobs and three cwd bindings
+match; full health0, no redeploy. Fresh isolated-cache official discovery exactly
+one EVT015/retries0; inputs `22d120c429f0e75885ccf54b56277508604caf071479ba1bd8344ac922acb20a`, four registries unchanged.
+Launch 7872745472bytes free. Canonical runner owns FE/BE setup/scoped fixtures.
+No source/services/DB/cache mutation or overlap while healthy; no business pass yet.
+
+Atomic readiness three-file batch and final six checks independently accepted;
+exact diff40a4ffbf684b5fda772e425e122ea029e2281a4fb3173533975c433314c5854b.
+Root viewed original and final synthetic loaded-image screenshots; lower-level
+only, not application visual proof. Original failed evidence remains immutable.
+Only original regular context/manifest/hash/live bindings/canonical semantics/
+complete action evidence and settled desktop/mobile acceptance may precede18
+original unexecuted once. Never repeat accepted CON021–025/EVT014/fullsuite/splice
+certificates. Strict six-child/OAuth/six delivered OTP/inbox/19 external production
+inputs and host/provider/storage/legal/independent recovery gates remain. Preserve
+historyf19/unrelated moderation-resume. Never invent values or deploy production.
