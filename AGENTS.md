@@ -1,5 +1,33 @@
 # Workspace-Wide Agent Notes
 
+## Domain operations — semantic free-fee readback correction published, 9 October 2026
+
+Clean harness6806d9deb653f954d561284a2138d3337f75f3d1 published; productfb4b0c836/
+UAT20261009T093930Z-fb4b0c83 retained. Root+independentSOLhigh accepted exact2file
+diff7345ed62a2efd2ae02c8b8815c3dc491a41c365d1774f4e019fe32890fbf2fa8,
+PWtyping/lint/strict180/diff0. Actual clearPOST omits allfee fields, ownerresponse
+has Freeentry and fresh edit all4checkboxesunchecked/all4amountsblank. Anonymous
+samepath retains paid125 summary13s later, compatible existing60s detailTTL; direct
+cacheHIT unmeasured, no product/cache defect claimed. Freefallback intentionally
+retainsUL and broad offers matches hero+detail. Original failedproof preserved.
+
+Existing public-event poll now optionally checks visible state after each realGET,
+same deadline/cadence; only fee-clearcall requires uniquevisible detailoffers/
+exactone Freeentry row/no125. Same positive/removedamount checks repeat after real
+reload. Eleven other callers unchanged; remainingEVT015 branches audited. No
+product/helper/map/provider/expecteddate/security change, build/redeploy unnecessary.
+All1181 archive/live blobs/currentrelease/3cwd/fullhealth0; official fresh isolated
+cache exactlyoneEVT015/retries0/inputf0fa8cb5718822c6f6aa98126d9a1f77b22f211202a8243bbe159e39b6cc6a4c,
+four registries unchanged. Root owns one failed-EVT015 proof; browser pending.
+Preflight `/tmp/tfp-domain-event-free-recovery-20261009T110723Z/`; source/history
+and every failed context/cache/state untouched. Only independently accepted full
+originalcontext/hash/canonicalaction/count/capture/desktopmobile proof may unlock
+18 originalunexecuted once. No CON021–025/EVT014/fullsuite repeat/spliced certificate.
+Strict six-child/OAuth/six deliveredOTP/inbox/19 external production inputs and
+host/provider/storage/legal/independent recovery gates remain. Preserve historyf19
+and unrelated moderation/resume; never invent values/approve/deploy production.
+Evidence app diagnostic-review/domain-event-free-readback-20261009.
+
 ## Domain operations — fee-clear public readback stopped for diagnosis, 9 October 2026
 
 Productfb4b0c83630cf13bb8cfaa51531384d8af33429d/UAT20261009T093930Z-fb4b0c83
