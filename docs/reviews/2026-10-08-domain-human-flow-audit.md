@@ -299,3 +299,25 @@ snapshot remains running/null and must not be rewritten as current activity.
 Original results/trace/video/captures/context/manifest/cache remain unchanged.
 Earlier CON021/022 and CON023/024 passes are retained;20original blocks remain
 unexecuted. No aggregate, verifier success or production approval is claimed.
+
+
+## Accepted minimal download/cleanup correction — 9 October 2026
+
+Published app/harness092a95ee contains nine scoped files. Current exact-origin
+provider GET/HEAD returned200JPEG with ACAO/Vary, so no provider policy widening
+is justified. Read-only source-scoped GetBucketCors denied403. A two-origin real
+Chromium socket discriminator compiling the actual helper reproduced the old
+thumbnail-cache/CORS/no-download pattern; no-store then saved exact bytes/name
+with one fresh Origin GET. Original UAT initiating cache reuse remains unproved.
+Signed identity, credentials omission, CORS enforcement and fallback are unchanged.
+
+Shared supervised finalization retains primary errors, attaches sanitized secondary
+failures and guarantees exact-owned cleanup attempts; strict diagnostic failure
+still fails an otherwise-successful flow. Five new-domain consumers migrated.
+SOL high independent read-only review found no concrete blocker. Tests: download
+unit6, cleanup6, two separate lower-level browser checks passed. Original old-source
+rejection, initial popup timing failure and optional-CDP-type failure are preserved;
+only their failed/incomplete checks were recovered. Typing/lint/human180/diff passed.
+Evidence: app test-results/reports/diagnostic-review/domain-download-cleanup-20261009/.
+Deployment/full exact health and one CON025 proof are pending;20 original blocks
+remain untouched. No strict certificate or production approval follows.
