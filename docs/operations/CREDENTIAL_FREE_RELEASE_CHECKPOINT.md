@@ -1,5 +1,43 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
+## Domain operations — OPP023 passed; remaining work blocked by credits, 10 October 2026
+
+Focused `uat-domain-opp023-visible-20261009T181426Z-dab1dc2c` finished exit 0 at
+18:15:45 UTC on 9 October: one passed attempt, zero retries/failures/flakes/skips.
+Both detached owners are absent. Root rechecked the original regular context,
+manifest, canonical mapping, live four-registry/input hashes and twelve unique
+regular captures. The prior root review viewed all eight desktop/mobile captures;
+four tablet captures were checked through metadata. This is a focused business pass,
+with a separate mobile role/status word-wrapping defect still awaiting correction.
+
+Harness remains clean `dab1dc2c3f1db49135559a5cc24d20fe020dbe36`; deployed product
+`7a412553077257953a8c9747e5a3d92445c9c3f2` / UAT
+`20261009T155321Z-7a412553` is unchanged. Context
+`33dd6bda61fc552eb692e3a9e8b2e61678080f9d0532590d3d2cfff3bcb67c91`;
+inputs `fe9e772e8349672d0ead7d41ba895e212993dc0c88933b971a5f088427e5882c`.
+
+All three requested GPT-6.1 SOL Ultra implementation/review agents were rejected
+with “Your workspace is out of credits.” No new tracked product/harness edit,
+browser launch, service restart or deployment occurred. The prior Ultra reviewer
+reported matching evidence checks, but its final artifact remains pending.
+Do not repeatedly spawn agents against this unchanged resource failure or replace
+the requested Ultra work with a lower-reasoning agent. Low reasoning is monitoring only.
+
+Eleven original unexecuted blocks remain gated by the minimal workspace CSS fix,
+six confirmed harness corrections, relevant checks and independent Ultra review.
+The scratch proposal is unapplied; preserve selection SHA
+`a1aa6aedfd94680e539c562ee80653605d05b8b497eb501cf1b52c7669d35ef7`
+and proposal SHA `87c8746f31a6fc5979733205540956a44a1a7c4110263628fbfa1bf6f08872af`.
+Resume after workspace credit capacity is restored; never repeat OPP023 or any
+completed flow. Root metadata audit: `/tmp/tfp-domain-handoff-creditgate-20261010/root-audit.json`.
+The initial audit's mistaken zero-based evidence attempt assertion is preserved;
+actual helper uses retry + 1, and the corrected metadata audit passed without a browser run.
+
+Strict six-child certification, OAuth/six delivered-email OTP/inbox and nineteen
+external production inputs plus host/provider/storage/legal/independent recovery
+remain gates. No production approval or deployment. Historical sections below,
+all original evidence/caches/history f19 and unrelated moderation/resume work remain preserved.
+
 ## Domain operations — exact workspace readiness correction accepted, 9 October 2026
 
 Exactly one focused `uat-domain-opp023-visible-20261009T181426Z-dab1dc2c` is active,
