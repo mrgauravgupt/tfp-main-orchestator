@@ -442,3 +442,17 @@ approval follows. OAuth/six recipient-delivered OTP/inbox and19external producti
 inputs plus actual host/provider/storage/legal/independent recovery remain gates.
 Never invent values, approve/deploy production or delete QA evidence. Preserve
 unrelated moderation-service/resume work and historicalf19.
+
+## Remaining20 — first gallery failure preserved
+
+`uat-domain-remaining20-20261009T074551Z-7d1e3e64` stopped exit1 at07:47:56UTC,
+0passed/1failed/19unexecuted, zeroRetries. Atomic unexecuted-status.json overrides
+immutable historical running launch state; owner35667 absent. First EVT014 spec317
+failed in public-gallery-actions.ts59: previous-page photo IDs returned empty
+instead of exact original IDs. Initiating cause remains unclassified. SOL high
+sole gallery RCA owner traces actual source/trace/DOM/navigation before proposing
+a minimal correction; no edits/browser/probe/service/DB/storage mutations allowed
+until root independently reviews. No suppressed guard, timeout increase, retry,
+uncertain replay or full/completed-flow replacement. Original evidence catalog
+is incomplete0cases/0actions and all artifacts/cache preserved. CON025 predecessor
+remains accepted; only failed EVT014 proof and19 unexecuted may later continue.

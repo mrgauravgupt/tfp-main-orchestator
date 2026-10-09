@@ -1,6 +1,6 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
-## Domain operations — accepted CON025, remaining20 active, 9 October 2026
+## Domain operations — gallery failure preserved, 9 October 2026
 
 Product `092a95ee1a2c8dfc6db07b11d34de0c8c87475da` remains deployed at UAT
 `20261009T071116Z-092a95ee`; clean published harness is `7d1e3e648f09a876f769d9922bb63af0b039549c`.
@@ -25,19 +25,26 @@ scoped lint, human180 consistency, changed consumer contract and diff passed.
 Shared no-store CORS/download correction retains real-socket/consumer evidence;
 original UAT cache reuse was not conclusively captured, no provider policy weakened.
 
-Exactly one continuation `uat-domain-remaining20-20261009T074551Z-7d1e3e64` launched, ownerPID35667,
-ONLY20 original unexecuted blocks/20IDs. `/tmp/tfp-domain-remaining20-state.json`
-binds authoritative `/tmp/tfp-domain-tab-recovery-20261009T073734Z/unexecuted-status.json`;
-missing final status unfinished. Fresh isolated-cache official discovery exactly
-matches canonical AST and immutable disjoint selection SHA256
-`10c2ec36cf388d554c3e3820c23c0e2f943d2a2e7383daf1c8c5258bf4b346f5`. ZeroRetries/maxfail1/oneworker/action evidence;
-resource gate4.87GiB free exceeded2GiB conservative report+256MiBvariance+512MiBreserve.
-Root sole runner owner; low owner watches exact process exit only. Runner owns
-FE/BE setup/scoped isolated fixtures. No overlapping launch, healthy restart or
-shared source/service/DB/cache mutation. Accepted CON021/022,CON023/024,CON025 and
-completed historical flows must never repeat. Original failed contexts/caches and
-immutable historical running launch states remain separate; atomic status wins.
-No current20 pass is claimed before original evidence/settled visual acceptance.
+Remaining20 continuation `uat-domain-remaining20-20261009T074551Z-7d1e3e64` is TERMINAL exit1 at
+07:47:56UTC:0passed/1failed/19unexecuted (Playwright reports19 skipped after
+maxfail1), zeroRetries. Owner35667 absent; low completion watch stopped.
+Immutable `/tmp/tfp-domain-remaining20-state.json` retains historical running/null;
+authoritative `/tmp/tfp-domain-tab-recovery-20261009T073734Z/unexecuted-status.json` is finished1.
+First EVT014 at event-lifecycle.human.spec.ts317 failed in shared
+public-gallery-actions.ts59: returned photo IDs were empty where previous-page
+readback expected the original exact IDs. Actual initiating cause is unclassified;
+no product loss, authorization or provider failure is presumed. All original
+context/manifest/results/trace/video/screenshots/cache remain preserved. Evidence
+catalog is incomplete0cases/0actions; no business pass is inferred from uploads.
+Sole GPT-6.1 SOL high owner `/root/domain_gallery_root_cause_high` performs bounded
+READ-ONLY source/trace/navigation/DOM RCA and minimal discriminating proposal;
+root independently reviews before any edit/probe/publication. No new browser,
+service restart, DB/storage write, source mutation or replay during diagnosis.
+Only separately accepted failed-block proof may precede19 remaining original
+unexecuted blocks; completed CON021/022,CON023/024,CON025 and old flows never repeat.
+Selection20/input hashes remain frozen in original launch evidence. Do not splice
+partial/failed contexts or launch automatic replacements. Negative API logs alone
+are not failures. Latest report volume free4,936,532KiB; all evidence retained.
 
 Evidence: `docs/reviews/2026-10-08-domain-human-flow-audit.md` and external immutable
 preflight/reviews under `/tmp/tfp-domain-tab-recovery-20261009T073734Z`. Focused/resumed results are incomplete;
