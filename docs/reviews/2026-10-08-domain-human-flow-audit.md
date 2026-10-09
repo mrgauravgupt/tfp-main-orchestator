@@ -143,11 +143,18 @@ Playwright typing, scoped lint, strict-human guard and diff checks passed.
 Both revisions' deployable archives are byte-identical; all 1,181 live UAT blobs
 match the original product, so no new deployment is required. Previous workspace
 credit exhaustion made no edits; the resumed correction completed successfully.
-No recovery browser has been launched and no new business pass is claimed.
+Exactly one focused failed-block proof is now active:
+`uat-domain-contest-recovery-20261009T021350Z-93e9300b`, owner PID7196.
+Official fresh-cache discovery matched one canonical block/CON021–022. Current
+state is `/tmp/tfp-domain-recovery-state.json`; its atomic focused-status path
+is authoritative and absence means unfinished. Inputs hash is
+`9b5b5d23d7a13b79818017d86c3aa2c21f296725f2eaa83f4aa2e4b0d0c83623`;
+four registry hashes are unchanged. No new business pass is claimed until
+original context/manifest/action evidence and desktop/mobile captures are audited.
 
-Root must independently review the exact correction, publish scoped harness
-files/gitlink and establish deployable archive equivalence. Then one uniquely
-discovered failed-block proof precedes only the original twenty-two unexecuted
+The exact correction, scoped publication and deployable archive equivalence
+are independently accepted. This uniquely discovered failed-block proof must
+pass independent evidence review before only the original twenty-two unexecuted
 blocks; completed historical flows/full matrices are never rerun. Every original
 trace/result/context/manifest/cache remains untouched. Read any new
 `/tmp/tfp-domain-recovery-state.json` and its atomic status before acting.
