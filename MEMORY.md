@@ -1,63 +1,46 @@
 # Workspace Memory for Future Agents
 
-## Domain operations — reviewed download correction, 9 October 2026
+## Domain operations — exact-tab recovery active, 9 October 2026
 
-Clean published app/harness is `092a95ee1a2c8dfc6db07b11d34de0c8c87475da`.
-Main UAT is deployed as `20261009T071116Z-092a95ee`. Root matched all1,181
-live deployable blobs, exact API/worker/Web running cwd markers, full8unit/6endpoint
-health and loopback-only PostgreSQL/listeners. Exactly one runtime blob changed;
-prior releases remain retained. The focused CON025 proof remains failed; no
-business pass, strict aggregate/verifier certificate or production approval yet.
+Product `092a95ee1a2c8dfc6db07b11d34de0c8c87475da` remains deployed at UAT
+`20261009T071116Z-092a95ee`; clean published harness is `7d1e3e648f09a876f769d9922bb63af0b039549c`.
+All1,181 deployable archive blobs are byte-identical and match live, exact three
+service cwd markers and full-stack health passed. No redeployment was required.
+Initial read-only archive setup used an incorrect marker name and unprivileged
+proc-cwd access; corrected verified reads passed, with setup evidence preserved.
 
-Root and GPT-6.1 SOL high accepted the nine-file minimal correction. Shared
-resource download uses `cache: no-store` to request fresh CORS response headers;
-signed identity, credentials omission, native CORS enforcement, fallback,
-modified-click handling and blob cleanup are unchanged. A real two-origin
-compiled-client discriminator reproduced the old cached-thumbnail CORS/download
-failure. The corrected download saved exact bytes/name after exactly one fresh
-Origin request. Original UAT cache reuse was not conclusively captured. Current
-provider Origin GET/HEAD both returned200 with exact-origin ACAO/Vary; no provider
-policy rewrite is justified, and source-scoped GetBucketCors denied403.
+The prior CON025 proof `uat-domain-download-20261009T071739Z-092a95ee` remains
+terminal exit1/0passed/1failed/zeroRetries. Actual download and normalized tolerant
+pixel comparison passed before the later exact legacy-URL assertion failed.
+The shared detail controller intentionally synchronizes initial About state as
+`tab=about`; canonical origin/path/hash were correct. Root independently accepted
+SOL high's four-file harness/README correction: full exact canonical URL plus
+About state, selected-tab assertion, the same fix for only unexecuted OPP028/032,
+and shared primary-preserving cleanup for OPP032. Product behavior is unchanged.
+Playwright typing, scoped lint, human180 consistency, one changed consumer-contract
+assertion and diff checks passed. Prior download cache/no-store and lifecycle
+corrections retain their real-socket/consumer proof; original UAT cache reuse was
+not conclusively captured and no provider CORS/security widening was made.
 
-The shared supervised-session finalizer preserves primary errors, attaches
-sanitized secondary failures and attempts exact-owned cleanup despite close
-failures. Otherwise-successful tests still fail strict diagnostics/cleanup.
-Only five proved new-domain consumers were migrated. Six download unit and six
-cleanup lifecycle checks passed; two lower-level browser checks passed separately.
-The original old-source rejection, initial popup timing failure, corrected
-modified-click result and initial optional-CDP-type failure remain preserved.
-Playwright/Web typing, scoped lint, strict-human180 consistency and diff checks
-passed. No completed business/browser matrix was repeated. SOL agents briefly
-stopped on exhausted credits; one resumed read-only independent review accepted
-the completed diff. Root recovered only incomplete/failed checks.
+Exactly one focused CON025 recovery `uat-domain-tab-20261009T073958Z-7d1e3e64` is launched,
+owner PID34497. `/tmp/tfp-domain-tab-recovery-state.json` binds atomic
+`/tmp/tfp-domain-tab-recovery-20261009T073734Z/focused-status.json`; missing final status is unfinished.
+Fresh isolated-cache official discovery exactly matched one canonical block,
+zero retries/maxfail1/oneworker/action evidence. Inputs `e8793da075b4b2be9d8e3fdff3a48614d14680d494dbb0ec476026de8e931ec8`;
+four registries unchanged. Low owner watches exact process exit only. Original
+failed states/reports/caches are immutable. No current pass is claimed before
+original context/manifest/evidence and desktop/mobile inspection. Accepted
+CON021/022 and CON023/024 must not repeat;20 original blocks remain unexecuted
+until independent focused acceptance. No overlapping owner or shared source,
+service, DB or cache mutation during healthy work. Runner owns FE/BE setup and
+scoped isolated fixtures. No full-suite/completed-flow replay or evidence splicing.
 
-Focused `uat-domain-edit-recovery-20261009T031339Z-7eab7deb` remains exit1,
-0passed/1failed/zeroRetries at03:15:32UTC; owner16229 absent. Atomic
-`/tmp/tfp-domain-edit-recovery-20261009T031154Z/focused-status.json` is authoritative
-over immutable historical running launchstate. Primary spec672 download timeout
-was masked by secondary close guard738, which also skipped later fixture cleanup.
-All original artifacts/cache/context/manifest are preserved. Earlier CON021/022
-and CON023/024 passed once and must not be repeated;20 original blocks remain
-unexecuted. Affected proof `uat-domain-download-20261009T071739Z-092a95ee` terminated exit1
-at07:19:32UTC:0passed/1failed/zeroRetries; owner32255 absent and low monitor
-stopped. Immutable `/tmp/tfp-domain-download-recovery-state.json` is historical;
-authoritative `/tmp/tfp-domain-download-recovery-20261009T071404Z/focused-status.json` is finished1.
-Exact downloaded file/pixel assertions were reached before the later spec694
-legacy-redirect full-URL assertion failed: canonical URL has an additional default
-`tab=about` query. Product versus invalid test expectation remains under source-led
-SOL high review; no new source/probe/20-block launch yet. Primary-error/cleanup
-correction retained the actual URL assertion; missing after evidence is cascade.
-Inputs `98d2f4b9333d0e93954f4efd9cd4397e667eb060293cc0784b3bc136cc91c37e` and all four registries remain bound to this failed
-attempt. Never overwrite originals or repeat prior accepted CON021/022/CON023/024.
-No overlapping owner or source/service/DB/cache mutation during healthy execution.
-
-Lower-level evidence: app `test-results/reports/diagnostic-review/domain-download-cleanup-20261009/`.
-Full original audit: `docs/reviews/2026-10-08-domain-human-flow-audit.md`.
-The user's no-full-rerun policy remains binding. Do not splice partial/failed
-children into strict certification. OAuth/six delivered-email OTP/inbox and19
-external production inputs plus host/provider/storage/legal/independent recovery
-remain gates. Never invent inputs or approve/deploy production. Preserve all
-historicalf19/failures and unrelated moderation-service/resume work.
+Evidence and historical attempts: `docs/reviews/2026-10-08-domain-human-flow-audit.md`.
+Strict six-compatible-clean-child aggregate/verifier certification, OAuth/six
+recipient-delivered OTP/inbox and19 external production inputs plus actual
+host/provider/storage/legal/independent recovery remain gates. Never invent
+values, approve/deploy production or delete QA evidence. Preserve unrelated
+moderation-service/resume work and historicalf19.
 
 ## Remaining Web gates — completed scoped handoff 8 October 2026
 

@@ -352,3 +352,47 @@ a cascade. The shared finalizer preserved that actual primary error and reached
 cleanup instead of masking it. Source-led SOL high review must classify the
 query-owner behavior before any minimal correction or new proof. All original
 artifacts/state/caches remain immutable;20 remaining blocks never started.
+
+
+## Domain operations — exact-tab recovery active, 9 October 2026
+
+Product `092a95ee1a2c8dfc6db07b11d34de0c8c87475da` remains deployed at UAT
+`20261009T071116Z-092a95ee`; clean published harness is `7d1e3e648f09a876f769d9922bb63af0b039549c`.
+All1,181 deployable archive blobs are byte-identical and match live, exact three
+service cwd markers and full-stack health passed. No redeployment was required.
+Initial read-only archive setup used an incorrect marker name and unprivileged
+proc-cwd access; corrected verified reads passed, with setup evidence preserved.
+
+The prior CON025 proof `uat-domain-download-20261009T071739Z-092a95ee` remains
+terminal exit1/0passed/1failed/zeroRetries. Actual download and normalized tolerant
+pixel comparison passed before the later exact legacy-URL assertion failed.
+The shared detail controller intentionally synchronizes initial About state as
+`tab=about`; canonical origin/path/hash were correct. Root independently accepted
+SOL high's four-file harness/README correction: full exact canonical URL plus
+About state, selected-tab assertion, the same fix for only unexecuted OPP028/032,
+and shared primary-preserving cleanup for OPP032. Product behavior is unchanged.
+Playwright typing, scoped lint, human180 consistency, one changed consumer-contract
+assertion and diff checks passed. Prior download cache/no-store and lifecycle
+corrections retain their real-socket/consumer proof; original UAT cache reuse was
+not conclusively captured and no provider CORS/security widening was made.
+
+Exactly one focused CON025 recovery `uat-domain-tab-20261009T073958Z-7d1e3e64` is launched,
+owner PID34497. `/tmp/tfp-domain-tab-recovery-state.json` binds atomic
+`/tmp/tfp-domain-tab-recovery-20261009T073734Z/focused-status.json`; missing final status is unfinished.
+Fresh isolated-cache official discovery exactly matched one canonical block,
+zero retries/maxfail1/oneworker/action evidence. Inputs `e8793da075b4b2be9d8e3fdff3a48614d14680d494dbb0ec476026de8e931ec8`;
+four registries unchanged. Low owner watches exact process exit only. Original
+failed states/reports/caches are immutable. No current pass is claimed before
+original context/manifest/evidence and desktop/mobile inspection. Accepted
+CON021/022 and CON023/024 must not repeat;20 original blocks remain unexecuted
+until independent focused acceptance. No overlapping owner or shared source,
+service, DB or cache mutation during healthy work. Runner owns FE/BE setup and
+scoped isolated fixtures. No full-suite/completed-flow replay or evidence splicing.
+
+Evidence and historical attempts: `docs/reviews/2026-10-08-domain-human-flow-audit.md`.
+Strict six-compatible-clean-child aggregate/verifier certification, OAuth/six
+recipient-delivered OTP/inbox and19 external production inputs plus actual
+host/provider/storage/legal/independent recovery remain gates. Never invent
+values, approve/deploy production or delete QA evidence. Preserve unrelated
+moderation-service/resume work and historicalf19.
+
