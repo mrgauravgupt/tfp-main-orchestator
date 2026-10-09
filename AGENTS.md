@@ -1,6 +1,15 @@
 # Workspace-Wide Agent Notes
 
-## Domain operations — scoped public event date correction published, 9 October 2026
+## Domain operations — scoped public event date proof active, 9 October 2026
+
+Exactly ONE failed-EVT015 proof `uat-domain-event-date-20261009T105822Z-5092356a` ACTIVE ownerPID65349.
+State `/tmp/tfp-domain-event-date-recovery-state.json`; authoritative atomic
+`/tmp/tfp-domain-event-date-recovery-20261009T105408Z/focused-status.json`. Missing final exit unfinished. Product/harness/archive1181/
+three live cwd/full health exact; fresh isolated discovery one canonical EVT015,
+retries0/input`14117ab40c576e9effc6cf422fd44236d8a0b26d827b7f89ba7d75b65b9d0c7a`/four registries unchanged. Launch7729856512bytes free.
+Root sole runner owner; low exactPIDNOTE_EXIT monitor, no shared mutations/overlap.
+No case pass yet; only independently accepted original complete evidence/visuals
+may unlock18 original unexecuted. Current no-full/completed-flow-rerun policy remains.
 
 Clean harness `5092356a216794a8f9ea3d740db55ca0c8102bad` published; product
 `fb4b0c83630cf13bb8cfaa51531384d8af33429d` / UAT `20261009T093930Z-fb4b0c83`

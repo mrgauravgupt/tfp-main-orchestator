@@ -916,3 +916,14 @@ or splice strict certificates. All external strict/OAuth/OTP/inbox/19 production
 inputs/host/provider/storage/legal/independent recovery gates remain; preserve
 historyf19/unrelated moderation-resume. No production approval/deployment. Evidence:
 app diagnostic-review/domain-event-public-date-20261009.
+
+## Reviewed public-date proof launch
+
+Exactly ONE failed-EVT015 proof `uat-domain-event-date-20261009T105822Z-5092356a` ACTIVE ownerPID65349.
+State `/tmp/tfp-domain-event-date-recovery-state.json`; authoritative atomic
+`/tmp/tfp-domain-event-date-recovery-20261009T105408Z/focused-status.json`. Missing final exit unfinished. Product/harness/archive1181/
+three live cwd/full health exact; fresh isolated discovery one canonical EVT015,
+retries0/input`14117ab40c576e9effc6cf422fd44236d8a0b26d827b7f89ba7d75b65b9d0c7a`/four registries unchanged. Launch7729856512bytes free.
+Root sole runner owner; low exactPIDNOTE_EXIT monitor, no shared mutations/overlap.
+No case pass yet; only independently accepted original complete evidence/visuals
+may unlock18 original unexecuted. Current no-full/completed-flow-rerun policy remains.
