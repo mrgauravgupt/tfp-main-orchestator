@@ -1,6 +1,6 @@
 # Workspace Memory for Future Agents
 
-## Domain operations — accepted focused recovery and remaining22 active, 9 October 2026
+## Domain operations — preserved continuation and CON025 recovery active, 9 October 2026
 
 Product `0dac6128432ddd9687f57a2525dbca2fe6dc6975` remains deployed as UAT
 `20261008T170441Z-0dac6128`; clean published harness is
@@ -28,21 +28,48 @@ overall coverage is incomplete and no certificate is claimed. Owner12397 absent.
 Authoritative `/tmp/tfp-domain-share-recovery-20261009T024757Z/focused-status.json`
 is finished0; the separate launchstate remains immutable historical evidence.
 
-Exactly ONE continuation now runs only the original22 unexecuted blocks/23IDs:
-`uat-domain-continuation-20261009T025709Z-2ac71bc2`, detached owner PID13536.
+The original22-block continuation
+`uat-domain-continuation-20261009T025709Z-2ac71bc2` terminated exit1 at02:59:47UTC:
+CON023/024 passed once, CON025 failed,20 blocks unexecuted,zero retries. Owner13536
+is absent; all original results/captures/contexts/cache remain untouched.
 Read `/tmp/tfp-domain-continuation-state.json` and authoritative
 `/tmp/tfp-domain-continuation-20261009T025435Z/status.json` before acting;
-missing final status means unfinished. Fresh-cache official non-browser discovery
+its authoritative status is finished1 and historical launchstate is not active.
+Fresh-cache official non-browser discovery
 matched all22 exact AST declarations and the immutable original disjoint set,
 selection SHA256 `482bd39c9292fc9aaa9087d14d1b7ecc83e9c5216643306950b67b57e2db0151`.
 Inputs `ea73fe211005dbcaaedf83554dccb22c36de5d0c63be5cea57eac081830bf963` and
 four registry hashes remain frozen. Disk exceeded9GiB at launch. Zero retries,
 one worker/maxfail1/action evidence; canonical runner owns FE/BE setup and scoped
-fresh fixtures. Root owns the runner; low-cost domain_recovery_monitor_low only
-watches exact owner exit and reads atomic completion. Do not repeat the accepted
+fresh fixtures. Its low-cost process-exit watcher reported completion correctly
+and stopped. Root audited the passed winner/force/clear/nonadmin declaration,
+12regular width-fitting loaded-image captures and viewed8desktop/mobile images. Do not repeat the accepted
 flow, duplicate launch or mutate shared source/services/DB/cache while healthy.
 First actual failure stops for preserved evidence and scoped SOL high RCA;
 no blind full replacement, hidden retries/sleeps/suppression or assertion weakening.
+
+The initiating CON025 failure at spec629 was a document-wide description selector
+matching SiteHead metadata and the edit textarea. Root and SOL high reviewed the
+actual form and both fill/readback loops. Scoped two-file harness/README correction
+`7eab7deb80fa4c17d441a55072c2c5c044b6fcfb` requires one visible POST edit form,
+unique form input/textarea controls and one initial resource; scopes dates/uploads/
+Save without changing public pixel-download/URL/search/deletion/auth assertions.
+Typing/scoped lint/consistency/diff passed once; unchanged88fixtures were not replayed.
+A bounded source review of20unexecuted declarations found no additional confirmed
+metadata/duplicate-control collision; this supplies no runtime pass. All1,181
+deployable blobs still match the original product/live UAT, full health passed.
+
+Exactly ONE failed-block proof is active:
+`uat-domain-edit-recovery-20261009T031339Z-7eab7deb`, detachedPID16229. Read
+`/tmp/tfp-domain-edit-recovery-state.json` and authoritative
+`/tmp/tfp-domain-edit-recovery-20261009T031154Z/focused-status.json`; missing final
+status is unfinished. Fresh-cache official discovery matched one CON025 block;
+inputs `d21dd6be736f65823ced0dfbdb3f629b6b242d8c2a488bb9721229f9a1a54cc1`, four
+registries unchanged. ZeroRetries/maxfail1/actionevidence/scopedfreshfixtures.
+Low-cost domain_recovery_monitor_low watches exact owner NOTE_EXIT; root owns
+runner/publication. Do not duplicate/shared-mutate while healthy. Independent
+focused acceptance must precede only20original unexecuted blocks; never repeat
+accepted CON021/022 or passed CON023/024, full suites or old browser children.
 
 Independent final original-evidence/visual review is required after continuation.
 Only scoped root audit/checkpoint/MEMORY/AGENTS notes may be published meanwhile.

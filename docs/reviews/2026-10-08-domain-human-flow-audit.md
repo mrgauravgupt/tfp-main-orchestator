@@ -251,3 +251,34 @@ is excluded. No completed historical flow or full matrix is repeated.
 Do not mutate source/services/DB/cache while healthy; stop first actual failure
 for evidence-led review. Canonical runner owns FE/BE restarts and isolated fixtures.
 All evidence remains separate; no aggregate/certificate or production approval.
+
+## Preserved continuation failure and CON025 form correction
+
+Continuation `uat-domain-continuation-20261009T025709Z-2ac71bc2` ended exit1
+at02:59:47UTC:1passed/1failed/20unexecuted/zeroRetries. Passed CON023/024
+retains its complete2actionpairs/12regular captures; root viewed8desktop/mobile
+images. It must not rerun. Original raw results SHA256
+`def001b90ffcb48924532b3a4bea1cceafe5c2e9adff77af9bd637f0da43a64a`.
+Canonical context hash3e4a9b6d binds originalclean2ac inputs ea73fe21, not the
+new harness inputs. Operator launchstate remains immutable historical evidence.
+
+| Source/failure | Root cause | Minimal correction | Status |
+| --- | --- | --- | --- |
+| CON025 fill at629; head SiteHead179 and edittextarea179 | Document-wide name query matches metadata and actual editable field; strict mode stops before submit. After-evidence failure is a cascade. | Unique visible POST form#contest-create-form[data-contest-create-form]; scope all edit/readback controls and require unique input/textarea fields; one initial resource instead of first(). | Two-file harness/README accepted and published7eab7deb. Public download pixels/legacycanonicalURL/delete/search/auth/evidence unchanged. Focused proof active, not yet accepted. |
+
+Once-only Playwrighttyping/scopedlint/strict-humanconsistency/diff checks passed.
+SOL high separately inspected20 still-unexecuted declarations/current components
+and found no additional confirmed bare-name/meta/duplicate collision. No runtime
+pass or zero-defect claim follows from that bounded review.
+
+Both deployable archives and all1,181 live UAT files match product0dac exactly;
+full8unit/6endpoint health passed. No product edit/redeployment. Archive proof
+and immutable1failed+20unexecuted selections:
+`/tmp/tfp-domain-edit-recovery-20261009T031154Z/`. Root audit retains old context
+and results; new inputs d21dd6be/four unchanged registries are recorded separately.
+Official fresh-cache discovery matched exactlyone CON025 declaration before
+`uat-domain-edit-recovery-20261009T031339Z-7eab7deb`, detachedPID16229.
+Read new state `/tmp/tfp-domain-edit-recovery-state.json` and bound atomic status.
+One attempt/zeroRetries/maxfail1/action evidence; missing status unfinished.
+After independent focused evidence/visual acceptance only20unexecuted may continue.
+Never splice failed/partial contexts into certification or repeat completed flows.
