@@ -706,3 +706,33 @@ and visual audit plus SOL high independent review remain pending after this chil
 Evidence: `docs/reviews/2026-10-08-domain-human-flow-audit.md`, app
 `test-results/reports/diagnostic-review/domain-gallery-pagination-style-20261009/`
 and `/tmp/tfp-domain-remaining19-20261009T091659Z/`.
+
+## Nineteen-flow first-failure preservation and source review
+
+The original-unexecuted continuation `uat-domain-remaining19-20261009T092152Z-fbfccc85`
+is TERMINAL exit1 at09:22:54UTC, owner48532 absent: zero passed, one failed,
+eighteen unexecuted and zero retries. Playwright labels those eighteen skipped
+with empty results arrays after max-failures1; no attempt began and they are not
+executed skips. Historical `/tmp/tfp-domain-remaining19-state.json` remains
+running/null; authoritative atomic status is
+`/tmp/tfp-domain-remaining19-20261009T091659Z/unexecuted-status.json`.
+Original report/context/manifests/trace/video/screenshots/log/cache remain intact.
+There is no active browser, and no replacement/continuation is authorized yet.
+
+First failure is EVT015 `event-lifecycle.human.spec.ts:405`, rich event revision.
+Caller433 selects `input[name="locationSearch"]`; actual helper112 fails the
+readiness-attribute expectation because no element is found, not an observed
+wrong attribute. Missing after-evidence is a cascade. No provider, hydration,
+transport or product cause is assumed. `domain_gallery_root_cause_high` is sole
+GPT-6.1 SOL high read-only source/trace/DOM/navigation/caller RCA owner, returning
+a grounded failure/root-cause/minimal-correction table before root accepts edits
+or a probe. Low exact-owner watch finished and idles. No services/DB/storage,
+source or browser mutation during diagnosis.
+
+Immutable remaining-eighteen selection derived from actual empty-result records:
+`/tmp/tfp-domain-remaining19-20261009T091659Z/original-unexecuted18-selection.json`,
+SHA256 `08830f0d526215fa9208d11a80ccd520efe49d5024042cbde377f966441b57f2`.
+Original nineteen selection and input/hash/discovery remain unchanged. After
+independently accepted smallest correction and affected proof, only these
+eighteen may continue once. Accepted CON021/022, CON023/024, CON025 and EVT014
+must never repeat; no full-suite replacement or spliced certificate.

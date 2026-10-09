@@ -1,6 +1,6 @@
 # Workspace-Wide Agent Notes
 
-## Domain operations — nineteen original unexecuted flows active, 9 October 2026
+## Domain operations — continuation stopped; event edit diagnosis pending, 9 October 2026
 
 Clean published product/harness `fbfccc850ceb2da547c7f7f195123d6536efafff`
 is deployed at UAT `20261009T091632Z-fbfccc85`. The reviewed four-file batch
@@ -26,20 +26,33 @@ original fixture cleanup, so that read-only live CSS check is not new gallery
 business/visible-pagination proof. The new unexecuted opportunity-gallery flow
 will provide separate runtime evidence; old EVT014 must not repeat.
 
-Exactly one continuation `uat-domain-remaining19-20261009T092152Z-fbfccc85`
-is active, detached owner48532. Read `/tmp/tfp-domain-remaining19-state.json`
-and authoritative `/tmp/tfp-domain-remaining19-20261009T091659Z/unexecuted-status.json`;
-missing atomic final exit is unfinished. Official fresh isolated-cache discovery
-exactly matched nineteen original unexecuted declarations/nineteen IDs and retries0.
-Immutable original selection SHA256
-`cc8083f28954df9b6d20053ab799368df32934eae76c02b9c5fc08e16c5640ef`;
-new inputs `3aa3c8645c3003da3ee9445c7ab792fad37781d2b571fb2bb972fccd142d230e`;
-live four registry hashes remain unchanged. Launch free5436719104bytes exceeds
-2GiB report estimate plus256MiB variance and512MiB reserve. Root is sole durable
-OS-session/file-log/atomic-status/idle-guard runner owner;
-`domain_recovery_monitor_low` owns read-only exact-PID kqueue exit monitoring.
-Canonical runner owns FE/BE setup/scoped fresh fixtures. No overlap, completed-flow
-replay or shared source/services/DB/cache mutation while healthy.
+The original-unexecuted continuation `uat-domain-remaining19-20261009T092152Z-fbfccc85`
+is TERMINAL exit1 at09:22:54UTC, owner48532 absent: zero passed, one failed,
+eighteen unexecuted and zero retries. Playwright labels those eighteen skipped
+with empty results arrays after max-failures1; no attempt began and they are not
+executed skips. Historical `/tmp/tfp-domain-remaining19-state.json` remains
+running/null; authoritative atomic status is
+`/tmp/tfp-domain-remaining19-20261009T091659Z/unexecuted-status.json`.
+Original report/context/manifests/trace/video/screenshots/log/cache remain intact.
+There is no active browser, and no replacement/continuation is authorized yet.
+
+First failure is EVT015 `event-lifecycle.human.spec.ts:405`, rich event revision.
+Caller433 selects `input[name="locationSearch"]`; actual helper112 fails the
+readiness-attribute expectation because no element is found, not an observed
+wrong attribute. Missing after-evidence is a cascade. No provider, hydration,
+transport or product cause is assumed. `domain_gallery_root_cause_high` is sole
+GPT-6.1 SOL high read-only source/trace/DOM/navigation/caller RCA owner, returning
+a grounded failure/root-cause/minimal-correction table before root accepts edits
+or a probe. Low exact-owner watch finished and idles. No services/DB/storage,
+source or browser mutation during diagnosis.
+
+Immutable remaining-eighteen selection derived from actual empty-result records:
+`/tmp/tfp-domain-remaining19-20261009T091659Z/original-unexecuted18-selection.json`,
+SHA256 `08830f0d526215fa9208d11a80ccd520efe49d5024042cbde377f966441b57f2`.
+Original nineteen selection and input/hash/discovery remain unchanged. After
+independently accepted smallest correction and affected proof, only these
+eighteen may continue once. Accepted CON021/022, CON023/024, CON025 and EVT014
+must never repeat; no full-suite replacement or spliced certificate.
 
 Accepted EVT014 predecessor `uat-domain-gallery-ready-20261009T083252Z-fca2265f`
 finished0 at08:35:54UTC: one passed declaration, zero retries/failures/flakes/skips,
