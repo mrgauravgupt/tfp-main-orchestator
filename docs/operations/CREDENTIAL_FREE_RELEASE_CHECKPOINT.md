@@ -1,32 +1,40 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
-## Domain operations — event edit correction published; focused proof pending, 9 October 2026
+## Domain operations — exact event edit focused proof active, 9 October 2026
 
-Clean app/harness `fb4b0c83630cf13bb8cfaa51531384d8af33429d` is published.
-Root and independent GPT-6.1 SOL high accepted exact three-file diff SHA256
-`e8ebe7e9febc49a5ba1df14e156d35732c08a6aa20708a7ef598d8e17084b3ce`.
-Original EVT015 failed because edit uses `#eventLocation` while its test used the
-create-only `name="locationSearch"`. Actual edit field was already bound. The
-visible label also pointed to nonexistent `location`; one product association now
-matches the canonical LocationPicker ID. Two harness selectors and faithful
-visible/unfocused/label-click/focus preconditions change; helper/deadlines and
-business assertions stay unchanged. Fourteen helper sites traced, thirteen others
-unchanged. Playwright/Web typing, strict180 guard, supported TypeScript lint,
-diff and one Web production build passed. Unsupported Astro ESLint setup exit1
-is preserved separately; Web typing compiles the Astro page. No runtime pass yet.
+Clean app/harness `fb4b0c83630cf13bb8cfaa51531384d8af33429d` is deployed as UAT
+`20261009T093930Z-fb4b0c83`. Root and independent SOL high accepted the three-file
+EVT015 correction (diff e8ebe7e9febc49a5ba1df14e156d35732c08a6aa20708a7ef598d8e17084b3ce):
+real unique edit selectors and one visible label association with faithful
+unfocused/label-click/focus proof. Helper/deadlines/business/security unchanged.
+Typing/strict180/supported lint/diff and Web production build passed.
 
-Root owns exact new UAT deployment/health and one failed EVT015 proof only. New
-preflight `/tmp/tfp-domain-event-edit-recovery-20261009T093655Z/`; no browser yet.
-Original nineteen run remains0passed/1failed/18unexecuted/zeroRetries; its atomic
-status and all original evidence remain unchanged. Immutable eighteen selection
-SHA256 `08830f0d526215fa9208d11a80ccd520efe49d5024042cbde377f966441b57f2`.
-Only after original context/hash/complete action/visual evidence acceptance may
-these eighteen run once. Never repeat accepted CON021–025/EVT014 or a full suite,
-splice evidence, invent production inputs, approve/deploy production or delete QA
-history. Strict six-child/OAuth/six delivered OTP/inbox and nineteen external
-production host/provider/storage/legal/independent-recovery gates remain. Preserve
-historicalf19 and unrelated moderation/resume dirt. Exact source/checks/reviews:
-app `test-results/reports/diagnostic-review/domain-event-edit-location-20261009/`.
+Exactly one focused run `uat-domain-event-edit-20261009T094357Z-fb4b0c83` is active, detachedPID51389.
+Read `/tmp/tfp-domain-event-edit-recovery-state.json` and authoritative atomic
+`/tmp/tfp-domain-event-edit-recovery-20261009T093655Z/focused-status.json`; missing exit unfinished. Fresh isolated-cache official
+discovery exactly one EVT015/retries0, inputs `6eb07770e40aa6f2e6603063739f585d85d4f6f6c09cac6eb95feccd30a351fa` and four live
+registries unchanged. Launch 5345546240bytes free. Root owns runner;
+low exact PID NOTE_EXIT watch only. Canonical runner owns FE/BE setup/scoped fixtures.
+No overlap or shared source/services/DB/cache mutation while healthy. No pass yet.
+Original nineteen failure/eighteen unexecuted and every artifact remain preserved.
+Only original-context/live hashes/canonical action/count/regular capture audit and
+settled desktop/mobile acceptance may precede eighteen original unexecuted once,
+selection08830f0d526215fa9208d11a80ccd520efe49d5024042cbde377f966441b57f2.
+Never repeat accepted CON021–025/EVT014/fullsuite or splice a strict certificate.
+
+The deployment command returned0, but external wrapper single-space Release regex
+missed the canonical nine-space padding and exited1 before its final atomic write.
+Original wrapper/log/missing status retained; independent bookkeeping review and
+new `deploy-reviewed-status.json` record actual1181 live blobs/exact currentcommit/
+three cwd bindings and full health0. No deployment repeated. Independent review
+proves whitespace cause, not ANSI. Unsupported Astro ESLint setup exit1 also remains
+separate; Web typing compiled Astro. First actual browser failure preserves/stops
+for source-led SOL high review; no automatic replacement/retry/suppression. Strict
+six-child/OAuth/six delivered OTP/inbox/19 external host/provider/storage/legal/
+independent recovery gates remain. Never invent values/approve/deploy production/
+delete evidence; preserve historicalf19 and unrelated moderation/resume work.
+Evidence: app diagnostic-review/domain-event-edit-location-20261009 and
+`/tmp/tfp-domain-event-edit-recovery-20261009T093655Z/`.
 
 ## Domain operations — continuation stopped; event edit diagnosis pending, 9 October 2026
 
