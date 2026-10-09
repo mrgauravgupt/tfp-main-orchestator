@@ -448,11 +448,26 @@ unrelated moderation-service/resume work and historicalf19.
 `uat-domain-remaining20-20261009T074551Z-7d1e3e64` stopped exit1 at07:47:56UTC,
 0passed/1failed/19unexecuted, zeroRetries. Atomic unexecuted-status.json overrides
 immutable historical running launch state; owner35667 absent. First EVT014 spec317
-failed in public-gallery-actions.ts59: previous-page photo IDs returned empty
-instead of exact original IDs. Initiating cause remains unclassified. SOL high
+failed in public-gallery-actions.ts59: previous-page readback returned3 of12
+exact original IDs, correcting the initial low empty-array summary. Same-navigation
+200HTML contains12 trigger anchors; parser/navigation timing remains under review.
+SOL high
 sole gallery RCA owner traces actual source/trace/DOM/navigation before proposing
 a minimal correction; no edits/browser/probe/service/DB/storage mutations allowed
 until root independently reviews. No suppressed guard, timeout increase, retry,
 uncertain replay or full/completed-flow replacement. Original evidence catalog
 is incomplete0cases/0actions and all artifacts/cache preserved. CON025 predecessor
 remains accepted; only failed EVT014 proof and19 unexecuted may later continue.
+
+## Grounded gallery readiness finding and minimal correction plan
+
+| Priority/source | Actual failure and root cause | Minimal correction | Status |
+| --- | --- | --- | --- |
+| P1 harness blocker, public-gallery-actions.ts57–59 | Previous click ends107791.563ms; immediate read107800.383–107817.132 returns the first3 exact IDs. Same200HTML contains ordered12; transfer completes about107836.891. Playwright navigation barrier resolves commit before parser completion. | Await canonical count12 before initial and returned first-page ID snapshots; retain exact ordered equality and all oldest/query/page assertions. Shared owner serves EVT014/OPP029 only. | Root independently accepted actual trace/caller proof. SOL high implementation authorized; no new business pass. |
+| Lower-level discrimination | Static source presence cannot establish navigation readiness. | One actual compiled-helper loopback response held at3 by explicit latch; disposable old source must reject intended count/order boundary, corrected waits for remaining9 and completes exact contract. | Scoped seam only, no app/provider/DB mutation or arbitrary sleeps. |
+| Remaining validation | EVT014 is still failed;19 original blocks unexecuted. | Scoped checks/independent diff review, harness-only publication/runtime archive equivalence, one failed EVT014 proof before19 continuation. | No browser flow or automatic replacement authorized before review. |
+
+Read-only RCA: /tmp/tfp-domain-tab-recovery-20261009T073734Z/gallery-rca.json.
+Original low empty-array summary is corrected by trace to3-of12 exact prefix.
+Original states/results/artifacts/cache remain immutable. No provider CORS/security
+change, product deletion/filter fix, timeout increase or suppression is justified.

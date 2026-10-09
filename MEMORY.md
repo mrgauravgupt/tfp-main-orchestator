@@ -31,15 +31,24 @@ maxfail1), zeroRetries. Owner35667 absent; low completion watch stopped.
 Immutable `/tmp/tfp-domain-remaining20-state.json` retains historical running/null;
 authoritative `/tmp/tfp-domain-tab-recovery-20261009T073734Z/unexecuted-status.json` is finished1.
 First EVT014 at event-lifecycle.human.spec.ts317 failed in shared
-public-gallery-actions.ts59: returned photo IDs were empty where previous-page
-readback expected the original exact IDs. Actual initiating cause is unclassified;
-no product loss, authorization or provider failure is presumed. All original
+public-gallery-actions.ts59: previous-page readback returned only3 of12 original
+exact IDs. Initial low summary incorrectly described an empty array; preserved
+trace corrects it. Full same-navigation200HTML contains12 triggers. Actual
+initiating cause is proved harness readiness: click waits navigation commit, then
+immediate evaluateAll snapshots partly parsed SSR; complete200HTML retains exact
+ordered12. No product loss, authorization or provider failure is supported. All original
 context/manifest/results/trace/video/screenshots/cache remain preserved. Evidence
 catalog is incomplete0cases/0actions; no business pass is inferred from uploads.
-Sole GPT-6.1 SOL high owner `/root/domain_gallery_root_cause_high` performs bounded
-READ-ONLY source/trace/navigation/DOM RCA and minimal discriminating proposal;
-root independently reviews before any edit/probe/publication. No new browser,
-service restart, DB/storage write, source mutation or replay during diagnosis.
+Sole GPT-6.1 SOL high owner `/root/domain_gallery_root_cause_high` completed
+read-only source/trace/navigation/DOM RCA and a minimal discriminating proposal.
+Root independently accepted actual trace/callers and authorized the minimal
+shared helper count readiness before both ID snapshots, preserving exact ordered
+equality/oldest/query/page contracts. Sole SOL high owner implements only helper,
+one deterministic actual-helper streamed-HTML loopback discriminator and README,
+with scoped typing/lint/consistency checks. No application flow, service restart,
+DB/storage mutation, commit/deploy before root exact-diff acceptance. No permanent
+product change or redeployment is justified.19-block immutable selection SHA256
+cc8083f28954df9b6d20053ab799368df32934eae76c02b9c5fc08e16c5640ef.
 Only separately accepted failed-block proof may precede19 remaining original
 unexecuted blocks; completed CON021/022,CON023/024,CON025 and old flows never repeat.
 Selection20/input hashes remain frozen in original launch evidence. Do not splice
