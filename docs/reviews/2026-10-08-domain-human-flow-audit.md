@@ -143,14 +143,36 @@ Playwright typing, scoped lint, strict-human guard and diff checks passed.
 Both revisions' deployable archives are byte-identical; all 1,181 live UAT blobs
 match the original product, so no new deployment is required. Previous workspace
 credit exhaustion made no edits; the resumed correction completed successfully.
-Exactly one focused failed-block proof is now active:
-`uat-domain-contest-recovery-20261009T021350Z-93e9300b`, owner PID7196.
-Official fresh-cache discovery matched one canonical block/CON021–022. Current
-state is `/tmp/tfp-domain-recovery-state.json`; its atomic focused-status path
-is authoritative and absence means unfinished. Inputs hash is
-`9b5b5d23d7a13b79818017d86c3aa2c21f296725f2eaa83f4aa2e4b0d0c83623`;
-four registry hashes are unchanged. No new business pass is claimed until
-original context/manifest/action evidence and desktop/mobile captures are audited.
+The first focused recovery `uat-domain-contest-recovery-20261009T021350Z-93e9300b`
+is also terminal exit1 at 02:15:21 UTC on9October: zero passed/one failed, zero
+retries. Owner7196 is absent. The recorded first failure at spec498 is a global
+Share selector matching both the visible direct-entry form and hidden lightbox
+form; no click executed. Missing after-evidence is a cascade. Preserve its regular
+context/manifest/results/trace/video/screenshots/cache. Atomic
+`/tmp/tfp-domain-recovery-20261009T021119Z/focused-status.json` overrides historical
+running/null state in `/tmp/tfp-domain-recovery-state.json`. The prior passive
+completion watch did not report terminal status and is stopped.
+
+Root accepted the actual source/trace correction: visible detail section, unique
+reaction POST form for the exact submission ID, one visible exact Share button,
+then unchanged feedback and independent fresh-GET reaction/count assertions.
+Harness `22c6fb7f155a4fe22c3098c99a8f800b49cc209a` is published; typing/lint/guard88
+and diff checks passed. No new browser execution has followed this correction.
+
+The bounded SOL high same-class review of all22 remaining declarations found
+only two additional confirmed selector mistakes, affecting EVT016/020/CON025.
+Root independently accepted their three-file harness/README correction: actual
+exact-title event articles and unique detail links, and a unique visible results
+search field. Publication `2ac71bc27208d425151319a2d6073ec11aa61872` passed typing,
+scoped lint, strict-human consistency and diff checks. Both archives and all1,181
+live UAT files remain identical to product0dac. No product defect or new pass is
+inferred from those test mistakes. Current inputs hash is `ea73fe211005dbcaaedf83554dccb22c36de5d0c63be5cea57eac081830bf963`;
+four registries are unchanged. Fresh official discovery matched exactlyone
+Chromium block/CON021–022 before its authorized proof. No browser is yet active.
+Read any new `/tmp/tfp-domain-share-recovery-state.json`/atomic status before
+acting; absence means not launched. Only a separately reviewed failed-block
+proof may precede the original22 unexecuted blocks, never completed historical
+flows or a full matrix.
 
 The exact correction, scoped publication and deployable archive equivalence
 are independently accepted. This uniquely discovered failed-block proof must
@@ -177,3 +199,30 @@ Application identity remains `0dac6128432ddd9687f57a2525dbca2fe6dc6975`; harness
 identity differs explicitly. Registry hashes are unchanged, while the run-input
 hash must be freshly calculated from the corrected harness. No old contexts
 or reports are rewritten and no passing totals/certificate are manufactured.
+
+## Second preserved boundary and proactive selector review
+
+| Source / failure | Root cause | Minimal correction | Status |
+| --- | --- | --- | --- |
+| Clean harness93e9300b, first focused block at498 | Actual DOM/source has a visible direct reaction form and a separate closed-dialog reaction form. Global SHARE query matches both, so strict mode prevents the click. | Scope the exact visible direct-entry section/form; require count1, exact submission ID, method POST and one visible Share button. Retain real reaction and independent GET checks. | Accepted/published22c6fb7f; fast checks passed, runtime still unexecuted. Both failed attempts retained. |
+| EVT016/020 unexecuted declarations | Card component is an article with a nested listing-card__link; a.listing-card cannot reach it. | Bind exact-title event article and actual link; retain positive discovery, click and postdelete absence. | Accepted/published2ac71bc2; source correction only, runtime unexecuted. |
+| CON025 unexecuted declaration | Header and results both render input[name=q]. | Scope unique visible query field to the actual results form; retain Enter/search readback. | Accepted/published2ac71bc2; source correction only, runtime unexecuted. |
+
+First focused raw result SHA256 remains
+`85dffc15f304f48fcee5eb944c117cc9197a528cea68c71995c2cd18e166822e`.
+Its context is clean app0dac/harness93e/release20261008T170441Z-0dac6128 with
+inputs9b5b5d23; it remains failed and cannot be certified or rewritten.
+
+## Final selector counter-review and frozen recovery preflight
+
+GPT-6.1 SOL high traced only the original22 unexecuted declarations and actual
+rendered helpers/forms/routes. It found the two source mismatches above and no
+additional confirmed finding within that bounded scope. This is neither an
+executed business pass nor a universal zero-defect assertion. Root inspected
+the exact diff: no action, deletion/authorization boundary or assertion was
+weakened; no product source, dependency or runtime policy changed.
+
+Scoped publication: Share22c6fb7f, then event/search2ac71bc2. Archive-equivalence
+record under `/tmp/tfp-domain-share-recovery-20261009T024757Z/` binds product0dac,
+current harness2ac71bc2 and the exact existing UAT release. The original23-child
+and first focused93e child remain failed; neither is rewritten/spliced.

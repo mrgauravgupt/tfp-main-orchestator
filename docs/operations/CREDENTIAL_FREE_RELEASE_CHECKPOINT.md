@@ -22,14 +22,36 @@ Playwright typing, scoped lint, strict-human guard and diff checks passed.
 Both revisions' deployable archives are byte-identical; all 1,181 live UAT blobs
 match the original product, so no new deployment is required. Previous workspace
 credit exhaustion made no edits; the resumed correction completed successfully.
-Exactly one focused failed-block proof is now active:
-`uat-domain-contest-recovery-20261009T021350Z-93e9300b`, owner PID7196.
-Official fresh-cache discovery matched one canonical block/CON021–022. Current
-state is `/tmp/tfp-domain-recovery-state.json`; its atomic focused-status path
-is authoritative and absence means unfinished. Inputs hash is
-`9b5b5d23d7a13b79818017d86c3aa2c21f296725f2eaa83f4aa2e4b0d0c83623`;
-four registry hashes are unchanged. No new business pass is claimed until
-original context/manifest/action evidence and desktop/mobile captures are audited.
+The first focused recovery `uat-domain-contest-recovery-20261009T021350Z-93e9300b`
+is also terminal exit1 at 02:15:21 UTC on9October: zero passed/one failed, zero
+retries. Owner7196 is absent. The recorded first failure at spec498 is a global
+Share selector matching both the visible direct-entry form and hidden lightbox
+form; no click executed. Missing after-evidence is a cascade. Preserve its regular
+context/manifest/results/trace/video/screenshots/cache. Atomic
+`/tmp/tfp-domain-recovery-20261009T021119Z/focused-status.json` overrides historical
+running/null state in `/tmp/tfp-domain-recovery-state.json`. The prior passive
+completion watch did not report terminal status and is stopped.
+
+Root accepted the actual source/trace correction: visible detail section, unique
+reaction POST form for the exact submission ID, one visible exact Share button,
+then unchanged feedback and independent fresh-GET reaction/count assertions.
+Harness `22c6fb7f155a4fe22c3098c99a8f800b49cc209a` is published; typing/lint/guard88
+and diff checks passed. No new browser execution has followed this correction.
+
+The bounded SOL high same-class review of all22 remaining declarations found
+only two additional confirmed selector mistakes, affecting EVT016/020/CON025.
+Root independently accepted their three-file harness/README correction: actual
+exact-title event articles and unique detail links, and a unique visible results
+search field. Publication `2ac71bc27208d425151319a2d6073ec11aa61872` passed typing,
+scoped lint, strict-human consistency and diff checks. Both archives and all1,181
+live UAT files remain identical to product0dac. No product defect or new pass is
+inferred from those test mistakes. Current inputs hash is `ea73fe211005dbcaaedf83554dccb22c36de5d0c63be5cea57eac081830bf963`;
+four registries are unchanged. Fresh official discovery matched exactlyone
+Chromium block/CON021–022 before its authorized proof. No browser is yet active.
+Read any new `/tmp/tfp-domain-share-recovery-state.json`/atomic status before
+acting; absence means not launched. Only a separately reviewed failed-block
+proof may precede the original22 unexecuted blocks, never completed historical
+flows or a full matrix.
 
 The exact correction, scoped publication and deployable archive equivalence
 are independently accepted. This uniquely discovered failed-block proof must
