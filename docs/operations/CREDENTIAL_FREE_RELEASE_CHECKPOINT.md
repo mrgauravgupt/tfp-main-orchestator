@@ -1,5 +1,41 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
+## Domain operations — exact workspace readiness correction accepted, 9 October 2026
+
+Clean published harness `dab1dc2c3f1db49135559a5cc24d20fe020dbe36`; unchanged product
+`7a412553077257953a8c9747e5a3d92445c9c3f2` / UAT `20261009T155321Z-7a412553`.
+Root and independent Ultra accept exact three-file diff
+`6eda53e1bba17abd497b2b1a47ce365e16b36021bc83d6aa4238f7bb79f9e2d8`.
+Original prior failure is a proved selector collision, not publication failure:
+valid edit measuredPENDING/AI_PENDING, selected participant workspaceHTTP200
+4.287s later;72pollGET200/1GET404. All73 generic first-text visibility checks
+matched hidden notification drawer STRONG before exact visible heroH1, while
+workspace tab/panel and original delivery markup were available. No DB/provider/
+authentication/slug fault established; file-byte/final after assertions unreached.
+
+OPP023 alone now supplies a predicate for unique exact visible heroH1, selected
+workspace tab and visible panel. Eleven existing helper callers/default predicate,
+realGETs600000ms deadline/2–4–8s cadence and all application/role/metadata/delivery/
+exact download/freshGET/cleanup assertions remain. Actual compiled privatehelper
+and actual callback loopback test rejects oldpredicate on identical healthyHTML,
+accepts correctedpredicate, rejects wrongtitle/404/unselected/hiddenpanel. Final
+one test/five states passed; typing/scopedlint/strict180/diff0. Root and reviewer
+viewed two synthetic desktop/mobile captures; they are not application proof.
+Earlier author checkchildren and all original failures remain distinct/preserved.
+
+All1181 runtime archive/liveblobs and3cwd byteidentical; no redeploy.
+Fresh official isolated-cache discovery exactly1OPP023/retries0/maxfail1. Preflight
+`/tmp/tfp-domain-opp023-visible-20261009T181000Z/` inputs
+`fe9e772e8349672d0ead7d41ba895e212993dc0c88933b971a5f088427e5882c`,
+four registries unchanged. Single affected proof pending root health/launch;
+eleven original-unexecuted stay gated. Their separate three-file scratch proposal
+for six source-confirmed draft/label/upload/media/cleanup gaps remains unapplied.
+No completed-flow/fullsuite repeats or certificate splicing; preserve all original
+evidence/cache/historyf19/unrelatedmoderationresume. Ultra owns fix/review, low only
+monitors. Strict6child/OAuth/sixdeliveredOTP/inbox/19external production host/provider/
+storage/legal/independent recovery gates remain; never invent values, approve/
+deploy production or delete evidence.
+
 ## Domain operations — opportunity publication precondition accepted, 9 October 2026
 
 Focused `uat-domain-opp023-ready-20261009T174305Z-2a641123` TERMINATED1 at17:54:43UTC,
