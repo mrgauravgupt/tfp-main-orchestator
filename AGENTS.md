@@ -2,13 +2,19 @@
 
 ## Domain operations — reviewed opportunity draft correction, 9 October 2026
 
-Exactly one OPP023 proof `uat-domain-opp023-20261009T171010Z-fff83169` is active,
-owner98823/supervisor98820. Immutable `/tmp/tfp-domain-opp023-state.json` binds
-the report/cache/logs; authoritative atomic
-`/tmp/tfp-domain-opp023-recovery-20261009T170400Z/focused-status.json` controls
-completion. Low `opp023_completion_monitor_low` owns exact-PID exit monitoring;
-root owns execution. Zero retries/maxfail1/action evidence. Missing exit unfinished.
-No duplicate launch/watch or shared source/services/DB/cache mutation while healthy.
+OPP023 proof `uat-domain-opp023-20261009T171010Z-fff83169` TERMINATED1 at17:11:58UTC:
+zero passed/one failed/zero retries, owner98823/supervisor98820 absent. Immutable
+`/tmp/tfp-domain-opp023-state.json` remains historical running; authoritative
+`/tmp/tfp-domain-opp023-recovery-20261009T170400Z/focused-status.json` is terminal.
+The draft/persisted-field/application/closed-role/metadata checks progressed before
+new first failure660: selected participant workspace delivery row expected1/actual0.
+Its cause remains unclassified; sole `opportunity_opp023_rca_ultra` performs bounded
+read-only source/trace/actor/visibility/query diagnosis. No source/services/DB/storage
+mutation, browser replacement or eleven-flow continuation is authorized during RCA.
+Low exact-owner monitor completed and idles. Canonical context
+`93f519d2fba24fe4aeae4806953d65406e278427981d5edca6435698df110c7d` is regular,
+clean and bound to exact product/harness/release/live four registries/inputs below.
+Every new and previous failure artifact/cache remains preserved; no case pass claimed.
 
 Published clean harness `fff83169961685015f596cbc7248b99b23f538b8` retains product
 `7a412553077257953a8c9747e5a3d92445c9c3f2` / UAT
