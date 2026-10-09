@@ -226,3 +226,28 @@ Scoped publication: Share22c6fb7f, then event/search2ac71bc2. Archive-equivalenc
 record under `/tmp/tfp-domain-share-recovery-20261009T024757Z/` binds product0dac,
 current harness2ac71bc2 and the exact existing UAT release. The original23-child
 and first focused93e child remain failed; neither is rewritten/spliced.
+
+## Accepted focused proof and disjoint continuation — 9 October 2026
+
+Corrected child `uat-domain-share-recovery-20261009T025018Z-2ac71bc2`
+passed1/1, two CON021/022 IDs, zero retries/failures/flakes/skips, canonical and
+wrapper exit0. Root and independent SOL high audited exact clean bindings,
+canonical context hash8a0e623c, frozen inputs ea73fe21/four live registry hashes,
+exact AST mapping, one attempt and matching attached/catalog/attempt evidence.
+Two action pairs contain12 unique regular captures with fitting widths and
+loaded images; root viewed all8desktop/mobile captures. Relevant diagnostics
+are empty. Its partial coverage and five other unexecuted slots remain explicit.
+Root audit: `/tmp/tfp-domain-share-recovery-20261009T024757Z/root-evidence-audit.json`.
+Both prior failures remain unchanged and preserved.
+
+Only the original22 unexecuted blocks (23IDs), independently reconciled against
+original results and current AST, were selected. Fresh-cache official discovery
+matched exactly22 before run `uat-domain-continuation-20261009T025709Z-2ac71bc2`,
+owner13536, launched once with zero retries/maxfail1/action evidence. Current
+operator state `/tmp/tfp-domain-continuation-state.json`; atomic completion
+`/tmp/tfp-domain-continuation-20261009T025435Z/status.json`. Missing status is
+unfinished. Selection SHA256482bd39c is immutable; accepted failed-block proof
+is excluded. No completed historical flow or full matrix is repeated.
+Do not mutate source/services/DB/cache while healthy; stop first actual failure
+for evidence-led review. Canonical runner owns FE/BE restarts and isolated fixtures.
+All evidence remains separate; no aggregate/certificate or production approval.

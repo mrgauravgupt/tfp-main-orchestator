@@ -1,72 +1,57 @@
 # Workspace Memory for Future Agents
 
-## Domain operations — preserved first failure, 9 October 2026
+## Domain operations — accepted focused recovery and remaining22 active, 9 October 2026
 
-Published product remains `0dac6128432ddd9687f57a2525dbca2fe6dc6975` at UAT
-`20261008T170441Z-0dac6128`; the 1,181-file source archive and full stack health
-were independently checked before launch. The original scoped child
-`uat-domain-20261008T170824Z-0dac6128` terminated exit1 at 17:09:19 UTC on
-8 October: zero passed, one failed, twenty-two unexecuted, zero retries.
-Owner PID95377 is absent. `/tmp/tfp-domain-human-20261008T170543Z/status.json`
-is authoritative; `/tmp/tfp-domain-human-state.json` retains immutable historical
-launch state and must not be read as a current running owner.
+Product `0dac6128432ddd9687f57a2525dbca2fe6dc6975` remains deployed as UAT
+`20261008T170441Z-0dac6128`; clean published harness is
+`2ac71bc27208d425151319a2d6073ec11aa61872`. All1,181 deployable blobs remain
+byte-identical to product and live UAT; no unnecessary redeployment occurred.
+Reviewed harness corrections preserve exact CUID-derived submission identity,
+unique visible direct Share POST control, actual event cards and results search
+controls. Types/lint/strict-human/diff checks passed; product semantics unchanged.
 
-The first helper assertion assumes UUIDs for submission links; executable
-`ContestSubmission` uses CUIDs. The submitted entry and visible link existed.
-Missing before/after evidence is a cascade of that helper failure, not an
-established product failure. SOL high corrected only the helper and README;
-root independently reviewed actual ID generation, routes and all three callers.
-Harness `93e9300b5c6d1cf0ed5e57680e8181bc95144118` is published. Visible-link,
-same-origin exact contest path and exact entry identity assertions remain.
-Playwright typing, scoped lint, strict-human guard and diff checks passed.
-Both revisions' deployable archives are byte-identical; all 1,181 live UAT blobs
-match the original product, so no new deployment is required. Previous workspace
-credit exhaustion made no edits; the resumed correction completed successfully.
-The first focused recovery `uat-domain-contest-recovery-20261009T021350Z-93e9300b`
-is also terminal exit1 at 02:15:21 UTC on9October: zero passed/one failed, zero
-retries. Owner7196 is absent. The recorded first failure at spec498 is a global
-Share selector matching both the visible direct-entry form and hidden lightbox
-form; no click executed. Missing after-evidence is a cascade. Preserve its regular
-context/manifest/results/trace/video/screenshots/cache. Atomic
-`/tmp/tfp-domain-recovery-20261009T021119Z/focused-status.json` overrides historical
-running/null state in `/tmp/tfp-domain-recovery-state.json`. The prior passive
-completion watch did not report terminal status and is stopped.
+The original23-block child and first93e focused child remain terminal exit1:
+zero passed, one failed each; original22 blocks were unexecuted. Their actual
+causes are the unjustified UUID assertion and duplicate visible/hidden Share
+selector. Preserve all original states/results/contexts/manifests/traces/caches;
+never rewrite historical running/null launch snapshots as current activity.
 
-Root accepted the actual source/trace correction: visible detail section, unique
-reaction POST form for the exact submission ID, one visible exact Share button,
-then unchanged feedback and independent fresh-GET reaction/count assertions.
-Harness `22c6fb7f155a4fe22c3098c99a8f800b49cc209a` is published; typing/lint/guard88
-and diff checks passed. No new browser execution has followed this correction.
+Corrected `uat-domain-share-recovery-20261009T025018Z-2ac71bc2` passed1/1 once,
+zero retries/failures/flakes/skips, canonical+wrapper exit0 at02:51:59UTC9October.
+Root and independent GPT-6.1 SOL high accepted exact context hash
+`8a0e623c59e2956537ca36e6d70b2bdc76521b1d87c18fa97ffd4e3f50351dc5`, clean
+app/harness/release, live four registries/inputs, CON021/022 declaration and one
+attempt. Two action pairs/12 unique regular captures are complete; widths fit,
+images loaded and diagnostic arrays empty. Root viewed all8desktop/mobile images;
+tablet metadata independently audited. Its other five slots remain unrun;
+overall coverage is incomplete and no certificate is claimed. Owner12397 absent.
+Authoritative `/tmp/tfp-domain-share-recovery-20261009T024757Z/focused-status.json`
+is finished0; the separate launchstate remains immutable historical evidence.
 
-The bounded SOL high same-class review of all22 remaining declarations found
-only two additional confirmed selector mistakes, affecting EVT016/020/CON025.
-Root independently accepted their three-file harness/README correction: actual
-exact-title event articles and unique detail links, and a unique visible results
-search field. Publication `2ac71bc27208d425151319a2d6073ec11aa61872` passed typing,
-scoped lint, strict-human consistency and diff checks. Both archives and all1,181
-live UAT files remain identical to product0dac. No product defect or new pass is
-inferred from those test mistakes. Current inputs hash is `ea73fe211005dbcaaedf83554dccb22c36de5d0c63be5cea57eac081830bf963`;
-four registries are unchanged. Fresh official discovery matched exactlyone
-Chromium block/CON021–022 before its authorized proof. No browser is yet active.
-Read any new `/tmp/tfp-domain-share-recovery-state.json`/atomic status before
-acting; absence means not launched. Only a separately reviewed failed-block
-proof may precede the original22 unexecuted blocks, never completed historical
-flows or a full matrix.
+Exactly ONE continuation now runs only the original22 unexecuted blocks/23IDs:
+`uat-domain-continuation-20261009T025709Z-2ac71bc2`, detached owner PID13536.
+Read `/tmp/tfp-domain-continuation-state.json` and authoritative
+`/tmp/tfp-domain-continuation-20261009T025435Z/status.json` before acting;
+missing final status means unfinished. Fresh-cache official non-browser discovery
+matched all22 exact AST declarations and the immutable original disjoint set,
+selection SHA256 `482bd39c9292fc9aaa9087d14d1b7ecc83e9c5216643306950b67b57e2db0151`.
+Inputs `ea73fe211005dbcaaedf83554dccb22c36de5d0c63be5cea57eac081830bf963` and
+four registry hashes remain frozen. Disk exceeded9GiB at launch. Zero retries,
+one worker/maxfail1/action evidence; canonical runner owns FE/BE setup and scoped
+fresh fixtures. Root owns the runner; low-cost domain_recovery_monitor_low only
+watches exact owner exit and reads atomic completion. Do not repeat the accepted
+flow, duplicate launch or mutate shared source/services/DB/cache while healthy.
+First actual failure stops for preserved evidence and scoped SOL high RCA;
+no blind full replacement, hidden retries/sleeps/suppression or assertion weakening.
 
-The exact correction, scoped publication and deployable archive equivalence
-are independently accepted. This uniquely discovered failed-block proof must
-pass independent evidence review before only the original twenty-two unexecuted
-blocks; completed historical flows/full matrices are never rerun. Every original
-trace/result/context/manifest/cache remains untouched. Read any new
-`/tmp/tfp-domain-recovery-state.json` and its atomic status before acting.
-No partial or failed child may be spliced into strict six-child certification.
-Preserve unrelated moderation/resume work and historical f19 evidence.
-
-Product/database/client checks and operation scope remain documented in
-`docs/reviews/2026-10-08-domain-human-flow-audit.md`. OAuth/six delivered-email
-OTP/inbox, production host/provider/storage/legal and independent recovery gates
-remain explicit. Production values were not invented and approval is not claimed.
-
+Independent final original-evidence/visual review is required after continuation.
+Only scoped root audit/checkpoint/MEMORY/AGENTS notes may be published meanwhile.
+No partial/failed child becomes a strict six-child aggregate/verifier certificate.
+OAuth/six delivered-email OTP/inbox and nineteen external production inputs plus
+host/provider/storage/legal/independent recovery proof remain launch gates.
+No production values/approval/deployment are invented. Preserve historicalf19
+and unrelated moderation-service/resume work. Details:
+`docs/reviews/2026-10-08-domain-human-flow-audit.md`.
 
 ## Remaining Web gates — completed scoped handoff 8 October 2026
 
