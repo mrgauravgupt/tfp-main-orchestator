@@ -1,5 +1,50 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Canonical danger correction interrupted; actual terminal state preserved — 10 October 2026
+
+Ultra 172500 is terminal exit 1 at 17:33:23Z with no final answer: the actual backend
+reported an included Codex usage limit. Supervisor 82387 is absent; the sole exact-
+exit LOW-origin monitor completed. Historical active launch notes do not override
+atomic /tmp/tfp-button-default-danger-fix-ultra-20261010T172500Z/status.json.
+No purchased-credit check, automatic redispatch or weaker-model substitution.
+
+Root verified all 458 Web sources: 453 unchanged, five runtime CSS files match the
+exact accepted D01/D02 and source-confirmed D03 delta. The current diagnostic
+ownership adapter/new canary is partial and unvalidated; README remains unchanged.
+Protected OPP031 hash bc58 stays exact. No new checks, captures, publication or deploy
+occurred. Current snapshots and full partial delta are preserved at
+/tmp/tfp-button-canonical-interruption-root-20261010T190829Z/root-partial-audit.json.
+
+Prior context 5/5 and all six root-viewed originals, accepted b073 and earlier source-
+bound proof remain intact. Finish only the interrupted source/README work after
+one authorized available-usage attempt; root delta approval then minimum LOW
+checks and one combined canonical/context independent judgment precede publication.
+Current deployed c5, one failed OPP031 proof, four original empty flows and strict
+external/native gates remain unchanged. No application/production readiness claim.
+
+## Default danger findings confirmed; canonical SSOT correction active — 10 October 2026
+
+Read-only Ultra171300 finished0. D01 confirms two default account controls retain
+bright danger/soft-white text; D02 finds visited profile links can inherit base
+gold due selector specificity. Proposal SHA f85fd72df268ab3b7d8cfdce3943366bd0078ea9b83fa221d29bce5d54a0f5f3
+maps canonical danger to existing dark text, preserves Report soft-white explicitly,
+removes two redundant local declarations and adds only danger :visited foreground.
+No audit runtime claim; all458 Web source hashes/protected contracts stayed exact.
+Root status-note drift is separately recorded and not relabeled source integrity.
+
+Root accepted the grounded proposal before one source-only Ultra correction:
+/tmp/tfp-button-default-danger-fix-ultra-20261010T172500Z/status.json,supervisor82387.
+It must also confirm before edit whether explicit AdminDialogs bright hover/white
+text is the same defect; only a proved hover foreground may use the canonical
+reference. Normal intentional dark palettes/native/permissions/layout stay exact.
+One current new canary reuses existing helpers, reconciles historical diagnostic
+ownership without suppressing guards and excludes all passed business/matrices.
+Sole deterministic LOW-origin watcher /tmp/tfp-button-default-danger-fix-monitor-low-20261010T172900Z/status.json.
+Root delta acceptance precedes LOW minimal canary/lint/one CSS build and one combined
+canonical/context independent judgment, reusing six context originals/root views
+and accepted b073 evidence. Current deployedc5/exact UAT/OPP031/four empty-flow and
+external/native gates remain; no source or application certification is inferred.
+
 ## Actual fixture context checks passed; default danger consumer audit active — 10 October 2026
 
 Source165600 finished0; root approved delta23c39cad366dba606094de975d379874b57d24374ea4af6a0ea52fbf94b3016c
