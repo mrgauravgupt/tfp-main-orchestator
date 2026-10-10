@@ -1,5 +1,43 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
+## Domain operations — opportunity evidence/UI correction published, 10 October 2026
+
+Clean app/harness `c5d947147ff680bc21c6b7958d993c12c8153564` publishes the independently accepted six-file batch
+`005273a908bf3b5291eee903628465d4fc3d43f386d1ae99f6844ade98a0ef3f`.
+OPP028 changes only its visitor before key to `public-deletion`; canonical evidence
+checks and all business/cleanup/security assertions remain. Thirteen scoped SCSS
+lines produce two application-card rules preserving complete status/Update labels
+and wrapping the status form. No shared/global style or product API changed.
+
+Actual Astro/card/Button/translation/Sass/font discriminator passed once:16
+original/current states,8 corrected English/German states at1440/768/390/320,40
+old label rejections,32 corrected rows without text/geometry anomalies. English
+old badges and longer German Update discriminate; English Update fits this
+synthetic fixture. Root viewed three old/current representative captures; author
+reports all16 viewed. PW/Web/test typing, scoped lint, strict180, one build and
+diff checks passed. Both initial type setup failures remain preserved. Old
+workspace/pagination baseline bytes/hashes/assertions are retained without reruns.
+Independent Ultra artifact `domain-two-fixes-independent-20261010/review.json`,
+SHA99f72d28fcd15380137732adbec65162d8b9a2c77f8be73d183a5abe53312842.
+
+Original four OPP024–027 business passes independently accepted with limitations:
+`domain-four-pass-independent-20261010/review.json`,
+SHAd932a6d4c434d560e2fca25277e2ddb1db7d07bbed31e6ecf7b9c780b5b8824c.
+Five action pairs/30 unique regular captures. Prior partial reviewer reported
+all20 desktop/mobile viewed; final reviewer personally viewed4, root viewed2
+OPP026 originals. Tablet10 metadata only. OPP027 four placeholders/one fixture,
+normalized first-image/lightbox and five desktop height metadata8px differences
+remain explicit limits, without speculative cause or completed-flow replay.
+
+Exact UAT deployment/archive/cwd/health pending before one failed OPP028 proof.
+Prepared-only operator directory `/tmp/tfp-domain-opp028-release-20261010T041900Z/`;
+no browser launched. Only accepted original full evidence may unlock the six
+original unexecuted flows; selectionSHAdc2ae011217730117d2896526f395107c32b5b8fbc541df6e51381bedbc01f34.
+Use included Codex ChatGPT usage, Ultra fixing/review and low monitoring. Preserve
+all original evidence/cache/historyf19 and unrelated moderation/resume work.
+Strict six-child/OAuth/six deliveredOTP/inbox/nineteen external production plus
+host/provider/storage/legal/independent recovery remain gates; no production approval.
+
 ## Domain operations — OPP028 cause and application-card correction accepted, 10 October 2026
 
 Original remaining11 remains terminal1: four OPP024–027 passed once, OPP028 failed,
