@@ -1,5 +1,35 @@
 # Workspace Memory for Future Agents
 
+## Canonical danger checks passed; combined context judgment active — 10 October 2026
+
+LOW210900 actual child finishedPASSED21:09:06Z:4/4steps,one namedcanary1pass,
+retry0 and492source/114artifact hashes stable every boundary. Changed syntax,
+new canonical-only check, one-file lint and ONECSSbuild passed. Original status:
+/tmp/tfp-button-native-shape-low-approved-20261010T210900Z/execution-20261010T210900Z/status.json.
+New default-danger-w0MKhE13rows/32unique regular non-symlink captures/emptyerrors;
+evidenceSHA543f5a34712de0aeab74f66c2e2f9c2f03e212d79f3f2142de60ed4bda973290.
+Root viewed16 originals/all32metadata; exact subset/limits at
+/tmp/tfp-button-canonical-root-evidence-20261010T211400Z/root-observation.json.
+Account/profile enabled tested contrastminimum5.696; Report icon-only generic
+labelFits=false and pre-existing tall AdminApprove/narrowtextarea retained for
+source-led reviewer interpretation, no inferred new geometry defect.
+
+ONE combined canonical/context Ultra reviewer dispatched21:13:04Z,supervisor7536:
+/tmp/tfp-button-canonical-context-independent-ultra-20261010T211800Z/status.json.
+AuthorizationSHAdd47bac05f099e69597388a4259144cfca918fa929b82604c8cd94176a9fef12
+binds492sources/187artifacts. All32new+6context originals must be personally viewed;
+reuse b07322/earlier29all42 inspection without full repeats. Old173contexthashes
+include later canonical changes; trace exact nongeometry operations, never claim
+all173 currentlyunchanged. Sole deterministic exact watcher
+/tmp/tfp-button-canonical-context-monitor-low-20261010T211900Z/status.json,
+session18736 adds0models. No checks/browser/deploy active, no duplicate judgment.
+
+Independent acceptance precedes scoped publication/exactUAT/onefailedOPP031/four
+originalempty once. Privatefragments/build are not application/native/business
+or production certification; visitedpainting unobserved. Preserve every original
+failure/observation/rootpreparation/capture/historyf19/unrelatedwork. Deployedc5
+and strict external/native gates remain unchanged.
+
 ## Strict native transition correction accepted; minimum LOW checks active — 10 October 2026
 
 Source-only Ultra204600 finished0 at20:43:18Z. Root independently accepted exact
