@@ -1,5 +1,66 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Domain operations — role SSOT audit and scoped implementation, 10 October 2026
+
+Latest direct user requests reusable, consistent role selection across opportunity
+creation, registration, profiles and other genuinely shared controls. Actual source
+census confirms six consumers of RolesNeededSelector.astro: CompactSignupForm,
+opportunity create/edit, event create/edit and contest create. Canonical role options,
+localized labels/icons, roles-needed.ts and role-chip CSS already own that UI.
+Primary single-choice selects and domain-specific options/limits remain legitimate.
+
+Prioritized source-confirmed profile findings accepted for smallest correction:
+
+- High: portfolio UI can select more tags than the existing API maxCreativeRoles
+  policy permits. user-media-routes.ts owns limit4 and already returns it; the Web
+  loader currently discards policy. Consume that same response, no duplicated4 or
+  extra fetch; configure the existing picker limit and localized feedback.
+- Medium: profile/[username].astro owns raw creativeRoles checkboxes and redundant
+  portfolio-modal__roles SCSS. Reuse RolesNeededSelector with ONLY member roles,
+  existing names/order/empty defaults and custom roles disabled; preserve upload
+  payload/reset/draft/modal/permissions. Remove obsolete sole-consumer styling.
+- Medium: profile/edit.astro hand-renders secondaryRoles. Reuse the shared picker
+  while preserving persisted defaults, primary-role exclusion, specialty filtering
+  and role preferences. Single primary role stays SelectControl. No API role
+  membership authorization requirement was established; do not invent one.
+
+User-requested isolated fixture correction finished: actual shared components,
+client, styles, canonical13roleoptions/i18n/icons render instead of raw synthetic
+controls. Final isolated check1passed/0errors; all13labels44px and contained at
+1440/768/390, label/keyboard selection and MODEL serialization verified. Root viewed
+all three shared-picker captures. New contract SHA78a0ee48225f76a17014de9e7851af48c754bebcce655cedd4a353b13daad1cc;
+OPP031 spec unchanged SHA bc58d6bebb3d68529ea8c22e3a4fa8d72c1e91ae9cb1bdfc1fa2d68222b73732.
+Original candidate and all initial setup/check failures preserved. Tablet native
+date text and narrow custom-placeholder clipping are observations, product impact
+unproved; no speculative CSS correction. Independent revised review remains pending.
+
+Three061800 requested Ultra sessions stopped with actual included Codex usage-limit
+errors/no final answers/no profile source edits. Original events/statuses preserved
+under /tmp/tfp-shared-role-usage-interruption-20261010/. New direct continuation and
+one included-usage snapshot allowed execution; exactly one implementation resumed
+and successfully executed before resuming the two non-overlapping reviewers. Never
+poll/gate purchased-credit flags or substitute lower reasoning.
+
+Current sole profile implementation:
+/tmp/tfp-profile-role-ssot-resumed-ultra-20261010T064700Z/status.json.
+Current read-only general-form auditor:
+/tmp/tfp-ui-ssot-form-audit-resumed-ultra-20261010T064800Z/status.json.
+Current read-only revised-fixture reviewer:
+/tmp/tfp-domain-opp031-shared-fixture-review-resumed-ultra-20261010T064800Z/status.json.
+No recursive Codex/model/agent execution. Root owns publication/runtime dispatch.
+Product remains c5/UAT20261010T043413Z-c5d94714. Runtime profile changes require
+reviewed exact publication/deployment/bindings/health; prepared harness-only operator
+assumptions must be revised. No application browser or replacement is active.
+
+Original six atomic status remains terminal1: OPP030passed/OPP031failed/four
+OPP032/PRO009-011 empty/unexecuted. Only reviewed fixes and one accepted failed
+OPP031 proof may unlock those four once; selection SHAe24af95363af55d3648d89dc5b9f8ed0fc52d1959fc85f589bc04a75c20672e2.
+Do not repeat completed flows/full suites or splice certificates. Preserve every
+original evidence/cache/state/historyf19 and unrelated moderation/resume work.
+Ultra owns diagnosis/fix/review, low only monitoring. Strict certification, OAuth/
+delivered OTP/inbox/nineteen external production host/provider/storage/legal/
+independent recovery remain gates; no production approval/deployment.
+
 ## Domain operations — shared role fixture revision requested, 10 October 2026
 
 The user identified the isolated screenshot's unstyled synthetic role checkboxes
