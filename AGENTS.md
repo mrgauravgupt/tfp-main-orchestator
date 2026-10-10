@@ -1,5 +1,23 @@
 # Workspace-Wide Agent Notes
 
+## Included usage reset verified; interrupted source finisher resumed — 10 October 2026
+
+The included 300-minute Codex window now starts at 19:06:35Z, after the preserved
+17:33:23Z rejection; read-only usage was 11%. Exactly one requested Ultra finisher
+was dispatched at 19:36:22Z and completed seven initial tool calls without rejection.
+Atomic /tmp/tfp-button-default-danger-resume-ultra-20261010T193700Z/status.json,
+supervisor 92854, owns only the current canary and README. Five accepted runtime
+CSS deltas and all other product/native/human sources remain protected. No author
+checks/build/browser/deploy; completion and validation are not inferred from launch.
+
+Sole deterministic LOW-origin exact-exit watcher:
+/tmp/tfp-button-default-danger-resume-monitor-low-20261010T193800Z/status.json,
+root session 56733. No extra model monitoring or healthy-work/credit polling.
+Root final-delta acceptance then minimum LOW checks and one combined canonical/
+context Ultra judgment precede publication, exact UAT, one failed OPP031 proof and
+four original empty flows. All prior failures/evidence, deployed c5 and external/
+native gates remain; root status-note drift is separate from product integrity.
+
 ## Canonical danger correction interrupted; actual terminal state preserved — 10 October 2026
 
 Ultra 172500 is terminal exit 1 at 17:33:23Z with no final answer: the actual backend
