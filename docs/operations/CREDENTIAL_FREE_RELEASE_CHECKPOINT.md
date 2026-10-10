@@ -1,5 +1,66 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
+## Domain operations — Codex usage resumed; eleven ready for first execution, 10 October 2026
+
+The user corrected the prior resource gate: use included Codex usage. Purchased
+credit flags are not a prerequisite for work. Existing GPT-6.1 SOL Ultra agents
+resumed successfully and executed tools; the earlier backend rejections remain
+historical evidence. Use Ultra for diagnosis, implementation and independent
+review, and low reasoning only for monitoring. Do not repeatedly poll purchased
+credit flags or substitute a weaker fixing/review model.
+
+The independently reviewed seven-file batch is published clean at
+`a9003a97ff28c03b846ccb79d6616d321e27d6f7` and deployed at UAT
+`20261010T025357Z-a9003a97`. Only seven workspace CSS lines change the deployable
+runtime: rows wrap and full role/status labels retain usable width. The other
+changes repair the six source-confirmed harness gaps in the original unexecuted
+PRO009–011 and OPP025/028/031, add two actual-source discriminators and maintain
+one pagination source hash. OPP023 and all other completed declarations/helpers
+remain unchanged. All 1,181 deployable/live source blobs and three service cwd
+bindings match; eight units, six loopback endpoints, database and Access health
+passed. Earlier UAT releases are retained; no other product deployment ran.
+
+Exact accepted patch `cb6a62dcebbe8181e33d16e81ef44bfcdece6cd25dcfa482a6417d045a916283`.
+Independent Ultra review `domain-final-batch-independent-20261010/review.json`,
+SHA256 `440a30503aff146855f2d4e59f4c795ef59f662dbfb8fee2c3bbe0c808c00ca1`.
+PW typing/scoped lint/strict human180/Web typing/one production build/diff passed.
+The original guard failure remains preserved; its unsupported read-only
+classList.contains call was replaced by equivalent token-exact getAttribute/includes
+without changing the guard. The CSS check passes one corrected lower-level run,
+24 corrected rows/18 compact labels at 1440/768/390, with six original mobile
+label rejections. Its first message-bookkeeping failure remains preserved.
+PRO011 actual observer/callback check passed once across seven states and a
+wrong-src discriminator; loaded wrong/missing/unselected bodies still fail.
+These synthetic checks are not application or provider passes.
+
+OPP023 predecessor independently accepted: original context/input/live registries,
+one passed attempt/retry0, one case/two actions/twelve regular unique captures,
+all eight desktop/mobile originals viewed. Review artifact
+`domain-opp023-independent-20261010/review.json`; five other slots remain unrun.
+Do not repeat OPP023, accepted domain flows or any full suite.
+
+Exactly eleven original empty-result unexecuted blocks are authorized next, each
+once: OPP024–028/030–032 and PRO009–011. Immutable selection SHA256
+`a1aa6aedfd94680e539c562ee80653605d05b8b497eb501cf1b52c7669d35ef7`.
+Fresh isolated-cache official discovery exactly matched eleven canonical AST
+blocks/eleven IDs, retries0/maxfail1/worker1. Inputs
+`ae82acb065b08723912d525fa517b08015456a79314b57af271107b0acb4cb86`; four registries are unchanged.
+Prepared run `uat-domain-remaining11-20261010T025732Z-a9003a97` has NOT launched at this checkpoint.
+Preflight/deploy/discovery/health/archive evidence: `/tmp/tfp-domain-remaining11-release-20261010T024527Z`.
+Preserved code gates: app `test-results/reports/diagnostic-review/domain-remaining11-prepublication-20261010/`.
+Root owns one durable launcher; its canonical runner owns setup/scoped fixtures.
+After launch use immutable `/tmp/tfp-domain-remaining11-state.json` and atomic
+`/tmp/tfp-domain-remaining11-release-20261010T024527Z/status.json`; absent final exit is unfinished.
+
+Preserve every original failure/context/manifest/trace/video/capture/log/cache/state,
+history f19 and unrelated moderation/resume work. Stop first actual failure for
+source-led Ultra review before a minimum correction; no automatic rerun, hidden
+retry/sleep/replay, suppression or weakened security/assertions. Never splice
+partial/mixed evidence into strict certification. Strict six-child certification,
+OAuth/six delivered-email OTP/inbox and nineteen external production inputs plus
+host/provider/storage/legal/independent recovery remain gates. No production
+approval or deployment. Earlier credit-blocked sections below are historical.
+
 ## Domain operations — OPP023 passed; remaining work blocked by credits, 10 October 2026
 
 Focused `uat-domain-opp023-visible-20261009T181426Z-dab1dc2c` finished exit 0 at

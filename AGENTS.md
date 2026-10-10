@@ -1,5 +1,35 @@
 # Workspace-Wide Agent Notes
 
+## Domain operations — Codex usage resumed; eleven ready for first execution, 10 October 2026
+
+Use included Codex usage for capacity. Purchased-credit flags are not a prerequisite;
+the earlier backend rejections and credit-blocked sections below are historical.
+Existing GPT-6.1 SOL Ultra owners resumed and successfully executed tools. Use
+Ultra for analysis/fixing/independent review and low reasoning only for monitoring.
+No purchased-credit polling or weaker fixing/review substitution.
+
+App/harness `a9003a97ff28c03b846ccb79d6616d321e27d6f7` is published clean and
+UAT `20261010T025357Z-a9003a97` exact source/cwd/full-stack health passed.
+Independent Ultra accepted seven-file patch `cb6a62dcebbe8181e33d16e81ef44bfcdece6cd25dcfa482a6417d045a916283`;
+relevant gates and two actual-source lower-level browser checks passed. Original
+setup/guard/message failures remain preserved. OPP023 predecessor accepted;
+never repeat it or any other completed flow/full suite.
+
+Only eleven original unexecuted blocks are prepared, not launched here:
+`uat-domain-remaining11-20261010T025732Z-a9003a97`. Immutable selection
+SHA `a1aa6aedfd94680e539c562ee80653605d05b8b497eb501cf1b52c7669d35ef7`;
+official fresh-cache discovery matches eleven AST blocks/IDs, retry0/maxfail1/worker1.
+Root owns the single runner; canonical setup/fixtures remain its responsibility.
+After launch read `/tmp/tfp-domain-remaining11-state.json` and authoritative
+`/tmp/tfp-domain-remaining11-release-20261010T024527Z/status.json`; no final exit is unfinished.
+
+Current detailed evidence/commands/limitations: `docs/reviews/2026-10-08-domain-human-flow-audit.md`
+and `docs/operations/CREDENTIAL_FREE_RELEASE_CHECKPOINT.md`. Stop actual failures
+for source-led Ultra review; no automatic replay/suppression/security weakening.
+Preserve all historical evidence/cache/f19 and unrelated moderation/resume dirt.
+Strict six-child/OAuth/six delivered OTP/inbox/nineteen external production plus
+host/provider/storage/legal/independent recovery remain gates. No production approval/deploy.
+
 ## Domain operations — OPP023 passed; remaining work blocked by credits, 10 October 2026
 
 Focused `uat-domain-opp023-visible-20261009T181426Z-dab1dc2c` finished exit 0 at
