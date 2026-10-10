@@ -1,5 +1,39 @@
 # Workspace-Wide Agent Notes
 
+## Domain operations — shared role fixture revision requested, 10 October 2026
+
+The user identified the isolated screenshot's unstyled synthetic role checkboxes
+and requested consistent shared role selection. These are private discriminator
+fixture controls, not application UI. The product already owns
+RolesNeededSelector.astro, roles-needed.ts, canonical role options/labels/icons,
+base role-chip styles and opportunity-create form styles. Reuse those owners;
+do not create another picker/list/style or imply a production role defect.
+
+The original three-file OPP031 candidate ba72facbf85fb4b6c3361efffb77148dc8d19163c4aa0cf87db7ab070d401f45
+finished its independent Ultra review with acceptance/no findings before steering.
+Original review is preserved at diagnostic-review/domain-opp031-original-candidate-independent-20261010/review.json.
+The final isolated date discriminator passed once after preserved typing/import/
+startup-route setup failures. Runtime date constraints/helpers and all other
+human declarations remain unchanged. No application OPP031 proof was launched.
+
+Sole Ultra fixture author now
+/tmp/tfp-domain-opp031-role-fixture-ultra-20261010T055700Z/status.json. Only the
+new contract test and README may change; the reviewed human spec must retain
+SHAbc58d6bebb3d68529ea8c22e3a4fa8d72c1e91ae9cb1bdfc1fa2d68222b73732.
+Use actual rendered shared picker/client/canonical options and existing form CSS.
+Validate visible chip/keyboard behavior, selected-state serialization and readable
+1440/768/390 captures while preserving old/current date discrimination. Revised
+fixture requires new independent exact-diff/check review before publication/proof.
+Product remains c5/UAT20261010T043413Z-c5d94714, no runtime change/deploy authorized
+without separately proved product finding. Root's prepared OPP031 operator is idle;
+four original empty flows remain gated; no completed-flow/full-suite reruns.
+
+Preserve original candidate/reviews/evidence/cache/state/historyf19 and unrelated
+moderation/resume. Included Codex usage, Ultra fix/review and low only monitoring;
+no purchased-credit gate. Strict certification/OAuth/delivered OTP/inbox/nineteen
+external production host/provider/storage/legal/independent recovery remain gates.
+No production approval or deployment.
+
 ## Domain operations — OPP031 order defect confirmed; four remain unexecuted, 10 October 2026
 
 Original `uat-domain-six-20261010T044848Z-c5d94714` is terminal1 at04:53:59UTC:
