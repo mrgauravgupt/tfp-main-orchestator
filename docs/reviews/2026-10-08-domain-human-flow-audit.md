@@ -1,5 +1,112 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Component SSOT continuation — actual terminal states and resumed owners, 10 October 2026
+
+Prior F1/F3/F4/F7 role-contract and F2/F8 registration implementations finished
+with their lower-level checks. The profile proof is terminal failure, not running:
+private browser-PxMMXl produced2/32 captures and stopped on an immediate focus
+snapshot (3px versus declared2px during transition); no further invocation occurred.
+All two originals were viewed and preserved. The source-supported settled-animation
+proposal remains pending a separately reviewed test change, with strict focus
+assertions retained. No profile application pass is claimed.
+
+The subsequent071900/072100/072400 authors ended with genuine backend workspace
+rejections at07:15–07:16 and no final answers. Those statuses/events remain. Latest
+user continuation authorized one requested Ultra execution attempt, which executed
+source tools successfully at10:34; only then did the other two non-overlapping
+owners resume. Included Codex usage is decisive, no purchased-credit polling/gate.
+
+Current sole Ultra owners:
+- /tmp/tfp-role-policy-resumed-ultra-20261010T103400Z/status.json: existing user
+  API maxima/role client raw-count compatibility and explicit ARIA state values.
+- /tmp/tfp-image-input-resumed-ultra-20261010T103600Z/status.json: existing shared
+  image-only input/selection policy for domain cover/banner/moodboard/submissions.
+- /tmp/tfp-quickrequest-control-resumed-ultra-20261010T103600Z/status.json: shared
+  Button/scoped control-base reuse, with admin stylesheet callers traced first.
+
+Root corrected a source-audit overstatement: CompactSignupForm ALREADY enforces
+maxSelected3. Its literal/API3 need shared-policy alignment, not a missing UI cap.
+Profile secondary selector lacks API6. These distinct3/6 policies must stay distinct.
+Shared role client toggleAttribute produces invalid empty ARIA values; the exact
+native checked/disabled behavior remains authoritative. Source also shows normalized
+picker counts versus raw API array max can disagree for case variants; preserve API
+raw cap and exact serializer contract, fix only the admission count.
+
+Native consumers independently repeat opportunity10/profile6/onboarding3 and
+onboarding label mapping, despite an existing taxonomy translator. Proposed minimum
+is same shared constants/translator in those native callers, preserving native
+components, payloads and current domain behavior. No native runtime/device proof.
+Proposals/source evidence: /tmp/tfp-ui-ssot-root-proposals-20261010/proposals.json.
+No broad global form rewrite, new layer/dependency, arbitrary permission change or
+completed human flow replay. Private diagnostics remain distinct from business proof.
+
+Original c5/UATc5 six remains OPP030pass/OPP031fail/four originally unexecuted;
+no new application browser/service/DB/storage mutation or deployment. Original
+OPP031 specbc58 and all prior date/capture evidence remain immutable. Current-role
+and upload-owner changes require separately reviewed narrow new-diagnostic source
+ownership reconciliation, not suppression of old preservation guards. Final exact
+combined-diff review/build/publication/deploy/current bindings/health precede one
+failed OPP031 proof, then four original empty flows once after accepted evidence.
+Strict certificate/OAuth/delivered OTP/inbox/nineteen external production inputs
+plus actual host/provider/storage/legal/independent recovery remain gates. Preserve
+all histories/caches/f19/unrelated moderation/resume; no production approval/deploy.
+
+
+## Component SSOT audit — confirmed findings and bounded owners, 10 October 2026
+
+Source-only Ultra form audit completed with eight confirmed findings. The revised
+OPP031 actual-shared-picker fixture independently passed review with no findings;
+review SHAeff919e59feabb44ae52c9f9c840037d5e1c99cfe6db60de8457b7f307c107a0.
+Its original c5 proof and all earlier failures remain immutable; it is lower-level
+UI/date proof, not an application business pass.
+
+Prioritized minimal corrections are scoped as follows:
+
+| Priority | Source evidence and root cause | Smallest correction / state |
+| --- | --- | --- |
+| High | Opportunity/contest picker props omit existing API selection maxima; contest custom roles are discarded by canonical parsing. | Shared limit constants, caller max/custom policy; Ultra role-contract owner active. |
+| High | login.astro numeric truthiness drops valid latitude/longitude zero. | Reuse structured location parser while keeping required physical onboarding contract; Ultra registration owner active. |
+| High | CompactSignupForm formats role IDs instead of localizing; Web known-role label map duplicates taxonomy. | Delegate known-role labels to canonical taxonomy translator; same role owner active. |
+| Medium | Config repeats canonical creative-role union/allowed IDs. | Derive identities; preserve exact opportunity default order and OTHER_CREATIVE exclusion. |
+| Medium | Image-only domain inputs use image/* and bypass existing ImageFileInput/imageFileSelectionError policy feedback. | Root source-reviewed proposal recorded; scoped shared input/helper migration pending. Document/resources/workspace files retain distinct policy. |
+| Medium | QuickRequest pages copy shared button/control framing. | Root source-reviewed Button/control-base reuse proposal pending; preserve named submit values/domain layout, no global style rewrite. |
+| Medium | Opportunity client repeats existing parseOpportunityRoles serialization. | Same parser, preserving custom-role/ordering/dedup contract; role owner active. |
+| Medium | clearFieldError removes caller aria-describedby on first valid blur when no validation error owned it. | Guard ownership/restoration; registration owner active. |
+
+Profile candidate is prepared: existing picker replaces portfolio/editor duplicate
+checkboxes, API portfolio maxCreativeRoles is read from its existing response,
+obsolete sole-consumer CSS removed, and only original-unexecuted PRO011 visible
+label interactions changed. Static/unit checks passed27; original private browser
+setup failed before server/browser because unused component imports were demanded.
+Source correction reviewed; exactly one affected corrected private proof owner is
+/tmp/tfp-profile-role-proof-ultra-20261010T070800Z/status.json. No application pass
+or captures are claimed before its terminal evidence. Product pages and human
+OPP031 spec remain under their scoped authors; no completed business flow repeats.
+
+Current role owner /tmp/tfp-role-contract-ssot-fix-ultra-20261010T070000Z/status.json;
+registration owner /tmp/tfp-registration-validation-ssot-fix-ultra-20261010T070300Z/status.json.
+All are root-launched ChatGPT-authenticated GPT-6.1 SOL Ultra, never recursively
+invoke models/agents. Included Codex usage is decisive; purchased credits are not
+a gate. Low reasoning remains monitoring only.
+
+The isolated OPP031 discriminator's c5 whole-file preservation guard will conflict
+with separately justified role-label/edit-picker and non-calendar validation edits.
+Do not suppress it or relabel that as product regression. Before final acceptance,
+review a minimal test-ownership refinement that still preserves exact human caller,
+date fragment/calendar semantics/old-order failure/native negatives and actual
+current source hashes. Keep all original fixture/check evidence unchanged.
+
+No application browser, service/DB/storage mutation or deployment is active.
+Prepared-only /tmp/tfp-domain-role-ssot-release-20261010T065600Z/ requires independent
+exact combined-diff acceptance and clean publication before one exact UAT deploy,
+current archive/cwd/health proof, one failed OPP031 proof, then the four originally
+unexecuted flows once after accepted original evidence. No old c5 runtime-equivalence
+shortcut for product changes. No evidence deletion or old-release pruning.
+Strict certification/OAuth/delivered-email OTP/inbox/nineteen external production
+host/provider/storage/legal/independent recovery remain gates; no production approval.
+Preserve all historical evidence/cache/f19 and unrelated moderation/resume work.
+
+
 ## Domain operations — role SSOT audit and scoped implementation, 10 October 2026
 
 Latest direct user requests reusable, consistent role selection across opportunity
