@@ -1,5 +1,30 @@
 # Workspace Memory for Future Agents
 
+## Shared-button continuation — saved review accepted; bounded source owner, 10 October 2026
+
+The previous54-source candidate passed20 LOW scoped checks once plus native
+checks. Saved independent review114000 accepted with no findings; root reverified
+all54 hashes. Its original wrapper terminal bookkeeping remains unknown after
+interruption despite a saved turn.completed event. Preserve the original status;
+do not relabel it exit0 or rerun that review. Root acceptance artifact:
+/tmp/tfp-ssot-combined-independent-ultra-20261010T114000Z/root-artifact-acceptance-after-interruption.json.
+
+The direct user screenshot exposes a raw Next field button in a private validation
+fixture. Completed source audit found six minimal shared-Button migration groups
+B01–B06; specialized controls remain legitimate. The broader control inventory is
+lexical discovery, not findings. The source-only120400 attempt finished1 due real
+included-usage limit before edits. Latest direct continue authorized exactly one
+new requested Ultra execution: /tmp/tfp-ui-component-resume-ultra-20261010T133700Z/status.json,
+durable supervisor55641. LOW ui_reuse_runner_low solely watches exact exit. No
+purchased-credit polling, repeated backend attempts, tests/build/browser/deploy
+while author changes source. Read actual atomic terminal status before proceeding.
+
+Minimum affected LOW checks/settled captures and incremental independent Ultra
+acceptance precede publication/exact UAT deployment, one failedOPP031 proof and
+only four original unexecuted flows. Product/UATc5 remains unchanged; no completed
+flow replay or strict certificate splicing. Preserve all evidence/historyf19 and
+unrelated moderation/resume work. External production/native-device gates remain.
+
 ## Component SSOT checks completed; independent review active — 10 October 2026
 
 LOW execution passed all20 approved scoped steps once with exact54 hashes;
