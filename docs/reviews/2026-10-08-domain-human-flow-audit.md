@@ -1,5 +1,33 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Canonical source complete; first CSS comparison proof stopped — 10 October 2026
+
+Ultra 193700 finished 0 at 19:45:40Z. Root accepted exact combined seven-file delta
+3c731db4ce0db8c5622524130e4cc7e3c38a966ecf09b7341158da0de9a55b1a,
+verified five runtime operations/protected helper bytes/42 owner hashes, and approved
+four minimum LOW steps with 492 source/30 artifact bindings. Original private-directory
+CLI trust setup failed before checks; source-led Ultra RCA accepted restoring only
+canonical repository --cd, retaining the trust check and original failed state.
+
+Actual corrected LOW execution is terminal failed at 20:12:11Z: syntax passed once,
+new canonical canary failed at normalized CSS graph equality, lint/build two unrun,
+zero retries and all hashes stable. Original atomic status:
+/tmp/tfp-button-canonical-low-approved-20261010T201100Z/execution-20261010T200759018739Z/status.json.
+Private default-danger-KEcI21 has 0 rows/0 captures; no product business regression
+is inferred. LOW task exit 0 is not a check pass. All failure logs/CSS/manifests stay.
+
+Sole bounded source-only Ultra RCA/conditional diagnostic correction:
+/tmp/tfp-button-cssom-projection-fix-ultra-20261010T201600Z/status.json,
+supervisor 97149 at 20:15:10Z. It must prove actual CSSOM style/group classification
+cause before editing only the new comparison/README, retaining strict entire-graph,
+property/count/negative/source-hash and native assertions. No product CSS/old helpers
+or author checks/probes. Sole deterministic LOW-origin exact watcher:
+/tmp/tfp-button-cssom-projection-monitor-low-20261010T201700Z/status.json,session 79714.
+Root final-delta acceptance then only minimum affected failed/unexecuted LOW checks
+and one combined independent judgment precede publication/UAT/OPP031/four empty flows.
+Prior accepted proofs, deployed c5, every original and strict external/native gates
+remain unchanged. Root status-note updates are separate from product integrity.
+
 ## Included usage reset verified; interrupted source finisher resumed — 10 October 2026
 
 The included 300-minute Codex window now starts at 19:06:35Z, after the preserved
