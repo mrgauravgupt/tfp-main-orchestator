@@ -1,5 +1,33 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Strict native transition correction accepted; minimum LOW checks active — 10 October 2026
+
+Source-only Ultra204600 finished0 at20:43:18Z. Root independently accepted exact
+two-file diagnostic delta70b0481ba7445e26579d2511519609ed5cfc118d4a037d3af3b887c15924847a,
+492 current source hashes/112 original artifact bindings, unchanged graph driver
+outside the new tail block, five runtime CSS owners and protected OPP031bc58.
+Exact five observed native names/order/count/empty priorities and lossless actual
+longhand value transfer remain subject to the unchanged wholegraph equality.
+Author checks0; source acceptance is not a canary/application pass.
+
+Sole LOW dispatched21:08:37Z,supervisor6112:
+/tmp/tfp-button-native-shape-checks-low-20261010T210900Z/status.json.
+Actual child /tmp/tfp-button-native-shape-low-approved-20261010T210900Z/execution-20261010T210900Z/status.json
+controls honest check counts. Plan SHAce7be6f624e903b467aeea79b31d3513ccd0a649998a1ab150743e15641dad91
+freezes492 sources/114 artifacts. Only changed syntax, one exact failed NEWcanary,
+original-unrun one-file lint and one CSS build;retry0/stop first failure or drift.
+Sole deterministic exact watcher /tmp/tfp-button-native-shape-monitor-low-20261010T211000Z/status.json,
+session61618 adds no model. No duplicate healthy launches or shared mutations.
+Root210800 README metadata-boundary preparation failed before model/check/source
+execution and remains preserved; new unique preparation changes only bookkeeping.
+
+Original trust/CSSgraph/nativeguard failures and retained-CSS observation remain
+immutable. New original capture inspection and ONE combined canonical/context
+Ultra judgment precede publication/exact UAT/OPP031/four original empty flows.
+Reuse accepted b073/all22 and six context originals, no unaffected matrices or
+completed business replay. Deployedc5/strict external/native gates remain;
+visited painting unobserved; no application or production readiness claim.
+
 ## Native shorthand mismatch observed; minimal source correction active — 10 October 2026
 
 Read-only Ultra202900 finished0 and withheld a speculative fix. Root approved
