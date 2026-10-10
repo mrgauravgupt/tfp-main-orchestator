@@ -1,5 +1,43 @@
 # Workspace Memory for Future Agents
 
+## Usage-efficient SSOT continuation — 10 October 2026
+
+Latest direct user instruction assigns routine execution/monitoring to LOW and
+source diagnosis/fixes/independent judgment to GPT-6.1 SOL ULTRA. Use included
+Codex usage; never gate on purchased-credit flags. Consolidate source work into
+one owner, reuse valid source-bound evidence, and run only minimum affected checks.
+
+Actual role-policy103400 and image-input103600 owners finished0. Quick103600,
+native105500 and SSR105200 finished1 with genuine included-usage-limit errors and
+no final answers; their partial changes and every check/artifact remain preserved.
+LOW collection: /tmp/tfp-ssot-low-verification-plan-20261010/plan.json. Subsequent
+LOW native typecheck and the four affected native contract tests passed with exact
+unchanged hashes: /tmp/tfp-ssot-low-native-checks-20261010T112000Z/status.json.
+The earlier native failure was contract import.meta/module compatibility; its
+reviewed path correction is now checked. No native device/business pass is claimed.
+
+Sole source-only ULTRA finisher is
+/tmp/tfp-ssot-source-finish-ultra-20261010T111700Z/status.json; successful tools
+observed after latest user continuation. It owns saved SSR negative expectations,
+sole admin QuickRequest shared-control counterpart, narrow diagnostic source
+ownership reconciliation and actual upload-runtime fixture import/policy binding.
+It runs no tests/build/browser; LOW ssot_run_plan_low alone observes exact exit
+and will execute only root-accepted scoped commands after stable source. The old
+c5/F8 negatives remain distinct; current positive SSR/ARIA/reference assertions,
+exact OPP031 specbc58/date/calendar/caller/native bounds and historical evidence
+stay protected. Root reviewed two representative current QuickRequest narrow
+private captures; all34 original passed captures remain, not a business signoff.
+
+Product/UAT remains c5/20261010T043413Z-c5d94714. No new app browser/deployment.
+Original OPP030pass/OPP031fail/four empty flows and selectione24af9 remain unchanged.
+Final LOW checks/build, one independent combined ULTRA review and scoped nested/
+parent publication precede exact UAT deployment/bindings/health, one failed OPP031
+proof and only four original unexecuted once after original-evidence acceptance.
+Strict clean six-child certificate, OAuth/delivered OTP/inbox/nineteen external
+production inputs and host/provider/storage/legal/independent recovery remain
+gates; no production approval/deploy. Preserve all failures/caches/historyf19 and
+unrelated moderation/resume. Full/completed-flow reruns and suppression forbidden.
+
 ## Component SSOT continuation — actual terminal states and resumed owners, 10 October 2026
 
 Prior F1/F3/F4/F7 role-contract and F2/F8 registration implementations finished
