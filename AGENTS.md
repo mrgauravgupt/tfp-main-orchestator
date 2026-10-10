@@ -1,5 +1,53 @@
 # Workspace-Wide Agent Notes
 
+## Domain operations — OPP028 accepted; six original flows active, 10 October 2026
+
+Focused `uat-opp028-20261010T043706Z-c5d94714` finished exit0 at04:39:51UTC:
+one passed attempt, zero retries/failures/flakes/skips. Root and independent
+GPT-6.1 SOL Ultra accepted original unique regular context/manifest, clean exact
+revision/release, live four registries/input hashes, canonical OPP028 mapping,
+two complete action pairs/twelve unique regular captures. Both viewed all eight
+desktop/mobile originals; four tablet captures metadata only. Context
+`c7124e249b4853d28118b5cd60a1f562141bbcea0a2955d4069979cc1fb89b2a`;
+inputs `ac5b7be6b198ff292b2bca1d0f785ad5a853e789f4dab8f3c4593e8ab9500dbc`.
+Independent artifact `domain-opp028-independent-20261010/review.json`, SHA
+`a4175298d467d677ebdcef5396563b789f9d2b5ce57185a4ef2079fa0a9371a8`.
+
+Initial moodboard placeholder, privacy-banner occlusion, normalized32x32 sRGB
+mean-difference<=6 rather than binary identity, and absent passed trace/provider
+timing remain explicit limits. The separate actual-component/compiled-CSS label
+check is lower-level UI proof, not OPP028 application-card proof. Original a9003
+failure/four passes remain unchanged; the root startup observation incorrectly
+expected running after terminal0 and is preserved without rerunning anything.
+
+Published clean app/harness `c5d947147ff680bc21c6b7958d993c12c8153564` / UAT
+`20261010T043413Z-c5d94714` deployed successfully. All1181 archive/live blobs,
+three running service cwd and full-stackhealth0 matched again before continuation.
+Exactly one `uat-domain-six-20261010T044848Z-c5d94714` was dispatched at04:49:48UTC,
+runner70580/supervisor70576. Only six original empty-result OPP030–032/PRO009–011
+run once. Immutable six-selection SHA
+`dc2ae011217730117d2896526f395107c32b5b8fbc541df6e51381bedbc01f34`;
+source results SHA`d564ed7665331d98a7b6b7037ea7c3dbd30871d589cfdf603446a7a5da3c9075`.
+Official fresh isolated-cache discovery matched exactly six canonical AST blocks/IDs,
+zero retries/maxfail1/oneworker/actions. Launch5.91GB free exceeded2GiB report
+estimate+256MiB variance+512MiB operating reserve. No deployment repeated.
+
+Immutable `/tmp/tfp-domain-remaining6-state.json`; authoritative atomic
+`/private/tmp/tfp-domain-remaining6-20261010T044848Z/status.json`. Root owns runner;
+canonical setup/fixtures own FE+BE restart. Sole low exact-supervisor NOTE_EXIT
+monitor `/tmp/tfp-domain-six-monitor-low-20261010T045000Z/status.json`. Missing final
+exit is unfinished; owner absence without exit is unknown, never pass. No duplicate
+watch/launch or shared source/services/DB/storage/cache mutation while healthy.
+
+Use included Codex ChatGPT usage, Ultra diagnosis/fix/review and low monitoring;
+purchased-credit flags are not a gate. Never repeat completed flows/full suites,
+splice evidence or claim a strict certificate. Stop first actual pipeline failure
+for bounded source-led Ultra review; preserve every original artifact/cache/state,
+historyf19 and unrelated moderation/resume work. Final independent original-evidence
+review and truthful scoped handoff remain pending. Strict six-child/OAuth/six
+deliveredOTP/inbox/nineteen external production host/provider/storage/legal/
+independent recovery remain gates; no production approval/deployment.
+
 ## Domain operations — opportunity evidence/UI correction published, 10 October 2026
 
 Clean app/harness `c5d947147ff680bc21c6b7958d993c12c8153564` publishes the independently accepted six-file batch
