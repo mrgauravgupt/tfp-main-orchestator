@@ -1,5 +1,49 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Actual fixture context checks passed; default danger consumer audit active — 10 October 2026
+
+Source165600 finished0; root approved delta23c39cad366dba606094de975d379874b57d24374ea4af6a0ea52fbf94b3016c
+and independently reverified eight protected blocks. LOW171300 finished0 at17:10:59Z:
+5/5 commands,two selected checks,173 source hashes/12 artifact bindings stable,
+zero retries. Actual /tmp/tfp-button-context-low-approved-20261010T171100Z/execution-20261010T171050798717Z/status.json.
+Root personally viewed all6 new regular unique captures: full actual-source event
+upload grid and admin owning row/focus ring at1440/768/390 are contained. Bounded
+private evidence only; independent context judgment and application gates remain.
+Metadata/source/visual limits: /tmp/tfp-button-context-root-evidence-20261010T171600Z/root-observation.json.
+
+Root source inspection indicates additional unscoped default danger users at
+profile/edit and account/delete; their actual cascade was not proved by the earlier
+census. Sole read-only Ultra audit /tmp/tfp-button-default-danger-audit-ultra-20261010T171300Z/status.json,
+supervisor78649,traces consumers/report alias before minimal true SSOT proposal.
+No source edits/tests/browser/erasure action by this reader. Sole deterministic
+LOW-origin exact-exit watcher /tmp/tfp-button-default-danger-monitor-low-20261010T171600Z/status.json.
+Root acceptance precedes any correction. Combine eventual canonical/context-only
+independent judgment and reuse accepted b073/old source-bound evidence; no complete
+or unchanged matrix replay. Current deployedc5/one OPP031/four empty flows/strict
+external/native gates remain. Preserve every historical artifact and unrelated work.
+
+## Contrast/spacing accepted; actual private context correction active — 10 October 2026
+
+Correction-only Ultra164100 finished0 and accepted exact F01/F02 source/evidence;
+review SHAb073cf61429135ed8bd132030d46df2c1ab1f7c9c127d14da546d32a18341ba4.
+All22 new originals personally inspected; prior unchanged source/evidence reused.
+No product upload defect established: isolated event cover omitted actual top-grid
+and title/description sibling, causing desktop percentage-height collapse. Admin
+fragment omitted owning row/table/page context, cropping vertical focus outline.
+Confirm mobile fullscreen is deliberate existing source and needs no redesign.
+
+Latest user spacing/reuse scope authorizes the minimal L01/L03 fixture-context
+correction before presenting full geometry proof. Sole source-only Ultra owner:
+/tmp/tfp-button-fixture-context-fix-ultra-20261010T165600Z/status.json,
+supervisor76768. Only two current diagnostic contracts and README may change;
+product CSS/components/API/native/OPP031bc58 and accepted color/gap/native assertions
+remain exact. New admin-only context boundary excludes accepted Confirm/matrices.
+Sole deterministic LOW-origin exact-exit watcher:
+/tmp/tfp-button-context-monitor-low-20261010T165700Z/status.json, no extra model run.
+Root exact-delta acceptance, minimum affected LOW checks and context-only judgment
+precede publication/exact UAT/one OPP031/four empty flows. All histories preserved;
+no blanket application/native/production certification or production deploy.
+
 ## Spacing/color checks passed; screenshot context review active — 10 October 2026
 
 LOW correction checks finished0 at16:37:03Z:8/8 steps,three selected contracts,
