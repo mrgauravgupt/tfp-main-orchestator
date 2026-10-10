@@ -1,5 +1,47 @@
 # Workspace Memory for Future Agents
 
+## Spacing/color checks passed; screenshot context review active — 10 October 2026
+
+LOW correction checks finished0 at16:37:03Z:8/8 steps,three selected contracts,
+22 new unique regular captures,empty diagnostics;96 combined source/reference
+hashes stayed exact at every boundary. Actual status:
+/tmp/tfp-button-spacing-low-approved-20261010T163700Z/execution-20261010T163629374356Z/status.json.
+Enabled normal/focus/hover contrast is at least5.696:1 across tested four themes;
+Next gap12/ring4/clearance8 and event gap21/ring4/clearance17 at1440/768/390.
+Root personally viewed10 originals and verified all22 metadata; limits recorded in
+/tmp/tfp-button-correction-root-evidence-20261010T164000Z/root-observation.json.
+
+Visual inspection nevertheless shows private event upload collapse at768/1440;
+390 is complete. Actual page grid/right sibling vs isolated fixture ancestry must
+be traced before any contextual/product correction. Confirm mobile fullscreen is
+explicit existing source policy; isolated admin top focus-edge is a contextual
+observation,not a proved product regression. One correction-only Ultra reviewer:
+/tmp/tfp-button-correction-independent-ultra-20261010T164100Z/status.json,
+supervisor75206. Deterministic LOW-origin exact-exit watcher
+/tmp/tfp-button-correction-monitor-low-20261010T164300Z/status.json adds no model run.
+No repeated checks or new app run/deploy during judgment. All histories remain;
+independent acceptance/publication/exact UAT/OPP031/four-empty-flow/external/native
+certification gates are unchanged. Current deployedc5 remains; no blanket UI signoff.
+
+## Spacing/color source complete; minimum LOW checks active — 10 October 2026
+
+Ultra161200 finished0 at16:33:28Z; its exact-exit LOW monitor finished0. Root
+reverified six-file correction SHAa78c86f134f71a74ba6943f4c1d858fad0e341e1a84d31afc954139ccc2933ef,
+81 frozen sources/24 consumer references and all old helper/admission/native blocks.
+Two existing text-token scopes fix Confirm/admin row; private Next uses space-3
+and event uses actual FormActions. Source approval is not runtime acceptance.
+
+Sole LOW owner /tmp/tfp-button-spacing-checks-low-20261010T163700Z/status.json,
+supervisor73183, executes eight sequential scoped commands once with source/artifact
+hashes checked at every boundary and stop-first-failure. Plan
+/tmp/tfp-button-spacing-low-approved-20261010T163700Z/approved-plan.json,
+SHA26e8c11a7314a80ae8839aea724063324e7e0759d35fa34ff8ddd6ceae0c6b09.
+Actual unique execution child/status controls counts; no pass inferred from launch.
+No unaffected matrices or business replay. Correction-only independent review,
+publication/exact UAT/one OPP031/four empty-flow gates remain. Current deployedc5,
+all prior failures/evidence/historyf19/unrelated work and external/native gates
+are preserved; no production-readiness certificate or deploy is claimed.
+
 ## Spacing/color correction resumed from actual interruption — 10 October 2026
 
 Independent143300 review finished0 and inspected all29 incremental sources/all42
