@@ -1,5 +1,69 @@
 # Workspace-Wide Agent Notes
 
+## Domain operations — OPP028 cause and application-card correction accepted, 10 October 2026
+
+Original remaining11 remains terminal1: four OPP024–027 passed once, OPP028 failed,
+six OPP030–032/PRO009–011 never began. No completed flow is repeated. Independent
+GPT-6.1 SOL Ultra source/retained-trace review confirms initiating OPP028 evidence
+action mismatch: visitor before `public-discovery`, after `public-deletion`. The
+canonical engine correctly rejects the missing matching before; owner missing-after
+is a cascade. Edit/persisted fields/normalized replacement pixels/legacy redirect/
+deletion/public unavailable/search and list absence assertions were reached. This
+is a newly executed harness defect, not proof of regression of an earlier pass.
+
+Root accepted one literal correction to the before action, preserving engine,
+business/security/assertions/timeouts and cleanup. Root and Ultra also viewed actual
+OPP026 owner desktop/mobile captures showing badge/Update words compressed across
+lines. That pre-existing application-card CSS is outside the prior workspace-row
+fix. A narrowly scoped full-label/flex-wrap correction and actual Astro/compiled-CSS
+discriminator are authorized; no truncation or overflow hiding. No application
+browser or six-flow continuation is active or authorized before reviewed proof.
+
+Three collaboration Ultra tasks had genuine backend credit rejections. Existing
+ChatGPT-authenticated Codex CLI successfully ran requested GPT-6.1 SOL Ultra using
+included usage; purchased-credit flags are not a gate. Original CLI reserved-provider
+setup and read-only heredoc temporary-file failures remain preserved. Corrected
+read-only review completed exit0. Sole scoped Ultra implementation is now
+`/tmp/tfp-domain-two-fixes-ultra-20261010T041200Z/status.json`; separate bounded
+four-original-pass review is `/tmp/tfp-domain-four-pass-final-ultra-20261010T041000Z/status.json`.
+No duplicate author/review/browser/service operations. Root acceptance artifact:
+app `test-results/reports/diagnostic-review/domain-opp028-action-pair-20261010/root-accepted-proposal.json`.
+
+Only independent exact-diff/check acceptance and exact UAT source/cwd/health may
+precede one failed OPP028 proof, then the immutable original six once after evidence
+acceptance. Preserve all reports/caches/state/historyf19/unrelated moderation/resume.
+Strict six-child/OAuth/six delivered OTP/inbox/nineteen external production plus
+host/provider/storage/legal/independent recovery remain gates; no production approval.
+
+## Domain operations — OPP028 stopped; six original flows unexecuted, 10 October 2026
+
+Run `uat-domain-remaining11-20261010T025732Z-a9003a97` is TERMINAL exit1 at
+2026-10-10T03:08:04Z. Exact runner49488/supervisor49484 exited; low
+`remaining11_completion_monitor_low` completed and idles. Atomic status
+`/private/tmp/tfp-domain-remaining11-release-20261010T024527Z/status.json`
+overrides historical running launch state. Four OPP024–027 passed once,
+OPP028 failed once, six OPP030–032/PRO009–011 have empty unexecuted result arrays;
+zero retries/executed skips. Manifest remains incomplete: four cases/five actions.
+
+First recorded error is the public-deletion evidence action's missing before capture.
+Ultra `unexecuted11_fix_ultra` solely correlates actual source/trace/action ordering
+before a minimal proposal; independent Ultra `domain_acceptance_review_ultra`
+separately audits the four original passes/captures. No new browser, correction
+or six-flow continuation is authorized during pending RCA. App/harness
+`a9003a97ff28c03b846ccb79d6616d321e27d6f7` / UAT `20261010T025357Z-a9003a97`
+remains unchanged. Preserve all original evidence/state/cache and passed flows.
+
+Immutable six-selection:
+`/private/tmp/tfp-domain-remaining11-release-20261010T024527Z/original-unexecuted6-selection.json`,
+SHA `dc2ae011217730117d2896526f395107c32b5b8fbc541df6e51381bedbc01f34`;
+source results SHA `d564ed7665331d98a7b6b7037ea7c3dbd30871d589cfdf603446a7a5da3c9075`.
+Only independently accepted smallest correction and one failed OPP028 proof may
+precede those six once; never repeat OPP024–027/OPP023 or other completed flows.
+Included Codex usage remains available; no purchased-credit gate. Ultra owns
+fix/review, low only monitors. Strict six-child/OAuth/six delivered OTP/inbox/
+nineteen external production host/provider/storage/legal/independent recovery
+remain gates; no production approval/deploy or evidence splicing/deletion.
+
 ## Domain operations — Codex usage resumed; eleven original unexecuted flows active, 10 October 2026
 
 Use included Codex usage for capacity. Purchased-credit flags are not a prerequisite;
