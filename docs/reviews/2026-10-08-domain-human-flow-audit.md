@@ -1,5 +1,44 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Native transition guard stopped; bounded read-only diagnosis active — 10 October 2026
+
+Actual LOW202600 child is terminal failed at20:23:17Z:1syntaxpass/2executed,
+lint/build2unrun,retry0 and492source/76artifact hashes stable. Original status:
+/tmp/tfp-button-cssom-low-approved-20261010T202500Z/execution-20261010T202600Z/status.json.
+New Unexpected danger visited transition split guard failed before rows/captures;
+default-danger-SNVbTb0rows0captures and earlier KEcI21 are separately preserved.
+LOW model exit0 is not a check pass; no product business regression is inferred.
+
+Sole read-only Ultra RCA /tmp/tfp-button-native-transition-rca-ultra-20261010T202900Z/status.json,
+supervisor99582 dispatched20:25:01Z. No edits/probes/checks/build/deploy; exact
+source/retained CSS/error hypotheses precede a grounded proposal. If native failing
+clause is not retained, propose one root-approved LOW CSSOM observation on saved
+CSS only, never canary/component/business replay. Sole deterministic exact watcher
+/tmp/tfp-button-native-transition-monitor-low-20261010T203000Z/status.json,session70955.
+All runtime/helper/human/native owners remain protected; no automatic rerun or
+weakened guards. One combined independent judgment/publication/exact UAT/OPP031/
+four-empty-flow and strict external/native gates remain; deployedc5 unchanged.
+
+## CSSOM comparison correction accepted; minimum LOW checks active — 10 October 2026
+
+Ultra201600 finished0 at20:20:13Z. Root independently accepted exact two-file
+diagnostic delta74963f1ae4bd18075134a47c7799575762d6d59a44179431887745c414bedfbc.
+The new visitor now classifies actual style rules before child groups and strictly
+reconciles only the allowed visited transition tail. Old helpers/driver assertions,
+five runtime CSS corrections and protected OPP031bc58 stay exact. No author checks.
+
+Sole LOW execution /tmp/tfp-button-cssom-checks-low-20261010T202600Z/status.json,
+supervisor98481, dispatched20:23:05Z. Actual child:
+/tmp/tfp-button-cssom-low-approved-20261010T202500Z/execution-20261010T202600Z/status.json.
+Plan SHA62a51f9a1fb94c8c117571c9e3f960ef0c64394ede41fb726558a4f40b138102
+freezes492 sources/76 artifact bindings. Four affected commands only, retries0,
+stop first failure/drift; earlier failed evidence remains immutable. Sole exact
+LOW-origin watcher /tmp/tfp-button-cssom-monitor-low-20261010T202600Z/status.json,
+session72209, adds no model run. No duplicate/unchanged matrix/business replay.
+Actual output/capture review and one combined independent canonical/context
+judgment precede publication/exact UAT/OPP031/four original empty flows. Deployed
+c5 and strict external/native gates remain; source approval is not a test pass.
+
 ## Canonical source complete; first CSS comparison proof stopped — 10 October 2026
 
 Ultra 193700 finished 0 at 19:45:40Z. Root accepted exact combined seven-file delta
