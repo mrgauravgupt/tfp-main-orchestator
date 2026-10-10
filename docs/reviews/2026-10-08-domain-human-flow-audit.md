@@ -1,6 +1,6 @@
 # Opportunity, event, contest and profile human-flow audit
 
-## Domain operations — Codex usage resumed; eleven ready for first execution, 10 October 2026
+## Domain operations — Codex usage resumed; eleven original unexecuted flows active, 10 October 2026
 
 The user corrected the prior resource gate: use included Codex usage. Purchased
 credit flags are not a prerequisite for work. Existing GPT-6.1 SOL Ultra agents
@@ -45,12 +45,17 @@ once: OPP024–028/030–032 and PRO009–011. Immutable selection SHA256
 Fresh isolated-cache official discovery exactly matched eleven canonical AST
 blocks/eleven IDs, retries0/maxfail1/worker1. Inputs
 `ae82acb065b08723912d525fa517b08015456a79314b57af271107b0acb4cb86`; four registries are unchanged.
-Prepared run `uat-domain-remaining11-20261010T025732Z-a9003a97` has NOT launched at this checkpoint.
+Exactly one run `uat-domain-remaining11-20261010T025732Z-a9003a97` is active,
+dispatched at 2026-10-10T02:59:44Z, detached runner49488/supervisor49484.
 Preflight/deploy/discovery/health/archive evidence: `/tmp/tfp-domain-remaining11-release-20261010T024527Z`.
 Preserved code gates: app `test-results/reports/diagnostic-review/domain-remaining11-prepublication-20261010/`.
 Root owns one durable launcher; its canonical runner owns setup/scoped fixtures.
-After launch use immutable `/tmp/tfp-domain-remaining11-state.json` and atomic
-`/tmp/tfp-domain-remaining11-release-20261010T024527Z/status.json`; absent final exit is unfinished.
+Low `remaining11_completion_monitor_low` solely watches exact runner/supervisor
+NOTE_EXIT and atomic completion, with one compact snapshot at most every30minutes.
+Use immutable `/tmp/tfp-domain-remaining11-state.json` and authoritative atomic
+`/private/tmp/tfp-domain-remaining11-release-20261010T024527Z/status.json`;
+absent final exit is unfinished. Do not duplicate launch/watch/restart or mutate
+shared source/services/DB/storage/cache during healthy execution. No run pass yet.
 
 Preserve every original failure/context/manifest/trace/video/capture/log/cache/state,
 history f19 and unrelated moderation/resume work. Stop first actual failure for

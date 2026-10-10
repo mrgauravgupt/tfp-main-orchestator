@@ -1,6 +1,6 @@
 # Workspace Memory for Future Agents
 
-## Domain operations — Codex usage resumed; eleven ready for first execution, 10 October 2026
+## Domain operations — Codex usage resumed; eleven original unexecuted flows active, 10 October 2026
 
 Use included Codex usage for capacity. Purchased-credit flags are not a prerequisite;
 the earlier backend rejections and credit-blocked sections below are historical.
@@ -15,13 +15,17 @@ relevant gates and two actual-source lower-level browser checks passed. Original
 setup/guard/message failures remain preserved. OPP023 predecessor accepted;
 never repeat it or any other completed flow/full suite.
 
-Only eleven original unexecuted blocks are prepared, not launched here:
-`uat-domain-remaining11-20261010T025732Z-a9003a97`. Immutable selection
+Exactly one eleven-flow continuation is active:
+`uat-domain-remaining11-20261010T025732Z-a9003a97`, dispatched at
+2026-10-10T02:59:44Z, runner49488/supervisor49484. Immutable selection
 SHA `a1aa6aedfd94680e539c562ee80653605d05b8b497eb501cf1b52c7669d35ef7`;
 official fresh-cache discovery matches eleven AST blocks/IDs, retry0/maxfail1/worker1.
 Root owns the single runner; canonical setup/fixtures remain its responsibility.
-After launch read `/tmp/tfp-domain-remaining11-state.json` and authoritative
-`/tmp/tfp-domain-remaining11-release-20261010T024527Z/status.json`; no final exit is unfinished.
+Low `remaining11_completion_monitor_low` solely watches exact-owner exit and
+atomic status. Read immutable `/tmp/tfp-domain-remaining11-state.json` and authoritative
+`/private/tmp/tfp-domain-remaining11-release-20261010T024527Z/status.json`;
+no final exit is unfinished. Never duplicate launch/watch/restart or mutate shared
+source/services/DB/storage/cache during healthy execution.
 
 Current detailed evidence/commands/limitations: `docs/reviews/2026-10-08-domain-human-flow-audit.md`
 and `docs/operations/CREDENTIAL_FREE_RELEASE_CHECKPOINT.md`. Stop actual failures
