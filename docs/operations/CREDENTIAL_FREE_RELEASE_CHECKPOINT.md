@@ -1,5 +1,62 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
+## Domain operations — OPP031 order defect confirmed; four remain unexecuted, 10 October 2026
+
+Original `uat-domain-six-20261010T044848Z-c5d94714` is terminal1 at04:53:59UTC:
+OPP030 passed once, OPP031 failed once, four OPP032/PRO009–011 have empty result
+arrays/unexecuted, zero retries/executed skips. Owners70580/70576 are absent;
+low exact-exit monitor finished. Immutable launchstate remains historical running;
+atomic `/private/tmp/tfp-domain-remaining6-20261010T044848Z/status.json` controls.
+No application browser or replacement is active.
+
+Independent GPT-6.1 SOL Ultra confirmed OPP031 caller1153 resets deadline7 before
+extending an end date saved as today. Original PATCH200/freshGET200/native values
+agree: deadline/start/end2026-10-10, deadline.max2026-10-10, requested17 disabled.
+Root independently verified original snapshot after@call@2467 and source hashes.
+Calendar/API bounds are correct; missing final evidence is a cascade. Proposed
+smallest change reorders the same calls to end12/start10/deadline7, preserving all
+final values, assertions, helpers, timeouts, validation, security and cleanup.
+RCA artifact `domain-opp031-ordering-rca-20261010/review.json`, SHA
+`227a8256515127d8bf5e1cb7bf25adb3d191793ce6e89768593a3ddc2bcf1be0`.
+Earlier deadline-expiry/ended rejection and zero-row assertions reached; entire
+OPP031/all-roles-closed phase remain unproved until affected proof.
+
+OPP030 original scoped business pass independently accepted with limitations:
+`domain-opp030-independent-20261010/review.json`, SHA
+`47b2ba9ba3cfc8421f19879f3d3629e12218035d780a44f199ca67818bbd7adb`.
+Original context673a571e8bc05f7445e6a27e224644a37502a3177ba34f89ef973f500c7134e4;
+inputac5b7be6b198ff292b2bca1d0f785ad5a853e789f4dab8f3c4593e8ab9500dbc.
+Exact clean c5/release/live four registries/canonicalmapping/attempt1retry0,
+two pairs/twelve unique regular captures and seven empty diagnostics accepted.
+Root and reviewer viewed all eight desktop/mobile, tablet4 metadata only. Owner
+after captures precede stale submission; subsequent zero rows rests on reached
+fresh-readback assertion. No passed trace/provider timing/exact fixture proof.
+One desktop after image is8px shorter than recorded document height, cause unknown.
+No OPP030 rerun; whole manifest remains incomplete.
+
+Two initial read-only Ultra reviews ended with genuine backend rejections/no final
+answers; all originals retained. Direct user continuation resumed requested model
+execution through ChatGPT-authenticated Codex CLI, both reviews finished exit0.
+Included Codex usage remains authoritative; no purchased-credit polling/gate.
+Sole three-file Ultra implementation/check owner now
+`/tmp/tfp-domain-opp031-fix-ultra-20261010T054000Z/status.json`: one caller order,
+new actual-source isolated calendar discriminator and tests/README command only.
+Root/independent exact-diff/check acceptance and publication must precede one
+failed OPP031 proof. Product/release remain c5/UAT20261010T043413Z-c5d94714;
+harness-only runtime archive equivalence means no unnecessary redeployment.
+Prepared-only `/tmp/tfp-domain-opp031-recovery-20261010T053805Z/`, no browser launched.
+
+Immutable four selection
+`/private/tmp/tfp-domain-remaining6-20261010T044848Z/original-unexecuted4-selection.json`,
+SHAe24af95363af55d3648d89dc5b9f8ed0fc52d1959fc85f589bc04a75c20672e2,
+sourceResultsSHA82d7752e2591126889d92b4502cd05a2ebc2cc17db7f28bd07e7777dd2089e15.
+Only accepted focused original context/hash/AST/actions/captures/desktop-mobile may
+unlock these four once. Never repeat any passed flow/full suite/splice certificates.
+Preserve all originals/cache/state/historyf19/unrelated moderation-resume. Ultra
+fix/review; low only monitors. Strict six-child/OAuth/six deliveredOTP/inbox/nineteen
+external production host/provider/storage/legal/independent recovery remain gates;
+no invented inputs, production approval/deploy or evidence deletion.
+
 ## Domain operations — OPP028 accepted; six original flows active, 10 October 2026
 
 Focused `uat-opp028-20261010T043706Z-c5d94714` finished exit0 at04:39:51UTC:
