@@ -1,5 +1,27 @@
 # Workspace Memory for Future Agents
 
+## Native shorthand mismatch observed; minimal source correction active — 10 October 2026
+
+Read-only Ultra202900 finished0 and withheld a speculative fix. Root approved
+one LOW detached retained-CSS observation:1/1passed20:36:05Z,retry0,492source/
+81artifact hashes stable,browser1/evaluate1/no requests/0source edits/0captures.
+Native original /tmp/tfp-button-native-cssom-observation-low-approved-20261010T204000Z/execution-20261010T204000Z/native-cssom.json
+SHA3f5a915efc8c0b881c0c349084cf29eea1c400e2fe8e38aa66d1b03600f7426a
+proves both heads firstrejectC09:transition tail has5native declarations, not1;
+item0transition-behavior. Other clauses false, all priorities empty. Observation
+is not canary/application proof. Root204300 metadata-envelope setup failure before
+model/check/source execution is preserved; final drift uses observer-status.json.
+
+Root grounded proposal precedes sole source-only Ultra204600 correction:
+/tmp/tfp-button-native-transition-fix-ultra-20261010T204600Z/status.json,
+supervisor2531 dispatched20:38:13Z. Only NEW strict native transition shape guard
+and README may change; retain actual values/full graph/count/priority/negative
+assertions and all old helpers/five CSS/human/native owners. No author checks.
+Sole deterministic exact watcher /tmp/tfp-button-native-transition-fix-monitor-low-20261010T204700Z/status.json,session79578.
+Root exactdelta acceptance/minimum failed-unrun LOW/combined independent judgment
+remain before publication/exact UAT/OPP031/four empty flows. Deployedc5, originals
+and strict external/native gates remain; no production-readiness claim.
+
 ## Native transition guard stopped; bounded read-only diagnosis active — 10 October 2026
 
 Actual LOW202600 child is terminal failed at20:23:17Z:1syntaxpass/2executed,
