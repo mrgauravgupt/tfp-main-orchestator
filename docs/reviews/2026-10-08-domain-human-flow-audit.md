@@ -1,5 +1,38 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Component SSOT checks completed; independent review active — 10 October 2026
+
+One LOW runner executed the root-approved fixed20-step plan exactly once:
+/tmp/tfp-ssot-low-final-checks-20261010/execution-20261010T113646029443Z/status.json.
+All20 exited0 with all54 source hashes unchanged before/after each step. Four
+private actual-component contracts passed1each (SSR/admin/profile/date); the
+existing upload timeout passed Chromium+Firefox2 with34 other rows filtered out.
+Shared/config/API/Web builds, relevant typing/lint/static180/syntax/diff passed.
+The separate LOW native typecheck and four native contract tests also passed.
+Original93 new captures are preserved (36SSR,16admin,32profile,9date). Root viewed
+8 representative originals; remaining visual metadata is distinct from personal
+inspection. Unproved tablet date/specialty-input and synthetic status-copy
+observations remain bounded; no speculative product patch or linguistic signoff.
+
+ULTRA source finisher111700 finished0. A separately scoped59-second ULTRA correction
+reused complete lifecycle cleanup in the new admin diagnostic; summary-write or
+browser-close errors now cannot skip other cleanup, and failures remain fatal.
+All originals are preserved. One independent source/evidence ULTRA review is active:
+/tmp/tfp-ssot-combined-independent-ultra-20261010T114000Z/status.json, root session64482,
+owner40278. LOW ssot_run_plan_low alone watches exact exit. No repeated checks or
+new app run/deploy while review pending. Detailed source and hash manifests:
+/tmp/tfp-ssot-source-finish-ultra-20261010T111700Z/implementation.json and
+/tmp/tfp-ssot-low-final-checks-20261010/approved-plan.json.
+
+Product remains dirty candidate atop c5; deployed UATc5 is unchanged. These are
+lower-level proofs, not OPP031/application/native-device/strict/production passes.
+Independent acceptance precedes scoped nested publication/root gitlink, exact UAT
+deploy/archive/cwd/health, one failed OPP031 proof, then the four original empty
+flows once after accepted evidence. Original OPP030 pass must not repeat. Strict
+six-child/OAuth/deliveredOTP/inbox/nineteen external production host/provider/
+storage/legal/independent recovery gates remain. No production approval/deploy.
+Keep automation active; preserve all histories/caches/f19/unrelated moderation/resume.
+
 ## Usage-efficient SSOT continuation — 10 October 2026
 
 Latest direct user instruction assigns routine execution/monitoring to LOW and

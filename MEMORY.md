@@ -1,5 +1,16 @@
 # Workspace Memory for Future Agents
 
+## Component SSOT checks completed; independent review active — 10 October 2026
+
+LOW execution passed all20 approved scoped steps once with exact54 hashes;
+private contracts/transport proof remain separate from application certification.
+One independent ULTRA review is active at
+/tmp/tfp-ssot-combined-independent-ultra-20261010T114000Z/status.json; LOW owns exit
+monitoring. No repeated checks or new application run/deployment yet. Current
+results, artifact paths and remaining gates are authoritative in
+[the scoped audit](docs/reviews/2026-10-08-domain-human-flow-audit.md).
+Preserve original c5 states, all evidence/historyf19 and unrelated work.
+
 ## Usage-efficient SSOT continuation — 10 October 2026
 
 Latest direct user instruction assigns routine execution/monitoring to LOW and
