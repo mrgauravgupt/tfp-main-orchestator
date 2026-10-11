@@ -1,5 +1,61 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Three original flows passed; bounded PRO011 harness correction resumed — 11 October 2026
+
+Original four run uat-domain-original4-20261011T033725Z-57e99045 finished1 at
+03:41:01Z: OPP032/PRO009/PRO010 passed, PRO011 failed, zero empty/retries.
+Atomic /private/tmp/tfp-domain-original4-guarded-20261011T032000Z/status.json
+is authoritative; original owners60564/60560 are absent and exact watcher completed.
+All original report/trace/capture/cache/state and consumed four-once authorization
+remain immutable. The three passed cases and completed OPP031 cannot replay.
+
+Read-only requested Ultra RCA finished0 at03:49:40Z. Retained trace/DOM and installed
+Playwright source establish HARNESS_LOCATOR_SCOPE_MISMATCH: the modal was open and
+scoped role input present/enabled/unchecked, but label has-filter evaluates the
+unchanged modal-qualified input selector within each label. That enclosing modal
+cannot match from label scope. RCA3538115930e1c6424d9848c1d53f8b18e1bfbb4f12c7be05608081a8a0a1b5d5;
+proposal09284e8304c368836513ed59ebe8c8c269fd81b3d5f46a409069403223826cd3.
+Missing-after evidence finalizer is downstream and stays strict. No product
+regression, upload or persistence success is inferred from this failed attempt.
+
+Root accepted only additive chooseWrappedCheckbox, two PRO011 helper calls/one
+wrapped deselection, and one new actual-helper detached functional discriminator.
+Every old helper, PRO009/010 body, original selector/business/security/evidence
+assertion and OPP specbc58 is protected. Initial source owner035200 finished1 at
+03:51:49Z on actual backend workspace-credit rejection before edits; all508 sources
+and402 original artifacts remained exact. No purchased-credit gate or retry loop.
+
+One read-only included window snapshot at04:25 shows3% used in a new300-minute
+window starting04:25:11Z, after the failure. ExactlyONE bounded requested Ultra
+resumption dispatched04:26:22Z, supervisor66690:
+/tmp/tfp-pro011-wrapped-checkbox-resume-ultra-20261011T042700Z/status.json.
+Root authorization979457c70a89df9504b9fd189d657d59c35a534358c7f67ebb2ce4bc84b56a0d
+binds508 sources/411 immutable artifacts. Sole zero-additional-model exact kqueue
+watcher /tmp/tfp-pro011-wrapped-checkbox-resume-monitor-low-20261011T042800Z/status.json,
+root session52019. No author checks/browser/build/publication/deploy. Missing final
+exit unfinished; absent owner without terminal unknown, never pass. No duplicates.
+
+Root mixed-run metadata verifies original clean57/release/current input/four
+registries/canonical context8f6f33fd: three passed cases/seven complete actions/
+42 unique regular non-symlink captures. Root personally viewed12 representative
+desktop/mobile originals; remaining30 metadata only, tablet not personally viewed.
+Record /tmp/tfp-domain-original4-root-personal-evidence-20261011T043000Z/root-observation.json,
+SHA502545ee91ed9b5c6bb39ad423eaec7b92d76cf554c48f0805cb4e2e5380b23b.
+Privacy overlay limits covered content inspection. Native-looking service group
+borders, apparent search-placeholder/icon overlap and faint desktop cover helper
+text are retained observations pending source/cascade/state review, not quantified
+contrast or blanket product defect claims. No whole-UI consistency signoff.
+
+Root exact final delta/freeze precedes minimum LOW changed syntax/types/lint/one
+new functional check, then one correction-only independent Ultra judgment and
+scoped harness publication. No product build/deploy or old matrices justified.
+Only separately justified FAILED PRO011 proof may follow; consumed original-four
+state cannot be reused/replaced. Current product/UAT57 unchanged; historical OPP031
+persistencef179 WITHHELD/pass/spec remains separate. Preserve all evidence/f19/
+unrelated moderation-resume. Strict six-child/OAuth/deliveredOTP/inbox/nineteen
+external production/recovery and native-device gates remain; no certificate splice,
+invented inputs, production approval/deploy or readiness promise.
+
 ## Four original unrun flows dispatched once; exact completion watcher active — 11 October 2026
 
 Direct human four-once authorization remains valid, with original OPP031 historical
