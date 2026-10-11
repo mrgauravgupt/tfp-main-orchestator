@@ -1,5 +1,38 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
+## OPP031 passed once; persistence discriminator acceptance withheld — 11 October 2026
+
+Original `uat-opp031-roles-20261011T011417Z-a62d6ae4` finished0 at01:16:39Z:
+one pass/zero retries, failures, flakes or skips; four complete action pairs and
+24 unique regular captures. Contextf7ab83b7/input01809ac3/live four registries/
+canonical AST and clean a62d6ae4/UAT20261011T011053Z-a62d6ae4 verified. Post-run
+1181 live archive blobs and three service cwd bindings match. Root personally
+viewed8 representative desktop/mobile originals, all24 metadata; Ultra viewed
+all16 desktop/mobile, tablet8 metadata. 23 distinct contents and one8px document
+height difference remain explicit original limits, not a clipping diagnosis.
+
+Independent Ultra finished0 at01:29:58Z but WITHHELD full persistence acceptance:
+reviewSHAf179d263781ee803c50cedbb8248a2dbeb0c6a2f1a59b16c5d4b11630c6fef0f.
+OPP031-F01: local owner applications loader can fall back to[] on a failed or
+schema-invalid read; three zero-row checks cannot prove successful persisted
+empty reads. No actual API failure, persisted application or regression is claimed.
+Do not erase the recorded pass or upgrade it to full accepted persistence proof.
+Originalbc58 spec and every passed/failed report/capture/cache remain protected.
+
+Sole read-only Ultra resolution planner dispatched01:32:26Z, supervisor22114:
+/tmp/tfp-opp031-read-discriminator-plan-ultra-20261011T013200Z/status.json.
+It must trace local load-status/context/callers and reusable unavailable feedback,
+then a smallest grounded proposal and honest no-replay continuation gate before
+root approval. No edits/checks/browser/SSH/API/DB/cache/service/model/deploy calls.
+Sole deterministic exact watcher:
+/tmp/tfp-opp031-read-plan-monitor-low-20261011T013300Z/status.json.
+Four original empty OPP032/PRO009–011 remain LOCKED; prepared-only operator
+/tmp/tfp-domain-original4-20261011T013000Z/ has no root acceptance or launch.
+Never rerun passed OPP031 or any completed/full/local flow, splice certificates,
+weaken assertions or mutate unrelated work. Current published/deployeda62 remains.
+Strict certification/OAuth/delivered OTP/inbox/nineteen external production inputs
+and native-device gates remain; no production readiness/approval/deployment.
+
 ## Exact UAT accepted; sole affected OPP031 proof active — 11 October 2026
 
 Clean published app/harness `a62d6ae48c4374d0b3476a043477e4e3ce433fe3`
