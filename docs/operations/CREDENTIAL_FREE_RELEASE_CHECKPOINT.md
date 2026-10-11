@@ -1,5 +1,55 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
+## Harness and original mixed evidence accepted; two scoped profile UI corrections active — 11 October 2026
+
+Combined requested Ultra050800 finished0 at05:22:33Z. Review
+cea2528237c81c419f2cc85b538082ea42026012a197740d8200383894458a95
+ACCEPTED additive three-file harness/private proof and original mixed provenance/
+three recorded passes, with separate withheld target/full-UI claims. Root reverified
+all510sources541artifacts/review audit hashes/personal28 paths. Reviewer personally
+viewed28original desktop-mobile captures; tablet14metadata only; root12views remain
+separate. Seven complete passed actions42regularunique files/39distinctcontents;
+two8px post-capture metric differences and privacy/navigation/timing limits retained.
+Original terminal1/OPP032PRO009PRO010pass/PRO011fail/retry0/0unrun unchanged.
+Failed PRO011 strict missing-after finalizer and consumed four-scope state stay intact.
+
+Two current-source/retained-visual findings confirmed separately: UI-F01 shared
+base input specificity overrides specialty-search icon padding; UI-F02 cover prompt
+span paints beneath darkening pseudo overlays. Native inner service fieldsets are
+legitimate semantic grouping; borders alone do not establish a shared-style defect.
+No quantified contrast violation or whole-UI signoff. Grounded proposal1900f040ff492a79f0587aa1ff24b2ddffd4e49dc2302e2c675c86dbcd984f01
+at /tmp/tfp-pro011-combined-independent-ultra-20261011T050800Z/minimum-grounded-ui-proposal.json.
+Root accepted only existing stronger form-scoped search selector preserving tokens,
+and existing cover span position:relative/z-index3/pointer-events:none preserving
+opacity/colors/native input2/camera4/content5/mobile hidden. No new component,
+palette/token/dependency/global CSS/fieldsets/filter/permission/API/human changes.
+
+Sole source-only requested Ultra owner dispatched05:44:12Z supervisor79211:
+/tmp/tfp-profile-ui-spacing-fix-ultra-20261011T055000Z/status.json,1200sbound.
+Root authorizatione4647e3697a1c417d4de731436aac4456dca71def798f4ff2a20c9d623f306bc
+binds510sources564immutableartifacts; allowed one existing profile-edit.scss owner,
+ONE new actual-source profile UI discriminator and README additive documentation.
+Full actual owning hero/form/search ancestry/shared Icon/ImageFileInput/token/i18n/
+base cascade required; max12new current EN/DE1440/768/390 empty/entered-focus captures.
+Old CSS counterfactual only in new proof, no passed business/matrix replay. Author
+runsNOchecks/Node/Sass/probes/browser/build/models/commitdeploy. Sole exact kqueue
+watcher /tmp/tfp-profile-ui-spacing-fix-monitor-low-20261011T055100Z/status.json,
+root session85984, zero extra model. Missing atomic final unfinished/absentowner
+without final unknown; no duplicate healthy owner/watch/shared mutations.
+
+Root exact two-operation reversal/other-source preservation/freeze approval before
+LOW newdiagnostic syntax/onefilelint/ONEnew proof/ONECSSWebbuild, then one correction-
+only independent judgment reusing accepted harness and28old personal observations.
+No publication/deploy/failedPRO011proof yet. Runtime CSS means eventual NEW exact
+UAT/current1181archive/3cwd/fullhealth; no stale57 byte-equivalence claim. Source/UAT57
+remains until actual accepted clean publication/deploy. Future canonical proof ONLY
+separately justified FAILEDPRO011/newonceoperator/state/report/freshcache/officialAST/
+retry0/maxfail1/oneworker/actions/exactwatch. Never replay completed cases, replace
+original four ledger or splice child evidence. Historic OPP031 persistencef179 stays
+WITHHELD; bc58/pass/artifacts unchanged. All originals/caches/f19/unrelated moderation-
+resume preserved; strict six-child/OAuth/OTP/inbox/nineteen external recovery/native
+inputs remain, no invented values/production approval/deploy/readiness promise.
+
 ## Scoped checkbox proof passed; one combined independent judgment active — 11 October 2026
 
 Original four-case run remains terminal1: OPP032/PRO009/PRO010 passed; PRO011
