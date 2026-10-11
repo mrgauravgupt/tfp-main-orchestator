@@ -1,5 +1,33 @@
 # Workspace Memory for Future Agents
 
+## Anonymous access premise diagnosed; bounded harness correction active — 11 October 2026
+
+Read-only Ultra081000 completed0 at08:17:40Z. RCA641c4bb4/proposalb732d0e8 proves
+anonymous report click opens native auth while the sole reusable report form stays
+closed, hidden, inert and empty, with no report-context/submission requests. DOM
+presence is not unauthorized interaction; no product authorization bypass established.
+Remaining signup/image/success premises have no source-confirmed mismatch. Separate
+source-confirmed no-op actor cleanup affects only future isolated test actors.
+
+Root accepted minimum P1 access guards and P2 existing scoped cleanup before edits.
+Sole source-only requested Ultra /root/pro011_anonymous_guard_fix_ultra owns
+/private/tmp/tfp-pro011-anonymous-guard-fix-ultra-20261011T082000Z/status.json.
+Authad0a5fb1 binds644sourceinputs1080immutableartifacts; only spec/newcontract/README
+may change. Preserve native auth/business/image/security/finalizer assertions; replace
+invalid count0 with stronger anonymous/closed-hidden-inert/blank-field/no-visible-form/
+passive no-request guards. Reuse unchanged cleanupCreatedHumanAccounts for future
+reporter then owner only, guest closed first, setup/primary failure preserved and
+cleanup-only failure fatal. No historical deletion or product edits. Author checks0;
+root exactdelta/freeze precedes minimum LOW and one incremental independent judgment.
+Prepared082500 future failed-only operator is gated; no preflight/discovery/browser.
+
+Latest fec1f72 original remains terminal1/0pass1fail0unrun0retry; consumed080000 state,
+strict missing-after and every artifact remain. Current clean harness05e24a1f differs
+from deployed appebff/UAT20261011T064852Z-ebff5966. No build/redeploy. Historical502
+unresolved; completed three/OPP031 cannot replay, f179 persistenceWITHHELD/bc58 exact.
+No strict certificate splice, wholeUI/native/production approval or invented inputs.
+Preserve unrelated moderation/resume/historyf19; only four scoped root notes publish.
+
 ## New PRO011 crossed navigation; anonymous report-form premise under read-only diagnosis — 11 October 2026
 
 The new failed-only canonical run uat-pro011-deeplink-20261011T080257Z-05e24a1f
