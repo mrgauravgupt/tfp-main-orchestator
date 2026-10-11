@@ -1,5 +1,53 @@
 # Workspace-Wide Agent Notes
 
+## Failure collection implemented; remaining native diagnostic under grounded review — 11 October 2026
+
+Direct human request authorizes normal future independent target cases to collect
+failures at maxFailures0/retries0, report every selected result and retain a failing
+exit status. Shared validated execution settings now own outer/direct-inner values;
+invalid settings stop before tunnels or target work. Strict dependent certification
+explicitly retains maxFailures1. Setup/health failures still prevent unsafe work.
+This does not replay completed cases or imply every later assertion within a failed
+case can run. Source-only policy author completed at08:53:07Z, author checks0;
+root exact17operations/seven original reversals accepted. Publication is pending.
+
+Actual LOW085800 collected all three selected independent tests once: runner guard
+and failure policy passed, native diagnostic failed before browser. Policy proof has
+50 native shell/env/argv/status rows; no Playwright scheduling or target certification
+is inferred. Nine command passes/ten executed/zero unrun/retries and655source1165
+artifact bindings stayed stable. Previously passed lifecycle/types/log matrices stay
+source-bound and are reused without replay.
+
+Saved read-only envelope RCA completed09:00:17Z before its later model delivery
+failure. Exact tag-prefix collision proved SiteHead also matched SiteHeader; root
+accepted one newline delimiter correction. Source finisher094900 completed checks0,
+all other bytes reverse exactly/655sources4810artifacts preserved. Actual LOW095800
+then passed changed syntax/lint but native discriminator failed09:56:28Z after ten
+saved rows; retry0/zero unrun/655sources4819artifacts stable at all six boundaries.
+Original failures remain separate and immutable. This is a diagnostic negative-error
+expectation failure, not an established product security or business regression.
+
+Sole requested read-only Ultra /root/pro011_native_negative_rca_ultra traces that
+failed native clause plus remaining negative expectations within a240second bound.
+Authorization a665a86b at /private/tmp/tfp-pro011-native-negative-rca-ultra-20261011T100000Z
+binds655sources4831immutableartifacts. No edits/checks/Node/compiler/browser/network/
+services/DB/cache/build/recursive models. Grounded proposal precedes root-approved
+minimum correction/failed-only LOW, then ONE combined incremental independent review.
+No duplicate full review, original-image inspection or passed-matrix replay.
+
+Prepared085000 failed-PRO011 operator explicitly requests maxFailures1 and owns a
+new absent once path; all admission controls remain. No preflight/discovery/browser
+was dispatched. Current clean harness05e24a1f differs from actual deployed appebff/
+UAT20261011T064852Z-ebff5966. Harness-only publication requires exact deployable
+archive equivalence/current1181files/threecwd/health/input/live4registries and fresh
+isolated official exact-one discovery before one justified failed-only proof; no
+product build/redeploy or consumed-ledger replacement. Historical502 stays unresolved.
+Original completed three/OPP031 cannot replay; f179 historical persistenceWITHHELD,
+protectedbc58 and every report/trace/capture/cache/state stay immutable. Broader UI,
+strict six-child/OAuth/deliveredOTP/inbox/nineteen external production/recovery/native
+gates remain. No certificate splice, invented input or production approval/readiness
+promise. Preserve moderation/resume/historyf19; only four scoped root notes publish.
+
 ## Anonymous access premise diagnosed; bounded harness correction active — 11 October 2026
 
 Read-only Ultra081000 completed0 at08:17:40Z. RCA641c4bb4/proposalb732d0e8 proves
