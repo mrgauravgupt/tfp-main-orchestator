@@ -1,5 +1,37 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
+## Owner read forward correction accepted and published; exact UAT next — 11 October 2026
+
+Finding-only Ultra finished0 at02:40:53Z and ACCEPTED FINAL_FORWARD_CORRECTION:
+review1b6c9dbbb9eea264a8ae051f73e604656dd912826f31e58bc0cd32133ab35126,
+findings[]. Owner extraction now consumes exactly schema-validated data.applications.
+Three collision cases/12real requests passed once in separate proof; LOW5/5 at
+02:33:47Z/retry0/508source198artifact stable, Astro0errors/0warnings/28hints/build0.
+Prior39row8capture proof/shared28/mobile7 and eight root/reviewer personal views
+reused without replay; original six-TS fixture failure and44aad withholding retained.
+New conclusion is forward correction acceptance, not historic read recovery.
+
+LOW scoped nested publication PASSED02:41:50Z, nine reviewed files/508committed
+source blobs/remote verified. Clean app/harness57e9904501dfc01a1202e53075ad5b59c23cee44.
+Acceptance /tmp/tfp-owner-read-publication-low-approved-20261011T025500Z/root-acceptance.json,
+SHAe162c0ace318bbe8135681793796391a20d04e4f5c7e15317e2953221e83ae16.
+Only four deployable source owners changed; all1181archive paths preserved.
+Prepared operator /tmp/tfp-owner-read-release-20261011T030000Z/ binds57e99045 and
+accepted review. Parent gitlink/four scoped notes publication, ONEexactUAT with
+historical release pruning false/current1181inventory/three service cwd/full-stack
+health remain to be executed. Deployed a62 until actual terminal identity/health.
+No test/fullmatrix/business rerun accompanies deployment.
+
+Original a62 OPP031 pass stays recorded; historical persistencef179 remains
+WITHHELD, protectedbc58 exact, four original-empty OPP032/PRO009–011 LOCKED.
+Publishing/deploying a forward fix cannot satisfy or silently change the standing
+full-original-acceptance prerequisite under no replay. Complete concrete reviewed
+fix/runtime verification before narrow continuation decision. All old artifacts/
+caches/states/f19 and unrelated moderation/resume preserved. Included usage only;
+LOW routines/Ultra diagnosis and independent judgment. Strict six-child/OAuth/
+deliveredOTP/inbox/nineteen external production/native-device gates remain; no
+certificate splicing, invented production inputs/approval/deploy/readiness claim.
+
 ## Owner read forward review withheld for collection coherence; minimal correction active — 11 October 2026
 
 Independent forward Ultra finished0 at02:25:25Z, reviewSHA
