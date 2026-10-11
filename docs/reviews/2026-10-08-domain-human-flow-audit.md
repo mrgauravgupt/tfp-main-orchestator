@@ -1,5 +1,58 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## PRO011 target independently accepted; final profile caption correction active — 11 October 2026
+
+The new canonical failed-only PRO011 attempt finished exit0 at10:26:44Z: one passed,
+zero failed, flaky, skipped, retries or unexecuted. Actual atomic status is
+/private/tmp/tfp-pro011-policy-guard-execution-20261011T102450Z/status.json.
+Consumed085000once state and all earlier failed children remain immutable. One complete
+case/two action pairs/twelve unique regular originals; root and reviewer personally
+viewed all12 (desktop4/tablet4/mobile4). Canonical context35e6c5ca/results52540ba4 and
+current inputfac1d7b0/live4registries are bound to clean harness802f5d96 and actual
+applicationebff/UAT20261011T064852Z-ebff5966. Fresh prelaunch1181archive/live files,
+threecwd/fullhealth and official isolated exact1AST passed. No redundant build/deploy.
+
+Requested final target Ultra ACCEPTED the scoped business assertions and provenance,
+separately from visual/full-certification claims. Reviewa60847398b8dc95a5cce4993ca4039ad87e058d7ec6c6bec1dc3111617ec4504
+at /private/tmp/tfp-pro011-final-target-independent-ultra-20261011T103521Z/review.json;
+658source8220artifact before/after bindings exact, all12 personal views,375seconds
+within600. Root acceptance preserves exact separate judgments and all originals.
+The completed OPP032/PRO009/PRO010 passes remain accepted from the original mixed
+run. No completed case, PRO011, OPP031, full/local flow or old matrix may replay.
+These separate pass records do not form a strict compatible-clean-child certificate.
+
+One current source/visual P2 is confirmed: the existing profile gallery hover/focus
+overlay paints its author over the always-visible footer for a supported long name.
+Tablet upload helper remains visible; no clipping or quantified contrast defect is
+inferred from that observation. Grounded minimum proposal31edd80d8ded6dc271758b0d77d8b2c59a44c4a417dfc8f92a68bcc49e6e4d41
+preserves shared gallery consumers and existing profile presentation. Root accepted
+only profile-scoped hover/focus footer suppression before edits. Sole source-only
+requestedUltra /root/profile_gallery_caption_fix_ultra writes allowed profile-detail.scss,
+new actual-component state proof and additive README. Private owner:
+/private/tmp/tfp-profile-gallery-caption-source-ultra-20261011T104407Z/status.json.
+Authbd59e67a binds658sources8228immutable artifacts; author checks0. Any further
+text-fit operation needs a grounded root-approved proposal before edit. No duplicate
+author/check/browser/target/deploy or healthy shared mutations.
+
+Exact delta/freeze approval precedes only new proof syntax/lint/actual gallery state
+proof/one CSS Web build, all new captures personally inspected, then one correction-only
+independent judgment reusing accepted target evidence. Runtime CSS then requires scoped
+publication/current root gitlink and one exact NEW UAT with historical pruningfalse,
+fresh1181archive/3cwd/fullhealth. No business replay after this accepted PRO011 pass.
+Current published harness802 and applicationebff remain until actual new publication.
+
+Normal future independent selected target suites now collect all failures by default
+(maxFailures0/retries0); failed-case dependent steps still stop, setup/health/auth gates
+remain, and strict dependent certification explicitly pins maxFailures1. Policy50 and
+native13/lifecycle7/passed minimum checks remain source-bound; no automatic reruns.
+Historical502 cause unresolved, historicOPP031 persistencef179 WITHHELD/three reads
+unrecoverable/bc58 exact. Strictsix-child/OAuth/sixdeliveredOTP/inbox/nineteen actual
+external production/recovery/native-device gates and broader UI discovery remain.
+No wholeUI/native/production approval, invented inputs, spliced certificate or readiness
+promise. Preserve every report/context/manifest/trace/video/capture/log/cache/state,
+historyf19 and unrelated moderation/resume. Final honest scoped handoff then automation
+deletion remains pending this last confirmed visual correction.
+
 ## Failure collection accepted and published; failed PRO011 admission remains scoped — 11 October 2026
 
 Requested independent Ultra ACCEPTED all four scoped increments, findings empty:
