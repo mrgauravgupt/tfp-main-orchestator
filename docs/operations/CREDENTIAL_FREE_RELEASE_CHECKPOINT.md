@@ -1,5 +1,51 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
+## Scoped checkbox proof passed; one combined independent judgment active — 11 October 2026
+
+Original four-case run remains terminal1: OPP032/PRO009/PRO010 passed; PRO011
+failed; zero retries/unexecuted. Consumed original scope, failed trace/finalizer and
+historic OPP031 persistence WITHHELD remain immutable. No completed case replay.
+Current published application/UAT57 unchanged; three harness files remain uncommitted.
+
+Read-only requested Ultra045700 completed0 at04:57:03Z and proved the new private
+diagnostic confused ancestor-label locator calls with nested INPUT event targets.
+RCA87361cb0e36321c82039f6432f59c3d34ad146c8ede5fedfbf4391816f1bf73e;
+proposal dc133217a4c296c6728c68f9914b13909c22becca6f177e1aac6fe18709d723f.
+Root independently verified all510sources496artifacts, installed delegation source,
+nine exact candidate operations/reversal and accepted only the NEW diagnostic copy
+8fe547bf003b36c40daefdcbabfaaa383cb65630d1564006892d211fca76d3de.
+Passive installed-version/hash-bound API observation preserves actual method/state/
+fixture/event behavior; exact call and trusted native arrays discriminate separately.
+Old failed diagnostic/three native changes/zero nonINPUT events remain FAILED.
+
+Actual LOW050400 child passed3/3 once at05:02:21Z, retry0/unrun0, all510sources523
+artifacts stable at every boundary: changed new diagnostic syntax, one-file lint,
+ONE failed functional discriminator. Passed narrow types/unchanged helper-spec lint
+and syntax reused without replay. Original status /tmp/tfp-pro011-click-target-low-approved-20261011T050300Z/execution-20261011T050400Z/status.json.
+New private pro011-functional-UT3EzJ has6rows/3completed strict ancestorlabel clicks/
+3trusted native changes/exact6INPUT click-change events/checked no-op/outside isolation/
+emptydiagnostics/allcleanup fulfilled/0screenshots. Summaryef1fc430b3a6704e9b193b3410f5273dfe092cb37d1882c8561d9775832af56e.
+Private functional proof is not target PRO011/business/product UI certification.
+
+ExactlyONE requested independent Ultra dispatched05:04:26Z, supervisor75920:
+/tmp/tfp-pro011-combined-independent-ultra-20261011T050800Z/status.json.
+Root authorization da73ad6f80991e31389b47d4aaec21c638bbdfbf134728ceae4d50ad65e83b4c
+binds510sources541artifacts. Separately judge harness correction/new proof, original
+mixed evidence and source-led UI observations. Personally view28original desktop-
+mobile captures; tablet14metadata only; root12representative personal views retained.
+No edits/checks/browser/model recursion or earlier complete review replay. Sole exact
+kqueue watcher /tmp/tfp-pro011-combined-independent-monitor-low-20261011T050900Z/status.json,
+root session51010, zero extra model. Missing atomic final unfinished; absentowner
+without terminal unknown. No duplicate healthy owner/watch/source-service mutations.
+
+Only independent harness acceptance permits scoped publication and one separately
+justified FAILEDPRO011 proof. Product deployables must be exactly bound; no redundant
+build/deploy or original-four-state replacement. Any source-confirmed UI finding
+needs grounded smallest modular proposal before fix. No whole-UI signoff from scoped
+proof. Preserve all originals/caches/f19/unrelated moderation-resume. Strict six-child/
+OAuth/deliveredOTP/inbox/nineteen external production/recovery/native-device gates
+remain; no certificate splice, invented values, production approval/readiness claim.
+
 ## Checkbox correction preserved; isolated click-target diagnostic failure under review — 11 October 2026
 
 Original four run remains terminal1: OPP032/PRO009/PRO010 passed, PRO011 failed,
