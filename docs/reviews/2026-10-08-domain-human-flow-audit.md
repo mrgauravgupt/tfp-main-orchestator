@@ -1,5 +1,60 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Navigation and sanitized-log correction accepted and published; failed PRO011 gates next — 11 October 2026
+
+Independent requested Ultra accepted the two harness operations and new log lifecycle
+contract, findings empty. Review ec09cd4a61938dbd568f09c609c9534718a9b4129a5249ce68bf8a3ca79d5ab7
+at /private/tmp/tfp-pro011-navigation-log-independent-ultra-20261011T075600Z/review.json.
+All 628 source/input and 961 immutable artifact bindings matched before and after;
+no duplicate old review, images or checks. Actual minimum LOW passed five of five
+once at 07:53:28Z, retries zero, all 628 sources and 904 artifacts stable at ten
+boundaries. New selected contract has four native shell/stdio/filesystem rows:
+report logs survive real canonical cleanup at exit 0/23, exact old temporary logs
+disappear, fake private keys are removed and not copied, original status preserved.
+No browser, network, screenshots or transport correctness certification.
+
+Four reviewed harness files are committed and pushed as
+05e24a1f2a6ece92d04329bbc113074f92fae55f; 620 committed source blobs verified.
+Actual deployed application remains ebff59668ac93c9336e8e289d1b385f329b73e8e,
+UAT 20261011T064852Z-ebff5966. No runtime source changed; no build/redeployment.
+The direct link now uses the existing portfolio tab before the same role/photo hash;
+proxy stdout/stderr now remains under its already-created report directory. All
+other runner/spec bytes, native/business/security/evidence assertions and old helpers
+are exact. Prior UI bf52 and twelve personal original views remain source-bound.
+
+Read-only RCA 705a3519 proved identical-URL same-document navigation during queued
+native close cleanup; its precise event timestamp was not recorded. Independent
+owner document 502 was synthesized by the local proxy; its underlying connection
+cause remains unresolved. The one bounded original-window journal observation found
+zero rows, which does not exonerate that failure. Durable logging improves future
+diagnostics only. Strict unexpected-response and missing-after finalizers remain.
+
+NEW prepared operator /private/tmp/tfp-pro011-navigation-only-20261011T080000Z
+derives only the later actual failed PRO011 from results 63a6df and preserves the
+three passed exclusions. No preflight, discovery or browser dispatched yet. Fresh
+once state /tmp/tfp-pro011-navigation-once-state-20261011T080000Z.json must be absent.
+Current actual-app/new-harness deployable archive equivalence, all 1181 live files,
+three service cwd, full stack health, clean publication, current input/four registries,
+official isolated exact-one AST, resource/no-overlap and actions gates precede one
+separately justified failed-case proof. Canonical runner owns setup and fixtures;
+durable OS sessions, file logs, atomic status, idle guard, worker one, retry zero,
+max-failure one and exact exit watcher remain. No custom driver or ledger bypass.
+
+Original four run stays three passed/one failed; later corrected PRO011 stays zero
+passed/one failed. Both consumed once states, all original reports/traces/captures/
+caches and strict failures remain immutable. Never replay completed OPP032, PRO009,
+PRO010, OPP031 or a full/local case. First actual failure stops for bounded source-led
+Ultra diagnosis and smallest reviewed proposal; no blind retry, sleeps, suppression
+or assertion/security weakening. Historic OPP031 persistence f179 stays WITHHELD,
+protected bc58 remains exact; future proof cannot repair past evidence.
+
+Only scoped root notes and parent bindings are published; unrelated moderation,
+resume PDF and history f19 remain preserved. Broader lexical UI discovery, strict
+six-compatible-child aggregate/verifier, OAuth/six delivered OTP/inbox, nineteen
+external production host/provider/storage/legal/independent recovery and native-device
+inputs remain gates. No whole-UI/device/production approval, invented inputs or mixed
+certificate. Included usage only; LOW routines, requested Ultra diagnosis/judgment.
+
 ## Exact new UAT verified; later PRO011 deep-link failure under bounded diagnosis — 11 October 2026
 
 Clean app/harness ebff59668ac93c9336e8e289d1b385f329b73e8e and parent2d33d7de
