@@ -1,5 +1,26 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Interrupted review evidence preserved; one judgment finisher active — 11 October 2026
+
+Combined Ultra211800 actually ended1 at21:21:10Z,no final review/answer: backend
+remotecompaction workspace-credit rejection. All38 original views and independent
+source/LOW/context/preservation records saved; original failure remains immutable.
+Do not infer product failure/included-window exhaustion or relabel it acceptance.
+One read-only included-window snapshot now3%/new300min starts00:34:36Z afterfailure;
+purchased-credit fields ignored, no buy/reset. ExactlyONE bounded requested Ultra
+finisher dispatched00:36:49Z,supervisor13000,600s:
+/tmp/tfp-button-canonical-context-finish-ultra-20261011T003700Z/status.json.
+Root authorizationSHA9a35acaa1977df6c62897c6f96a4e71f5c1e134ae220e4190a63ff1f293f17b9
+binds492sources/206artifacts. Finish existing judgment from saved independent38views,
+no duplicate image/fullreview/check/browser/source mutation; distinguish original
+personal inspection from finisher reuse. Sole deterministic exact watcher
+/tmp/tfp-button-canonical-context-finish-monitor-low-20261011T003800Z/status.json,
+session79383 adds0models. Reject/incomplete means preserve/stop,no loop/downgrade.
+
+OriginalLOW4/4/13rows32captures/retry0 and all histories preserved. NEWexplicit
+independent acceptance remains before publication/exactUAT/OPP031/four emptyflows.
+Currentdeployedc5/strict external/native gates unchanged; no readiness claim.
+
 ## Canonical danger checks passed; combined context judgment active — 10 October 2026
 
 LOW210900 actual child finishedPASSED21:09:06Z:4/4steps,one namedcanary1pass,
