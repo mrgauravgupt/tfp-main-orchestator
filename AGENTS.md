@@ -1,5 +1,58 @@
 # Workspace-Wide Agent Notes
 
+
+## Expanded Web/mobile work: focused checks pass; final review pending — 12 October 2026
+
+The expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+The original scoped UAT handoff is historical; current nested source is uncommitted.
+No completed business case or old matrix has been replayed.
+
+Minimum affected LOW completed **8/8 PASSED once at18:34:49Z, retries0**:
+changed test lint/mobile types, four formerly failed AsyncStorage rows, five previously
+uncollected legal-component rows, unchanged compiled-translator proof through the
+actual API tsx loader, nine Web search checks, contest component/client proof and one
+Web build. Translator proof has12 label rows,658 locale fallback rows and8 negative
+controls. All2,738 frozen inputs,1,270 preserved artifacts and196 shared outputs
+matched every boundary. Earlier failed batches and bound-exceeded RCA remain intact;
+passed unaffected checks are reused, not rerun or relabeled.
+
+The new actual-component proof has16 rows/eight regular unique originals, empty
+browser/transport errors, no source drift and fulfilled cleanup. Root personally
+inspected all8 originals. Retained five-resource EN/DE states cover1440/768/390;
+held-progress full-page originals actually measure409x844 despite configured390.
+That width and existing German ZIP upload-label interpretation remain explicit
+pending review, not a whole-page containment or copy-consistency claim. Synthetic
+outer-form/held-upload seams do not prove provider/DB/application/business behavior.
+Root record: `/private/tmp/tfp-comprehensive-batch-root-evidence-20261011/root-observation.json`
+SHA6e6f2363ffa3ad9afb4f52e2ac828dff6433acac9020ad2ab937c46e0a6959ee.
+
+The original independent reviewer encountered an actual included-usage backend
+limit before saving a final judgment. Saved preliminary/catalog/increment reasoning
+is preserved; it is not final acceptance. Latest direct human continuation authorized
+exactly one bounded same-model finisher, reusing saved work and passed checks:
+`/private/tmp/tfp-comprehensive-batch-review-finish-authorized-20261011T184900Z`.
+Actual terminal status controls continuation; if rejected, stop without another
+unchanged attempt/downgrade or purchased-credit gating. No publication/runtime case
+is admitted by model dispatch alone.
+
+Read-only native admission inventory completed:51 available simulators/none booted,
+5 installed debug candidates with Metro/RCTBundleURLProvider markers; manual46582
+and FE3000/API4000 listener ownership preserved. Metro8081/8082 and driver22087..22100
+were free; measured2,644,021,248bytes. Native compatibility/routing/current bundle/
+actor/resource admission remain unverified. No boot, app launch, Metro, native case,
+HTTP probe, reset, seed or service mutation occurred.
+
+PUB025 and the five new native cases remain **unexecuted**. Their private preparations
+retain exact selection, original-case exclusions, once-state/retry0 and setup/health
+safety gates. Gallery pagination/media recovery, canonical screen-load component,
+workspace picker/retrieval, precise message reporting, screen-reader behavior and
+broader UI discovery remain queued. Registration/lower-level proof is not completed
+human E2E coverage. Current actual UAT remains3c008/release20261011T115439Z-3c008ec4.
+HistoricOPP031 persistenceWITHHELD, underlying502unknown, strict compatible-child
+certification/external production/native-device gates and all originals remain.
+No production approval, invented inputs or blanket readiness/consistency promise.
+Preserve moderation-service/resume/historyf19 and every report/cache/state.
+
 ## Expanded Web/mobile work: first validation batch collected — 11 October 2026
 
 The direct human expanded scope beyond the completed Web handoff: close confirmed
