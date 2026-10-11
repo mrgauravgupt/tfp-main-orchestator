@@ -1,5 +1,47 @@
 # Workspace-Wide Agent Notes
 
+## Owner read correction checks passed; independent judgment active — 11 October 2026
+
+SourceUltra015000 completed0; root accepted four-runtime/nine-total-file correction.
+Five original LOW steps passed once: changed parse/lint, new shared28 (five old
+filter-skipped), new mobile7 (eight old filter-skipped), sharedbuild0. First Astro
+check failed six new-fixture TypeScript shadowing errors; original02:07:01Z status
+stays FAILED with browser/build two unrun and497source/76artifact hashes stable.
+Source-led Ultra minimal helper rename finished0, patchf7f13b2b40ccd18f864af44b3b088e91b7be3119ce22b0d3b64e367728d02089;
+three identifier changes reverse exactly; actual browser assertions stay exact.
+No product/runtime change was needed for that diagnostic failure.
+
+Corrected minimum LOW actual child PASSED5/5 once at02:14:44Z, retry0:
+/tmp/tfp-owner-read-shadow-low-approved-20261011T022000Z/execution-20261011T022100Z/status.json.
+Changed onefile parse/lint, failed Astro0errors/0warnings/28hints, ONEnew HTTP/SSR/
+Astro discriminator1pass and ONEWebbuild0;497source/98artifact hashes stable each
+boundary. Shared/mobile/build prior passes reused, no old matrices/business replay.
+New private owner-read-Oc6HT7 summarySHA7bb97193df22865a68d8409ef176bfd0bf1d1d589d4cb81fda65da297c706480:
+39rows/121actual loopback requests/113source bindings/eight unique regular original
+captures/emptyerrors/allcleanupfulfilled. Root personally viewed ALL8 originals:
+existing unavailable feedback and full Retry/focus ring/readable English-German
+text contained in actual sidebar ancestors at1440/768/390; ready-empty1440/390.
+Private card crops omit unrelated page content and prove no historic persistence,
+target DB contents, full-page/application/native certification or new contrast ratio.
+Root record /tmp/tfp-owner-read-root-evidence-20261011T022500Z/root-observation.json.
+
+ONE correction-only independent Ultra dispatched02:16:56Z, supervisor34491:
+/tmp/tfp-owner-read-independent-ultra-20261011T023000Z/status.json.
+Authorizationc7f666c65dc1b3b2754a57bde6de840b466a25c6b9cd1e52439a1bc490cdfb8a
+binds508sources/170artifacts/final9filepatch5106d39f9098ff0ae2451bf9813de9845ee2cd5d769d5157acd7fbec6646157a.
+It reviews only this forward correction/actual transport/new evidence and personally
+views eight new captures; original denial/capture judgment is reused, no old full
+review/matrix/check replay. Sole deterministic exact watcher
+/tmp/tfp-owner-read-independent-monitor-low-20261011T023100Z/status.json,
+root session99391. No checks/browser/deployment during independent judgment.
+Only acceptance permits scoped nested publication/parent gitlink/one exact NEW UAT
+with historical releases/current archives/cwd/health. Current published/deployeda62
+remains. Original OPP031 pass stays recorded, historic persistence reviewf179 WITHHELD;
+protectedbc58 and FOURoriginal-empty cases LOCKED. Do not alter that standing gate.
+Preserve originals/caches/f19/unrelated moderation-resume; no certificate splicing,
+production approval/deploy or invented external inputs. Strict OAuth/OTP/inbox/
+nineteen external production/native-device gates and truthful handoff remain.
+
 ## Owner applications read gap planned; bounded forward correction active — 11 October 2026
 
 Read-only Ultra planner finished0 at01:44:08Z. RCA SHAca54e8fd1358bbca67c0d786941c09dfbc39171db98dcbfd90bd585c56425df8
