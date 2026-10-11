@@ -1,5 +1,47 @@
 # Workspace Memory for Future Agents
 
+## Four original unrun flows explicitly authorized; private operator review pending — 11 October 2026
+
+Direct human reply: "Continue the four unrun cases (Recommended)" to the scoped
+question authorizes independent OPP032/PRO009–011 once, while retaining original
+OPP031 historical persistence explicitly unverified. This supersedes only the
+standing continuation prerequisite for those four; original f179 WITHHELD, pass,
+specbc58, evidence and strict certification remain unchanged. No additional
+permission needed for this four-case continuation after normal operational checks.
+Record /tmp/tfp-domain-original4-authorized-20261011T031000Z/continuation-authorization.json,
+SHA9a2ce8c69941bf5d02bd1e3003be9cf6420be66f0dfc208f8ea0540b8ed03cd2.
+
+Root prepared a NEW private operator, preserving the old prepared-only operator:
+/tmp/tfp-domain-original4-authorized-20261011T031000Z/. Exact increment
+517cdd1445a08d2750f0d7fefaa556b39069033a10bb96c1452138a7079b580f changes only
+strict user/current-forward/historic-withheld gate metadata and new immutable state
+path. Original empty result selection/AST IDs/titles/registry/input/discovery/cache/
+clean source/deployment/retry0/maxfail1/worker1/actions/no-overlap/resource controls
+stay. No product/helper/spec/assertion/ledger change or business/browser launch.
+Immutable four selectione24af9/source results82d7752 exact. Current source/UAT57/
+20261011T024314Z-57e99045 unchanged; root observed7.32GiB free, launcher rechecks
+1200MiB report estimate+256MiB variance+512MiB reserve immediately before dispatch.
+
+Sole bounded read-only Ultra operational review dispatched03:11:11Z, supervisor48667:
+/tmp/tfp-original4-operator-review-ultra-20261011T031200Z/status.json.
+508sources/240artifacts hash-bound; review only narrow private gate/selection/plan,
+no old product/full/image review or tests/probes/discovery/SSH/browser/source edits.
+Sole deterministic exact watcher
+/tmp/tfp-original4-operator-review-monitor-low-20261011T031300Z/status.json,
+root session9723. Only accepted operator review permits one LOW approved routine
+current archive/3cwd/fullhealth/preflight/fresh official exact4AST discovery then
+ONE durable canonical target runner. Canonical runner owns FE/BE setup/scoped
+fixtures; no duplicate owner/watch/shared mutation while healthy or extra redeploy.
+Missing atomic exit unfinished, absentowner without terminal unknown, never pass.
+
+No completed OPP031/other accepted/full/local business replay. First actual failure
+preserve/stop/source-led Ultra RCA/minimal review before correction; no blind retries,
+assertion/security weakening or broad reset/delete. Preserve all originals/caches/
+f19/unrelated moderation-resume. Final current original context/hash/AST/actions/
+counts/settled desktop-mobile evidence judgment and truthful handoff remain; no
+strict certificate splice, production approval/deploy or invented external inputs.
+LOW routines/monitoring, Ultra diagnosis/fix/judgment, included usage only.
+
 ## Owner read forward fix deployed and verified; narrow continuation decision pending — 11 October 2026
 
 Final forward correction independently ACCEPTED (review1b6c9dbbb9eea264a8ae051f73e604656dd912826f31e58bc0cd32133ab35126).
