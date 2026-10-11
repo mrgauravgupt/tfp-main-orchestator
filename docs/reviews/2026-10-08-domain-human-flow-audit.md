@@ -1,5 +1,49 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Profile UI source and four affected checks passed; independent acceptance pending — 11 October 2026
+
+Historical055000 source owner ended1 at05:52:17Z on an actual backend rejection;
+its two CSS edits/partial proof/status remain preserved, never relabeled. Latest
+direct human requested full ownership/deploy readiness and optimal usage. ONE
+bounded requested Ultra finisher062100 finished0 at06:28:28Z, authorchecks0.
+Root accepted exact two-file finishing increment/README append, protected two CSS
+operation reversal and511source/580artifact bindings. Source acceptance:
+/private/tmp/tfp-profile-ui-source-finish-ultra-20261011T062100Z/root-source-acceptance.json.
+
+Actual LOW child passed4/4 once at06:30:44Z, retry0/unrun0:
+/private/tmp/tfp-profile-ui-low-approved-20261011T063000Z/execution-20261011T063200Z/status.json.
+Only new diagnostic syntax/onefilelint/ONE named actual-source visual proof/ONECSS
+Webbuild; all511sources601artifacts stable at eight boundaries. New spacing-zvDLKm
+proof has6rows/12regularunique distinct current captures/200actualinputs45retained
+outputs/emptydiagnostics/allcleanup. Summary898b94b6b43188cf21bc2011b91be48dd8684cbeb62d274c43b39a55c4f27773.
+Root personally ALL12original EN/DE1440/768/390 empty/enteredfocused images;
+/private/tmp/tfp-profile-ui-root-evidence-20261011T063500Z/root-observation.json.
+Text starts7px beyond the shared icon; desktop/tablet prompt now above overlays,
+mobile hiding/native input hitareas/focus/opacity/colors/geometry preserved.
+Detached source-owned fragments are not target/application/device certification.
+Existing hover differences and retained English copy in German images are source
+interpretation observations; no new regression or whole-UI/i18n signoff inferred.
+
+SOLE correction-only requested Ultra reviewer dispatched06:34:23Z supervisor91441:
+/private/tmp/tfp-profile-ui-independent-ultra-20261011T063700Z/status.json,900sbound.
+Authorization072eaab1617f28e5f25dd38bc11d64aa6b5031b0642dc3c6d134c2fab00b0951
+binds626current source/input files667immutableartifacts; personally12NEW originals,
+reuse accepted cea harness/original28views without earlier complete review replay.
+No author/check/browser/source/service/DB/cache/publish/deploy during judgment.
+Sole zero-additional-model exact kqueue watcher
+/private/tmp/tfp-profile-ui-independent-monitor-low-20261011T063800Z/status.json,
+root session41317. Missing atomic exit unfinished/absentowner without final unknown;
+no duplicate healthy owners/watchers or shared mutations.
+
+Independent acceptance remains before six-file scoped nested publication/rootgitlink,
+ONEexact NEWUAT/pruningfalse/current1181archive/3cwd/fullhealth, then only separately
+justified FAILEDPRO011/newoperator/oncepath/report/cache/officialAST/retry0/maxfail1/
+oneworker/actions/exactwatch. Current published/UAT57 unchanged. Completed three
+cases/OPP031 cannot replay; original3pass1fail/consumedfourstate and historic f179
+persistenceWITHHELD/bc58 stay immutable. Preserve all originals/caches/f19/unrelated
+moderation-resume. Strict six-child/OAuth/OTP/inbox/19external production/recovery/
+native-device gates remain; no invented inputs/production approval/readiness claim.
+
 ## Harness and original mixed evidence accepted; two scoped profile UI corrections active — 11 October 2026
 
 Combined requested Ultra050800 finished0 at05:22:33Z. Review
