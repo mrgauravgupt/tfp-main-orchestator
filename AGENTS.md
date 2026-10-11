@@ -1,5 +1,45 @@
 # Workspace-Wide Agent Notes
 
+## Caption proof collected all rows; narrow fit diagnosis active — 11 October 2026
+
+Actual source author104407 finished0 at10:54:58Z/checks0. Root accepted only the
+profile footer reveal rule, additive README and new proof; full original CSS reverses
+exactly. Actual minimum LOW105800 terminalFAILED10:58:41Z: two syntax/lint passes,
+one failed gallery proof, one unrun CSS build, retry0. All659sources8241artifacts
+matched six before/after boundaries. Preserve original failed status and evidence.
+
+New gallery-caption-dh1ndT executed all18 independent viewport/name/owner rows and
+saved nine regular unique originals with empty browser/transport diagnostics and
+all cleanup fulfilled. Collected68 violations:60 trailing-whitespace fixture equality
+and eight title-fit failures at768/390. Earlier equality can mask later80name checks;
+retained raw geometry independently shows long-title and author clipping. Root
+personally ALL9 originals, separately from target business evidence; record
+/private/tmp/tfp-profile-gallery-caption-low-prepared-20261011T105254Z/root-failed-observation.json,
+SHA028ae58e4f170fe79a05b098e595cdf538ac7473afc7396821224f7f90d608f3.
+
+Sole requested read-only Ultra /root/profile_gallery_caption_fix_ultra traces retained
+source/cascade/geometry/fixture and independent assertion collection; private
+/private/tmp/tfp-profile-gallery-caption-rca-ultra-20261011T110100Z, bound240seconds,
+auth0f4813f2/659sources9508immutableartifacts. Grounded minimum proposal must precede
+root approval/source edit. No checks/browser/network/source/services/DB/cache/model
+recursion/publication by reader. No duplicate healthy owner or blind canary retry.
+Only affected failed proof and original unrun build may follow exact correction
+acceptance; old passes stay source-bound. New current captures and one correction-only
+independent judgment precede scoped publication and one exact NEW UAT. Runtime CSS
+invalidates old archive equivalence. No passed business flow can replay.
+
+PRO011 target remains independently ACCEPTED once (reviewa608/12personal originals),
+OPP032/PRO009/PRO010 recorded passes remain accepted separately. Failure-collection
+policy45ef is published in clean harness802; selected independent future suites
+collect failures/maxFailures0/retries0, dependent failed steps and setup/health/auth
+still stop. Current deployed appebff/UAT20261011T064852Z remains until actual reviewed
+new deployment. Historic502 unknown/f179OPP031persistenceWITHHELD/bc58 exact and all
+failed children/consumed states remain immutable. No aggregate certificate/wholeUI/
+native/production approval or invented values. Strictsixchild/OAuth/sixdeliveredOTP/
+inbox/19actualexternalproduction-recovery/native-device gates remain. Preserve all
+originals/caches/historyf19/unrelatedmoderation-resume; final truthful scoped handoff
+and automation deletion await this confirmed visual correction.
+
 ## PRO011 target independently accepted; final profile caption correction active — 11 October 2026
 
 The new canonical failed-only PRO011 attempt finished exit0 at10:26:44Z: one passed,
