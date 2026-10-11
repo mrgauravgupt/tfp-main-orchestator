@@ -1,5 +1,40 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
+## Reviewed profile UI and harness published; exact new UAT pending — 11 October 2026
+
+Correction-only requested Ultra063700 finished0 at06:44:07Z and ACCEPTED the two
+profile CSS operations/new actual-source proof/README/retained LOW evidence,
+findings[]. Reviewbf52e70ccf240feee3c4ab466c2625341f477446ac67856f11b82fe35d7ca3a2
+at /private/tmp/tfp-profile-ui-independent-ultra-20261011T063700Z/review.json.
+Root independently reverified626current source+installed inputs667immutable
+artifacts and all12personal-view bindings. Reviewer personally ALL12new originals,
+root12separate; old28views/harness/mixed evidence reused without complete replay.
+Hover/localization/long native placeholder and complete-UI/device/production limits
+remain explicit. Original055000 backendfailure and all originals retained.
+
+Retained LOW-origin scoped publisher passed: clean nested app/harness
+ ebff59668ac93c9336e8e289d1b385f329b73e8e, six reviewed files/618committed source
+blobs/remote verified. Actual /private/tmp/tfp-profile-ui-publication-low-approved-20261011T065000Z/execution-status.json.
+No new model for routine publication. Root read-only acceptance preparation hit
+KeyError on before-audit-only metadata; original failure/refused subsequent steps
+preserved before any source/check/commit/deploy. New reader checks exact626/667
+before hash rows and actual after regular-file rows; assertions not suppressed.
+Root acceptance /private/tmp/tfp-profile-ui-independent-ultra-20261011T063700Z/root-independent-acceptance.json.
+
+Actual prior LOW4/4/new6row12capture proof/511sources601artifacts/zero retries/build
+pass remain source-bound. Parentgitlink then ONE NEW exactUAT with historical
+pruningfalse/fresh1181archive/3runningcwd/fullhealth next; current deployed57 until
+actual terminal runtime acceptance. Only FAILEDPRO011 may follow in a NEW once
+operator/state/report/cache with official exact1AST/currentinput/live4registries/
+cleanrevision-release/headroom/nooverlap/retry0/maxfail1/worker1/actions/exactwatch.
+Prepared-only failure selection4ac4897a43d2841deb164f00c8ddf774b2b7f41f3f9b99bbe4f302eb0a651ac8
+at /private/tmp/tfp-pro011-only-prepared-20261011T064200Z/failed-pro011-selection.json;
+no preflight/discovery/browser dispatched. Completed three cases/OPP031 cannot
+replay; original consumedfourstate/mixed3pass1fail and historicf179 persistence
+WITHHELD/bc58 unchanged. Preserve all originals/caches/f19/unrelated moderation-
+resume. Strict six-child/OAuth/OTP/inbox/19external production/recovery/native-device
+and broader UI gates remain; no invented inputs/production approval/readiness claim.
+
 ## Profile UI source and four affected checks passed; independent acceptance pending — 11 October 2026
 
 Historical055000 source owner ended1 at05:52:17Z on an actual backend rejection;
