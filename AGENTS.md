@@ -1,5 +1,32 @@
 # Workspace-Wide Agent Notes
 
+## Exact UAT accepted; sole affected OPP031 proof active — 11 October 2026
+
+Clean published app/harness `a62d6ae48c4374d0b3476a043477e4e3ce433fe3`
+deployed at `20261011T011053Z-a62d6ae4`, exit0 at01:12:54Z. All1181 live
+archive blobs, three running service cwd bindings and canonical full-stack
+health0 match. Historical releases were preserved. Parent gitlink/notes commit
+2ca37fa is published; unrelated moderation-service/resume work remains untouched.
+Runtime acceptance: /tmp/tfp-domain-role-ssot-release-20261010T065600Z/root-runtime-acceptance.json.
+
+ExactlyONE affected OPP031 was dispatched01:14:44Z:
+`uat-opp031-roles-20261011T011417Z-a62d6ae4`, runner18853/supervisor18849.
+Official fresh isolated-cache discovery matched one canonical AST/ID; retries0,
+maxfail1/oneworker/actions. Canonical runner owns FE/BE setup and scoped fixtures.
+Atomic /tmp/tfp-domain-role-ssot-release-20261010T065600Z/status.json controls;
+/tmp/tfp-domain-opp031-roles-recovery-state.json is historical launch state.
+Sole zero-extra-model exact-exit watcher:
+/tmp/tfp-opp031-proof-monitor-low-20261011T012000Z/status.json.
+Never duplicate launch/watch or mutate shared source/services/DB/storage/cache
+while healthy. Missing final exit is unfinished; absent owner without exit unknown.
+
+No business pass is inferred from dispatch. Original OPP031 failure and every
+prior passed/failed state remain immutable. Root+Ultra original context/hashes/
+registry/input/AST/count/action/unique captures/desktop-mobile acceptance must
+precede four original empty OPP032/PRO009–011 once, selectionSHAe24af9.
+Protected OPP031 specSHA bc58 stays exact. No completed/full/local replay or
+spliced strict certificate; external production and native-device gates remain.
+
 ## Reviewed shared-component candidate published; exact UAT deployment next — 11 October 2026
 
 The bounded Ultra review finisher completed exit0 at00:42:21Z and explicitly
