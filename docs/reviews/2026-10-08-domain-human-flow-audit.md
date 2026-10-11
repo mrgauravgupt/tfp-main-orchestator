@@ -1,5 +1,41 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Owner read forward review withheld for collection coherence; minimal correction active — 11 October 2026
+
+Independent forward Ultra finished0 at02:25:25Z, reviewSHA
+44aad4835762cf9e0085967a99f3e193d5576ee14396ee947298be42d44f9dd8.
+WITHHELD one medium/high-confidence finding: route schema validates
+ data.applications, but existing extractList prefers a root applications array.
+An additive root[] can hide validated nested rows; invalid root records may be
+selected despite nested empty validation. These counterexamples are source-traced,
+not observed UAT/server faults or regression. Actual server emits nested data;
+shared schema/mobile/passed transport proof otherwise remain source-bound valid.
+All508 sources/170 artifacts stable, all8 new originals personally viewed by
+reviewer with no definite spacing/clipping/overlap defect. Existing LOW5/5/39rows/
+8captures remain passed; original six-TS-shadow failure remains failed. No repeats.
+
+Root accepted grounded bounded proposalafc71c80e060e576971772d56bdc8f632a348dbd0af2351ca24726f186bb314e BEFORE edits:
+owner-only existing asRecord(result.payload)?.data input to existing extractList,
+then APPEND separately selected three-envelope actual HTTP/loader proof. Original
+530-line passed proof/8captures/assertions/helpers stay exact, no UI/CSS/schema/
+mobile/backend/native/permissions/date changes. Only loader/newdiagnostic/README
+three source owners allowed. Source-only Ultra dispatched02:26:37Z, supervisor37537:
+/tmp/tfp-owner-read-canonical-fix-ultra-20261011T023600Z/status.json.
+No author checks/probes/Node/browser/network/build/commitdeploy;508sources/182artifacts
+protected except explicit three owners. Sole deterministic exact watcher
+/tmp/tfp-owner-read-canonical-fix-monitor-low-20261011T023700Z/status.json,
+root session20772. Root final exactdelta/freeze precedes minimum affected LOW;
+reuse passed shared/mobile/build/8personal UI observations without replay. One
+finding-only independent judgment follows new collision proof, no full review redo.
+
+Current published/UATa62 unchanged; no publication/deployment until acceptance.
+Original OPP031 pass remains recorded; historical persistence reviewf179 WITHHELD,
+protectedbc58 exact and four original-empty flows LOCKED. Forward correction does
+not alter the standing historical gate or repair old evidence. Preserve every
+original/capture/cache/state/f19/unrelated moderation-resume. Strict six-child/
+OAuth/deliveredOTP/inbox/nineteen external production/native-device gates remain;
+no invented inputs, certificate splice, production approval/deploy/readiness claim.
+
 ## Owner read correction checks passed; independent judgment active — 11 October 2026
 
 SourceUltra015000 completed0; root accepted four-runtime/nine-total-file correction.
