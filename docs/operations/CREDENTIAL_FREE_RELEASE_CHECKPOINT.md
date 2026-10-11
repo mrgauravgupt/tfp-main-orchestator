@@ -1,5 +1,79 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
+## Scoped Web validation and final UAT handoff complete — 11 October 2026
+
+### Verified deployment
+
+The final profile caption correction is published and deployed as
+`3c008ec45a78552ff5561643ad8e920e9a540100`, release `20261011T115439Z-3c008ec4`.
+One exact deployment passed at 2026-10-11T11:56:37.986926+00:00; historical release pruning was
+disabled. Fresh inventory and live verification matched all **1,181 files**, all
+**three running service directories** matched the release, and canonical full-stack
+health returned **0** at 2026-10-11T11:56:40.228080+00:00. Only deployable `profile-detail.scss`
+changed from actual previous application ebff. Root reverified all14,697 original
+plan bindings, clean nested source/remote and current parent gitlink. **No business
+case, earlier matrix or completed flow was replayed after this CSS deployment.**
+
+Runtime acceptance: `/private/tmp/tfp-profile-gallery-caption-release-prepared-20261011T110800Z/root-runtime-acceptance.json`
+SHA `8b71d0181a6affc6ed095cd52f79266a2d029316ecb37cd4f3b4a530d8147381`.
+Scoped handoff: `/private/tmp/tfp-profile-gallery-caption-release-prepared-20261011T110800Z/scoped-handoff.json`.
+
+### Accepted correction and evidence
+
+Requested correction-only Ultra review **ACCEPTED, findings empty**:
+`/private/tmp/tfp-profile-gallery-caption-independent-ultra-20261011T113800Z/review.json`
+SHA `f48ef6f3f6d00ef5460bbafc8c6ee73fdf552a969bcd3f4a334880f8ae748448`.
+The three scoped source owners preserve shared gallery consumers, native controls,
+existing colors/tokens and full accessible text. Profile hover/focus suppresses the
+redundant footer; the canonical two-line clamp intentionally ellipsizes visible
+captions; mobile overlay padding reserves the existing corner-control row.
+
+Minimum LOW passed **4/4 once**, retries0: changed syntax, one-file lint, one actual
+component/Sass state proof and CSS Web build. Retained proof has18rows/360native
+states/20,411 strict independent passing invariants/0violations/9unique regular
+originals. Root and independent reviewer each personally inspected **all9new
+originals** at desktop/tablet/mobile. Minimum mobile caption-control clearance was
+9.609375px against the existing8px requirement. All659 source/14,020 original review
+artifact bindings matched. Detached synthetic component proof is scoped; it does
+not certify full-page application, all widths/fonts/locales, devices or production.
+
+### Completed business results remain bound to their original runs
+
+| Case | Recorded result and accepted evidence | Original revision boundary |
+| --- | --- | --- |
+| OPP032 | Passed; combined cea accepted the original evidence | Original mixed run on57e99045 |
+| PRO009 | Passed; combined cea accepted the original evidence | Original mixed run on57e99045 |
+| PRO010 | Passed; combined cea accepted the original evidence | Original mixed run on57e99045 |
+| PRO011 | Passed once10:26:44Z; a608 accepted scoped target assertions/provenance, all12originals personally root/reviewer viewed | Harness802f5d96, actual applicationebff/UAT064852 |
+
+The original mixed run remains3pass1fail, and every earlier failed PRO011 child,
+consumed once-state, trace, video, capture, cache and strict finalizer stays intact.
+These separate accepted pass records **do not form a compatible-clean-child strict
+aggregate certificate**, and the final CSS deployment does not rebind old business
+proof. Original OPP030 and OPP031 records likewise retain their original boundaries.
+
+### Failure collection and remaining gates
+
+Future **selected independent target cases collect all case results by default**
+at `maxFailures0/retries0`, then return failure if any case fails. Failed-case
+ dependent steps and setup/health/auth gates still stop unsafe work. Strict dependent
+certification explicitly pins1. This policy does not automatically rerun completed
+cases or execute every later assertion within a failed case. Policy50/native13/
+lifecycle7 and other passed affected checks remain source-bound, reused without replay.
+
+**Production remains gated:** strict six-compatible-clean-child aggregate/verifier;
+OAuth and six actually delivered OTP/inbox inputs; nineteen actual external
+production host/provider/storage/legal/independent-recovery inputs; native-device
+gates; and broader UI discovery. Historical502 underlying cause remains unresolved.
+Historic OPP031f179 persistence remains **WITHHELD**, with three successful reads
+unrecoverable; protectedbc58 is exact. Forward fixes do not repair that past evidence.
+No wholeUI/native/production approval, invented inputs or readiness/deadline promise.
+
+The authorized scoped validation and truthful handoff are complete. The scoped
+follow-up automation has fulfilled its purpose and will be removed after this final
+checkpoint is published. Preserve every original report/context/manifest/trace/
+video/capture/log/cache/state, historyf19 and unrelated moderation/resume work.
+
 ## Final profile caption correction accepted and published; exact UAT next — 11 October 2026
 
 The final correction-only requested Ultra review finished exit0 at11:46:19Z,
