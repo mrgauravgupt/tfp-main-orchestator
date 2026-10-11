@@ -1,5 +1,53 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Four original unrun flows dispatched once; exact completion watcher active — 11 October 2026
+
+Direct human four-once authorization remains valid, with original OPP031 historical
+persistence explicitly WITHHELD. One canonical continuation was dispatched03:37:34Z:
+uat-domain-original4-20261011T033725Z-57e99045, runner60564/supervisor60560.
+Authoritative atomic /private/tmp/tfp-domain-original4-guarded-20261011T032000Z/status.json;
+/tmp/tfp-domain-original4-authorized-state-20261011T031000Z.json is immutable launch
+history. Sole deterministic exact supervisor kqueue watcher is current operator
+watch-completion.py, root session46920. No business pass is inferred from dispatch.
+Missing atomic final unfinished; absentowner without terminal unknown, never pass.
+No duplicate launch/watch or shared source/service/DB/storage/cache mutation while
+healthy. Observe only exact exit or one compact30-minute snapshot.
+
+Original private operational review0b644 withheld the inherited persistent-inner
+no-overlap matcher gap, not an observed overlap/application failure. Root accepted
+one-line correction7e57f47b75c750042a84058a1340418b75664311c6581d1ff52a66bba7c8e903;
+all other launcher bytes/nine copies/old operators preserved. Original LOW032600
+included-usage rejection occurred before checks and remains separate. Latest direct
+continue allowed one resumed LOW: actual static77case1/1pass/retry0/508sources272
+artifacts stable03:29:03Z. Finding-only Ultra independent review033300 finished0
+and ACCEPTED final narrow operator/findings[], reviewSHA
+b5cd0a9fa0a61425118329191be0f8527da0444b754ddf960e13a8ac68c4b5e8;
+508sources277artifacts root-reverified exact. No complete operational audit replay.
+
+LOW approved dispatcher /tmp/tfp-original4-dispatch-low-approved-20261011T033500Z/
+approved-plan.json SHAbd054f6bcc80438a3b3db3d720ebaf92d362c112a4fb2744b54a54774cf0435f
+completed current1181live archive/threecwd match03:37:30Z/canonical fullhealth0
+03:37:31Z, original-empty preflight and official fresh isolated-cache exact4AST
+IDs/titles discovery. Only OPP032/PRO009–011, Chromium/worker1/retry0/maxfail1/actions.
+Inputce0ed2872bed159a6bcea5bbe774d4076a63defa417167a1ecdc6024843124f4/live4registries
+unchanged. Clean published app/harness57e9904501dfc01a1202e53075ad5b59c23cee44 and
+UAT20261011T024314Z-57e99045 match; no redeploy. Launch7.30GiB; fresh1968MiB minimum.
+Canonical runner owns FE/BE setup/scoped fixtures; independent durable OS sessions,
+filelogs/atomic status/caffeinate/exclusive four-scope state retained.
+
+First actual failure preserve/stop/source-led Ultra RCA/minimal reviewed proposal;
+no blind retries/replay/assertion-security weakening or broad reset/delete. Original
+regular unique context/manifest/current hashes/AST/counts/actions/settled desktop-
+mobile root+Ultra judgment and truthful mixed-scope handoff remain pending. Do not
+replay completed OPP031/any accepted/full/local business flow, or splice certificates.
+Protectedbc58/oldf179WITHHELD/selectione24af9/source results82d7752 remain exact.
+Preserve all evidence/caches/states/historyf19/unrelated moderation-resume. Broader
+lexical UI inventory remains unresolved discovery; scoped proof is not whole-UI
+or native certification. Strict six-child/OAuth/deliveredOTP/inbox/nineteen external
+production host/provider/storage/legal/independent recovery/native-device gates
+remain; no invented inputs, production approval/deploy/readiness promise.
+Included usage only; LOW routines/exact watch, requested Ultra diagnosis/judgment.
+
 ## Four original unrun flows explicitly authorized; private operator review pending — 11 October 2026
 
 Direct human reply: "Continue the four unrun cases (Recommended)" to the scoped
