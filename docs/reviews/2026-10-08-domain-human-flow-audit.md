@@ -1,5 +1,38 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Final profile caption correction accepted and published; exact UAT next — 11 October 2026
+
+The final correction-only requested Ultra review finished exit0 at11:46:19Z,
+ACCEPTED with findings[]: f48ef6f3f6d00ef5460bbafc8c6ee73fdf552a969bcd3f4a334880f8ae748448.
+Root independently reconciled all659 current source and14020 immutable artifact
+bindings, reviewer9new personal views and root9separate views. Retained minimum
+LOW passed4/4 once at11:35:34Z: syntax, lint, actual-component state proof and CSS
+Web build.18rows/360native states/20411 strict independent invariants/0violations,
+9regular unique captures; minimum mobile clearance9.609375px against8px.
+
+Three scoped owners are published as 3c008ec45a78552ff5561643ad8e920e9a540100;642committed
+source blobs, clean nested main and remote verified. Profile-only footer suppression,
+canonical two-line caption clamp and mobile control-row reservation preserve full
+accessible text, native controls, shared consumers and existing colors/tokens.
+No product or business claim is inferred from detached synthetic component proof.
+
+Current actual application remains ebff59668ac93c9336e8e289d1b385f329b73e8e,
+UAT20261011T064852Z-ebff5966 until one exact NEW UAT passes with pruningfalse,
+fresh1181archive/live files, three service cwd and full health. Runtime delta is
+only profile-detail.scss. No completed business case will replay after deployment.
+PRO011 remains independently accepted a608; OPP032/PRO009/PRO010 remain accepted
+from their original mixed run. These separate records are not a strict certificate.
+
+Future selected independent suites collect all case failures at maxFailures0,
+retries0; failed-case dependent steps and setup/health/auth gates still stop. Strict
+dependent certification pins1. Historical failures/caches/states remain immutable;
+502cause unresolved, OPP031f179 persistenceWITHHELD/three reads unrecoverable/bc58
+exact. Broader UI discovery, strict six-compatible-clean-child verifier, OAuth/six
+deliveredOTP/inbox, nineteen actual external production/recovery and native-device
+gates remain. No wholeUI/native/production approval or readiness promise. Preserve
+unrelated moderation/resume/historyf19. Honest scoped handoff and automation deletion
+follow exact new runtime acceptance.
+
 ## Final gallery control clearance correction active — 11 October 2026
 
 PRO011 remains passed once and independently accepted (a608); OPP032, PRO009 and
