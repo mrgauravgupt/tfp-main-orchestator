@@ -1,5 +1,43 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
+## Final gallery control clearance correction active — 11 October 2026
+
+PRO011 remains passed once and independently accepted (a608); OPP032, PRO009 and
+PRO010 remain accepted from the original mixed run. No completed business case
+may replay. Future independent selected suites collect failures at maxFailures0,
+retries0; dependent steps and setup/health/auth gates still stop unsafe work.
+
+The second gallery proof finished FAILED at11:15:16Z: syntax/lint passed, the
+canary collected18rows9originals and11139 independent invariants, and the CSS build
+remains unrun. All72 failures concern computed flow-root versus declared
+-webkit-box;11067 other invariants passed.659sources9532 artifacts matched all six
+boundaries. Root personally viewed all9 originals and retained the failed result.
+Mobile title/control overlap was also confirmed from retained geometry.
+
+Read-only RCA saved grounded proposalfa559 and preserved659sources9602artifacts,
+but finalization exceeded180seconds (205.6s, exit1); never relabel that bound failure.
+Root independently accepted the saved proposal before edits. Sole source-only
+requested Ultra profile_gallery_caption_fix_ultra owns the current three-file
+correction, bounded600seconds, authorchecks0:
+/private/tmp/tfp-profile-gallery-caption-control-fit-source-ultra-20261011T112500Z.
+Authorization55471faa binds659sources9611artifacts. Only profile mobile overlay
+padding reserves the existing control row; the diagnostic strictly distinguishes
+CSS declarations from computed display and proves all control/text clearances.
+Footer/clamp rules, shared components, tokens, full accessible text and native
+controls remain protected. No duplicate author/check/browser or healthy shared mutation.
+
+Exact delta/freeze approval precedes minimum changed syntax/lint, one failed
+actual-component state proof and the unrun CSS build. All new originals need root
+personal inspection and one correction-only independent judgment. Then scoped
+publication/current parent binding and one exact NEW UAT with historical pruning
+disabled, fresh1181archive/live files, three service cwd and full health. Current
+harness802/applicationebff/UAT064852 remain until actual reviewed publication/deploy.
+No business replay, strict certificate splice or wholeUI/native/production approval.
+Historic502 remains unresolved; OPP031f179 persistence remains WITHHELD and bc58
+exact. Strictsixchild/OAuth/sixdeliveredOTP/inbox/nineteen external production and
+recovery/native-device gates remain. Preserve every original/cache/state/historyf19
+and unrelated moderation/resume. Honest scoped handoff then automation deletion.
+
 ## Caption proof collected all rows; narrow fit diagnosis active — 11 October 2026
 
 Actual source author104407 finished0 at10:54:58Z/checks0. Root accepted only the
