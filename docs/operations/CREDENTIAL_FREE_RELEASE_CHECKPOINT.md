@@ -1,5 +1,68 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
+## Checkbox correction preserved; isolated click-target diagnostic failure under review — 11 October 2026
+
+Original four run remains terminal1: OPP032/PRO009/PRO010 passed, PRO011 failed,
+zero retries/empty. Original consumed once state/evidence cannot be replaced; no
+passed/completed/local/full business replay. Source/UAT57 and historic OPP031
+persistencef179 WITHHELD/pass/specbc58 remain separate, unchanged.
+
+Requested source-only Ultra042700 finished0 at04:37:03Z, author checks0. Root
+independently accepted exact additive three-file patch4a6c69319fc7c1d92e7d0b7c271409aa283cfa6d81618b1b3c58a6d018b5d7ab:
+chooseWrappedCheckbox uses scoped input enclosing label; old helper bytes reverse
+exactly, PRO011 changes only two call identifiers/one deselection/import, PRO009/010
+bodies and all original business/security/evidence selectors/assertions stay exact.
+New actual-helper detached functional discriminator is source-bound, not product UI
+or target business evidence. Current510 frozen source bindings; nested not published.
+Root acceptance /tmp/tfp-pro011-wrapped-checkbox-root-acceptance-20261011T043900Z/root-acceptance.json.
+Original035200 backend failure/no edits and pre-edit bookkeeping error are retained.
+
+First minimum LOW actual child failed04:38:34Z: two syntax passed; private narrow
+TypeScript configuration failedTS2688 (node typings unresolved); lint/functional two
+unrun, retries0,510sources437artifacts stable. Original config/logs/status immutable.
+Read-only requested Ultra044500 completed0 and proved private config origin controls
+automatic type lookup, not inherited repository config/cwd. RCA297cc2e3401f632a6c35301f042013b32d8b928808e3502e9981a1ff7bc3739d,
+proposala588779e2e392ec3233615c5f6e252b9c8f6449818cede30bc3267204630811a.
+Root accepted a NEW private config copy adding only canonical existing typeRoots;
+all other112-byte reversal/settings/file scope/strict/noEmit exact, no suppression
+or dependency/repository changes. Candidateb4e078702d0870fbb8c4b835a295e253fefb29767d91baacb9776cf39e500fc8.
+
+Corrected minimum LOW actual child failed04:47:01Z (CLIexit0 is not checks pass):
+/tmp/tfp-pro011-type-root-low-approved-20261011T045100Z/execution-20261011T045200Z/status.json.
+Original failed typecheck now passed; original unrun three-file lint passed; ONE
+new detached functional case FAILED its click-target assertion. Three commands,
+zero retries/unrun;510sources473artifacts stable every boundary. No syntax repeat.
+Private pro011-functional-a4pxzo has6rows, original has-expression0matches,
+3trusted native changes with expected role sequence/outside duplicate untouched,
+0reported nonINPUT label activations, empty diagnostics/allcleanup fulfilled and
+zero screenshots. Summarye1c9de4df892c8b95fb108f0e378c3fd561f99f1701c15ab1c31329491dad317.
+The overall functional result remains FAILED; no helper/product/business pass.
+
+ExactlyONE source-only requested Ultra readonlyRCA dispatched04:48:51Z,
+supervisor72357: /tmp/tfp-pro011-native-click-target-rca-ultra-20261011T045700Z/status.json,
+900sbound;510sources496immutableartifacts. Trace actual extracted helper/retained
+fixture/observer/API trace/installed source with multiple hypotheses; save grounded
+RCA/proposal before any UNEXECUTED private diagnostic candidate. No existing source
+or artifacts edits, tests/probes/browser/Node/models/build/deploy. If evidence is
+insufficient propose one bounded observation, never speculative assertion weakening.
+Sole zero-additional-model exact kqueue watcher
+/tmp/tfp-pro011-native-click-target-monitor-low-20261011T045800Z/status.json,
+root session70340. Watch-prompt rootJS parse error occurred before any execution;
+its preserved record distinguishes no model/source/check/watch launched, corrected
+text quoting before sole watcher creation. Missing atomic final unfinished; absent
+owner without terminal unknown, never pass. No healthy duplicate/poll/mutation.
+
+Root candidate/delta approval before any changed syntax/lint/failed functional-only
+LOW; reuse passed type/unchanged helpers without replay. One combined independent
+Ultra judgment is PREPARED_ONLY: exact harness correction, original mixed evidence
+and source trace of retained UI observations, personally28desktop/mobile originals/
+tablet14 metadata, root12representative views precisely retained. No source/harness
+publication or affected FAILEDPRO011 business proof until checks/judgment accepted.
+No product build/deploy justified for harness-only delta. All evidence/caches/f19/
+unrelated moderation-resume retained. Broader UI discovery/strict six-child/OAuth/
+deliveredOTP/inbox/nineteen external production/recovery/native-device gates remain;
+no spliced certificate, invented inputs, production approval/deploy/readiness claim.
+
 ## Three original flows passed; bounded PRO011 harness correction resumed — 11 October 2026
 
 Original four run uat-domain-original4-20261011T033725Z-57e99045 finished1 at
