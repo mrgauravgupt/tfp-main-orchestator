@@ -1,5 +1,42 @@
 # Implementation checkpoint — 6 September 2026
 
+## Expanded Web/mobile work: first validation batch collected — 11 October 2026
+
+The direct human expanded scope beyond the completed Web handoff: close confirmed
+Web/native journey gaps, UI consistency and component-reuse defects, excluding
+**OAuth, OTP and email use cases**. The prior scoped completion remains historical;
+the expanded task is active. No completed business flow or old matrix is replayed.
+
+Five source-only tranches are authored and root delta accepted: Web contest copy
+and dead Sass options; PUB025 quick-search activation; native missing-profile,
+consent and legal request/status cases; canonical Web/native quick-search destinations
+and German labels; consent write failure and strict native manifest finalization.
+There are **42 unique allowed paths**, 1,018 source-freeze bindings and 976 unchanged
+baseline sources outside the authorized union. Source registration is not runtime proof.
+
+Actual combined LOW ended **FAILED at17:59:34Z:19 passed,5 failed,4 blocked,retries0**.
+All2,738 frozen inputs,805 originals and196 shared outputs matched at every boundary.
+Failures are mobile types, runner EOF whitespace, emitted German representation,
+two i18n parity/order assertions and three native selector/feature guard findings.
+Dependent component proof and Web build stayed blocked; no new captures or business
+execution occurred. One requested Ultra read-only RCA diagnoses these failures
+together before the minimum correction proposal. Reuse the passed checks unchanged.
+
+Private authority/evidence: `/private/tmp/tfp-comprehensive-gap-closure-20261011`,
+`/private/tmp/tfp-comprehensive-root-source-acceptance-20261011`, and
+`/private/tmp/tfp-comprehensive-combined-validation-prepared-20261011`.
+The shared build passed once; an immediate API health sample failed during its
+existing tsx restart. Read-only RCA proved that timeline; a separately approved
+single GET returned200 at17:46:36Z. No restart/reset/seed or second shared build ran.
+
+Manual FE3000/API4000 remain preserved. Nested changes are uncommitted/unvalidated;
+actual UAT remains3c008/release20261011T115439Z-3c008ec4. Native current-bundle/device,
+actor and launch-resource admission remain pending; no simulator test has run.
+Gallery pagination/media recovery, native workspace picker/retrieval, precise message
+reporting, screen-reader behavior and broader UI discovery remain queued/gated.
+HistoricOPP031 persistenceWITHHELD,502unknown, originals and unrelated moderation/
+resume/historyf19 remain untouched. No whole-UI/native/production readiness claim.
+
 > Historical review snapshot. For the current source-verified backlog, use [the 8 September audit and implementation plan](2026-09-08-deep-architecture-audit-and-implementation-plan.md). Revalidate these older findings before changing code.
 
 > **Superseded — 7 September:** The scheduled run fired at 03:15:02 IST and
