@@ -1,5 +1,46 @@
 # Workspace-Wide Agent Notes
 
+## New PRO011 crossed navigation; anonymous report-form premise under read-only diagnosis — 11 October 2026
+
+The new failed-only canonical run uat-pro011-deeplink-20261011T080257Z-05e24a1f
+finished exit 1 at 08:05:30Z: zero passed, one failed, zero unexecuted/retries.
+Authoritative /private/tmp/tfp-pro011-navigation-only-20261011T080000Z/status.json
+and consumed /tmp/tfp-pro011-navigation-once-state-20261011T080000Z.json are immutable.
+Original results fec1f72b7fb8550e190f213477b6d521978240570a18b28a0902a86d397e0a99
+and every original trace/DOM/video/capture/cache are preserved. The corrected deep-link
+assertions were crossed. Primary spec 293 failed because the auth dialog opened but
+the report-form DOM count was one instead of zero. Strict missing-after finalizer
+and incomplete zero-case evidence catalog remain. No full business pass, successful
+submission/persistence or security bypass/product regression is inferred.
+
+The durable proxy log contains only its two readiness markers, with no classified
+transport error in this attempt. This does not resolve the historical 502. Source
+author, five affected checks, independent ec09 acceptance and four-file clean harness
+publication 05e24a1f remain valid within their original limits. Fresh admission matched
+all 1181 deployed files, three service cwd and full health, with actual application
+ebff distinct from the new harness. Parent 06d3858 contains the exact gitlink. No
+product build or redeployment occurred; UAT remains 20261011T064852Z-ebff5966.
+
+Sole requested read-only Ultra owner /root/pro011_anonymous_report_rca_ultra writes
+only /private/tmp/tfp-pro011-anonymous-report-rca-ultra-20261011T081000Z. Authorization
+122127cb072183c533a6cd132cee12ee1d762afce7c058d7cf796e384a448a0c binds 628 current
+source/input files and 1059 immutable artifacts. Actual SSR/auth/modal/form/trigger,
+native client behaviour, server permission and retained trace premises must distinguish
+hidden pre-rendered markup from an actual authorization defect. Remaining reporting
+premises are source-checked within this same bounded investigation to reduce cycles.
+No edits, checks, browser/network/service/DB/cache operations, builds or nested models.
+Root accepts a grounded minimum proposal before any source author or observation.
+
+The pipeline stopped at the first actual failure. No automatic retry, assertion
+removal, suppression, sleeps, security weakening or consumed-state replacement.
+Completed OPP032/PRO009/PRO010/OPP031 and full/local matrices cannot replay. Original
+mixed and later failed children remain separate; historic OPP031 persistence f179
+stays WITHHELD and protected bc58 unchanged. Future successful original evidence still
+needs independent scoped judgment and an honest mixed-scope handoff. Whole-UI/native
+certification, strict six-child verifier, OAuth/delivered OTP/inbox and nineteen
+external production/recovery inputs remain gates. No invented inputs, production
+approval or readiness claim. Preserve unrelated moderation/resume work and history f19.
+
 ## Navigation and sanitized-log correction accepted and published; failed PRO011 gates next — 11 October 2026
 
 Independent requested Ultra accepted the two harness operations and new log lifecycle
