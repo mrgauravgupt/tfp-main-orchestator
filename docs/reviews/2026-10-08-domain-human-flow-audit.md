@@ -1,5 +1,58 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Failure collection accepted and published; failed PRO011 admission remains scoped — 11 October 2026
+
+Requested independent Ultra ACCEPTED all four scoped increments, findings empty:
+review45ef09dfc518e17e45a245fbe0244b79291c7056167007fb48abafebd5d0a0d8
+at /private/tmp/tfp-pro011-policy-anonymous-independent-ultra-20261011T100900Z/review.json.
+All658current source8156immutableartifact before/after bindings matched. Original
+600second overrun and same-owner finalization allowance remain explicit; no duplicate
+review/model/old images. Root accepted precise separate claims. Root additionally
+verified all4847individual correctionBindings at each of six LOW boundaries; original
+review's plan-hash-only bookkeeping description stays preserved with additive root
+observation, not silent rewriting.
+
+Normal future independent target suites default maxFailures0/retries0, collect every
+selected case result and return failure if any fail. Shared outer/direct-inner integer
+validation occurs before target work; invalid values exit2. Setup/health/auth failures
+still stop unsafe work. Strict dependent certification explicitly retains maxFailures1.
+A failed case stops its dependent steps; other independent cases continue. Existing
+completed cases and consumed states cannot be replayed by this policy change.
+
+Policy50native shell/env/argv/status rows and changed runner guard passed once.
+Affected anonymous native proof now PASSED13rows/emptyerrors/allcleanup/no captures,
+summary7670599cb1b5c5de1aa1a588e1447a73a2e747ef5ded2163429bc53b81cad66f.
+LatestLOW100700 passed3/3 at10:05:07Z/retry0/zero unrun/658source4847artifacts stable.
+Passed7lifecycle/spec types/log/helper/oldmatrices reused through exact executed-tail
+ownership reconciliation; oldwhole diagnostic hashes were not falsely called current.
+Original compiler/envelope/request-predicate failures and all earlier states remain.
+
+Retained zero-model LOW publisher PASSED: ten reviewed harness/test/README files,
+641committed source blobs/clean main/current remote verified. Published harness
+802f5d965667ad0059dcf45a45f985b7f06f2890; actual deployed application remains
+ebff59668ac93c9336e8e289d1b385f329b73e8e/UAT20261011T064852Z-ebff5966.
+No product runtime changed, no build/redeployment. Actual publication status:
+/private/tmp/tfp-pro011-policy-anonymous-publication-low-20261011T101100Z/execution-status.json.
+Parent gitlink and only four scoped root notes bind the new harness separately.
+
+Accepted private085000 operator adds only explicit maxFailures1 and a new absent once
+path. Fresh exact1181archive/live byte equivalence, threecwd/fullhealth/currentinputs/
+live4registries/resource/nooverlap and isolated official sole-failed-PRO011 AST discovery
+precede one separately justified canonical proof. No discovery/browser dispatched yet;
+all old prepared/consumed operators remain immutable. Existing canonical runner owns
+setup/scoped fixtures, one worker/retry0/actions/durable OSsession/filelogs/atomicstatus/
+idle guard/exactexit watch. Never replay completed OPP032/PRO009/PRO010/OPP031/local/full
+business flows or splice future evidence into prior failed children/certificates.
+
+Current original fec1f72 PRO011 remains failed; original mixed3pass1fail and all reports/
+traces/captures/caches/states stay immutable. Historical502 remains unresolved; f179
+OPP031 persistence stays WITHHELD/three unrecoverable reads/protectedbc58 exact.
+No private proof repairs historical evidence or grants wholeUI/native/production
+approval. Broader UI discovery, strictsix-child/OAuth/deliveredOTP/inbox/nineteen actual
+external production/recovery/native-device gates remain. Preserve moderation/resume/
+historyf19; no invented inputs or readiness promise. Automation remains for scoped
+continuation/final evidence judgment and truthful handoff.
+
 ## Failure collection implemented; remaining native diagnostic under grounded review — 11 October 2026
 
 Direct human request authorizes normal future independent target cases to collect
