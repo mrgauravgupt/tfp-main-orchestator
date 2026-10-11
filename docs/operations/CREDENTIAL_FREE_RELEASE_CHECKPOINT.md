@@ -1,5 +1,49 @@
 # Credential-free release checkpoint — current handoff, 8 October 2026
 
+## Exact new UAT verified; later PRO011 deep-link failure under bounded diagnosis — 11 October 2026
+
+Clean app/harness ebff59668ac93c9336e8e289d1b385f329b73e8e and parent2d33d7de
+published six reviewed files/618committed source blobs. ONEexact UAT deployment
+passed06:51:08Z, release20261011T064852Z-ebff5966/pruningfalse/all1181live archive
+blobs/3servicecwd/fullstackhealth0. Root runtime acceptance3a1fc87b3de9474b18ffd6264f5f0c028ba1d8bb23660e4165457efccde402a1
+at /private/tmp/tfp-profile-ui-release-20261011T065500Z/root-runtime-acceptance.json.
+Independent profileUIbf52 accepted two CSS operations/new proof/README; all12new
+originals personally root/reviewer viewed, LOW4/4/6rows/emptyerrors/build0 retained.
+These scoped facts do not grant wholeUI/localization/device/production approval.
+
+ExactlyONE justified PRO011-only canonical proof dispatched06:55:47Z and ended1
+at06:57:26Z: uat-pro011-wrapped-20261011T065413Z-ebff5966,0pass1fail0unrun0retry.
+Atomic /private/tmp/tfp-pro011-only-guarded-20261011T070000Z/status.json and consumed
+/tmp/tfp-pro011-corrected-once-state-20261011T070000Z.json remain immutable. Original
+results63a6df3543ebd26679829d7a2345ad7febdde40d0ccf321aa3d0689239d48f56
+and all trace/DOM/network/video/capture/cache/evidence preserved. Primary spec:283
+lightbox open absent after direct role/hash navigation; separate actual unexpected
+HTTP502 browser diagnostic and strict missing-after finalizer retained. It advanced
+past original checkbox scope failure, but no successful upload/persistence/action
+pair or product-regression claim is inferred. No automatic retry/replacement.
+
+SOLE requested READ-ONLY Ultra RCA dispatched07:02:53Z supervisor95498,900sbound:
+/private/tmp/tfp-pro011-deeplink-rca-ultra-20261011T071000Z/status.json.
+Auth90f968442de63413190b913ffdd9e5c60d40974e59b740b85e6ae5f553050b1a
+binds626sources869immutableartifacts. Trace actual fixture role/gallery ID premises,
+modal/hash/bootstrap lifecycle, source/installed behavior and502resource/phase with
+multiple hypotheses; save grounded rca.json/minimal-proposal before any correction.
+No edits/checks/Node/probes/browser/network/SSH/build/services/DB/cache/model/push.
+If retained data insufficient propose ONEbounded read-only LOW observation, no
+observation now. Sole zero-model exact kqueue watcher
+/private/tmp/tfp-pro011-deeplink-rca-monitor-low-20261011T071100Z/status.json,
+root8119. Missing final unfinished/absentowner unknown; no duplicate healthy owners.
+
+Root acceptance of grounded minimum before author/observation; minimal affected
+LOW and independent incremental judgment before any further failed-only NEWonce
+proof. Runtime change needs new exactUAT; harness-only needs true archive equivalence.
+Never reuse either consumed scope, replay completed3/OPP031/full/local cases, suppress
+502/finalizer, weaken business/security/evidence/native assertions, add blind sleeps/
+retries/timeout/forcedclick workarounds or splice certificates. Original3pass1fail,
+historicf179 persistenceWITHHELD/bc58/all artifacts/f19/unrelatedmoderation-resume
+remain. Strict six-child/OAuth/OTP/inbox/19externalproduction/recovery/native inputs
+and broaderUI discovery still gates; no invented inputs/production readiness claim.
+
 ## Reviewed profile UI and harness published; exact new UAT pending — 11 October 2026
 
 Correction-only requested Ultra063700 finished0 at06:44:07Z and ACCEPTED the two
