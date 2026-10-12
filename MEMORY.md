@@ -1,5 +1,74 @@
 # Workspace Memory for Future Agents
 
+## Expanded Web/mobile: affected Workspace checks pass; current independent review resumed — 12 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Nested changes remain uncommitted; actual UAT remains **3c008**, release
+**20261011T115439Z-3c008ec4**. No completed business flow, old native case or
+unaffected matrix was replayed. This is not a deployment-ready handoff.
+
+Root adopted **19 scoped owners / 64 exact line operations** for the shared
+native saved-resource lifecycle, authorized Workspace Save/Export, generated
+attachment names, current cold-flow guards and accessibility state/labels.
+Existing signed Open, upload/finalization, permissions and business paths remain.
+The capability is a **10 MiB subset**; original filenames, full API25MiB parity,
+provider-displayed names and actual device persistence are not inferred.
+All77 prior case objects remain exact except the two accepted CON014 wording
+strings; registration of OPP014 brings the census to79, not runtime coverage.
+Root adoption: `/private/tmp/tfp-comprehensive-workspace-accessibility-root-adoption-20261012T160700Z/root-adoption.json`
+SHAfd14eff07d510169a8203dca6ba092f62cf716a7713db38ac42e0a28f0b716c7.
+
+The first batch passed12 generated-name rows; its one shared build naturally
+exited0 with verified cleanup and exactly four formatter outputs changed.
+The executor then correctly **ABORTED** on live-generated versus immutable-artifact
+ownership. Its original RUNNING build label remains; a separate root prerequisite
+receipt accepts the actual child result. Only four live output keys were removed
+from a fresh immutable envelope; all196 original private backups remain. No build
+or formatter test replay occurred.
+
+The remaining eleven commands collected **nine passes and two failures** once:
+new lifecycle6, affected Contest11, new Workspace identity4, accessibility6,
+strict parsed direct-contract121, guard79, changed lint and private syntax passed.
+Missing title in a new fixture and an unmodeled native Image host were minimally
+corrected in two test owners. Types then passed; the three new Workspace rows
+collected two passes and one immediate async Open assertion failure. Installed
+TanStack source proved the async boundary; only that same exact-once URL assertion
+now uses the existing settled helper. The failed row then **passed once** with13
+others excluded. Latest two-command LOW passed at16:21:04Z, retry0; all five
+boundaries matched2765 inputs/5479 originals/196 outputs and both cleanups VERIFIED.
+`/private/tmp/tfp-comprehensive-workspace-open-row-low-approved-20261012T164000Z/root-check-acceptance.json`
+SHA6b5f01fece446b1ed559cc4688cd5a6370ca98dd02b3428b1d5e4145ac35a4fc.
+These separate source-bound passes do not relabel any failed or aborted batch.
+
+The original CON014 independent judgment b7 retained accepted source/check parts
+but WITHHELD its cold-flow guard and filename wording claims. Those findings now
+have source corrections and minimum checks; their **combined current independent
+judgment is still pending**. The first reviewer attempt returned an actual backend
+workspace-capacity error after saving its before audit. A separate gallery planner
+also failed at that backend; no product regression or purchased-credit conclusion
+is inferred. Direct human continuation authorizes exactly one bounded SOL Extra High
+review resume, reusing the original record, with2765 sources/6191 originals/196
+outputs bound. Actual terminal controls continuation:
+`/private/tmp/tfp-comprehensive-workspace-con014-accessibility-review-resume-sol-xhigh-authorized-20261012T164600Z`.
+No automatic retry, purchase, reset or silent downgrade is authorized.
+
+The private native-admission cleanup correction independently ACCEPTED OP-CLN-1
+only (22651f), with one syntax pass. Unknown ownership still fails; restoration
+continues after Metro inspection errors. A read-only preparation found selected
+simulator Shutdown, none booted, reserved ports free and sufficient headroom at
+its timestamp. No simulator, Metro, native app or native case has executed.
+Current bundle/ABI/API-origin/public-UI admission and four public/settings cases,
+DISC010, TRUST006, CON014, Workspace and persisted-gallery journeys remain gated.
+Mocked contracts are not device/provider/business or VoiceOver/TalkBack proof.
+
+Accepted PUB025 LOCAL and gallery97d343 evidence remain bound to their original
+runs; five PUB025 execution slots remain incomplete. Manual FE3000/API4000 owners
+are preserved. Historic OPP031 persistence WITHHELD/three unrecoverable reads,
+historical502 unknown, strict compatible-child and external production/native
+gates remain. No certificate splicing, whole-UI signoff, invented inputs or production
+approval. Preserve every original/cache/state/historyf19 and unrelated moderation,
+resume and newly observed untracked work. Only these four scoped root notes publish.
+
 ## Expanded Web/mobile: new Web journey accepted; native receipt checks pass — 12 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
