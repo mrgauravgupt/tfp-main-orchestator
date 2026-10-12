@@ -1,6 +1,57 @@
 # Workspace-Wide Agent Notes
 
 
+## Expanded Web/mobile: sources authored; validation-owner diagnosis active — 12 October 2026
+
+The expanded task is active, excluding **OAuth, OTP and email use cases**. The
+accepted original Web UAT handoff remains historical; current nested changes are
+uncommitted. No completed business case, old native case or unaffected matrix replay.
+
+The bounded independent batch finisher accepted twelve precise earlier claims,
+with complete-copy/native/full-page claims kept separate: review69ebf8e7. Root and
+original reviewer each viewed eight originals; the finisher reused those records and
+opened none. German ZIP wording was source-confirmed and its one-leaf correction plus
+new actual-consumer proof are root source-accepted, with checks pending.
+
+New source tranches are root delta-accepted: gallery pagination/media16owners,
+canonical ScreenLoadError5, workspace native picker/finalized upload/retrieval6,
+seven message/selector/proof owners and the four-owner direct TRUST006 execution
+contract. Shared components, native controls and old handlers/assertions are retained.
+TRUST006 is **implemented only**; census77 retains all76prior cases. Gallery/device,
+persisted exact MESSAGE-row and actual saved-file proof remain unexecuted. The old
+message-author terminal is missing/unknown; root current-code acceptance does not
+relabel that model wrapper as successful. Backend/interruption/bound failures and
+original states remain immutable.
+
+Private supervision LOW2/2 and13native rows passed once. One independent review
+withheld an early spawn/identity cleanup gap. The minimum private correction then
+passed2/2 and8NEWnative rows, retries0, with independent0c4b81 acceptance within its
+specific boundary; old13rows were reused. This is process-control evidence, not an
+application/native-device/business pass.
+
+Actual combined13-command validation ended **ABORTED at02:24:44Z**: JSON passed;
+Bash syntax child naturally exited0, but identity registration was rejected and
+cleanup remainedUNKNOWN, so the executor stopped. The Bash step is not accepted;
+eleven commands remain unrun. All2,753sources/1,270originals/196shared outputs and
+130i18n/356Web outputs are retained. No new component proof or build ran. Read-only
+RCAe06286e9 completed within240seconds; exact missing-versus-mismatched candidate was
+not retained, so fast-exit race remains a leading hypothesis. Root approved one
+three-row native-only observation, source author first, no script/app/runtime replay:
+`/private/tmp/tfp-comprehensive-fast-owner-observation-authorized-20261012T023600Z`.
+Actual atomic terminal/observations control the next smallest correction; no blind
+retry, returncode-only false success or unknown/foreign-ownership weakening.
+
+CON014 has a concrete saved capability proposalda4b7d3b, with its original300second
+bound failure preserved. Existing-dependency private save/iOS share/Android SAF can
+be implemented separately after root acceptance; external filename/byte certification
+still needs an actual provider/observer. No file-save source or native proof yet.
+PUB025, five new native public/settings cases, screen-reader/platform proof and
+broader UI discovery remain pending. ManualFE3000/API4000 ownership is preserved;
+current UAT remains3c008/release20261011T115439Z-3c008ec4. HistoricOPP031 persistence
+WITHHELD, underlying502unknown and strict compatible-child/external production/native
+gates remain. No blanket coverage, whole-UI/device/production readiness claim or
+invented inputs. Preserve all originals/caches/historyf19 and moderation/resume dirt.
+
 ## Expanded Web/mobile work: focused checks pass; final review pending — 12 October 2026
 
 The expanded scope remains active, excluding **OAuth, OTP and email use cases**.
