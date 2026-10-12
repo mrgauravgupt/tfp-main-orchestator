@@ -2,6 +2,83 @@
 
 
 
+## Expanded Web/mobile: type, save and caption checks pass; two gallery assertions remain — 12 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Current nested changes are uncommitted; actual UAT remains **3c008**, release
+**20261011T115439Z-3c008ec4**. No completed business flow, old native case or
+unaffected full matrix was replayed. This is not a deployment-ready handoff.
+
+The private execution gate is independently **ACCEPTED, findings empty** (0bf193).
+The original source-author atomic terminal remains missing/unknown; saved source
+was separately root accepted. Its ten affected native process-control rows passed
+once. The independent product reader saved a grounded grouped RCA/proposal within
+1,200 seconds, then exceeded its final-report bound; that failure is preserved.
+
+The first fourteen-command application batch collected **10 command passes,
+three failures and one blocked Web build**, retries0. Its twelve new test files
+recorded104 rows:87 passed/17 failed. Five generic file-save passes had an invalid
+early-guard premise and were explicitly withheld as adapter behavior evidence.
+The one canonical i18n compile changed only DE plus mobile EN/HI/NE catalogs;
+39 compiled save labels, three interpolations and six negatives passed. Old outputs,
+original failures and every boundary remain preserved; no compile replay occurred.
+
+The requested Ultra correction author saved **all11 approved file operations**,
+then received an actual model-capacity rejection. Its RUNNING atomic source note is
+not a completion. Root reconstructed all48 operations exactly, verified4,792 outside
+bindings/130 compiled outputs and all77 original case objects/census totals unchanged,
+and accepted the saved delta for minimum checks only. No handler/permission/pending/
+security policy changed; the native nullable Share result declaration is faithful.
+Source record: `/private/tmp/tfp-comprehensive-grouped-validation-fix-authorized-20261012T065000Z/root-saved-source-acceptance.json`
+SHAa5c60146801947fe0048e144171ee3052818a112cfad292235c6bb2b2dc2b57d.
+
+Corrected minimum LOW remains **FAILED**: five commands passed, one failed, two
+were blocked. All13 original TypeScript errors are resolved; changed lint, metadata
+JSON and registry checks passed. The selected23 native checks recorded **21 passes
+and two failures**: all20 file-save rows reached the intended mocked native seams
+and passed; the one directly changed old media-descriptor row passed. The two gallery
+rows crossed the earlier pending-button premise and failed later at the existing
+server-clamped page assertion. Preserve those failures; no product regression or
+native-device/provider/business pass is inferred. All2,756 sources/2,066 originals/
+196 shared outputs matched17 boundaries, cleanup VERIFIED, retries0.
+`/private/tmp/tfp-comprehensive-grouped-validation-low-approved-20261012T070700Z/execution-status.json`.
+
+A copied plan still referenced already-passed prerequisite names absent from its
+minimum status map. Root accepted a fresh **private bookkeeping-only reconciliation**,
+preserving that failed batch; no source edit or failed-gallery replay. The two
+originally unrun steps then **PASSED once**: actual Astro/native-input caption proof
+with current EN/DE and both strict old-copy/ZIP negatives (four rows, requests0,
+errors0, no screenshots), then one canonical Web build0. All2,756 sources/2,593
+originals/196 shared outputs matched five boundaries; both cleanups VERIFIED.
+`/private/tmp/tfp-comprehensive-unrun-caption-build-low-approved-20261012T071100Z/execution-status.json`.
+
+One included-usage snapshot showed33% primary and43% weekly remaining; no new
+window after the capacity rejection. Purchased-credit fields were ignored. Included
+usage is not exhausted, and the actual requested-model rejection remains separate.
+No unchanged model retry/downgrade or purchase occurred. The next bounded source-led
+Ultra RCA is **PREPARED ONLY**, targeting the two later gallery assertions and their
+remaining premises before any minimal correction or affected-only rerun:
+`/private/tmp/tfp-comprehensive-gallery-later-clamp-rca-prepared-20261012T071500Z`.
+Final incremental independent product judgment is still pending.
+
+Fresh read-only native inventory found51 available simulators/none booted, five
+existing installed candidates, free Metro/driver ports and3,725,938,688 bytes at its
+observation. Fifteen ordinary native fingerprints and five framework fingerprints
+matched; a wrong framework metadata-envelope comparison is preserved separately
+with its exact supplemental reconciliation. This is inventory, not current bundle,
+actor, routing, device or provider admission. Manual FE3000/API4000 listeners were
+preserved without HTTP probe, restart, reset or seed.
+
+PUB025, new native public/settings/gallery/workspace/message cases and screen-reader/
+provider observations remain unexecuted. CON014 source-private Save/export controls
+are bounded at10 MiB versus the API default25 MiB; iOS share completion is not Files
+persistence, and Android byte readback does not certify provider-displayed filename.
+Workspace and CON014 inventory reasons are now truthful; no native runtime coverage
+was invented. Historic OPP031 persistence WITHHELD/three unrecoverable reads, unknown
+historical502, strict compatible-child and external production/native gates remain.
+No whole-UI/device/production signoff. Preserve every original/cache/state/historyf19
+and unrelated moderation/resume work; only four scoped root notes publish here.
+
 ## Expanded Web/mobile: file-save source adopted; two runner fidelity findings collected — 12 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
