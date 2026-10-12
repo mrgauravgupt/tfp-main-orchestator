@@ -1,6 +1,60 @@
 # Workspace-Wide Agent Notes
 
 
+
+## Expanded Web/mobile: file-save source adopted; two runner fidelity findings collected — 12 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Current nested changes are uncommitted; UAT remains3c008/release20261011T115439Z-3c008ec4.
+No completed business flow, old native case or unaffected matrix was replayed.
+
+The finite eight-file CON014 candidate completed within1200seconds, author checks0.
+Root personally read adapter/consumer diffs/two new tests, accepted exact old-line/body
+preservation and13mobile.files keys in each EN/HI/NE, then adopted only those eight
+files. All outside-scope sources,1,270originals and196shared outputs stayed exact.
+The adapter reuses shared types/limits/formatter and existing native byte/hash owner;
+actual ResourcePack/Button/Open/business paths remain. Persistent private save and
+native export outcomes are separate; iOS completion cannot certify Files destination,
+and Android readback does not prove the provider's displayed filename. No real native
+save/provider, CON014 business pass or completed coverage is claimed.
+Source/adoption: `/private/tmp/tfp-comprehensive-file-save-candidate-authorized-20261012T025500Z`.
+
+One approved native observation recorded three fast-leaf rows: true/false identities
+were unavailable before natural completion; Python retained actual identity. Recording
+is not a canary/application pass and cannot reconstruct the original Bash candidate.
+The saved fix proposal exceeded its480second bound; original failure is retained.
+New source-only exec-gate author completed1124.76seconds within1200, checks0. Root
+verified exact whole-core reversal, protected ownership/cleanup/idle/watch bodies and
+four copies. Root's authorized CON014 eight-operation delta was reconciled separately;
+the original five source mismatches are preserved, never falsely called a full freeze.
+
+Actual minimum LOW ended **FAILED**: syntax passed; ONE new native contract collected
+all11rows, nine passed/two failed, retries0, both command cleanupsVERIFIED. Failed
+native-env fidelity and compound cwd/stdin fidelity remain strict. All2,756current
+sources,1,276originals,196shared outputs and eight private-helper bindings matched
+before/after. No application/native-device/browser/HTTP/business/build command ran.
+`/private/tmp/tfp-comprehensive-fast-exec-release-low-approved-20261012T032700Z/execution-status.json`
+and all native originals are immutable. One source-led read-only Ultra RCA groups
+the two findings before a grounded minimum proposal; no automatic canary retry.
+The preceding root wrong-status-envelope preparation failed before any check and is
+retained separately; only bookkeeping was corrected in a fresh directory.
+
+The fresh combined13-command product-validation plan is **PREPARED_ONLY_GATED**:
+reuse original JSON pass, run the failed owner syntax and original eleven unrun
+commands plus new file-copy JSON; twelve NEW native test files, minimum types/lint,
+one canonical i18n compile (DE plus three mobile catalogs only) and one Web build.
+`/private/tmp/tfp-comprehensive-new-mobile-caption-filesave-low-prepared-20261012T031700Z`.
+Independent command failures collect; unsafe ownership/drift or dependency gates stop.
+Earlier8/8 proof and finisher69eb12acceptedclaims remain source-bound and reused.
+PUB025, native public/settings/gallery/workspace/message and screen-reader/provider
+proof remain unexecuted. TRUST006 census77 is registration only. Current native bundle,
+actual actor/resource/provider and headroom admission remain required; manual FE3000/
+API4000 listeners were preserved without HTTP probe, restart, reset or seed.
+
+HistoricOPP031 persistenceWITHHELD,502underlyingunknown, strict compatible-child and
+external production/native-device gates remain. No blanket UI/coverage/readiness or
+production approval. Preserve every original/cache/state/historyf19 and moderation/resume.
+
 ## Expanded Web/mobile: sources authored; validation-owner diagnosis active — 12 October 2026
 
 The expanded task is active, excluding **OAuth, OTP and email use cases**. The
