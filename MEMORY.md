@@ -1,6 +1,67 @@
 # Workspace Memory for Future Agents
 
+## Expanded Web/mobile: new Web journey accepted; native receipt checks pass — 12 October 2026
 
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Current nested source is uncommitted. Actual UAT remains **3c008**, release
+**20261011T115439Z-3c008ec4**. No completed business flow, old native case or
+unaffected matrix was replayed; this is not a deployment-ready handoff.
+
+Both formerly failed gallery reset rows passed once. A separate source-confirmed
+clamp-to-regrowth defect was fixed by exactly three insertions in the two detail
+screens and one test owner. Minimum lint/types and two NEW regrowth rows passed;
+13 old rows were excluded. Correction-only independent review **97d343 ACCEPTED**,
+findings empty. Original model-limit/missing terminal, late overbound supplement,
+root line-index/watch/output-envelope preparation errors and original failed batches
+remain distinct. The original JSON stdout is the regrowth-result authority; no
+missing output file was invented. These are source/component claims, not device proof.
+
+The newly unexecuted **PUB025 LOCAL Chromium human-target case passed once** at
+10:22:46Z, retry0: ten actual desktop-context anchor activations, ten complete pairs
+and60 regular unique capture originals/56 distinct contents. Independent review
+**8c7367 ACCEPTED** the scoped assertions and provenance. Root personally viewed
+all60 originals; reviewer personally40 desktop/mobile, tablet20 metadata only.
+All8 runner boundaries matched current3438 source/output and3143 original bindings,
+cleanup VERIFIED. Tablet/mobile viewport captures are not native activations there.
+Only one of six PUB025 execution slots passed; the five others and aggregate coverage
+remain incomplete. Context truthfully records dirty LOCAL/applicationCommit unknown,
+harness3c008; it does not attest deployed UAT. Existing consent overlay, narrow filter
+ellipsis and hidden secondary card actions were traced without a new confirmed P2.
+
+CON014 now has an adopted ten-owner source correction: owned secret-free atomic
+receipt, actual-byte/type/hash cold restoration, existing ResourcePack/Button controls
+and precise selectors, one new native flow and exact second generic direct contract.
+All77 old case objects and TRUST006 value stayed exact; census78 is registration.
+Original Ultra backend capacity failure stays separate; the explicitly authorized
+GPT-6 SOL Extra High finite finishers ran no checks or repository writes.
+
+The actual seven-command minimum collected **six passes and one guard failure**:
+new receipt5 passed/old20 excluded; directly affected consumer11 passed; current
+strict direct-contract74 passed; types/lint/JSON passed. All15 boundaries matched
+2758 inputs/3176 originals/196 shared outputs; seven cleanups VERIFIED/retry0.
+The guard correctly rejected a planned-versus-implemented feature label. A grounded
+one-leaf correction preserved every case/contract/runtime limit; ONLY that failed
+guard then passed once (78 registered cases), all3 boundaries stable. The original
+failed batch remains immutable; the six unaffected passes were not replayed.
+One current CON014 independent source/check judgment is pending. No native file,
+provider, business or cold-device pass is inferred from mocked contracts.
+
+The saved iOS debug shell is only a candidate for a bounded current-JS admission
+observation: binary/framework hashes and module-name markers match; installed0.1.0
+versus config1.0.0, actual module versions/ABI, current bundle/routing/UI remain
+unproved. No simulator, Metro or native case has run. Four public/settings cases,
+separate DISC010, TRUST006, CON014, workspace and persisted-gallery journeys remain
+runtime-gated. OPP014 reuse planning targets the existing adapter/components and
+shared save lifecycle, with explicit10MiB/generated-name limits; no duplicate UI,
+API/schema rewrite, full25MiB or original-filename promise is authorized by that plan.
+
+Manual FE3000/API4000 owners remain preserved; approved root-path health returned200.
+The root's earlier incorrect prefixed health request returned401 and is preserved as
+an admission mistake, not an API regression. No restart/reset/seed or source deployment.
+HistoricOPP031 persistence WITHHELD/three unrecoverable reads, underlying502 unknown,
+strict compatible-child, screen-reader/provider/device and external production gates
+remain. Never splice certificates, invent inputs, approve production or claim whole UI
+coverage/readiness. Preserve every original/cache/state/historyf19 and moderation/resume.
 
 ## Expanded Web/mobile: type, save and caption checks pass; two gallery assertions remain — 12 October 2026
 
