@@ -1,5 +1,64 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Expanded Web/mobile: two new LOCAL journeys accepted; affected harness checks pass — 13 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Nested changes remain uncommitted; actual UAT remains **3c008**, release
+**20261011T115439Z-3c008ec4**. No completed business/native flow or unaffected
+matrix has been replayed. This is not a deployment-ready handoff.
+
+The two NEW LOCAL PUB025 Firefox and mobile-Chromium cases each **passed once**:
+ten native anchor activations, ten complete action pairs, zero retries and verified
+cleanup. Independent **4e91cd ACCEPTED** their scoped assertions/provenance,
+findings empty. All120 regular unique capture originals remain; root personally
+viewed24, reviewer80 desktop/mobile, tablet40 metadata only. Both manifests remain
+incomplete; resized evidence is not activation at every breakpoint. Three separate
+LOCAL pass records now exist, with three TARGET slots still unexecuted and no
+compatible six-slot certificate. Authority:
+`/private/tmp/tfp-comprehensive-pub025-two-local-root-acceptance-20261013T115200Z/root-acceptance.json`.
+
+Fresh **current-resource recovery is VERIFIED**: exactly two owned operations
+terminated the selected app and shut down its simulator, exit0, four unchanged
+boundaries. Root accepted status **b8937c**; the original failed PRO010 cleanup
+UNKNOWN and absent child identity remain historical, not reconstructed. Manual
+FE3000/API4000 are preserved. No native business case has run since that failure.
+
+The eight-owner JUnit reporting correction is root adopted. Its actual offline
+writer/finalizer proof passed26 rows; five syntax checks and corrected canonical
+lint passed. Independent **bb1862** accepted those narrow claims but WITHHELD
+aggregate claims for a deleted path-ID extractor and outdated rejection wording.
+Three aggregate rows had also failed earlier because newly registered direct cases
+were omitted. All original failures, timing limits and that judgment remain.
+
+The current corrections now reuse the canonical direct-contract validator, exact
+argv/input gates and shared ID extractor. The latest minimum LOW **PASSED11/11**,
+retry0: changed syntax/lint,30 new direct-contract rows, one new extraction row and
+only the three previously failed aggregate consumer rows. All23 boundaries matched
+2770 sources/8312 originals/196 shared outputs; cleanup VERIFIED. Old26 rows and
+unaffected matrices stayed source-bound and were not replayed. This is offline
+harness proof, not a real full native aggregate.
+Authority: `/private/tmp/tfp-comprehensive-native-aggregate-junit-low-approved-20261013T164200Z/root-check-acceptance.json`.
+
+Installed-source diagnosis traced the native failure to default location-grant
+preparation; its underlying command error remains unproved. Seven explicit empty
+permission maps now preserve the selected flows' existing permission state. The
+actual installed parser/model/Orchestra proof passed through a fake Driver, including
+null/all-allow, distinct all-unset and strict old-format negatives. Its first mapping
+format failure is preserved. Three actual receipt methods and affected syntax passed;
+the canonical graph guard passed79 registrations. Durable full child rows retain
+UNKNOWN and canonical cold-launch receipts preserve exact identity. No native device
+or business pass is inferred. ONE fresh combined correction-only independent judgment
+is pending at `/private/tmp/tfp-comprehensive-current-harness-native-independent-gpt61-sol-xhigh-20261013T165200Z/review.json`.
+
+The five native public/settings/discovery cases, CON014/OPP014 actual saved bytes and
+provider outcomes, TRUST006 persisted MESSAGE reporting, OPP015 real-provider phases,
+Android and screen-reader runtime remain pending. Census79 is registration only.
+Historic OPP031 persistence stays WITHHELD/three unrecoverable reads; historical502
+remains unknown. External production and strict compatible-child gates remain separate.
+No invented inputs, spliced certificate, whole-UI/device signoff or production approval.
+Preserve all originals/caches/states/historyf19 and unrelated moderation/resume/new
+untracked architecture work. Publish only these four scoped root notes.
+
 ## Expanded Web/mobile: new native source accepted; first case setup failed — 13 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
