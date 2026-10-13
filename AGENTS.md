@@ -1,5 +1,53 @@
 # Workspace-Wide Agent Notes
 
+## Expanded Web/mobile: native-origin source accepted; cleanup guard correction active — 14 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Nested source is uncommitted; actual UAT remains **3c008**, release
+**20261011T115439Z-3c008ec4**. This is not a deployment-ready handoff.
+
+The minimum affected zero-model batch **PASSED 3/3 once at22:13:49 UTC on13October**:
+changed test lint, canonical mobile types and only the five formerly failed proof
+rows. Twenty old unit rows were skipped; two earlier transport rows were unselected.
+All seven boundaries matched2,773 sources/9,014 originals/196 outputs, retry0,
+owned cleanup VERIFIED. The original seven-command batch remains FAILED; its five
+command passes and22 unaffected mobile rows were reused without replay.
+Authority: `/private/tmp/tfp-comprehensive-native-origin-failed-five-low-approved-20261013T221300Z/root-check-acceptance.json`.
+
+Independent **edee2a ACCEPTED** the five repository owners, native event/privacy
+contract, bootstrap ordering, optional enrollment and source-bound proofs. The original
+Root arming failure cause remains unresolved; the canonical mock and bounded premise
+correction passed without inventing that old cause. Reviewer before/after matched all
+2,773 sources/9,014 originals/196 outputs and41 additional bindings, checks/runtime0.
+Review: `/private/tmp/tfp-comprehensive-native-origin-independent-sol-xhigh-20261013T221700Z/review.json`.
+
+The phase-zero operator is separately **WITHHELD** for confirmed **PHASE0-CLN-1**:
+Documents restoration can run after app cleanup becomes UNKNOWN, risking a pending
+native receipt write or foreign replacement. Root accepted only a new private-copy
+quiescence gate and actual parent-order offline fixtures before edits. Sole source-only
+SOL Extra High author has300s and executes no checks or runtime:
+`/private/tmp/tfp-comprehensive-native-origin-quiescence-fix-sol-xhigh-20261013T222600Z/root-accepted-proposal.json`.
+Exact delta, minimum new checks and finding-only independent acceptance must precede
+one fresh zero-business-case native-origin observation. No native observation has run.
+A separate read-only current post-Maestro write-gate planner is active; old receipts
+cannot silently admit later generations or writes.
+
+Completed native PRO010 remains **584f5b ACCEPTED** for scoped unavailable/recovery
+UI/assertions/provenance,46 owned steps, retry0, verified cleanup and all four original
+root/reviewer views. API origin/backend actor and settled four-tab recovery remain
+unproved. Do not replay it; four NEW public/settings/discovery cases remain gated.
+Three LOCAL PUB025 records remain accepted; three TARGET slots, CON014/OPP014 actual
+saved bytes/provider outcomes, TRUST006 persisted MESSAGE, OPP015 real-provider phases,
+Android, screen-reader runtime and broader UI discovery remain incomplete.
+
+Hourly fallback **continue-tfp-gap-closure is ACTIVE**; preserve the exact owned
+12-hour idle-sleep hold. Use included usage, SOL high reasoning and zero-model routine
+execution; no duplicate healthy owners or unchanged backend attempts. Historic OPP031
+persistence stays WITHHELD with three unrecoverable reads; historical502 stays unknown.
+Strict compatible-child and external production gates remain separate. Preserve every
+original/cache/state/historyf19 and unrelated moderation/resume/architecture work.
+Only these four scoped root notes publish; no product publication or whole-UI signoff.
+
 ## Expanded Web/mobile: new native-origin checks collected; grouped proof RCA active — 14 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
