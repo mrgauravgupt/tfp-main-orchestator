@@ -1,5 +1,56 @@
 # Workspace Memory for Future Agents
 
+## Expanded Web/mobile: new native-origin checks collected; grouped proof RCA active — 14 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Current nested changes remain uncommitted; actual UAT stays **3c008**, release
+**20261011T115439Z-3c008ec4**. No deployment-ready or whole-native handoff is claimed.
+
+The included-window source finisher completed within441.39s/600, source checks0.
+Root separately caught a cross-owner handoff: canonical readiness deleted the two
+files the diagnostic reader needed. A bounded source-only correction completed
+within192.57s/300, retaining the handshake only on successful explicitly enrolled,
+backed-up diagnostics. Ordinary/failure/fatal cleanup remains; six new native-filesystem/
+Bash fixture methods were added. All older failures and candidate records remain.
+Root adopted exactly five repository owners after byte-reversal/hash inspection.
+
+The actual minimum zero-model batch **FAILED at21:54:19 UTC on13October** after
+collecting ALL7 commands, retry0/unrun0: five passed, new mobile proof and types failed.
+Private static-admission/receipt/restoration five methods and enrollment/readiness
+ten methods passed, with native commands modeled or blocked. Changed Bash/Python
+syntax and scoped lint passed. The mobile proof recorded22 passed and5 failed rows;
+types reported two new test-owner diagnostics. All15 boundaries matched2773 sources/
+8981 originals/196 outputs; every owned cleanup VERIFIED. Authority:
+`/private/tmp/tfp-comprehensive-native-http-origin-low-approved-20261013T215200Z/execution-status.json`.
+These are source/fixture results, not native API-origin or business passes.
+
+ONE bounded read-only SOL Extra High RCA is grouping the four unsuccessful-completion
+parameter rows, actual RootLayout arming failure and two type diagnostics before a
+minimum proposal. No edits/checks/probes/runtime by this reader:
+`/private/tmp/tfp-comprehensive-native-origin-mobile-proof-rca-sol-xhigh-20261013T220000Z/root-authorization.json`.
+Reuse the five passed commands and22 unaffected rows; no blind proof rerun or weakened
+payload/cleanup/bootstrap assertions. Independent source judgment and a separately
+authorized zero-business-case observation remain required before origin acceptance.
+A separate current post-Maestro ownership/write gate is still pending.
+
+Completed native PRO010 remains **584f5b ACCEPTED** for scoped UI/assertions/provenance,
+46 owned steps, retry0, verified cleanup and ALL4 root/reviewer original views.
+API origin/backend actor and settled four-tab recovery paint remain withheld.
+Do not replay that completed case; four NEW public/settings/discovery cases stay gated.
+Original source-author capacity rejection, planner bound failures, failed preparations
+and all old snapshots/caches/states retain their actual labels.
+
+Hourly fallback **continue-tfp-gap-closure is ACTIVE**. Resume newest checkpoint and
+atomic states; avoid duplicate owners or unchanged capacity attempts. Mac on/Codex
+open and the owned12-hour idle-sleep hold support unattended local continuation.
+Three LOCAL PUB025 records remain accepted; three TARGET slots, CON014/OPP014 saved
+bytes/provider outcomes, TRUST006 persisted MESSAGE, OPP015 real-provider phases,
+Android, screen-reader runtime and broader discovery remain incomplete. The Android
+file-only inventory is not current-bundle/device admission. Historic OPP031 persistence
+WITHHELD/three unrecoverable reads, historical502 unknown, strict compatible-child and
+external production gates remain. Preserve all originals/historyf19 and unrelated
+moderation/resume/architecture work; publish only four scoped root notes.
+
 ## Expanded Web/mobile: included-window source resume; native pass retained — 14 October 2026
 
 The expanded task remains active, excluding **OAuth, OTP and email use cases**.
