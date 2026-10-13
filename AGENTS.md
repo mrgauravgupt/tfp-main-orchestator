@@ -1,5 +1,75 @@
 # Workspace-Wide Agent Notes
 
+## Expanded Web/mobile: fatal ordering accepted; native authorization rebound pending review — 13 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Nested changes remain uncommitted; actual UAT remains **3c008**, release
+**20261011T115439Z-3c008ec4**. This is not a deployment-ready handoff.
+
+Combined independent **438ee4** accepted the scoped JUnit/direct-contract and native
+permission/receipt source and offline evidence, then withheld aggregate ordering.
+Finding-only **b9f27d** accepted the actual live two-file fatal-last resolution.
+Stable artifact keys, membership and nonfatal order remain. The actual live code is
+a separately accepted implementation, not an exact adoption of the private170200
+candidate. Its saved check provenance remains qualified: the root put the Node
+selection option after the filename, so all30 old contract rows plus the new row
+ran, first with one new-row failure and then31 passes. The earlier failed host-Node
+syntax/CLI and Corepack attempts remain. Do not call this failed-only selection,
+no-replay proof, exact saved exit/freeze evidence or aggregate runtime acceptance.
+Root reconciliation:
+`/private/tmp/tfp-comprehensive-native-pro010-current-resume-prepared-20261013T180000Z/root-fatal-order-source-reconciliation.json`.
+
+The first fresh preparation ended **FAILED before native initialization**, with the
+runtime directory empty: three external bindings entered the repository-only inner
+envelope. All three outer boundaries matched2770 sources/8676 originals/196 outputs;
+the supervised child cleanup was VERIFIED. Source-led SOL RCA accepted only a
+metadata correction. A NEW scope keeps all2770 outer bindings and passes2767
+repository sources plus196 outputs to the unchanged strict inner guard. Both the
+original failed preparation and consumed outer once-state remain immutable.
+Proposal **8ec642**:
+`/private/tmp/tfp-comprehensive-native-pro010-envelope-rca-sol-xhigh-20261013T180600Z/proposal.json`.
+
+Fresh read-only owner admission passed with approximately3.7GiB free, exact manual
+FE3000/API4000 ownership, free reserved ports and no booted/overlapping native owner.
+Exactly ONE previously undispatched native PRO010 scope was then dispatched through
+the retained zero-model executor, with fresh runtime/once ownership and retry0.
+Actual atomic authority:
+`/private/tmp/tfp-comprehensive-native-pro010-inner-envelope-prepared-20261013T181000Z/execution-status.json`;
+native authority is its `runtime/status.json` when created. That scope then ended
+FAILED before any owned native command: its older eight-file authorization still
+expected the superseded generic-runner hash. App/Metro/files/preference/simulator
+cleanup were NOT_APPLICABLE; its source-freeze cleanup remains UNKNOWN. The outer
+child was reaped with VERIFIED process cleanup. Preserve those separate claims.
+The exact-exit watcher is terminal; no native case or device boot occurred.
+
+A grouped saved SOL source audit found exactly one stale legacy binding, zero
+refinement mismatches, and exact2767 inner sources/196 outputs. The reader exceeded
+its bound and was interrupted before finalization; its saved audit is separately
+root accepted, not a completed model result. A NEW immutable authorization copy
+updates only the already independently accepted `13b8a127` generic-runner hash.
+The new private operator changes only its authorization path/hash constants.
+Whole-operator byte reversal, changed syntax and all eight actual bindings passed
+through a zero-model routine. One finding-only independent judgment is pending:
+`/private/tmp/tfp-comprehensive-native-auth-increment-independent-sol-xhigh-20261013T182300Z/review.json`.
+The new `182000Z` scope is PREPARED_ONLY; no dispatch or further runtime occurred.
+
+The existing passive native PID/start-to-loopback4000 observation may corroborate
+the actual transport endpoint only when its true receipt, launch identity, current
+listener/bundle and guest/English evidence are accepted together. It does not prove
+the profile HTTP response, literal hostname or backend actor identity. The saved
+source-only plan exceeded240seconds and remains FAILED_BOUND_EXCEEDED; its grounded
+material is separately reviewable. Missing/false peer evidence leaves later
+consent/legal writes gated. Configured API origin alone is insufficient.
+
+Accepted prior LOCAL PUB0253records, Workspace/CON014, gallery and Home proofs retain
+their original limits. Three PUB025 TARGET slots, five native case outcomes,
+CON014/OPP014 saved bytes/provider destination, TRUST006 persisted MESSAGE, OPP015
+real-provider phases, Android and screen-reader observations remain incomplete.
+Historic OPP031 persistenceWITHHELD/three unrecoverable reads, historical502 unknown,
+strict compatible-child and external production gates remain. Preserve every
+original/cache/state/historyf19 and unrelated moderation/resume/architecture work.
+Only these four scoped root notes publish; no whole-UI/device/production approval.
+
 ## Expanded Web/mobile: two new LOCAL journeys accepted; affected harness checks pass — 13 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
