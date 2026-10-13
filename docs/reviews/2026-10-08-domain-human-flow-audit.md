@@ -1,5 +1,65 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Expanded Web/mobile: native PRO010 accepted; hourly continuation active — 14 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Nested changes remain uncommitted; actual UAT remains **3c008**, release
+**20261011T115439Z-3c008ec4**. This is not a deployment-ready handoff.
+
+The fresh native PRO010 scope **PASSED once at18:25:08 UTC on13October**, retry0,
+with46 owned steps. Required unavailable-profile negatives and native Home recovery
+passed; the conditional OS-open command was skipped because no prompt appeared.
+All app/Metro/files/preference/simulator/freeze/stream and child cleanup was VERIFIED.
+The outer2770 sources/8739 originals/196 shared outputs matched every boundary.
+Root and independent reviewer each personally viewed ALL4 new1206x2622 originals.
+Independent **584f5b ACCEPTED** the scoped UI/assertions/provenance and local guest/
+English claims, findings empty. Root acceptance:
+`/private/tmp/tfp-comprehensive-native-pro010-auth-rebound-prepared-20261013T182000Z/root-native-case-acceptance.json`.
+
+Native HTTP origin and remote backend actor remain **UNPROVED**. The late lsof sample
+was empty; direct fixture HTTP404 is not an app response. Final Home shows only one
+painted tab, so settled four-tab paint remains withheld without a confirmed defect.
+Dirty LOCAL manifest base3c008 does not attest clean publication or deployed UAT.
+This completed PRO010 must not replay. Four NEW public/settings/discovery cases and
+later writes remain gated on current native-origin and ownership evidence.
+
+The exact one-binding private authorization rebind was independently **3c2e82
+ACCEPTED** before that scope. Earlier external-envelope and stale-authorization
+preparations remain failed; their UNKNOWN and NOT_APPLICABLE cleanup claims are not
+reconstructed. Fatal-last source resolution remains b9f27 accepted, with the root's
+31-row option-order replay and incomplete saved execution provenance explicitly
+qualified. No full native aggregate is certified.
+
+A source-derived native HTTP observation proposal is separately root accepted from
+its saved material; its planner exceeded its600s bound and remains FAILED.
+ONE source-only SOL Extra High author is preparing private candidates for DEV+iOS
+listeners armed before Home's existing public request, exact responseURL/status200
+and same-request successful completion, with strict enrollment and three-file
+restoration. No extra request, networking patch, business replay or runtime dispatch.
+Authority:
+`/private/tmp/tfp-comprehensive-native-http-origin-source-sol-xhigh-authorized-20261014T002300Z/root-accepted-proposal.json`.
+Minimum checks and independent source acceptance precede a fresh zero-business-case
+observation. A separate current post-Maestro generation/ownership gate is still
+required before consent/legal writes; a prior receipt cannot silently admit them.
+
+User-requested **hourly thread continuation is ACTIVE**, id
+`continue-tfp-gap-closure`. It resumes the newest checkpoint and atomic states,
+avoids duplicate owners and unchanged capacity failures, uses included usage and
+stays quiet unless progress needs attention. A temporary owned12-hour idle-sleep
+hold supports overnight local work; the Mac must stay on and Codex remain open.
+Its exact private ownership is recorded at
+`/private/tmp/tfp-hourly-local-awake-owner-20261014T001500Z/owned-awake.json`;
+stop only that matching hold on completion, otherwise let it expire.
+
+Three separate LOCAL PUB025 records remain accepted; three TARGET slots are unrun.
+CON014/OPP014 saved bytes/provider outcomes, TRUST006 persisted MESSAGE, OPP015
+real-provider phases, Android, screen-reader runtime and broader UI discovery remain.
+Census79 is registration only. Historic OPP031 persistence remains WITHHELD with
+three unrecoverable reads; historical502 remains unknown. Strict compatible-child
+and external production inputs stay separate. Preserve every original/cache/state/
+historyf19 and unrelated moderation/resume/architecture work. Only four scoped root
+notes publish; no certificate splicing, whole-UI/device signoff or production approval.
+
 ## Expanded Web/mobile: fatal ordering accepted; native authorization rebound pending review — 13 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
