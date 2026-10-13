@@ -1,5 +1,61 @@
 # Workspace-Wide Agent Notes
 
+## Expanded Web/mobile: new native source accepted; first case setup failed — 13 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Expanded nested changes remain uncommitted; actual UAT is still **3c008**, release
+**20261011T115439Z-3c008ec4**. This is not a deployment-ready handoff. Completed
+business cases and unaffected matrices have not been replayed.
+
+The current public/settings lifecycle and eight guest-state/flow owners have
+scoped source acceptance. The visible login marker reflects only an actual
+resolved false session; pending, error and authenticated states remain distinct.
+The new actual JSX-expression discriminator passed two rows. One initial types
+failure was corrected through the existing typed mobile-root convention, with no
+suppression or configuration weakening. Three affected path/types/lint commands
+passed; the minimum second cold-consent guest-flow placement then passed three
+commands. Earlier private methods and unaffected passes stayed source-bound.
+
+The independent reviewer saved explicit final **19f7a7 ACCEPTED** source/check
+judgment before an actual backend delivery failure. Root separately verified the
+saved final judgment and exact current boundaries, including the authoritative
+8,085 original bindings; the review's 8,084 qualification was not silently rewritten.
+The one requested GPT-6.1 SOL Extra High metadata finisher then hit actual model
+capacity without a supplement. Neither model failure is relabeled successful.
+Source acceptance does not prove native marker visibility, actual actor/API origin,
+business persistence, all-module ABI or device readiness.
+
+One fresh, solely selected PRO010 native attempt ended **FAILED at10:16:43 UTC**,
+retry0, before the business case was dispatched. The prior current-JS readiness and
+one new English Home screenshot succeeded, but guest setup failed inside Maestro
+`launchApp` location-permission preparation. Retained JUnit records one failure;
+the setup manifest's passed/exit0 label contradicts that evidence and the parent
+timeout124. It is not accepted as setup success. Every original and consumed
+once-state is preserved.
+Authority: `/private/tmp/tfp-comprehensive-native-pro010-current-prepared-20261013T102200Z/runtime/status.json`.
+
+Native cleanup remains **UNKNOWN for app and simulator**; Metro, files, preference
+and source cleanup were verified. One approved read-only inventory found the selected
+simulator booted and one exact app process with a different launch identity, with no
+reserved Metro/driver listeners. The missing setup-child identity cannot be invented.
+No automatic termination, shutdown or case replay occurred. Source-led permission,
+finalizer and ownership diagnosis continues; manual FE3000/API4000 are preserved.
+The original Home admission **9d0d97** and preference mechanism **a9897e** retain
+their own accepted boundaries.
+
+Two new LOCAL PUB025 operators for Firefox and mobile-Chromium are preparing only;
+their original accepted LOCAL Chromium child is not replayed. Three TARGET slots
+remain gated on current accepted publication/deployment. CON014/OPP014 saved-byte
+and provider outcomes, TRUST006 exact persisted MESSAGE reporting, OPP015 real
+provider gallery phases, Android and screen-reader runtime remain pending. Registered
+79-case census and source/mock proofs are not completed human E2E coverage.
+
+Historic OPP031 persistence remains WITHHELD with three unrecoverable reads;
+historical502 is unresolved. Strict compatible-child and external production inputs
+remain separate. No certificate splicing, invented values, whole-UI/device signoff
+or production approval. Preserve all originals/caches/states/historyf19 and unrelated
+moderation/resume/untracked work. Publish only these four scoped root notes.
+
 ## Expanded Web/mobile: current iOS Home admitted; five new native cases preparing — 13 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
