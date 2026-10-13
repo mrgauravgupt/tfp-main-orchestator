@@ -1,5 +1,60 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Expanded Web/mobile: current source checks accepted; native preference admission under diagnosis — 13 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Current nested changes remain uncommitted; actual UAT remains **3c008**, release
+**20261011T115439Z-3c008ec4**. This is not a deployment-ready handoff. No completed
+business flow, old native case or unaffected matrix was replayed.
+
+The 19-owner Workspace/CON014 lifecycle, generated-name and accessibility source
+claims now have scoped independent acceptance. The resumed combined review **5ccb3f**
+accepted the source/mock/check claims but withheld one title-reentry guard. Its actual
+saved directory is `/private/tmp/tfp-comprehensive-workspace-con014-accessibility-review-resume-sol-xhigh-20261012T164600Z`;
+the earlier checkpoint's additional `-authorized-` segment was a metadata-path error.
+The minimum parsed-title correction then passed four commands and nine new rows,
+with old121 rows excluded. Finding-only independent review **a0a750 ACCEPTED** the
+current static guard, preserving native/business limits. All original failed,
+aborted and backend-interrupted records remain separate.
+
+The first actual zero-case native observation failed on the native defaults diagnostic
+wrapper, before Metro/app launch. Cleanup was VERIFIED. A strict raw-envelope correction
+then passed two affected offline commands: three selected methods and16 negative
+subtests, with the unchanged filesystem method reused. Finding-only **908a214 ACCEPTED**
+the correction, findings empty; all2765 sources/7774 originals/196 outputs matched.
+Review: `/private/tmp/tfp-comprehensive-native-raw-envelope-independent-sol-xhigh-authorized-20261013T014600Z/review.json`.
+This is parser/source acceptance, not current-JS or device proof.
+
+The human freed space; fresh admission measured4.35 GiB and preserved manual FE3000/API4000
+owners, original28 Expo state files, native binaries/frameworks and free reserved ports.
+No original/temp artifact cleanup was required. A separately justified new zero-case
+attempt ended **FAILED at01:55:59Z**, retry0, after34 command steps: the absence check
+passed, but an exit0 preference write did not match app-container readback. Metro
+started; no native app, screenshot or business case executed. Every owned cleanup
+(app/Metro/files/preference/simulator/freeze) was **VERIFIED**. Its consumed once-state
+and all originals remain immutable.
+Authority: `/private/tmp/tfp-comprehensive-native-current-js-admission-approved-20261013T015800Z/runtime/status.json`.
+A bounded source-led SOL Extra High reader is tracing preference-domain ownership and
+retained data before any minimal proposal or further observation:
+`/private/tmp/tfp-comprehensive-native-preference-persistence-rca-sol-xhigh-authorized-20261013T020100Z`.
+No automatic replay, assertion weakening or alternate build/install is authorized.
+
+A source-derived dispatch plan for the four new public/settings cases and separate
+DISC010 is prepared only. It requires current-JS/API-origin/actor admission and
+per-case state/restoration checks; configured manifest origins are not actual bundle
+proof. OPP015 persisted-gallery has a concrete real-provider/readback phase proposal,
+but source and execution are not yet authorized/adopted. CON014, OPP014, TRUST006,
+provider/native persistence and screen-reader observations remain gated. The saved
+file capability remains10 MiB/generated names, not API25 MiB/original filenames or
+provider-displayed-name certification. Accepted PUB025 LOCAL and gallery97d343 remain
+bound to their originals; five PUB025 slots are incomplete.
+
+Historic OPP031 persistence WITHHELD/three unrecoverable reads, underlying502 unknown,
+strict compatible-child, external production and native-device gates remain. No
+certificate splicing, invented inputs, whole-UI/device signoff or production approval.
+Preserve every original/cache/state/historyf19 and unrelated moderation/resume/untracked
+work. Publish only these four root notes; no nested/product publication or deployment.
+
 ## Expanded Web/mobile: affected Workspace checks pass; current independent review resumed — 12 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
