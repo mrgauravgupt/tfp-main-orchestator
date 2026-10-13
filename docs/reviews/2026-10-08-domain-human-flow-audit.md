@@ -1,5 +1,62 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Expanded Web/mobile: current iOS Home admitted; five new native cases preparing — 13 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Nested source is still uncommitted; actual UAT remains **3c008**, release
+**20261011T115439Z-3c008ec4**. No completed business case or unaffected matrix replayed.
+
+The native preference blocker is now resolved within the observed boundary. An
+independent review caught the root's controlled-marker labeling error: it had
+observed the simulator-wide preference file and called it the app container.
+The prior read-barrier candidate remains WITHHELD and unused; the overwritten
+residual status and incorrect interpretation are recorded separately. Original
+physical backups and failed native scopes remain preserved.
+
+The accepted minimum private correction targets the verified app preference path.
+Three focused commands passed once: syntax, three actual temporary-file defaults
+rows and four cleanup-order rows. The controlled discriminator's pre-boot container
+lookup then failed on the simulator's Shutdown state, before boot or marker writes.
+A metadata-bound pre-boot path correction retained the live post-boot identity
+check; its two affected commands and five metadata rows passed. Old passes stayed
+source-bound and were not replayed. Independent judgments e2a638 and fc690d accepted
+only their precise source/check boundaries.
+
+One fresh controlled simulator observation then PASSED with30 owned steps and
+zero retries: the temporary value reached the actual installed app preference
+file, the simulator-wide file stayed unchanged, and every original was restored.
+Independent runtime supplement **a9897e** accepted that mechanism and cleanup.
+The earlier failed scopes and consumed once-states were not replaced.
+
+The subsequent zero-case current-JS admission **PASSED at03:04:03 UTC**, with38
+owned steps, zero retries and all app/Metro/preference/files/simulator/freeze
+cleanup VERIFIED. The current Metro bundle and fresh native readiness handshake
+were captured. Root and independent reviewer each personally viewed the ONE
+original1206×2622 screenshot: English Home, visible EN US, search controls and
+four tabs, with no visible fatal screen. Independent **9d0d97 ACCEPTED** this
+scoped Home admission. Actual API origin, guest actor, other routes, all-module ABI,
+provider/device/business coverage and production readiness remain unproved.
+Authority: `/private/tmp/tfp-comprehensive-native-current-js-admission-prepared-20261013T032300Z/runtime/status.json`.
+Review: `/private/tmp/tfp-comprehensive-native-current-js-independent-sol-xhigh-20261013T033000Z/review.json`.
+
+A source-only private lifecycle candidate is preparing the four NEW public/settings
+cases and separate DISC010 through canonical runners, each with fresh once ownership.
+It must hold its owned device/Metro through the child, account for canonical cold
+relaunch identities, prove visible guest/English and actual local API origin before
+consent/legal writes, then restore owned state. No business case has dispatched.
+Manual FE3000/API4000 remain preserved. Fresh headroom was above3.9 GiB; no original
+artifact cleanup was needed.
+
+Workspace/CON014 source/mock/static claims and title-reentry guard remain accepted.
+CON014, OPP014, TRUST006, persisted-gallery/provider and screen-reader runtime gates
+remain; OPP015 is still a concrete unadopted plan. PUB025 LOCAL and gallery97d343
+remain bound to their original evidence, with five PUB025 slots incomplete.
+Historic OPP031 persistence WITHHELD/three unrecoverable reads, historical502 unknown,
+strict compatible-child and external production gates remain. No invented inputs,
+certificate splicing, whole-UI/device signoff or production approval. Preserve every
+original/cache/state/historyf19 and unrelated moderation/resume/untracked work.
+Only these four root notes publish.
+
 ## Expanded Web/mobile: current source checks accepted; native preference admission under diagnosis — 13 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
