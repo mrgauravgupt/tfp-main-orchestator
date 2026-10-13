@@ -1,5 +1,57 @@
 # Implementation checkpoint — 6 September 2026
 
+## Expanded Web/mobile: included-window source resume; native pass retained — 14 October 2026
+
+The expanded task remains active, excluding **OAuth, OTP and email use cases**.
+Nested changes remain uncommitted; actual UAT stays **3c008**, release
+**20261011T115439Z-3c008ec4**. This is not a deployment-ready handoff.
+
+Native PRO010 remains passed once and independently **584f5b ACCEPTED** within its
+UI/assertion/provenance boundary:46 owned steps, retry0, full recorded cleanup and
+ALL4 originals personally viewed by root and reviewer. Its API origin/backend actor
+and settled four-tab recovery paint remain unproved. Do not replay that completed case.
+Four new public/settings/discovery cases and later writes remain gated.
+
+The original source-only HTTP-origin author saved five repository candidates and
+three private owners, then failed with an actual backend workspace-capacity rejection,
+without final implementation/terminal answer. All16 saved originals are preserved;
+no candidate was adopted, checked or executed. This is not proof of purchased-credit
+availability or included-usage exhaustion. Failure authority:
+`/private/tmp/tfp-comprehensive-native-http-origin-source-sol-xhigh-authorized-20261014T002300Z/root-backend-failure.json`.
+
+The eligible hourly wake took ONE included-window snapshot at21:31:07 UTC on13October:
+3% primary used in a new300-minute window beginning after the failure; weekly32% used.
+Purchased-credit fields were ignored. Root authorized exactly ONE bounded600s requested
+SOL Extra High source-only finisher on NEW copies:
+`/private/tmp/tfp-comprehensive-native-http-origin-source-resume-sol-xhigh-authorized-20261014T030500Z/root-resume-authorization.json`.
+Original2770 sources/8739 artifacts/196 outputs,183 additional originals and16 first
+author files stay protected. No live source edits, checks, device/network execution,
+publication or post-Maestro write admission is authorized by this resume. Actual
+terminal controls continuation; another rejection stops without an unchanged retry.
+
+The Android source planner exceeded its240s bound and was interrupted; its saved
+early proposal is incomplete, not a final accepted model result. It established
+that canonical humanE2e embeds release-mode JavaScript and existing reuse metadata
+does not attest the current dirty source. A separately root-approved zero-model
+file-only inventory passed with two unchanged boundaries, four file rows and two
+APK embedded entries, no adb/emulator/network/build/install/test commands.
+Approximately3.50GiB was free at that sample. Existing APK is a preserved candidate,
+not current Android bundle/device admission.
+`/private/tmp/tfp-comprehensive-android-file-inventory-low-20261014T004000Z/inventory.json`.
+
+Hourly continuation **continue-tfp-gap-closure remains ACTIVE**. It resumes newest
+checkpoint/atomic states and avoids duplicate owners or unchanged backend attempts.
+The owned temporary idle-sleep hold remains bounded12hours; Mac on and Codex open
+are required. Preserve every original/cache/state/historyf19 and unrelated
+moderation/resume/architecture work. Publish only four scoped root notes.
+
+Three LOCAL PUB025 records remain accepted; three TARGET slots, saved-byte/provider
+CON014/OPP014, persisted MESSAGE TRUST006, real-provider OPP015, Android, screen-reader
+runtime and broader UI discovery remain incomplete. Historic OPP031 persistence
+WITHHELD/three unrecoverable reads, unknown historical502, strict compatible-child
+and external production gates stay separate. No certificate splicing, invented
+inputs, whole-UI/device approval, production deployment or readiness promise.
+
 ## Expanded Web/mobile: native PRO010 accepted; hourly continuation active — 14 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
