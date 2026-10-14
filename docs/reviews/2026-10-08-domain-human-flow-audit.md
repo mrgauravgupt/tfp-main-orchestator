@@ -1,5 +1,82 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Expanded Web/mobile: native SET005 setup failed before business; recovery custody correction active — 14 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email delivery use cases**.
+Nested source stays uncommitted; actual UAT remains **3c008**, release
+**20261011T115439Z-3c008ec4**. No deployment-ready or whole-device handoff is claimed.
+
+Original173000 native scope terminal1 at17:28:40 UTC, outer1 at17:28:44 UTC, retries0.
+Canonical guest-English setup exited1 before its manifest was initialized; SET005
+business command never dispatched and no case exit/manifest exists. All three outer
+2,780-source/11,469-original/196-output boundaries matched. Root viewed TWO actual
+regular1206x2622 originals: pre-setup transient ENUS Home/search/four tabs and preflight
+failure downloading100-percent/logo splash. Neither proves setup, settled recovery or
+SET005 outcome; archived Expo backup PNGs are cache custody, not native captures.
+All34 original owned-command receipts/once/status/logs/documents/backups remain.
+Native cleanup is honestly UNKNOWN for local preferences/app/files/project state/
+simulator; coordinator/Metro/preference/frozen/streams are VERIFIED. Old active-note
+text is historical; actual terminal controls. Root exact exec88150 is closed1.
+Authority: `/private/tmp/tfp-comprehensive-native-set005-admission-corrected-prepared-20261014T173000Z/root-failed-setup-observation.json`.
+
+Read-only source RCA saved all four records at586.30s, then final timestamp correction
+exceeded620.97s/600; terminal remains FAILED_BOUND_EXCEEDED. Root separately assessed
+its complete saved material and unchanged2,780/11,645/196 boundaries, never relabeling
+bounded completion. Setup stderr reports CURRENT_GENERATION_COORDINATOR_FAILED; exact
+swallowed assertion remains UNKNOWN. Missing manifest is downstream. Cold launch
+transition/old-process absence/supervised child failure are distinct hypotheses, not
+proved causes or product/Metro regressions. Strict local VERIFIED-before-termination
+and writer gates correctly prevent unsafe restoration/shutdown. No setup/case replay,
+source edit or recovery was performed by the reader.
+Authority: `/private/tmp/tfp-comprehensive-native-set005-setup-failure-rca-gpt61-sol-xhigh-20261014T174300Z/root-observation-proposal-acceptance.json`.
+
+Root accepted ONLY one prospective bounded READ-ONLY recovery admission observation,
+not a mutation or writer grant. First observer source was saved351.20s/360 but wrote
+source after its records-only cutoff; its time-rule failure remains. Root source
+inspection found TWO prospective flaws before any checks/observation: it required
+already-terminated Metro alive, and used unsupervised direct child plumbing. Root
+accepted only verified original Metro cleanup plus exact absence before/after, and
+retained supervised independent-session/filelog/full-child receipts for the same
+three fixed read-only inventories. ONE SOL6.1 Extra High source-only owner corrects
+NEW private copies, bound600s. No process/device observation or recovery has run.
+Current snapshots at recorded boot are never fresh SecureStore readback or local
+VERIFIED restoration. Any later recovery needs separate source/check/independent/
+exact-owner authority; original UNKNOWN remains historical.
+Authority: `/private/tmp/tfp-comprehensive-native-set005-recovery-observer-custody-fix-gpt61-sol-xhigh-20261014T181000Z/root-accepted-proposal.json`.
+
+Separate narrowed legal first-stage proposal431a completed534.57s/600, preserving
+its map-output incident. Root accepted only three additive guest/prefetch/type surfaces
+and NEW3 test owners on private copies. Source author completed768.93s/900, checks0;
+root reconstructed14 exact sequential operations/full reversal and all2,780/11,452/196
+bindings. Strict successful direct raw-null snapshot, opt-in awaited preparation and
+final synchronous pre-fetch fence are prospective generic plumbing. Old store/default
+request semantics/transport/handlers remain; no consumer wiring or current guest fact.
+Unconditional selected legal throw/UI/controller/coordinator remain exact. Candidates
+are unadopted; canonical new-only tests/lint/types and independent judgment await safe
+source/recovery admission. No legal POST/input/capability/persistence or email-delivery
+claim exists. Root metadata append/create encoding corrections changed no source or
+runtime and are preserved separately.
+Authority: `/private/tmp/tfp-comprehensive-native-legal-guest-prefetch-stage-source-gpt61-sol-xhigh-20261014T175000Z/root-private-source-reconciliation.json`.
+
+Independent6392a still ACCEPTED only prior TWO preboot branches/THREE fixture insertions
+and minimum2/2 source/OFFLINE proofs,308.27s/420 and2,780/11,447/196 unchanged. Its
+prospective permission did not certify actual setup. Native two-boot producer remains
+accepted only for SourceCode/fresh HTTP200/observed null-raw exact restoration/100
+receipts/custody/cleanup; independent156d saved material separately root accepted while
+reader626.85s/600 stays FAILED_BOUND_EXCEEDED. No producer guest/business/later-write
+claim. Selected Bash -B corrections and old core proofs stay source-bound; completed
+PRO010584f5b/public HTTP2a2074 and all completed cases must not replay.
+
+Four original settings/discovery business cases remain unrun. Three LOCAL PUB025
+records remain accepted; three TARGET slots, CON014/OPP014 saved bytes/provider,
+TRUST006 persisted MESSAGE, OPP015 real-provider phases, Android, screen-reader runtime
+and broader discovery remain incomplete. Historic OPP031 persistence WITHHELD/three
+unrecoverable reads, historical502 unknown and strict compatible-child/external
+production gates stay separate. No mixed certificate, invented values or production
+approval. Hourly continuation ACTIVE; old12-hour hold expired and matching owner absent.
+Preserve every original/cache/state/historyf19 and unrelated moderation/resume/architecture.
+Only four root notes publish; no nested publication, gitlink or deployment change.
+
 ## Expanded Web/mobile: selected local admission accepted; first original SET005 native case active — 14 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email delivery use cases**.
