@@ -1,5 +1,65 @@
 # Implementation checkpoint — 6 September 2026
 
+## Expanded Web/mobile: selected local admission accepted; first original SET005 native case active — 14 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email delivery use cases**.
+Nested source remains uncommitted; actual UAT stays **3c008**, release
+**20261011T115439Z-3c008ec4**. No deployment-ready or whole-device handoff is claimed.
+
+Finding-only independent6392a completed308.27s/420 and ACCEPTED the TWO selected-local
+preboot parent replacements, THREE additive fixture insertions, actual minimum2/2
+source/OFFLINE checks and eight exact prospective operator copies, findings empty.
+Before/after2,780 sources/11,447 originals/196 outputs matched. Mandatory fresh actual
+canonical setup/native identity/passed manifest/resolved guest-English marker and
+selected ADMITTED receipt remain before case dispatch. Legacy branches, legal hardblock
+and restoration stay exact. Output-discipline and metadata parse incidents remain
+separate; no old image/matrix review or new runtime was performed by that reader.
+Root separately reverified current hashes and accepted its precise source/OFFLINE scope.
+Authority: `/private/tmp/tfp-comprehensive-native-local-pref-admission-independent-gpt61-sol-xhigh-20261014T172600Z/root-source-independent-acceptance.json`.
+
+Fresh zero-model READ-ONLY admission PASSED: four owned inventory commands/cleanup
+VERIFIED, exact manual FE3000/API4000 owners, reserved ports free, selected simulator
+Shutdown,2 native regular fingerprints/1 framework,28 Expo files/18 directories and
+3,061,055,488 free bytes. No boot/app/API/DB/cache/service mutation occurred in preflight.
+After exact root binding, ONE first original-unrun SET005 was dispatched at17:27:28 UTC
+through the retained zero-model durable executor. Native atomic state reached
+ONE_CASE_SETUP_ADMITTED at the single root owner-binding observation17:28:28 UTC;
+terminal/actual case outcome remains pending. Models0/retries0/caseCount1; completed
+PRO010/producer/other business flows never replay. Exact root exec session88150 owns
+exit monitoring; no duplicate watcher or source/service owner may start.
+Authorities: `/private/tmp/tfp-comprehensive-native-set005-admission-corrected-prepared-20261014T173000Z/root-execution-approval.json`
+and that scope's `execution-status.json` plus `runtime/status.json`.
+
+The future case must prove its actual setup, current generation HTTP receipts, actions,
+regular original captures, exact local restoration and full cleanup; source/private
+fixture/zero-producer passes are not a case pass. Inherited selected API-peer status
+wording means fresh native ADMITTED HTTP receipt, not a new lsof socket observation.
+Root personal capture review and one scoped independent original-evidence judgment
+follow terminal completion. DISC010 and legal SET006/SET007 remain unrun. No legal
+write grant is inferred. A narrower first-stage legal guest/prefetch source planner
+works on exactly three prospective surfaces with600s bound; no edits/eval/runtime/
+legal transfer/controller/UI/DB or live adoption is admitted while native owner runs.
+Previous legal300s/600s bound failures and saved material remain distinct.
+
+The actual two-boot producer remains accepted only for current SourceCode/owned Metro,
+fresh HTTP200/same-request completion, observed one-null/one-raw exact restoration and
+100 receipts/custody/cleanup. Independent156d material was separately root accepted
+while reader626.85s/600 stays FAILED_BOUND_EXCEEDED; no producer business/guest/later-write
+claim or screenshot exists. Three selected Bash -B corrections stay accepted/adopted.
+Original backend author failure and ONE included-window finisher351.43s/360/source-only
+result remain preserved. Actual minimum2/2/five stable2,780/11,426/196 boundaries and
+all cleanup remain accepted within their offline limits; no check replay occurred.
+
+Three LOCAL PUB025 records remain accepted; three TARGET slots, CON014/OPP014 saved
+bytes/provider outcomes, TRUST006 persisted MESSAGE, OPP015 real-provider phases,
+Android, screen-reader runtime and broader discovery remain incomplete. Historic
+OPP031 persistence WITHHELD/three unrecoverable reads, historical502 unknown and strict
+compatible-child/external production gates remain separate. No mixed certificate,
+invented values or production approval. Hourly continuation is ACTIVE; old12-hour hold
+expired and its owner was absent. Preserve all originals/caches/states/historyf19 and
+unrelated moderation/resume/architecture work. Only four scoped root notes publish;
+no nested publication, parent gitlink or deployment change. Included usage only.
+
 ## Expanded Web/mobile: selected local admission checks pass; independent closure pending — 14 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email delivery use cases**.
