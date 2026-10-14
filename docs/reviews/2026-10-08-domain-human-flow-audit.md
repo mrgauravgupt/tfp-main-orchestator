@@ -1,68 +1,77 @@
 # Opportunity, event, contest and profile human-flow audit
 
-## Expanded Web/mobile: owned ACL observation insufficient; no permission transaction; source-contract RCA active — 15 October 2026
+## Expanded Web/mobile: ACL route blocked; separate untrusted planning diagnostic source active — 15 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email delivery**. Nested
-source remains uncommitted; actual UAT stays **3c008**, release **20261011T115439Z-3c008ec4**.
+source remains uncommitted; UAT stays **3c008**, release **20261011T115439Z-3c008ec4**.
 No deployment-ready, whole-device or full-coverage handoff is claimed.
 
-Native permission-helper minimum225000 remains FAILED22:46:43 UTC: syntax3owners passed;
-all16 NEW methods collected once,4 independent methods passed/12 errored with39 entries.
-Five2,780/11,744/196 boundaries matched, both outer cleanups VERIFIED/retry0. Source-led
-RCA225500 completed294.45s/420, all2,780/11,753/196 unchanged. Installed ABI/type matched;
-historical NULL errno/ordinal was unretained. Root accepted only one prospective NEW
-owned-temp ACL diagnostic, preserving every original/4 independent passes and all strict
-ancestor/absence guards. No source fix or original target permission grant followed.
+Read-only source-contract RCA231000 completed360.84s/480, all2,780 sources/11,783 originals/
+196 outputs unchanged. Installed headers/man plus primary Apple Libc/XNU trace show
+NULL/ENOENT and missing EXTENDED_SECURITY each collapse absent and unsupported/unavailable
+states. Empty ACL text is not absence; successful acl_to_text may leave EINVAL; successful
+rmdir has no public directory-FD nlink0 guarantee. Installed SDK26.0 versus OS26.5.1 means
+upstream-main linkage remains qualified inference. The strict ACL/permission route stays
+BLOCKED, no positive-absence waiver or further probe. Source/output incidents and old
+UNKNOWN receipts remain, no actual target permission was changed.
+Authority: `/private/tmp/tfp-comprehensive-native-acl-null-unlink-source-rca-gpt61-sol-xhigh-20261014T231000Z/root-blocked-source-assessment.json`.
 
-The diagnostic author230000 completed257.92s/420, source hash15bc4a, checks0. Root inspected
-all source and installed acl_to_text length/NUL contract. Actual zero-model230500 ended
-FAILED at22:59:07 UTC: syntax passed; exactly ONE diagnostic queried TWO newly owned
-objects, directory and regular file, once/retry0. Both actual acl_get_fd_np calls returned
-NULL/errno2. Both fgetattrlist calls returned0/errno0,32-byte buffer and only common
-returned-attributes bit0x80000000, without EXTENDED_SECURITY. Both before/after metadata
-checks matched. No positive ACL-absence sentinel was obtained; no universal ENOENT/NULL/
-missing-attribute waiver is inferred. Observation code reached OBSERVATION_COMPLETE_ONLY,
-but owned-fixture cleanup is UNKNOWN: DIRECTORY_UNLINK_UNPROVED follows successful rmdir
-and the source's strict fd-nlink0 assertion. Do not relabel the diagnostic exit1 as pass.
-All five2,780/11,772/196 boundaries matched, both outer child cleanups VERIFIED. No original
-ancestor/simulator ACL query, permission change, app/device/API/DB action or observer ran.
-Authority: `/private/tmp/tfp-comprehensive-native-owned-acl-observation-low-approved-20261014T230500Z/root-failed-owned-diagnostic-acceptance.json`.
+A final narrow source decision232000 completed254.16s/420, all2,780/11,793/196 unchanged.
+It permits only the CONCEPT of a separate UNTRUSTED_DIAGNOSTIC_ONLY planning consumer
+using unchanged accepted canonical contract.safe_read. That function has no positive
+ACL-absence/exclusive-ancestor promise; successful reads do not authenticate producer,
+exclusive/confidential custody, a consistent six-record set or current SecureStore.
+The failed stricter observer/its generic guard and consumed states remain unchanged.
+New output can NEVER enter accepted native approval/status/receipt/baseline/business
+schemas. Original coordinator restart/new_boot is invalid: it initializes empty state,
+rebaselines and mutates records; original Metro/deadlines are gone. Safe restore-only
+rebinding remains UNRESOLVED and needs separate frozen-original-baseline/current native
+identity/direct raw readback/restoration-before-termination authority. No host file read
+supplies it and no original native cleanup is relabeled.
+Authority: `/private/tmp/tfp-comprehensive-native-canonical-untrusted-diagnostic-plan-gpt61-sol-xhigh-20261014T232000Z/root-source-concept-acceptance.json`.
 
-Root STOPPED further probes/observations. ONE read-only bounded480s SOL6.1 Extra High
-reader now groups actual NULL/returned-mask semantics, absent/empty/unsupported distinction,
-remaining decoder premises and rmdir/fd-link guarantees. Installed headers/man plus PRIMARY
-official Apple Libc/XNU source browsing are allowed; no app/API/provider requests, source
-edits, compiler/tests/import-eval/native calls, permission/cleanup repair or extra model.
-Only a positively grounded minimum source proposal may follow; otherwise save a concrete
-blocked finding. Original errno cannot be retroactively invented and old UNKNOWN cleanup
-is preserved. No automatic repeat diagnostic or blanket security waiver.
-Authority: `/private/tmp/tfp-comprehensive-native-acl-null-unlink-source-rca-gpt61-sol-xhigh-20261014T231000Z/root-authorization.json`.
+ONE requested SOL6.1 Extra High author now has600s/final90records-only on TWO NEW PRIVATE
+owners: fixed separate informational routine and actual-source owned-filesystem/offline
+proofs. Exact canonical safe_read and retained supervised session/log/full-receipt custody
+are reused, six4096-byte reads maximum, fresh fixed five-command owner/container checks
+before AND after, finite240s prospective bound, no globs/fallback/bodycopy/export. Only
+allowlisted ordinal/size/digest/shape/UNTRUSTED_FILE_CLAIM fields may be emitted. Authority,
+nativefact, admission, recovery, current SecureStore, exclusivecustody and oldobserverpass
+are permanently false; original cleanup UNKNOWN. No authored code execution, current
+body read, compiler/test/import-eval, app/device/process/API/DB/chmod/cleanup or extra model
+is admitted to the author. All2,780/11,800/196 originals protected. Root exact source,
+new-only minimum checks/output firewall and DISTINCT runtime approval precede any read.
+No runtime approval or recovery grant exists now.
+Authority: `/private/tmp/tfp-comprehensive-native-untrusted-diagnostic-source-gpt61-sol-xhigh-20261014T233000Z/root-accepted-proposal.json`.
 
-Previous fresh feasibility proved6of6 bounded metadata and FIVE fixed owner/container
-commands, retry0/all cleanup VERIFIED/eleven stable boundaries: selected device Booted,
-exact saved native PID/start, old Metro absent and original container match. Those are
-necessary conditions only, not future admission/raw SecureStore readback/restoration.
-Original173000 setup failed before SET005 business; native local/app/files/project/simulator
-cleanup remains UNKNOWN. All originals/34 receipts/TWO root native views remain. Original
-183000 observer failed before inventories;184000 overbound RCA saved material was separately
-root assessed. Permission source224000 completed633.83s/900/private only with ONE observer
-mode literal and TWO new wrapper/test owners; no runtime approval. Group-use absence is
-unproved, ctime irreversible and crash rollback unguaranteed. Old reader capacity failures,
-one included-window resume371.90s/600 and their evidence boundaries remain distinct.
+Original225000 helper minimum remains FAILED:16 tests collected/39 errors across12methods,
+4 independent passes preserved, syntax3passed/retry0/all5boundaries stable/outer cleanup
+VERIFIED. ONE230500 owned-temp diagnostic remains FAILED22:59:07 UTC: two new objects each
+NULL/errno2, fgetattrlist0/errno0/buffer32/only0x80000000 returned, metadata stable/no positive
+absence. Owned fixture cleanup UNKNOWN after rmdir then unsupported nlink0 assertion;
+both outer cleanup receipts VERIFIED/all5boundaries2,780/11,772/196 stable. No original
+ancestor/simulator ACL query, target chmod or observer dispatch occurred. Every original
+failure/cache/status/once/source remains; no automatic rerun or success reinterpretation.
+Original173000 setup failed before SET005 business; local/app/files/project/simulator
+cleanup remains UNKNOWN,34 receipts/TWO actual root native views preserved. Original183000
+observer failed before inventories;184000 overbound judgment/root separate assessment,
+source224000/private permission proposal, prior capacity failures and one included-window
+resume remain distinct. Earlier6of6 metadata/FIVE owner/container passes were necessary
+historical feasibility only, not current admission or restoration.
 
-Legal six source/test candidates stay private/unadopted/unexecuted; independent judgment
-unfinished after actual included capacity rejection; unconditional legal block exact.
-Accepted two-boot/null-raw100 receipts, Bash cache fixes, PRO010584f5b/public HTTP2a2074
-retain original scopes; no completed case/matrix replay. FOUR original settings/discovery
+Legal six source/test candidates remain private/unadopted/unexecuted, independent judgment
+unfinished after actual included rejection; unconditional legal block exact. Accepted
+two-boot/null-raw100 receipts, selected Bash cache fixes, PRO010584f5b/public HTTP2a2074 keep
+original boundaries; no completed case/matrix replay. FOUR original settings/discovery
 business cases, three PUB025 TARGET slots, CON014/OPP014 saved bytes/provider, TRUST006
-persisted MESSAGE, OPP015 real-provider phases, Android, screen-reader runtime and broader
+persisted MESSAGE, OPP015 provider phases, Android, screen-reader runtime and broader
 discovery remain incomplete. Historic OPP031 persistence WITHHELD/three unrecoverable reads,
 historical502 unknown and compatible-child/external production gates remain separate.
 No mixed certificate, invented inputs or production approval. Hourly continuation ACTIVE;
 old12-hour hold expired/owner absent. Preserve all originals/caches/states/historyf19 and
 unrelated moderation/resume/architecture work. Only four root notes publish; no nested
-publication, parent gitlink or deployment change. Replaced prior latest checkpoint text
-is preserved in this note publisher's before snapshots and prior root commit aa97b4e9.
+publication, parent gitlink or deployment change. Prior latest text is preserved in this
+publisher's before snapshots and prior root commit c920cebf.
 
 ## Expanded Web/mobile: native owner and six-file metadata feasible; private guarded observation source active — 15 October 2026
 
