@@ -1,5 +1,59 @@
 # Workspace-Wide Agent Notes
 
+## Expanded Web/mobile: cache checks pass; partial consumer finding preserved; one included-window review resume — 14 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Nested source remains uncommitted; actual UAT stays **3c008**, release
+**20261011T115439Z-3c008ec4**. No whole-device or deployment-ready handoff is claimed.
+
+The cache author121800 exceeded300s and was interrupted with partial source preserved.
+The direct-human finisher123000 saved full material but exceeded312.08s/300; its terminal
+remains FAILED_BOUND_EXCEEDED. Root separately reconstructed TWO runtime -B insertions
+and THREE synthetic-source/mode/archive-custody operations before checks. It accepted
+saved source material for checks, not bounded author completion. All old failures and
+originals remain immutable; no old test or business case was replayed.
+
+The actual zero-model cache minimum PASSED2/2 once at12:36:32 UTC: three private owners
+compiled and ONE actual-source-derived owned-filesystem discriminator passed. Four
+controlled children distinguish old cache writes from both corrected -B paths; all58
+archived files match bytes/modes, and cleanup was VERIFIED. Five boundaries and current
+2,780 sources/10,674 originals/196 outputs match, retries0. Root-check acceptance:
+`/private/tmp/tfp-comprehensive-native-child-cache-low-approved-20261014T123700Z/root-check-acceptance.json`.
+The earlier parent restoration/P7 minimum remains PASSED2/2, pending independent judgment.
+
+The final incremental reviewer124800 and legal planner125000 both encountered actual
+backend workspace-capacity errors before final review/proposal/terminal. No included
+exhaustion or product failure is inferred from that backend wording. The reviewer left
+a source-confirmed partial finding: selected Bash consumers invoke three coordinator
+prepare/wait-ready commands with -I -S but no -B. Root corroborated their exact source
+locations; no actual historical cache mutation was observed. The zero-only driver
+bypasses those Bash consumers. This partial message is not a final acceptance.
+
+Direct human continuation and ONE read-only included snapshot at15:12:53 UTC showed
+primary3% used in a NEW300-minute window starting15:12:53 UTC, weekly48% used.
+Purchased fields were ignored; no purchase or reset was consumed. Exactly ONE bounded
+GPT-6.1 SOL Extra High finisher resumes the existing source/OFFLINE judgment and narrow
+consumer proposal, without full review or check replay:
+`/private/tmp/tfp-comprehensive-native-generation-final-review-resume-gpt61-sol-xhigh-20261014T151500Z/root-resume-authorization.json`.
+A new private two-boot scope130000 is PREPARED_ONLY_GATED; no preflight, simulator boot,
+app launch or observation ran. Independent judgment, fresh owner/resource admission
+and exact root approval still precede the zero-business observation. SourceCode,
+generation rollover and actual two-key null/raw restoration remain UNOBSERVED.
+
+Completed native PRO010584f5b must not replay. Four NEW settings/discovery cases remain
+unrun; valid legal writes stay blocked pending current guest, owned normalized input,
+POST201/capability/persistence authority. Controlled contact data is not email delivery.
+Original accepted native HTTP2a2074 remains scoped to its original response/cleanup;
+it cannot grant later writes. Three LOCAL PUB025 records remain accepted; three TARGET
+slots, CON014/OPP014 bytes/provider, TRUST006 persisted MESSAGE, OPP015 provider phases,
+Android, screen-reader runtime and broader discovery remain incomplete. Historic OPP031
+persistence WITHHELD/three unrecoverable reads, historical502 unknown and compatible-child/
+external production gates stay separate. No mixed certificate, invented values or
+production approval is claimed. Hourly continuation remains ACTIVE. The old12-hour hold
+expired and its owner was absent. Preserve every original/cache/state/historyf19 and
+unrelated moderation/resume/architecture work. Only four scoped root notes publish;
+no nested publication, gitlink change or deployment.
+
 ## Expanded Web/mobile: generation source accepted; selected restoration fix passes; cache admission correction active — 14 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
