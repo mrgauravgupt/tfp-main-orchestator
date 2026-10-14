@@ -1,5 +1,75 @@
 # Workspace-Wide Agent Notes
 
+## Expanded Web/mobile: cache preservation accepted; fresh native-origin observation active — 14 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Nested source remains uncommitted; actual UAT stays **3c008**, release
+**20261011T115439Z-3c008ec4**. No deployment-ready handoff is claimed.
+
+The bounded GPT-6 SOL Extra High project-state finisher completed; root accepted
+the final three private owners after exact nine-operation reversal and original
+preservation. An earlier non-final handoff was corrected before final acceptance;
+the original interrupted author and its seven partial files remain immutable.
+Minimum zero-model checks **PASSED2/2 once at02:04:04 UTC**, with eleven NEW
+actual-filesystem/parent-order methods, retry0, five stable boundaries2,773 sources/
+9,098 originals/196 outputs and verified cleanup. Old proof rows were not replayed.
+Independent **0764f9 ACCEPTED** source/offline proof and prospective zero-case
+operator source admissibility, subject to fresh root execution admission.
+Review: `/private/tmp/tfp-comprehensive-native-origin-project-state-independent-gpt6-sol-xhigh-20261014T020800Z/review.json`.
+
+The fresh read-only admission **FAILED before native work at02:16:30 UTC**:
+the project-state helper rejected file type/link-count/size. Four read-only process/
+device inventories had verified cleanup; FE3000/API4000 owners were preserved,
+reserved ports were free, selected device Shutdown, and9,122,516,992 bytes were free.
+No simulator boot, app launch, business case or service/cache mutation occurred.
+Original authority: `/private/tmp/tfp-comprehensive-native-http-origin-observation-prepared-20261014T021000Z/read-only-admission.json`.
+
+A bounded read-only RCA then found exactly one current owned regular single-link
+40.759MiB log above the32MiB per-file cap:28 files/18 directories,44,212,055 total
+bytes, zero unsafe entries. Current cause is grounded; the historical failed entry
+identity was not retained and remains inferred. Root independently repeated only
+plain metadata admission and accepted a measured64MiB per-file cap, preserving
+the128MiB total/2,048-entry and all ownership/quiescence/archive/cleanup guards.
+The bounded source-only correction completed on NEW private copies: exactly
+three operations and two appended filesystem discriminator methods, all old bodies
+preserved. Zero-model minimum PASSED2/2 once at02:32:15 UTC, retry0, five stable
+boundaries2,773 sources/9,146 originals/196 outputs and verified cleanup.
+Finding-only independent fcc8db ACCEPTED this measured correction, findings empty;
+root reverified all current bindings. Fresh read-only admission PASSED once:
+28 files/18 directories,9,052,655,616 bytes free, exact manual owners and selected
+native fingerprints, no booted device or reserved listener. The subsequent outer
+dispatcher FAILED at02:40:08 UTC before native initialization: root omitted required
+literal --approval in argv. All three outer boundaries2,773/9,195/196 matched,
+child cleanup VERIFIED, runtime empty, retries0. Its consumed outer once stays.
+Independent fc35e3 accepted only the exact private argument correction. A NEW
+root-approved zero-model scope now owns one zero-business-case native observation;
+actual native status reached PREFERENCE_SET with27 owned steps at02:44:46 UTC.
+Its terminal result and cleanup are pending, not accepted native-origin proof.
+Authority: `/private/tmp/tfp-comprehensive-native-http-origin-observation-cli-corrected-prepared-20261014T024500Z/runtime/status.json`.
+Old failures and consumed once-states remain immutable; no completed case replayed.
+Authority: `/private/tmp/tfp-comprehensive-native-origin-cache-budget-fix-gpt6-sol-xhigh-20261014T022900Z/root-accepted-proposal.json`.
+
+Documents quiescence c5e2de and native observer edee2a remain accepted within their
+source/offline boundaries. No native API-origin observation has run. Completed
+PRO010584f5b must not replay; four NEW settings/discovery cases remain gated.
+The post-Maestro proposal remains unadopted; prior receipts cannot admit later
+generations or writes. The bounded Android source-plan finisher completed179.4s/240;
+the saved release APK cannot attest current dirty source or Android HTTP origin.
+Its private build/device proposal remains unexecuted. The targeted current-generation
+planner saved a proposal, then hit a backend delivery capacity error; that failure
+and saved records are preserved separately. No unchanged model retry or later-write
+admission occurred.
+
+Three LOCAL PUB025 records remain accepted; three TARGET slots, CON014/OPP014 actual
+saved bytes/provider outcomes, TRUST006 persisted MESSAGE, OPP015 provider phases,
+Android, screen-reader runtime and broader discovery remain incomplete. Historic
+OPP031 persistence WITHHELD/three unrecoverable reads and historical502 unknown
+remain separate from future proof. Strict compatible-child and external production
+gates remain. Hourly continuation and the exact bounded12-hour idle-sleep hold remain
+active. Preserve all originals/caches/states/historyf19 and unrelated moderation/resume/
+architecture work. Publish only four root notes; no product publication or whole-UI,
+native-device or production signoff.
+
 ## Expanded Web/mobile: cleanup correction accepted; interrupted project-state source resumed — 14 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
