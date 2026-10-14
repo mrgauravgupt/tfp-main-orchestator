@@ -1,64 +1,68 @@
 # Workspace Memory for Future Agents
 
-## Expanded Web/mobile: private permission helper checks collected; native ACL failure RCA active — 15 October 2026
+## Expanded Web/mobile: owned ACL observation insufficient; no permission transaction; source-contract RCA active — 15 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email delivery**. Nested
-source stays uncommitted; UAT remains **3c008**, release **20261011T115439Z-3c008ec4**.
+source remains uncommitted; actual UAT stays **3c008**, release **20261011T115439Z-3c008ec4**.
 No deployment-ready, whole-device or full-coverage handoff is claimed.
 
-Source-only SOL6.1 Extra High author224000 completed633.83s/900 before records cutoff,
-checks0. Root independently reconstructed ONE observer status0600to0644 literal with
-all other bytes exact, plus TWO new private wrapper/test owners and current2,780/
-11,730/196 preservation. The wrapper proposes a separately approved exact-target FD
-permission transaction; the16 NEW methods use only newly owned temporary filesystem
-and explicit offline child seams. Original target permissions/app state were untouched.
-No runtime approval, source adoption or recovery grant exists. Group-use absence is
-unproved; irreversible ctime and crash-restoration limits are explicit.
+Native permission-helper minimum225000 remains FAILED22:46:43 UTC: syntax3owners passed;
+all16 NEW methods collected once,4 independent methods passed/12 errored with39 entries.
+Five2,780/11,744/196 boundaries matched, both outer cleanups VERIFIED/retry0. Source-led
+RCA225500 completed294.45s/420, all2,780/11,753/196 unchanged. Installed ABI/type matched;
+historical NULL errno/ordinal was unretained. Root accepted only one prospective NEW
+owned-temp ACL diagnostic, preserving every original/4 independent passes and all strict
+ancestor/absence guards. No source fix or original target permission grant followed.
 
-Actual retained zero-model minimum225000 ended FAILED at22:46:43 UTC, retries0/unrun0:
-changed private syntax3owners PASSED; ONE collected functional invocation ran ALL16
-new tests and recorded39 error entries across12 methods, with4 independent methods
-passing. All five2,780-source/11,744-original/196-output boundaries matched; both owned
-child cleanups VERIFIED. First grouped error is acl_get_fd_np returningNULL in actual
-owned-filesystem context construction, rejected as FD_ACL_READ_ERROR. Native errno was
-not retained and its underlying cause is UNKNOWN. No product/native app regression,
-original simulator permission change or observer execution is inferred. Preserve every
-failed original; no automatic rerun or acceptance from outer model/source completion.
-Authority: `/private/tmp/tfp-comprehensive-native-recovery-permission-minimum-low-approved-20261014T225000Z/root-failed-check-acceptance.json`.
+The diagnostic author230000 completed257.92s/420, source hash15bc4a, checks0. Root inspected
+all source and installed acl_to_text length/NUL contract. Actual zero-model230500 ended
+FAILED at22:59:07 UTC: syntax passed; exactly ONE diagnostic queried TWO newly owned
+objects, directory and regular file, once/retry0. Both actual acl_get_fd_np calls returned
+NULL/errno2. Both fgetattrlist calls returned0/errno0,32-byte buffer and only common
+returned-attributes bit0x80000000, without EXTENDED_SECURITY. Both before/after metadata
+checks matched. No positive ACL-absence sentinel was obtained; no universal ENOENT/NULL/
+missing-attribute waiver is inferred. Observation code reached OBSERVATION_COMPLETE_ONLY,
+but owned-fixture cleanup is UNKNOWN: DIRECTORY_UNLINK_UNPROVED follows successful rmdir
+and the source's strict fd-nlink0 assertion. Do not relabel the diagnostic exit1 as pass.
+All five2,780/11,772/196 boundaries matched, both outer child cleanups VERIFIED. No original
+ancestor/simulator ACL query, permission change, app/device/API/DB action or observer ran.
+Authority: `/private/tmp/tfp-comprehensive-native-owned-acl-observation-low-approved-20261014T230500Z/root-failed-owned-diagnostic-acceptance.json`.
 
-ONE bounded420s read-only SOL6.1 Extra High RCA now traces actual retained failure,
-installed Darwin ACL headers/man/source, multiple hypotheses and remaining fixture/
-guard premises together before a minimum proposal. No edits/compiler/tests/import-eval,
-native ACL probe, process/device/network/DB/permission action or extra model. If retained
-source is insufficient it may propose only ONE owned-temp-filesystem ACL observation;
-root must assess before any execution. No blanketNULL/errno allowance/security weakening.
-Reuse the4 independent passes and only rerun failed/invalid-premise methods after exact
-root-reviewed correction; all old native/business/matrix evidence stays untouched.
-Authority: `/private/tmp/tfp-comprehensive-native-fd-acl-failure-rca-gpt61-sol-xhigh-20261014T225500Z/root-authorization.json`.
+Root STOPPED further probes/observations. ONE read-only bounded480s SOL6.1 Extra High
+reader now groups actual NULL/returned-mask semantics, absent/empty/unsupported distinction,
+remaining decoder premises and rmdir/fd-link guarantees. Installed headers/man plus PRIMARY
+official Apple Libc/XNU source browsing are allowed; no app/API/provider requests, source
+edits, compiler/tests/import-eval/native calls, permission/cleanup repair or extra model.
+Only a positively grounded minimum source proposal may follow; otherwise save a concrete
+blocked finding. Original errno cannot be retroactively invented and old UNKNOWN cleanup
+is preserved. No automatic repeat diagnostic or blanket security waiver.
+Authority: `/private/tmp/tfp-comprehensive-native-acl-null-unlink-source-rca-gpt61-sol-xhigh-20261014T231000Z/root-authorization.json`.
 
-Earlier nonmutating feasibility completed6of6 bounded owned single-link metadata and
-FIVE fixed owner/container commands, retries0/all cleanup VERIFIED/eleven boundaries.
-Selected device Booted, exact saved native PID/start, old Metro absent and original
-container matched; NO document bodies or permission operation were read/executed then.
-Those necessary conditions are not a future admission, fresh SecureStore readback,
-restoration or business result. Original173000 setup failed before SET005 case dispatch;
-local/app/files/project/simulator cleanup remains UNKNOWN. Original183000 observer
-failed before all inventories;184000 RCA overbound saved material and original reader
-capacity failures remain distinct. All originals/34 receipts/TWO root native views stay.
+Previous fresh feasibility proved6of6 bounded metadata and FIVE fixed owner/container
+commands, retry0/all cleanup VERIFIED/eleven stable boundaries: selected device Booted,
+exact saved native PID/start, old Metro absent and original container match. Those are
+necessary conditions only, not future admission/raw SecureStore readback/restoration.
+Original173000 setup failed before SET005 business; native local/app/files/project/simulator
+cleanup remains UNKNOWN. All originals/34 receipts/TWO root native views remain. Original
+183000 observer failed before inventories;184000 overbound RCA saved material was separately
+root assessed. Permission source224000 completed633.83s/900/private only with ONE observer
+mode literal and TWO new wrapper/test owners; no runtime approval. Group-use absence is
+unproved, ctime irreversible and crash rollback unguaranteed. Old reader capacity failures,
+one included-window resume371.90s/600 and their evidence boundaries remain distinct.
 
-The one included-window safety-plan resume371.90s/600 and0e771 source plan remain bounded
-source-only. Legal stage six private source/test candidates are still unadopted, checks
-unexecuted and independent judgment unfinished after actual included capacity rejection.
-Unconditional legal blocking remains. Accepted two-boot/null-raw100 receipts, Bash cache
-corrections, PRO010584f5b/public HTTP2a2074 retain original boundaries, no completed case
-replay. FOUR original settings/discovery business cases remain unrun; three PUB025 TARGET
-slots, CON014/OPP014 saved bytes/provider, TRUST006 persisted MESSAGE, OPP015 real-provider
-phases, Android, screen-reader runtime and broader discovery remain incomplete. Historic
-OPP031 persistence WITHHELD/three unrecoverable reads, historical502 unknown and compatible-
-child/external production gates remain separate. No mixed certificate, invented inputs
-or production approval. Hourly continuation ACTIVE; old12-hour hold expired/owner absent.
-Preserve all originals/caches/states/historyf19 and unrelated moderation/resume/architecture.
-Only four root notes publish; no nested publication, parent gitlink or deployment change.
+Legal six source/test candidates stay private/unadopted/unexecuted; independent judgment
+unfinished after actual included capacity rejection; unconditional legal block exact.
+Accepted two-boot/null-raw100 receipts, Bash cache fixes, PRO010584f5b/public HTTP2a2074
+retain original scopes; no completed case/matrix replay. FOUR original settings/discovery
+business cases, three PUB025 TARGET slots, CON014/OPP014 saved bytes/provider, TRUST006
+persisted MESSAGE, OPP015 real-provider phases, Android, screen-reader runtime and broader
+discovery remain incomplete. Historic OPP031 persistence WITHHELD/three unrecoverable reads,
+historical502 unknown and compatible-child/external production gates remain separate.
+No mixed certificate, invented inputs or production approval. Hourly continuation ACTIVE;
+old12-hour hold expired/owner absent. Preserve all originals/caches/states/historyf19 and
+unrelated moderation/resume/architecture work. Only four root notes publish; no nested
+publication, parent gitlink or deployment change. Replaced prior latest checkpoint text
+is preserved in this note publisher's before snapshots and prior root commit aa97b4e9.
 
 ## Expanded Web/mobile: native owner and six-file metadata feasible; private guarded observation source active — 15 October 2026
 
