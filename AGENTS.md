@@ -1,5 +1,58 @@
 # Workspace-Wide Agent Notes
 
+## Expanded Web/mobile: read-only recovery admission failed before inventories; two narrow source judgments active — 14 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email delivery**. Nested
+source remains uncommitted; UAT stays **3c008**, release **20261011T115439Z-3c008ec4**.
+No deployment-ready, whole-device or full-coverage handoff is claimed.
+
+The corrected private recovery observer source completed350.76s/600. Root reconstructed
+12 exact custody operations, retaining the original Metro VERIFIED-absence premise and
+supervised independent-session/log/receipt/deadline handling for three fixed read-only
+inventories. Actual zero-model minimum183000 ended FAILED at18:05:29 UTC: one syntax
+pass, one observer failure, retries0 and all five2,780/11,676/196 boundaries unchanged.
+Every outer child cleanup was VERIFIED. The observer rejected BEFORE all inventories
+and Documents reads: inventoryCount0/documents0/freshSecureStoreReadbackfalse/recovery
+false. Original173000 native local/app/files/project/simulator cleanup remains UNKNOWN;
+SET005 business never ran. No setup, completed case or producer was replayed.
+Authority: `/private/tmp/tfp-comprehensive-native-set005-recovery-observation-low-approved-20261014T183000Z/root-failed-observer-acceptance.json`.
+
+Read-only184000 RCA saved complete static findings but exceeded420.39s/420; its
+operational FAILED_BOUND_EXCEEDED is preserved. Root separately assessed saved material
+and unchanged2,780/11,688/196 bindings. First CURRENT deterministic reject is retained
+status0644 versus expected0600; historical exact swallowed clause remains UNKNOWN.
+All earlier envelopes/hashes and later JSON schemas pass. A separate valid guard also
+rejects one shared simulator data ancestor0775 for both native binaries and Documents.
+The private status-mode-only proposal preserves frozen digest/safe file/ancestor guards
+and does NOT admit an observation, chmod or recovery. A bounded480s SOL6.1 Extra High
+reader now plans only precise shared-ancestor custody/admission alternatives and all
+remaining premises; no process/device scan, source change or mutation.
+Authority: `/private/tmp/tfp-comprehensive-native-recovery-shared-ancestor-plan-gpt61-sol-xhigh-20261014T185000Z/root-authorization.json`.
+
+Private legal stage175000 completed768.93s/900, author checks0. Root reconstructed all
+14 operations across three additive implementation candidates and three NEW test owners;
+old store/default request semantics and unconditional legal block stay exact. A parallel
+bounded600s SOL6.1 Extra High independent reader judges only direct raw-null session
+snapshot, opt-in awaited preparation/final synchronous fetch fence, adapter forwarding
+and meaningful new tests. No canonical adoption/checks, current guest, legal input,
+POST201/capability/persistence or email delivery is inferred. Source candidates remain
+private; native recovery admission remains separate.
+Authority: `/private/tmp/tfp-comprehensive-native-legal-prefetch-private-independent-gpt61-sol-xhigh-20261014T185200Z/root-authorization.json`.
+
+All original setup/status/once/34 receipts/TWO root-viewed native originals/caches and
+all older failures remain. Accepted two-boot producer/null-raw restoration100 receipts,
+selected Bash cache fixes, PRO010584f5b and public HTTP2a2074 retain only their original
+boundaries; no completed business/native/full matrix replay. FOUR original settings/
+discovery business cases remain unrun. Three LOCAL PUB025 records remain accepted;
+three TARGET slots, CON014/OPP014 saved bytes/provider, TRUST006 persisted MESSAGE,
+OPP015 real-provider phases, Android, screen-reader runtime and broader discovery remain
+incomplete. Historic OPP031 persistence WITHHELD/three unrecoverable reads, historical502
+unknown and compatible-child/external production gates stay separate. No certificate
+splicing, invented inputs or production approval. Hourly continuation remains ACTIVE;
+old12-hour hold expired and matching owner absent. Preserve every original/cache/state/
+historyf19 and unrelated moderation/resume/architecture work. Only four root notes
+publish; no nested publication, gitlink or deployment change.
+
 ## Expanded Web/mobile: native SET005 setup failed before business; recovery custody correction active — 14 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email delivery use cases**.
