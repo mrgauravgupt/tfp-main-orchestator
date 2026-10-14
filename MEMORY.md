@@ -1,5 +1,53 @@
 # Workspace Memory for Future Agents
 
+## Expanded Web/mobile: original review capacity failures preserved; one included-window safety-plan resume — 15 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email delivery**. Nested
+source remains uncommitted; actual UAT stays **3c008**, release
+**20261011T115439Z-3c008ec4**. No deployment-ready or whole-device handoff is claimed.
+
+Both original narrow readers185000/185200 encountered actual included-usage-limit
+rejections. The safety planner retained only partial audit/source copy; the legal
+independent reader retained only before-verification. Neither saved a final judgment
+or terminal, and neither is active. Root preserved exact failure classification in
+new records beside their original authorizations. Old active-reader checkpoint text
+is historical. No source adoption, check, runtime, recovery or business pass follows
+from these interrupted readers; all private legal candidates remain unreviewed and
+unexecuted. No unchanged backend attempt, purchase or reset occurred.
+
+ONE eligible hourly read-only included snapshot at22:22:23 UTC on14October showed
+primary4percent used in a NEW300-minute window beginning22:22:23 UTC, weekly79percent.
+Purchased/account/reset-credit fields were ignored. Exactly ONE bounded600s requested
+SOL6.1 Extra High resume now finishes the existing shared-simulator-ancestor safety
+plan from saved partial material. This is read-only static planning, no process/device
+observation, chmod, source fix, import/eval/test, app action or legal write. Final90s
+are records only. Actual terminal controls continuation; another rejection stops.
+Authority: `/private/tmp/tfp-comprehensive-native-shared-ancestor-plan-resume-gpt61-sol-xhigh-20261014T222500Z/root-resume-authorization.json`.
+
+The prior read-only observer183000 still FAILED before inventories/Documents reads:
+syntaxpass1/observerfail1/retry0, all five2,780/11,676/196 boundaries matched and outer
+cleanup VERIFIED. Current static first reject is retained status0644 versus expected
+0600; historical exact swallowed clause stays UNKNOWN. One shared simulator data
+ancestor0775 also fails the preserved strict guard. The earlier184000 saved full RCA
+was separately root assessed while420.39s/420 operational failure stays unchanged.
+No observer replay or permission repair is admitted merely by its one-literal proposal.
+Original173000 setup failed before SET005 business dispatch; native local/app/files/
+project/simulator cleanup remains UNKNOWN, all originals/34 receipts/TWO root views
+preserved. Recovery requires separate concrete source/check/independent/root authority.
+
+Accepted two-boot producer/observed null-raw restoration100 receipts, selected Bash
+cache corrections, completed PRO010584f5b and public HTTP2a2074 retain original boundaries;
+no completed case or unaffected matrix replay. FOUR original settings/discovery business
+cases remain unrun. Three LOCAL PUB025 records remain accepted; three TARGET slots,
+CON014/OPP014 saved bytes/provider, TRUST006 persisted MESSAGE, OPP015 real-provider
+phases, Android, screen-reader runtime and broader discovery remain incomplete. Historic
+OPP031 persistence WITHHELD/three unrecoverable reads, historical502 unknown and strict
+compatible-child/external production gates stay separate. No certificate splicing,
+invented inputs or production approval. Hourly continuation ACTIVE; old12-hour hold
+expired and matching owner absent. Preserve all originals/caches/states/historyf19 and
+unrelated moderation/resume/architecture work. Only four root notes publish; no nested
+publication, parent gitlink or deployment change.
+
 ## Expanded Web/mobile: read-only recovery admission failed before inventories; two narrow source judgments active — 14 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email delivery**. Nested
