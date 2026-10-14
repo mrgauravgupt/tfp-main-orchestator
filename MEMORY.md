@@ -1,5 +1,88 @@
 # Workspace Memory for Future Agents
 
+## Expanded Web/mobile: generation source accepted; selected restoration fix passes; cache admission correction active — 14 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Nested source is uncommitted; actual UAT remains **3c008**, release
+**20261011T115439Z-3c008ec4**. No deployment-ready or whole-device handoff is claimed.
+
+The current native public HTTP child remains independently2a2074 ACCEPTED only for
+its original response/provenance/cleanup boundary. No old image, completed PRO010,
+business case or unaffected matrix was replayed. Current-generation SourceCode,
+two cold boots and exact native null/raw restoration remain UNOBSERVED.
+
+The interrupted fixture author's20 partial operations were preserved with UNKNOWN
+cause and no terminal; they were not called complete. The one direct-human resumed
+GPT-6.1 SOL Extra High finisher completed571.51s/600, eight incremental operations,
+author checks/runtime/live edits0. Root reconstructed both layers exactly. Actual
+zero-model affected private batch PASSED3/3 once at11:37:56 UTC: two failed filesystem
+methods plus P3–P7, seven stable boundaries2,780 sources/10,560 originals/196 outputs,
+all cleanup VERIFIED. Old P4/P5 early-premise passes remain separately WITHHELD.
+Seventeen passed mobile behavior rows and unaffected original methods were reused.
+
+The separate zero-business driver author completed1181.78s/1200, source-only. Root
+reconstructed its three explicit zero-config/operation-denial operations and paired
+only the final trusted-contract hash literal. After all source owners ended, root
+adopted only the two LocalSnapshot type edits; all17 behavior bodies stayed exact.
+The next zero-model batch PASSED4/4 once at11:54:35 UTC: syntax, affected lint,
+canonical mobile types and ten NEW actual driver/coordinator fixture methods.
+All nine boundaries2,780/10,585/196 matched, cleanup VERIFIED, retries0.
+Authority:
+`/private/tmp/tfp-comprehensive-native-generation-zero-typed-low-approved-20261014T115800Z/root-check-acceptance.json`.
+
+Independent33c32 completed552.98s/600 and ACCEPTED the current12 repository consumers,
+strict generation/receipt/controller/coordinator correction, fixture type and paired
+zero-only driver within source/OFFLINE scope. It WITHHELD selected parent
+GEN-PARENT-RESTORE-001: app termination can follow local restoration UNKNOWN. Its
+P7 pass proved document gates, not the required restoration-before-termination order.
+All2,780 sources/10,608 originals/196 outputs matched. The initial oversized cat of
+its authorization is a separately recorded output-discipline incident, not a source
+or runtime action. Review:
+`/private/tmp/tfp-comprehensive-native-generation-combined-independent-gpt61-sol-xhigh-20261014T120000Z/review.json`.
+
+Root accepted only selected-mode local VERIFIED before app/device termination and
+matching P7 unknown-local expectations BEFORE edits. The source author finished
+227.66s/300 with five exact byte operations in two NEW private copies; ordinary
+PRO010/default bytes, contract and coordinator stayed exact. Minimum LOW PASSED2/2
+once: changed syntax and ONLY P7, five stable boundaries2,780/10,633/196, verified
+cleanup/retries0. Its correction-only independent judgment remains pending.
+Authority:
+`/private/tmp/tfp-comprehensive-native-selected-parent-restore-low-approved-20261014T121500Z/root-check-acceptance.json`.
+
+A targeted installed-CPython source assessment then confirmed a prospective cache
+admission gap: both coordinator child argv omit -B; -I does not imply it and ignores
+PYTHON environment options. Conditional import recompilation can write caches in
+preserved dependency directories. No actual past cache mutation was observed. Its
+saved records qualify160s after first observed clock; exact reader receipt time was
+not supplied, so strict180s completion is not claimed. Root separately assessed the
+source findings and accepted only TWO child -B insertions and ONE source-bound owned
+filesystem discriminator before edits. A bounded300s source-only SOL Extra High
+owner works on NEW private copies; no old matrices or cache probes run.
+Authority:
+`/private/tmp/tfp-comprehensive-native-child-cache-fix-gpt61-sol-xhigh-20261014T121800Z/root-accepted-proposal.json`.
+
+The legal pre-write planner resume exceeded its300s bound and was interrupted without
+final proposal/terminal; its before record and root-bound failure remain distinct.
+Existing legal349939 assessment stays source-only. Valid selected legal POSTs remain
+blocked pending actual current guest, owned normalized input, POST201, capability
+lookup and persisted case/audit evidence; no email delivery or no-email runtime claim.
+The future zero-business observation is one scope/two cold boots, caseCount0, mutation0,
+no YAML/setup/business callbacks or circular prior-zero prerequisite. Acceptance,
+fresh owner/resource admission and explicit root approval precede device work.
+Four NEW settings/discovery cases remain unrun; completed native PRO010584f5b must
+not replay. Separate capacity, setup, preparation and original failed batches remain.
+
+Three LOCAL PUB025 records remain accepted; three TARGET slots, CON014/OPP014 saved
+bytes/provider outcomes, TRUST006 persisted MESSAGE, OPP015 real-provider phases,
+Android, screen-reader runtime and broader discovery remain incomplete. Historic
+OPP031 persistence WITHHELD/three unrecoverable reads, historical502 unknown and
+compatible-child/external production gates remain separate. No mixed certificate,
+invented values, whole-UI/device approval or production deployment is claimed.
+Hourly continuation remains ACTIVE. The old12-hour hold expired and its exact owner
+was absent; no renewal or persistent power change. Preserve every original/cache/
+state/historyf19 and unrelated moderation/resume/architecture work. Only four scoped
+root notes publish; no nested publication or gitlink/deployment change.
+
 ## Expanded Web/mobile: collected generation checks preserve valid passes; minimum fixture correction active — 14 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
