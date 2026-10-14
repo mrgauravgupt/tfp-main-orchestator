@@ -1,5 +1,68 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Expanded Web/mobile: selected local admission checks pass; independent closure pending — 14 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email delivery use cases**.
+Nested source remains uncommitted; actual UAT stays **3c008**, release
+**20261011T115439Z-3c008ec4**. No deployment-ready or whole-device handoff is claimed.
+
+The fresh narrow source reader completed418.32s/420 and established TWO selected-local
+preboot mismatches: legacy zero status/screenshot shape versus actual accepted two-boot
+producer, and historical guest-English approval before mandatory fresh canonical setup.
+Its e273 proposal retains legacy branches and selected legal blocking. Root accepted
+only those TWO private parent replacements before authoring; no guest fact was invented.
+Canonical setup still requires resolved guest marker/EN/no logout, exact passed manifest,
+owned native identity and fresh selected ADMITTED receipt before case dispatch.
+
+The first source author encountered actual backend workspace-capacity failure after
+saving the exact parent and partial fixture; no terminal/check/runtime/live adoption.
+All originals and its output-discipline incident remain preserved. Direct human continue
+and ONE read-only included snapshot at17:09:53 UTC showed4% primary used in a new300-minute
+window starting16:47:26 UTC, weekly63% used. Purchased/account/reset-credit fields were
+ignored; no purchase/reset. Exactly ONE requested SOL6.1 Extra High finisher completed
+351.43s/360, retaining parent bytes and adding THREE narrow fixture insertions. Root
+reconstructed both source layers and byte-exact before snapshots/copied inputs; all
+2,780 sources/11,401 originals/196 outputs matched. Author checks/runtime/live edits0.
+Authority: `/private/tmp/tfp-comprehensive-native-local-pref-admission-resume-gpt61-sol-xhigh-20261014T171300Z/root-source-acceptance.json`.
+
+Actual zero-model minimum PASSED2/2 once at17:18:10 UTC: changed private syntax and ONLY
+TWO new source-bound preboot/setup methods, retries0. All five boundaries2,780 sources/
+11,426 originals/196 outputs matched; both owned cleanups VERIFIED. Strict negatives
+cover actual status/judgment pairing, missing/drifted evidence, legacy screenshot/guest
+requirements, legal denial, setup failures/native identity/manifest/current receipt and
+zero case dispatch on rejection. These are owned filesystem/modeled callback proofs,
+not guest/device/business passes. Root metadata filename and keyed-step-map preparation
+errors happened before any repeated check/model/runtime and remain separate records.
+Authority: `/private/tmp/tfp-comprehensive-native-local-pref-admission-low-approved-20261014T172100Z/root-check-acceptance.json`.
+
+ONE narrow independent SOL6.1 Extra High source/OFFLINE judgment is pending, bound420s,
+2,780 sources/11,447 originals/196 outputs; old core/cache/native100 judgments are reused,
+no complete review or image replay. NEW SET005173000 is PREPARED_ONLY_GATED; no preflight,
+boot or case ran. Independent acceptance, fresh owner/resource admission and root exact
+approval precede its mandatory fresh actual setup and first original-unrun local case.
+DISC010 remains unrun; legal SET006/SET007 stay hardblocked. A narrowed legal first-stage
+reader exceeded300s and was interrupted without final proposal; its saved source messages
+and previous153000 overbound5a1 proposal are not implementation/write authority.
+Authority: `/private/tmp/tfp-comprehensive-native-local-pref-admission-independent-gpt61-sol-xhigh-20261014T172600Z/root-review-authorization.json`.
+
+The actual two-boot producer remains accepted only for current SourceCode/owned Metro,
+fresh HTTP200/same-request completion, observed one-null/one-raw exact restoration and
+100 receipts/custody/cleanup. Its independent156d material was separately root accepted
+while reader626.85s/600 remains FAILED_BOUND_EXCEEDED. No producer business/guest/later-write
+claim or screenshot exists. Three selected Bash -B corrections remain independently
+accepted and adopted; no app JS build/publication/deployment change occurred. Completed
+PRO010584f5b/public HTTP2a2074 and every completed case remain preserved, never replayed.
+
+Three LOCAL PUB025 records remain accepted; three TARGET slots, CON014/OPP014 saved
+bytes/provider outcomes, TRUST006 persisted MESSAGE, OPP015 real-provider phases,
+Android, screen-reader runtime and broader discovery remain incomplete. Four original
+settings/discovery cases remain unrun. Historic OPP031 persistence WITHHELD/three
+unrecoverable reads, historical502 unknown and compatible-child/external production
+gates stay separate. No mixed certificate, invented values or production approval.
+Hourly continuation remains ACTIVE; old12-hour hold expired and its owner was absent.
+Preserve every original/cache/state/historyf19 and unrelated moderation/resume/architecture.
+Only four scoped root notes publish; no nested publication or root gitlink/deploy change.
+
 ## Expanded Web/mobile: actual two-boot restoration verified; selected cache correction adopted; local case admission planning — 14 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
