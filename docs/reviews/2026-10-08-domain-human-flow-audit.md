@@ -1,5 +1,67 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Expanded Web/mobile: native owner and six-file metadata feasible; private guarded observation source active — 15 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email delivery**. Nested
+source remains uncommitted; UAT stays **3c008**, release **20261011T115439Z-3c008ec4**.
+No deployment-ready, whole-device or full-coverage handoff is claimed.
+
+The ONE included-window SOL6.1 Extra High safety-plan resume completed371.90s/600 before
+its records cutoff, preserving its initial metadata-output incident. All2,780 sources/
+11,699 originals/196 outputs matched. Saved0e771 proposal rejects a descriptor-only
+writable-ancestor waiver and retains the generic strict guard. It proposes only a
+separately approved exact-owner same-FD0775to0755to0775 transaction plus ONE private
+status0644 literal correction and actual-source filesystem negatives. Ctime cannot be
+restored; group-use absence and crash-proof restoration are never invented. Root accepted
+ONLY nonmutating feasibility first, not chmod/observer/recovery execution.
+Authority: `/private/tmp/tfp-comprehensive-native-shared-ancestor-plan-resume-gpt61-sol-xhigh-20261014T222500Z/root-proposal-feasibility-acceptance.json`.
+
+Actual zero-model fixed-six-entry metadata observation completed0 at22:31:37 UTC:
+6of6 present/regular/owned/single-link/bounded, three2,780/11,706/196 stable boundaries,
+child cleanup VERIFIED, retries0. It read NO document bodies and ran NO process/device
+command, permission operation or observer. Separately approved fresh owner feasibility
+completed0 at22:33:13 UTC: FIVE fixed read-only commands, eleven2,780/11,714/196 stable
+boundaries, all owned cleanups VERIFIED/retry0. Selected device Booted, exact saved
+native PID/start, original Metro absent and original app container match. These current
+necessary conditions do not grant a fresh SecureStore readback, restoration or business
+pass. Original native cleanup remains UNKNOWN. No setup/case/producer was replayed.
+Authority: `/private/tmp/tfp-comprehensive-native-recovery-owner-feasibility-low-approved-20261014T223600Z/root-owner-feasibility-acceptance.json`.
+
+ONE requested SOL6.1 Extra High source-only owner now has900s to create exactly THREE
+NEW PRIVATE owners: old observer with ONE expected-status-mode literal change; fixed
+exact-target descriptor transaction wrapper; meaningful actual-source native-filesystem
+proofs. All other observer bytes and generic guard remain exact; all2,780/11,730/196
+bindings protected. NO authored-source execution/checks/probes/import-eval, native
+inventory, chmod, app/service/DB/cache action or publication is admitted to the author.
+Future runtime needs distinct root approval accepting temporary0020group-write removal
+and irreversible ctime event, fresh no-ACL/exact owner/identity/once/deadline custody,
+minimum new checks and independent acceptance. No such runtime approval exists now.
+Current group dependency remains UNPROVED, never relabeled absent. A success would be
+read-only recorded-boot custody only, not current local restoration or recovery grant.
+Authority: `/private/tmp/tfp-comprehensive-native-recovery-permission-transaction-source-gpt61-sol-xhigh-20261014T224000Z/root-accepted-proposal.json`.
+
+Original185000 safety and185200 legal readers failed actual included capacity; originals
+and partials remain. ONE snapshot22:22:23 UTC showed new300-minute window/primary4percent/
+weekly79percent; purchased/account/reset-credit fields ignored, no purchase/reset or
+unchanged retry. Legal independent judgment is unfinished; its six source/test candidates
+remain private/unadopted/unexecuted and unconditional legal block exact. Original183000
+observer failed before inventories/body reads;184000 RCA420.39s/420 operational failure
+and original173000 setup failure/34 receipts/TWO root native views remain separately
+preserved. SET005 business never dispatched. Local/app/files/project/simulator cleanup
+is still UNKNOWN; no permission/observer proposal repairs historical claims.
+
+Accepted two-boot/null-raw restoration100 receipts, selected Bash cache corrections,
+PRO010584f5b and public HTTP2a2074 retain original boundaries; no completed case/matrix
+replay. FOUR original settings/discovery business cases remain unrun. Three LOCAL PUB025
+records remain accepted; three TARGET slots, CON014/OPP014 saved bytes/provider, TRUST006
+persisted MESSAGE, OPP015 real-provider phases, Android, screen-reader runtime and broader
+discovery remain incomplete. Historic OPP031 persistence WITHHELD/three unrecoverable
+reads, historical502 unknown and compatible-child/external production gates remain
+separate. No certificate splicing, invented inputs or production approval. Hourly
+continuation ACTIVE; old12-hour hold expired/owner absent. Preserve all originals/caches/
+states/historyf19 and unrelated moderation/resume/architecture work. Only four root notes
+publish; no nested publication, gitlink or deployment change.
+
 ## Expanded Web/mobile: original review capacity failures preserved; one included-window safety-plan resume — 15 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email delivery**. Nested
