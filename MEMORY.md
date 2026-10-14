@@ -1,5 +1,63 @@
 # Workspace Memory for Future Agents
 
+## Expanded Web/mobile: passive native evidence retained; exact request mismatch under diagnosis — 14 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Nested source remains uncommitted; actual UAT stays **3c008**, release
+**20261011T115439Z-3c008ec4**. No deployment-ready handoff is claimed.
+
+Independent **0510f7 ACCEPTED** the five-owner passive diagnostic increment and
+explicit transport-test presence guard, findings empty. Exact URL/status/request-ID/
+completion and default opt-in criteria remain strict; summaries contain fixed enums
+and capped counters, no raw URLs, headers, bodies or identities. Four-document,
+hardlink, app-absence, retention and restoration guards remain conservative.
+Original five-command batch remains FAILED (four passes, one types failure).
+Only failed types, changed single-file lint and the changed transport row then
+PASSED3/3 once, retry0, seven stable boundaries2,775 sources/9,487 originals/196 outputs.
+Private eight methods and six unaffected new unit rows were reused without replay.
+Review: `/private/tmp/tfp-comprehensive-native-passive-diagnostic-independent-gpt61-sol-xhigh-20261014T032500Z/review.json`.
+
+Fresh read-only admission passed with8,897,097,728 bytes free, exact manual FE3000/
+API4000 owners, no booted device/reserved listener and verified native fingerprints.
+The separately approved NEW zero-business observation **FAILED at03:42:20 UTC**,
+retry0, after41 owned steps: RECEIPT_WAIT_EXPIRED. Current-JS handshake and one
+PRE_RECEIPT_TRANSIENT_DIAGNOSTIC screenshot were retained. Root personally viewed
+the regular single-link original1206x2622 Home screenshot: EN US, search controls
+and four painted tabs; this does not prove settled recovery, exact HTTP origin or ABI.
+Passive native summary recorded six responses, zero malformed, zero exact target,
+six non-target (four same-origin/non-exact), six unmatched completions, registration
+complete and receipt write not started. Counts do not identify the observed URL.
+Authority: `/private/tmp/tfp-comprehensive-native-passive-observation-prepared-20261014T033000Z/runtime/status.json`.
+Root failure/provenance acceptance: its `root-failed-observation-acceptance.json`.
+
+All app/Metro/four Documents/preference/simulator/stream/project-state/freeze cleanup
+was VERIFIED. Twenty-eight original Expo files were restored and produced outputs
+archived; all three outer boundaries2,775 sources/9,535 originals/196 outputs matched.
+All earlier failures, consumed once-states and captures remain immutable.
+No business case ran and no completed case replayed.
+
+The saved current-generation plan finisher hit an actual included-usage rejection;
+its partial proposal and absent terminal remain distinct. ONE eligible hourly snapshot
+showed a new300-minute included window starting07:40:10 UTC, primary0% used/weekly47%.
+Purchased-credit fields were ignored. Exactly ONE bounded GPT-6.1 SOL Extra High
+retained-evidence RCA now traces the non-target responses and actual Home/API/native
+request owners before any minimum proposal. No further observation or source edit
+is admitted; no unchecked retry or URL/status weakening.
+Authority: `/private/tmp/tfp-comprehensive-native-nontarget-response-rca-gpt61-sol-xhigh-20261014T074400Z/root-authorization.json`.
+
+Completed native PRO010584f5b remains accepted within its original UI/provenance
+boundary and must not replay. Four NEW settings/discovery cases and later writes
+remain gated; the post-Maestro generation proposal is unadopted. Three LOCAL PUB025
+records remain accepted; three TARGET slots, CON014/OPP014 saved bytes/provider,
+TRUST006 persisted MESSAGE, OPP015 real-provider phases, Android, screen-reader runtime
+and broader discovery remain incomplete. Historic OPP031 persistence WITHHELD/three
+unrecoverable reads and historical502 unknown remain separate. Strict compatible-child
+and external production gates are not spliced or invented. Hourly continuation and
+the exact bounded12-hour idle-sleep hold remain active. Preserve all originals/caches/
+states/historyf19 and unrelated moderation/resume/architecture work. Publish only
+four root notes; no product publication, whole-UI/device or production approval.
+
+
 ## Expanded Web/mobile: native-origin observation failed honestly; cleanup and preservation verified — 14 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
