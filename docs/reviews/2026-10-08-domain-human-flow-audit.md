@@ -1,5 +1,60 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Expanded Web/mobile: native-origin observation failed honestly; cleanup and preservation verified — 14 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Nested source remains uncommitted; actual UAT stays **3c008**, release
+**20261011T115439Z-3c008ec4**. No deployment-ready handoff is claimed.
+
+Measured cache-budget correction fcc8db is independently ACCEPTED, findings empty:
+only32→64MiB per-file allowance, exact private helper-hash rebind and two NEW
+filesystem methods. Total128MiB/2,048 entries and ownership/quiescence/archive/
+cleanup guards remain byte-exact. Zero-model2/2 checks passed once, retry0; all
+five boundaries2,773 sources/9,146 originals/196 outputs and cleanup matched.
+Eleven prior project-state methods and old mobile/native matrices were reused.
+
+Fresh read-only admission passed with9.05GB free and preserved manual FE3000/API4000.
+The first outer dispatch failed before native initialization because root omitted
+literal --approval. Original failure/consumed outer state remain. Read-only source
+judgment fc35e3 accepted only the argument correction; that combined reader later
+exceeded180s and was interrupted. Its exact saved CLI claim is separately accepted,
+not a bounded whole-reader completion or final generation plan.
+
+The NEW zero-business native observation ended **FAILED at02:46:09 UTC**, retry0,
+after40 owned steps. Current-JS handshake was recorded, but no native HTTP receipt
+arrived; exact request/event/write/ownership cause is not yet proved. No public
+screenshot was created, no business case ran and no completed case replayed.
+All app/Metro/three Documents/preference/simulator/stream/project-state/freeze
+cleanup is **VERIFIED**, including28 original Expo files restored with generated
+outputs archived. All three outer boundaries2,773 sources/9,214 originals/196
+outputs matched. This is honest failed origin proof, not an app/API regression.
+Authority: `/private/tmp/tfp-comprehensive-native-http-origin-observation-cli-corrected-prepared-20261014T024500Z/runtime/status.json`.
+Root acceptance: its `root-failed-observation-acceptance.json`.
+
+ONE bounded source-led GPT-6 SOL Extra High RCA traces the retained failure,
+actual observer/RootLayout/Home/client/native event owners and targeted original
+diagnostics before a minimum proposal. No further observation/check/runtime or
+source edit is admitted. If retained data is insufficient, propose only the smallest
+passive bounded secret-free discriminator; no speculative fix or blind replay.
+Authority: `/private/tmp/tfp-comprehensive-native-missing-http-receipt-rca-gpt6-sol-xhigh-20261014T024800Z/root-authorization.json`.
+
+Documents c5e2de, project-state0764f9 and observeredee2a source/offline acceptances
+remain bounded. Completed native PRO010584f5b must not replay; four NEW settings/
+discovery cases remain unrun. The post-Maestro generation proposal remains unadopted
+and later writes gated. Its saved targeted plan followed by backend delivery failure
+is preserved separately. Android's bounded source-only staged build/device plan is
+saved; the old release APK cannot certify dirty current source or Android HTTP origin.
+No Android build/adb/install/device runtime ran.
+
+Three LOCAL PUB025 records remain accepted; three TARGET slots, CON014/OPP014 actual
+saved bytes/provider outcomes, TRUST006 persisted MESSAGE, OPP015 real-provider phases,
+Android, screen-reader runtime and broader discovery remain incomplete. Historic
+OPP031 persistence WITHHELD/three unrecoverable reads and historical502 unknown remain
+separate. Strict compatible-child and external production gates are not spliced or
+invented. Hourly continuation and the exact bounded12-hour idle-sleep hold remain active.
+Preserve all originals/caches/states/historyf19 and unrelated moderation/resume/architecture.
+Publish only four root notes; no product publication, whole-UI/device or production approval.
+
 ## Expanded Web/mobile: cache preservation accepted; fresh native-origin observation active — 14 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
