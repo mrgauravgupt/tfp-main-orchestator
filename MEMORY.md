@@ -1,5 +1,69 @@
 # Workspace Memory for Future Agents
 
+## Expanded Web/mobile: current native HTTP boundary accepted; generation prototype withheld for grouped correction — 14 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Nested source is uncommitted; actual UAT remains **3c008**, release
+**20261011T115439Z-3c008ec4**. No deployment-ready or whole-device handoff is claimed.
+
+Independent **2a2074 ACCEPTED** only the new085700 child's completed native public
+HTTP response/provenance/cleanup, findings empty. The actual native receipt records
+HTTP200, same-request successful completion and its sole cache timestamp inside the
+arming/response window. All42 full child receipts, three outer preservation boundaries,
+28 restored Expo originals, four Documents and preference match. Root and reviewer
+each personally viewed the ONE regular1206x2622 original transient Home screenshot.
+The direct-human resumed review completed281.99s/360 with2,777 source/10,330 original/
+196 output bindings unchanged; its original included-limit failure remains separate.
+Root acceptance:
+`/private/tmp/tfp-comprehensive-native-cache-url-original-evidence-resume-gpt61-sol-xhigh-20261014T101200Z/root-native-runtime-acceptance.json`.
+Backend actor/body/provider/persistence, settled recovery, all-module ABI, deployed
+UAT and later-generation writes remain outside this accepted child boundary.
+
+The selected generation/state author finished private candidates in1169.58s/1200,
+checks/runtime/live edits0. Root reconstructed all41 sequential operations across
+ten existing copies and five new files; all originals stayed exact. The accepted
+native observer remains unchanged. Candidate source is NOT adopted.
+
+A bounded source-led GPT-6.1 SOL Extra High RCA completed271.36s/360 and WITHHELD four
+confirmed concerns: weaker copied receipt ID/finite-time/readiness bounds,15-second
+operation ACK versus the proposed2-second window, config read before safe-file
+admission, and missing meaningful selected-write/pending-restore/stale-ACK/coordinator
+identity integration negatives. No product or native runtime failure is inferred.
+RCA/proposal:
+`/private/tmp/tfp-comprehensive-native-generation-guard-rca-gpt61-sol-xhigh-20261014T103800Z/minimal-proposal.json`.
+
+Root accepted only the grouped minimum correction BEFORE edits on NEW private copies:
+reuse the actual accepted validator with real readiness data; operation-specific2s
+expiry; source-bound safe config bootstrap; focused actual-controller/coordinator/
+parent-order fixtures. ONE source-only GPT-6.1 SOL Extra High author owns four changed
+candidates and one new proof owner; the other eleven copies stay exact. Checks,
+source adoption, native cases, builds and deployment remain unexecuted.
+Authority:
+`/private/tmp/tfp-comprehensive-native-generation-guard-fix-gpt61-sol-xhigh-20261014T104600Z/root-accepted-proposal.json`.
+A parallel bounded read-only planner prepares only a prospective zero-business
+generation/SourceCode/two-key restoration driver; no circular zero-proof acceptance
+or completed case replay is allowed. Actual new generation/state restoration remains
+unobserved; all four NEW settings/discovery cases are unrun.
+
+The targeted legal assessment **349939** confirmed optional-auth anonymous guest and
+capability lookup source support. The traced command creates a case/audit row and
+does not send email or enqueue outbox work; required email is stored controlled
+contact data. Live DB triggers/workers were not queried. Actual current guest,
+owned input, POST201, capability lookup and persistence readback remain unproved.
+Valid legal submissions correctly fail closed pending separate pre-write authority;
+local preference proof does not require an invented remote authenticated actor.
+
+Three LOCAL PUB025 records remain accepted; three TARGET slots, CON014/OPP014 saved
+bytes/provider outcomes, TRUST006 persisted MESSAGE, OPP015 real-provider phases,
+Android, screen-reader runtime and broader discovery remain incomplete. Completed
+native PRO010584f5b must not replay. Historic OPP031 persistence WITHHELD/three
+unrecoverable reads, historical502 unknown and compatible-child/external production
+gates remain separate; no mixed certificate is spliced. Hourly continuation is ACTIVE.
+The old bounded idle-sleep hold naturally expired and its exact owner was absent.
+Preserve every original/cache/state/historyf19 and unrelated moderation/resume/
+architecture work. Only four scoped root notes publish; no product publication,
+production approval or readiness promise.
+
 ## Expanded Web/mobile: native HTTP receipt captured; generation and local-state correction preparing — 14 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
