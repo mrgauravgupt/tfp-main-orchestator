@@ -1,5 +1,75 @@
 # Workspace Memory for Future Agents
 
+## Expanded Web/mobile: native HTTP receipt captured; generation and local-state correction preparing — 14 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Nested source remains uncommitted; actual UAT stays **3c008**, release
+**20261011T115439Z-3c008ec4**. No deployment-ready handoff is claimed.
+
+Independent **14c211 ACCEPTED** the exact cache-transform source/offline correction,
+findings empty: eight operations/four candidates, two adopted mobile owners,22 new
+mobile rows and four new private methods; five affected commands passed once.
+Its before/after2,777 sources/10,088 originals/196 outputs and seven installed
+bindings matched. Actual Request behavior is source-bound; modeled tests alone
+were not called native transport proof.
+
+Fresh read-only admission passed with4,034,662,400 bytes free, exact manual FE3000/
+API4000 owners, free reserved ports, selected simulator Shutdown and verified native
+fingerprints. ONE NEW zero-business observation **captured its actual native HTTP
+receipt at09:04:54 UTC**, retry0, after42 owned steps; the outer command passed
+at09:04:58 UTC. Its private receipt records HTTP200 and successful completion of
+the same native request, with the sole13-digit cache timestamp actually present
+inside armedAt..responseAt. The six-counter diagnostic records one target response,
+one matched completion and successful receipt persistence. Prior failed queries
+were not retained, so this new observation does not retroactively prove their bytes.
+Authority: `/private/tmp/tfp-comprehensive-native-cache-url-observation-prepared-20261014T085700Z/runtime/status.json`.
+
+All app/Metro/four Documents/preference/simulator/stream/Expo/freeze cleanup was
+VERIFIED;28 Expo original files were restored and generated outputs archived.
+All three outer boundaries2,777 sources/10,125 originals/196 outputs matched.
+Root checked all42 original owned-child receipts and personally viewed the ONE
+regular1206x2622 screenshot: EN US Home, search and four painted tabs. It remains
+PRE_RECEIPT_TRANSIENT_DIAGNOSTIC, not settled recovery or a device/ABI certificate.
+Root record: that scope's `root-observation-acceptance.json`.
+
+The first scoped original-evidence review hit an actual included-usage limit after
+only its start record; no judgment or personal-view record was produced. The failure
+is preserved at the original091000 scope. Direct human continuation authorized
+ONE bounded GPT-6.1 SOL Extra High resume on a NEW scope, no repeated unchanged loop:
+`/private/tmp/tfp-comprehensive-native-cache-url-original-evidence-resume-gpt61-sol-xhigh-20261014T101200Z/root-review-authorization.json`.
+Independent runtime acceptance remains pending; no later writes are admitted.
+
+The bounded targeted generation/local-state plan completed with zero source/runtime
+actions and unchanged2,777/10,088/196 boundaries. Root independently traced two
+preservation gaps: DISC010's visible English reset leaves an originally absent
+locale key present, and SET005's analytics-false Save creates fresh timestamped
+consent JSON. Visible resets cannot restore original SecureStore presence/raw bytes.
+Proposal: `/private/tmp/tfp-comprehensive-native-current-generation-local-state-plan-gpt6-sol-xhigh-20261014T090000Z/proposal.json`.
+
+ONE source-only GPT-6.1 SOL Extra High author prepares private candidates for only
+the selected generation/write fence and exact two-key snapshot/set-or-delete/direct
+readback restoration before owned app termination. It reuses the strict accepted
+observer and existing consumers, keeping ordinary handlers/store/localization/API/
+SDK unchanged. A captured private coordinator, current native bundle URL/run nonce/
+PID-start, six bounded Documents and conservative writer cleanup bind later generations;
+missing or uncertain evidence fails closed. Author checks/runtime/live edits0.
+Authority: `/private/tmp/tfp-comprehensive-native-generation-state-source-gpt61-sol-xhigh-20261014T101700Z/root-accepted-proposal.json`.
+SourceCode availability and actual per-generation/local restoration remain unobserved;
+legal POST actor/provider/persistence gates are separate from local preferences.
+
+Completed PRO010584f5b must not replay. Four NEW settings/discovery cases, three
+PUB025 TARGET slots, CON014/OPP014 saved bytes/provider outcomes, TRUST006 persisted
+MESSAGE, OPP015 real-provider phases, Android, screen-reader runtime and broader
+discovery remain incomplete. Historic OPP031 persistence WITHHELD/three unrecoverable
+reads and historical502 unknown remain separate; no mixed certificate is spliced.
+The root runtime-review bookkeeping TypeError and corrected envelope supplement are
+preserved separately; compact cleanup strings were reconciled to their original full
+child receipts, without source changes or runtime replay. Hourly continuation is
+ACTIVE; the original12-hour hold has naturally expired and its owner was absent.
+Preserve every original/cache/state/historyf19 and unrelated moderation/resume/
+architecture work. Publish only four root notes; no product publication, whole-UI,
+native-device or production approval.
+
 ## Expanded Web/mobile: effective native URL correction passes; independent acceptance pending — 14 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
