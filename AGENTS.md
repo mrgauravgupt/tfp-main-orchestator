@@ -1,5 +1,61 @@
 # Workspace-Wide Agent Notes
 
+## Expanded Web/mobile: effective native URL correction passes; independent acceptance pending — 14 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Nested source remains uncommitted; actual UAT stays **3c008**, release
+**20261011T115439Z-3c008ec4**. No deployment-ready handoff is claimed.
+
+The six-counter classifier increment is independently **fb6ab4 ACCEPTED**, findings
+empty. Its five-command minimum passed once; old source and evidence were reused.
+A separately admitted zero-business native observation then **FAILED at08:16:08 UTC**,
+retry0, after41 owned steps. It recorded one USERS_PATH_QUERY_VARIANT response, no
+exact target and no receipt. Root personally viewed its ONE original transient
+Home screenshot; that paint does not prove HTTP origin or settled recovery.
+All app/Metro/four Documents/preference/simulator/stream/Expo/freeze cleanup was
+VERIFIED, including28 restored Expo originals; three outer boundaries2,776 sources/
+9,842 originals/196 outputs matched. Its failed scope and consumed once-state remain.
+Authority: `/private/tmp/tfp-comprehensive-native-fixed-class-observation-prepared-20261014T081600Z/runtime/status.json`.
+
+Actual installed whatwg-fetch3.6.20 transforms the ApiClient's no-store GET by adding
+a timestamp cache parameter. Root accepted exactly eight operations/four candidate
+owners, adopting only the observer and one NEW unit owner. Receipt admission permits
+the raw exact enrolled URL or its sole anchored13-digit ASCII cache suffix inside
+the recorded armedAt..responseAt window. Origin/path/query/encoding, status200,
+same native request completion, enrollment/default privacy and cleanup remain strict.
+No networking behavior, API, SDK, UI or business code changed. The old observation's
+actual query bytes were not retained: its cache suffix remains inferred, not proved.
+
+Minimum zero-model checks **PASSED5/5 once at08:46:01 UTC**, retry0: two private syntax
+owners, four NEW private validation methods,22 NEW mobile rows using the actual
+ApiClient and installed Request constructor, two-owner lint and canonical mobile types.
+All11 boundaries2,777 sources/10,064 originals/196 outputs matched; all five owned
+cleanups VERIFIED. Root reverified current hashes and seven installed bindings.
+Authority: `/private/tmp/tfp-comprehensive-native-cache-buster-low-approved-20261014T084500Z/root-check-acceptance.json`.
+ONE bounded independent incremental source/offline judgment is pending at
+`/private/tmp/tfp-comprehensive-native-cache-url-independent-gpt61-sol-xhigh-20261014T085800Z`.
+A new private operator is PREPARED_ONLY_GATED; no new native observation has run.
+Acceptance, fresh resource/owner admission and root approval precede any device work.
+
+A separate bounded read-only planner finishes only the current-generation/write fence
+and exact local preference preservation plan from saved partial proposals. Its source
+and runtime operations remain unadopted. Completed native PRO010584f5b must not replay;
+four NEW settings/discovery cases and later writes remain gated. Three LOCAL PUB025
+records stay accepted; three TARGET slots, CON014/OPP014 saved bytes/provider outcomes,
+TRUST006 persisted MESSAGE, OPP015 real-provider phases, Android, screen-reader runtime
+and broader discovery remain incomplete. No census or offline proof is full coverage.
+
+The earlier319-second RCA exceeded its300-second bound; its saved grounded material
+was separately root assessed, not relabeled bounded completion. Backend, setup,
+preparation and native failures remain distinct. Historic OPP031 persistence stays
+WITHHELD/three unrecoverable reads; historical502 remains unknown. Compatible-child
+and external production gates are not spliced or invented. Hourly continuation is
+ACTIVE. The original12-hour idle-sleep hold naturally expired at06:35:01 UTC and its
+exact owner was VERIFIED_ABSENT at08:07:16 UTC; no renewal or persistent power change.
+Preserve all originals/caches/states/historyf19 and unrelated moderation/resume/
+architecture work. Publish only four root notes; no product publication, whole-UI,
+native-device or production approval.
+
 ## Expanded Web/mobile: passive native evidence retained; exact request mismatch under diagnosis — 14 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
