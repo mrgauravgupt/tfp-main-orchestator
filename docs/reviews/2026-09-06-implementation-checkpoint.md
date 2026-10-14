@@ -1,5 +1,71 @@
 # Implementation checkpoint — 6 September 2026
 
+## Expanded Web/mobile: collected generation checks preserve valid passes; minimum fixture correction active — 14 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Nested source is uncommitted; actual UAT remains **3c008**, release
+**20261011T115439Z-3c008ec4**. No deployment-ready or whole-device handoff is claimed.
+
+Current native public HTTP observation remains independently **2a2074 ACCEPTED**
+only within its original response/provenance/cleanup boundary: HTTP200, same-request
+successful completion, strict cache timestamp,42 owned receipts, verified cleanup,
+and one transient Home original personally viewed by root and reviewer. Backend
+actor/body/persistence, settled recovery and later generations remain outside it.
+Its original included-limit review failure remains separate from the accepted resume.
+
+The generation guard author completed850.51s/900 with checks/runtime/live edits0.
+Root reconstructed17 exact operations and the new integration owner, preserved the
+other copies and adopted12 repository owners FOR CHECKS ONLY. The immutable41-operation
+prototype and all earlier withheld findings remain distinct. Source acceptance and
+native execution have not been inferred from mechanical adoption.
+
+The zero-model minimum **collected all9 commands once**, ending FAILED at11:04:33 UTC:
+**six command passes, three failures, zero retries and zero unrun**. All19 boundaries
+matched2,780 sources/10,454 originals/196 outputs; all9 owned cleanups were VERIFIED.
+Seventeen new mobile rows passed. Python/Bash syntax, affected lint and registry guard
+passed; the registry count is registration, not runtime coverage. Original private
+methods recorded3 passes/2 errors; integration recorded4 passes/2 errors/1 failure;
+canonical mobile types reported one fixture TS2322. Authority:
+`/private/tmp/tfp-comprehensive-native-generation-grouped-low-approved-20261014T111000Z/execution-status.json`.
+
+A bounded read-only GPT-6.1 SOL Extra High RCA completed206.99s/300, all2,780 sources/
+10,476 originals/196 outputs unchanged. Test-owned temporary paths traversed the
+macOS alias before strict file admission. P7 followed the same early rejection into
+UNKNOWN cleanup. P4/P5 recorded negative passes are explicitly WITHHELD because that
+wrong early error can satisfy a broad expectation. The getter needs the existing
+exact two-key LocalSnapshot type, not a value fallback or suppression. Runtime file,
+identity, receipt, deadline and restoration guards remain strict.
+RCA/proposal:
+`/private/tmp/tfp-comprehensive-native-generation-collected-failure-rca-gpt61-sol-xhigh-20261014T111200Z/minimal-proposal.json`.
+
+Root accepted only fixture canonicalization, targeted admission/guard phase markers,
+the fixture type and its exact trusted-contract hash rebind BEFORE edits. ONE source-only
+GPT-6.1 SOL Extra High author works on four NEW private copies, bound600s; no checks,
+live edits or runtime are admitted. Valid17 mobile/P1/P2/original-method/Bash/registry
+passes will be reused; only failed or invalid-premise methods and changed-owner checks
+may execute once after exact root acceptance. Authority:
+`/private/tmp/tfp-comprehensive-native-generation-fixture-fix-gpt61-sol-xhigh-20261014T112000Z/root-accepted-proposal.json`.
+
+A separate bounded source-only GPT-6.1 SOL Extra High owner prepares a NEW zero-business,
+two-cold-boot driver and explicit zero-mode operation denial, using accepted captured
+ownership/phase-zero/project-state conventions. It runs no device, setup/YAML or business
+case and edits no live source. Actual SourceCode, generation rollover and exact native
+null/raw two-key restoration remain unobserved. Combined source/minimum checks,
+independent judgment and fresh root resource/owner admission precede any observation.
+Completed native PRO010584f5b must not replay; four NEW settings/discovery cases remain
+unrun. Valid legal submissions remain blocked until separate current guest/input/
+POST201/capability/persistence authority; controlled contact data is not an email use case.
+
+Three LOCAL PUB025 records remain accepted; three TARGET slots, CON014/OPP014 saved
+bytes/provider outcomes, TRUST006 persisted MESSAGE, OPP015 real-provider phases,
+Android, screen-reader runtime and broader discovery remain incomplete. Historic
+OPP031 persistence WITHHELD/three unrecoverable reads, historical502 unknown and
+compatible-child/external production gates remain separate. No mixed certificate,
+invented inputs, whole-UI/device signoff or production approval is claimed. Hourly
+continuation is ACTIVE; the old12-hour idle-sleep hold naturally expired and its exact
+owner was absent. Preserve every original/cache/state/historyf19 and unrelated
+moderation/resume/architecture work. Only four scoped root notes publish.
+
 ## Expanded Web/mobile: current native HTTP boundary accepted; generation prototype withheld for grouped correction — 14 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
