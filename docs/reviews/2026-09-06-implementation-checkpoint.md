@@ -1,5 +1,74 @@
 # Implementation checkpoint — 6 September 2026
 
+## Expanded Web/mobile: actual two-boot restoration verified; selected cache correction adopted; local case admission planning — 14 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Nested source stays uncommitted; actual UAT remains **3c008**, release
+**20261011T115439Z-3c008ec4**. No deployment-ready or whole-device handoff is claimed.
+
+Independent a9aea accepted the selected parent/P7 restoration guard, two captured
+-B increments and zero-only driver within source/OFFLINE scope. It withheld three
+selected Bash coordinator calls still lacking-B. The bounded source author saved
+exact three insertions in two NEW private copies and one source-derived discriminator;
+author checks/runtime/live edits0. Original collected LOW4 commands remained FAILED:
+three syntax passes, one fixture failure, nine stable boundaries and verified cleanup.
+The first owned bridge failed before Python because installed Bash3.2 lacks BASHPID.
+Source-led RCA completed235.42s/240 and proposed only BASHPID→$$; root accepted before
+a deterministic zero-model one-literal private correction. All argv/ownership/cache/
+custody assertions stayed intact. Only changed compile and the failed method then
+PASSED2/2 once: six native Bash rows, three old cache writes/three corrected absences,
+107 regular unique single-link archive files, five stable boundaries and all cleanup
+VERIFIED. Earlier failed originals remain immutable; three syntax passes were reused.
+
+Finding-only independent closure completed264.80s/420, ACCEPTED/findings empty,
+2,780 sources/10,919 originals/196 outputs unchanged. After every healthy owner ended,
+root adopted ONLY the three flags across two repository Bash owners. Every other byte
+and mode stayed exact; no app JS source, build, publication or deployment changed.
+Authority: `/private/tmp/tfp-comprehensive-native-selected-bash-cache-adoption-20261014T161500Z/root-source-adoption.json`.
+
+ONE separately admitted zero-only native producer PASSED at15:45:41 UTC, outer0
+at15:45:43 UTC, retries0, caseCount0/two cold boots/YAMLsetup0/mutation callbacks0.
+It bypassed all selected Bash paths. Root verified ALL100 original owned command
+receipts, two distinct native boot associations, actual SourceCode/current owned
+Metro association and fresh HTTP200 same-request completion. The first two-key hash
+stayed identical across generations; direct native restoration matched its observed
+one null/one raw string exactly before final app termination. All local/app/Metro/
+coordinator/six Documents/28 Expo originals/preference/simulator/frozen/manual/stream
+cleanup was VERIFIED; three outer boundaries2,780/10,790/196 matched. No screenshot
+was created or viewed; no business pass or arbitrary consent JSON was proved.
+Authority: `/private/tmp/tfp-comprehensive-native-generation-two-boot-prepared-20261014T130000Z/root-original-zero-observation-verification.json`.
+
+The independent original-evidence reader saved156d scoped ACCEPTED/findings empty,
+100 receipts and2,780/11,361/196 unchanged, but exceeded626.85s/600. Root explicitly
+records operational FAILED_BOUND_EXCEEDED, preserving the original terminal's false
+within-bound flag and semantic acceptance state. Its full saved judgment was separately
+root assessed and accepted only for current SourceCode/two generations/firstsnapshot/
+observed null/raw restoration/custody/cleanup. It is NOT bounded reader completion,
+whole-device/business/backend actor/body/persistence approval or later-write grant.
+Authority: `/private/tmp/tfp-comprehensive-native-two-boot-original-evidence-independent-gpt61-sol-xhigh-20261014T160200Z/root-native-runtime-acceptance.json`.
+
+Original-unrun SET005 is PREPARED_ONLY_GATED at162000; no preflight or case ran.
+A bounded targeted SOL6.1 Extra High reader resolves exact legacy zero-interface,
+current API-origin/local guest-English evidence and fresh canonical setup prerequisites
+for SET005 then DISC010. No current raw guest or remote actor is invented; local
+preferences do not require an invented remote authenticated actor. Completed PRO010
+and completed producer observations must not replay. The legal planner153000 exceeded
+600s and was interrupted without terminal; its saved5a1 source plan is separately
+reviewable, not execution authority. Valid legal submissions stay hard blocked pending
+current strict guest, owned normalized input, POST201/capability/persistence proof.
+Controlled contact data is not email delivery; no runtime no-email claim is inferred.
+
+Three LOCAL PUB025 records remain accepted; three TARGET slots, CON014/OPP014 saved
+bytes/provider outcomes, TRUST006 persisted MESSAGE, OPP015 real-provider phases,
+Android, screen-reader runtime and broader discovery remain incomplete. Four original
+settings/discovery cases remain unrun. Historic OPP031 persistence WITHHELD/three
+unrecoverable reads, historical502 unknown and compatible-child/external production
+gates stay separate. No mixed certificate, invented values or production approval.
+Hourly continuation is ACTIVE; old12-hour hold expired and its owner was absent.
+Preserve all originals/caches/states/historyf19 and unrelated moderation/resume/
+architecture work. Only four scoped root notes publish; no nested publication or
+root gitlink/deployment change. Included usage only; no purchased-credit gates/resets.
+
 ## Expanded Web/mobile: cache checks pass; partial consumer finding preserved; one included-window review resume — 14 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
