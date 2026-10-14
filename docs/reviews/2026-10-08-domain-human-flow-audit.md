@@ -1,5 +1,57 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Expanded Web/mobile: cleanup correction accepted; interrupted project-state source resumed — 14 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
+Nested source remains uncommitted; actual UAT stays **3c008**, release
+**20261011T115439Z-3c008ec4**. No deployment-ready handoff is claimed.
+
+Documents quiescence **PHASE0-CLN-1 is resolved and independently c5e2de ACCEPTED**.
+The two-command zero-model minimum passed once: nine NEW actual-parent offline
+methods, five stable boundaries2,773 sources/9,051 originals/196 outputs, retry0,
+cleanup VERIFIED. Missing/replaced identity, failed inspection/termination and a
+modeled late writer prevent Documents restoration; verified absence precedes exact
+three-file restoration. Old proofs were reused without replay.
+Review: `/private/tmp/tfp-comprehensive-native-origin-quiescence-independent-sol-xhigh-20261013T223400Z/review.json`.
+
+A separate installed-source assessment found direct Expo startup can generate
+`.expo/types/router.d.ts`, while the prospective zero-case driver lacked fresh
+project-state preservation. This is a future admission gap, not an allegation of
+past byte changes. The assessment exceeded180s and its failed-bound record remains.
+The accepted private correction saves fresh bytes/modes/membership, preserves produced
+outputs and restores only after verified writer/Metro quiescence. Grounded current
+expo-env/tsconfig/gitignore byte premises are idempotent; no setup suppression is used.
+
+The source-only project-state author and Android planner both hit actual backend
+workspace-capacity errors. Project-state helper/operator/proof candidates were saved,
+but final implementation and source terminal were unfinished. All partial originals
+remain immutable; no checks or native dispatch are admitted from them. Root failure
+records are saved beside both original authorizations.
+
+Direct human continuation and ONE included-window snapshot authorized a new bounded
+**GPT-6 SOL Extra High** source finisher on copied candidates:3% primary used in a new
+300-minute window starting01:51:41 UTC on14October, after those failures. Purchased
+credit fields are ignored; actual execution remains decisive. No unchanged retry loop,
+purchase, reset or silent downgrade. Current authority:
+`/private/tmp/tfp-comprehensive-native-origin-project-state-resume-gpt6-sol-xhigh-20261014T015600Z/root-resume-authorization.json`.
+The finisher executes no checks/runtime/live edits; minimum new offline validation
+and one incremental independent judgment still precede a fresh zero-business-case
+native-origin observation. No new native observation has run.
+
+The post-Maestro source planner saved a prospective per-boot gate but exceeded300s;
+its failure remains. Local consent/discovery writes do not need an invented remote
+actor. Legal POSTs and every later generation remain separately gated. Completed
+native PRO010584f5b must not replay; four NEW settings/discovery cases remain unrun.
+Three LOCAL PUB025 records stay accepted; three TARGET slots, CON014/OPP014 real
+saved bytes/provider outcomes, TRUST006 persisted MESSAGE, OPP015 provider phases,
+Android, screen-reader runtime and broader UI discovery remain incomplete.
+
+Hourly continuation is ACTIVE; the exact owned12-hour idle-sleep hold remains bounded.
+Preserve every original/cache/state/historyf19 and unrelated moderation/resume/architecture
+work. Historic OPP031 persistence WITHHELD/three unrecoverable reads, historical502
+unknown, strict compatible-child and external production gates remain separate.
+Publish only these four root notes; no product publication or whole-UI/device approval.
+
 ## Expanded Web/mobile: native-origin source accepted; cleanup guard correction active — 14 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email use cases**.
