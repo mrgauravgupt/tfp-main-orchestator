@@ -1,5 +1,67 @@
 # Workspace Memory for Future Agents
 
+## Expanded Web/mobile: post-restart minimum independently accepted; private native staging continues — 15 October 2026
+
+The actual incremental GPT6 SOL Extra High review completed15:39:18UTC, ACCEPTED scoped
+source and selected checks/findings0. Root verified original9d01e9e5 review and terminal,
+exact Metro single-expression inverse/all26assertions, seven private runner operation
+groups/full inverses, actual1selectedpass/11siblingsUNRUN plus fixturelint0, seven new
+controlled adapter methods and owned container/command cleanup. Five full frozen groups
+matched before/after review:2,786sources/14,112originals/196outputs/111postrestartinputs/
+264reviewinputs. Earlier mixed checks remain original mixed children; no clean aggregate,
+native/device/business/UAT or readiness certificate follows. Authority:
+`/private/tmp/tfp-native-metro-post-restart-incremental-independent-gpt6-sol-xhigh-20261015T154000Z/root-incremental-acceptance.json`.
+
+Source-only staging recipe160000 binds189 additional regular files, latest897source+
+14metadata snapshot, accepted current Metro45428196/fixture801d2ac, four operator files,
+one Xcode template and exactly two Pod prefix retargets. Native stage omits generated
+.expo/types/router.d.ts; old .expo/.git/cache/app/device state is never copied. Current
+metadata closure passed55,806regular/15,547directories/4,919containedrelative links,
+896,105,844logicalbytes. Dependency body copy/build/offline/toolchain/device proof remain
+unexecuted. The disjoint branch uses staged manifest bindings; the different legacy
+GENERIC_RUNNER_SHA constant is not used there and was not edited.
+
+Initial stage executor author stopped after its records cutoff; olddraft d5b001f1 is
+UNFINISHED/UNEXECUTED, never adopted. Root traced8dependencyfiles with map nlink2, so a
+blanket nlink1 source predicate is inappropriate for those read-only input copies; all
+NEW destination files must still be independent nlink1. One bounded requested SOL6.1
+Extra High saved-draft finisher161500 is active with that grounded scope, no execution.
+A separate GPT6 offline planner hit actual workspace-credit rejection before outputs.
+One included-only snapshot showed ordinaryusageallowed/primary4percent/weekly16percent;
+purchased/account/reset fields ignored, no purchase/reset. Exactly one bounded requested
+SOL6.1 Extra High offline proposal resume162500 is active; actual execution/status wins.
+It cannot certify network denial from environment flags or repair the old SIGABRT proof.
+
+Source-led manual FE/API plan excludes broad start-app.sh force-stop/migration/seed/build
+behavior. Fresh read-only actual TEST database observation succeeded:loopback/dedicated
+TESTname,71of71mappedmodeltables,9currentmigrations/0missing/0unfinished. Original first
+literal User/Profile lookup remains false because actual Prisma maps users/creator_profiles;
+that observation-locator error was corrected in a NEW bounded metadata-only query, no
+DB defect or data modification inferred. ONE approved LOW routine163000 may now start
+API4000 then FE3000 on loopback with restarttries0, pinned installed runtime/offline
+package intent, durable exact-owned process receipts and bounded health/readiness. The
+actual startup FAILED at final listener-group ownership check after APIhealth/ready and
+WebHTTP200 passed. APIgroup cleanup VERIFIED_GROUP_ABSENT; Webleader exited but its group
+cleanup remains UNKNOWN. No startup acceptance or automatic relaunch. One bounded source+
+saved-receipt SOL6.1 Extra High RCA164000 now distinguishes detached-runner behavior from
+foreign ownership and proposes an exact current observation before any cleanup. No native
+case, private build or simulator action dispatched.
+
+Verified external backup/restored13,733boundfiles retain byte/mode custody only; missing
+unbound receipts and old112800/115500/native173000 cleanup remain UNKNOWN. Actual UAT
+stays3c008/release20261011T115439Z-3c008ec4; expanded nested source uncommitted. Only four
+scoped root notes publish, no nested publication/gitlink/deploy. Preserve every NON-RETIRED
+original/cache/state/historyf19 and unrelated moderation/resume/architecture. Authorized
+QA archive retirement remains intentional, no whole tmp deletion or oldawakehold renewal.
+
+Four settings/discovery cases, legal current guest/ownedinput/POST201/capability/persistence,
+three PUB025 TARGET slots, CON014/OPP014 bytes/provider, TRUST006 persisted MESSAGE,
+OPP015providerphases, Android/screenreader/broaderdiscovery and externalproductioninputs
+remain separate. Historic OPP031 persistenceWITHHELD/threeunrecoverablereads and historical
+502unknown remain. OAuth/OTP/emaildelivery excluded. No invented values/certificate
+splicing/production approval/readinesspromise. Hourly job is usage-recovery fallbackONLY;
+healthy active work continues without waiting. Actual terminal states override active text.
+
 ## Expanded Web/mobile: post-restart fixture minimum passes; one incremental judgment active — 15 October 2026
 
 User confirmed restart and mounted `rg`. Verified backup restored13,733 bound files /
