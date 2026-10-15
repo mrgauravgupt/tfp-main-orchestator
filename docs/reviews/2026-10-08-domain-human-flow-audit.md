@@ -1,5 +1,65 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Expanded Web/mobile: workspace tmp is retained QA history; explicit archive retirement decision pending — 15 October 2026
+
+Expanded work remains active, excluding OAuth/OTP/email delivery. Actual UAT remains
+3c008/release20261011T115439Z-3c008ec4; nested source stays uncommitted. No readiness,
+whole-coverage/device or production handoff. Single hourly job is usage fallback only;
+environment blockage does not authorize model/test retries.
+
+The user asked to inspect `tfpphotographers/tmp` for cleanup, believing its9GB unneeded.
+Root metadata inventory found39,511 entries: `qa-archive`21,488 files/9,378,504,704
+allocated bytes, screenshots122,900,480 bytes, db-backups17,195,008 bytes. No tmp path
+is in the CURRENT frozen maps and no tmp file is tracked; neither fact means old
+evidence is disposable. Root traced executable prepare-session moving whole prior
+test-results into pre-session archives. Independent SOL6.1 Extra High source reader
+confirmed ui-capture-progress still discovers archived runs, API telemetry uses
+tmp/vitals-store.json, and db-backups are real backup-script outputs. Equal-size
+trace/report copies are separate report resources, not automatically disposable.
+No file content/payload/secret was printed and no deletion/move/check/runtime ran.
+Authorities: `/private/tmp/tfp-workspace-tmp-cleanup-inventory-20261015T083500Z/inventory.json`
+and `/private/tmp/tfp-workspace-tmp-cleanup-classification-gpt61-sol-xhigh-20261015T083700Z/root-cleanup-classification-acceptance.json`.
+
+The largest archive `tmp/qa-archive/pre-seed-1786870416071` is about4.50GB/4.194GiB,
+6,989 files; its name dates16August2026. Root metadata inspection found only TWO
+Finder files with October mtimes there; other files predateOctober. Current October
+bound evidence is elsewhere. This archive contains old human-local/target traces,
+screenshots/videos/reports and cannot be called scratch. No substantial automatic
+cleanup was accepted. Only top-level .DS_Store12,288 bytes was a conditional harmless
+candidate, insufficient to restore required headroom and left untouched.
+
+A SINGLE self-contained question now awaits explicit user choice: permanently retire
+ONLY that Aug16 archive (~4.5GB), all archived QA runs (~9.38GB), or keep evidence.
+This is necessary because standing instructions say preserve every original/cache/
+state/historyf19; the inspection request does not explicitly override evidence
+retirement. Do not ask again while unchanged or infer deletion approval from elapsed
+time, heartbeat or ordinary continue. A specific approval may supersede retention
+ONLY for its exact path. Fresh path/identity/no-active-use/custody admission, a
+metadata/hash retirement manifest and exact bounded cleanup must precede deletion;
+preserve all other originals, current proofs, caches, DB backups and source dirt.
+No entire tmp deletion, prune, daemon stop, source mutation or production action.
+
+Original isolated97 checks remain96pass/1fail; lint13owners passed;6 fixture TS2367
+errors were source traced. The accepted seven-operation/two-private-fixture correction
+is source-complete and root forward/reverse exact, but failed-only validation has
+NOT run: fresh once scope083000 rejected the3GiB disk premise before any container/
+dependency/check. Disk was2.407GiB then2.294GiB at tmp inventory; cause unestablished.
+Original failed status/once remain immutable. After actual authorized cleanup or
+external free-space recovery, use NEW once/fresh resources to execute ONLY original
+failed Search method/two-fixture lint/canonical mobile types, retaining96 passes and
+original kernel proof. Then ONE incremental independent closure, no old matrix replay.
+
+Native original173000 setup/UNKNOWN local-app-files-project-simulator cleanup and
+blocked recovery/ACL/legal-current-guest/POST201/capability/persistence authority remain.
+Accepted two-boot100/PRO010584f5b/publicHTTP2a2074 never grant later writes. Four new
+settings/discovery cases, three PUB025 TARGET slots, CON014/OPP014 bytes/provider,
+TRUST006 persisted MESSAGE, OPP015 provider phases, Android/screen-reader/broader
+discovery, historic OPP031 withheld persistence and historical502 unknown stay open.
+Strict compatible-child/external production gates remain; no mixed certificate.
+Only four root notes publish; no nested publication/gitlink/deploy. Preserve every
+non-retired original/cache/state/historyf19 and unrelated moderation/resume/architecture.
+No healthy owner/check/watcher or active cleanup exists. Actual terminals win.
+
 ## Expanded Web/mobile: fixture correction complete; failed-only validation blocked by fresh disk headroom — 15 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email delivery**. Continuous
