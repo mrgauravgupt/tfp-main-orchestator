@@ -1,5 +1,58 @@
 # Workspace Memory for Future Agents
 
+## Expanded Web/mobile: trusted-local native source and nine new contract checks pass; independent review active — 16 October 2026
+
+Both new bounded SOL6.1 Extra High source owners completed. The single-build dispatcher
+completed580.36s/600; the explicit local-mode operator/coordinator completed508.77s/600,
+authorchecks0. Root read actual source/test owners, installed supervisor/FD APIs and
+current tool/copy receipt shapes. All25mode operation groups/full byte inverses matched;
+the actual61,204-byte legacy prefix is unchanged. Historic65,605 described a different
+old boundary containing later shared helpers and is NOT claimed unchanged now. Existing
+strict/default clauses remain under their explicit branch; no automatic fallback or
+fabricated universal offline state. Ordinary Apple-service effects remain honestly
+allowed only in the new trusted-local development scope.
+
+Root accepted the exact local Debug Hermes generated-tree replacement in the NEW
+writable workspace after reading installed script/Pods phase and110member metadata /
+6contained-link graph. All1,101tracked source paths remain immutable; only source-derived
+untracked generated namespaces there may change. Original immutable project/tool inputs,
+evidence/caches/old devices and manual TEST services stay protected. No archive extraction,
+Xcode build or native action ran. New prepared runtime-home receipt is deliberately
+UNSATISFIED: six source-derived Maestro dependency files may later be copied into an
+exclusive new home; no broad original-home/cache copy or mutation is authorized now.
+
+Actual NEW zero-model minimum PASSED once: five Python syntax owners and all NINE new
+controlled actual-source contract methods,8build+1mode/coordinator/home/device. Both
+owned commands exited VERIFIED, retries0, all four2,786source/14,112original/196output/
+111postrestart groups matched before/after. Root personally read original logs/counts.
+One earlier root preparation assumed wrong metadata envelope before checks; that failure
+is retained, corrected only to the actual sourceBindings key in new preparation. No
+source/assertion/test weakening or old proof/matrix replay. Authority:
+`/private/tmp/tfp-native-trusted-local-combined-minimum-zero-model-20261015T202200Z/root-check-acceptance.json`.
+
+ONE independent SOL6.1 Extra High reviewer is active,51selected inputs and the four
+frozen groups bound before/after. It judges affected dispatcher/local mode/coordinator,
+inherited two JVM operations and original new controlled evidence ONLY; no new tests,
+builds, images, browser, service/DB or extra models. Its actual review/terminal controls
+continuation. Source/tests passing does not authorize build/artifact/device/business.
+Authority:
+`/private/tmp/tfp-native-trusted-local-combined-independent-gpt61-sol-xhigh-20261015T202600Z`.
+
+After independent acceptance, fresh unchanged resource/manual owner/XcodeSDK admissions
+must precede ONE actual private build. Root artifact inventory/provenance, new simulator
+creation/install, exclusive runtime-home preparation and current-native guest/case gates
+remain separate. No existing device, consumed case or original partial run may replay.
+FE3000/API4000 remain left running from accepted TEST startup; no continuous-health claim.
+Actual UAT stays3c008/release20261011T115439Z-3c008ec4; expanded nested source uncommitted.
+ONLY four root notes publish, no nested/gitlink/deploy. Four settings/discovery flows,
+legal owned input/POST201/capability/persistence, PUB025TARGET3, CON014/OPP014bytes/provider,
+TRUST006persistedMESSAGE, OPP015provider phases, Android/screen-reader/broader discovery
+and external production inputs remain. Historic OPP031 persistenceWITHHELD/three reads
+unrecoverable and historical502unknown unchanged; OAuth/OTP/emaildelivery excluded.
+Preserve all NON-RETIRED originals/caches/states/historyf19/unrelated work. No invented
+input, mixed certificate, production approval or readiness/deadline promise. Hourly
+job is usage-recovery fallback ONLY; healthy active work continues without waiting.
+
 ## Expanded Web/mobile: private local workspace and JVM checks pass; ordinary Mac build scope prepared — 16 October 2026
 
 Human answered no separate runner is available. Root assessed the source-grounded
