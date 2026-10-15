@@ -1,5 +1,86 @@
 # Implementation checkpoint — 6 September 2026
 
+## Expanded Web/mobile: private native source corrected and independently accepted; minimum checks blocked before dispatch — 15 October 2026
+
+Continuous expanded work remains authorized, excluding OAuth, OTP and email delivery.
+Actual UAT remains3c008/release20261011T115439Z-3c008ec4; expanded nested source stays
+uncommitted. No nested publication, gitlink update, deployment, full-coverage/device or
+readiness claim. Hourly continuation is ONLY actual included-usage recovery fallback.
+
+The new disjoint native source owner completed ten PRIVATE files/50 exact operations.
+Root reconstructed every forward/full inverse, preserving the whole legacy parent
+prefix, Release branch and legal hard block. New mode proposes a private project/app,
+new device and Metro8083; no new device, project graph, artifact or native run exists.
+The separate new Python minimum passed2/2 including six actual-source methods. Those
+results reuse their exact original boundary; no old producer/native/business replay.
+
+Original new Linux minimum103200 collected all five commands once: both Bash syntax
+checks and three-owner lint passed; the new TS owner had11pass/1fail and mobile types
+reported four TS1343 errors. All eight2,786-source/13,606-original/196-output boundaries
+matched; nine exact-owned containers and the volume were removed VERIFIED. Independent
+103800 source review withheld only two confirmed findings: undeclared mobile-root
+metro-cache resolution and four import.meta expressions incompatible with current types.
+Root preserved the mixed result and accepted only seven operations/two NEW copies.
+The correction uses Metro's supplied cache factory/actual Expo CLI loader and existing
+CommonJS path anchors, retaining all26 test assertions and every other source byte.
+
+The first finding-only independent reader105000 hit an actual backend workspace-credit
+interruption with no final review/terminal. This is not proof included usage exhausted.
+One later read-only included snapshot showed primary1percent/300-minute window available
+and weekly16percent; purchased-credit fields ignored, no purchase/reset/downgrade. ONE
+bounded requested SOL6.1 Extra High finisher completed231.76s/240. Source verdict ACCEPTED,
+findings0; exact operations/assertions,12 installed inputs and both full boundaries
+matched. Overall minimum/future execution remain WITHHELD. Root separately verified
+the actual review, terminal and current two hashes. Original interrupted reader stays
+unfinished. Authority:
+`/private/tmp/tfp-native-metro-cjs-finding-resume-sol-xhigh-20261015T112500Z/root-source-acceptance.json`.
+
+Corrected failed-only104800 admission failed HOST_AVAILABLE_GATE37percent before any
+container/check. One separately admitted read-only observation later measured39percent,
+warning pressure2, about10.50GB disk; both full boundaries/three owned command exits
+verified. This is measured recovery of the unchanged screen, not exact incremental RAM.
+Root admitted only NEW once112800 with all6GiB host/actual VM/hard limits/critical monitor/
+cleanup gates intact. No threshold was lowered and no old failed status/once was reused.
+
+NEW112800 also FAILED BEFORE all checks/containers, during fixed TCP3000 lsof inspection.
+Root traced the actual handler:20-second deadline, SIGTERM/wait3, SIGKILL/wait3; the final
+TimeoutExpired escaped before its command/PID receipt was appended. This is not simply
+a three-second listener-read timeout. The first manual PID identity passed; both full
+2,786/13,860/196 boundaries matched. Container allocation0; listener-child cleanup is
+UNKNOWN because exact PID/start was not durably recorded. Underlying macOS stall cause
+is UNPROVED. No product failure, automatic retry, timeout increase, manual guard weakening
+or speculative kill follows. Static RCA saved the confirmed receipt-loss direction but
+missed its bound210.54s/180; its operational failure stays intact. Root separately
+assessed the saved source and approved only a two-hunk forward correction plus ONE
+new focused lifecycle proof in NEW private114000. Source owner is active, author checks0;
+actual terminal controls continuation. A separate fixed pgrep later returned1/empty:
+no current lsof match observed, not historical owned cleanup verification. Exact Java17
+home was read-only discovered; no Java/Maestro/native runtime ran. Authority:
+`/private/tmp/tfp-native-metro-cjs-resource-resume-low-approved-20261015T112800Z/root-listener-failure-observation.json`.
+
+The measured private dependency/Pods closure is896,105,844 logical bytes, no copy yet.
+Installed Node24.20.0/Corepack/pinned PNPM10 inputs were read-only bound; private offline
+execution remains unproved. Maestro static material is separately saved while its
+201.76s/180 operational failure remains; no XDG defect established, exact Java/offline
+driver authority incomplete. No generic planner or native runtime grant is inferred.
+
+The corrected Metro method, two-owner lint and mobile types remain UNEXECUTED. Earlier
+11TS/Python/Bash passes and legal/discovery96 valid rows/failed-only3of3/adoption stay
+source-bound and are reused without replay or mixed clean aggregate claims. Native
+SET005 original173000 local/app/files/project/simulator cleanup remains UNKNOWN; no
+old chmod/ACL/recovery loop is reopened. Four settings/discovery cases, legal current
+guest/owned input/POST201/capability/persistence, three PUB025 TARGET slots, CON014/OPP014
+saved bytes/provider, TRUST006 persisted MESSAGE, OPP015 provider phases, Android/
+screen-reader/broader discovery and external production inputs remain separate gates.
+Historic OPP031 persistence stays WITHHELD/three unrecoverable reads; historical502
+cause unknown. No invented inputs, certificate splicing or production approval.
+
+Preserve all NON-RETIRED originals/caches/states/historyf19 and unrelated moderation/
+resume/architecture. Explicitly authorized QA archive retirement remains intentional
+retirement, not preservation. Only four scoped root notes publish; no nested/gitlink/
+deployment. Old awake hold expired/owner absent; no renewal. Actual states supersede
+older active/healthy or no-unresolved-interruption checkpoint text.
+
 ## Expanded Web/mobile: pending checks pass; reviewed legal/discovery corrections adopted; native isolation next — 15 October 2026
 
 Continuous authorized work remains active, excluding OAuth, OTP and email delivery.
