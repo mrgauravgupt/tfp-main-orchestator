@@ -1,5 +1,82 @@
 # Workspace-Wide Agent Notes
 
+## Expanded Web/mobile: continuous work resumed; hourly usage fallback updated; Docker engine ready — 15 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email delivery**. The user
+clarified that hourly continuation is ONLY a fallback after actual included-usage
+interruption. Active work continues continuously while useful authorized work is
+feasible. The existing single hourly heartbeat was updated through the app and its
+full prompt/schedule/thread/status read back exactly. A wake with no newest unresolved
+actual usage-limit interruption or with a healthy owner performs no new work or usage
+poll. One verified available-window bounded SOL resume may recover an interrupted
+owner; no historical already-resumed rejection, purchase/reset or silent downgrade.
+Authority: `/private/tmp/tfp-continuous-capacity-fallback-update-20261015T072800Z/root-automation-update-verification.json`.
+
+Material resource progress: fresh07:27 UTC observation found about5.5GB available,
+exceeding native2GiB threshold; the prior under1GiB observation is historical. The
+fresh local engine query still failed. One bounded SOL6.1 Extra High reader completed
+223.98s/240, verifying installed Desktop4.52.0/start-timeout command and16GiB RAM.
+Its fixed settings open blocked, was interrupted once with owned cleanup VERIFIED,
+and was never retried; resource allocations/prior container restart policies remained
+UNKNOWN. Root separately admitted only ordinary existing Desktop startup under the
+user's continuous-work authorization, accepting normal persistent-app behavior without
+inventing empty prior Docker state or a zero-side-effect guarantee. No reset/prune/
+resource-policy change or existing-workload stop was authorized.
+
+Actual zero-model startup PASSED2/2 once: fresh3GiB minimum/exact manual FE3000/API4000
+listener identity admission, then installed `docker desktop start --timeout 60`.
+All FIVE2,780-source/11,989-original/196-output boundaries matched, retries0 and CLI
+owned cleanup VERIFIED. The command timeout bounds its wait, not Desktop lifetime.
+A separate read-only poststart observation PASSED: local Unix engine responded,
+manual service identities stayed exact, TWO further full boundaries matched, and
+14 existing containers/2 running/18 images/no public Node images were recorded. These
+are poststart observations; prior active states/auto-reactivation are not invented.
+No explicit test container, image pull, project mount, TFP app/native/API/DB action
+or business replay occurred. Existing Docker resources remain untouched by explicit
+workload commands. Free space after observation was about5.51GB.
+Authorities: `/private/tmp/tfp-existing-local-engine-start-low-approved-20261015T073700Z/execution-status.json`
+and `/private/tmp/tfp-existing-local-engine-poststart-admission-low-20261015T074000Z/observer-status.json`.
+
+ONE bounded480s/final90s-records SOL6.1 Extra High reader now reuses the accepted
+03:38 private canonical recipe to derive one concrete Docker isolated checking
+workspace for SIX NEW test owners: three source-accepted legal candidates and three
+source-accepted discovery candidates. It must preserve current dirty source/export/
+aliases at canonical paths, avoid Mac binaries/host secrets/socket/original mounts,
+separate public dependency preparation from network-none tests, bound storage/resources,
+and leave all14 existing containers/18 images untouched. It may propose exact ordinary
+commands and new Docker-only isolation checks, not execute images/pulls/containers/
+Node/tests/native actions or write source. No generic recursive planner is requested.
+Frozen maps bind2,780 sources/11,996 originals/196 outputs. Initial truncated path
+discovery incident is retained separately; no body/secret was printed.
+Authority: `/private/tmp/tfp-docker-private-canonical-check-plan-gpt61-sol-xhigh-20261015T074300Z/root-authorization.json`.
+
+Discovery's eight private candidates remain independently ACCEPTED source-only,
+review99411459, root exact-reversal/source judgment retained. Original malformed card
+candidate stays WITHHELD/preserved; corrected card preserves location/date and shows
+only actual distinct RSVP stats. Dependent search filters clear coordinates/specialty.
+All THREE new discovery and THREE new legal test owners, affected lint/mobile types,
+native/visual validation remain UNEXECUTED. No canonical adoption follows from Docker
+startup or source review. The original macOS isolated proof SIGABRT/pre-worker failure
+remains unchanged and its cause/denied resource unproved; no repeated crash reads or
+MacOS negative/finalization/completed-case replay occurred.
+
+Original173000 native setup failed before SET005 business; native local/app/files/
+project/simulator cleanup remains UNKNOWN. Current-process inspect/quiesce/rebind/
+delivery and ACL/permission recovery remain BLOCKED. No legal current guest/owned
+input/POST201/capability/persistence or write grant exists. Accepted two-boot100,
+PRO010584f5b/public HTTP2a2074 retain original boundaries, never later-write authority.
+Four settings/discovery business cases, three PUB025 TARGET slots, CON014/OPP014 bytes/
+provider, TRUST006 persisted MESSAGE, OPP015 provider phases, Android, screen-reader
+runtime and broader discovery remain incomplete. Historic OPP031 persistence WITHHELD/
+three unrecoverable reads, historical502 unknown and external production gates remain
+separate. No mixed certificate, invented input or readiness/deadline promise.
+
+Nested source remains uncommitted; actual UAT stays3c008/release20261011T115439Z-3c008ec4.
+Only four root notes publish; no nested publication/gitlink/deploy change. Preserve
+every original/cache/state/historyf19 and unrelated moderation/resume/architecture.
+Single hourly fallback ACTIVE; old12-hour hold expired/owner absent and was not renewed.
+Previous active/pending environment text is historical; actual current atomic states win.
+
 ## Expanded Web/mobile: native discovery correction source judgment recorded; runtime validation blocked — 15 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email delivery**. Nested
