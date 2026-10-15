@@ -1,66 +1,78 @@
 # Opportunity, event, contest and profile human-flow audit
 
-## Expanded Web/mobile: legal source finding closed; new termination checks preserve one failure — 15 October 2026
+## Expanded Web/mobile: untrusted observation complete; isolated offline source finisher active — 15 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email delivery**. Nested
 source remains uncommitted; UAT stays **3c008**, release **20261011T115439Z-3c008ec4**.
 No deployment-ready, whole-device or full-coverage handoff is claimed.
 
-Private legal correction030500 completed306.25s/600 with THREE exact operations across
-TWO owners, FOUR candidates unchanged.
-Root independently reconstructed forward/reverse bytes and all six current digests.
-Finding-only reviewer031840 accepted LEGAL-PREFETCH-CAPTURED-SESSION-001 closure,
-findings empty;323s from first observed clock/420,2,780/11,816/196 unchanged.
-The inherited captured-session assertion now runs after optional awaited preparation
-inside the existing abort race; final synchronous fence/fetch and absent-option source
-remain exact. Eight new rows remain UNEXECUTED. All candidates remain private and
-unadopted; safe canonical source/check admission and unconditional legal block remain.
+Private legal captured-session correction remains independently ACCEPTED source-only:
+THREE exact operations/TWO changed owners/FOUR unchanged candidates; post-preparation
+inherited session recheck stays inside the abort race, with synchronous final fence/fetch
+and absent-option source exact. Eight added rows and three NEW test owners remain
+UNEXECUTED. No canonical adoption, current guest or legal write authority is inferred.
 Authority: `/private/tmp/tfp-comprehensive-native-legal-prefetch-finding-closure-gpt61-sol-xhigh-20261015T031840Z/root-independent-source-acceptance.json`.
 
-Original informational diagnostic source233000 and one-literal fixture correction
-completed; zero-model234500 PASSED2/2 with14 NEW offline methods, five unchanged
-2,780/11,821/196 boundaries and verified cleanup. Independent030457 accepted exact
-provenance/firewall/read-limit evidence but WITHHELD prospective UNTRUSTED-CUSTODY-001:
-standalone SIGTERM could bypass cleanup, and retained Interrupted could rethrow before
-full-receipt persistence. The saved14 proofs remain OLD-source evidence only.
+Informational custody source finding UNTRUSTED-CUSTODY-001 is independently CLOSED,
+fbaa68 review202.60s/420/findings empty. Original033000 batch stays FAILED11pass/1fail;
+the strict single alarm diagnostic034000 passed once without changing the routine.
+Historical inner cleanup cause remains UNKNOWN; no completed method/matrix was replayed.
+The first actual informational attempt034600 failed BEFORE output/inventory/record reads:
+root prepared0755 base against unchanged0700 guard. Source-only preparation judgment
+a080d6 completed79.10s/180 and accepted only a NEW private0700 bundle with exact routine
+and0600 approval, preserving the old failure/base/modes.
 
-Root accepted only five private custody operations before source032000 authoring.
-Author completed495.96s/600 with checks0; root exact forward/reverse inspection accepted
-sticky interruption, standalone handlers, final-update receipt persistence and prior
-handler restoration. NEW zero-model033000 collected12 entrypoint/owned-process methods
-once, terminalFAILED03:28:14 UTC:11passed/1failed/0unrun/0retry. Changed syntax PASSED;
-all five2,780/11,835/196 boundaries matched and BOTH outer cleanups were VERIFIED.
-The sole alarm-during-owned-command method recorded inner cleanupUNKNOWN versus
-expectedVERIFIED. Exact cause is not established; no native/product regression claimed.
-All originals remain. One bounded300s source-only SOL6.1 Extra High RCA032900 now traces
-actual fixture and retained supervisor before any proposal/correction. No automatic
-rerun or runtime approval exists.
-Authority: `/private/tmp/tfp-comprehensive-native-untrusted-termination-minimum-low-approved-20261015T033000Z/root-failed-check-acceptance.json`.
+ONE separately approved corrected informational scope035000 PASSED at03:47:09 UTC,
+models0/retries0. Root inspected ALL10 full supervised owner/container receipts,6 bounded
+record reads and31 regular single-link private artifacts; all inner/outer cleanup
+VERIFIED and all THREE2,780/11,853/196 boundaries matched. Six host JSON objects were
+present; one structural value was UNTRUSTED_BASELINE_MATCH only. No raw body was copied
+or exported. Output authority is permanently NONE/HUMAN_SOURCE_PLANNING_ONLY; admission,
+recovery, native fact, current SecureStore, exclusive custody, old observer pass and
+business flags stay false. Original native cleanup/local restoration remain UNKNOWN.
+This is not an accepted canonical native receipt, baseline or recovery grant.
+Authority: `/private/tmp/tfp-comprehensive-native-untrusted-information-private-corrected-20261015T035000Z/root-untrusted-planning-reconciliation.json`.
 
-Separate restore-only source assessment032105 completed322s/360. Existing native code
-requires enrolled in-memory state and has no authenticated inspect/quiesce/rebind or
-safe current-process code delivery. Fresh isolated-device continuation also needs a
-new reviewed selector/no-overlap/project/cache/Metro isolation design; downstream
-selection remains unassessed. Original coordinator restart/new_boot is invalid, and
-host records cannot grant writes or current SecureStore facts. Native recovery stays
-BLOCKED and original173000 cleanup UNKNOWN. No original device was shut down or changed.
-Authority: `/private/tmp/tfp-comprehensive-native-restore-only-rebind-plan-gpt61-sol-xhigh-20261015T032105Z/minimal-proposal.json`.
+Restore-only032105 and downstream isolation033724 source assessments are complete.
+Current native code has no established safe inspect/quiesce/rebind/delivery path.
+Downstream exact device-ID and Metro-port selectors ARE source-confirmed, but captured
+parent/host/native validators still bind old candidate/workspace/8082. A future isolated
+device needs private workspace/dependencies, owned native/container lease, isolated
+transport/cache/tools and fresh resource/service admission. No original device was
+terminated, no new simulator/project created, and no isolation gate was waived.
 
-The ACL/permission route stays BLOCKED; no target chmod, positive-absence waiver or
-further ACL probe. The separate informational concept remains permanently untrusted:
-no admission, recovery, native fact, baseline, current guest or legal-write authority.
-Original173000 setup failed before SET005 business;34 receipts/TWO actual root views
-and every original/cache/state remain. Accepted two-boot/null-raw100 receipts, selected
-Bash cache fixes, PRO010584f5b/public HTTP2a2074 retain only original boundaries.
-FOUR settings/discovery business cases, three PUB025 TARGET slots, CON014/OPP014 saved
-bytes/provider, TRUST006 persisted MESSAGE, OPP015 provider phases, Android, screen-reader
+Private canonical offline validation has a conditional source route: genuine isolated
+canonical source/config snapshot, exact six candidates and unchanged aliases; read-only
+third-party dependency links; actual standard CLIs through unchanged pinned Node wrapper;
+kernel original-write/read fences and closed inherited writable descriptors. Original
+planner's authored235s terminal estimate is unsupported; actual returned clock240s means
+strict bounded completion remains unestablished. Root separately assessed saved material.
+No sandbox, project copy or Node check has executed. First-stage TWO private OS-boundary/
+owned-fixture proof files were saved, then the author hit an actual backend workspace
+capacity error with NO terminal. Original partials/failure/output incident are preserved.
+
+ONE read-only included snapshot05:03:11 UTC showed primary3percent in a NEW300-minute
+window starting05:03:11, weekly63percent; purchased/account/reset fields ignored and no
+purchase/reset. Exactly ONE bounded420s/final75records-only requested SOL6.1 Extra High
+finisher now completes those TWO source owners on NEW copies. No checks/import-eval/
+compiler/sandbox/Node/project copy/process-device/network/API/DB/adoption/publication or
+extra model is admitted. Actual terminal and root exact reconciliation precede minimum
+syntax, independent policy judgment and any separately approved owned-filesystem proof.
+Authority: `/private/tmp/tfp-comprehensive-native-owned-offline-sandbox-finish-gpt61-sol-xhigh-20261015T050500Z/root-resume-authorization.json`.
+
+The strict ACL/permission route remains BLOCKED; no target chmod or extra ACL probe.
+Original173000 setup failed before SET005 business;34 receipts/TWO root-viewed native
+originals and all caches/states remain. Accepted two-boot/null-raw100, selected Bash
+cache fixes, PRO010584f5b/public HTTP2a2074 retain their original boundaries. FOUR original
+settings/discovery business cases, three PUB025 TARGET slots, CON014/OPP014 saved bytes/
+provider, TRUST006 persisted MESSAGE, OPP015 provider phases, Android, screen-reader
 runtime and broader discovery remain incomplete. Historic OPP031 persistence WITHHELD,
 three unrecoverable reads, historical502 unknown and external production gates remain.
 No certificate splicing, invented inputs or production approval. Hourly continuation
 ACTIVE; old12-hour hold expired/owner absent. Preserve historyf19 and unrelated
-moderation/resume/architecture work. Only four root notes publish; no nested publication,
-parent gitlink or deployment change. Prior latest section is preserved in this scope's
-before snapshots and prior root1716955.
+moderation/resume/architecture. Only four root notes publish; no nested publication,
+parent gitlink or deployment change. Prior latest section preserved in before snapshots
+and rootf0ff975.
 
 
 ## Expanded Web/mobile: native owner and six-file metadata feasible; private guarded observation source active — 15 October 2026
