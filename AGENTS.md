@@ -1,5 +1,65 @@
 # Workspace-Wide Agent Notes
 
+## Expanded Web/mobile: private local workspace and JVM checks pass; ordinary Mac build scope prepared — 16 October 2026
+
+Human answered no separate runner is available. Root assessed the source-grounded
+ordinary trusted-local proposal: whole Apple-service isolation was an internal strict
+certificate prerequisite, not a human condition for normal local development. The NEW
+trusted-local-dev-ios mode may allow ordinary Apple-managed cache/log/service effects,
+with whole-service egress and host-read isolation explicitly UNVERIFIED. Existing strict
+mode remains unchanged/fail-closed. This is source-scope acceptance, not build/device
+or legal-write authority. The earlier separate-runner question is answered and is not
+repeated. Proposal exceeded198.15s/180 operationally; that failure remains, and root
+separately accepted saved grounded material. Authority:
+`/private/tmp/tfp-native-trusted-local-scope-plan-gpt61-sol-xhigh-20261015T174300Z/root-source-proposal-acceptance.json`.
+
+ONE zero-model new writable project preparation PASSED67.75s. It copied the accepted
+immutable project with native clone/copy fallback, retargeted ONLY two absolute prefixes
+in one existing Pod script, and initialized REAL parentless private local Git. Root
+independently rehashed56,910immutable files and56,906new writable files,4,919relative
+links/strict targets, exact retarget inverse and1,101current index/blob/body bindings.
+Actual private commit7c3d4467b4ff09c015633741ddd7e3b80da6945d/tree7c70492fcb86f1622c2748a74f8dd242eeab2d75;
+branch codex/private-native-snapshot-20261015; current Git status empty. This is LOCAL
+NONCANONICAL/NONUAT ancestry. No original .git copy, canonical commit or runtime pass.
+Authority:
+`/private/tmp/tfp-native-trusted-local-workspace-git-low-20261015T174800Z/execution-status.json`.
+
+Private JVM/Git environment source completed192.98s/240, authorchecks0. Root reconstructed
+both exact operation groups/full inverse and unchanged65,605-byte legacy prefix. New
+in-memory syntax2files and ONE actual-AST controlled JVM/provenance/environment method
+PASSED once,0retries;21negative discriminators retain truthful scope. All four protected
+2,786source/14,112original/196output/111postrestart groups matched before/after; four
+owned commands exited VERIFIED. Initial root routine else1 parser-preparation failure
+occurred before entry/checks and remains; NEW exact one-token whitespace copy passed.
+Derived private-JVM proof reuses accepted original Java17.0.3.1/tool-copy receipts;
+no tool/version/kernel/native or old matrix replay. Root authority:
+`/private/tmp/tfp-native-jvm-git-minimum-and-workspace-root-verification-corrected-20261015T200300Z/root-check-and-workspace-acceptance.json`.
+
+Both first trusted-local source dispatches hit actual backend workspace-credit rejection
+before creating candidate directories. Originals retained. On eligible hourly recovery,
+ONE included-only snapshot showed ordinary usage allowed/primary3percent/weekly32percent;
+purchased fields ignored. ONE bounded requested SOL6.1 Extra High source resume actually
+executed. No purchase/reset/downgrade or duplicate healthy owner. Other native-operator
+source task remains unexecuted; it was not silently redispatched. Actual resumed source
+found a concrete build closure issue: private Pods marker is Release; installed Debug
+Hermes phase locally replaces its private hermes-engine tree. Exact generated-write
+proposal must be root-assessed before dispatcher authoring; no build/probe/extraction
+or new device ran. Current source owner records that minimum finding/proposal only:
+`/private/tmp/tfp-native-trusted-local-build-source-gpt61-sol-xhigh-20261015T195800Z`.
+
+FE3000/API4000 remain left running from accepted TEST foreground startup; no continuous
+health/browser/full-flow claim. Actual UAT remains3c008/release20261011T115439Z-3c008ec4;
+expanded canonical nested source is uncommitted. ONLY four root notes publish. No
+nested/gitlink/deploy. Native build/artifact/new-device/current guest/four settings-
+discovery flows, legal owned input/POST201/capability/persistence, three PUB025 TARGET
+slots, CON014/OPP014bytes/provider, TRUST006persistedMESSAGE, OPP015provider phases,
+Android/screen-reader/broader discovery and external production inputs stay separate.
+Historic OPP031 persistenceWITHHELD/three unrecoverable reads and historical502unknown
+remain. OAuth/OTP/emaildelivery excluded. Preserve all NON-RETIRED originals/caches/
+states/historyf19 and unrelated work. No mixed certificate, invented input, production
+approval or readiness/deadline promise. Hourly automation is usage recovery fallback
+ONLY; useful authorized active work continues without waiting. Old awake hold expired.
+
 ## Expanded Web/mobile: private native tool compatibility passes; service-isolated runner input required — 15 October 2026
 
 Verified forward progress: the private project copy remains accepted at its original
