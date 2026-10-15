@@ -1,5 +1,90 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Expanded Web/mobile: fixture correction complete; failed-only validation blocked by fresh disk headroom — 15 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email delivery**. Continuous
+useful work continues when feasible; the single hourly job is ONLY an actual included-
+usage recovery fallback. It must not retry an environment failure or duplicate owners.
+Actual UAT stays **3c008**, release **20261011T115439Z-3c008ec4**; nested source remains
+uncommitted. No deployment-ready/full-coverage/native-device handoff is claimed.
+
+Original isolated Linux results remain exactly **96 passed /1 failed** across97 new
+checks in six new owners, affected13-file lint passed, mobile types failed with SIX
+TS2367 fixture comparisons. The new Linux kernel boundary passed, all eight frozen
+2,780-source/11,996-original/196-output boundaries matched, and all11 exact-owned
+containers plus ephemeral volume cleanup VERIFIED. No full/native/business matrix
+replay occurred. Root personally inspected original result counts/logs/selected mount
+receipts and accepted only those mixed results; screenshots0/personal image views0.
+Authority: `/private/tmp/tfp-docker-private-log-corrected-low-approved-20261015T080900Z/root-original-collected-check-acceptance.json`.
+
+The original fixture RCA agent encountered an actual backend “workspace out of
+credits” interruption after saving three before records; no final judgment/terminal
+exists. This is NOT proof of included-usage exhaustion or a product failure. Root
+preserved the interruption. Direct human continuation and ONE read-only included
+snapshot showed primary4percent used/300-minute window starting06:20:19 UTC, weekly
+1percent used. Purchased-credit fields were ignored; no purchase/reset/unchanged retry.
+One bounded SOL6.1 Extra High saved-material resume completed226.99s/300, source-only,
+with both2,780/11,996/196 boundaries matching and38 inspected inputs stable. An earlier
+rootAGENTS note drift was explicitly separated from33 unchanged original inputs.
+Authority: `/private/tmp/tfp-discovery-collected-fixture-rca-resume-gpt61-sol-xhigh-20261015T082200Z/terminal.json`.
+
+Source/installedReact18.3.1/type traces confirmed TWO fixture findings: opening the
+panel inside the outer async act queries it before the nested batch commits; six
+custom-native host literal comparisons conflict with declared React element types.
+Root independently traced those paths and accepted only SEVEN exact operations in
+TWO NEW private fixture copies before edits. The same requested SOL6.1 Extra High
+source owner completed90.87s/180, checks0. Opening moves before async location act;
+six guarded comparisons use String identity while keeping typeof guards and every
+count/style/text/testID assertion. Runtime owners/mocks/old candidates and96 valid
+passes remain exact. Both2,780/13,136/196 boundaries matched. Root independently
+reconstructed all forward/full inverse bytes and current two candidate hashes:
+Search1ac28e19/card04b7aace. No canonical source adoption or runtime pass follows.
+Authority: `/private/tmp/tfp-discovery-fixture-minimum-fix-gpt61-sol-xhigh-20261015T082700Z/terminal.json`
+and `/private/tmp/tfp-discovery-fixture-only-low-approved-20261015T083000Z/root-source-check-admission.json`.
+
+Zero-model staging changed ONLY two members in the previously bound private source
+tar; metadata stayed exact. A new exact three-command selection would execute ONLY
+the original failed search method, the two changed-fixture lint owners and canonical
+mobile types. The96 original passed rows/other11-owner lint and original kernel proof
+are reused; no unaffected method/negative/native/business replay is admitted.
+
+Actual fresh failed-only preparation TERMINATED FAILED at PREPARATION_RESOURCE_GATE
+BEFORE any new container, volume, dependency or check dispatch. Both frozen boundaries
+matched; new container count0/check count0, so no new Docker cleanup is outstanding.
+One root read-only observation found2,584,162,304 free bytes (2.407GiB), below the
+unchanged3GiB preparation gate. Earlier5.5GB is historical; the cause of free-space
+change is UNESTABLISHED. The old VM available-memory sample is historical, never fresh
+availability. No assertion was weakened, no blind preparation retry, source check or
+image repull occurred. A single required environment question now requests at least
+1GiB freed outside preserved artifacts/caches, or a suitable alternate isolated runner.
+Elapsed time/heartbeat/ordinary continuation is not evidence that space was freed.
+Authority: `/private/tmp/tfp-discovery-fixture-only-low-approved-20261015T083000Z/root-failed-fresh-admission-observation.json`.
+
+After actual environment recovery: a NEW once scope/fresh admission may execute only
+the failed method/changed-fixture lint/mobile types with canonical private graph,
+current resource/custody/hash/cleanup gates. Then ONE incremental independent SOL
+judgment may reuse earlier runtime-source acceptance and original96 passes, without
+full source/image/native/business review replay. The fixture correction has not yet
+passed those checks or independent closure. No healthy owner/check/watcher is active.
+
+Private legal source acceptance/60 original unit checks and discovery source99411459/
+mapper22/card8/search6 retain exact original limits; they are not legal/native writes,
+device/visual/full-page/business certification. Original173000 setup failed before
+SET005 business; native local/app/files/project/simulator cleanup remains UNKNOWN.
+No safe recovery/ACL/permission route or current guest/owned legal input/POST201/
+capability/persistence grant exists. Two-boot100/PRO010584f5b/public HTTP2a2074 retain
+only original boundaries. Four settings/discovery cases, three PUB025 TARGET slots,
+CON014/OPP014 saved bytes/provider, TRUST006 persisted MESSAGE, OPP015 provider phases,
+Android, screen-reader runtime and broader discovery remain incomplete. Historic
+OPP031 persistence WITHHELD/three unrecoverable reads, historical502 unknown and
+strict compatible-child/external production gates stay separate. No mixed certificate,
+invented input, production approval or readiness/deadline promise.
+
+Only four scoped root notes publish; no nested publication/gitlink/deployment change.
+Preserve every original/cache/state/historyf19 and unrelated moderation/resume/
+architecture work. Hourly fallback remains ACTIVE; old12-hour hold expired/owner absent
+and was not renewed. Earlier active-owner notes are historical; actual terminals win.
+
 ## Expanded Web/mobile: isolated Linux checks executed; 96 new checks pass; one interaction and fixture typing remain — 15 October 2026
 
 Continuous work remains active, excluding **OAuth, OTP and email delivery**. The
