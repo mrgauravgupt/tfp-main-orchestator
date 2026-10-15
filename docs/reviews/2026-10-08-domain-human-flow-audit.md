@@ -1,5 +1,85 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Expanded Web/mobile: pending checks pass; reviewed legal/discovery corrections adopted; native isolation next — 15 October 2026
+
+Continuous authorized work remains active, excluding OAuth, OTP and email delivery.
+Actual UAT remains3c008/release20261011T115439Z-3c008ec4. Nested expanded changes remain
+uncommitted; no nested publication, parent gitlink update, deployment or readiness claim.
+Hourly continuation remains ONLY recovery after a newly unresolved included-usage failure,
+not the normal scheduler. Current work has no unresolved usage rejection.
+
+User authorized retirement of ALL archived QA runs. Completed084600 permanently removed
+21,488 files/17,687 directories and recovered9,365,245,952 bytes. Its full hash retirement
+manifest and root verification remain; this intentionally retired history is not claimed
+preserved. Other tmp siblings, current October evidence, caches, DB backups and unrelated
+moderation/resume/architecture work remain. Do not delete the complete workspace tmp.
+
+Disk recovery was sufficient. Subsequent090800 admission still failed the unchanged
+6GiB host metric screen before containers/checks. The independent controlled-resource
+policy accepts known pressure flags1/2 with bounded monitoring, fresh actual VM5GiB
+preallocation/4.5GiB after fetch and before checks, hard4GiB containers/3GiB tmpfs and
+exact-owned cleanup even after a resource rejection. Warning2 is accepted residual risk,
+not normal pressure or exact incremental available RAM certification. No app, existing
+container or Docker allocation was stopped/resized; no purge, purchase or reset occurred.
+
+Saved source-led no-cache proposal exceeded190.66s/180 operationally; that failure remains.
+Root separately assessed its exact per-read-FD F_NOCACHE48 method. One65,553-byte owned
+native-FD proof passed, including identical hashes, readonly/offset semantics, unchanged
+file metadata and success/exception closure. One separate full preservation boundary
+then matched and the fresh host screen was44percent/7.56GB, disk11.70GB. Cache causality
+and improved incremental RAM are not proved. Every SHA comparison remained enabled.
+Authorities: `/private/tmp/tfp-preservation-nocache-owned-proof-low-approved-20261015T092200Z/root-proof-acceptance.json`
+and `/private/tmp/tfp-preservation-nocache-boundary-admission-low-approved-20261015T092500Z/root-observation-acceptance.json`.
+
+Actual NEW failed-only LOW093000 PASSED3/3 at09:26:17 UTC, retries0: original failed
+Search interaction1pass/6siblings unrun, two changed-fixture lint, canonical mobile types.
+All eight2,780-source/13,273-original/196-output boundaries matched. Nine exact-owned
+containers and the tmpfs volume were removed VERIFIED; all logs retained. Original mixed
+97-check batch remains96pass/1fail plus its typing failure. Those96 valid rows/kernel
+proof are reused, never replayed or relabeled as a single clean aggregate child.
+Authority: `/private/tmp/tfp-discovery-fixture-nocache-low-approved-20261015T093000Z/root-check-acceptance.json`.
+
+Incremental independent SOL6.1 Extra High review completed218.82s/240, ACCEPTED/findings0.
+It reconstructed all seven operations/two fixtures, checked14 mappings/908 tar members,
+actual3/3 results, reused legal6a933f/discovery99411459 source judgments and original96
+passes. Before/after2,780/13,476/196 bindings matched. Its metadata path-key output
+incident is recorded. No new image/native/business/legal-write or whole-UI claim follows.
+Authority: `/private/tmp/tfp-legal-discovery-incremental-independent-gpt61-sol-xhigh-20261015T093400Z/root-incremental-acceptance.json`.
+
+First094000 canonical adoption failed because api-client.ts was bound in BOTH source
+and originals; its forward metadata updated only source. All eight old files were
+restored exactly and six new files removed; full original boundary verified. Bounded
+SOL source RCA confirmed this metadata cause before correction. Root accepted only
+all-group old-SHA validation for the same14 targets in a NEW private copy, preserving
+every other binding and all failed originals. Actual095200 adoption PASSED:8 existing
+files/6 new files,15 expected forward-map entries, complete before/after boundaries0drift.
+Root verified every canonical candidate, all before backups and exact map delta.
+Current map:2,786 sources/13,513 originals/196 outputs. No tests replayed. Corrections
+now live only in the working tree: actual distinct RSVP counts, dependent filter cleanup,
+generic captured-session/request-preparation safety and six focused test owners.
+Authority: `/private/tmp/tfp-legal-discovery-canonical-adoption-corrected-low-20261015T095200Z/root-adoption-acceptance.json`.
+
+Native173000 setup still failed before SET005; old local/app/files/project/simulator
+cleanup remains UNKNOWN. Static fresh-owner feasibility found canonical explicit-device
+single-case routes but the old lifecycle pins ordinal3, global boot exclusivity, shared
+canonical .expo and Metro8082. A new UDID alone is unsafe. One actual read-only installed
+inventory succeeded:6 available iOS runtime entries/43 iPhone types/1 booted device,
+about11.69GB disk; no boot/install/shutdown or old state mutation. Next requires concrete
+independent app artifact, private project/Metro state and disjoint owner binding; do not
+reopen old chmod/ACL/recovery loops or treat a source plan as runtime authorization.
+Authorities: `/private/tmp/tfp-native-fresh-isolated-owner-feasibility-gpt61-sol-xhigh-20261015T093800Z/terminal.json`
+and `/private/tmp/tfp-native-installed-inventory-low-approved-20261015T095000Z/status.json`.
+
+Native/visual validation, four settings/discovery cases, legal current guest/owned input/
+POST201/capability/persistence, three PUB025 TARGET slots, CON014/OPP014 bytes/provider,
+TRUST006 persisted MESSAGE, OPP015 provider phases, Android/screen-reader/broader discovery
+remain separate unfinished gates. Two-boot100/PRO010584f5b/public HTTP2a2074 retain only
+their original boundaries, never later-write grants. Historic OPP031 persistence stays
+WITHHELD/three reads unrecoverable; historical502 cause and external production inputs
+remain unknown. No certificate splicing, invented values or production approval.
+Preserve all NON-RETIRED originals/caches/states/historyf19 and unrelated work. Only four
+scoped root notes publish. Old awake hold expired/owner absent, no renewal.
+
 ## Expanded Web/mobile: authorized QA archive retirement complete; isolated checks blocked by host memory pressure — 15 October 2026
 
 Expanded work remains active, excluding OAuth/OTP/email delivery. Actual UAT remains
