@@ -1,5 +1,90 @@
 # Workspace-Wide Agent Notes
 
+## Expanded Web/mobile: runner fix verified; final Metro fixture prepared; native host recovery required — 15 October 2026
+
+Expanded work remains authorized, excluding OAuth, OTP and email delivery. Actual UAT
+remains3c008/release20261011T115439Z-3c008ec4; expanded nested source is uncommitted.
+No nested publication/gitlink/deployment, whole-flow/device or readiness claim. No
+unresolved included-usage interruption remains: the single hourly job is ONLY usage
+recovery fallback and must not retry this environmental blocker or replay checks.
+
+The source-only private native10-file/50-operation correction and prior Metro seven-
+operation/two-copy correction retain their accepted boundaries. Original103200 mixed
+11TSunitpass/1fail/fourTS1343, Python6/Bash2/lint passes and all originals are immutable.
+The interrupted105000 independent reader remains unfinished; ONE verified included-
+window resume112500 accepted only the exact seven source operations/findings0, with
+new minimum initially unexecuted. Purchased fields ignored, no purchase/reset/downgrade.
+
+The112800 host listener command reached its20-second deadline, then TERM3/KILL3 waits
+without verified exit. Its lost command receipt was traced; old cleanup stays UNKNOWN.
+Static RCA113100 exceeded210.54s/180 and remains an operational failure. Root separately
+accepted only its grounded receipt-loss direction before NEW114000 authoring. Actual
+author completed375.76s/420, source319.98s/360: exactly TWO executor hunks and ONE NEW
+four-case proof. Every production argv/default20/TERM3/KILL3/manual identity/resource/
+hash guard stayed; dispatch/PID/final rows preserve primary/finalization failures, and
+UNKNOWN prevents normal overlap while exact cleanup remains allowed.
+
+NEW114800 minimum PASSED2/2 once: two-owner in-memory Python syntax and FOUR focused
+cases. Three cases use actual detached native children; unreapable wait/signal is an
+explicit control-flow seam, never a kernel proof. Four2,786/13,912/196 boundaries matched;
+outer children and temporary fixtures cleaned VERIFIED. Independent115000 completed
+221.31s/300, ACCEPTED/findings0; two hunks/full inverses and original logs/counts matched,
+both2,786/13,924/196 boundaries unchanged. Root verified actual review and acceptance.
+Authorities:
+`/private/tmp/tfp-native-command-receipt-minimum-low-approved-20261015T114800Z/root-check-acceptance.json`
+and `/private/tmp/tfp-native-command-receipt-finding-independent-sol-xhigh-20261015T115000Z/root-incremental-acceptance.json`.
+
+Root then admitted NEW115500 once after current pgrep returned1/empty, retaining old
+UNKNOWN rather than claiming historical cleanup. It reused the accepted911-member
+snapshot and only two metadata adapters. ALL THREE pending independent commands ran:
+selected Metro method FAILED1/11 siblings unrun, two-owner lint PASSED, canonical mobile
+types PASSED. Post-check listener inspection stalled again. This time the corrected
+runner preserved its exact local PID/PGID, command hash, deadline/TERM3/KILL3 outcomes
+and final UNKNOWN receipt. Overall exit1 remains; all eight2,786/13,935/196 boundaries
+matched, nine exact-owned containers and the tmpfs volume were removed VERIFIED. No
+product regression or clean aggregate is inferred. Authority:
+`/private/tmp/tfp-native-command-receipt-corrected-metro-low-approved-20261015T115500Z/root-original-mixed-observation.json`.
+
+Actual remaining method failure is a NEW fixture contract error: mergeConfig({},config)
+dereferences absent base.resolver/transformer. Installed Metro and actual Expo loader
+were traced before edits. Root approved ONLY one expression using actual Expo defaults,
+no fake base/dependency/assertion/guard change. Requested SOL6.1 Extra High120000 author
+completed123.40s/180, source92.59s/135; one NEW candidate SHA801d2ac1510b40d18d47d3ce7131dad189d269a0a7ae1aa4f21df2fefa993528,
+all26 assertion lines and full inverse exact, both full frozen boundaries unchanged.
+Root verified source only. NEW checks are UNEXECUTED. Preserve actual passing types;
+the replacement uses the existing untyped require/base interface with no new type
+surface. Next validation is ONLY failed method and changed-fixture lint, then ONE
+incremental independent judgment; no old11TS/Python/Bash/lifecycle/kernel/image replay.
+Authority: `/private/tmp/tfp-native-metro-real-base-fix-sol-xhigh-20261015T120000Z/root-source-acceptance.json`.
+
+Genuine external blocker: repeated macOS lsof processes did not exit within bounded
+TERM/KILL waits. Underlying cause and both historical child cleanups remain UNKNOWN;
+the later process receipt is preserved privately. No speculative kill, timeout increase,
+identity/resource waiver, repeated OS observation or automatic test replacement is
+admitted. ONE self-contained environment question asks the human to save work/restart
+this Mac then reply ready, or supply another Mac. It is pending; no autonomous reboot.
+After explicit recovery input, use fresh current exact-owner/no-overlap/resources and
+NEW once admission before the two pending checks. Elapsed time/heartbeat/ordinary
+continue is not environmental recovery. No healthy source/check/native owner remains.
+
+Private native staging/build/artifact/offline toolchain/current new device/guest and
+runtime evidence are still unproved. Measured dependency/Pods closure896,105,844 bytes
+was not copied. Exact installed Java17 home was read-only discovered, not Java/Maestro
+execution. Maestro static trace operational201.76s/180 failure remains/no XDG defect.
+Original native173000 local/app/files/project/simulator cleanup stays UNKNOWN. Four
+settings/discovery cases, legal current guest/owned input/POST201/capability/persistence,
+three PUB025 TARGET slots, CON014/OPP014 bytes/provider, TRUST006 persisted MESSAGE,
+OPP015 provider phases, Android/screen-reader/broader discovery and external production
+inputs remain separate. Historic OPP031 persistenceWITHHELD/three unrecoverable reads
+and historical502 unknown remain; future evidence cannot repair old claims.
+
+Preserve every NON-RETIRED original/cache/state/historyf19 and unrelated moderation/
+resume/architecture. Authorized QA archive retirement stays intentional retirement;
+do not delete complete workspace tmp. Only four scoped root notes publish, no nested/
+gitlink/deploy. Old awake hold expired/owner absent, no renewal. Final scoped validation
+and truthful handoff remain incomplete; keep the fallback job, never invent inputs or
+splice certificates. Actual terminal states override older active/pending text.
+
 ## Expanded Web/mobile: private native source corrected and independently accepted; minimum checks blocked before dispatch — 15 October 2026
 
 Continuous expanded work remains authorized, excluding OAuth, OTP and email delivery.
