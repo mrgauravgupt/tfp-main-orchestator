@@ -41,11 +41,25 @@ preserved originals/caches and make a suitable local engine ready, or supply ano
 isolated runner. Native testing needs at least2GiB. Elapsed time is not an answer.
 Authority: `/private/tmp/tfp-comprehensive-native-owned-offline-termination-enum-low-20261015T061500Z/root-local-engine-feasibility.json`.
 
-One bounded SOL6.1 Extra High source-only audit now inspects previously unreviewed native
-SettingsScreen/SearchScreen/DiscoveryCards and direct consumers, maximum three grounded
-findings. It may write only private reports, no source adoption/check/device/API/DB/cache
-or publication. Existing Button/harness/completed business/image matrices are reused.
-Authority: `/private/tmp/tfp-comprehensive-native-settings-discovery-source-audit-gpt61-sol-xhigh-20261015T062500Z/root-authorization.json`.
+The settings/discovery source audit completed274.28s/420 with TWO grounded findings,
+all2,780/11,955/196 before/after bindings unchanged. Event cards duplicate rsvpCount as
+Going and Interested while actual search payload lacks those statistics. Removing a
+location tag retains lat/lon; removing role retains specialty, so hidden restrictions
+still reach backend queries. Distance sorting also needs relevance fallback when its
+coordinates are removed. These are source/dataflow findings, not observed native images.
+The schema-output path-key incident is preserved; no values or bodies were printed.
+Authority: `/private/tmp/tfp-comprehensive-native-settings-discovery-source-audit-gpt61-sol-xhigh-20261015T062500Z/audit.json`.
+
+Root independently traced those consumers and accepted only FOUR runtime operations
+on private copies: optional actual valid per-status pair, mapper validation preserving
+unknown versus zero, distinct conditional card rows, and one dependent filter updater
+for both draft/applied plus location labels/status. Legacy detail rsvpCount, navigation,
+tokens, other search handlers and all old tests stay exact. ONE bounded900s/final90s
+records-only SOL6.1 Extra High author works on five existing private candidates and
+three NEW focused actual-component/mapper test owners. No checks/adoption/runtime or
+publication are admitted to the author; all new tests remain UNEXECUTED. Frozen maps
+bind2,780 sources/11,959 originals/196 outputs. No active check/device/service owner.
+Authority: `/private/tmp/tfp-comprehensive-native-discovery-minimum-fix-gpt61-sol-xhigh-20261015T063100Z/root-accepted-proposal.json`.
 
 Private legal captured-session correction remains independently ACCEPTED source-only,
 three exact operations/two owners/four unchanged candidates. Eight new rows/three test
@@ -66,7 +80,7 @@ unknown and external production gates stay separate. No certificate splicing, in
 inputs or production approval. Hourly continuation ACTIVE; old12-hour hold expired and
 owner absent. Preserve all originals/caches/states/historyf19 and unrelated moderation/
 resume/architecture. Only four root notes publish; no nested publication/gitlink/deploy.
-Prior latest section remains in this scope's before snapshots and rootf07d7d6.
+Prior latest section remains in this scope's before snapshots and root068caea.
 
 
 ## Expanded Web/mobile: native owner and six-file metadata feasible; private guarded observation source active — 15 October 2026
