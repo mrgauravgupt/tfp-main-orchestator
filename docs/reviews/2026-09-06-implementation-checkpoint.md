@@ -1,5 +1,76 @@
 # Implementation checkpoint — 6 September 2026
 
+## Expanded Web/mobile: native discovery correction source judgment recorded; runtime validation blocked — 15 October 2026
+
+Expanded scope remains active, excluding **OAuth, OTP and email delivery**. Nested
+source remains uncommitted; actual UAT stays **3c008**, release
+**20261011T115439Z-3c008ec4**. No deployment-ready, full-coverage or whole-device handoff.
+
+The bounded native settings/discovery audit completed274.28s/420 with TWO confirmed
+source/dataflow findings: discovery cards duplicate a legacy count as Going/Interested,
+including invented zeros when search payload omits statistics; filter-tag removal
+retains hidden coordinates/specialty restrictions. Root independently traced actual
+mapper/card/search/serializer/backend contracts. The original source author completed
+490.27s/900, checks0, five existing private candidates/three NEW focused test owners.
+Mechanical reversal was exact but root WITHHELD its malformed JSX card replacement
+before any execution. The entire old candidate and author result remain preserved;
+completion and byte reversal are not semantic acceptance.
+
+Root approved only a new two-owner correction before edits. It completed160.02s/360,
+checks0: rebuild card from canonical before bytes, wrap ONLY the two complete RSVP
+rows, preserve location/date prefix and all other bytes; add actual metadata-row
+assertions for known/unknown counts in its existing new test candidate. Six other
+candidates stayed exact. Root independently reconstructed all old and corrected
+operations/full inverses and verified eight current hashes/all2,780 sources/11,972
+originals/196 outputs unchanged. Current cardSHA4de792759cbeffad0295a872720551ef33572afa989dc4215e729196d7558f54.
+Authority: `/private/tmp/tfp-comprehensive-native-discovery-card-jsx-fix-gpt61-sol-xhigh-20261015T064000Z/root-exact-source-acceptance.json`.
+
+ONE independent SOL6.1 Extra High reader completed224.75s/420, source verdict
+ACCEPTED/findings empty. It traced all eight current candidates, producer/mapper/card
+and search consumers, catalogs, query serialization and test host seams. All2,780
+sources/11,986 originals/196 outputs matched before/after. Root inspected the actual
+review/terminal and independently reverified every current binding; source-only
+reviewSHA99411459f070f2472a3c15cbfd7dd2493a151cd75ed56ec0e8c115f6342f81b1.
+It is not a compiler/test/runtime/native/visual pass and grants no canonical adoption.
+Authority: `/private/tmp/tfp-comprehensive-native-discovery-source-independent-gpt61-sol-xhigh-20261015T064500Z/root-independent-source-acceptance.json`.
+
+
+The private corrections preserve absent versus explicit-zero versus unequal per-status
+RSVP values while retaining legacy detail rsvpCount. One key-aware updater clears
+location/lat/lon and only distance sorting to relevance, or role/specialty, for both
+draft/applied states; location labels/status also clear. Tokens, navigation, unrelated
+handlers and old tests remain exact. All THREE new mapper/card/search test owners,
+affected lint/mobile types and native/visual verification remain **UNEXECUTED**. No
+canonical adoption, source check, build, browser/device or business replay occurred.
+The old Button/harness/completed case/image matrices are retained without rerun.
+
+Actual isolation remains BLOCKED: the owned OS proof ended SIGABRT before worker entry,
+despite recorded readonly-null/private-stream custody, verified owned cleanup and stable
+bindings. The retained diagnostic identifies a startup subsystem, not a proven denied
+resource or policy fix. No additional automated crash reads/unchanged retry is admitted.
+The06:11:14 UTC local Docker engine query exited1 and space was under1GiB. No current
+engine cause/readiness is inferred; no container/image/start action ran. The required
+environment input remains pending: free space outside preserved originals/caches and
+provide a working isolated runner. Native testing requires at least2GiB. No duplicate
+question, capacity polling, purchase/reset or silent downgrade.
+
+Private legal correction retains only its accepted source boundary; eight added rows/
+three legal test owners remain UNEXECUTED and no current guest/legal POST201/capability/
+persistence/write grant exists. Original173000 setup failed before SET005 business;
+native local/app/files/project/simulator cleanup remains UNKNOWN. No safe inspect/
+quiesce/rebind/delivery or ACL/permission route is established. Completed two-boot100,
+PRO010584f5b/public HTTP2a2074 keep original boundaries, never later-write authority.
+
+Four settings/discovery business cases, three PUB025 TARGET slots, CON014/OPP014 bytes/
+provider, TRUST006 persisted MESSAGE, OPP015 provider phases, Android, screen-reader
+runtime and broader discovery remain incomplete. Historic OPP031 persistence WITHHELD/
+three unrecoverable reads, historical502 unknown and external production gates remain
+separate. No mixed certificate/invented input/production approval/readiness promise.
+Hourly continuation ACTIVE, single job verified; old12-hour hold expired/owner absent.
+Only four scoped root notes publish; no nested publication/gitlink/deploy change.
+Preserve all originals/caches/states/historyf19 and unrelated moderation/resume/
+architecture. Previous active-author text is historical; actual terminal records win.
+
 ## Expanded Web/mobile: stdin correction accepted; isolated runtime abort blocks validation — 15 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email delivery**. Nested
