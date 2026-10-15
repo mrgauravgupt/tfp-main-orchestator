@@ -1,5 +1,70 @@
 # Workspace-Wide Agent Notes
 
+## Expanded Web/mobile: native staging source corrected; fresh disk exhaustion blocks minimum — 15 October 2026
+
+Actual Metro incremental review is ACCEPTED scoped/findings0,9d01e9e5; selectedmethod
+1pass/11siblingsUNRUN and fixturelintpassed. Current UAT remains3c008/release
+20261011T115439Z-3c008ec4; expanded nested source uncommitted. No nested/gitlink/deploy,
+fullflow/device/legal-write/readiness claim. Only four scoped root notes publish.
+
+Private project copy68d74382 failed BEFORE allocation:CLOSURE_LINK_ESCAPE/0files/0dirs/
+0bytes/0links, full2,786source/14,112original/196output/111newinput boundaries matched
+before/after, owned child cleanup VERIFIED. Bounded SOL6.1 Extra High RCA confirmed the
+producer records fully resolved targets while consumer used lexical normalization.
+Exactly4Hermes links traverse Versions/Current to0; source-data graph4919of4919 matched.
+Root accepted only4strictgraphoperations plus newauthorityhash, no Hermes exception.
+New165700 executor451b09f0/proof0200c6fd completed224.49/360, authorchecks0. Root read
+actualhelper/proof and reconstructed all5forward/fullinverse operations exactly. NEW
+syntax/controlledactualASTgraphproof/correctedcopy remain UNEXECUTED, old failure intact.
+Authority: `/private/tmp/tfp-native-stage-framework-link-fix-gpt61-sol-xhigh-20261015T165700Z`.
+
+Separate private trustedtool-copy source completed203.67/360,1,681files/345directories/
+140containedrelative links/829,214,043bytes. Root read actual5d720039executor and metadata
+contract, no copy/tool/runtime action. It requires separately accepted stagecopy, current
+resources and seven absent destinations. Offline sourceproposal662cb3b2 confirms missing
+OS dispatch/privateJAVA_HOME and limits of service-launched inheritance. No offline/
+networkDisabled/build/artifact/device or native acceptance exists. Old Python SIGABRT
+and historical cleanup remain unchanged; source planning never repairs them.
+Authority: `/private/tmp/tfp-native-private-toolcopy-source-gpt61-sol-xhigh-20261015T165200Z`.
+
+Manual TEST database readonly observation verified71of71mappedtables/9migrations/
+0missing/0unfinished. First local startup reached APIhealth+ready and WebHTTP200 but
+FAILED exactgroupownership: installedAstro7.2.9 agentCLI intentionally detaches. API
+group stopped. Original Webchildbirth/PGID receipt gap remains historicalUNKNOWN. Saved
+matchingbackgroundchild/currentexactargv/cwd/FDlogdev+inode/lock/birthwindow/stablePS
+established CURRENT ownership before ONE exactPID TERM. New170000 receipt verified
+currentchild+group and both3000/4000absent. No unrelated signal, relaunch or cachedelete.
+SourceRCA244.20/240 operationalfailure preserved; root separately assessed grounded
+foregroundrecipe. New170200 author stopped at actualENOSPC before candidate creation;
+its prepared sourcebuffers remain in toolhistory, no finalauthor terminal. FE/API are
+currently stopped at the last verified boundary. No manual/fullflow pass inferred.
+
+Fresh host observation found121,888,768bytes (about116MiB), below unchanged3GiB minimum;
+rootAPFScontainer reported122,101,760freebytes. `/Volumes/rg` is no longer mounted; only
+MacintoshHD was listed. Rootspace changed from earlier18.44GB; cause UNESTABLISHED.
+Do not infer an external disk failure from mount absence. No delete/prune/purge/reset/
+resize/daemon-stop or resource waiver. ONE question requests at least5GiB freed outside
+preserved artifacts/caches, and reconnectRGifused, then replyready. No runtime/check/
+build/source-write retry until actual recovery and NEW fresh admission. Small checkpoint
+records alone are retained; no test/resource pass follows from writing this note.
+Authority: `/private/tmp/tfp-current-disk-blocker-20261015T163005Z/root-blocker.json`.
+
+No healthy author/check/service/native owner remains. Actual earlier GPT6 offline backend
+rejection was resumed once by requested6.1 sourceplanner; it completed. No unresolved
+included-usage interruption exists. Hourly job is recovery fallbackONLY and MUST NOT
+retry this environment failure or poll usage. Oldawakehold expired, no renewal. Preserve
+all NON-RETIRED originals/caches/states/historyf19 and unrelated moderation/resume/
+architecture. AuthorizedQAarchiveretirement remains intentional, no whole tmp deletion.
+
+After recovery: finish only savedforegroundsource in NEWscope, minimum graphproof/
+syntax/correctedexclusivecopy, rootactualinventory then toolcopy/offline/build/newdevice
+admissions. Foursettings/discovery, legal currentguest/ownedinput/POST201/capability/
+persistence, threePUB025TARGETslots, CON014/OPP014bytes/provider, TRUST006persistedMESSAGE,
+OPP015providerphases, Android/screenreader/broaderdiscovery/externalproductioninputs stay
+separate. HistoricOPP031persistenceWITHHELD/threeunrecoverablereads and historical502unknown
+remain. OAuth/OTP/emaildelivery excluded. Never splice certificates/invent inputs/approve
+production or promise readiness. Actual terminals override all earlier active text.
+
 ## Expanded Web/mobile: post-restart minimum independently accepted; private native staging continues — 15 October 2026
 
 The actual incremental GPT6 SOL Extra High review completed15:39:18UTC, ACCEPTED scoped
