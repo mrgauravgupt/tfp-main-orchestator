@@ -1,5 +1,76 @@
 # Workspace Memory for Future Agents
 
+## Expanded Web/mobile: private native tool compatibility passes; service-isolated runner input required — 15 October 2026
+
+Verified forward progress: the private project copy remains accepted at its original
+56,910-file / 4,919-link boundary. The two Maestro driver timestamps changed again
+across the earlier fixed-authority handoff. Both aborted source attempts and the
+original zero-allocation copy failure remain immutable; no actor or historical byte
+continuity is inferred. Root accepted only the source-led deterministic current-two-
+ctime preparation, with immutable first eight metadata fields,0700, no-follow stable
+FD/path, exact installed JAR/resource bytes and two body-SHA pins. Full nine-slot
+copier checks and every other manifest row/guard stayed unchanged.
+
+The new helper source was written156.87s after authority, but its records exceeded
+the240s author bound: corrected terminal277.31s, operational FAILED retained. Root
+separately read/reviewed all17,188 helper bytes, exact accepted digest AST and original
+manifest serialization, then admitted ONE actual zero-model minimum/copy. It PASSED
+in12.476s:1,681 independent regular files /829,214,043 bytes /140 contained relative
+links; every owned command/helper exited VERIFIED and all four frozen before/after
+groups matched. Root rehashed ALL source AND destination bodies, checked destination
+metadata/inode independence, all links/strict targets, five whole-manifest operations
+with full object+byte inverse and two executor-literal operations with full byte
+inverse. No guard exclusion, broad resnapshot, source chmod, retry or original deletion.
+Authority:
+`/private/tmp/tfp-native-toolcopy-current-authority-source-gpt61-sol-xhigh-20261015T171900Z/root-tool-copy-acceptance.json`.
+
+Independent SOL6.1 Extra High review completed208.51s/240, ACCEPTED/findings0 for the
+three trusted-process sources and original actual controlled proof. All35 inputs and
+four frozen groups matched before/after; no proof or old matrix replay. Root inspected
+the original review/terminal and all current bindings. Scope remains trusted direct
+processes and ordinary descendants ONLY; host reads, Mach/service brokers, whole native
+isolation and Internet connectivity are unproved. Authority:
+`/private/tmp/tfp-native-trusted-process-independent-gpt61-sol-xhigh-20261015T171500Z/root-independent-acceptance.json`.
+
+ONE new private compatibility batch PASSED4/4 in23.111s, retry0: actual Node24.20.0,
+pnpm10.0.0, Java17.0.3.1 and Maestro2.6.1. Exact private argv/JAVA_HOME/user.home, accepted
+process policy, current copied body/link guards, fresh unchanged resources and all
+owned cleanup passed. Root inspected actual version outputs/receipts; all four frozen
+before/after groups matched. Maestro advertising/analytics notice was retained as
+untrusted output; no advertised command/model was run. This is NOT a universal offline,
+implicit-download, Xcode/build, artifact, simulator/device or business receipt.
+Authority:
+`/private/tmp/tfp-native-private-tool-versions-low-20261015T172300Z/root-tool-compatibility-acceptance.json`.
+
+Bounded source assessment completed123.29s/180. The current operator's whole-service
+network/state gate is still UNSATISFIED: direct process proof does not cover Apple's
+Xcode/CoreSimulator/Mach service actors. Concrete build argv/env/artifact/new-device
+and exact ownership plan is saved; NO build,simctl,install or native action dispatched.
+ONE self-contained runner-availability question is pending, requesting a separate
+Mac/macOS VM with the required administrator-verified service/egress/state boundary.
+Ordinary continuation/elapsed time does not supply it. Source-confirmed integration
+gaps are unwrapped dispatch, missing private JAVA_HOME and unconditional Git calls
+in the no-Git staged manifest writer. A narrow read-only two-gap consumer/proposal
+owner now prepares only the JVM and truthful snapshot-identity corrections; external
+gate remains fail-closed. Actual terminal controls continuation. Authorities:
+`/private/tmp/tfp-native-build-service-admission-plan-gpt61-sol-xhigh-20261015T172700Z/minimal-proposal.json` and
+`/private/tmp/tfp-native-snapshot-jvm-source-plan-gpt61-sol-xhigh-20261015T173100Z`.
+
+Local TEST FE3000/API4000 remain left running from the accepted foreground startup;
+no new continuous-health/browser/full-flow claim. Actual UAT remains3c008/release
+20261011T115439Z-3c008ec4; canonical expanded nested source is uncommitted. ONLY four
+root notes publish; no nested/gitlink/deploy. Four settings/discovery flows, legal
+current guest/owned input/POST201/capability/persistence, three PUB025 TARGET slots,
+CON014/OPP014 bytes/provider, TRUST006 persisted MESSAGE, OPP015 provider phases,
+Android/screen-reader/broader discovery and external production inputs stay separate.
+Historic OPP031 persistenceWITHHELD/three unrecoverable reads and historical502unknown
+remain. OAuth/OTP/email delivery excluded. Preserve NON-RETIRED originals/caches/states/
+historyf19 and unrelated moderation/resume/architecture. No mixed certificate, invented
+input, production approval or readiness/deadline promise. No unresolved included-usage
+interruption remains; hourly job is usage-recovery fallback ONLY, not environment or
+missing-runner retry. Old awake hold expired, no renewal.
+
+
 ## Expanded Web/mobile: private project and process proof pass; local FE/API restored; tool authority correction pending — 15 October 2026
 
 Actual states supersede the previous disk-blocker checkpoint. The user freed space;
