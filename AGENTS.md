@@ -1,5 +1,64 @@
 # Workspace-Wide Agent Notes
 
+## Expanded Web/mobile: source review accepted; first SDK admission stops before Xcode; exact correction active — 16 October 2026
+
+Independent SOL6.1 Extra High review completed395.977s/600, affected source ACCEPTED /
+findings0; all51selected inputs and four frozen groups matched before/after. Root read
+actual review/terminal and reverified51current bindings. This reuses9newcontrolled
+methods and originalJVM1 at their original boundaries; no old proof/version/image/case
+replay. Runtime/artifact/device/business/readiness remained WITHHELD. Authority:
+`/private/tmp/tfp-native-trusted-local-combined-independent-gpt61-sol-xhigh-20261015T202600Z/root-independent-acceptance.json`.
+
+ONE zero-model fresh local build admission observed exact current manual FE3000/API4000
+birth/session/socket/CWD/logFD bindings, pinned Xcode26.6/SDK26.5 and unchanged resource
+gates.13read-only commands exited VERIFIED; pgrep1 was expected no-build absence. The
+reviewed Python dispatcher then exited1/VERIFIED before Xcode, helpers or run allocation:
+generic read46/admit176 rejected SDKSettings.plist INPUT_CUSTODY. Original outer field
+buildDispatched=true means Python parent launched, NOT Xcode. Exact runRoot remains
+absent; actual Xcode/build/artifact/device/case counts0. Original status/once/approval/
+logs retained. No automatic retry or permission/resource waiver. Root authority:
+`/private/tmp/tfp-native-trusted-local-build-runtime-low-approved-20261015T203500Z/root-first-failure-observation.json`.
+
+Bounded read-only SOL6.1 Extra High RCA completed208.65s/240. SDKSettings is regular
+root0:0/nlink1/mode0664/2586bytes; its SHA and all9FD/lstat identity slots match the
+original admission. Only generic private-input no022 predicate fails on group-write020.
+Version.plist0644 and xcodebuild0755 pass. This is an input-domain mismatch, not an app
+build/product/security failure or evidence of tampering. Four frozen groups,8selected
+inputs and3vendor observations stayed stable. Root accepted minimum BEFORE editing:
+a separate reader for only TWO exact vendor metadata names, pinned identities/ancestors/
+SHA/no-follow readonlyFD/closure/64KiBcap. General source/approval read remains byte-exact;
+no chmod, global mode waiver, broad Xcode prefix or fallback. Authority:
+`/private/tmp/tfp-native-xcode-vendor-metadata-custody-rca-gpt61-sol-xhigh-20261015T204000Z/root-minimal-proposal-acceptance.json`.
+
+ONE source-only SOL6.1 Extra High correction owner is active in NEW204800 scope,480s
+including final60records. It creates only new dispatcher/preparation/test copies with
+exact inverses; preparation captures vendor metadata rows. Minimum will run ONLY changed
+syntax and ONE new discriminating source/FD contract, reusing9previous passes without
+replay. One correction-only independent judgment and a NEW once/fresh admission are
+required before a later build. No build/source retry has yet occurred. Current owner:
+`/private/tmp/tfp-native-xcode-vendor-metadata-fix-gpt61-sol-xhigh-20261015T204800Z`.
+
+Parallel approved zero-model preparation PASSED8.261s: exactly6independent copied
+Maestro dependency files/21,486,066bytes in a new exclusive home, empty writable cache
+and runtime directories, four frozen before/after groups0drift. Root independently
+verified6body hashes/inodes/0700directories/empty runtime. No broad old-home/cache copy,
+artifact/device/guest/legal/case authority. Future native runId is063e45f3-369a-44dc-b753-f6290567badf;
+receipt8e91c98c remains source-bound and must be current at actual later admission.
+Authority:
+`/private/tmp/tfp-native-trusted-local-runtime-home-low-approved-20261015T204300Z/root-preparation-acceptance.json`.
+
+Manual TEST services remain left running; no continuous-health claim. Actual UAT stays
+3c008/release20261011T115439Z-3c008ec4; expanded nested source uncommitted. ONLY four root
+notes publish, no nested/gitlink/deploy. Native build/artifact/new-device/current guest/
+four settings-discovery flows, legal owned input/POST201/capability/persistence, PUB025
+TARGET3, CON014/OPP014bytes/provider, TRUST006persistedMESSAGE, OPP015provider phases,
+Android/screen-reader/broader discovery and external production inputs remain separate.
+Historic OPP031 persistenceWITHHELD/three reads unrecoverable and historical502unknown
+remain; OAuth/OTP/emaildelivery excluded. Preserve NON-RETIRED originals/caches/states/
+historyf19/unrelated work. No mixed certificate, invented input, production approval or
+readiness/deadline promise. Hourly job is usage recovery fallback ONLY; healthy active
+work continues without waiting. No new usage polling/purchase/reset or awake renewal.
+
 ## Expanded Web/mobile: trusted-local native source and nine new contract checks pass; independent review active — 16 October 2026
 
 Both new bounded SOL6.1 Extra High source owners completed. The single-build dispatcher
