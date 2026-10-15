@@ -1,5 +1,69 @@
 # Workspace Memory for Future Agents
 
+## Expanded Web/mobile: private project and process proof pass; local FE/API restored; tool authority correction pending — 15 October 2026
+
+Actual states supersede the previous disk-blocker checkpoint. The user freed space;
+fresh admitted observations passed the unchanged disk/memory gates. No additional
+deletion, purge, Docker resize, service stop or resource waiver was performed.
+
+The corrected private native project copy PASSED once. Root rehashed all 56,910
+independent regular files / 947,303,966 bytes and verified all 4,919 relative links
+and their strict targets. Six full frozen before/after groups matched, owned child
+cleanup VERIFIED. Old failed copy remains immutable. No Git, app artifact, build,
+offline, simulator/device or native flow follows from the copy. Authority:
+`/private/tmp/tfp-native-stage-framework-link-fix-gpt61-sol-xhigh-20261015T165700Z/root-stage-copy-acceptance.json`.
+
+The foreground local TEST startup PASSED: API health/readiness and Web HTTP200;
+both listener process-group/birth receipts matched. FE http://localhost:3000 and
+API4000 were left running for human testing. Root accepted the original startup
+receipt, not continuous health or a browser/business pass. Previous detached startup
+failure and historical ownership gaps remain separate. Authority:
+`/private/tmp/tfp-post-restart-foreground-start-resume-source-gpt61-sol-xhigh-20261015T171100Z/root-runtime-startup-acceptance.json`.
+
+New trusted-process source actually completed before its agent final-response usage
+rejection. Its new controlled minimum PASSED once in9.311s: actual parent/ordinary
+child IPv4+IPv6 loopback TCP/UDP and private writes succeed; owned outside writes and
+numeric documentation-address operations receive EPERM under the restricted policy,
+with discriminating unconfined controls. All owned cleanup VERIFIED; full original
+before/after boundaries matched. Root inspected original structured results. Scope
+is TRUSTED_DIRECT_PROCESS_AND_ORDINARY_DESCENDANTS_ONLY. Host reads, Mach/service
+brokers, Internet connectivity and whole native/build/offline isolation remain
+UNPROVED. No old abort/kernel/native matrix was replayed. Authority:
+`/private/tmp/tfp-native-trusted-process-minimum-low-20261015T170700Z/root-process-proof-acceptance.json`.
+
+The first private tool copy failed before allocation: stale exact source metadata,
+0files/bytes/links, original boundaries stable and command cleanup VERIFIED. Read-only
+SOL6.1 Extra High RCA found only two driver ctime slots stale; present complete driver
+bytes match current SHA-bound installed JAR resources. Producer permission code is a
+plausible mechanism; actor/cause and historical unpinned byte continuity remain UNKNOWN.
+A fixed-timestamp source correction then aborted BEFORE candidates because those two
+ctime slots changed again; other eight identity fields matched. No chmod, retry,
+copy, source/cache mutation or guard relaxation occurred. A bounded source-only
+current-authority proposal now assesses deterministic just-in-time data preparation
+while retaining full nine-slot/FD/hash/final-state guards. Actual terminal controls
+continuation. Authorities:
+`/private/tmp/tfp-native-toolcopy-driver-current-source-gpt61-sol-xhigh-20261015T171000Z/terminal.json` and
+`/private/tmp/tfp-native-toolcopy-current-authority-plan-gpt61-sol-xhigh-20261015T171400Z`.
+
+Two actual included-usage interruptions were preserved. ONE included-only snapshot
+then showed ordinary usage allowed, primary3percent/weekly32percent. Purchased fields
+were ignored; no purchase/reset/downgrade. ONE bounded requested SOL6.1 Extra High RCA
+resume actually completed, resolving that interruption. Hourly automation remains
+usage-recovery fallback ONLY; it must not duplicate healthy owners or retry an
+environment/metadata failure. No further usage polling is admitted while healthy.
+
+Actual UAT remains3c008/release20261011T115439Z-3c008ec4; expanded nested source remains
+uncommitted. Publish ONLY these four root notes, no nested/gitlink/deploy. Native tool
+copy/versions, separate Xcode/service boundary/build/artifact/new-device admissions,
+four settings/discovery flows, legal current guest/owned input/POST201/capability/
+persistence, three PUB025 TARGET slots, CON014/OPP014 bytes/provider, TRUST006 persisted
+MESSAGE, OPP015 provider phases, Android/screen-reader/broader discovery and external
+production inputs remain separate. Historic OPP031 persistence WITHHELD/three reads
+unrecoverable and historical502 unknown stay unchanged. OAuth/OTP/email delivery are
+excluded. Preserve NON-RETIRED originals/caches/states/historyf19 and unrelated work.
+No invented inputs, mixed certificate, production approval or readiness/deadline promise.
+
+
 ## Expanded Web/mobile: native staging source corrected; fresh disk exhaustion blocks minimum — 15 October 2026
 
 Actual Metro incremental review is ACCEPTED scoped/findings0,9d01e9e5; selectedmethod
