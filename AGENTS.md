@@ -1,5 +1,68 @@
 # Workspace-Wide Agent Notes
 
+## Expanded Web/mobile: post-restart fixture minimum passes; one incremental judgment active — 15 October 2026
+
+User confirmed restart and mounted `rg`. Verified backup restored13,733 bound files /
+2,343,035,900 bytes with no overwrite/delete. Bytes and file modes were verified; old
+inodes/directory metadata/ACLs/process cleanup are not restored. Old112800/115500 and
+native173000 cleanup remain UNKNOWN. Fresh host70percent/12.03GB metric and46.73GB disk
+passed unchanged screens; Docker ordinary startup succeeded, current3000/4000 absent.
+No reset/prune/workload stop/resource-policy change or redundant product deploy occurred.
+
+One source-only planner exceeded204.39s/180 operationally; saved grounded proposal was
+separately root-assessed. The6.1 source author hit actual workspace-credit rejection
+before writing code. This is not included-window exhaustion. One read-only included
+snapshot showed primary1percent/weekly16percent, purchased fields ignored. Direct human
+continuation and permitted GPT6 SOL Extra High fallback completed the same source work;
+old interruption stays unfinished. Root conservatively bounded completion256.721s/330.
+Seven exact private runner operation groups/full inverses were personally reconstructed;
+all other helpers,20s/TERM3/KILL3/UNKNOWN/resource/hash/security/lease/cleanup stayed exact.
+Fresh two-port pinned PRESENT/ABSENT custody retains before/final and selected-check guards.
+
+Missing old080000 image-preparation receipt remains MISSING, never fabricated. A NEW
+actual immutable cached-image/resource probe passed: Node24.22/Linuxarm64, VM7.30GB,
+backing20.76GB, both ports absent, exact-owned probe cleanup VERIFIED. Source snapshot
+has897 regular source plus14 metadata members; one accepted fixture payload changed,
+whole-tar inverse and all other member metadata/bodies match. Old stale894 count remains.
+
+First new minimum FAILED during preflight before any command/check because six unbound
+candidate-reference copies were absent after reboot. Full frozen groups remained exact.
+Source-led RCA checked ALL18 references:12 present/matching,6 missing,0 drift; the six
+exact payloads were in the verified source tar. Exclusive no-follow700 parents and six
+new644 files rehydrated byte custody only, with no overwrite/delete or source/map/guard
+change. Original failed minimum/once remains. The NEW once minimum then PASSED: two-owner
+in-memory syntax, seven controlled actual-AST adapter methods and fresh no-overlap;
+owned command cleanup VERIFIED. Controlled proof is not an OS/kernel/native certificate.
+
+Actual new private Docker minimum PASSED2/2 once: the original failed Metro method
+1pass/11siblings UNRUN and changed-fixture lint0, retries0. Seven full2,786-source /
+14,112-original /196-output /111-new-input boundaries matched. All eight exact-owned
+containers and named volume were removed VERIFIED; owned commands exited VERIFIED,
+pressure flag1 only. Reuse old11TS/Python/Bash/lint/types/kernel proof at original
+boundaries; do not create a clean mixed12-method or whole-application aggregate.
+Authority: `/private/tmp/tfp-native-metro-post-restart-minimum-20261015T151000Z/root-check-acceptance.json`.
+
+ONE correction-only GPT6 SOL Extra High independent reviewer is active at
+`/private/tmp/tfp-native-metro-post-restart-incremental-independent-gpt6-sol-xhigh-20261015T154000Z`.
+Its actual review/atomic terminal controls continuation. No duplicate source/check/native/
+build/service owner. Root notes are separate from product integrity. Actual UAT stays
+3c008/release20261011T115439Z-3c008ec4; expanded nested source remains uncommitted. No
+nested publication/gitlink/deploy, full-flow/device, legal-write or readiness claim.
+
+After independent acceptance, actual private project/artifact/offline toolchain/new-device
+native runtime still require fresh source/resource/owner admissions. Four settings/
+discovery cases, legal current guest/owned input/POST201/capability/persistence, three
+PUB025 TARGET slots, CON014/OPP014 saved bytes/provider, TRUST006 persisted MESSAGE,
+OPP015 provider phases, Android/screen-reader/broader discovery and external production
+inputs remain separate. Historic OPP031 persistence WITHHELD/three reads unrecoverable
+and historical502 unknown stay unchanged. OAuth/OTP/email delivery remain excluded.
+
+Preserve every NON-RETIRED original/cache/state/historyf19 and unrelated moderation/
+resume/architecture. Authorized old QA archive retirement remains intentional; no whole
+tmp deletion. Publish only four scoped root notes. Hourly job is usage-recovery fallback
+ONLY; no unresolved included-usage interruption currently exists, and it must not retry
+an environment blocker or duplicate healthy work. Old awake hold expired, no renewal.
+
 ## Expanded Web/mobile: runner fix verified; final Metro fixture prepared; native host recovery required — 15 October 2026
 
 Expanded work remains authorized, excluding OAuth, OTP and email delivery. Actual UAT
