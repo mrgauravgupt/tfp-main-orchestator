@@ -1,6 +1,6 @@
 # Opportunity, event, contest and profile human-flow audit
 
-## Expanded Web/mobile: final-verdict finding closed; first isolated OS proof preserves launch failure — 15 October 2026
+## Expanded Web/mobile: strict readonly-stdin adapter source active; original isolated failure preserved — 15 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email delivery**. Nested
 source stays uncommitted; actual UAT remains **3c008**, release
@@ -48,11 +48,25 @@ outer cleanup VERIFIED, protected/product owned fingerprints unchanged, and all 
 no real original-write probe, Node/project copy/application/native/legal action ran.
 Authority: `/private/tmp/tfp-comprehensive-native-owned-offline-os-proof-prepared-20261015T053100Z/root-failed-proof-acceptance.json`.
 
-ONE bounded240s source/retained-metadata SOL6.1 Extra High RCA now traces launcher guards
-and exact enrolled files with multiple hypotheses. No reproduction, extra observation,
-source edit, policy expansion or automatic retry is admitted. Six passed negatives and
-four finalization cases are retained; a grounded minimum proposal precedes any correction.
-Authority: `/private/tmp/tfp-comprehensive-native-owned-offline-launcher-rca-gpt61-sol-xhigh-20261015T053500Z/root-authorization.json`.
+Read-only source RCA053500 completed210.18s/240, all2,780/11,900/196 unchanged.
+Installed CPython DEVNULL opens O_RDWR; exact retained supervisor/descendant use it while
+launcher and worker require O_RDONLY. This is a source-confirmed adapter mismatch;
+earlier runtime-dependent identity/profile/FD facts and historical swallowed clause
+remain qualified UNKNOWN. No reproduction, process observation, edit or policy waiver.
+Authority: `/private/tmp/tfp-comprehensive-native-owned-offline-launcher-rca-gpt61-sol-xhigh-20261015T053500Z/minimal-proposal.json`.
+
+Root accepted only prospective readonly-null normalization before unchanged strict
+guards, explicit readonly descendant stdin and fixed actual-only selection reusing six
+passed negatives. ONE bounded600s/final90records-only SOL6.1 Extra High source owner now
+works on TWO NEW copies and ONE new actual-source FD/selector proof owner. A separately
+accepted supplement permits only a finite source-derived guard-code classification;
+unknown exceptions remain class-only, no arbitrary text/path/environment or traceback.
+All policy/retained supervisor/gate/stdout-stderr/final-verdict guards stay exact. Author
+runs NO checks/import/compiler/sandbox/Node/native/project/network/API/DB/models or
+publication. Root exact source acceptance, new-only minimum, one incremental judgment
+and a NEW separately admitted actual-only once bundle must precede further execution.
+No old six-negative/four-finalization case or original OS proof replay is authorized.
+Authority: `/private/tmp/tfp-comprehensive-native-owned-offline-stdin-fix-gpt61-sol-xhigh-20261015T054000Z/root-accepted-proposal.json`.
 
 Native restore-only and downstream isolation assessments remain BLOCKED: no established
 safe current-process inspect/quiesce/rebind/delivery. An isolated device still needs
@@ -70,7 +84,7 @@ production gates remain separate. No certificate splicing, invented inputs or pr
 approval. Hourly continuation ACTIVE; old12-hour hold expired/owner absent. Preserve
 historyf19 and unrelated moderation/resume/architecture. Only four root notes publish;
 no nested publication, parent gitlink or deployment change. Prior latest section remains
-in this scope's before snapshots and root8b91501.
+in this scope's before snapshots and root3acf3a3.
 
 
 ## Expanded Web/mobile: native owner and six-file metadata feasible; private guarded observation source active — 15 October 2026
