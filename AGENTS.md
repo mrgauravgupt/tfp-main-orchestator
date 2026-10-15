@@ -1,5 +1,79 @@
 # Workspace-Wide Agent Notes
 
+## Expanded Web/mobile: isolated Linux checks executed; 96 new checks pass; one interaction and fixture typing remain — 15 October 2026
+
+Continuous work remains active, excluding **OAuth, OTP and email delivery**. The
+single hourly job is ONLY an included-usage fallback; healthy active work continues
+without waiting for it. No purchased-credit gate, purchase/reset or unchanged backend
+retry occurred. Actual UAT stays **3c008**, release **20261011T115439Z-3c008ec4**;
+nested source remains uncommitted. No deployment-ready/full-coverage/device handoff.
+
+The Docker recipe reader completed466.65s/480 source-only. Root accepted its concrete
+ordinary private workspace recipe and only a phase-order clarification: host/resource
+premises precede the sole public image pull; actual VM available memory must pass
+before dependency allocation. One bounded official Node24 image pull PASSED, retaining
+immutable imageID b3b84798 and249,128,102 bytes. A new read-only/nonroot/network-none
+resource container confirmed Node24.22.0/Linuxarm64, about7.05GB available VM memory
+and20.76GB backing-store headroom; exact owned cleanup VERIFIED. No host project,
+socket, credentials or existing Docker workload was mounted or explicitly changed.
+Authority: `/private/tmp/tfp-docker-private-image-preparation-low-20261015T080000Z/execution-status.json`.
+
+LOW prepared exact current dirty-source snapshots, regular unique entries only:
+14 metadata files/747,520-byte tar,894 source files/49,315,840-byte tar,49,350,975
+expanded bytes under128MiB. Fourteen accepted private overlays and908 canonical
+before/after bindings matched; root independently inspected every tar member/hash,
+ownership/mode/path and disjoint metadata/source boundaries. No canonical adoption.
+Authority: `/private/tmp/tfp-docker-private-snapshot-low-20261015T080000Z/root-snapshot-acceptance.json`.
+
+The first preparation FAILED before keeper entry/dependencies/tests because Docker's
+local logging compression default conflicts with max-file1. Its exact container and
+volume cleanup VERIFIED; both full boundaries stayed stable. A bounded SOL6.1 Extra
+High RCA completed161.80s/180 with official driver/validator evidence. Root accepted
+only six `--log-opt compress=false` insertions, preserving5m/single-file limits and
+every other argument, then reconciled whole-object inverses and one executor-path
+change on NEW private copies. Original failure/once/logs remain immutable.
+Authorities: `/private/tmp/tfp-docker-local-log-option-rca-gpt61-sol-xhigh-20261015T080700Z/minimal-proposal.json`
+and `/private/tmp/tfp-docker-private-log-corrected-low-approved-20261015T080900Z/root-exact-correction-acceptance.json`.
+
+The corrected zero-model batch TERMINATED **CHECK_FAILURES_COLLECTED**, retries0.
+Metadata-only public dependency preparation succeeded with canonical pnpm10.0.0,
+frozen lock and ignore-scripts; that network container ended before source import.
+NEW Linux filesystem/network/descendant/host-path isolation proof PASSED. Exactly
+SIX NEW test owners then executed all97 checks once: **96 PASSED /1 FAILED** across
+five passed files and one mixed file. All THREE legal owners passed35+20+5 checks;
+discovery mapper22/card8 passed, search6pass/1fail. Affected13-owner lint PASSED.
+Canonical mobile types reported SIX TS2367 comparisons in the two new interaction
+fixtures. All THREE independent commands were collected; no check was hidden/retried.
+Eight2,780-source/11,996-original/196-output boundaries matched. All11 exact-owned
+containers and named tmpfs volume were removed with VERIFIED cleanup. New ephemeral
+dependency storage was unmounted after logs/receipts; original caches stay unchanged.
+Authority: `/private/tmp/tfp-docker-private-log-corrected-low-approved-20261015T080900Z/execution-status.json`.
+
+One bounded SOL6.1 Extra High read-only source/type/state RCA now traces the failed
+search current-location test's missing host at line109/openPanel115/caller222 and
+the SIX fixture TS2367 errors before any minimum correction. No product defect is
+presumed.96 valid passes/lint remain reusable; only failed method/changed fixtures/
+necessary typing may rerun after a grounded accepted proposal and NEW freeze. No
+old Button/native/business/image/completed case matrix replay or canonical adoption.
+Authority: `/private/tmp/tfp-discovery-collected-fixture-rca-gpt61-sol-xhigh-20261015T081200Z`.
+
+Private source review99411459 and legal source judgment retain their accepted
+boundaries; private unit/component/transport checks are not native/business/visual
+or legal write authority. Original173000 setup failed before SET005; native local/
+app/files/project/simulator cleanup remains UNKNOWN. No safe current-process recovery,
+ACL/permission route, current guest/legal input/POST201/capability/persistence grant.
+Completed two-boot100/PRO010584f5b/public HTTP2a2074 remain original boundaries only.
+Four settings/discovery cases, three PUB025 TARGET slots, CON014/OPP014 saved bytes/
+provider, TRUST006 persisted MESSAGE, OPP015 provider phases, Android, screen-reader
+runtime and broader discovery stay incomplete. Historic OPP031 persistence WITHHELD/
+three unrecoverable reads, historical502 unknown and external production gates remain.
+No certificate splicing, invented input, production approval or readiness promise.
+
+Only four scoped root notes publish; no nested publication/gitlink/deploy change.
+Preserve every original/cache/state/historyf19 and unrelated moderation/resume/
+architecture work. Old12-hour awake hold expired/owner absent and was not renewed.
+Previous active/pending launch notes are historical; actual terminals control.
+
 ## Expanded Web/mobile: continuous work resumed; hourly usage fallback updated; Docker engine ready — 15 October 2026
 
 Expanded scope remains active, excluding **OAuth, OTP and email delivery**. The user
