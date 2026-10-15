@@ -1,5 +1,80 @@
 # Workspace Memory for Future Agents
 
+## Expanded Web/mobile: authorized QA archive retirement complete; isolated checks blocked by host memory pressure — 15 October 2026
+
+Expanded work remains active, excluding OAuth/OTP/email delivery. Actual UAT remains
+3c008/release20261011T115439Z-3c008ec4; nested source stays uncommitted. No deployment-
+ready/full-coverage/device or production handoff. The single hourly job is ONLY an
+included-usage recovery fallback; it must not retry this environmental blocker.
+
+DIRECT human answer was **“Delete all archived QA runs (~9.38 GB)”** to the exact
+retirement question. This superseded standing retention ONLY for the entire contents
+of `tfpphotographers/tmp/qa-archive`. No extra permission was required or requested.
+Root admitted one retained zero-model exact-path/owner/no-active-regular-file routine.
+It captured the archive inode in a unique same-filesystem quarantine and preserved
+an empty original qa-archive directory. A full regular-file SHA/metadata retirement
+manifest was saved before deletion. Actual terminal PASSED:21,488 regular files and
+17,687 subordinate directories permanently retired; quarantine removed; archive root
+empty with original owner/mode. Observed9,365,245,952 bytes (~9.37GB) recovered; free
+space became about11.1GiB. This is intentional historical evidence retirement, NOT
+preservation or recertification of those archived runs. All other tmp siblings had
+the same identities and both frozen outside boundaries matched. DB backups/API state/
+screenshots/certification cache/current October evidence/source and unrelated work
+were untouched. Root independently verified actual terminal, retirement manifest,
+all counts/root/siblings and protected outside hashes.
+Authority: `/private/tmp/tfp-approved-qa-archive-retirement-low-20261015T084600Z/root-retirement-verification.json`.
+
+After verified disk recovery, root prepared NEW once scope085000 with exact selected
+recipe/source snapshot/two fixture corrections; only its frozen-map path changed.
+Original083000 failed-disk status/once stayed immutable. Actual NEW admission FAILED
+at HOST_AVAILABLE_GATE BEFORE any container, volume, dependencies or check dispatch;
+all2,780-source/13,182-original/196-output boundaries matched. The retained OS query
+was34percent of16GiB,5.44GiB against the unchanged6GiB screen. No method/lint/types ran,
+no old proof was replayed and no source change or cleanup is outstanding from it.
+Authority: `/private/tmp/tfp-discovery-fixture-resource-resume-low-approved-20261015T085000Z/root-failed-host-memory-admission.json`.
+
+One bounded read-only SOL6.1 Extra High resource RCA saved grounded material but its
+final record correction exceeded264.83s/240; operational FAILED_BOUND_EXCEEDED remains.
+Root separately assessed the saved proposal/actual four-command receipt. The single
+read-only transaction completed4/4 in0.018s, no mutations. Current pressure flag2 maps
+to WARNING; physical compressor occupancy was about6.21GiB and swap about6.47GiB.
+Apple accounting shows memory_pressure-Q is not guaranteed incremental allocation
+capacity; root does not relabel5.44GiB as exact available memory or lower6GiB to pass.
+No source/threshold/purge/critical-pressure/Docker-policy/workload change was admitted.
+Authority: `/private/tmp/tfp-docker-host-memory-gate-rca-gpt61-sol-xhigh-20261015T085300Z/terminal.json`
+and its saved `minimal-proposal.json`.
+
+Root then admitted ONLY one10s PID/RSS/comm-only read, maximum20 rows, models0/actions0.
+It completed PASSED_READ_ONLY_OBSERVATION_ONLY. Chrome renderers were largest observed
+resident entries; RSS does not establish compressed/swap ownership, exact available
+headroom or authority to stop anything. No known task-owned candidate was identified
+for automatic safe termination. FE/API stayed running; no app/daemon/container was
+stopped or resized. ONE self-contained environment question now awaits memory freed
+by closing unneeded tabs/apps, or an alternate isolated runner. Do not repeat it or
+retry based only on elapsed time/heartbeat/ordinary continuation. Current warning
+pressure must resolve and fresh unchanged admission must pass before any checks.
+Authority: `/private/tmp/tfp-host-memory-owner-observation-low-20261015T085800Z/observation.json`.
+
+Original97 private checks remain96pass/1fail,13-owner lint passed, SIX fixture typing
+errors were traced. Exact seven-operation/two-NEW-fixture correction is source-complete,
+root forward/reverse verified, unadopted. Pending validation is ONLY original failed
+Search method/two changed-fixture lint/canonical mobile types, then ONE incremental
+independent closure reusing96 passes and accepted kernel proof. No old full/native/
+business/image/negative matrix replay; no clean-current-child certificate is invented.
+
+Native original173000 setup failed before SET005; local/app/files/project/simulator
+cleanup stays UNKNOWN and recovery/ACL/legal-current-guest/POST201/capability/persistence
+authority blocked. Two-boot100/PRO010584f5b/publicHTTP2a2074 retain original boundaries,
+never later-write grants. Four settings/discovery cases, three PUB025 TARGET slots,
+CON014/OPP014 bytes/provider, TRUST006 persisted MESSAGE, OPP015 provider phases,
+Android/screen-reader/broader discovery, historic OPP031 persistenceWITHHELD/three
+unrecoverable reads, historical502 unknown and compatible-child/external production
+gates remain separate. No mixed certificate, invented input or readiness promise.
+Only four scoped root notes publish; no nested publication/gitlink/deploy. Preserve
+all NON-RETIRED originals/caches/states/historyf19 and unrelated moderation/resume/
+architecture work. Old12-hour hold expired/owner absent; no renewal. No healthy
+source/check/watcher or cleanup owner remains; actual terminals override old notes.
+
 ## Expanded Web/mobile: workspace tmp is retained QA history; explicit archive retirement decision pending — 15 October 2026
 
 Expanded work remains active, excluding OAuth/OTP/email delivery. Actual UAT remains
