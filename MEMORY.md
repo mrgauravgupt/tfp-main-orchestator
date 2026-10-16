@@ -1,5 +1,54 @@
 # Workspace Memory for Future Agents
 
+## Expanded Web/mobile: native build and complete artifact verification pass; new simulator preparation active — 16 October 2026
+
+ONE current run23ece244-39dc-4c5a-bf49-b81ecc15a441 completed actual Xcode0/process0,
+770.264s inner/770.737s outer, no supervision failure. Cleanup VERIFIED/reaped/sessionEmpty/
+signals[]; manualAfter/protectedAfter VERIFIED. All1101 tracked bytes/modes stayed exact;
+10 declared Hermes/marker deltas accepted. Original success observatione558263e retained.
+Outer112000 and exactwatch112200 TERMINAL0; no build/watch owner remains. All five older
+failed build/DD pairs and original partial/failure states remain preserved. No rebuild,
+codegen/config-producer replay or cache copying is needed or authorized by this success.
+
+The actual112400 inspector PASSED once18.524s: ALL40regular artifact files/64726036bytes,
+arm64/iOS Simulator MachO and exact native-generation source bindings verified, along
+with complete postbuild project/1101/delta/Hermes checks. Root artifact-only acceptance
+01c406ba7273c686a81d38fe304a7c5b8d9189c825844a61dfb99f338e13159a.
+DebugJS/source hashes/optional strings do not prove current boot/nativeHTTP/business.
+No actual simulator, device or case pass follows. Actual status:
+`/private/tmp/tfp-native-expo-actual-run-artifact-inspector-prepared-zero-model-20261016T112400Z/inspection-status.json`.
+
+Separate115400 DATA constructor reused accepted saved manifests only:57010 physical
+regular source/dependency bindings,4920 contained links separately,1238 privateGit metadata
+excluded,40native/nine generation bindings. Project rereads/device actions0. Candidate
+staging state remains pending boundary judgment; dependency/direct-old-state authority
+fields remain NULL. Accepted artifact receipt is not relabeled into staging authority.
+Corrected113600 case map changes one stale projectRoot literal only; original map kept.
+
+Root separately accepted the grounded114000 minimum despite its operational source
+cutoff failure146.625/120s (total146.626/180s). Sole source-only SOL6.1 Extra High115000
+implements ONE new private provisioner,600s/source450/final150; no existing source edits,
+checks/runtime/models by author. Root authorization3b41bd9691cf2136dcd1dbe781fc378ec0b0a127c2bce9109a7fe499b581e86c.
+It reuses accepted process/FD helpers and retains6GiB/manual/vendor/once/no-overlap gates.
+Only a new actual UUID absent complete baseline may be booted/installed/full40verified/
+returned Shutdown; all original device metadata/membership preserved. No olddevice/appdata
+command, delete/recreate, business driver or automatic case follows. Root exactsource/
+minimum/ONEincremental independent judgment and fresh actual admission precede mutation.
+Installed CLI115200 preflight passed7help commands once1.282s/no simulator actions; actual
+baseline/returnedUUID/install/currentguest/nativeHTTP remain future inputs, never invented.
+
+Manual TEST FE3000/API4000 left running, no continuous-health claim. UAT remains3c008/
+release20261011T115439Z-3c008ec4; expanded nested source uncommitted. Publish ONLY four
+root notes; no nested/gitlink/deploy. Native settings/discovery/currentguest/legalowned
+input/POST201/capability/persistence, PUB025TARGET3, CON014/OPP014bytes/provider, TRUST006
+persistedMESSAGE, OPP015providerphases, Android/screen-reader/broader discovery/external
+production gates remain separate. Historic OPP031 persistenceWITHHELD/three unrecoverable
+reads/502unknown unchanged. OAuth/OTP/email delivery excluded. Preserve all NON-RETIRED
+originals/caches/states/historyf19/unrelated work. No mixed certificate/invented input/
+production approval/readiness promise. Hourly follow-up usage-recovery fallback ONLY;
+no unresolved included rejection, usage polling/purchase/reset/downgrade/awake renewal.
+Continue useful work without an hourly wait; do not replay completed checks/cases.
+
 ## Expanded Web/mobile: independent current Expo source accepted; one native build active — 16 October 2026
 
 Independent111400 completed283.155/480s, source229.635/360s: source and original new
