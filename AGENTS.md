@@ -1,5 +1,68 @@
 # Workspace-Wide Agent Notes
 
+## Expanded Web/mobile: codegen preparation source and minimum pass; corrected in-root execution active — 16 October 2026
+
+Original actual Debug Xcode build remains terminal exit65: missing generated
+FBReactNativeSpec.h. Root verified1,101tracked source bodies unchanged, all10delta rows
+only declared Hermes/marker, ownedcleanup/manualAfter/protectedAfter VERIFIED. Original
+failed project/run/logs/xcresult/partial state remain immutable, no artifact/device pass.
+Authority: `/private/tmp/tfp-native-sdk-corrected-build-runtime-zero-model-20261015T210500Z/root-original-build-failure-observation.json`.
+
+Read-only source RCA confirms private staging omitted generated ReactCodegen inputs;
+Pod header-copy phase precedes GenerateSpecs, which never ran. RCA exceeded270.60s/240
+operationally; failure preserved. Root separately read installedCocoaPods/CLI/executor
+and18currentbindings, accepted grounded minimum BEFORE edits: NEW scratch workspace
+from immutable project and installed local iOS generator, complete required-reference
+closure and full generated delta; no copying fabricated headers or package/pod fetch.
+Root direction: `/private/tmp/tfp-native-reactcodegen-missing-header-rca-gpt61-sol-xhigh-20261016T012000Z/root-minimal-preparation-direction-acceptance.json`.
+
+Source-only SOL6.1 Extra High preparation completed417.36s/420, authorchecks0. Root
+read all3files and reconstructed seven retained-recipe operation groups/full inverse.
+Closed localNode argv, yarn-build-branch denial, complete actual PBXgenerated reference
+closure, all1,101tracked bytes/modes, exact-two Podscript retarget, parentless private
+Git, scoped output/caps, full oldfailed-tree/frozen/tool/manual protection and owned
+command/FD/TERM3/reap3/UNKNOWN remain. NEW minimum PASSED8.516s:3syntax/ONEactual-source
+contract, retry0/ownedcleanupVERIFIED/allfour frozen groups0drift. Originaltest/matrix/
+version/image proofs reused without replay. Authority:
+`/private/tmp/tfp-native-reactcodegen-preparation-minimum-zero-model-20261016T014000Z/root-check-acceptance.json`.
+
+First preparation FAILED102.105s before ANY owned command/copy/Git/Node allocation:
+PRIVATE_PATH_ESCAPE. Allfour before/after groups0drift/baselineAfterVERIFIED; outer
+parentcleanupVERIFIED, new writable root remained absent. Its sources/status/once/
+approval are retained. Read-only SOL6.1 Extra High RCA completed112.74s/120,10selected
+bindings stable: recorder requires command-record BASE inside fixedSTAGE. Every BASE/
+config/out/err/custody/cwd/load consumer supports relocation together. Root independently
+read private_dir/record and accepted ONLY placement DATA, no source or policy edit.
+Authority: `/private/tmp/tfp-native-codegen-execution-root-placement-rca-gpt61-sol-xhigh-20261016T014600Z/root-placement-acceptance.json`.
+
+NEW exclusive700 in-STAGE runtime has three independent body-identical source copies;
+root wrapper changes ONLY EXEC location literal with full inverse. Source/minimum reused
+without newcheck/review replay; all permission/catalog/ownership/resource gates unchanged.
+Fresh13read-only current-owner/resource commands passed. Actual preparation parent32288
+ACTIVE, sole zero-model exactownerwatch93785. Atomic status controls continuation:
+`/private/tmp/tfp-native-reactcodegen-placement-corrected-fresh-admission-zero-model-20261016T014900Z/execution-status.json`.
+Actual execution root is recorded by root-placement-copy-acceptance.json there; new
+writable project is STAGE/trusted-local-codegen-build/project. No new Xcode/device/case
+was dispatched. Missing atomic final is unfinished. After actual preparation root must
+verify full new project/Git/generated closure and oldfailed originals, then admit minimum
+build/operator binding adaptation plus ONEcombinedincremental independent judgment
+before any separately justified newbuild; no blind retry or invented future receipts.
+
+Accepted SDK correction9526b035 and earlier source proofs remain reused at original
+boundaries. Future SET005 map26fields/eight unsatisfied groups and exclusive six-file
+Maestro home remain preparation only. Manual TEST FE3000/API4000 stay running; no
+continuous-health claim. Actual UAT stays3c008/release20261011T115439Z-3c008ec4;
+expanded nested source uncommitted. ONLY four root notes publish, no nested/gitlink/
+deploy. Four settings/discovery cases, legal current guest/owned input/POST201/capability/
+persistence, PUB025TARGET3, CON014/OPP014bytes/provider, TRUST006persistedMESSAGE,
+OPP015provider phases, Android/screen-reader/broader discovery/external production
+inputs remain. Historic OPP031 persistenceWITHHELD/three unrecoverable reads and
+historical502unknown unchanged. OAuth/OTP/emaildelivery excluded. Preserve NON-RETIRED
+originals/caches/states/historyf19/unrelated work. No invented input/mixed certificate/
+production approval/readiness promise. Hourly job is usage-recovery fallbackONLY;
+no unresolved included interruption or awake renewal. Never duplicate healthy owners.
+
+
 ## Expanded Web/mobile: actual private Debug build fails on missing ReactCodegen header; cleanup verified — 16 October 2026
 
 Actual terminal supersedes previous running text. NEW corrected SDK admission passed13
