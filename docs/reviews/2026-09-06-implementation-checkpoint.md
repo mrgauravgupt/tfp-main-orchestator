@@ -1,5 +1,70 @@
 # Implementation checkpoint — 6 September 2026
 
+## Expanded Web/mobile: batched monitor accepted; preparation will reuse produced inputs — 16 October 2026
+
+The private monitoring correction completed source-only in 463.217/600 seconds.
+Root reconstructed all seven operation groups and full byte inverses. Twelve original
+supervisor functions remain exact; the thirteenth changes only the recurring live
+reader and sleep interval. Ownership, registration, signalling and cleanup remain
+unchanged. The new live reader batches one bounded native process snapshot, retains
+PID/FD/exit/timeout/cleanup receipts, and fails closed on observation errors.
+
+The new minimum passed once in 8.937 seconds: four changed syntax owners and ONE new
+actual-source contract, including ONE read-only native process snapshot. All old
+methods remained UNRUN, retries were zero, cleanup VERIFIED_EXITED, and the four
+frozen groups (2,786 source / 14,112 originals / 196 outputs / 111 post-restart inputs)
+matched before and after. This is focused monitoring evidence, not an app build.
+Authority: `/private/tmp/tfp-native-batched-monitor-minimum-zero-model-20261016T052803Z/root-check-acceptance.json`
+SHA `87e66b0767db452a4084907b038bdc447286172d4393605b25ccaf0e226212f4`.
+
+ONE incremental SOL6.1 Extra High independent judgment completed 186.854/300 seconds,
+affected source ACCEPTED, findings zero. Root read its actual terminal/review and
+reverified all 24 selected current inputs. No old checks, process probe, build,
+producer, image or business case replayed. Root acceptance:
+`/private/tmp/tfp-native-batched-monitor-independent-gpt61-sol-xhigh-20261016T052843Z/root-independent-acceptance.json`
+SHA `459e252e24f25fa6e459418927386f7e07bd2a470c2a55432ab207c2adb6bf89`;
+original review SHA `c5789bff475cf81bb0ca6b50929c287f565b05a71ca71dd7635865504dab5d83`.
+
+The user explicitly rejected repeated reruns. A bounded source-led reuse plan completed
+169.962/180 seconds, with 12 selected inputs unchanged. Root accepted the minimum
+before editing: a NEW independent project from immutable inputs, exact existing hoist
+and two-prefix retarget, and transfer of ONLY the 104 already-produced codegen files.
+Original codegen execution remains original provenance; target codegenExecuted=false
+must be explicit. No Node codegen, old tests, full old preparation transcript or old
+DerivedData replay/copy. One actual config producer in the changed target context is
+the smallest remaining compatibility check because dynamic environment/plugin
+relocation equivalence has not been established. No producer has run in that target.
+Do not invent a new command34/35-command history or claim cache hits/relocatability.
+
+SOLE source-only SOL6.1 Extra High owner053600 is ACTIVE, 600-second bound including
+final60 record-only, allowed three NEW preparation/test copies only. Actual atomic
+terminal controls continuation; missing final is unfinished. Direction:
+`/private/tmp/tfp-native-reused-input-preparation-source-gpt61-sol-xhigh-20261016T053600Z/root-direction-acceptance.json`
+SHA `b3314f8d8c0761e45aedc7b4a5ffc0efeff0e538ed9c8b12564c04e06f17f2f0`.
+After terminal: root exact delta, only new affected syntax/one transfer discriminator,
+then fresh owner/resource admission before actual materialization. Root full new
+workspace/Git/config verification and one combined incremental judgment must precede
+any separately justified build. No automatic replacement build or native/device owner.
+
+Original run93865 remains FAILED on a supervisor process-query timeout, exit1/process-15,
+cleanup VERIFIED; no artifact recorded. All FOUR failed project/run/DerivedData pairs
+and original producer receipts remain preserved. Underlying host delay and latent
+compiler outcome remain UNKNOWN. The new monitoring proof does not repair that run.
+Disk recovery was verified earlier; no deletion or resource waiver is authorized now.
+
+Manual TEST FE3000/API4000 were left running; no continuous health claim. Actual UAT
+stays3c008/release20261011T115439Z-3c008ec4; expanded nested source remains uncommitted.
+Publish ONLY four root notes, no nested/gitlink/deploy. Native artifact/device/current
+guest/four settings-discovery flows, legal owned input/POST201/capability/persistence,
+PUB025 TARGET3, CON014/OPP014 bytes/provider, TRUST006 persisted MESSAGE, OPP015 provider
+phases, Android/screen-reader/broader discovery and external production inputs remain
+separate. Historic OPP031 persistence WITHHELD/three unrecoverable reads and historical
+502 unknown remain. OAuth/OTP/email delivery excluded. Preserve NON-RETIRED originals,
+caches, states, historyf19 and unrelated work. No mixed certificate, invented inputs,
+production approval or readiness promise. Hourly job is usage-recovery fallback ONLY;
+no unresolved included rejection, healthy usage polling, purchase/reset/downgrade or
+awake renewal. Active useful work continues without hourly delay.
+
 ## Expanded Web/mobile: build terminated by supervisor process-query timeout; no automatic replay — 16 October 2026
 
 Actual correctedARM64run93865ae8-74d0-46ae-9969-e0b55f2268e7 TERMINALFAILED; original
