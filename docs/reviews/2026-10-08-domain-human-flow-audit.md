@@ -1,5 +1,63 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Expanded Web/mobile: actual private Debug build fails on missing ReactCodegen header; cleanup verified — 16 October 2026
+
+Actual terminal supersedes previous running text. NEW corrected SDK admission passed13
+bounded commands and fresh exact manual owners/resources. Actual Xcode Debug simulator
+build ran once, retry0, process exit65 at01:15:58UTC; dispatcher terminal1 at01:16:32,
+510.28s. Sole primary compiler failure: ReactCodegen Copy cannot find private
+`apps/mobile/ios/build/generated/ios/FBReactNativeSpec/FBReactNativeSpec.h`. No artifact,
+new simulator, native case or product regression is inferred. Exact-owned command
+cleanup VERIFIED/reaped/sessionempty/no signals/supervisionFailure null; manualAfter
+and protectedAfter VERIFIED. Root inspected original terminals/bounded compiler error,
+all1,101tracked before/after SHA bindings and all10project delta rows. All63,063project
+entries remain; delta is only declared generated Hermes tree plus Release-to-Debug
+marker. Every original log/xcresult/partial/build state remains; no automatic rerun,
+source reset, permission waiver or failed-state replacement. Root authority:
+`/private/tmp/tfp-native-sdk-corrected-build-runtime-zero-model-20261015T210500Z/root-original-build-failure-observation.json`.
+Sole exactownerwatch exited0 at01:16:32; no healthy build/check/watch owner remains.
+
+ONE requested SOL6.1 Extra High read-only source/log RCA is active,240s including45
+record-only. It traces actual Pod/codegen owning phases, staged generated inputs,
+execution ordering and multiple hypotheses before a grounded minimum proposal. No
+Node/codegen/Pods/build/native/network or source edits admitted. Root must accept
+minimum before correction, then minimum affected checks/independent judgment and NEW
+once/current source-resource-owner admission; no blind unchanged build retry. Owner:
+`/private/tmp/tfp-native-reactcodegen-missing-header-rca-gpt61-sol-xhigh-20261016T012000Z`.
+
+The SDK/preservation correction remains source ACCEPTED/findings0,9526b035. Actual
+minimum3syntax/ONEnewmethod passed8.745s/retry0/ownedcleanupVERIFIED/allfour frozen
+groups0drift; no old8/9method/version/image replay. Root independently accepted23current
+bindings and exact4/3/1 full inverses. Two exact vendor metadata roles and all-group
+accepted preservation hash retain their closed domains; generic source/approval guards
+remain unchanged. New actual included-only4percent/48percent snapshot plus ONE bounded
+127.351s SOL6.1 Extra High saved-review resume resolved the interrupted210200 reviewer;
+original missing final/terminal remain preserved, no purchase/reset/downgrade. Authority:
+`/private/tmp/tfp-native-sdk-custody-correction-review-resume-gpt61-sol-xhigh-20261016T010600Z/root-independent-acceptance.json`.
+
+Future SET005 source map completed164.007s/180:26rootfields/eight UNSATISFIED actual
+input groups. Companion runtime closure copies THREE accepted body-identical files,
+134,726bytes, independent owned files; no import/check/runtime or case grant. Existing
+six-file21,486,066byte Maestro home063e45f3-369a-44dc-b753-f6290567badf/runtime remains
+prepared only. Source-only future map:
+`/private/tmp/tfp-native-trusted-local-case-admission-map-gpt61-sol-xhigh-20261016T011800Z/plan.json`.
+No staging/artifact/device/guest/resource receipt is fabricated from the map. Later
+build must pass before complete root artifact/provenance/write-delta acceptance,
+new-only simulator creation/install and current native guest/case admission.
+
+Manual TEST FE3000/API4000 remain running and exact final identities verified; no
+continuous-health claim. Actual UAT remains3c008/release20261011T115439Z-3c008ec4;
+expanded nested source uncommitted. Publish ONLY four root notes, no nested/gitlink/
+deploy. Four settings/discovery cases, legal current guest/owned input/POST201/capability/
+persistence, PUB025TARGET3, CON014/OPP014bytes/provider, TRUST006persistedMESSAGE,
+OPP015provider phases, Android/screen-reader/broader discovery/external production
+inputs remain. Historic OPP031 persistenceWITHHELD/three unrecoverable reads and
+historical502unknown unchanged. OAuth/OTP/emaildelivery excluded. Preserve NON-RETIRED
+originals/caches/states/historyf19/unrelated work. No mixed certificate, invented input,
+production approval or readiness/deadline promise. Hourly job remains usage-recovery
+fallback ONLY; no unresolved included rejection or awake renewal.
+
+
 ## Expanded Web/mobile: exact SDK correction accepted; first actual private Debug build running — 16 October 2026
 
 Actual source204800 completed462.76s/480, authorchecks0. Root reconstructed ALL4/3/1
