@@ -1,5 +1,57 @@
 # Implementation checkpoint — 6 September 2026
 
+## Expanded Web/mobile: reviewed native provisioner active; original build and artifact proof reused — 16 October 2026
+
+Current build23ece and112400 artifact proof remain PASSED at their original scopes;
+no rebuild/codegen/config/oldcheck/case replay. Exact3operation ARM64 source correction
+completed90.296/210s, root fullinverse verified. New affected minimum passed once0.030s:
+one syntax/five actual owning-predicate rows/two oldcounterfactual/actualclosedbootargv+
+maincall; nativecommands0/oldmethods0. Current source2ab09b98bd8b7b0b502666af4d144612fb82f62207d4a0d4fe4176ae2d5d9fda.
+Independent124000 completed224.550/360s,source144.802/270s,findings0; root read actual
+review/audit/terminal and reverified14pins. Root acceptance21e74eda6f31c3a8a7b5942a167c0a4b4e6491a2ee84b64855e15afc1896020b.
+Complete newprovisioner+dispatcher/helpercoupling/newminimum accepted; no runtime pass.
+
+Original115000 author cutofffailure and120000 missingreviewterminal/actualusageerrors
+remain preserved. One included-only snapshot ordinaryavailable(primary4%,weekly79%used)
+and ONE actual requestedSOL6.1ExtraHigh continuation resolved interruption; no purchased
+fields/purchase/reset/downgrade/repeatedunchangedattempt. Recovery123600 retained.
+No unresolved usage interruption now; hourlyfollowup remains fallbackONLY.
+
+First120400 actualdispatch exited1/reaped before runallocation/nativecommand/device0:
+VENDOR_ANCESTOR_IDENTITY. Source-led124600 material found only shared /Applications
+mtime/ctime drift; both fileidentities/allotherancestor slots exact, actorunknown.
+RCA operational source90/total150 bounds FAILED169.435s; not accepted as boundedpass.
+Root separately compared actualslots and accepted minimumDATA-only fresh complete
+two-role custody via unchanged accepted capture function/originalSHA/mode/owner/FDguards.
+No timestamp handpatch/source waiver. Originalfailedapproval/stderr/once remain immutable.
+New124900 DATA differs only vendorcustody/runUUID/runRoot/deviceName; dispatcher byteexact.
+
+Sole actual provisioner29995 is ACTIVE, NEW runf7b456f8-5429-4905-9a06-72e85eed27f8;
+outer session67734. Actual atomic controls continuation:
+`/private/tmp/tfp-native-simulator-current-custody-dispatch-zero-model-20261016T124900Z/execution-status.json`.
+Sole zero-model exactexit watcher125000/session58527 waits29995; no healthy polling,
+duplicate owner/watch or automatic replacement. Source600work660total/cleanup60/6GiB/
+manual/vendor/once/FD/foreigndevice/installed40 guards unchanged. ActualnewUUID/install/
+shutdown/outcome still future; no businesscase has run. After terminal root must inspect
+actualtypedexits/cleanup/manual/sourceartifact/baselineforeign/newUUID/full40install/
+shutdown before any canonical nativecase. Missingatomicterminal remains unfinished.
+
+Separate115400 staging DATA is root-accepted using original savedproject/artifactmapping
+and independent124000 directboundary judgment:57010regular/4920links/40native/9generation,
+1238privateGit excluded. true/[]/false/false claims mean DIRECT admitted staginginput/
+dependency/write provenance ONLY; hostReadIsolationfalse/ordinaryAppleeffectstrue remain.
+No service/hostread, futureMetro/currentguest/nativeHTTP/case authority is inferred.
+FirstSET005 remains pending existing canonical setup/currentgeneration/actualnewdevice/
+freshresource/home/runtime gates; no passedPRO010/othercompletedcase replay.
+
+Manual TEST FE3000/API4000 left running, no continuoushealth claim. UAT3c008/release
+20261011T115439Z-3c008ec4 unchanged; expanded nested source uncommitted. ONLYfourrootnotes
+publish; no nested/gitlink/deploy. Other native settings/discovery/legal/provider/bytes/
+persistence/Android/screen-reader/broaderdiscovery/externalproduction gates remain separate.
+HistoricOPP031persistenceWITHHELD/threeunrecoverablereads/502unknown unchanged. OAuth/OTP/
+emaildelivery excluded. Preserve all NON-RETIRED originals/caches/states/historyf19 and
+unrelatedwork. No mixedcertificate/inventedinput/productionapproval/readiness promise.
+
 ## Expanded Web/mobile: native build and complete artifact verification pass; new simulator preparation active — 16 October 2026
 
 ONE current run23ece244-39dc-4c5a-bf49-b81ecc15a441 completed actual Xcode0/process0,
