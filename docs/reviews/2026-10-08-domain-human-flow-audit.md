@@ -1,5 +1,69 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Expanded Web/mobile: reused-input workspace verified; current build bindings being adapted — 16 October 2026
+
+**Verified completion:** the NEW input-reuse preparation passed once in197.751seconds
+(outer198.418),34owned commands all typed exit0/process0, no supervision failure,
+cleanupVERIFIED/reaped/sessionEmpty. Target transferred exactly104 accepted files /
+1,147,746bytes; codegenExecuted=false, no Node codegen or old method replay. One config
+producer in the changed target ran as actual command33, real1866-byte JSON/output SHA
+dd0b652c unchanged, expected app identity/project invariance/FD/cleanup verified. All
+four frozen groups2786source/14112original/196output/111postrestart matched before/after.
+Actualstatus:
+`STAGE/trusted-local-reused-input-preparation-run-b51cdd6d-2424-4cb0-8f07-a86b80d5bb8a/execution-status.json`
+SHA9c3fffc3faa29b3c80e369d9ab65ae6683e47af72e18a6da07c39beb45141709.
+Transferreceiptef13bb57/configreceipt171c2997 remain separate from original codegen35.
+Outer25180 and soleexactwatch69057 TERMINAL0; no active preparation/watch owner.
+
+**Root verification:** root accepted the new verifier's36 exact operations/fullinverse,
+retained safe readers/core inventory/index/hoist checks, and ONE in-memory syntax.
+Source064700 completed273.723/300/authorchecks0. The actual verifier then passed12.476s:
+ALL58,248current regular files /965,112,867logicalbytes,4,920containedlinks/63,168entries,
+1,101index/blob/body/modes and104current transferred inputs verified. No old DD scan,
+producer/check replay or artifact claim. Current privateGit status independently0/
+empty/unchanged index/optional locks disabled. Actualparentless privatecommit
+ec06581b9e442ae87e7c125078305a08fa9ca7ad/treeb81b3b32b37749a486563f6e828a5771bb42f1ba.
+NewworkspaceONLYacceptance:
+`/private/tmp/tfp-native-reused-input-root-workspace-verification-zero-model-20261016T065300Z/root-reused-input-workspace-acceptance.json`
+SHA00dc786b404b8b0c2b4079a6c3753e0b19ec2e2483e57e886d2ef8891100288d.
+Target state ROOT_ACCEPTED_PRIVATE_REUSED_INPUT_WORKSPACE_ONLY explicitly separates
+originalCodegenProvenance/inputTransferReceipt/configProducerReceipt. No build/device grant.
+
+**Sole active work:** one requested source-only SOL6.1 Extra High owner065500,600s
+including final60record-only, allowed four NEW build/admission/test/native copies.
+Root accepted minimum BEFOREedit: bind only actual new workspace/Git/current34rows/
+producer33/transfer/config refs and add a narrow transferred-input gate. Preserve
+accepted batched monitor, old codegen validators where possible, strict61204 native
+prefix, DebugARM64/jobs2/1200work1260total/manual/resource/vendor/FD/once/security/
+evidence guards. Append ONE new actual-source discriminator; all old methods UNRUN.
+Direction:
+`/private/tmp/tfp-native-reused-input-downstream-source-gpt61-sol-xhigh-20261016T065500Z/root-direction-acceptance.json`
+SHA2c0778d72c4fd527ebf06cd9fc46e9f38aefa395a5f6c857f52ffd4382f46b7c.
+After actual terminal: root exactdelta/minimum affected syntax+ONEnewmethod, then ONE
+combined incremental independent judgment of3prep+verifier+4adapters/original new
+proofs. Only then separately justify one fresh-admitted build. No automatic cold build,
+oldDerivedData/cache copy/in-place continuation/consumed-once replacement. Missing atomic
+final is unfinished; never duplicate healthy owners/watchers.
+
+The earlier source backend rejection remains immutable; ONE included-only available
+snapshot and ONE actual bounded continuation resolved it. No unresolved usage interruption,
+healthy usage polling/purchase/reset/downgrade or awake renewal. Monitoring minimum
+and independent459e252e source acceptance are reused without old checks/probe replay.
+Originalfour failed project/run/DD pairs remain preserved. Latest93865 failed on a
+supervisor process-query timeout, cleanupVERIFIED/noartifact; underlyinghost delay/
+latent compiler outcome UNKNOWN. Source fixes do not retrospectively repair any run.
+
+Manual TEST FE3000/API4000 left running, no continuous-health claim. Actual UAT remains
+3c008/release20261011T115439Z-3c008ec4; expanded nested source uncommitted. ONLY four root
+notes publish; no nested/gitlink/deploy. Native artifact/newdevice/currentguest/four
+settings-discovery, legal ownedinput/POST201/capability/persistence, PUB025 TARGET3,
+CON014/OPP014bytes/provider, TRUST006persistedMESSAGE, OPP015provider phases, Android/
+screen-reader/broaderdiscovery/externalproduction inputs remain separate. HistoricOPP031
+persistenceWITHHELD/three unrecoverable reads/historical502unknown remain. OAuth/OTP/email
+delivery excluded. Preserve NON-RETIRED originals/caches/states/historyf19/unrelatedwork.
+No mixed certificate/inventedinputs/productionapproval/readiness promise. Hourlyjob is
+usage-recovery fallback ONLY; active useful work continues without an hourly wait.
+
 ## Expanded Web/mobile: input-reuse contract passes; one new workspace preparation active — 16 October 2026
 
 The original053600 model attempt hit an actual backend capacity rejection before any
