@@ -1,5 +1,61 @@
 # Workspace Memory for Future Agents
 
+## Expanded Web/mobile: current Expo/build gate accepted; one corrected ARM64 build active — 16 October 2026
+
+Current downstreamsource completed410.585s/600/authorchecks0. Root reconstructed23
+exactgroups/fullinverses(9build/6test/2admission/6native);23oldbuildhelpers and strict
+61,204byte nativeprefix exact. Onlyactualcurrentworkspace/Git/rootrefs/35count and
+additive strictretainedproducer/currentoutput/sourcegate; oldtests onlycurrentdata
+literalchanges/UNRUN. ActualNEWminimum PASSED8.761s:4syntax+ONLYnewrealproduceradmission
+method1pass/oldmethods0/retry0/ownedcleanupVERIFIED/fullfourfrozengroups0drift. No
+producer/config/build/native replay. Authority:
+`/private/tmp/tfp-native-config-build-minimum-zero-model-20261016T044200Z/root-check-acceptance.json` SHA80f59ee0d6d4a1eaac6bb856b023ace7efbd4d8cb560fdd415021809092adc82.
+
+ONEincremental SOL6.1ExtraHigh independent judgment COMPLETED159.924s/300,source
+ACCEPTED/findings0.23adapter+13rootverifiergroups/inverses and originalactual35owned/
+producer34/root58248files4920links1101index evidence accepted within originalscopes.
+All32selectedbeforeafterexact;rootreadactualreview/terminal/reverified32currenthashes.
+Old035700/032400sourceacceptedproof reused,no fulloldreview/check/configexecution/
+bodytree/matrix replay. Futureartifact/device/business/readiness WITHHELD. Authority:
+`/private/tmp/tfp-native-config-build-incremental-independent-gpt61-sol-xhigh-20261016T044400Z/root-independent-acceptance.json` SHAa21641183e29ea259f87d9b47e84f51fcd592f4286017c7d301bb08fd3a693a1.
+Finalsource8fa44eca bindsactualworkspace85de9164/currentGit18cc0e2b/treef696385c/real
+producer7f104126 and outputdd0b652c. No fakeartifactgrant;nativefuturestagingmustalso
+bind exactactualconfigProducerReceipt alongside actualbuild/currentgeneration gates.
+
+Fresh13read-only source/manualowner/SDKvendor/no-overlap/resourcechecks PASSED;
+metric12,541,304,504bytes/pressure1/disk36,126,179,328bytes,unchanged6GiBcriteria.
+MetricNOTexactincrementalRAM. Sole currentactualparent92578/supervisor92596 ACTIVE:
+NEW STAGE/trusted-local-config-arm64-build/run-93865ae8-74d0-46ae-9969-e0b55f2268e7.
+OriginalclosedexecFDreceipt and XcodeCommandlineinvocation marker rootobserved. Actual
+status controlsresult, not runningnotes:
+`/private/tmp/tfp-native-config-arm64-build-runtime-zero-model-20261016T044800Z/execution-status.json`.
+Outerrootsession8467;solezero-model exactparentkqueuewatch044900/rootsession45979.
+NEWonce/exclusiveDD/Debug/ARCHSarm64/jobs2/work1200total1260/retries0. Neverduplicate/
+pollhealthyowner or automaticallyrerun. Missingatomicfinalunfinished/absentownerUNKNOWN.
+Currentconfigproducer is retainedreadonly prerequisite, NOT rerun. Earlierfailed3
+project/run/DerivedData/cache/log/state remain immutable. Userexplicitly saysno
+repeatedruns: allpassed/completedcases/oldproofs remain unrun/reused.
+
+ParallelONEsource-onlySOL6.1ExtraHigh artifactinspector045000 prepares onlyreadonly
+futureterminal/artifact/Info.plist/MachOarm64sim/provenanceverification,240s/final45.
+No activebuild/project/run/DD/log/status/artifactreads byauthor,no probes/checks/
+compile/import/build/device. Source-onlyactualterminal controlsitscompletion:
+`/private/tmp/tfp-native-current-artifact-inspector-source-gpt61-sol-xhigh-20261016T045000Z/root-authorization.json` SHA26607b97932d16882523447b362e6e3242e97208e4272dac591d30a3b5dba7c5.
+Rootmustacceptsource before execution AFTERactualbuildexit0. UnsupportedlayoutUNKNOWN,
+no TS-embeddedDebugJS/nativecaseclaim. Actualbuildfailure preserves/stops forbounded
+source-ledminimumproposal;no automaticretry/replacement/suppression/assertionweakening.
+
+ManualTESTFE3000/API4000left running,nocontinuoushealthclaim. UAT3c008/release20261011T115439Z-3c008ec4
+unchanged;expandednestedsourceuncommitted. ONLYfourrootnotes publish,no nested/gitlink/
+deploy. Newartifact/device/currentguest/foursettings-discovery/legalownedinput+POST201/
+capability/persistence,PUB025TARGET3,CON014/OPP014bytes/provider,TRUST006persistedMESSAGE,
+OPP015providerphases,Android/screenreader/broaderdiscovery/externalproductioninputs
+remain separate. HistoricOPP031persistenceWITHHELD/threeunrecoverablereads/502unknown
+unchanged;OAuth/OTP/emaildeliveryexcluded. Preserve NON-RETIREDoriginals/caches/states/
+historyf19/unrelatedwork. No inventedinput/mixedcertificate/productionapproval/readiness
+promise. Hourlyusage-recoveryfallbackONLY,no unresolvedincludedrejection/no healthyusage
+poll/purchase/reset/downgrade/awake renewal. Activeworkcontinues;actualterminalwins.
+
 ## Expanded Web/mobile: disk recovered; real Expo producer and complete current workspace verified — 16 October 2026
 
 The human replied ready. NEW actual disk observation36,360,880,128bytes(~33.86GiB)
