@@ -1,5 +1,60 @@
 # Workspace-Wide Agent Notes
 
+## Expanded Web/mobile: codegen preparation/adapters independently accepted; one fresh native build active — 16 October 2026
+
+Actual new minimum PASSED8.858s:four Python syntax owners and ONLY the new complete104
+codegen closure method,old9methods unrun,retry0/cleanupVERIFIED. Four full frozen
+2,786source/14,112original/196output/111postrestart groups matched before/after.
+Root independently reconstructed all17adapter operation groups/full inverses,old9test
+prefix and strict61,204-byte native prefix exact. Root minimum authority:
+`/private/tmp/tfp-native-codegen-downstream-minimum-zero-model-20261016T020500Z/root-check-acceptance.json` SHA46066fe0908ebd62ded0325f118223e85a15cd45904d245f61a85538ebf868c3.
+
+ONE incremental SOL6.1 Extra High independent judgment COMPLETED296.143s/420:
+affected3preparation+4adapter source ACCEPTED/findings0. All38selected before/after
+bindings match. Reviewer personally traced actual34command configs,one installedNode
+codegen invocation/no fetch and exact104map/manifest inputs; reused original fullroot
+workspace/frozen evidence, no old full audit/check/image/version/build/case replay.
+Runtime/artifact/device/business/readiness remains WITHHELD. Root read actual review/
+terminal and reverified all38current hashes. Authority:
+`/private/tmp/tfp-native-codegen-preparation-adapters-independent-gpt61-sol-xhigh-20261016T020700Z/root-independent-acceptance.json` SHA0a02246e8fde815026d863c46e9f098c8789c06c5cbfb0434da327708cf07aa6.
+Finalsource a0620523 binds actualnewworkspace/privatecommit142acd95/tree9b259d69.
+Future native staging must also carry exact actual codegenPreparation d5a9440d alongside
+separate successful build/artifact authority; workspace-only receipt is not artifact.
+
+ONE fresh zero-model admission passed13read-only commands:exact manual FE3000/API4000
+birth/session/socket/CWD/logFD,pinned SDK/vendor/no-build-overlap,unchanged resources.
+pgrep1 is expected no-build absence. Host memory metric9,448,928,051bytes/pressure1,
+disk16,679,706,624bytes; metric is NOT exact incremental available RAM. No waiver or
+service mutation. New dispatcher reached actual Xcode:owned exec FD custody and original
+stdout command-line marker observed. Sole active parent36149/supervisor36167/owned
+Xcode36213 usesNEWrun1472a3d6-e863-4c23-913e-93e31c7b8dbe in NEWcodegenworkspace.
+No terminal build/pass inferred. Actual atomic:
+`/private/tmp/tfp-native-codegen-corrected-build-runtime-zero-model-20261016T020900Z/execution-status.json`.
+Sole zero-model exact-parent kqueue watcher021000/root session50838;no duplicate/poll.
+Fresh once/state/filelogs/Debug/jobs2/work1200/total1260/retry0 retained. Oldfailedworkspace/
+run never reused. Missing final is unfinished; absentownerwithoutfinal remainsUNKNOWN.
+
+After actual terminal root must inspect exit/owned cleanup/manual+protected boundaries/
+complete generateddelta/tracked1101/artifact architecture/native-generation provenance.
+Actual failure preserves and stops for bounded source-led hypotheses/minimum proposal;
+no automatic retry/replacement/suppression or assertion/security weakening. No newdevice,
+install,currentguest/settings-discovery or legalcase dispatched. Original Xcode65,
+missingheader/RCA bound failure and outsideSTAGE placement failure remain immutable.
+Root preliminary observation parser had a Python syntax error before any filesystem
+read; corrected observation only, no source/check/runtime retry or product failure.
+
+Manual TEST services remain left running,no continuous-health claim. Actual UAT stays
+3c008/release20261011T115439Z-3c008ec4;expanded nested source uncommitted. ONLY fourroot
+notes publish,no nested/gitlink/deploy. Native build/artifact/newdevice/currentguest/
+foursettings-discovery,legalownedinput/POST201/capability/persistence,PUB025TARGET3,
+CON014/OPP014bytes/provider,TRUST006persistedMESSAGE,OPP015providerphases,Android/
+screen-reader/broaderdiscovery/externalproduction inputs remain separate. Historic
+OPP031persistenceWITHHELD/three unrecoverable reads and historical502unknown unchanged.
+OAuth/OTP/emaildelivery excluded. Preserve NON-RETIRED originals/caches/states/historyf19/
+unrelatedwork. No mixedcertificate/inventedinputs/productionapproval/readinesspromise.
+Hourlyjob usage-recoveryfallbackONLY;no unresolved included rejection,poll/purchase/reset/
+downgrade/awake renewal. Healthy active work continues without hourly delay.
+
 ## Expanded Web/mobile:104 codegen inputs prepared and root-verified; downstream source binding active — 16 October 2026
 
 Actual corrected in-root preparation PASSED once199.277s/parent199.818s:34owned
