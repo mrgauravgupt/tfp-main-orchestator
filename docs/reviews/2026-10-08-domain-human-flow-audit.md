@@ -1,5 +1,48 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Expanded Web/mobile: ARM64 build terminates on EXConstants config phase; original failure preserved — 16 October 2026
+
+Actual ARM64 run62351bdd-243a-41b4-a5f4-a6b5d8623c29 is TERMINALFAILED, not active.
+Xcode exit65/process65 at03:33:43UTC; outer parent30171 exited1 at03:34:18/722.110s,
+inner721.687s. No supervision failure; ownedcleanup VERIFIED/reaped/sessionEmpty/no
+signals. ManualAfter+protectedAfterVERIFIED. Stderr identifies EXConstants [CP-User]
+Generate app.config for prebuilt Constants.manifest. Root lowercase compiler-marker
+scan observed0 but does NOT establish no phase Error. No artifact recorded/product
+regression/build/device/business success inferred. All1101trackedbody/modes unchanged;
+10projectdelta rows only declared HermesDebug replacement/marker. Retain original
+project/DerivedData/xcresult/stdout/stderr/FD/owned/context/status/once/cache, no retry.
+Authority: `/private/tmp/tfp-native-arm64-build-runtime-zero-model-20261016T032600Z/root-original-exconstants-failure-observation.json` SHAa1a9c141ffe79647ba039ffe6e73ee0617a2c51921a2a966edc9718d89bcd41c.
+Sole exactwatch032800/root53024terminal0; outer86542terminal1. No build/device/check owner.
+
+ONE requested read-only SOL6.1ExtraHigh RCA is active,240s includingfinal45records,
+16selectedbefore/after. It traces retained phase log/generated shell/installed Expo
+config producer/app.config/build_env and multiplehypotheses before minimumproposal.
+Root requires a focused actual affected config/script producer check before any future
+fullbuild where feasible; no repeated cold build to discover unchanged prerequisites.
+No script/Node/compiler/probe/Git/xcrun/build/network/service/DB/cache/device/model or
+source mutation. No broadlog/environment/secret output. Current RCA authority:
+`/private/tmp/tfp-native-exconstants-config-phase-rca-gpt61-sol-xhigh-20261016T034000Z/root-authorization.json` SHA9e1402f0fd8afeb01d8442aea897c1d3fdf7266a64fcb9368d881ace2f5d13e1.
+Missing final unfinished; actual terminal/groundedrootacceptance control continuation.
+
+Accepted ARM64 minimum4syntax+ONEnewmethod9.501s and independent032400/42dabc42
+154.988s/300/findings0/34selectedexact remain source-bound; no old proof replay.
+New current case DATA map033200 updates knownARM64project/commitbba1729e/tree072f02b7/
+rootworkspacereceipte6fe3c22/prepf76c1f60/operator efac7bd6 only. Three exact independent
+companioncopies033100 prepared; artifact/device/currentguest/case inputs remain gated.
+No source-only map/closure supplies runtime authority. Actual previous dualarch timeout
+124 and original missingheader65/RCA operational failures stay distinct and immutable.
+
+Manual TEST FE3000/API4000 left running,no continuoushealthclaim. Actual UAT stays
+3c008/release20261011T115439Z-3c008ec4;expanded nested source uncommitted. ONLY fourroot
+notes publish,no nested/gitlink/deploy. Nativeartifact/newdevice/currentguest/foursettings-
+discovery,legalownedinput/POST201/capability/persistence,PUB025TARGET3,CON014/OPP014bytes/
+provider,TRUST006persistedMESSAGE,OPP015providerphases,Android/screenreader/broaderdiscovery/
+externalproduction inputs remain separate. Historic OPP031persistenceWITHHELD/three
+unrecoverablereads/historical502unknown unchanged;OAuth/OTP/emaildelivery excluded.
+Preserve NON-RETIREDoriginals/caches/states/historyf19/unrelated work. No mixedcertificate,
+inventedinput/productionapproval/readinesspromise. No unresolved includedrejection;
+hourlyjobusagefallbackONLY,no healthyusagepoll/purchase/reset/downgrade/awakerenewal.
+
 ## Expanded Web/mobile: ARM64 source and new minimum accepted; one fresh build dispatched — 16 October 2026
 
 Finalsource031800 completed191.211s/420/authorchecks0. Root personally reconstructed
