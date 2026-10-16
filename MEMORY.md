@@ -1,5 +1,56 @@
 # Workspace Memory for Future Agents
 
+## Expanded Web/mobile: ARM64 source and new minimum accepted; one fresh build dispatched — 16 October 2026
+
+Finalsource031800 completed191.211s/420/authorchecks0. Root personally reconstructed
+all14adaptergroups/fullinverse:onlyactualnewworkspace/Git/receipt literals plus one
+ARCHS=arm64 argument. BuildfunctionsetchangedONLYbuild_argv/admit(rootpath);allother
+helperbodies/strict61,204prefix/defaultmode/SDK/vendor/generated/once/resource/manual/
+FD/1200work1260total/jobs2/retry0/cleanup exact. Old104methodonlyrootpath+SHA literals
+changed;old9bodiesexact/no replay. ActualNEWminimum PASSED9.501s:4syntax+ONLYnewactualAST
+ARM64argv/workspace/compatibilitymethod,cleanupVERIFIED/retry0/allfourfullfrozengroups
+0drift. Rootauthority: `/private/tmp/tfp-native-arm64-build-minimum-zero-model-20261016T032200Z/root-check-acceptance.json` SHAb291e7903473d9c766ace1f807bfd51d60dee32eb26350af0a8b9a1d79c8820c.
+
+ONEincrementalSOL6.1ExtraHighreviewCOMPLETED154.988s/300,affectedsourceACCEPTED/findings0.
+Prep5ops+adapter14groups/inverses/actual34owned0and104preparation/rootworkspace proof
+andhostruntimearm64compatibilityaccepted at precise scopes. All34selectedbeforeafter
+bindingsmatch. No oldfullaudit/check/image/version/bodymatrix/oldDD replay. Root read
+actualreview/terminal andreverified34currenthashes. Artifact/device/business/readiness
+remainWITHHELD. Authority: `/private/tmp/tfp-native-arm64-preparation-build-independent-gpt61-sol-xhigh-20261016T032400Z/root-independent-acceptance.json` SHAd9d1a33c68233bfde38cffee9369b682acf27cfb32fe8ef539bc97d03379f434.
+Finalroot sourceacceptancedc17b906 bindsactualW/commitbba1729e/tree072f02b7/workspacee6fe3c22/
+prepf76c1f60/compatibilitye90efa3a. Original timeout124/noartifact/RCA270.90/240 remain
+immutable and are not retrospective passes. NewARM64scope has no duration guarantee.
+
+ONEfreshzero-modeladmissionPASSED13read-onlycommands:manualFE3000/API4000exactbirth/
+session/socket/CWD/logFD,unchangedSDK/vendor/no-buildoverlap/resources. pgrep1expected
+absence;hostmetric12,713,103,196bytes/pressure1/disk9,374,507,008bytes. No resourcewaiver;
+metricNOTexactincrementalRAM. Newouterparent30171/supervisor30189 ACTIVE;runRootNEW
+STAGE/trusted-local-arm64-codegen-build/run-62351bdd-243a-41b4-a5f4-a6b5d8623c29.
+Atomic controlsactualresult: `/private/tmp/tfp-native-arm64-build-runtime-zero-model-20261016T032600Z/execution-status.json`.
+Freshonce/exclusiveDD/filelogs/atomicstatus/Debug/soleARCHSarm64/jobs2/work1200total1260/
+retry0 retained. DispatchedPythonparent alone is NOTsuccess or proofXcode started;
+root must readactualownedFD/stdoutandterminal. Solezero-model exactparentkqueuewatch
+032800/rootsession53024. Neverduplicateowner/watch/pollhealthywork. Missingatomicfinal
+unfinished/absentownerwithoutfinalUNKNOWN. No nativecase/device/install yet.
+
+Afteractualterminal rootmustinspectexit/ownedcleanup/protected+manual/fullgenerateddelta/
+all1,101trackedbindings/artifactInfo.plist+arm64simulatorMachO/nativegenerationprovenance.
+Firstactualfailure preserves/stops forboundedsource-ledminimumproposal beforecorrection;
+noautomaticretry/boundraise/reset/delete/assertionsecurityweakening or certificate splice.
+Bothfailedprojects+runs/cache/logs remain retained. Prior newprep261.921/root14.432s
+workspace58248files4919links104inputs accepted workspaceONLY,notartifact ordevice.
+
+ManualTESTservicesleft running,nocontinuoushealthclaim. ActualUAT3c008/release
+20261011T115439Z-3c008ec4unchanged;expandednestedsourceuncommitted. ONLYfourrootnotes
+publish,no nested/gitlink/deploy. Nativeartifact/newdevice/currentguest/foursettings-
+discovery,legalownedinput/POST201/capability/persistence,PUB025TARGET3,CON014/OPP014bytes/
+provider,TRUST006persistedMESSAGE,OPP015providerphases,Android/screenreader/broaderdiscovery/
+externalproductioninputs remain separate. HistoricOPP031persistenceWITHHELD/three
+unrecoverablereads/historical502unknownunchanged;OAuth/OTP/emaildeliveryexcluded.
+PreserveNON-RETIREDoriginals/caches/states/historyf19/unrelatedwork. Nomixedcertificate/
+inventedinput/productionapproval/readinesspromise. HourlyusagefallbackONLY;no unresolved
+includedrejection,poll/purchase/reset/downgrade/awakerenewal. Activeworkcontinues.
+
 ## Expanded Web/mobile: ARM64-compatible workspace prepared and root-verified; final source adaptation active — 16 October 2026
 
 TimeoutRCA actual270.904s/240 operationalFAILED remains. Root separately read grounded
