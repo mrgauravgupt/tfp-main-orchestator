@@ -1,5 +1,70 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Expanded Web/mobile: exact SDK correction accepted; first actual private Debug build running — 16 October 2026
+
+Actual source204800 completed462.76s/480, authorchecks0. Root reconstructed ALL4/3/1
+forward/full inverses. Only two exact installed vendor metadata roles use the separate
+root0:0/nlink1/mode0644+0664/nine-slot/ancestor/no-follow-readonlyFD/hash/cap reader and
+fresh matching producer. Generic read/digest/record and eight original methods remain
+byte-exact. Metadata-only integration traced18 preserved0664historical fixtures; ONLY
+all-group frozen expected-h loop uses the exact accepted151000 streaming F_NOCACHE
+hash body. No fixture exclusion, global permission waiver, chmod or execution grant.
+
+Actual NEW zero-model minimum PASSED8.745s: three in-memory syntax owners and ONE new
+named actual-source contract,0retries/ownedcleanupVERIFIED/checkerempty. Two installed
+metadata files were read-only compatibility inputs; controlled FD/metadata negatives
+are control-flow evidence, and preservation uses only a NEW owned0664fixture. Four
+frozen2,786source/14,112original/196output/111postrestart groups matched before/after.
+No old eight/nine methods, versions, images or native/business flow replay. Authority:
+`/private/tmp/tfp-native-sdk-custody-minimum-zero-model-20261015T210000Z/root-check-acceptance.json`.
+
+First correction-only reviewer hit actual workspace-capacity rejection after saved
+reconstruction, with finalreview/terminal MISSING. Preserve original210200 partials;
+no old within-bound completion claim. Eligible hourly wake took ONE included-only
+snapshot: primary4percent/weekly48percent used, capacity available; purchased fields
+ignored. ONE bounded requested SOL6.1 Extra High saved-review resume completed127.351s/
+180, source ACCEPTED/findings0. All23currentselected bindings matched before/after;
+original source review and checks reused without full audit/replay. Root read actual
+review/terminal and reverified23hashes. Interruption resolved by actual execution;
+no purchase/reset/downgrade/unchanged retry. Authority:
+`/private/tmp/tfp-native-sdk-custody-correction-review-resume-gpt61-sol-xhigh-20261016T010600Z/root-independent-acceptance.json`.
+
+Root final corrected source acceptance d3af26d0 permits only NEWonce/fresh admission.
+Actual admission passed13bounded read-only commands, exact current FE3000/API4000
+birth/session/socket/CWD/logFD bindings, pinned Xcode26.6/SDK26.5 and unchanged screens:
+host metric9,792,525,434bytes/pressure1/disk18,770,259,968bytes. Metric is not exact
+incremental RAM. NEW dispatcher2627 and owned build2674 are active; run allocated,
+exact stream custody saved and actual Xcode descendants registered. Debug simulator
+build uses jobs2/retry0/work1200/total1260. Sole zero-model exactowner kqueue watcher
+runs; no duplicate watcher/owner, build retry, service mutation or device action.
+Authoritative actual atomic status, not this historical launch note, controls result:
+`/private/tmp/tfp-native-sdk-corrected-build-runtime-zero-model-20261015T210500Z/execution-status.json`.
+Run: `run-5ae0950e-c260-4b9f-83b4-9f3b7b458952` under the accepted private build root.
+Exactwatch: `/private/tmp/tfp-native-sdk-corrected-build-exact-owner-watch-zero-model-20261016T011000Z/status.json`.
+Original203500 failure/consumedonce/absentoldrun remain unchanged. No build/artifact/
+architecture/generated-write/device/business success is inferred while running.
+
+Accepted private runtime home063e45f3-369a-44dc-b753-f6290567badf retains six copied
+Maestro files/21,486,066bytes and empty writable/runtime directories; not a device or
+case receipt. After actual build exit0/VERIFIED, root must inspect complete generated
+write delta, artifact architecture/current generation and immutable inputs, then admit
+new-only simulator provisioning/install/current native guest/case with fresh resources.
+Ordinary Apple-service effects are allowed only in explicit trusted-local scope;
+whole-service egress/host-read isolation/service cleanup remain unclaimed.
+
+Manual TEST services stay running; no continuous-health claim. Actual UAT remains
+3c008/release20261011T115439Z-3c008ec4; expanded nested source uncommitted. Publish ONLY
+four root notes, no nested/gitlink/deploy. Four settings/discovery cases, legal current
+guest/owned input/POST201/capability/persistence, PUB025TARGET3, CON014/OPP014bytes/provider,
+TRUST006persistedMESSAGE, OPP015provider phases, Android/screen-reader/broader discovery
+and external production inputs remain separate. Historic OPP031 persistenceWITHHELD/
+three unrecoverable reads and historical502unknown remain. OAuth/OTP/emaildelivery
+excluded. Preserve NON-RETIRED originals/caches/states/historyf19/unrelated work. No
+invented input, mixed certificate, production approval or readiness/deadline promise.
+Hourly automation stays usage-recovery fallback ONLY; no unresolved included rejection
+remains, no healthy-work usage polling or idle-sleep hold renewal.
+
+
 ## Expanded Web/mobile: source review accepted; first SDK admission stops before Xcode; exact correction active — 16 October 2026
 
 Independent SOL6.1 Extra High review completed395.977s/600, affected source ACCEPTED /
