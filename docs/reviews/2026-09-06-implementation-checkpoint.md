@@ -1,5 +1,53 @@
 # Implementation checkpoint — 6 September 2026
 
+## Expanded Web/mobile: independent current Expo source accepted; one native build active — 16 October 2026
+
+Independent111400 completed283.155/480s, source229.635/360s: source and original new
+proofs ACCEPTED at exact scopes, findings0. It reconstructed63 incremental groups,
+including the standalone Node diagnostic;55 authorized plus14 referenced pins matched
+before/after. Root read original review/audit/terminal and reverified all69 hashes.
+Root acceptancef8fb19cea47cb1773dd7c58cc70059b46cb3dab7dfc7da1c0aff306330632c02;
+final105400 source062944fcf5da407dc04b716e3b0bfe7d000b1ccadf5de589d6cf25869fd8df8f.
+Actual90548267 workspace and mode/Node/4syntax+ONEnewgate minima remain reused; no
+checks, producers, codegen, images, old full review or completed case replay.
+
+After separate root runtime authorization and13 fresh read-only admission commands,
+ONE current build reached Xcode. Actual supervisor1492 owns NEW run23ece244-39dc-4c5a-bf49-b81ecc15a441;
+root outer session98990. Launch observation verified CLOSED_BEFORE_EXACT_EXEC FD
+custody and actual Xcode invocation marker; no artifact/pass inferred. Fresh admission
+host metric10307921510bytes/pressure1/disk31551410176bytes passed unchanged gates;
+metric is not exact incremental available RAM. Actual atomic controls continuation:
+`/private/tmp/tfp-native-expo-current-build-prepared-zero-model-20261016T112000Z/execution-status.json`.
+Sole zero-model kqueue exact-supervisor watcher112200/root session16033 waits for1492.
+Never duplicate or poll healthy owner/watch. Debug/ARM64/jobs2/work1200total1260/retry0/
+NEWonce/exclusiveDD/source/manual/vendor/resource/FD/security guards remain. No old
+DD/cache copying or consumed-once replacement. Missing atomic final is unfinished.
+After actual exit, inspect typed outcome/cleanup/manual/protected/1101tracked/delta;
+first failure remains preserved and requires source-led minimum before continuation.
+
+Future artifact inspector112400 changes ONLY actualRUN and four SELECTED descriptors,
+full inverse and ONE syntax passed; source1a3d54c36c2626b1a65776fa09e93b1b5383acfa9416e76809d125dcf40681d4.
+All functional readers/MachO/fullartifact/project/1101/delta/Hermes/native-generation
+checks unchanged; accepted072500 inspector source proof reused. UNEXECUTED: actual
+buildterminal0 and separate root admission required. Companion112700 has3 independent
+byte-identical current files/169864bytes, no import/runtime. Data map112900 has23 data
+operations/full inverse; original26rootfields/eightmissinggroups and all unknown
+artifact/device/currentguest authorities remain NULL/false. No source-only map grants
+staging/case authority. One113200 SOL6.1ExtraHigh source-only reader may map actual
+staging consumers/data producers in parallel (180s/source120/final60), no active build/
+project/run/DD/log/status/artifact reads, edits or checks; never duplicates runtime.
+
+Manual TEST FE3000/API4000 left running, no continuous-health claim. UAT remains3c008/
+release20261011T115439Z-3c008ec4; expanded nested source uncommitted. Publish ONLY four
+root notes; no nested/gitlink/deploy. All native artifact/device/currentguest/settings-
+discovery/legal/provider/persistence, Android/screen-reader/broader discovery/external
+production gates from the prior checkpoint remain separate. Historic OPP031 persistence
+WITHHELD/three unrecoverable reads/502unknown remain. OAuth/OTP/email delivery excluded.
+Preserve all NON-RETIRED originals/caches/states/historyf19/unrelated work. No mixed
+certificate/invented input/production approval/readiness promise. Hourly follow-up is
+usage-recovery fallback ONLY; no unresolved included rejection, usage poll, purchase,
+reset, downgrade or awake renewal. Continue useful work without an hourly wait.
+
 ## Expanded Web/mobile: current Expo workspace and build-gate minimum verified; incremental review active — 16 October 2026
 
 **Completed, without replaying preparation or business cases:** the corrected current
