@@ -1,5 +1,69 @@
 # Workspace-Wide Agent Notes
 
+## Expanded Web/mobile: input-reuse contract passes; one new workspace preparation active — 16 October 2026
+
+The original053600 model attempt hit an actual backend capacity rejection before any
+candidate file existed. That failed attempt remains immutable. Eligible hourly recovery
+used ONE included-only snapshot (primary2% / weekly63% used; purchased fields ignored)
+and ONE bounded requested SOL6.1 Extra High continuation. Actual continuation completed
+496.651/600 seconds, original failure kept separate. No reset/purchase/downgrade/repeated
+unchanged attempt occurred. There is no unresolved included-usage interruption now.
+
+Root read all three source candidates, reconstructed all15 operation groups/full byte
+inverses, verified24 old contract function bodies and ordinary environment unchanged,
+and rechecked12 selected inputs plus20 original failure records. The NEW recipe copies
+immutable source, retains the exact hoist/two-prefix retarget/private Git, and transfers
+ONLY104 accepted generated files. Target codegenExecuted=false is explicit; original
+codegen execution is separate provenance. Node codegen is denied in the NEW catalog.
+One config producer in the changed target context records its real dynamic ordinal;
+no invented35-command/command34 history. All four failed project/run/DD pairs remain
+immutable; no cache copy, in-place continuation, whole-old-DD rehash or cache-hit claim.
+Source: `/private/tmp/tfp-native-reused-input-preparation-source-gpt61-sol-xhigh-20261016T053600Z/implementation.json`.
+
+The minimum PASSED once9.874seconds: three changed syntax owners and ONLY the new
+ReusedGeneratedInputContracts method, old methods UNRUN, retries0, cleanupVERIFIED_EXITED.
+Controlled104 filesystem fixtures and original accepted104 metadata are distinct;
+no actual target transfer/producer/build happened in this test. Four frozen groups
+2,786source/14,112original/196output/111postrestart matched before/after. Root authority:
+`/private/tmp/tfp-native-reused-input-minimum-zero-model-20261016T064448Z/root-check-acceptance.json`
+SHA `f753df62d94495ea5ebf69015d453672bcdcdac51899500c40d7ed47d3004829`.
+Root additionally read only the104 donor files (1,147,746bytes): all actual hashes match,
+no private absolute project paths; this is transfer eligibility, not a compile pass.
+
+Fresh thirteen read-only owner/resource/no-overlap checks passed. ONE actual preparation
+was dispatched, parent49353; atomic result, not this active note, controls continuation:
+`/private/tmp/tfp-native-reused-input-fresh-admission-prepared-zero-model-20261016T063800Z/execution-status.json`.
+Outer session25180; sole zero-model exact-parent kqueue watcher064000/session69057.
+Actual preparation root is STAGE/trusted-local-reused-input-preparation-run-b51cdd6d-2424-4cb0-8f07-a86b80d5bb8a;
+NEW target is STAGE/trusted-local-reused-input-arm64-build/project. No new Xcode/native/
+device owner. Missing atomic final is unfinished; absent owner without final UNKNOWN.
+Do not duplicate a healthy owner/watcher or automatically rerun after a failure.
+
+Parallel ONE source-only SOL6.1 Extra High verifier064700 is ACTIVE,300s/final45records,
+ONE new verify.py only. It must retain complete current58k-file/4920-link/1101-index,
+body/mode/inode/Git/104/source/env/FD/config verification, honestly separating original
+codegen from new transfer. No active project/run/status/log/artifact reads, checks or
+runtime by author. Actual final controls acceptance. After preparation: root inspect
+actual terminal/cleanup/current data, accept verifier delta/syntax, perform complete
+new workspace verification, then minimal downstream adaptation and ONE combined
+incremental independent judgment before any separately justified build. No future
+commit/tree/output hash or artifact grant is invented.
+
+The monitor source/minimum/incremental independent acceptance459e252e is reused, not
+replayed. Original build93865 staysFAILED on process-query timeout/process-15, cleanup
+VERIFIED, no artifact; underlying host delay/latent compiler outcome UNKNOWN. All
+NON-RETIRED originals/caches/states/historyf19 and unrelated work remain preserved.
+Manual TEST FE3000/API4000 left running, no continuous-health claim. UAT stays3c008/
+release20261011T115439Z-3c008ec4; expanded nested source uncommitted. ONLY four root notes
+publish; no nested/gitlink/deploy. Native artifact/device/currentguest/four settings-
+discovery, legal ownedinput/POST201/capability/persistence, PUB025 TARGET3, CON014/
+OPP014bytes/provider, TRUST006persistedMESSAGE, OPP015providerphases, Android/screen-reader/
+broaderdiscovery/externalproductioninputs remain separate. HistoricOPP031 persistence
+WITHHELD/three unrecoverable reads/historical502unknown remain. OAuth/OTP/email delivery
+excluded. No mixed certificate/invented inputs/production approval/readiness promise.
+Hourly follow-up is usage-recovery fallback ONLY; no healthy polling/purchases/resets/
+downgrade/awake renewal. Active work continues without waiting for an hourly wake.
+
 ## Expanded Web/mobile: batched monitor accepted; preparation will reuse produced inputs — 16 October 2026
 
 The private monitoring correction completed source-only in 463.217/600 seconds.
