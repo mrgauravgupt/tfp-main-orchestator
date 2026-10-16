@@ -1,5 +1,63 @@
 # Workspace Memory for Future Agents
 
+## Expanded Web/mobile: Expo owning producer passes; current workspace verifier schema correction active — 16 October 2026
+
+**Verified preparation completion:** current d4d31517 preparation ended0 in260.988s
+(outer261.670s),35 owned commands typedexit0/process0/no supervisionfailure/allcleanup
+VERIFIED/reaped/sessionEmpty/signals[]. Exactchild87388watch105000 ended0 at10:49:14UTC;
+outer25345terminal0. No preparation/build/device/watch owner remains. Actual command4
+executed the owning Expo configure phase successfully; exact0644->0755 podscript-only
+mode correction, allfour0755 directexec scripts/provider/fullproject invariance recorded.
+Existing config producer actualcommand34 passed;104 accepted inputs transferred,
+codegenExecutedfalse. Four frozen groups2786source/14112original/196output/111postrestart
+matched beforeafter0drift. No build/artifact/device/business pass follows.
+Actual terminal:
+`/private/tmp/tfp-native-disjoint-runtime-stage-20261015T160000Z/trusted-local-expo-node-preparation-run-d4d31517-c5c7-4737-93ef-69379ed865b3/execution-status.json`
+SHA4b97661ebfe31c2b06d7470f0bea7363a53d63937b2f520271d1103120f85a7c.
+Private commit1da8d0e2fccc8583b86433acab6efd39d61f8938/tree07a27cdad7a3a912c30743a6c7cc041510d2e0e9
+are actual preparation data; complete root current workspace proof remains pending.
+
+Mode source101400/minimum102000 passed once3syntax+ONEnewmethod8.857s; reused unchanged.
+Original a718 partial preparation remains FAILED INPUT_CUSTODY after4commands: correct
+mode receipt succeeded, installedNode121911744bytes exceeded inherited64MiB reader cap
+before Expo. This was Node, not Bash; original contradicted Bash hypothesis retained.
+Root accepted only exact Node-role limit121911744; generic reader unchanged. Source103700
+completed213.405/300s; exactfivecontract groups/twoowners byte-identical. New104500 minimum
+passed once8.822s:2syntax+ONEactual pinnedNode readonlybody/hash/FD-close+defaultnegative;
+oldmethods0/retry0/frozen0. Root minimumfc9a723a/sourceadf2c250 retained. Original104000
+root setup/dependency orchestration failure occurred before any test; preserved separately.
+
+Root105500 verifier execution stopped0.006s on AssertionError before workspace scan.
+Source-led RCA105700 found deterministic legacy metadata mismatch: current source
+acceptance omits preparedInputsMode, while immutable actual approval/contract require
+TRANSFER_ACCEPTED_GENERATED_INPUTS and exact reuse authorities; codegenfalse/source3pins
+remain explicit. Original lacks traceback, so captured first executed failing line is
+not claimed. RCA records exceeded160s at185.988; FAILED_BOUND retained. Root separately
+read actual clauses/metadata and reverified18selected hashes; grounded minimum accepted:
+`/private/tmp/tfp-native-expo-root-verifier-initial-rca-gpt61-sol-xhigh-20261016T105700Z/root-minimal-schema-direction-acceptance.json`
+SHAa0f08c7e2ca80b37dcfd24c05cbbbab4a4bede43fe747b16cceb222f4c216428.
+SOLE source-only SOL6.1ExtraHigh110000 corrects only initial exact schema/authority
+predicate in NEW verifier and adds bounded failure-frame observability,240s/source150/
+final90records. No checks/runtime/models byauthor. Actual terminal controls continuation.
+After root delta/syntax, one separately admitted current workspace verification only;
+never rerun preparation/config/codegen/passedtests/cases. Actual preparation binds30
+preserved originals; current verifier independently reads20; historical25label is not
+count proof. Full oldDD equality is not claimed. Downstream105400 proposal is preparation
+only, no edits/rootworkspace hash yet. One combined incremental independent judgment and
+fresh gates must precede any separately justified NEW build. Allfive failedbuild/DDpairs,
+a718partial,states,caches and originals remain immutable; no automatic retry/cachecopy.
+
+ManualTESTFE3000/API4000 left running; no continuous-health claim. UAT remains3c008/
+release20261011T115439Z-3c008ec4; expanded nested source uncommitted. ONLYfourrootnotes
+publish, no nested/gitlink/deploy. Nativeartifact/newdevice/currentguest/foursettings-
+discovery, legalownedinput/POST201/capability/persistence, PUB025TARGET3, CON014/OPP014
+bytes/provider, TRUST006persistedMESSAGE, OPP015providerphases, Android/screen-reader/
+broaderdiscovery/externalproductioninputs remain separate. HistoricOPP031persistence
+WITHHELD/threeunrecoverablereads/502unknown unchanged. OAuth/OTP/emaildelivery excluded.
+No mixedcertificate/inventedinput/productionapproval/readinesspromise. Hourlyjob is
+usage-recoveryfallbackONLY; no unresolvedincludedrejection/usagepoll/purchase/reset/
+downgrade/awake renewal. Continue useful work without an hourly wait.
+
 ## Expanded Web/mobile: staging permission cause accepted; minimal preparation fix active — 16 October 2026
 
 Original8448 build remains terminal65/noartifact, cleanup/manual/protected VERIFIED;
