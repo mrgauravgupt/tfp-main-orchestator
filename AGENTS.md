@@ -1,5 +1,64 @@
 # Workspace-Wide Agent Notes
 
+## Expanded Web/mobile: disk recovered; real Expo producer and complete current workspace verified — 16 October 2026
+
+The human replied ready. NEW actual disk observation36,360,880,128bytes(~33.86GiB)
+passed unchanged6GiB gate; no deletion/purge/waiver. Fresh13read-only commands verified
+exact manualFE3000/API4000birth/session/socket/CWD/logFD,no-build overlap and resources.
+Actual one NEW preparation PASSED366.091s/outer366.789s/retry0:35ownedcommands exit0,
+no supervisionfailure/allcleanupVERIFIED,104NEWrequiredcodegeninputs/104delta. Actual
+EXConstants shellchain command34 generated real app.config1866bytes with expected
+name/slug/iOSbundle identity/SHA dd0b652c6511dca8b988161da7354fc0aff2bcd35efcf8d0dcea0ee5d6abdb54.
+Complete project beforeafter producer unchanged; all1101trackedbytes+modes and four
+frozengroups2786source/14112original/196output/111postrestart0drift. ALLTHREEfailed
+project/run comparisons and immutablebaseline/tools/manualowners VERIFIED. No old
+build/proof/device/case replay. Actualpreparation authority:
+`/private/tmp/tfp-native-disjoint-runtime-stage-20261015T160000Z/trusted-local-config-codegen-preparation-run-58bb0fea-2caf-45d9-9190-9555828f11da/execution-status.json` SHAd164dd9bcfefc7a19a0cceccb46a35a1592502c202db4303dcd40a9c68b0c40a.
+Outer040800/session43821 and soleexactwatch040900/session12111 terminal0; no active
+preparation/watch owner. Olddiskblocker resolved by actualfreshadmission, not elapsedtime.
+
+Root personally rehashedALL58,248regularfiles/965,112,843logicalbytes,4,920contained
+links/63,168entries,independentinodes; fullcurrentinventoryequalsactualpostcodegen.
+Original4919links+exactcanonicalprivatehoist input verified; all104required and actual
+1101index/blob/body/mode bindings exact. Actualparentlessprivatecommit18cc0e2bbfde5fc7858f3bb0e4f76c0786329b6c/
+treef696385c05a7c52e8b4448fae4f243160a33fc28/branchcodex/private-native-config-arm64-20261016.
+Root14.051s verifies typed35rows/producer34/FD/closed7env/outputclosure+JSONidentity/
+SHA/bytes/entireprojectinvariance. SeparatecurrentfullGitstatus0/empty/indexunchanged/
+optionallocksdisabled. RootworkspaceONLYacceptance:
+`/private/tmp/tfp-native-config-codegen-root-verification-zero-model-20261016T041400Z/root-codegen-workspace-acceptance.json` SHA85de916495520011e7ca36e83905e42fc5e3ea82509f97780635ecde47d6bbda.
+Realproducerreceipt7f104126/rootfullGit2a63bc81/manifestd0b1c55e/tracked8cf156a0/required
+c5536a8e/generated1103598d are ACTUAL, no futurehash invented. Rootsummary parser's
+wrong outercleanup-envelope assumption failed before any mutation; corrected read-only
+observation only, no runtime/source/check retry or productfailure.
+
+Parallelsource-onlyrootverifier completed201.278s/240:13exactgroups/fullinverse,
+oldbody/index/Git/104/F_NOCACHE guards retained. Rootsourceassessment+in-memorysyntax
+passed BEFORE actualverification, no tests/build/device replay. Authority:
+`/private/tmp/tfp-native-config-workspace-verifier-source-gpt61-sol-xhigh-20261016T041000Z/root-source-assessment.json` SHA5397a96387fac4aa5b089c595fe27d2ae8d54b4bce08c9eee5143df98c6681ae.
+
+ONE requested SOL6.1ExtraHigh source-only downstreamowner043400 ACTIVE,600s/final60
+records. RootacceptedminimumBEFOREedit:fourNEW031800copies bind actualnewworkspace/
+Git/rootreceipts;35count+strictrealproducer/currentoutput gate,ONEnewactualsource
+receipt discriminator. Oldmethod/assertions exceptactualdata bindings unrun;strict
+61204prefix/ARCHSarm64/Debug/jobs2/work1200total1260/FD/resources/security unchanged.
+No checks/probes/build/device/models/publication byauthor. Actualterminalcontrols:
+`/private/tmp/tfp-native-config-build-downstream-source-gpt61-sol-xhigh-20261016T043400Z/root-authorization.json` SHA1f2927989ab13507aaf7b9df7c7b3033d4d9a49258dbbc213eced85e38a1a693.
+Afterterminal exactdelta/minimumaffected syntax+ONEnewmethod/incrementalindependent
+judgment before NEWonce/freshadmission/one separatelyjustifiedARM64build. No blind
+retry/oldDDreuse/redundantcodegen/fulloldreview. Actualproductbuild/artifact/device/
+business remainUNRUN; originalallfailures retained, no retrospectivepass.
+
+ManualTESTservicesleft running,nocontinuoushealthclaim. UAT3c008/release20261011T115439Z-3c008ec4
+unchanged;expandednestedsourceuncommitted. ONLYfourrootnotes publish,no nested/gitlink/
+deploy. Newartifact/device/currentguest/foursettings-discovery/legalownedinput+POST201/
+capability/persistence,PUB025TARGET3,CON014/OPP014bytes/provider,TRUST006persistedMESSAGE,
+OPP015providerphases,Android/screenreader/broaderdiscovery/externalproductioninputs
+remain separate. HistoricOPP031persistenceWITHHELD/threeunrecoverablereads and502unknown
+unchanged;OAuth/OTP/emaildeliveryexcluded. Preserve NON-RETIREDoriginals/caches/states/
+historyf19/unrelatedwork. No inventedinput/mixedcertificate/productionapproval/readiness
+promise. Hourlyusage-recoveryfallbackONLY,no unresolvedincludedrejection/no healthyusage
+poll/purchase/reset/downgrade/awake renewal. Actualterminals supersede earlieractive text.
+
 ## Expanded Web/mobile: exact Expo hoist source, new guard and independent judgment accepted; disk recovery required — 16 October 2026
 
 Source-only SOL6.1ExtraHigh completed321.498s/600/authorchecks0. Root personally
