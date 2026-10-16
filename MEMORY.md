@@ -1,5 +1,59 @@
 # Workspace Memory for Future Agents
 
+## Expanded Web/mobile: Metro staging topology failure isolated; no native rebuild — 16 October 2026
+
+Actual first SET005 wrapper063e45 ended1 at16:14:16UTC/51.571s. Canonical status
+FAILED_OR_ADMISSION_STOP/DISJOINT_METRO_EXITED; setup/business/nativeHTTP UNRUN.
+All16owned steps retained; Metro/files/projectState/simulator/streams/privateSource/
+state cleanup VERIFIED, oldNativeCleanup UNKNOWN_UNCHANGED. Outer77098/watch17447
+terminal; no runtime/watch owner. Original consumed once/runtime/home immutable.
+Actual terminal overrides prior active notes:
+`/private/tmp/tfp-native-set005-one-canonical-dispatch-prepared-zero-model-20261016T133000Z/execution-status.json`.
+
+Build23ece/full40artifact112400 and separate current installed-device acceptance161100
+remain accepted. No rebuild/reinstall/chmod/new simulator is justified. First native
+install modeguard failure remains FAILED, separate full40bytes/MachO/custody judgment
+retains its actual boundary. Native artifact success is not a case pass.
+
+Read-only requested SOL6.1 ExtraHigh Metro RCA162000 completed source281.712/300s,
+records116.993/120s,total398.705/420s. Root read original assessment/proposal/terminal
+and reverified12pins. Actual Metro0.81.5/TerminalReporter and CLI0.22.28 bodies match;
+Node CLI startup cannot resolve omitted ancestor pnpm shared-hoist edge. Canonical1488
+hoists versus private1; missing850edges have contained already-present providers,
+637missing-provider edges excluded. Conservative80startup/transitive fallback package
+manifests match; dynamic startup/bundling remains unproved. Original footprint/copy
+followed package-local links and omitted ancestor shared-hoist namespace; original
+4919/4920 custody receipts remain true at their narrower direct-input boundaries.
+
+Root accepted grounded minimum BEFOREedit: temporary owned850relative-link overlay,
+preserve existingconfig-plugin edge, no packagebodycopy/install/newworkspace/producer/
+build. Full private regularbytes/modes/linkmembership+text+identities/directoryowner+
+modes restoration; only .expo separately owned; no timestamp-equality claim. Separate
+link owner required because old ProjectStateOwner covers .expo only and verify_private
+hashes regulars. ONE standalone actual Expo-start owningconsumer minimum before future
+canonical case: exact argv/env, freshhome/cache, ownedlistener/status/cleanup/restoration,
+no simulator/setup/business. Sole source-only SOL6.1ExtraHigh author162900 active,
+source480/total600/final120; actual atomic controls completion. Direction:
+`/private/tmp/tfp-native-metro-hoist-overlay-source-sol61-xhigh-20261016T162900Z/root-authorization.json`.
+
+Retained byte-identical zero-model six-file home producer passed once10.484s, exactly6
+independentfiles/21486066bytes/fourprotectedgroups0drift. NEWfuture run9c0327aa-8fd0-48d2-
+86ae-b40f12166866 home/runtime reserved, no case authority. Fresh wrapper only4UUID+
+1home-receiptSHA literal replacements/fullinverse; otherbytes/canonical3435fc exact.
+Prepared163200 remains gated: source/minimum/ONEincrementalindependent/freshadmission
+before any future runtime. No consumed-state reuse or automatic retry.
+
+ManualTESTFE3000/API4000 left running, no continuoushealth. UAT3c008/release20261011T115439Z-3c008ec4
+unchanged; expandednestedsourceuncommitted. ONLYfourrootnotes publish/no nested/gitlink/
+deploy. Other native settings/discovery/currentguest/legalownedinput+POST201/capability/
+persistence/PUB025TARGET3/CON014-OPP014bytes-provider/TRUST006persistedMESSAGE/OPP015provider
+phases/Android/screen-reader/broaderdiscovery/externalproduction gates remain separate.
+HistoricOPP031persistenceWITHHELD/threeunrecoverablereads/502unknown unchanged. OAuth/OTP/
+emaildelivery excluded. Preserve NON-RETIREDoriginals/caches/states/historyf19/unrelated.
+No mixedcertificate/inventedinput/productionapproval/readinesspromise. No unresolved
+includedusage interruption; hourlyjob recoveryfallbackONLY/no usagepoll/purchase/reset/
+downgrade/awake renewal/hourlywait. Continue useful work; never replay passed cases.
+
 ## Expanded Web/mobile: installed artifact accepted separately; first native settings case active — 16 October 2026
 
 Reuse build23ece/full40artifact112400; no rebuild/codegen/config producer/completed
