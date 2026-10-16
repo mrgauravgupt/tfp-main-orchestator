@@ -1,5 +1,62 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Expanded Web/mobile: ARM64-compatible workspace prepared and root-verified; final source adaptation active — 16 October 2026
+
+TimeoutRCA actual270.904s/240 operationalFAILED remains. Root separately read grounded
+assessment/proposal/current16bindings+2owninggraphs and personally counted1,507CompileC
+perarm64/x86_64. Logs/metadata show active objectwrites0.389sbeforetermination; no compiler
+error observed, latent link/app failures unknown. ONEactualread-only runtime queryPASSED
+1.759s/cleanupVERIFIED:hostarm64,availableiOS26.5runtime supportedArchitectures[arm64],
+iPhone17Prosupported. Root accepted BEFOREediting only NEWindependentproject/localcodegen
+and solelaterARCHS=arm64 scope; no timingguarantee/boundincrease/cachecopy/oldstate retry.
+Authority: `/private/tmp/tfp-native-codegen-build-timeout-rca-gpt61-sol-xhigh-20261016T023200Z/root-minimal-arm64-direction-acceptance.json` SHA4c2f1da69c491409a40b125e22440abf264d1d38a875e68df18ad30afc9d37f4.
+Read-only rootpreparation parser syntaxfailedbeforeallocation; corrected before single
+actualcommand. Missingoldinventory path observed, no evidence invented or oldprobe replay.
+
+SourceonlyARM64prep completed98.405s/300,checks0. Exactly5operationgroups:Wliteral,
+twoexistingclosedbranchliterals,and two additive secondfailedproject/run beforeafter
+preservationlines; unchanged testcompanion/no methodreplay. Root exactforward/fullinverse
+and twochangedsyntaxPASSED. Root source06fd0fac keeps existing source/tool/manual/frozen/
+540work600total/FD/ownedcleanup/security guards exact. NEWin-STAGE3independent source
+copies and freshwrapper only2data literals changed/fullinverse. Fresh13read-only admission
+passed thenactualNEWprepPASSED261.921s/outer262.509s:34ownedcommands exit0/cleanupVERIFIED,
+104NEWrequiredcodegenfiles/104delta,all1,101trackedbodymodesexact/allfourfrozengroups0drift.
+FullBOTHfailedprojects+runs preservation comparisons passed;alloldDD/logs/cache retained.
+Outer26802/child26822/exactwatch44121 completedterminal0,noactiveprep/watch owner.
+Authority: `/private/tmp/tfp-native-arm64-codegen-fresh-admission-zero-model-20261016T031000Z/execution-status.json`.
+ActualruntimeSTAGE/trusted-local-arm64-codegen-preparation-run-b194cdef-1506-4d4d-aede-47f8f33bb061.
+
+Root personally rehashedALL58,248currentregularfiles/965,112,844logicalbytes,4,919contained
+links/63,167entries;completecurrentinventoryequalsactualpostcodegen. Actual1101index/
+blob/body/mode and parentlesscommitbba1729effec465be04d6deb90c4378fb9f41531/tree
+072f02b7bd0f5fa84e7c7ac5b2f0fee19863f237 verified. Root14.432s;separatecurrentfullGitstatus
+exit0/emptystdoutstderr/indexunchanged/optionallocksdisabled. NewworkspaceONLYacceptance:
+`/private/tmp/tfp-native-arm64-codegen-root-verification-zero-model-20261016T031500Z/root-codegen-workspace-acceptance.json` SHAe6fe3c22084207c6b53beaab06480dd8d8a373c08f7e8123d16a9142e2f25fe7.
+ActualprepSHAf76c1f60/postmanifestd7399ea4/trackedd786a395/requiredc5536a8e/generated1103598d.
+Noartifact/device/businessgrant;rootreusedactualoldfailedfour-treeproof,notoldDDrehash.
+
+ONErequestedSOL6.1ExtraHigh source-only finaladapter ownerACTIVE031800,420s including
+last60records. OnlyfourNEWcopies:actualnewworkspace/Git/receipts refs+solebuildargv
+ARCHS=arm64 beforebuild;sameDebug/SDK/genericdestination/jobs2/signing/work1200total1260/
+retry0/source/resource/owner/strictdefault. Existing104methodonlyactualdata literals
+maychange/assertionsexact;ONEnewmeaningfulactualargv discriminatorappended. Authorno
+checks/probes/models/runtime/publication. Rootauthorization4b799d0e:
+`/private/tmp/tfp-native-arm64-build-downstream-source-gpt61-sol-xhigh-20261016T031800Z/root-authorization.json`.
+Afterterminal rootexactdelta/4syntax/ONEnewmethod only,ONEincrementalindependentjudgment
+reusing020700evidence+prep5ops/originalnewpreparation. ThenNEWonce/freshgates/oneactual
+ARM64build. Noautomaticretry/oldproofreplay or futurehash invention. Missingfinalunfinished.
+
+ManualTESTFE3000/API4000leftrunning,nocontinuoushealthclaim. ActualUAT3c008/release
+20261011T115439Z-3c008ec4unchanged;expandednestedsourceuncommitted. ONLYfourrootnotes
+publish,no nested/gitlink/deploy. Nativeartifact/newdevice/currentguest/foursettings-
+discovery,legalownedinput/POST201/capability/persistence,PUB025TARGET3,CON014/OPP014bytes/
+provider,TRUST006persistedMESSAGE,OPP015providerphases,Android/screenreader/broaderdiscovery/
+externalproductioninputs remain separate. HistoricOPP031persistenceWITHHELD/three
+unrecoverablereads/historical502unknownunchanged;OAuth/OTP/emaildeliveryexcluded.
+PreserveNON-RETIREDoriginals/caches/states/historyf19/unrelatedwork. Nomixedcertificate/
+inventedinput/productionapproval/readinesspromise. No unresolvedincludedrejection;hourly
+jobusagefallbackONLY,nohealthyusagepoll/purchase/reset/downgrade/awakerenewal.
+
 ## Expanded Web/mobile: corrected native build reached work limit; preserved timeout under source-led analysis — 16 October 2026
 
 Actual NEW corrected build is TERMINALFAILED, not active. Outer parent36149 exited1
