@@ -1,5 +1,74 @@
 # Workspace-Wide Agent Notes
 
+## Expanded Web/mobile: link repair minima pass; native startup blocked before Metro — 16 October 2026
+
+Actual owning-start8268baf1 ended FAILED at16:44:40UTC/21.063s BEFORE .expo snapshot,
+850-link overlay, Node/Metro, simulator or business actions. Global reserved8083 lsof
+hit10s hardwall; typedprocess exitNULL/cleanupUNKNOWN/reapedfalse/sessionEmptyfalse,
+TERM+KILL recorded. Both manual listener-after checks verified at that observation.
+Original terminal remains immutable:
+`/private/tmp/tfp-native-metro-owning-start-once-zero-model-20261016T164600Z/run/execution-status.json`.
+Owner69434 and exactwatch terminal. Earlier root launch setsidEPERM and candidate CLI
+arity failure occurred before target allocation; separate records preserve them.
+No repeated startup, rebuild, reinstall, old test or completed-case replay followed.
+
+Read-only listener RCA165000 source137.936/120 FAILED_BOUND (total137.937/180); root
+separately read grounded material and verified6pins, not relabeled operational pass.
+Saved postcleanup snapshots contain exact69464/69469 identities through16:44:40.388.
+Process state/host cause UNKNOWN. Installed lsof documented kernel/fork/default15s
+versus outer10s is a plausible boundary interaction, not proved cause or timeout waiver.
+ONE separately root-approved unchanged2s instrumented ps observation165400 passed
+0.067s:723captured/722reconciled, only reapednewprobe vanished, uncertainty0; original
+PID/SID/PGID and bothknownPIDs absent. Oldsignals0/device0. PRESENT-TIME ONLY acceptance:
+`/private/tmp/tfp-native-listener-current-scope-once-zero-model-20261016T165400Z/root-current-scope-acceptance.json`.
+Original failed cleanup remains UNKNOWN; port admission/host condition/startup unproved.
+No further probe/old signal/listener query/startup automatically authorized.
+
+Source-only overlay162900 completed476.756/480; root static review caught scoped-parent
+strict-resolution preflight before check. Closed164000 correction22.036s/oneoperation/
+other3copies exact. Original minimum164100 PASSED once0.195s:4syntax+ONE actual filesystem
+method (scope dir/link ownership, collision, unknownquiescence, drift refusal/restore),
+old0/native0/retry0. Root initial inline SyntaxError remains separate preexecution setup.
+Actual standalone entrypoint then rejected its own argv before auth/once/Metro; source-
+confirmed two guard-cardinality fixes164400 completed19.225s/fullinverses; helper/test
+byteexact. Only2newsyntax and actualcall-edge positive/negative guard rows passed;
+original filesystem proof reused. No product or native regression follows these errors.
+
+Combined independent165100 inspected full262line source+original proofs/fresh canonical
+DATA, found ONEP2 initial accepted4920symlink membership/text admission omission; no
+other grounded integration defect. Operational source257.454/240 FAILED_BOUND retained;
+root separately accepted grounded minimum BEFOREedit, no independent bounded pass claim.
+New165600 source completed48.015/210,total109.069/300; exact1helper+2test groups/fullinverse,
+all8pins preserved/both runners byteidentical. Helper compares initial link map against
+accepted manifest using existing inventory; no extra body scan. Old fixture only gains
+matching symlink schema; ONEnew method adds accepted/extra/deleted/retargeted-contained
+cases. Actual165900 minimum PASSED once0.048s:2syntax+ONLYnewmethod/four subcases/old0/
+native0/retry0/pinsstable. Original filesystem andCLI proofs remain reused, not replayed.
+Final helper35a5afcb/test02ffbc92; standalonee3b70ba4/outer20f72c04 unchanged. Root minimum:
+`/private/tmp/tfp-native-hoist-initial-map-minimum-zero-model-20261016T165900Z/root-affected-minimum-acceptance.json`.
+NARROW independent finding-closure judgment remains PENDING; no owner active. Hourly
+fallback must not launch it without actual unresolved included-usage interruption.
+
+Build23ece/full40artifact112400/separate installed-device161100 acceptance remain source-
+bound and reusable; NO rebuild/reinstall/newdevice. Original failed transactions remain
+failed. Fresh canonical9c0327aa wrapper/home163200 still UNUSED/gated: closure judgment,
+reliable fresh owner/port/resource admission and ONE actual owning Expo startup with
+verified restore must precede separately justified still-UNRUN SET005. Original063e45
+consumed run and all artifacts/caches/states retained. No business/human-flow pass or
+whole device/UI certificate follows any source/controlled proof.
+
+Manual FE3000/API4000 left running, no continuoushealth. UAT3c008/release20261011T115439Z-3c008ec4
+unchanged; expanded nested source uncommitted. ONLYfourrootnotes publish/no nested/
+gitlink/deploy. Other native settings/discovery/currentguest/legalownedinput+POST201/
+capability/persistence/PUB025TARGET3/CON014-OPP014bytes-provider/TRUST006persistedMESSAGE/
+OPP015providerphases/Android/screen-reader/broaderdiscovery/externalproduction gates stay
+separate. HistoricOPP031persistenceWITHHELD/threeunrecoverablereads/502unknown unchanged.
+OAuth/OTP/emaildelivery excluded. Preserve NON-RETIRED originals/historyf19/unrelated.
+No readiness/deadline/production promise. All source/check/watch jobs terminal; missing
+independent closure remains unfinished. No unresolved included-usage rejection: hourly
+recoveryfallbackONLY; no new model/runtime owner, usagepoll/purchase/reset/downgrade/
+awake renewal or repeated checks on scheduled wakes. Environment failure is not usage.
+
 ## Expanded Web/mobile: Metro staging topology failure isolated; no native rebuild — 16 October 2026
 
 Actual first SET005 wrapper063e45 ended1 at16:14:16UTC/51.571s. Canonical status
