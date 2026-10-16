@@ -1,5 +1,62 @@
 # Workspace-Wide Agent Notes
 
+## Expanded Web/mobile: Expo private-hoist cause confirmed; exact source correction active, disk input pending — 16 October 2026
+
+Read-only SOL6.1ExtraHigh EXConstants RCA COMPLETED179.003s/240. Actualstdout77556:
+Cannot find module @expo/config-plugins from datetimepicker8.2.0 plugin bareimport;
+existingprovider9.0.17 is present but privateconsumer ancestorlookup edge is missing.
+CorrectprivateNode ran; no compiler/SDK/product regression inferred. Sixteenselected
+original+15owningsource hashes stayed exact. Static31JS/76,798byte/nineconfiguredplugin
+closure found no other unresolvedliteral localimport, but dynamic/fullconfig success
+remains UNPROVED. Root read actualphase/scripts/import/provider metadata and exact path
+resolution. Authority: `/private/tmp/tfp-native-exconstants-config-phase-rca-gpt61-sol-xhigh-20261016T034000Z/assessment.json` SHA5d14dcb9c076fb3575fa5ad94c32fb2d82496bbef8a5385d3110ebb59aece387.
+
+Parallel narrow source-boundary reader COMPLETED85.345s/120:43selectedpaths exact.
+CANONICAL .pnpm/node_modules/@expo/config-plugins is an existing contained symlink to
+../../@expo+config-plugins@9.0.17/node_modules/@expo/config-plugins; immutableSTAGE same
+edge ABSENT. Actual .modules.yaml records provider privatehoist; selectedpackage/config/
+lock/provider/consumer bodies canonical=stage. CurrentPRIVATEvisibility divergence is
+confirmed, no canonicalmissinginstallededge/productfix established; actor/historyunknown.
+Root adopts stronger exactcanonicaledge topology, not RCA's inventedconsumeredge option.
+Authority: `/private/tmp/tfp-datetimepicker-dependency-source-boundary-gpt61-sol-xhigh-20261016T034600Z/assessment.json` SHAc6cf594e91ba47c0484f0657c459cba8ecb7ed5ec14c4816a5434023ece631c5.
+
+Root accepted minimum BEFOREediting: one exactcanonicalrelativehoistinput+existingpinned
+provider in NEWprivateproject, complete4920link graph/old4919unchanged; no sourcepackage/
+appconfigedit, NODE_PATH, generic exception or install. Real fixed EXConstants owning
+shellchain/configproducer must run in exclusive privateoutput BEFOREanylaterXcode,
+validate boundedactualJSON/appidentity and fullproject beforeafter/protected1101/owned
+FD+exit0+cleanup. PreserveALLTHREEfailedprojects+runs. Allsource/resource/manual/frozen/
+540work600total/child180/TERM3reap3/security/no-fetch guards remain. Rootdirection:
+`/private/tmp/tfp-native-exconstants-config-phase-rca-gpt61-sol-xhigh-20261016T034000Z/root-canonical-hoist-producer-direction-acceptance.json` SHAe15855bf532ec5ad212c17bd4fd0ea759d838060aac2dab50eea21b13ca0fac9.
+
+ONEsource-only SOL6.1ExtraHigh author ACTIVE035000,600s includingfinal60records,only
+threeNEWprep sourcecopies; no probes/checks/Node/copy/build/device/models/publication.
+Exactclosed per-producer env/argv route and ONEmeaningful newguard proof may beadded;
+oldmethods reused/unrun. No downstreambuildadapter beforeactualproducer/newworkspace.
+Authority: `/private/tmp/tfp-native-config-hoist-preparation-source-gpt61-sol-xhigh-20261016T035000Z/root-authorization.json` SHA6355bd48fc92785e7d6bff259da163c40278533c9953c28d785b51052b3ea364.
+Actualauthor terminal controlscontinuation;missingfinalunfinished/no duplicatehealthyowner.
+
+NEWpostbuilddisk observation6,022,991,872bytes (~5.61GiB), below unchangedfresh6GiB
+admission6,442,450,944bytes. RGmountdirectoryabsent; no diskfailurecauseinferred. ONE
+pendinghumanquestion asks free5GiBoutsideNONRETIREDartifacts/caches andreplyready.
+Source/minimumsmallchecks maycontinue, but no preparation/build/resourceretry until
+actualrecovery andNEWfreshadmission. No delete/prune/purge/reset/daemonstop/waiver.
+Rootblocker: `/private/tmp/tfp-native-config-hoist-preparation-source-gpt61-sol-xhigh-20261016T035000Z/root-runtime-disk-blocker.json`.
+Original ARM64exit65/noartifact/cleanupVERIFIED, dualarchtimeout124 and allfailedstates
+stayimmutable;no rereun/replacement/certificate splice. No healthybuild/watch/device owner.
+
+ManualTESTFE3000/API4000left running,nocontinuoushealthclaim. ActualUAT3c008/release
+20261011T115439Z-3c008ec4unchanged;expandednestedsourceuncommitted. ONLYfourrootnotes
+publish,no nested/gitlink/deploy. Artifact/newdevice/currentguest/foursettings-discovery,
+legalownedinput/POST201/capability/persistence,PUB025TARGET3,CON014/OPP014bytes/provider,
+TRUST006persistedMESSAGE,OPP015providerphases,Android/screenreader/broaderdiscovery and
+externalproductioninputs remain separate. HistoricOPP031persistenceWITHHELD/three
+unrecoverablereads/historical502unknownunchanged;OAuth/OTP/emaildeliveryexcluded.
+Preserve NON-RETIREDoriginals/caches/states/historyf19/unrelatedwork. No inventedinput,
+mixedcertificate/productionapproval/readinesspromise. HourlyjobusagefallbackONLY,no
+unresolvedincludedrejection and mustnotretrydiskblocker. No healthyusagepoll/purchase/
+reset/downgrade/awakerenewal. Active usefulsourceworkcontinues without hourlydelay.
+
 ## Expanded Web/mobile: ARM64 build terminates on EXConstants config phase; original failure preserved — 16 October 2026
 
 Actual ARM64 run62351bdd-243a-41b4-a5f4-a6b5d8623c29 is TERMINALFAILED, not active.
