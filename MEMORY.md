@@ -1,5 +1,51 @@
 # Workspace Memory for Future Agents
 
+## Expanded Web/mobile: corrected native build reached work limit; preserved timeout under source-led analysis — 16 October 2026
+
+Actual NEW corrected build is TERMINALFAILED, not active. Outer parent36149 exited1
+at02:30:17UTC/1243.494s; inner1243.135s. Primary ownedcommandexit124/process-15,
+supervisionFailureTimeoutError/whole-runtime; exact-ownedcleanupVERIFIED/reaped/
+sessionEmpty/signalsTERM only. ManualAfter+protectedAfterVERIFIED. Originalstdout root
+scan found0compilererror rows,3,014CompileC/208SwiftCompile/81Touch, no artifactrecorded.
+No product/compiler regression, stall, success or readiness inferred from that scan.
+Root compared complete original before/after snapshots:all1,101tracked body/modes exact;
+10delta entries are declared HermesDebug replacement/marker only. All104codegen inputs
+remain bound. Retain every original project/DD/xcresult/log/context/state/once; no retry.
+Authority: `/private/tmp/tfp-native-codegen-corrected-build-runtime-zero-model-20261016T020900Z/root-original-build-timeout-observation.json` SHA27946bf41a714aaa51366f09a52dfeaf932bd55644faca6aa09d489e5a22fa7a.
+Sole exact-parent kqueue watcher021000/root50838 terminal0/exactexit; runner80559terminal1.
+No build/native/device/check owner remains. Earlier active build notes are historical.
+
+ONE requested read-only SOL6.1 Extra High timeout RCA is active,240s includingfinal45
+records;16selected source/original evidence bindings before/after. Multiplehypotheses
+must distinguish large clean/multiarch work, compiler failure, stall, preflightdeadline
+cost and tool/resource symptoms using retained source/logs plus bounded privateDDmetadata.
+Compare smallest one-arch/current-simulator, guarded incremental/newworkspace strategies
+against merely raising bounds; concrete proposal must be root-accepted BEFORE edit or
+runtime. No probes,build,retry,source/cache/DB/service/device mutation or extra models.
+Authority: `/private/tmp/tfp-native-codegen-build-timeout-rca-gpt61-sol-xhigh-20261016T023200Z/root-authorization.json` SHA0aee3f612416be238ef170c330323e86f0ddeb250d6f52a5f3c37285309cbdb3.
+Actual terminal/assessment controls continuation; absent final is unfinished.
+
+Accepted source/minimum020500 and independent020700/4adfd74f remain source-bound;
+38selected0drift/all17adapter inverses/old9testprefix/strict61,204prefix exact. No replay.
+Parallel future-case data-map increment completed100.452s/120:11data-only patches,
+all6selected exact/original26fields+eightpendinggroups reused. Planef5b03bc is GATED:
+allunknown artifact/device/currentinput fields remainNULL. New three-companion closure
+prepared3independent exactfiles/135,895bytes, no import/execute/artifact/device authority.
+Authorities: `/private/tmp/tfp-native-codegen-future-case-map-increment-gpt61-sol-xhigh-20261016T021500Z/root-map-assessment.json` and
+`/private/tmp/tfp-native-codegen-runtime-companion-closure-zero-model-20261016T021600Z/root-companion-acceptance.json`.
+
+Manual TEST services left running,no continuous-health claim. Actual UAT remains3c008/
+release20261011T115439Z-3c008ec4;expanded nested source uncommitted. ONLY fourrootnotes
+publish,no nested/gitlink/deploy. Native artifact/new-only device/currentguest/four
+settings-discovery,legalownedinput/POST201/capability/persistence,PUB025TARGET3,
+CON014/OPP014bytes/provider,TRUST006persistedMESSAGE,OPP015providerphases,Android/
+screen-reader/broaderdiscovery and externalproduction inputs remain separate. Historic
+OPP031persistenceWITHHELD/three unrecoverable reads/historical502unknown unchanged.
+OAuth/OTP/emaildelivery excluded. Preserve NON-RETIRED originals/caches/states/historyf19/
+unrelatedwork. No mixedcertificate/inventedinput/productionapproval/readinesspromise.
+No unresolved included rejection;hourlyjob recoveryfallbackONLY,not environment retry.
+No purchasedcredit polling/purchase/reset/downgrade/awake renewal;active work continues.
+
 ## Expanded Web/mobile: codegen preparation/adapters independently accepted; one fresh native build active — 16 October 2026
 
 Actual new minimum PASSED8.858s:four Python syntax owners and ONLY the new complete104
