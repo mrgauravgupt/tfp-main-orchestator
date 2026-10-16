@@ -1,5 +1,75 @@
 # Workspace Memory for Future Agents
 
+## Expanded Web/mobile: build terminated by supervisor process-query timeout; no automatic replay — 16 October 2026
+
+Actual correctedARM64run93865ae8-74d0-46ae-9969-e0b55f2268e7 TERMINALFAILED; original
+Xcode was terminated,notactive. Outerparent92578/supervisor92596 terminal1 at05:06:41UTC,
+838.985monotonicseconds;inner838.557s. Primaryownedexit1/process-15/supervisionFailure
+subprocess.TimeoutExpired:ps -axo pid= exceeded2s. This is NOT a1200s workdeadlinefailure;
+wallclockendpoints differ frommonotonicelapsed,donotinterchange. CleanupVERIFIED/reaped/
+sessionEmpty/TERM15only;manualAfter+protectedAfterVERIFIED. ArtifactNOTrecorded. Root
+comparedall1101beforeaftertrackedbody/modes exact;10deltaonlydeclaredHermesDebug/marker.
+Originalstdout1279CompileC/103SwiftCompile/28PhaseScriptExecution emittedoperations,
+not completedcompile orartifactpass. Two literalerror: matches37359/37364 are warning/
+quoteddeprecatedselector strings,notcompilererrors. No actualcompiler/productregression
+or success established;latent outcomesUNKNOWN. Alloriginalproject/DD/xcresult/FD/logs/
+contexts/once/cache/state preserved. Authority:
+`/private/tmp/tfp-native-config-arm64-build-runtime-zero-model-20261016T044800Z/root-original-supervisor-failure-observation.json` SHAd66df68479e2fbf1f526977bd7875ef5beb90ccc7853da07827db86316f14e89;
+classification7932397e. Exactwatch044900/session45979terminal0;outer8467terminal1.
+No build/device/watch/checkowner remains. Historicalactivebuildnotes cannot override.
+
+Read-onlySOL6.1ExtraHigh RCA051000 exceeded240s androotinterrupted303.75s beforefinal
+assessment/proposal/terminal. OriginaloperationalFAILED_BOUND+missingfinal retained,
+notcompletedaccepted. ONE60srecords-only continuation serializedexistingpartialmaterial;
+freshreads/checks/probes/sourcework0. Rootpersonallyread exactsupervisor34-97/239-285 and
+savedpartial,thenreverified13originalcurrenthashes. Immediate2squerytimeout established;
+0.05s recurring full-hostps+Npermemberidentityqueries source-confirmedoverhead path,
+notmeasuredrootcause. UnderlyinghostdelayUNKNOWN.1525registered identities are cumulative,
+NOT concurrentprocesscount;failedprobe hasnoseparatedurablePID/cleanuprow,notproofleak.
+Latercleanupsuccessdoesnotexonerateoldtimeout. Savedpartial+rootfailure:
+`/private/tmp/tfp-native-build-process-enumeration-timeout-rca-gpt61-sol-xhigh-20261016T051000Z`.
+
+RootacceptedONLYgroundedminimumBEFOREnewsource:buildscopedNEWsupervisor withbatched
+pid/pgid/lstartsnapshot/nativeSID+PGID,currentbirthandforeigngroupguards retained;
+recurringliveinterval0.05->1s,cleanupintervalunchanged. Nativeexactownedprobe durably
+recordsPID/FD/exit/timeout/cleanup,still2scap/TERM3reap3/failclosedUNKNOWN/noretries.
+No timeout-toempty,timeoutincrease oroldglobal695fsupervisoredit. Exactgate siblingcopy,
+newbuild/admissionbinding+explicitnewrunprobe-directorysetup;allotherbuildargs/resources/
+security/source/manual/SDK/FD/1200work1260total/jobs2/ARCHSarm64 guards preserved.
+APPENDonlyONEnewfocusedcontract;alloldmethodsUNRUN. This is overheadreductionand
+observability proposal,NOTprovenhostfix. No cachecopy/inplacecontinuation/coldbuild
+orartifact/deviceauthority granted. Unsupportedrelocation/usefulcachehitsUNPROVED;
+opaqueDB/stamprewritesandfailed4project/run/DDmutationforbidden.
+SoleSOL6.1ExtraHighsourceonlyauthor052000ACTIVE,600s/final60records:
+`/private/tmp/tfp-native-batched-monitor-source-gpt61-sol-xhigh-20261016T052000Z/root-authorization.json` SHA33ed216d228a0d57186008ea19444ed30b73a7bca1f92950eadc0aff83e6c42d.
+Afteractualterminalrootexactdelta/minimumaffected/newincrementaljudgmentbefore any
+separatelyjustified runtime. Userexplicitno repeatedruns:passedcases/fullmatrices/
+configproducer/oldproofs remain unrun/reused. Noautomatic replacementbuild.
+
+Read-onlyfutureartifactinspectorsource205.997s/240 isUNEXECUTED becausebuildfailed.
+Rootsourceprecheck found2installeddocumentationheadersnlink9versusgenericartifactreader
+nlink1 BEFORE candidatecompile/runtime. Exactsingleoperation NEWcopy removes onlyruntime
+revalidationofsource-documentationheaders;2headerbody/metadata evidence rootverified,
+allactualartifactcustody/architecture/1101/delta/FDguards unchanged. Rootsyntaxonlypass;
+noartifactorbuildretry. Authority:
+`/private/tmp/tfp-native-artifact-inspector-header-proof-zero-model-20261016T045400Z/root-source-assessment.json` SHAb75022fe1a9a5a6fdd621d017afdef6914bdd6038722b7b4378085170d2d3a54.
+Futureinspector763de408 acceptsONLYactualterminal0/newrootadmission,unsupportedlayout
+UNKNOWN;DebugTSsourceNOTembeddedJS/currentboot. Threecurrentcompanioncopies145895bytes
+and26field/eightpendinggroup DATAmap prepared045600/045700 only;actualartifact/device/
+currentguestinputs remainNULL, no import/execute/casegrant. Lastactualrootworkspace85de/
+Git18cc/tree f696/realproducer7f104126 remains originalscope,notbuild/artifactpass.
+
+ManualTESTFE3000/API4000left running,nocontinuoushealthclaim. UAT3c008/release20261011T115439Z-3c008ec4
+unchanged;expandednestedsourceuncommitted. ONLYfourrootnotes publish,no nested/gitlink/
+deploy. Newartifact/device/currentguest/foursettings-discovery/legalownedinput+POST201/
+capability/persistence,PUB025TARGET3,CON014/OPP014bytes/provider,TRUST006persistedMESSAGE,
+OPP015providerphases,Android/screenreader/broaderdiscovery/externalproductioninputs
+remainseparate. HistoricOPP031persistenceWITHHELD/threeunrecoverablereads/502unknown
+unchanged;OAuth/OTP/emaildeliveryexcluded. Preserve NON-RETIREDoriginals/caches/states/
+historyf19/unrelatedwork. No inventedinput/mixedcertificate/productionapproval/readiness
+promise. Hourlyusage-recoveryfallbackONLY;no unresolvedincludedrejection,no environment
+retry/healthyusagepoll/purchase/reset/downgrade/awake renewal. Actualterminalwins.
+
 ## Expanded Web/mobile: current Expo/build gate accepted; one corrected ARM64 build active — 16 October 2026
 
 Current downstreamsource completed410.585s/600/authorchecks0. Root reconstructed23
