@@ -1,5 +1,53 @@
 # Workspace-Wide Agent Notes
 
+## Expanded Web/mobile: actual owned simulator preserved; current process scope resolved — 16 October 2026
+
+Build23ece and full40 artifact112400 remain PASSED at original scopes; no rebuild,
+codegen/config producer, old proof, completed case or materialization replay. Actual
+130300 provision created UUID7183C034-9D7E-4D23-AD6F-5AFCAAD4F44D once, booted it,
+and returned it Shutdown. Native bootstatus18 exited0/process0/Finished, then legacy
+cleanup query recorded TimeoutExpired/UNKNOWN. Original failed terminal3712dfbd,
+31owned rows, original51 baseline/creation/ownership/identity remain immutable;
+manualAfter/protectedArtifactAfter VERIFIED, lock released, installation/cases UNRUN.
+All runtime/watch owners are terminal. Historical active notes never override finals.
+
+Source-led131000 RCA source101.990/total203.586s met bounds. Exact timed-out legacy
+ps argv is unrecoverable from saved errorClass; host cause UNKNOWN. reapedfalse is
+bookkeeping, not proof of a leaked child. Root separately approved ONE read-only
+current observation132000 using accepted instrumented2s native snapshot/3sTERM/reap.
+Actual0.059s captured681rows/reconciled680; only the reaped new probe vanished;
+original31692 PID/SID/PGID absent, uncertainties0, old signals0/device commands0.
+Root current-scope acceptance is PRESENT-TIME ONLY and preserves old UNKNOWN:
+`/private/tmp/tfp-native-boot-current-ownership-observation-zero-model-20261016T132000Z/root-current-scope-acceptance.json`.
+
+Root accepted grounded completion minimum BEFORE edit: reuse actual owned Shutdown
+UUID and original51 baseline/creation chain through NEW approval bridge; NO create
+catalog/branch/rebuild. Retain6GiB/manual/vendor/FD/once/no-overlap/full40 guards.
+Only justified boot/install/app-only container/full40/shutdown may follow source,
+minimum, independent and fresh admission gates. Sole source-only SOL6.1 ExtraHigh
+132600 author has450source/600total incl150records; atomic final controls continuation.
+NEW supervisor only adds exited-child empty-session batched cleanup fastpath; live/
+surviving legacy guarded branch exact, probe errors UNKNOWN, no timeout extension.
+Proposal132200 source/total met but records88.161/60 FAILED; root separately accepted
+material, no operational pass rewrite. No install-completion runtime authorized yet.
+
+Parallel future canonical SET005 wrapper had source305/300 cutofffailure and missing
+HOME; original retained. ONE closed HOME insertion132100 completed37.657s; root exact
+one-operation inverse + one source handoff/currentpositive/oldKeyError counterfactual
+passed0.033s, syntax1/native0/oldmethods0. Full125line wrapper independent132400 ACCEPTED0findings/151.678s; root8pins reverified;
+no dispatch. Canonical retains setup/current-generation/nativeHTTP/currentguest gates.
+
+Manual TEST FE3000/API4000 left running, no continuoushealth claim. UAT3c008/release
+20261011T115439Z-3c008ec4 unchanged; expanded nested source uncommitted. ONLY four root
+notes publish; no nested/gitlink/deploy. Native settings/discovery/legal ownedinput/
+POST201/capability/persistence, PUB025TARGET3, CON014/OPP014bytes-provider, TRUST006
+persistedMESSAGE, OPP015providerphases, Android/screen-reader/broaderdiscovery/external
+production gates remain separate. HistoricOPP031 persistenceWITHHELD/three unrecoverable
+reads/502unknown remain. OAuth/OTP/email delivery excluded. Preserve NON-RETIRED
+originals/caches/states/historyf19/unrelated work. No mixedcertificate/inventedinput/
+production approval/readiness promise. No unresolved usage interruption; hourlyjob is
+recovery fallbackONLY, no usagepoll/purchase/reset/downgrade/awake renewal/hourlywait.
+
 ## Expanded Web/mobile: reviewed native provisioner active; original build and artifact proof reused — 16 October 2026
 
 Current build23ece and112400 artifact proof remain PASSED at their original scopes;
