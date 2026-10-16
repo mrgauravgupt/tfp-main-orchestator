@@ -1,5 +1,76 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Expanded Web/mobile: current Expo workspace and build-gate minimum verified; incremental review active — 16 October 2026
+
+**Completed, without replaying preparation or business cases:** the corrected current
+workspace verifier passed in 14.217 seconds. It rehashed all 58,248 current regular
+files (965,112,854 logical bytes), verified 4,920 contained links / 63,168 entries,
+all 1,101 Git index/blob/body/mode bindings and the 104 transferred generated inputs.
+Owning Expo command 4 and EXConstants config command 34 were verified from the original
+35-command successful preparation. Codegen was not rerun. The exact podscript mode
+correction and provider/full-project invariance remain separate, explicit evidence.
+Root workspace acceptance:
+`/private/tmp/tfp-native-expo-node-root-current-workspace-zero-model-20261016T110300Z/root-reused-input-workspace-acceptance.json`
+SHA90548267f628ef09a39db088fb7bebe94930306192fd03ad5e4d00be8a8368fe.
+Actual private commit1da8d0e2fccc8583b86433acab6efd39d61f8938 / tree07a27cdad7a3a912c30743a6c7cc041510d2e0e9.
+One current full Git status subsequently passed in0.039268s: empty stdout/stderr,
+index unchanged, optional locks disabled. Root final observationfa21982c binds both.
+The two root inline setup syntax failures occurred before allocation/any Git execution;
+their originals are recorded separately, not product/test failures.
+
+The original105500 assertion failure remains immutable. Source110000 completed in
+56.152s, checks0; root reconstructed its three exact operations/full inverses and one
+new syntax before the successful current verification. It uses the exact current
+source-acceptance schema and actual approval transfer/reuse authorities; unknown
+schemas fail closed. Bounded failing-frame diagnostics were added without locals or
+environment data. Existing inventory, mode, Git, provider, FD and104 guards remain.
+No earlier RCA over-bound outcome was retrospectively changed to a pass.
+
+Downstream105400 initially received an actual backend capacity rejection before any
+candidate existed. ONE included-only snapshot showed ordinary usage available
+(primary5% / weekly48% used; purchased fields ignored), then ONE requested SOL6.1
+Extra High continuation actually executed. Original rejection retained; no unresolved
+included interruption, repeated unchanged attempt, purchase, reset or downgrade.
+Source completed238.426s / records299.562s by matching UTC endpoints. Different raw
+Perl/Python monotonic clock domains were retained and rejected as duration evidence.
+
+Root reconstructed all25 canonical final byte groups/full inverses across four NEW
+adapters (49 authoring steps are separate). Original codegen validators, 61,204 native
+prefix bytes, old test bodies/order, default mode, Debug/ARM64/jobs2/work1200total1260,
+batched monitor, resource/manual/vendor/once/FD/security guards remain. Only actual
+current data/35 rows/producer34 and strict current mode+Expo prerequisites changed.
+The new minimum passed once in9.877s: four syntax owners and ONLY one new controlled
+actual-source gate method, old methods0/retries0/owned cleanup VERIFIED_EXITED. All four
+frozen groups2786source/14112original/196output/111postrestart matched before/after.
+Root minimum:
+`/private/tmp/tfp-native-expo-current-downstream-minimum-prepared-zero-model-20261016T111000Z/root-check-acceptance.json`
+SHAf3d536a1767a3277a927eed813abeceebf688521e7746e3df2b436c52cf4a8b4.
+This controlled receipt/call-edge proof is not a product build or human-flow pass.
+
+SOLE fresh SOL6.1 Extra High incremental independent reviewer111400 is active,
+480s/source360/final120 records,55 selected bindings. It reviews the new preparation,
+Node role limit, verifier/schema/data changes, adapters and original new proofs while
+reusing accepted070700/072500 evidence. Authorityf172634754882a8a9b5f103f8e750f6cd291f288bf137a789fa4f32cc6a84f1d:
+`/private/tmp/tfp-native-expo-combined-incremental-independent-gpt61-sol-xhigh-20261016T111400Z/root-authorization.json`.
+Actual atomic final controls continuation. No build/device/check/source/watch owner is
+active otherwise. Missing review final is unfinished. Only independent acceptance
+plus fresh owner/resource admission can permit one separately justified current build.
+Future artifact inspector is a gated data-only plan: actual run/final source refs
+remain unknown; no artifact/device grant. Do not rerun passed checks or producers.
+Preparation binds30 old records; root independently verified20; historical25 label
+proves neither count. No full old DerivedData equality or cache copying is claimed.
+
+Manual TEST FE3000/API4000 remain left running; no continuous-health claim. UAT stays
+3c008/release20261011T115439Z-3c008ec4; expanded nested source remains uncommitted.
+Publish ONLY four root notes, no nested/gitlink/deploy. Native artifact/device/current
+guest/four settings-discovery, legal owned input/POST201/capability/persistence,
+PUB025 TARGET3, CON014/OPP014 bytes/provider, TRUST006 persistedMESSAGE, OPP015 provider
+phases, Android/screen-reader/broader discovery/external production inputs remain
+separate. Historic OPP031 persistence WITHHELD/three unrecoverable reads/502unknown
+remain. OAuth/OTP/email delivery excluded. Preserve NON-RETIRED originals, caches,
+states/historyf19 and unrelated work. No mixed certificate, invented input, production
+approval or readiness promise. Hourly job remains usage-recovery fallback ONLY.
+
 ## Expanded Web/mobile: Expo owning producer passes; current workspace verifier schema correction active — 16 October 2026
 
 **Verified preparation completion:** current d4d31517 preparation ended0 in260.988s
