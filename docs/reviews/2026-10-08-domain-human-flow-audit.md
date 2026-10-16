@@ -1,5 +1,55 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Expanded Web/mobile: exact Expo hoist source, new guard and independent judgment accepted; disk recovery required — 16 October 2026
+
+Source-only SOL6.1ExtraHigh completed321.498s/600/authorchecks0. Root personally
+reconstructed all16operation groups/fullinverses:5preparation/10contract/1newtest;
+ordinaryenvironment body and originalmethod prefix exact, all21selected0drift.
+ThreeNEWsourcecopies restore ONLY observedcanonicalpnpm privatehoistinput in NEW
+project; allold4919links retained plus exactoneinput=4920. Closed actualinstalled
+EXConstants shellchain/seven-key env overlay has realprivateJSONoutput/identity/
+project+1101tracked invariance/ownedFD+cleanup gates. AllTHREEfailedproject/run pairs
+remain protected. No canonicalpackage/lock/appconfigedit, install/NODE_PATH/plugin
+removal/mockproducer/timeoutincrease or historicalrepair. Source authority:
+`/private/tmp/tfp-native-config-hoist-preparation-source-gpt61-sol-xhigh-20261016T035000Z/root-source-acceptance.json`.
+
+NEWzero-model minimum PASSED8.973s:three in-memorysyntaxowners and ONLY new actual
+AST controlledcontract,1pass/oldmethodUNRUN/retry0/ownedcleanupVERIFIED_EXITED.
+Fourfullfrozen beforeafter groups2786source/14112original/196output/111postrestart
+matched0drift. Controlled Reader seam is explicit; no realconfigproducer/kernel/
+build/native/business pass follows. Authority:
+`/private/tmp/tfp-native-config-hoist-minimum-zero-model-20261016T035500Z/root-check-acceptance.json` SHAbd4f5f995420ddb687d949afee2b26112db6c385195e899cc8807e3dda3eadbf.
+
+ONEincremental SOL6.1ExtraHigh independent judgment COMPLETED130.459s/300,affected
+sourceACCEPTED/findings0. Reviewer traced installedowningphase/configchain/exacthoist,
+all16inverses/guards and originalminimum; all35selected beforeafter0drift. Root read
+actualreview/terminal and reverified all35currenthashes. PriorARM64source/evidence
+reused, no oldfullreview/check/image/case replay. Authority:
+`/private/tmp/tfp-native-config-hoist-source-independent-gpt61-sol-xhigh-20261016T035700Z/root-independent-acceptance.json`;
+originalreview SHAb169723ef6c5f8c69096c3dea8600f3939aa6ad3ebe9e42c15c7aa784670e95c.
+ActualNEWworkspace/35ownedcommands/realproducer/Git/codegen104/artifact remain UNRUN.
+
+Current blocker remains recorded6022991872bytes(~5.61GiB) below unchangedfresh6GiB;
+NOnewmeasurement/retry/deletion/waiver. Pendinghumanrequest free5GiBoutsidepreserved
+artifacts/caches thenreplyready. Runtime/build cannot resume until actualrecovery+
+NEWfreshowner/resource/nooverlap admission. No healthy source/review/check/build/
+watch/deviceowner remains. Later actualpreparation/rootfullworkspace+realproducer
+verification and only incrementalnewdata/adapters judgment precede separately
+justifiedNEWarm64build; no oldDD/cache reuse or consumedonce replacement. Original
+ARM64exit65/privatehoistfailure, dualarchtimeout124 and allolderfailures immutable.
+
+ManualTESTFE3000/API4000left running,nocontinuoushealthclaim. ActualUAT3c008/release
+20261011T115439Z-3c008ec4unchanged;expandednestedsourceuncommitted. ONLYfourrootnotes
+publish,no nested/gitlink/deploy. Artifact/newdevice/currentguest/foursettings-discovery,
+legalownedinput/POST201/capability/persistence,PUB025TARGET3,CON014/OPP014bytes/provider,
+TRUST006persistedMESSAGE,OPP015providerphases,Android/screenreader/broaderdiscovery/
+externalproductioninputs separate. HistoricOPP031persistenceWITHHELD/threeunrecoverable
+reads/historical502unknown unchanged. OAuth/OTP/emaildeliveryexcluded. Preserve all
+NON-RETIREDoriginals/caches/states/historyf19/unrelatedwork. No inventedinput/mixed
+certificate/productionapproval/readinesspromise. Hourlyjobusage-recoveryfallbackONLY;
+no unresolvedincludedrejection and mustnotretrydisk/environmentblocker. No healthyusage
+polling/purchase/reset/downgrade/awake renewal. Actualterminal supersedes earlieractive text.
+
 ## Expanded Web/mobile: Expo private-hoist cause confirmed; exact source correction active, disk input pending — 16 October 2026
 
 Read-only SOL6.1ExtraHigh EXConstants RCA COMPLETED179.003s/240. Actualstdout77556:
