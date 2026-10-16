@@ -1,5 +1,61 @@
 # Implementation checkpoint — 6 September 2026
 
+## Expanded Web/mobile: installed artifact accepted separately; first native settings case active — 16 October 2026
+
+Reuse build23ece/full40artifact112400; no rebuild/codegen/config producer/completed
+case replay. Completion source132600 finished438.458/450source/438.459/600total;
+root130adapter-character+1supervisor+29dispatcher groups/fullinverses and13unchanged
+functions verified, gateexact. New minimum133600 passed once0.143s:4syntax+ONEnew
+controlledmethod/0old/0native/0retry/18pinsstable. Independent155500 ACCEPTED0findings,
+190.744/420s; root28pins reverified. No prior proof or test replay.
+
+Actual completion5b819541-f949-43c6-b32f-a949e7678be3 ended1 at15:59:48UTC in59.720s
+(inner)/59.871outer. SAMEownedUUID7183C034-9D7E-4D23-AD6F-5AFCAAD4F44D; create0/retry0.
+Nativeinstall/container/boot/readiness/shutdown commands typed0;33ownedrows cleanup
+VERIFIED/reaped/sessionEmpty, all33newexited-childfastpath oneinstrumentedcensus verified.
+ManualAfter/protectedArtifactAfter VERIFIED/lockreleased/Shutdown. Primary installed
+modeguard APP_EXECUTABLE_INTENT_OR_SOURCE_MODE remains actualFAILED3899ff4a, not relabeled.
+All completion/watch owners terminal. No reinstall or newboot follows this failure.
+
+RootONE40file observation:64726036bytes/allsourcehashesmatch/uniqueinodes. Three
+source0700 libraries installed0644; main0755. Independent read-only160500 RCA completed
+148.462/150source/236.332/240total;5pins exact. Actualmain thinarm64 MH_EXECUTE/platform7,
+debug+preview MH_DYLIB/platform7, Hermes FAT32 withonearm64 MH_DYLIB/platform7 slice.
+SelectedInfo+4native installed/source hashes and stablecustody match. Blanket library
+xbit premise rejected at exactscope; canonical installed consumer requires ownedregular
+files/hash, no blanketdylibxbit. Installer internals unproved. Rootinitial thinheader
+observer AssertionError causeUNKNOWN and RCAownpreexecutionSyntaxError retained separately.
+
+Root161100 accepted grounded READONLY installed-artifact judgment plus ONE40rowmetadata
+custody closure/bodyreread0/native0. Currentowner/nlink1/regular/no-link/no-unsafewrite/
+specialbits/mainxbit retained. New root-derived install/provisioning receipts explicitly
+bind originaltypedinstall/container/33cleanup/original51baseline+creation/ownership,
+full40bytes/selectedMachO/currentmetadata/observedShutdown. Original failed transactions
+and absent originalsuccessreceipts remain honest. No productsource/chmod/newinstall/
+boot was needed. Rootaccepted currentdevice/installedartifact ONLY:
+`/private/tmp/tfp-native-installed-current-root-acceptance-zero-model-20261016T161100Z/root-provisioning-acceptance.json`.
+
+Separate root authorized ONE previouslyunrun MOB-E2E-SET-005 via unchanged canonical
+operator3435fc and independentlyaccepted wrapper904f4650. Freshwrapper manual/resource/
+reservedport admission actually dispatched canonical63594 underwrapper63572. Sole
+zero-model exactwrapperexit watcher161500/session17447; outerrootsession77098.
+Actualatomic controls outcome:
+`/private/tmp/tfp-native-set005-one-canonical-dispatch-prepared-zero-model-20261016T133000Z/execution-status.json`.
+No case/setup/currentguest/nativeHTTP/screenshot/restore/cleanup pass inferred; missing
+final unfinished. No duplicate/polling/replay. Canonical owns allsetup/business/cleanup;
+no customdriver or ledger bypass. Actualfirstfailure preserves/stops for source diagnosis.
+
+ManualTESTFE3000/API4000 left running, no continuoushealth. UAT3c008/release20261011T115439Z-3c008ec4
+unchanged; expandednestedsourceuncommitted. ONLYfourrootnotes publish/no nested/gitlink/
+deploy. Othernative settings/discovery/legalownedinput+POST201/capability/persistence,
+PUB025TARGET3/CON014-OPP014bytes-provider/TRUST006persistedMESSAGE/OPP015providerphases,
+Android/screen-reader/broaderdiscovery/externalproduction gates remain separate. Historic
+OPP031 persistenceWITHHELD/threeunrecoverablereads/502unknown unchanged. OAuth/OTP/email
+delivery excluded. Preserve NON-RETIREDoriginals/caches/states/historyf19/unrelatedwork.
+No mixedcertificate/inventedinput/productionapproval/readinesspromise. No unresolved
+includedusage interruption; hourlyjob fallbackONLY/no usagepoll/purchase/reset/downgrade/
+awake renewal/hourlywait. Continue useful work; actualterminal overrides runningnotes.
+
 ## Expanded Web/mobile: actual owned simulator preserved; current process scope resolved — 16 October 2026
 
 Build23ece and full40 artifact112400 remain PASSED at original scopes; no rebuild,
