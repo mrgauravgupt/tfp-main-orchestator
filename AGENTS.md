@@ -1,5 +1,63 @@
 # Workspace-Wide Agent Notes
 
+## Expanded Web/mobile: current build source independently accepted; one ARM64 build active — 16 October 2026
+
+The current downstream source completed source-only in510.007/600seconds. Root verified
+21 operation groups/full inverses; only current workspace/34command preparation/producer33/
+transferred-input bindings changed. Original codegen validators, strict61204 native prefix,
+Debug/ARM64/jobs2/1200work1260total/once/resource/manual/vendor/FD/security guards remain.
+The minimum passed once in9.041s:four changed syntax owners and ONE new transferred-input
+contract, old methods0/retries0/cleanupVERIFIED_EXITED/four frozen groups0drift.
+Authority: `/private/tmp/tfp-native-reused-input-downstream-minimum-zero-model-20261016T070512Z/root-check-acceptance.json`
+SHA ab1f90de3a035ed692f1af7ccb6a3645d74f7cc409bbfbf1684afcbb6b6c5a6c.
+
+ONE combined incremental SOL6.1 Extra High judgment completed341.292/420seconds,
+ACCEPTED/findings0. It reconstructed72 operation groups/full inverses across3preparation+
+1verifier+4adapters; all43 selected inputs matched before/after. Original new preparation,
+full root workspace and minimum evidence retained their exact scopes; no old tests,
+producer, tree, image or business case replayed. Root acceptance:
+`/private/tmp/tfp-native-reused-input-combined-independent-gpt61-sol-xhigh-20261016T070700Z/root-independent-acceptance.json`
+SHA1f975f72526b45f11d475ce9305535c809ec79d194e4cd76dba06d8d0e4c54a2.
+Final source acceptance914655446fe1d0822fc40195c624ad9d0a4f4692e0682844d94066212a29a11b
+binds actual workspace00dc786b/privateGit ec06581b/treeb81b3b32, input transfer ef13bb57,
+original codegen provenance and actual target config171c2997 separately. Target codegen
+was NOT rerun;104 produced inputs were transferred. This is source/workspace evidence.
+
+After separate root runtime authorization and13 fresh read-only admission commands,
+ONE new build reached Xcode. Launch observation verified closed-before-exact-exec FD
+custody and original command-line marker; no artifact/pass inferred. Parent53072 and
+supervisor53101 own run8448ac02-d1ae-4578-8aa3-34da52dbab1c in NEW reused-input project.
+Actual atomic controls continuation:
+`/private/tmp/tfp-native-reused-input-build-runtime-prepared-zero-model-20261016T070900Z/execution-status.json`.
+Sole zero-model exact-parent kqueue watcher071500/root session99402 waits on53072;
+no duplicate watcher, healthy polling or automatic replacement build. Fresh observed
+host metric12,713,103,196bytes/pressure1/disk33,346,887,680bytes passed unchanged gates;
+metric is not exact incremental RAM. Missing atomic final remains unfinished. After
+terminal inspect actual exit/ownedcleanup/manual+protected boundaries/1101tracked/delta/
+artifact provenance. On actual failure preserve and source-led minimum diagnosis first.
+All FOUR old failed project/run/DerivedData pairs remain immutable; no old cache copying.
+
+Future artifact inspector071600 is bound to actual8448 run; five source operations plus
+one actual-run literal/full inverses and syntax were accepted, runtime UNEXECUTED.
+Three071800 companion files are independent exact copies. The071900 future case map
+changes25 DATA operations only, retaining26 fields/eight pending groups; artifact/device/
+current guest/resource authority staysNULL. One incremental source-only independent
+review072500 is active,240s/final45 records,12 selected bindings; no active project/run/
+DD/log/status/artifact reads or checks. It does not gate or duplicate the running build.
+No artifact/device/case grant follows from preparation. Existing72-group judgment reused.
+
+Manual TEST FE3000/API4000 left running; no continuous-health claim. Actual UAT stays
+3c008/release20261011T115439Z-3c008ec4; expanded nested source uncommitted. Publish ONLY
+four root notes, no nested/gitlink/deploy. Native artifact/newdevice/currentguest/four
+settings-discovery, legal owned input/POST201/capability/persistence, PUB025 TARGET3,
+CON014/OPP014 bytes/provider, TRUST006 persistedMESSAGE, OPP015 provider phases, Android/
+screen-reader/broader discovery/external production inputs remain separate. Historic
+OPP031 persistenceWITHHELD/three unrecoverable reads/historical502unknown remain.
+OAuth/OTP/email delivery excluded. Preserve NON-RETIRED originals/caches/states/historyf19/
+unrelated work. No mixed certificate/invented input/production approval/readiness promise.
+Hourly job is usage-recovery fallback ONLY; no unresolved included rejection, usage
+polling/purchase/reset/downgrade/awake renewal. Continue useful work without hourly delay.
+
 ## Expanded Web/mobile: reused-input workspace verified; current build bindings being adapted — 16 October 2026
 
 **Verified completion:** the NEW input-reuse preparation passed once in197.751seconds
