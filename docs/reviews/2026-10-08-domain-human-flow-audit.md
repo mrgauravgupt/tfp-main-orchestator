@@ -1,5 +1,61 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Expanded Web/mobile: native build failed at Expo script permission; bounded source diagnosis active — 16 October 2026
+
+**Actual terminal overrides earlier running notes.** Run8448ac02-d1ae-4578-8aa3-34da52dbab1c
+ended Xcode65/process65 at07:25:18UTC. Outer parent53072/supervisor53101 ended1 at07:25:52,
+689.458seconds outer/689.092inner; no supervision failure. Exact-owned cleanup VERIFIED,
+reaped/sessionEmpty/signals[], manualAfter+protectedAfter VERIFIED. Root verified all1101
+tracked bytes/modes unchanged and all10 delta rows only declared HermesDebug/marker.
+No artifact recorded. Sole exactwatch071500/session99402 ended0; outer30901 terminal1.
+No active build/device/watch/check owner remains. All FIVE failed project/run/DD pairs,
+outputs, once states and originals remain preserved; no automatic retry or cache copying.
+Authority:
+`/private/tmp/tfp-native-reused-input-build-runtime-prepared-zero-model-20261016T070900Z/root-original-expo-configure-failure-observation.json`
+SHA6df1529994f6143315aba4990c125539ef111a6c06d6a777cec41d8a7bf2ed02.
+
+The original error at stdout78570 is `bash: ./Pods/Target Support Files/Pods-TFPPhotographers/expo-configure-project.sh: Permission denied`.
+Owning Xcode phase uses bash-l-c to execute that script directly. Root observed generated
+phase0755, staged target0644, immutable baseline0644, current canonical script0755;
+body differences include admitted path retargeting. This establishes the current failed
+permission premise; exact staging origin and minimal correction remain under source-led
+assessment. No compiler/product regression, native pass or artifact success inferred.
+
+SOLE requested SOL6.1 Extra High source-only RCA073000 is active,240s including final45
+records;9 selected original/source/mode bindings. It traces actual phase and staging mode
+owner, multiple hypotheses, and remaining executable phase closure statically. Root must
+accept a grounded minimum BEFOREedit, with smallest owning phase/permission compatibility
+proof before any separately justified future build. No probes/checks/Node/shell execution/
+compiler/network/build/device/models/publication. No broad logs or oldDD/project scan.
+Authority:
+`/private/tmp/tfp-native-expo-configure-permission-rca-gpt61-sol-xhigh-20261016T073000Z/root-authorization.json`
+SHA90a2f649773c51f806167602c8157daed6d4dd38158eb525e001cbed24184f2f.
+Actual atomic final controls continuation; missing final unfinished, no duplicate reader.
+
+Incremental inspector/map review072500 completed ACCEPTED/findings0:five inspector ops,
+one actual RUN literal and25 data-map ops/full inverses,12 current bindings exact. Root
+read original review/terminal and reverified12 hashes. Recorded monotonic interval164.660s
+began after initial authorization read; conservative full authorization-UTC208.964/240s
+is distinct. Root acceptance:
+`/private/tmp/tfp-native-reused-input-artifact-map-independent-gpt61-sol-xhigh-20261016T072500Z/root-independent-acceptance.json`
+SHA8ae7336bb77932aa038555b215ca6a6c9bb92fa5fa511f83d109bd58106bfa13.
+Artifact verifier071600 remains UNEXECUTED because build failed. Map is preparation only;
+separate current artifact/project staging receipts remain required. No build/artifact/
+device/business/readiness authority. Existing72-group review/minima/workspace proof are
+reused at their exact boundaries; no completed test/codegen/producer/case replay.
+
+Manual TEST FE3000/API4000 left running; no continuous-health claim. UAT remains3c008/
+release20261011T115439Z-3c008ec4; expanded nested source uncommitted. Publish ONLY four root
+notes, no nested/gitlink/deploy. Native artifact/newdevice/currentguest/four settings-
+discovery, legal owned input/POST201/capability/persistence, PUB025 TARGET3, CON014/OPP014
+bytes/provider, TRUST006persistedMESSAGE, OPP015provider phases, Android/screen-reader/
+broader discovery/external production inputs remain separate. Historic OPP031persistence
+WITHHELD/three unrecoverable reads/historical502unknown remain. OAuth/OTP/email delivery
+excluded. Preserve NON-RETIRED originals/caches/states/historyf19/unrelated work. No mixed
+certificate/invented input/production approval/readiness promise. Hourlyjob usage-recovery
+fallback ONLY, no unresolved included rejection or usage poll/purchase/reset/downgrade/
+awake renewal. Active useful source work continues without hourly delay.
+
 ## Expanded Web/mobile: current build source independently accepted; one ARM64 build active — 16 October 2026
 
 The current downstream source completed source-only in510.007/600seconds. Root verified
