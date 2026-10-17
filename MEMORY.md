@@ -1,5 +1,62 @@
 # Workspace Memory for Future Agents
 
+## Requested SOL resumes; planned gallery draft minimum accepted — 17 October 2026
+
+Actual renewed GPT-6.1 SOL Extra High source/judgment EXECUTED successfully; LOW
+executed only the NEW offline group. The older workspace-credits failures remain
+immutable historical records, now RESUMED. There is NO unresolved included-usage
+interruption, no model downgrade/purchase/reset/usage polling or fallback needed.
+Hourly remains recovery fallback ONLY; no automatic runtime owner or old retry.
+
+One four-file source delta records OPP015 as a NON-EXECUTABLE planned Markdown
+draft, flow:null/sourceDraftPath/runtimeEvidence:null/no owner/no aggregate. Matrix
+census79to80 counts plans, not passes. Product source/old flows/runners/guards/direct
+contracts/aggregate policy remained exact. First runnable candidate was rejected by
+root BEFORE tests for global forwarding/selector incompatibility and preserved at
+`/private/tmp/tfp-opp015-planned-phase-source-sol61-xhigh-20261017T025000Z/original-preexecution-integration-rejected-candidate`.
+Corrected source/terminal are separate; original receipts were not rewritten.
+
+Actual ONE new offline contract group PASSED once0.393s,1test/1pass/0fail/0retry,
+4authored+409selected old boundary hashes unchanged. It parses fenced source,
+rejects full Markdown as runnable Maestro, evaluates missing/unknown input shape
+rejection and phase ordering, checks actual case-ID extraction and planned/null/
+unowned registry. Original output/typed final retained:
+`/private/tmp/tfp-opp015-draft-minimum-once-low-20261017T033000Z/execution-status.json`.
+No old suite/global guard/typecheck/native/browser/build/install/case replay; no app
+behavior change, new UI or runtime gallery pass follows this offline proof.
+
+Independent GPT-6.1 SOL Extra High accepted exact four-file draft integration,
+zero findings,143.048/240executedseconds/7selectedpinsstable. Queue interval unknown;
+directory labels are not clock evidence. Root read original review/terminal/minimum,
+reconstructed matrix full inverse/README append-only and reverified7pins:
+`/private/tmp/tfp-opp015-draft-independent-sol61-xhigh-20261017T033000Z/review.json`.
+The draft does NOT close missing runnable gallery/lightbox/phase-owner integration.
+Legal diagnostic authority is also an explicit source gap/fail-closed rejection,
+not merely a transient environment issue. Removing the rejection is not authorized.
+No further justified app fix/check was established within the finite no-new-runner/
+no-replay/no-unowned-input/no-deploy boundary; this is not an all-source-complete claim.
+
+Four native settings/discovery cases, owned legal inputs+POST201/capability/persistence,
+CON014/OPP014 bytes/provider, TRUST006 persistedMESSAGE, gallery/provider phases,
+PUB025 three deployed-target slots, Android/screen-reader/broaderdiscovery/external
+production inputs remain unfinished. LOCAL PUB025 three originals and accepted
+PRO010/build40/device proofs remain reused at original boundaries. No startup/probe/
+rebuild/old-case retry. Prepared netstat probe remains UNEXECUTED/superseded.
+
+User reserved ALL i18n translation/cleanup for Gemini and requested a prompt. Root
+read canonical master mapping only: en_US resolves languages/en.json; mobile and
+regional overlays are separate families. All98 dirty i18n file hashes stayed exact,
+zero catalog edits/translations. Gemini handoff must retain family-specific English
+schemas/sparse overrides, remove genuine keys absent canonical English, translate
+English placeholders, preserve interpolation and existing unrelated dirty work.
+
+Finite atomic handoff:
+`/private/tmp/tfp-finite-draft-handoff-four-notes-zero-model-20261017T040400Z/current-atomic-checkpoint.json`.
+Expanded purpose remains incomplete; only four root notes publish, no nested/gitlink/
+deploy. UAT3c008/release20261011T115439Z-3c008ec4 unchanged; nested source uncommitted.
+Preserve all originals/caches/states/historyf19/unrelated work. OAuth/OTP/emaildelivery
+excluded. No invented input, readiness/ETA/whole UI/device/production promise.
+
 ## Uncommitted diff review; finite validation gaps retained — 17 October 2026
 
 User requested checking the uncommitted files while finishing the finite queue.
