@@ -1,5 +1,34 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Uncommitted diff review; finite validation gaps retained — 17 October 2026
+
+User requested checking the uncommitted files while finishing the finite queue.
+Read-only inventory:159modified tracked+60untracked product files,103JSON parsed,
+zero invalid JSON/duplicate-key files; git diff --check passed. All219 inventory
+hashes stayed stable. Prepared private-project comparison:198byte-identical,
+1different(current-native-generation.ts intentional8082/8083 staging selector),
+20absent from the private input scope. Equality is not full semantic/runtime proof.
+
+Root inspected the changed gallery/query consumers, consent/legal guards, native
+save/restore/export and Workspace/Contest callers, MESSAGE target/receipt controls,
+JUnit/manifest/direct aggregate ownership, shared Web form mixin callers/upload
+captions, quick-search consumers, development-only diagnostics and package lock
+registration. No NEW confirmed product defect in the inspected owners. This is a
+risk-focused review, not exhaustive test-body/translation or independent approval.
+Review/inventory/219hashes and exact limits:
+`/private/tmp/tfp-uncommitted-diff-review-zero-model-20261017T023300Z/review.json`.
+
+OPP015 native flow remains missing. SET006/007 diagnostic legal authority remains
+an explicit fail-closed rejection. Four native flows, exact download/provider/report
+persistence evidence and three PUB025 deployed-target slots remain unfinished.
+Original accepted source-bound evidence is reused; no old tests/cases/build/install/
+probe or model retry. Actual prior SOL workspace-credits rejection remains unresolved;
+no purchased-credit inference/reset-time claim or duplicate attempt. Separate
+moderation policy diff and unrelated documents preserved; no moderation evaluation
+pass claimed. Product files remain uncommitted, no nested/gitlink/deploy. Only four
+root notes publish. Previous finite pivot and all evidence-preservation boundaries
+remain in force; expanded work is incomplete, no readiness/ETA promise.
+
 ## Finite app-work pivot; reuse completed checks and expose blocked scope — 17 October 2026
 
 The user explicitly requested a faster pivot away from repeated runner work. Further
