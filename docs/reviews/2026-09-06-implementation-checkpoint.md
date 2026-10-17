@@ -1,5 +1,41 @@
 # Implementation checkpoint — 6 September 2026
 
+## Docker workspace and runtime delivery fixes committed locally — 17 October 2026
+
+Codex handled the non-translation release defects while Gemini owns all i18n.
+LOCAL product commit `f968bac7c154108ee6048998813e4ad80e18bef9` contains only Dockerfile, .dockerignore and
+scripts/ops/runtime-image-contract.test.mjs. The image now uses the existing
+canonical workspace build; host dist/node_modules/.astro cannot mask missing
+package outputs. Runtime copies the post-build dependency store (including the
+schema-generated Prisma client) and both API/Web pnpm link namespaces.
+
+Actual minimum checks passed once: two new build/ignore contracts, then one
+new controlled runtime-link/stage fixture. Existing methods were unselected;
+syntax, affected-file ESLint and scoped whitespace checks passed. The fixture
+rejects missing API/Web namespaces and the pre-generation store. It proves
+controlled layout behavior, not an actual Docker image or Prisma artifact.
+GPT-6.1 SOL Extra High independently accepted the build delta and final runtime
+increment; LOW executed the new checks. No old business/native/browser suite,
+build, generator, install, service restart or completed matrix was replayed.
+
+Original checks: /private/tmp/tfp-docker-workspace-build-minimum-once-low-20261017T180000Z/execution-status.json
+and /private/tmp/tfp-docker-runtime-layout-minimum-once-low-20261017T182000Z/execution-status.json.
+Final review: /private/tmp/tfp-docker-runtime-link-layout-independent-sol61-xhigh-20261017T181000Z/final-review.json.
+Local transaction: /private/tmp/tfp-docker-delivery-local-commit-zero-model-20261017T174131Z/commit-status.json.
+Only these four root notes and the product gitlink follow the scoped local commit.
+
+Gemini catalog edits are present and remain uncommitted/unmodified by this
+transaction; translation completion and quality await Gemini's actual handoff.
+Native delivery source review found no further grounded app-code correction;
+existing native/settings/discovery, legal authority and owned-input/persistence,
+download bytes/provider, MESSAGE persistence, runnable gallery/provider phases,
+PUB025 deployed-target and Android/screen-reader/external-input gaps remain open.
+Actual image build/startup was not run. No whole-UI/device or launch-ready claim.
+No push/deploy; UAT remains 3c008/release20261011T115439Z-3c008ec4. Preserve all
+original evidence/caches/states/historyf19 and unrelated moderation/resume/
+architecture work. Hourly prompt remains exactly continue; no unresolved
+included-usage interruption. OAuth/OTP/email delivery remain excluded.
+
 ## Gemini owns translations; validated Web fixes committed locally — 17 October 2026
 
 User explicitly assigned all remaining translations to Gemini and asked Codex
