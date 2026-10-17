@@ -1,5 +1,60 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Finite app-work pivot; reuse completed checks and expose blocked scope — 17 October 2026
+
+The user explicitly requested a faster pivot away from repeated runner work. Further
+native runner engineering is stopped. The prepared netstat schema probe at
+`/private/tmp/tfp-native-netstat-schema-once-zero-model-20261017T015708Z` was NEVER
+executed and is superseded by this pivot. No startup, build, reinstall, simulator,
+old proof, business case or completed browser matrix was replayed.
+
+The narrow independent link-map closure DID complete: actual terminal at
+`/private/tmp/tfp-native-link-map-closure-independent-sol61-xhigh-20261017T015044Z/terminal.json`
+accepted METRO-OVERLAY-001 closure, zero remaining narrow findings, source44.857/180s,
+records30.758/60s,total75.615/240s,8pinsstable. Root acceptance remains source/proof
+ONLY; original full-review bound failure and native startup failure remain unchanged.
+This supersedes the older checkpoint's PENDING label for that narrow closure.
+
+Root directly read the THREE original LOCAL PUB025 manifests and results:
+`tfpphotographers/test-results/reports/local-pub025-20261012T101800Z`,
+`tfpphotographers/test-results/reports/local-pub025-firefox-20261013T104300Z`, and
+`tfpphotographers/test-results/reports/local-pub025-mobile-chromium-20261013T104300Z`.
+Each original outcome passed/exit0/expected1/unexpected0/flaky0/skipped0/errors[].
+TARGET3 means THREE DEPLOYED-TARGET execution slots; it is not a third link or a
+reason to repeat local tests. Deployed source remains old; no target pass inferred.
+The existing local home page opened and one screenshot was root-viewed. Necessary
+storage only was selected in the new browser's anonymous session, no page error was
+reported, and that exact owned session was closed. This orientation closes NO case.
+
+Finite remaining scope (all incomplete, no aggregate certificate):
+- Native SET005/SET006/SET007/DISC010: current-generation/guest/nativeHTTP and reliable
+  actual startup still unproved. Browser substitutes cannot close native cases.
+- Legal SET006/007 also need owned normalized inputs, actual POST201, private
+  capability/status and independent persistence authority; no legal write occurred.
+- Native CON014/OPP014 need exact saved bytes/hash/MIME/name and provider persistence;
+  TRUST006 needs exact independently persisted MESSAGE report; OPP015 still lacks a
+  registered native flow and actual upload/provider/approval-phase evidence.
+- PUB025 TARGET3 needs an accepted deployed source/publication step and target runs.
+- Android, screen-reader, broader discovery and external production inputs remain
+  separate. Existing accepted PRO010/publicHTTP/build40/device proofs retain scope.
+
+Actual requested SOL6.1 ExtraHigh independent handoff judgment and LOW inventory
+continuation both received: "Your workspace is out of credits. Add credits to
+continue." No handoff judgment was obtained. Raw errors are preserved, unchanged
+attempts STOPPED; no purchase/reset/downgrade/retry or usage snapshot. This message
+alone does not identify an included five-hour window or authoritative reset time.
+Finite checkpoint and three original report hashes:
+`/private/tmp/tfp-finite-app-pivot-checkpoint-zero-model-20261017T021700Z/current-atomic-checkpoint.json`.
+
+Resume from this finite queue, not historical launcher loops. Do not rerun any local
+PUB025 slot or accepted build/case. Reassess only a newly resolved blocker or confirmed
+app defect. Expanded purpose remains incomplete; hourly recovery remains fallback
+ONLY under its actual included-usage conditions, never an environment retry scheduler.
+UAT3c008/release20261011T115439Z-3c008ec4 unchanged; nested source uncommitted. Publish
+ONLY four root notes; no nested/gitlink/deploy. Preserve every non-retired original,
+cache/state/historyf19 and unrelated work. OAuth/OTP/email delivery excluded. No
+invented input, readiness/deadline or whole UI/device/production promise.
+
 ## Expanded Web/mobile: link repair minima pass; native startup blocked before Metro — 16 October 2026
 
 Actual owning-start8268baf1 ended FAILED at16:44:40UTC/21.063s BEFORE .expo snapshot,
