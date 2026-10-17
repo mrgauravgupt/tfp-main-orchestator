@@ -1,5 +1,143 @@
 # Workspace Memory for Future Agents
 
+## Gemini owns translations; validated Web fixes committed locally — 17 October 2026
+
+User explicitly assigned all remaining translations to Gemini and asked Codex
+to handle other important work. Complete copyable Gemini prompt:
+`/private/tmp/tfp-gemini-complete-resource-translation-handoff-20261017T173500Z/gemini-prompt.md`.
+It covers all existing language/mobile/override bundles, the same373missing
+Hindi and Nepali mobile entries, approved contests.reaction_removed definition
+and94 translations, quality/placeholder contracts and precise fallback limits.
+Gemini owns catalogs; Codex owns code/registration and subsequent affected proof.
+
+The exact four validated Web files are now LOCAL nested commit `76bb0550130979408695116ed35e6575ad1265b8`.
+Parent gitlink advances to this local commit, including prior Gemini8a422298.
+Shared removal feedback rejects raw-key echoes and preserves genuine localized
+copy; detail SSR and both enhanced consumers share it. Both opportunity image
+fallbacks use existing common.image_unavailable. Future translation additions
+are supported by corrected tests. No catalog values were edited by Codex.
+
+Reuse original affected test/lint/Astro/source evidence and separate final-test
+closure at their actual scopes; no new suite, native/browser case, build, install,
+service restart or completed matrix replay. LOW precommit freeze verified4pins,
+103unchanged catalog hashes and27original evidence files. Original review bound
+failure remains immutable; separate final-test closure was accepted. Existing
+local public collection browser evidence proves only the helper SSR attribute,
+not actual removal or authenticated opportunity image state.
+
+Local transaction/actual terminal:
+`/private/tmp/tfp-localisation-web-local-commit-zero-model-20261017T174000Z/commit-status.json`.
+Only4product files, then4scoped root notes+product gitlink are committed.
+Unrelated moderation/resume/architecture/Gemini/Sonnet work remains untouched.
+No push/deploy; UAT remains3c008/release20261011T115439Z-3c008ec4.
+
+Translations remain unfinished until Gemini saves actual new output. Do not
+re-check8a or ask its location again. After a new catalog delta, validate only
+affected i18n/catalog and Web regression consumers; do not replay old successful
+work. Other supported mobile locales still using English must be disclosed,
+not hidden by changing registry/fallback policy. All inherited native/legal/
+provider/persistence/gallery/deployed-target/device gaps remain separate; no
+launch/readiness/deadline promise. Hourly prompt is exactly continue, no unresolved
+included-usage interruption. Preserve all original evidence/caches/states/historyf19.
+
+## Supplied Gemini commit resolved: admin translations only — 17 October 2026
+
+User supplied exact Gemini commit8a422298a0e75515c41e81f8ca4b60ab9110571d.
+Its contents were already verified directly:94non-English language files, exactly
+seven admin.quick_request values per file. It contains no additional mobile
+translations or contests.reaction_removed definition. Do NOT repeat the same
+commit/worktree search, ask for its location again, or replay completed checks.
+
+At that commit, mobile Hindi/Nepali each remain331/704 with373 missing entries
+per file; contest-removal label is absent from all95 language catalogs. The
+validated four-file Web fixes retain their original tests/source/browser bounds
+and remain uncommitted. No fresh source translation, test, build, native,
+browser, commit, push or deployment occurred for this scope clarification.
+
+Translation ownership remains Gemini. The concrete remaining task, exact paths
+and missing-key inventory are already prepared at
+`/private/tmp/tfp-localisation-launch-cleanup-handoff-zero-model-20261017T171600Z/gemini-handoff.md`
+and its adjacent gemini-mobile-gap-inventory.json. Await newly saved translation
+output or explicit changed authorization; no further permission/location loop.
+Hourly prompt remains continue. No launch-readiness claim; inherited native/UAT
+gates and preservation boundaries remain unchanged. Current atomic:
+`/private/tmp/tfp-gemini-admin-commit-scope-resolved-zero-model-20261017T173000Z/current-atomic-checkpoint.json`.
+
+## Gemini completion reported; additional translation output not located — 17 October 2026
+
+User answered the translation-owner question: already translated using Gemini.
+That is acknowledged; do not ask for translation permission again or duplicate
+Gemini work. Current main HEAD remains8a422298, whose actual change is only seven
+admin keys across94 language catalogs. Mobile hi-in/ne-np still331/704 each, the
+same373 missing entries per file; contests.reaction_removed remains absent from
+all95 language catalogs. No catalog changes exist in current Git status.
+
+LOW read ONLY the exact English/Hindi/Nepali mobile files in the other THREE
+registered worktrees: all older691/318/318, each still missing373. No completed
+mobile translation candidate was found there; no broad disk scan or test replay.
+User is asked for the saved file path, branch or commit containing Gemini's
+additional mobile output. This is an artifact-location input, not permission to
+translate. Preserve Gemini ownership and all original evidence.
+
+The previously validated four-file Web fix remains byte exact and uncommitted;
+no repeated tests, native/browser runs, services, commits, pushes or deploys.
+Hourly prompt remains exactly continue. Previous scoped checks/browser evidence
+are reused only at their accepted boundaries; no launch-readiness claim.
+Current atomic: `/private/tmp/tfp-gemini-mobile-completion-location-check-zero-model-20261017T172000Z/current-atomic-checkpoint.json`.
+
+## Localization launch cleanup; Web fixes validated, translation decision pending — 17 October 2026
+
+User asked to fix the three cited localization issues quickly and set the hourly
+follow-up prompt to exactly `continue`. Existing heartbeat was UPDATED in place
+with that exact prompt, ACTIVE/hourly, same chat, no duplicate automation.
+
+Three Web source owners plus ONE new regression file are changed locally from
+nested HEAD8a422298: common.preview_unavailable callers now use the existing
+all-language common.image_unavailable; shared contest interaction data resolves
+removal text once, detects exact missing-key echoes/empty strings, and retains
+the existing readable English fallback. Detail SSR reuses that shared text; both
+client consumers inherit its data attribute. No reaction-added label was reused
+because some translations mean specifically added. The missing canonical
+contests.reaction_removed localization remains outstanding.
+
+Initial NEW regression passed3/3 once; affected scoped lint/diffcheck and both
+Astro in-memory transforms passed. A test-only correction removed assumptions
+that legitimate future translations must remain missing. The first correction
+selection ran1pass/2skip (title mismatch recorded, not relabeled2pass); the
+previously unrun explicit-key/empty/valid-output method then ran once1pass/2skip.
+Unchanged preview/source/Astro proofs were reused; no old business/browser/native
+case, build, install or service restart was replayed. All103 catalog hashes stayed
+exact. Original terminals and final four source pins are retained in:
+`/private/tmp/tfp-localisation-launch-cleanup-handoff-zero-model-20261017T171600Z/current-atomic-checkpoint.json`.
+
+Independent source material was read by root; the original review FAILED_BOUND
+155.930/150s remains unchanged. The separate incremental final-test finding
+closure accepted3693f534,40.109/60s,zero remaining narrow findings. This is not a
+retroactive full independent bounded pass. Root read final test/diff and original
+LOW execution results; all scoped source judgments retain their actual boundaries.
+
+One owned anonymous LOCAL browser observed the public contest collection SSR
+attribute Reaction removed, no raw keys/pageerrors, and its screenshot was
+root-viewed; that exact browser was closed. Gallery was empty: no actual reaction
+removal/detail feedback, authenticated opportunity-image state or native/UAT
+flow pass is inferred. Existing FE3000/API4000 were left running, not restarted.
+
+Mobile en-in baseline704, hi-in331/ne-np331: the same373 keys remain missing in
+each overlay. No translations were edited. User previously reserved ALL i18n
+translations for Gemini; the current asynchronous choice asks whether root may
+translate these mobile gaps now or retain Gemini ownership. That required choice
+is PENDING; do not infer approval from elapsed time or re-ask/recount/retest on
+hourly wakes. Exact owned English/key inventory and a Gemini handoff are saved
+in the finite handoff directory. Canonical English legal fallback policy stays.
+
+All inherited native settings/discovery, legal-input/authority/persistence,
+provider/bytes/report, planned gallery, PUB025 deployed-target and broader device
+gaps remain separate. No launch/readiness/deadline promise, invented input,
+certificate splicing, source publication or deployment. UAT remains3c008/release
+20261011T115439Z-3c008ec4. Current Web fixes are UNCOMMITTED; no push/deploy/usage
+poll/model downgrade/purchase/reset occurred. Preserve originals/caches/states/
+historyf19 and unrelated moderation/resume/architecture/Gemini/Sonnet work.
+
 ## User-authorized local product commit — 17 October 2026
 
 User explicitly requested review and commit of the uncommitted product files.
