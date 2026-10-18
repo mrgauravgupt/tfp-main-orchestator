@@ -1,5 +1,47 @@
 # Workspace-Wide Agent Notes
 
+## Unified English Web/native catalog committed locally — 18 October 2026
+
+User stopped Gemini and authorized Codex to unify English/shared resources, then
+asked for a detailed localization-only Gemini handoff for every other locale.
+LOCAL product commit `d346204a5e9f822fe00fed9dfedb8e7cf28a092d` records exactly174scoped paths.
+The separate mobile catalog family and package export are retired. Both adapters
+now use languages/en.json and the same language catalogs/key schema; native keeps
+an Expo-compatible loader. The old704keys are fully mapped to shared meanings.
+English now has3088keys, including35genuine native.* instructions. Combined
+previous definitions3320to3088 removes232redundant definitions. Existing canonical
+2616values in each95catalogs remain exact; saved Gemini output was mechanically
+preserved into new semantic owners. Codex authored no new non-English translation.
+
+Sparse overrides/en-in.json and en-us.json remain legitimate regional overrides,
+not separate masters; en-in currently contains3India-specific legal leaves.
+Literal/dynamic consumers, status labels, saved-search options/validation and native
+file result keys use canonical owners. Domain-specific meaning/parameters remain;
+imperative common.open remains distinct from workflow Open states. Own-property
+checks preserve safe unknown-key fallback. Shared schema/parity and actual-source
+dynamic-owner regressions prevent the retired family from being reintroduced.
+
+Affected checks: schema/types/lint and most consumer selections passed initially;
+3obsolete expectations and3actual TypeScript errors were corrected. Separate final
+selected guard/new-owner methods, mobile typecheck, affected lint/diff passed with
+stable pins. Original failure/drift receipts remain unchanged. SOL6.1ExtraHigh
+independent source review and separate3filetypeclosure accepted, zero open findings.
+43non-English semantic-integrity failures remain translation work for Gemini;
+no full linguistic/native/browser/device/build/deployment pass is claimed.
+
+Current atomic: `/private/tmp/tfp-unified-i18n-migration-20261018/20261018T032443Z/current-atomic-checkpoint.json`.
+Final source/type minimum: `/private/tmp/tfp-unified-i18n-migration-20261018/20261018T032443Z/minimum-typescript-closure-once-low/20261018T034416Z/execution-status.json`.
+Independent final source/type receipts: `/private/tmp/tfp-unified-i18n-migration-20261018/20261018T032443Z/independent-sol61-xhigh/20261018T033805Z/`.
+Complete Gemini prompt: `/private/tmp/tfp-unified-i18n-migration-20261018/20261018T032443Z/gemini-localization-prompt.md`.
+Final fallback inventory: `/private/tmp/tfp-unified-i18n-migration-20261018/20261018T032443Z/final-catalog-migration-report.json`.
+All original catalogs and retired mobile output remain preserved under original/;
+non-English localization/quality is pending. Do not recreate mobile resources or
+translate canonical key names. No push/deploy; UAT remains3c008/release20261011T115439Z-3c008ec4.
+Prior native/legal/provider/persistence/PUB025/device/Docker-runtime gaps remain.
+User deleted ALL6scheduled jobs, including the hourly follow-up; do not recreate.
+Only4scoped root notes and product gitlink follow. Preserve unrelated work and all
+original reports/caches/states/historyf19. OAuth/OTP/email delivery stay excluded.
+
 ## Native gallery phase helper source committed locally — 18 October 2026
 
 User authorized useful parallel work while Gemini owns all localisations.
