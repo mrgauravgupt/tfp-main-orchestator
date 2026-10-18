@@ -1,5 +1,57 @@
 # Implementation checkpoint — 6 September 2026
 
+## Failed-only batch fixed, reviewed and dispatched — 18 October 2026
+
+Both original current runs are terminal: Web Chromium99passed/4failed,
+Firefox97passed/6failed, mobileChromium98passed/5failed:294passed/15failed,
+zero retries/skipped/unrun test blocks. Current iOS guest14flow batch10passed/
+4failed. These are completed runtime executions, not full native/target certificates.
+Original Web outer status remains staleRUNNING; actual terminal log and separate
+web-derived-terminal-observation.json preserve the truthful outcome. Its strict
+program aggregation rejected the task node_modules symlink dirty worktree; old
+contexts are not restamped. Original TEST DB/data snapshot and native cleanup are
+preserved. All full native/authenticated/Android/plannedOPP015/provider/production
+input and deployed-target gaps remain separate and incomplete.
+
+User resumed autonomous batch fixes then ONLY original failed cases. Requested
+SOL6.1Ultra/6.0ExtraHigh source/judgment executed successfully this continuation;
+old usage errors remain historical, no purchase/reset/downgrade/retry loop. LOCAL
+product6ce385d4ded7d8678de9de0f608c383a4add00be commits exactly19scoped paths:
+canonical request-zone contest parsing/edit display, SSR timezone propagation,
+gallery non-placeholder/lazy-image/readback readiness, exact cache-expiry search
+refresh, fresh UI requester plus real creation proof, native visible-scroll/English
+setup fixes, and two complete typed Astro fixtures. Independent source/driver review
+accepted zero P1/P2; original timezone P2 receipt stays immutable. Four selected
+new context regressions and Astro461files/0errors/0warnings passed; original
+focused source/lint/type/guard proofs remain scoped. Affected gallery controlled
+browser contract passed1method10.09s from the new isolated clone, no app fixture
+or provider/business pass inferred. No full old successful suite was replayed.
+
+Mobile Web professional-metadata timeout has actual host evidence: macOS low-power
+sleep at1percent battery from18:05:58to18:20:05IST (847s) spans missing screenshot,
+exceeding600s deadline. No grounded app patch or timeout extension was justified;
+only that failed slot remains selected. Task-scoped caffeinate surrounds new runs;
+it prevents idle sleep while active, not emergency battery depletion or shutdown.
+No permanent power setting changed. Keep original failed screenshot/time receipts.
+
+Fresh reviewed failed-only runs started15:00:55UTC: Web selects exactly4Chromium/
+6Firefox/5mobileChromium blocks, native exactlyDISC007/005/003/010, all zero retries,
+continue after individual failures. No completed pass selected. New clean Web clone
+uses3410/4410/7411/7403 and exact new disposable TEST DB15493, distinct from the
+preserved original DB. Native reuses owned artifact/deviceFD4C15D3-357C-46B9-A8AF-
+EF9B79326E2B and Metro8082, no rebuild/reinstall. Durable detached parent owns
+per-child result identity/count checks and cleanup; actual new totals/cleanup remain
+future and must come from terminal child reports. Missing/failed proof stays failed.
+
+Current atomic: /private/tmp/tfp-e2e-fix-continue-20261018/current-status.json.
+Final source/driver review: resumed-batch-final-review.json. New Web status:
+web-affected-job-status.json; native: native-failed-ios/status.json and preparation-
+status.json. Existing same-chat heartbeat review-web-and-mobile-e2e-results is
+UPDATED/ACTIVE quiet15minute completion monitoring, no duplicate. Inspect actual
+new statuses; never replay passed cases or blindly retry unchanged failures. Pause
+after terminal review/no active run. Preserve all originals/data/manual Web3000/
+API4000 and unrelated work. No push/deploy/readiness claim.
+
 ## Continue-all E2E fixes committed; collection and completion monitoring active — 18 October 2026
 
 User requested fixing failures, collecting all results despite individual failures,
