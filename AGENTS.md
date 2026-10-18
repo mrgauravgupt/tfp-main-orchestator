@@ -1,5 +1,64 @@
 # Workspace-Wide Agent Notes
 
+## Delivery blockers fixed locally; builds pass, readiness remains blocked — 18 October 2026
+
+User's new chat authorizes autonomous deploy-readiness decisions and scoped local
+commits. LOCAL product commit `540ff190ac2b953505239fcfbbd0886f7b12826c` contains
+exactly five reviewed delivery paths. UAT archive includes the i18n build script;
+Docker runtime declares PostgreSQL client and all three migration wrappers. Its
+shared base hydrates the canonical packageManager pin, owns runtime HOME/cache
+and disables runtime package-manager downloads. Product worktree is clean.
+
+Three NEW focused delivery methods passed once at their actual scopes. Original
+archive/migration and incremental real Corepack offline proofs remain separate;
+old successful methods were not replayed. Independent GPT-6.1 SOL Ultra closure
+accepted five source paths, zero open P1/P2. Original P1 review is retained.
+Actual Docker image build/startup and real migration are NOT proven: daemon info
+15s and distinct socket ping2s both timed out; no restart or image run occurred.
+
+Canonical workspace build passed all10stages once39.053s, including Prisma/API/
+Astro. Native production JS export passed iOS+Android once94.518s, explicit Hermes
+bundles/assets and444source/catalog pins exact. Root viewed desktop1440x1000 and
+mobile390x844 screenshots from compiled TEST Web/API3109/4109; no overflow/broken
+images/console/page errors, necessary-storage selection and menu interaction.
+Owned browser and processes closed; no full business/native/device certificate.
+
+ONE native Debug ARM64/jobs2/fresh-DD build FAILED after353.592s, wrapper1/Xcode65:
+React Native output says No space left on device.444source/catalog pins exact;
+ten ignored Hermes/config outputs changed with originals preserved. No simulator
+was created/booted, no retry/deletion. At checkpoint about3.3GB disk free remains;
+more capacity or suitable build volume is required, not another unchanged build.
+
+Current production dependency audit FAILED once with SIX unapproved fast-jwt
+advisories (one registry-critical), five existing dated exceptions unchanged.
+Ultra traced root override6.2.4 and selected compatible6.3.5 after primary-source
+review; this is PLAN ONLY. No package/lock/install change or auth validation yet.
+Two requested GPT-6.1 SOL Ultra agents then received actual usage-limit backend
+errors. Stop unchanged retries; no model downgrade/purchase/reset/usage polling/
+automation. Resume patch authoring and independent judgment when capacity returns.
+
+Local production doctor FAILED19findings:3local-DB classifications,6legal identity,
+3service URLs,4private/public storage keys,3backup fields. These describe the LOCAL
+profile, not deployed-host failure. OCI loopback DB may be correct; never invent
+legal/provider authority or substitute public DB. Inherited native/legal/provider/
+bytes/MESSAGE/gallery/PUB025 deployed-target/Android/accessibility/store-signing
+gaps remain separate and incomplete. No readiness claim or real legal submission.
+
+Workspace build triggered the old TEST API tsx watcher; its health watchdog
+exhausted zero retries and stopped it at07:45:57UTC, before isolated smoke. Exact
+original environment was reused for API-only compiled recovery, supervisor32923/
+PGID32923; Web3000PID37002 was untouched. Both manual endpoints returned200 at
+checkpoint. No DB reset/migration/standalone worker or whole-stack restart.
+
+Current atomic: `/private/tmp/tfp-deploy-readiness-20261018/current-atomic-checkpoint.json`.
+Finite handoff: `/private/tmp/tfp-deploy-readiness-20261018/handoff.md`.
+Independent closure: `/private/tmp/tfp-deploy-readiness-independent-20261018/20261018T075811Z/review.json`.
+Original receipts/logs/screenshots/builds/backups and failures indexed by atomic.
+Only four root notes+product gitlink follow; no push/deploy/scheduled jobs. UAT
+last-known handoff3c008/release20261011T115439Z-3c008ec4 was not remotely rechecked.
+Preserve all originals/caches/states/historyf19/unrelated work and catalog bytes.
+OAuth/OTP/email DELIVERY remain excluded. Full intended readiness is incomplete.
+
 ## Shared locale delivery committed; generated output and focused runtime verified — 18 October 2026
 
 User authorized completing the 94 reviewed catalogs, generated-output refresh and
