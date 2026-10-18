@@ -1,5 +1,53 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## User-requested Web/native E2E started; two-hour review scheduled — 18 October 2026
+
+User explicitly requested checking all human-like Web/native flows, starting both
+and reviewing results in two hours. This authorizes a NEW full local TEST Web run;
+previous successful run receipts remain historical, not current certification.
+Live inventory: Web181cases (174implemented,7blocked delivered-email cases); native
+80cases (79implemented,1planned OPP015). Mapping counts are not runtime passes.
+
+Both canonical full native aggregate attempts actually exited1 before any device
+execution: missing caller-owned direct-case entity/message/resource inputs. Actual
+aggregate manifests preserve all missing suites/cases. No input was invented and
+no full iOS/Android run is claimed. The canonical iOS guest batch reached a fresh
+ordinary cold-launch/session readiness but failed at Maestro discovery before UI
+flows. Local product commit `e344ed2b2f4761a92788bb90b881f8b80d77817f` changes only
+apps/mobile/.maestro/config.yaml from **/*.yaml to documented recursive **. The
+installed Maestro2.6.1 actual WorkspaceExecutionPlanner reproduces old rejection,
+discovers all15real selected flows after correction, confines them to the selected
+root and retains fail-fast. No TS/shell/application behavior change, native rebuild
+or model retry. The corrected guest batch is dispatched once; its live status and
+original failure are separate. This partial batch cannot certify full native.
+
+Web all-browser local orchestration is running serial Chromium/Firefox/mobile-
+Chromium from isolated source checkout340058d1, separate ports3310/4310/7311/7303,
+and a NEW owned PostgreSQL container at15492. Canonical reset is restricted to that
+new container's TEST/shadow DBs; existing manual data is untouched. Real local AI,
+worker and collage services started; browser blocks actually executing. Two early
+Chromium blocks passed, not a whole suite. Dependency store is reused; canonical
+reset regenerated its same-schema Prisma client. Original manual Web3000/API4000
+process identities observed unchanged. Web fixture source stays frozen at340058d1;
+native harness is separately e344ed2b, with application sources unchanged.
+
+The user NOW explicitly authorized ONE scheduled result review, superseding older
+no-recreation notes for this follow-up only. Heartbeat automation
+review-web-and-mobile-e2e-results is scheduled around16:55IST/11:25UTC today; its
+one-time review must report actual passed/failed/blocked/not-run scopes, inspect
+live child statuses and expire/pause afterward. Never start retry loops on wakes.
+Keep unfinished runs unfinished; no production/UAT deployment or target evidence.
+Root viewed current Web responsive evidence and native Home screenshot; neither
+orientation proves an unexecuted case. Reports/failures remain separate.
+
+Current continuation and all actual runner/status/report paths:
+`/private/tmp/tfp-web-mobile-e2e-20261018/current-status.json`.
+Web PID and native guest PID are linked there; native job owns shutdown/Metro/Expo
+cleanup. If Web is terminal at review, verify the owned DB ID in web-database.json
+before stopping only that test container; preserve all data and unrelated work.
+Do not repeat passed suites, guess native inputs, claim all-pass from a mapping,
+or use this local run to certify old UAT3c008 or the full target/device program.
+
 ## JWT patched; native and actual Docker runtime verified locally — 18 October 2026
 
 User freed disk and requested fast autonomous completion with optimal usage. LOCAL
