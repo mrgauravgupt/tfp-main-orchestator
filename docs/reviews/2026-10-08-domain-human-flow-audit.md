@@ -1,5 +1,46 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Shared locale delivery committed; generated output and focused runtime verified — 18 October 2026
+
+User authorized completing the 94 reviewed catalogs, generated-output refresh and
+runtime validation. LOCAL product commit `42829b7348643a931bcd525eed91b4334ef1dae8`
+contains exactly those 94 non-English catalogs; their final Gemini hashes remain
+exact. Commit `7ed4cd053cf640b3b17d2e522ff721f505124b8a` contains only the package
+build entrypoint and new catalog-resource build script. Product worktree is clean.
+The earlier accepted 503-test catalog proof was reused without replay; Codex
+changed no translation values. This supersedes earlier pending-catalog status.
+
+A clean build exposed missing dynamically loaded overrides/ne-in.json. The build
+now copies all catalog JSON after successful TypeScript emission. One corrected
+fresh build passed; active ignored dist contains 95 language catalogs and five
+regional overrides, all 100 JSON files source-byte-exact, with no retired mobile
+catalog family. Old dist and the original rejected TypeScript stage are preserved.
+Syntax, affected ESLint and whitespace checks passed once. Independent GPT-6.1
+SOL Extra High accepted the two build files with no P1/P2 findings.
+
+Compiled-server and actual mobile JS adapters ran from an external working directory:
+6,650 native-key executions (95 languages x 35 keys x two adapters), 570 canonical
+legal fallbacks, 20 corrected-entry checks, 190 unknown-key checks and three packaged
+Nepali/India overrides passed. Twelve public Web locale pages passed at desktop/mobile
+viewports, including Arabic RTL, exact source headings and no horizontal overflow,
+raw keys, page errors or console errors. Actual Arabic-to-Hindi picker/save/reload
+persisted the preference. Four original screenshots were root-viewed. A check-script
+KeyError was corrected using the actual page key; no browser interaction was replayed.
+
+Owned TEST Web 3109 and browser session were closed (actual process exit 0).
+Existing manual Web 3000/API 4000 were not restarted; 3000 retains its old module
+cache until a normal restart. Mobile proof is JS adapter execution, not native
+rendering/storage: no connected device or Metro was available. No full linguistic,
+whole-UI/device, application build, Docker startup or launch-readiness claim follows.
+Prior native/legal/provider/persistence/PUB025/deployed-target gaps remain separate.
+No push/deploy; UAT stays 3c008/release20261011T115439Z-3c008ec4. No scheduled jobs
+were recreated. Preserve unrelated work and every original evidence/cache/state.
+
+Current atomic and delivery receipts:
+`/private/tmp/tfp-i18n-delivery-20261018/20261018T070939Z/current-atomic-checkpoint.json`.
+Browser results, runtime probe, build/activation, independent review and commit
+receipts are linked there. Only these four root notes and product gitlink follow.
+
 ## Unified English Web/native catalog committed locally — 18 October 2026
 
 User stopped Gemini and authorized Codex to unify English/shared resources, then
