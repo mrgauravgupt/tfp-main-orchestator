@@ -1,5 +1,49 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## All original failed slots pass; final image verified, launch gates remain open — 18 October 2026
+
+User resumed fixing everything and launch readiness; all scheduled tasks stay deleted.
+LOCAL product28e002d6 commits the reviewed contest public-readback refresh within its
+original ten-second bound. Productd1f86b28 commits only the public-media error policy
+and its actual Fastify/Helmet regression owner: generic missing/private/revoked404s
+receive the same subresource headers as ready bytes. Signed download/auth/global
+policies remain intact. Independent SOL6.1Ultra review accepted zero P1/P2. Four new
+public response rows passed, then the corrected control passed separately; the first
+new control fixture401-versus404 failure remains an immutable failed attempt.
+
+First failed-only Web batch finished12passed/3failed; final contest-only reruns from
+d1f86b28 finished3passed/0failed across Chromium/Firefox/mobileChromium. Each original
+failed slot now has passing actual evidence:4/4Chromium,6/6Firefox,5/5mobileChromium,
+and4/4iOSguest. These19selected slots have0failed/0blocked/0not-run/0retries; previous
+passes were not replayed. Original fullWeb294/15 and iOSguest10/4 remain unchanged.
+No spliced full current-revision Web/native certificate follows these scoped results.
+Root viewed actual final desktop/mobile empty-search screenshots and raw reports.
+
+Final-source qa:release:prepare passed41/41. A fresh production-public-origin image
+built164.912s, sha256:1a09838d8fe2f7c964804ea3f6c3fc22193bf0c4a785137e17a433d6062c341c,
+with exactd1f86b28 label. Its isolated explicit-local-preview APIhealth/ready, Webhealth/
+renderedHome and fresh workerheartbeat passed. The initial missing privateDB alias
+and next incorrect base-preview environment failures are retained; corrected preview
+resumed the already-prepared owned DB without replaying schema preparation. Actual
+providers remain disabled/noop and unverified. Owned containers are stopped with data,
+images, volumes and both focused Web DB snapshots retained. Manual3000/4000health200.
+
+Public launch is still blocked. Actual LOCAL production doctor exits1 with19deferred
+values:3database credentials,6legal identity,3serviceURLs,4media keyparts and3backup
+fields. Dummy comments are not real operator/provider authority. Strict native SET005
+also remains not-run: accepted lifecycle entrypoints bind historical source/device/
+zero-proof or8083/iOS26.5 staging; coordinator-only8082 would omit state/cleanup gates.
+A requested SOL6.1Ultra feasibility check corroborated this; no weaker certificate,
+new lifecycle framework, rebuild/reinstall or duplicate native case was dispatched.
+Full authenticated/direct-input native, Android/device/accessibility, plannedOPP015,
+provider/persistence and threePUB025 deployed-target gates remain incomplete. No
+push/deploy; no new remote check or current UAT release claim. Unrelated work preserved.
+
+Current atomic and final evidence: /private/tmp/tfp-e2e-fix-continue-20261018/current-status.json
+and launch-readiness-final-review.json. Selected-generation feasibility:
+/private/tmp/tfp-native-set005-current-generation-feasibility-20261018T171645Z/feasibility-final.json.
+No active owned test/build remains and zero schedules remain; do not recreate them.
+
 ## Failed-only batch fixed, reviewed and dispatched — 18 October 2026
 
 Both original current runs are terminal: Web Chromium99passed/4failed,
