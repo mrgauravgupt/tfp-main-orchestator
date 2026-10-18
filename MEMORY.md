@@ -1,5 +1,61 @@
 # Workspace Memory for Future Agents
 
+## JWT patched; native and actual Docker runtime verified locally — 18 October 2026
+
+User freed disk and requested fast autonomous completion with optimal usage. LOCAL
+product commit `eaeab35995c29ef53368e1b6ae6d661af8f89e47` patches fast-jwt6.3.5,
+adds ten real Fastify auth regressions, corrects production PostgreSQL validation
+for supported loopback/private topology and redacts malformed/opaque PG URLs.
+All23auth tests, API build and affected lint passed; production dependency audit
+passes with FIVE unchanged dated exceptions, no new exclusions. Three affected
+config methods and one separate new opaque-URI regression passed. Independent
+GPT-6.1 SOL Ultra final six-file judgment accepted zero open P1/P2.
+
+At user's request, `.env.production` contains clearly DUMMY commented legal examples
+and procurement instructions. All216active assignments and ignored local secrets
+remain unchanged. Six real legal details, media role credentials, backup credentials,
+three production service URLs and real database credentials remain user-deferred.
+No fake legal identity/provider result is a production launch approval.
+
+Fresh iOS Debug ARM64 build PASSED exit0 in678.378s after disk recovery;444source/
+catalog pins stable and complete42file artifact inspected. One NEW iPhone16Pro/
+iOS18.6 simulator installed/launched it. Real Home/Privacy rendered; consent enable,
+save/restart persistence and disable/save/restart persistence passed. Screenshots
+root-viewed. Owned simulator is Shutdown, Metro exited, original Expo state restored.
+This is native smoke, not strict SET005/whole-case/Android/physical-device proof.
+
+Docker recovered via installed normal reopen plus documented force-stop/reopen;
+actual socket200/server29.0.1 and existing14containers/19images/21volumes inventoried.
+LOCAL product commit `340058d1a69dd546d67912bbc8a3d1ad4c032efd` adds only Dockerfile/
+.dockerignore fixes. Nested API temporary data and native outputs caused4.68GB context;
+recursive runtime/evidence/env exclusions now preserve real packages/uploads source.
+Real offline migration exposed missing runtime3.0 Prisma schema engine because build
+had detected OpenSSL1.1. Shared-base OpenSSL now aligns dependency/build/runtime ABI.
+Final ARM64 Linux image built163.339s: `sha256:1d4deb3c7462b94c51fa2db4d57f594ccd1ddf3c9e8345eb21d5809877c0a462`.
+Network-disabled nonroot/pinned-pnpm/PostgreSQL-client/fast-jwt preflight passed.
+Isolated empty-DB migrate+generate passed3.937s; all9migrations match repository.
+Internal HTTP APIhealth/ready, Webhealth/rendered home and fresh workerheartbeat passed.
+Preview explicitly disables moderation/uses noop; real providers are not certified.
+Four owned test containers stopped; all image/container/volume data retained. Docker's
+existing workloads and unrelated workspace files remain outside this transaction.
+
+Original failed builds/migrations/config/host-probe outcomes remain failures. Two small
+start-output logs were restored from recorded IDs after preview filename reuse; exact
+receipt limits are disclosed in docker-image/receipt-correction.json. Three actual
+backend capacity errors stopped further model dispatch; no unchanged retry, downgrade,
+purchase/reset or automation. Latest two Docker files have root source review and
+actual image/migration/runtime proof; no new independent-model judgment is claimed.
+
+Full strict native/settings/discovery/legal authority and owned-input/persistence,
+CON014/OPP014 bytes/provider, TRUST006 persistedMESSAGE, OPP015 actual provider phases,
+PUB025 three deployed-target slots, Android/screen-reader and production provider
+checks remain open. One read-only UAT service-graph check passed at OLD deployed
+`20261011T115439Z-3c008ec4`/`3c008ec45a78552ff5561643ad8e920e9a540100`.
+No push/deploy/public-launch claim; production validation stays fail-closed until
+real values and remaining target/provider proof exist. No old successful suite replay.
+Current detailed atomic receipt and every actual scope:
+`/private/tmp/tfp-deploy-readiness-resume-20261018/current-atomic-checkpoint.json`.
+
 ## Delivery blockers fixed locally; builds pass, readiness remains blocked — 18 October 2026
 
 User's new chat authorizes autonomous deploy-readiness decisions and scoped local
