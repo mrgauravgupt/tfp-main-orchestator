@@ -1,5 +1,50 @@
 # Workspace-Wide Agent Notes
 
+## Continue-all E2E fixes committed; collection and completion monitoring active — 18 October 2026
+
+User requested fixing failures, collecting all results despite individual failures,
+then letting the active runs finish before further Web changes. LOCAL product
+047d8034 fixes semantic checkbox actions and removes first-failure Web cutoffs;
+0023cf39 records native continue/blocked diagnostics, actual JUnit totals, guest
+selection and grounded flow fixes; de824d2a narrowly integrates the iOS Search/
+Return keyboard helper with the selector guard. No push/deploy occurred.
+
+Web source stays frozen at047d8034 in a NEW isolated checkout and owned TEST DB.
+Actual completed children: Chromium99passed/4failed/0skipped; Firefox97passed/
+6failed/0skipped. Mobile Chromium is still active; its final totals are unknown.
+The orchestration actually continued after both failed children. Retain all original
+pre-fix failures and current failed reports; no all-pass/readiness claim follows.
+Source-only diagnosis found contest datetime drift and gallery placeholder readiness;
+further Web edits are paused until the active matrix completes, as user requested.
+
+Native public selection now excludes authenticated DISC008 and supplies the real
+run-unique search keyword.32metadata/JUnit methods passed; focused aggregate/Web
+process checks retain their original scopes. Requested SOL6.1 Ultra incremental
+source review accepted zero P1/P2. An actual native preflight then exposed the
+missing keyboard-guard exemption BEFORE any UI. Its original status remained
+staleRUNNING after cleanup PermissionError; separate derived-terminal-observation
+records guardexit1, bothPIDs absent, port8082closed, owned simulatorShutdown and
+Expo restoration. The old record was not restamped. Guard closure passed2focused
+methods including actual guardCLI (5unselected); one mistaken broad test invocation
+was interrupted130 and remains separate, not a scoped/full-suite pass.
+
+A NEW native-public-ios-resume batch is running from de824d2a on the same owned
+FD4C15D3-357C-46B9-A8AF-EF9B79326E2B artifact/device, no rebuild/reinstall. Actual
+UI flows have begun; it continues after individual failed flows. Final14case totals
+and cleanup remain unfinished. Three controlled cleanup fixtures passed; direct
+Metro-child exit and process-group uncertainty remain separate. Full native80case/
+iOS/Android aggregate is not proven: caller-owned inputs, plannedOPP015 and original
+native/legal/provider/target/device/production gates remain explicit.
+
+Latest user authorized waiting/quiet monitoring and safe unfinished-point recovery.
+Existing heartbeat review-web-and-mobile-e2e-results was UPDATED in place to a
+15-minute completion monitor, same chat, no duplicate. It must stay quiet while
+active, inspect actual failure before any resume, never repeat completed suites,
+and pause after final review. Lower-cost/deterministic monitoring is preferred;
+SOL6.1/6.0Ultra/ExtraHigh is reserved for source/judgment. Current atomic and all
+report/review/resume paths: /private/tmp/tfp-e2e-fix-continue-20261018/current-status.json.
+Manual Web3000/API4000, original data/reports and unrelated work are preserved.
+
 ## User-requested Web/native E2E started; two-hour review scheduled — 18 October 2026
 
 User explicitly requested checking all human-like Web/native flows, starting both
