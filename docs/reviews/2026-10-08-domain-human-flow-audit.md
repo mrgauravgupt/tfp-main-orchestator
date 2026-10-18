@@ -1,5 +1,46 @@
 # Opportunity, event, contest and profile human-flow audit
 
+## Native gallery phase helper source committed locally — 18 October 2026
+
+User authorized useful parallel work while Gemini owns all localisations.
+LOCAL product commit `96a94c98f1089e127f4e6650fd00d7af95b11ba1` contains exactly ten gallery source,
+phase-helper, selector, test and explanatory documentation files. The explicitly
+selected helper validates input shape before device preparation and forwards seven
+quoted inputs. Exact opportunity/submission IDs and registered open/close/author
+controls are attached to real owners. Decoded selectors now belong to actual image
+frames after positive dimensions and display, with failure/source guards retained.
+Profile/Event/Opportunity fallback behavior and the shared image owner are unchanged.
+
+LOW ran the affected minimum ONCE: four offline methods and five gallery component
+methods passed; three unaffected component methods were unselected. Bash/MJS syntax,
+static E2E guard, six-file ESLint, scoped diff check and mobile typecheck passed.
+Total minimum 10.683s, zero retries; ten source and twelve protected pins stayed exact.
+GPT-6.1 SOL Extra High independently accepted the incremental source, zero findings.
+Root read the original source review, actual terminal, output and scoped final diff.
+No completed native/business/browser matrix, build, install or service was replayed.
+
+Original minimum: `/private/tmp/tfp-opp015-source-minimum-once-low-20261018/20261018T030336Z/execution-status.json`.
+Independent review: `/private/tmp/tfp-gallery-selector-independent-sol61-xhigh-20261018/final-20261018T030430Z/final-review.json`.
+Local commit: `/private/tmp/tfp-opp015-local-commit-low-20261018/20261018T030609Z/commit-status.json`.
+Current atomic: `/private/tmp/tfp-opp015-root-handoff-zero-model-20261018/20261018T030701Z/current-atomic-checkpoint.json`.
+
+This closes the missing executable supporting helper and real-image selector source
+work. OPP015 remains planned, flow:null, runtimeEvidence:null, no whole-case owner or
+aggregate. Actual caller actors/image bytes/provider approval/persistence remain
+unverified. A newly accepted bundle containing these selectors is needed for future
+native proof; old accepted artifact/device evidence retains its original boundary.
+No new native run or further runner engineering is authorized by these source checks.
+
+Gemini's catalogs and new mobile overlays remain outside this transaction; completion
+awaits its actual handoff. Native settings/discovery, legal authority/owned input and
+persistence, download bytes/provider, MESSAGE persistence, deployed PUB025 targets,
+Android/screen-reader/external-input and actual Docker image startup remain open.
+Only four scoped root notes and the product gitlink follow this local commit.
+No push/deploy/readiness claim; UAT stays 3c008/release20261011T115439Z-3c008ec4.
+Preserve all originals/caches/states/historyf19 and unrelated work. OAuth/OTP/email
+delivery remain excluded. Hourly prompt stays exactly continue; no unresolved
+included-usage interruption or automatic native retry.
+
 ## Docker workspace and runtime delivery fixes committed locally — 17 October 2026
 
 Codex handled the non-translation release defects while Gemini owns all i18n.
