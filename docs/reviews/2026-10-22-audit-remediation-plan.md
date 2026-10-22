@@ -60,3 +60,14 @@ architecture enforcement passed. Three wire-contract and three domain schema
 contract tests passed. Domain schema checks are static SQL name/shape checks.
 Audit original inventory/scan receipts remain unchanged; corrections are explicit.
 No provider, deployment, UI or whole-release certification follows this phase.
+
+### Phase 2 — bounded cleanup
+
+Removed nine unconsumed concrete repositories and the unused memory rate-limiter
+factory, including factory/interface/barrel entries (801 source lines). Active
+User/OAuthAccount/UserViolation adapters, soft-delete filters and redirect pages
+remain. API/database typechecks, affected lint and database build passed. Existing
+auth/admin tests passed 45 methods. A separate compiled-package PostgreSQL probe
+passed actual OAuth lookup, logout session-version update and violation query,
+then removed only its fixtures. Old compiled-output sourcemap warnings before the
+package rebuild remain in the original test log; they are not runtime defects.
