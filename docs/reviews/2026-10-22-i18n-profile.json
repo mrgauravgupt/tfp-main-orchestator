@@ -1,0 +1,116 @@
+{
+  "scope": "Local compiled i18n cold imports, Node 24, five fresh processes per revision; heap after explicit GC; no production latency claim",
+  "baseline": {
+    "node": "v24.20.0",
+    "samples": [
+      {
+        "importMs": 645.3079170000001,
+        "rssDelta": 115359744,
+        "heapDelta": 29667728,
+        "catalogReads": 97,
+        "uniqueCatalogs": 95,
+        "english": "Save"
+      },
+      {
+        "importMs": 600.4795419999999,
+        "rssDelta": 114704384,
+        "heapDelta": 29675632,
+        "catalogReads": 97,
+        "uniqueCatalogs": 95,
+        "english": "Save"
+      },
+      {
+        "importMs": 597.715625,
+        "rssDelta": 115458048,
+        "heapDelta": 29675528,
+        "catalogReads": 97,
+        "uniqueCatalogs": 95,
+        "english": "Save"
+      },
+      {
+        "importMs": 604.635583,
+        "rssDelta": 114114560,
+        "heapDelta": 29664128,
+        "catalogReads": 97,
+        "uniqueCatalogs": 95,
+        "english": "Save"
+      },
+      {
+        "importMs": 606.2138749999999,
+        "rssDelta": 114343936,
+        "heapDelta": 29670320,
+        "catalogReads": 97,
+        "uniqueCatalogs": 95,
+        "english": "Save"
+      }
+    ]
+  },
+  "lazy": {
+    "node": "v24.20.0",
+    "samples": [
+      {
+        "importMs": 83.2575,
+        "rssDelta": 23756800,
+        "heapDelta": 4118992,
+        "catalogReads": 2,
+        "uniqueCatalogs": 1,
+        "english": "Save"
+      },
+      {
+        "importMs": 59.14254100000002,
+        "rssDelta": 24395776,
+        "heapDelta": 4113600,
+        "catalogReads": 2,
+        "uniqueCatalogs": 1,
+        "english": "Save"
+      },
+      {
+        "importMs": 220.31674999999998,
+        "rssDelta": 24117248,
+        "heapDelta": 4122920,
+        "catalogReads": 2,
+        "uniqueCatalogs": 1,
+        "english": "Save"
+      },
+      {
+        "importMs": 120.03500000000003,
+        "rssDelta": 25034752,
+        "heapDelta": 4121312,
+        "catalogReads": 2,
+        "uniqueCatalogs": 1,
+        "english": "Save"
+      },
+      {
+        "importMs": 238.79899999999998,
+        "rssDelta": 24739840,
+        "heapDelta": 4116384,
+        "catalogReads": 2,
+        "uniqueCatalogs": 1,
+        "english": "Save"
+      }
+    ]
+  },
+  "medians": {
+    "baseline": {
+      "importMs": 604.635583,
+      "rssDelta": 114704384,
+      "heapDelta": 29670320,
+      "catalogReads": 97,
+      "uniqueCatalogs": 95
+    },
+    "lazy": {
+      "importMs": 120.03500000000003,
+      "rssDelta": 24395776,
+      "heapDelta": 4118992,
+      "catalogReads": 2,
+      "uniqueCatalogs": 1
+    }
+  },
+  "matchingLocaleDigests": 96,
+  "baselineProductRevision": "f19d41e2",
+  "lazyProductRevision": "fad84f609413b1458a72646b56213957960d1c0c",
+  "sourceHashes": {
+    "packages/i18n/src/index.ts": "49ca662c75d9eb15a08d363cb17dfd037fc7464491b2b61ee8a2aa52e46c8748",
+    "packages/i18n/src/language-catalog-reader.ts": "1eaab9843ceeabddabf3e997bdcac7a18d7e05a801e545ae6e7ec246c8bfedc0"
+  }
+}

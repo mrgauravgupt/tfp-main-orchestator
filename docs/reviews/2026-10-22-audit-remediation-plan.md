@@ -103,3 +103,21 @@ probes. The initial assumed unknown-route 404 was corrected to the existing glob
 auth policy's 401; original output is retained. Root viewed 1440x900 and 390x844
 Home screenshots: no overflow, broken images, console or page errors. Owned browser
 and both servers closed. No authenticated business/native/device certificate.
+
+### Phase 5 — measured i18n loading
+
+Synchronous catalog lookup now hydrates and caches only canonical requested
+languages; English remains preloaded and cache membership is registry-bounded.
+No catalog or mobile loader bytes changed. Five fresh compiled imports per version
+measured medians 604.6 -> 120.0 ms, retained heap delta 29,670,320 -> 4,118,992 bytes,
+RSS delta 114,704,384 -> 24,395,776 bytes, and language reads 97 -> 2 (95 -> 1 unique).
+All 96 resolved-locale catalog hashes match baseline. This is local measurement,
+not deployed latency or a linguistic certificate; native adapter behavior is covered
+by i18n tests, not a new device run. Reader/fallback and existing i18n tests passed
+137 methods; final Web unit suite passed all 827 across 124 files. Two original
+stale shared-token/limit assertions were corrected after the first Web run failed.
+API/Web/i18n builds, i18n/mobile types, affected lint and architecture checks passed.
+Twelve actual compiled Web renders across six locales and two viewports returned
+200 with no overflow/broken images; Arabic remained RTL. Root viewed Arabic desktop
+and mobile screenshots. Owned browser/API/Web closed; original attempts retained.
+Measurements and source hashes: `docs/reviews/2026-10-22-i18n-profile.json`.
