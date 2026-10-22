@@ -83,3 +83,23 @@ existing error vocabularies remain compatible. No distribution package introduce
 API tests passed 28 methods; full storage package passed 23; collage purge passed
 four. Upload build, API/collage types, affected lint and architecture gates passed.
 No real purge request, provider operation or authenticated business E2E was run.
+
+### Phase 4 — application structure
+
+Server composition is 289 lines (formerly 790); five registration helpers execute
+on the original root scope. AST reconstruction compared all 48 registrations,
+decorators and hooks against the original: exact content and ordering retained.
+Memory cache and its three existing behavior tests moved to API infrastructure.
+OAuth application code now consumes plain persistence capabilities; Prisma relation
+syntax and identity upsert live in its repository adapter. UserViolation already
+has a domain port. Active logout remains on its retained repository.
+API selections passed 78 methods (including an actual PostgreSQL port mapping);
+architecture and affected lint passed, mobile typecheck passed. Canonical build
+completed eight package stages before an API port type mismatch; corrected API
+and previously unrun Web builds then passed. Initial direct-Node startup failed
+on existing extensionless i18n imports; the canonical tsx runtime entrypoint passed.
+Fresh owned API/Web on 14510/13510 passed health/ready, auth and public cache/header
+probes. The initial assumed unknown-route 404 was corrected to the existing global
+auth policy's 401; original output is retained. Root viewed 1440x900 and 390x844
+Home screenshots: no overflow, broken images, console or page errors. Owned browser
+and both servers closed. No authenticated business/native/device certificate.
