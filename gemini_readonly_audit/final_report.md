@@ -1,3 +1,5 @@
+> **22 October correction:** This is the original audit narrative. Read [review corrections](review-corrections.md) before using its coverage claims or backlog.
+
 # Comprehensive Read-Only Architecture & Code Quality Audit Report
 
 **Date of Audit**: October 22, 2026  

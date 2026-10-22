@@ -206,7 +206,7 @@ def main():
         if rel not in unique_inventory:
             unique_inventory[rel] = (git_status, repo_name)
             
-    out_csv = os.path.join(AUDIT_DIR, 'file_inventory.csv')
+    out_csv = os.path.join(AUDIT_DIR, 'file_inventory.current.csv')
     fieldnames = [
         'path', 'category', 'module', 'lines', 'sha256',
         'status_inclusion', 'exclusion_reason', 'tool_scan_status',
@@ -258,10 +258,10 @@ def main():
             included_count += 1
             total_lines_included += lines
             
-            # Evidence-based status derivation
+            # Capability is not proof of execution or source review. Original inventory is retained.
             if ext in SCAN_EXTENSIONS:
                 if not is_test_or_fixture_path(rel_path):
-                    tool_status = 'COMPLETED'
+                    tool_status = 'SUPPORTED_UNVERIFIED'
                 else:
                     tool_status = 'PARTIAL'  # Scanned for layer violations, excluded from duplicate blocks
             else:
@@ -269,15 +269,15 @@ def main():
                 
             # AI review status based on finding presence and module coverage
             if finding_id:
-                ai_status = 'REVIEWED'
+                ai_status = 'UNVERIFIED'
             elif cat in ('SOURCE_CODE', 'DATABASE_SCHEMA', 'SCRIPT'):
-                ai_status = 'REVIEWED' if ref_record else 'PARTIAL'
+                ai_status = 'UNVERIFIED' if ref_record else 'PARTIAL'
             elif cat in ('CONFIGURATION', 'DOCUMENTATION', 'TEST_FIXTURE'):
                 ai_status = 'PARTIAL'
             else:
                 ai_status = 'PARTIAL'
                 
-            cross_status = 'COMPLETED' if ext in SCAN_EXTENSIONS else 'UNSUPPORTED'
+            cross_status = 'UNVERIFIED' if ext in SCAN_EXTENSIONS else 'UNSUPPORTED'
         else:
             excluded_count += 1
             tool_status = 'NOT_APPLICABLE'

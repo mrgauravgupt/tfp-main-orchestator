@@ -191,7 +191,7 @@ findings = [
     "behaviour_preservation_constraints": "Signal dictionary keys, derived floating-point score values, and diagnostic strings must remain identical to baseline model outputs.",
     "risk_of_changing_it": "High; requires regression testing against golden benchmark datasets.",
     "tests_required": [
-      "[EXISTING] tfp-moderation-service/tests/unit/test_service.py",
+      "[EXISTING] tfp-moderation-service/tests/unit/test_signal_response_builder.py",
       "[EXISTING] tfp-moderation-service/tests/integration/test_api.py",
       "[PROPOSED] tfp-moderation-service/tests/unit/test_decomposed_signal_builders.py"
     ],
@@ -267,7 +267,7 @@ findings = [
     "category": "ARCHITECTURE_VIOLATION",
     "severity": "MEDIUM",
     "confidence": "HIGH",
-    "verification_status": "CONFIRMED",
+    "verification_status": "REJECTED",
     "affected_modules": ["tfpphotographers/scripts", "tfpphotographers/apps/api"],
     "file_paths": [
       "tfpphotographers/scripts/architecture/http-persistence-boundary.test.mjs",
@@ -280,7 +280,7 @@ findings = [
     "observed_behaviour": "Test scripts bypassing module encapsulation to inspect internal implementation files.",
     "why_it_matters": "Tightly couples testing/verification scripts to internal file system layout, causing tests to break during routine internal refactoring.",
     "alternative_explanation": "Scripts needed to inspect AST structures of routes directly for architecture enforcement.",
-    "recommended_action": "Scope architectural verification tests to analyze file paths dynamically via AST scanners rather than importing internal TypeScript files directly.",
+    "recommended_action": "Retain the existing TypeScript AST guard; this finding is rejected by the 22 October source review.",
     "expected_benefit": "Decouples test tooling from internal file naming.",
     "behaviour_preservation_constraints": "Must ensure architectural compliance checks continue to cover all API route files.",
     "risk_of_changing_it": "Low.",
@@ -347,7 +347,7 @@ findings = [
     "risk_of_changing_it": "Low.",
     "tests_required": [
       "[PROPOSED] tfpphotographers/packages/moderation/tests/raw-policy-evaluator.test.ts",
-      "[EXISTING] tfp-moderation-service/tests/unit/test_policy.py"
+      "[EXISTING] tfp-moderation-service/tests/unit/test_moderation_policy.py"
     ],
     "related_findings": ["DUP-004"],
     "open_questions": []

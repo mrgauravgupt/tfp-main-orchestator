@@ -1,3 +1,5 @@
+> **22 October correction:** This is the original audit narrative. Read [review corrections](review-corrections.md) before using its coverage claims or backlog.
+
 # Read-Only Architecture and Code Quality Audit Index
 
 ## 1. Purpose and Scope

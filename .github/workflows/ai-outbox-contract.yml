@@ -42,3 +42,5 @@ jobs:
         run: node --test scripts/contracts/validate-ai-outbox-contract.test.mjs
       - name: Check worker integration schemas against application migrations
         run: node scripts/contracts/worker-test-schema.mjs
+      - name: Check AI enrichment queries against application domain columns
+        run: python3 -B scripts/contracts/test_ai_domain_schema.py

@@ -79,30 +79,7 @@ def resolve_module_ref(path):
         return 'orchestrator_contracts_scripts.md'
 
 def update_inventory():
-    rows = []
-    with open('gemini_readonly_audit/file_inventory.csv', 'r') as f:
-        reader = csv.DictReader(f)
-        for r in reader:
-            if r['status_inclusion'] == 'INCLUDED':
-                r['tool_scan_status'] = 'COMPLETED'
-                r['ai_review_status'] = 'REVIEWED'
-                r['cross_module_review_status'] = 'COMPLETED'
-                r['review_record_ref'] = resolve_module_ref(r['path'])
-                if r['path'] in FINDINGS_MAP:
-                    r['finding_ids'] = FINDINGS_MAP[r['path']]
-            rows.append(r)
-            
-    with open('gemini_readonly_audit/file_inventory.csv', 'w', newline='') as f:
-        fieldnames = [
-            'path', 'category', 'module', 'lines', 'sha256',
-            'status_inclusion', 'exclusion_reason', 'tool_scan_status',
-            'ai_review_status', 'cross_module_review_status',
-            'review_record_ref', 'finding_ids', 'staleness_status'
-        ]
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(rows)
-    print("file_inventory.csv successfully updated.")
+    raise SystemExit("Retired: blanket review statuses are unsupported. Use generate_inventory.py for a separate current inventory; retain original receipts.")
 
 if __name__ == '__main__':
     update_inventory()
