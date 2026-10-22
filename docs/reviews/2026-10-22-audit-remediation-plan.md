@@ -121,3 +121,63 @@ Twelve actual compiled Web renders across six locales and two viewports returned
 200 with no overflow/broken images; Arabic remained RTL. Root viewed Arabic desktop
 and mobile screenshots. Owned browser/API/Web closed; original attempts retained.
 Measurements and source hashes: `docs/reviews/2026-10-22-i18n-profile.json`.
+
+### Phase 6 — historical offline tooling
+
+Historical adapters now have a stable import facade over model-specific modules.
+The policy-neutral builder has nine ordered stages with named dataclass results,
+four cohesive helper groups and the original `service.ImageDerivedSignalBuilder`
+import. AST reconstruction verified all 23 adapter definitions, 34 signal helpers
+(after receiver rebinding) and all 188 build statements after stage unpacking.
+Remaining service definitions and policy bytes match the original. Twenty-three
+synthetic golden cases were frozen before edits; outputs and diagnostic logs match.
+A further 230 seeded synthetic variants, including generated images, match the
+original complete output and diagnostics. No actual model/provider was loaded.
+
+The browser toolkit is generated from the canonical TypeScript runtime plus its
+editable report helpers. Browser/CommonJS APIs, YAML helpers, aliases, errors,
+results and eager report diagnostics retain all 37 frozen cases. Normal application
+decisions retain short-circuit behavior: 500 generated expressions match the old
+runtime's results and diagnostics. Five Node contract methods pass, including
+artifact drift, both loading modes and first-match/default application outcomes.
+Actual Chromium passed all 37 cases plus a form action, with no console/page errors
+or overflow; its screenshot was viewed. This is an offline harness, not a folder
+moderation evaluation or historical service run. The cross-service CI contract
+workflow now checks generation and compatibility.
+
+The broad Python attempt passed 142 methods and exposed one stale cross-repository
+language-count contract; its corrected selected check passed separately. An earlier
+unit run exposed the already-enabled historical policy rule's stale disabled-set
+expectation; the full attempt above passed that corrected test. Original failures
+are retained. The language contract now accurately checks the declared 58-language
+remote mapping against historical model configuration, rather than claiming all
+95 UI languages are remotely translatable. Thirty-seven additional UI languages
+remain unmapped by that remote provider. No language/provider policy was changed.
+Scoped Ruff, formatting, API types, moderation build and TypeScript lint passed.
+
+Local nested commits: application `36709e1e`, historical moderation `374006e`.
+The original historical baseline was `be3f2c6` (its policy tuning stays exact).
+Evidence and original log hashes are indexed in
+`docs/reviews/2026-10-22-phase6-validation.json`.
+
+### Completion and limits
+
+All six implementation phases are committed locally. Existing manual services and
+unrelated files were preserved. Owned browser/API/Web processes are closed. The
+fresh owned PostgreSQL container `tfp-audit-phases-20261022` is stopped, with its
+container and data retained. No source was pushed and no deployment occurred.
+
+This closes the reviewed code-quality phases at their documented scopes. It does
+not certify external providers, native devices, production configuration, legal
+inputs, full business E2E or deployed launch readiness. Original scan receipts,
+failures and earlier evidence remain unchanged; passing focused checks are not a
+replacement whole-release certificate.
+
+| Phase | Application commit | Other nested commit | Orchestrator commit |
+| --- | --- | --- | --- |
+| 1 — correctness/contracts | `1f069eed` | — | `9702ef9` |
+| 2 — dead-code cleanup | `dbc58bdc` | — | `8133eb1` |
+| 3 — shared behavior | `327a3d95` | collage `2be4ad0` | `67f8eaf` |
+| 4 — bootstrap/persistence | `f19d41e2` | — | `e3594fe` |
+| 5 — measured i18n | `fad84f60` | — | `1123478` |
+| 6 — offline moderation | `36709e1e` | moderation `374006e` | this commit |

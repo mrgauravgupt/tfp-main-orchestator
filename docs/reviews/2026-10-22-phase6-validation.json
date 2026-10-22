@@ -1,0 +1,159 @@
+{
+  "scope": "Six-phase audit remediation; phase six offline source and compatibility evidence",
+  "commits": {
+    "tfpphotographers": "36709e1e69e7c7af5ca4b853f5d9de161d4b9ccc",
+    "tfp-moderation-service": "374006ec54abf7b36769c47a55dfad2d1fbf7250",
+    "tfp-collage-service": "2be4ad02322ac6dfd2af2f09d9fcf1b8fc227f10"
+  },
+  "extraction": {
+    "adapterDefinitionsExact": 23,
+    "signalHelpersExactAfterReceiverRebinding": 34,
+    "allBuildStatementsExactAfterStageUnpacking": 188
+  },
+  "signalDifferential": {
+    "seed": 20261022,
+    "syntheticCases": 230,
+    "resultAndDiagnosticsExact": true,
+    "realModels": 0,
+    "providerCalls": 0
+  },
+  "applicationRuntimeDifferential": {
+    "seed": 20261022,
+    "cases": 500,
+    "defaultApplicationResultsAndDiagnosticsExact": true
+  },
+  "goldenCases": {
+    "signalOutputAndDiagnostics": 23,
+    "browserPublicApiResultsAndDiagnostics": 37
+  },
+  "pythonBroadAttempt": {
+    "passed": 142,
+    "failed": 1,
+    "failedContract": "obsolete whole-UI language count; corrected selected check passed separately"
+  },
+  "pythonEarlierAttempt": {
+    "passed": 103,
+    "failed": 1,
+    "failedContract": "policy disabled-set expectation predating baseline policy tuning; corrected before broad attempt"
+  },
+  "javascriptContractMethods": {
+    "passed": 5,
+    "failed": 0
+  },
+  "checks": [
+    "AST extraction equivalence",
+    "remaining service and policy byte preservation",
+    "API typecheck",
+    "moderation TypeScript build",
+    "affected ESLint",
+    "scoped Ruff and formatting",
+    "browser artifact generation drift"
+  ],
+  "actualBrowser": {
+    "engine": "Chromium",
+    "frozenCasesPassed": 37,
+    "interactiveExpressionResult": false,
+    "eagerMissingPaths": [
+      "missing"
+    ],
+    "pageErrors": 0,
+    "consoleErrors": 0,
+    "horizontalOverflow": false,
+    "screenshotViewed": true,
+    "sessionClosed": true
+  },
+  "translationLimit": {
+    "uiBaseLanguages": 95,
+    "declaredRemoteLanguages": 58,
+    "additionalUiLanguagesWithoutRemoteMapping": 37,
+    "providerConfigurationChanged": false
+  },
+  "originalSources": {
+    "service.py": "8381b64ff09f29ddaec9b40c390a6a4202624796e591b147f387a76a9ab2679a",
+    "adapters.py": "b808b53322622d9d31526f9b9fa73f87c10cb9dc2379f42d09ae26d238709882",
+    "browser_policy_evaluator_toolkit.js": "aa2d2dbaf07f7479c8e33921b9c5630285cbcb7864c2eec1dd3672d164b6c582"
+  },
+  "receipts": {
+    "/tmp/tfp-phase6-extraction-equivalence.json": {
+      "sha256": "3f3e22fad960147da6121dcd02efe20f524afb3ecbe955a2dbdfeec194a14448",
+      "bytes": 131
+    },
+    "/tmp/tfp-phase6-differential.json": {
+      "sha256": "dda141b179b5f135941c1fabac825b7352a1c353402d00be734e504a1e86cbed",
+      "bytes": 114
+    },
+    "/tmp/tfp-phase6-default-runtime-parity.json": {
+      "sha256": "f8e246d3aca69bf57fc2beeb8514ef90b36a33355eb9de9053124257ceef2ce0",
+      "bytes": 82
+    },
+    "/tmp/tfp-phase6-original-goldens.log": {
+      "sha256": "a19fef603c3a54b3b571801c51418be32a3afbcc890feeb36453fcc70cc0ac40",
+      "bytes": 630
+    },
+    "/tmp/tfp-phase6-golden-before-refactor.log": {
+      "sha256": "d7b62fec726f8ec6010b57f9bbd4fc40c989ff5acce4b41c53ddbb4b4f1d4c9b",
+      "bytes": 99
+    },
+    "/tmp/tfp-phase6-signals-golden-after.log": {
+      "sha256": "92255cd92a064074a66b46e5ca14f00e91042146d69627ec984664821f3a5d81",
+      "bytes": 99
+    },
+    "/tmp/tfp-phase6-adapters-tests.log": {
+      "sha256": "b0b23d14d300dbfef005e10c245bc967c1d58f95975024e16eff27198f088d0a",
+      "bytes": 99
+    },
+    "/tmp/tfp-phase6-python-final.log": {
+      "sha256": "c9de66c8215c9d1198a41b45142d72dbab6934f1b0e812fe21ec4c4738475ef7",
+      "bytes": 1589
+    },
+    "/tmp/tfp-phase6-original-policy-test.log": {
+      "sha256": "cb7f4f801ab2b7113f35ed685e0ec706aa1d93dc671916f6b8c05b8dcb484fce",
+      "bytes": 1535
+    },
+    "/tmp/tfp-phase6-python-suite-final.log": {
+      "sha256": "9cb1d8ad6d15a857d645c927031840d6090ccbb31d9a9428a11e83f76026b7b2",
+      "bytes": 1430
+    },
+    "/tmp/tfp-phase6-language-contract-correction.log": {
+      "sha256": "35d86279d96ed65491ba8ff0748e1c8e7891711531404dc5d4b9cd6ae33de3ec",
+      "bytes": 98
+    },
+    "/tmp/tfp-phase6-toolkit-final.log": {
+      "sha256": "a630aebb2e1afae93f9121d685bce78b3947dd18dab37015309c7c488db5c733",
+      "bytes": 550
+    },
+    "/tmp/tfp-phase6-moderation-build.log": {
+      "sha256": "bce9a6c8ba6c8af4cd90e25d22bcacc759fbb9e8c66f0d9bdfdc2298d70ffda4",
+      "bytes": 111
+    },
+    "/tmp/tfp-phase6-api-types.log": {
+      "sha256": "b13aae82d9f15779e546a719b48cf838f610fa350ec96598ee8bbdd076bd8058",
+      "bytes": 106
+    },
+    "/tmp/tfp-phase6-runtime-lint.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "/tmp/tfp-phase6-lint-final.log": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    "/tmp/tfp-phase6-browser.png": {
+      "sha256": "67aadfc8c716d805a3d0072a84f817e31ffb84cb15ff9835cec4ae9c66964215",
+      "bytes": 32104
+    }
+  },
+  "cleanup": {
+    "container": "tfp-audit-phases-20261022",
+    "id": "4b6aee4ddc0757a80f0ce9a46952ef3aec3d95174fb06068c7aefb61e06ec16d",
+    "state": "exited",
+    "containerAndDataRetained": true,
+    "manualServicesUntouched": true
+  },
+  "limits": [
+    "No push/deploy",
+    "No model download/provider call",
+    "No historical service or folder moderation run",
+    "No new whole-business/native/device/deployed-target certificate"
+  ]
+}

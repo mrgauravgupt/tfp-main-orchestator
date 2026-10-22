@@ -1,4 +1,4 @@
-name: AI outbox contract
+name: Cross-service contracts
 
 on:
   pull_request:
@@ -44,3 +44,5 @@ jobs:
         run: node scripts/contracts/worker-test-schema.mjs
       - name: Check AI enrichment queries against application domain columns
         run: python3 -B scripts/contracts/test_ai_domain_schema.py
+      - name: Check generated historical browser evaluator and compatibility
+        run: node --test scripts/moderation/browser-policy-toolkit.test.mjs
