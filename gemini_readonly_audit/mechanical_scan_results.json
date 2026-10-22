@@ -1,0 +1,2383 @@
+{
+  "detector_metadata": {
+    "scanner_type": "lexical_rolling_hash_window",
+    "min_lines_threshold": 12,
+    "source_files_considered": 2104,
+    "production_files_scanned_for_dups": 1157,
+    "test_files_excluded_from_dups": 947
+  },
+  "layer_violations": [
+    {
+      "type": "MOBILE_DOMAIN_LEAK",
+      "file": "tfpphotographers/apps/mobile/src/domain/__tests__/account-deletion.test.ts",
+      "line": 1,
+      "import": "../../infrastructure/http/api-client",
+      "severity": "MEDIUM",
+      "detail": "Mobile domain layer imports infrastructure or presentation"
+    },
+    {
+      "type": "MOBILE_DOMAIN_LEAK",
+      "file": "tfpphotographers/apps/mobile/src/domain/__tests__/security.test.ts",
+      "line": 2,
+      "import": "../../infrastructure/http/sanitize-api-error",
+      "severity": "MEDIUM",
+      "detail": "Mobile domain layer imports infrastructure or presentation"
+    },
+    {
+      "type": "PATH_TRAVERSAL_APP_CROSSING",
+      "file": "tfpphotographers/scripts/db/verify-restored-evidence.ts",
+      "line": 5,
+      "import": "../../apps/api/dist/modules/legal/restore-evidence.js",
+      "severity": "MEDIUM",
+      "detail": "Relative import traverses across application boundaries"
+    },
+    {
+      "type": "PATH_TRAVERSAL_APP_CROSSING",
+      "file": "tfpphotographers/scripts/export-moderation-policy-preview.ts",
+      "line": 3,
+      "import": "../apps/api/src/modules/moderation/config/category-first-policy.js",
+      "severity": "MEDIUM",
+      "detail": "Relative import traverses across application boundaries"
+    },
+    {
+      "type": "PATH_TRAVERSAL_APP_CROSSING",
+      "file": "tfpphotographers/scripts/export-moderation-policy-preview.ts",
+      "line": 4,
+      "import": "../apps/api/src/modules/moderation/ReasonLibrary.js",
+      "severity": "MEDIUM",
+      "detail": "Relative import traverses across application boundaries"
+    },
+    {
+      "type": "PATH_TRAVERSAL_APP_CROSSING",
+      "file": "tfpphotographers/scripts/qa/lib/core-account-seeding.ts",
+      "line": 4,
+      "import": "../../../apps/api/src/modules/auth/totp",
+      "severity": "MEDIUM",
+      "detail": "Relative import traverses across application boundaries"
+    },
+    {
+      "type": "PATH_TRAVERSAL_APP_CROSSING",
+      "file": "tfpphotographers/scripts/qa/mobile-aggregate-verifier.test.mjs",
+      "line": 11,
+      "import": "../../apps/mobile/tests/e2e/scripts/mobile-flow-selection.mjs",
+      "severity": "MEDIUM",
+      "detail": "Relative import traverses across application boundaries"
+    },
+    {
+      "type": "PATH_TRAVERSAL_APP_CROSSING",
+      "file": "tfpphotographers/scripts/qa/mobile-aggregate-verifier.test.mjs",
+      "line": 12,
+      "import": "../../apps/mobile/tests/e2e/scripts/mobile-junit-contract.mjs",
+      "severity": "MEDIUM",
+      "detail": "Relative import traverses across application boundaries"
+    },
+    {
+      "type": "PATH_TRAVERSAL_APP_CROSSING",
+      "file": "tfpphotographers/scripts/qa/mobile-direct-aggregate-contract.test.mjs",
+      "line": 7,
+      "import": "../../apps/mobile/tests/e2e/scripts/mobile-aggregate-contracts.mjs",
+      "severity": "MEDIUM",
+      "detail": "Relative import traverses across application boundaries"
+    },
+    {
+      "type": "PATH_TRAVERSAL_APP_CROSSING",
+      "file": "tfpphotographers/scripts/qa/observe-mobile-legal-case.test.mjs",
+      "line": 8,
+      "import": "../../apps/api/src/observability/logger.ts",
+      "severity": "MEDIUM",
+      "detail": "Relative import traverses across application boundaries"
+    },
+    {
+      "type": "PATH_TRAVERSAL_APP_CROSSING",
+      "file": "tfpphotographers/scripts/qa/playwright-worker.ts",
+      "line": 2,
+      "import": "../../apps/api/src/worker.js",
+      "severity": "MEDIUM",
+      "detail": "Relative import traverses across application boundaries"
+    },
+    {
+      "type": "PATH_TRAVERSAL_APP_CROSSING",
+      "file": "tfpphotographers/scripts/qa/prepare-human-target.ts",
+      "line": 2,
+      "import": "../../apps/api/src/modules/auth/totp",
+      "severity": "MEDIUM",
+      "detail": "Relative import traverses across application boundaries"
+    },
+    {
+      "type": "PATH_TRAVERSAL_APP_CROSSING",
+      "file": "tfpphotographers/scripts/qa/prepare-mobile-e2e-profile.ts",
+      "line": 5,
+      "import": "../../apps/api/src/modules/referral/referral.service.js",
+      "severity": "MEDIUM",
+      "detail": "Relative import traverses across application boundaries"
+    }
+  ],
+  "large_files": [
+    [
+      "tfp-moderation-service/src/tfp_moderation_service/service.py",
+      6162
+    ],
+    [
+      "tfpphotographers/packages/shared/src/locale-registry.ts",
+      4207
+    ],
+    [
+      "tfpphotographers/scripts/qa/manual-browser-flow.js",
+      3049
+    ],
+    [
+      "tfp-moderation-service/src/tfp_moderation_service/adapters.py",
+      2207
+    ],
+    [
+      "tfpphotographers/apps/api/tests/modules/opportunity/opportunity.routes.test.ts",
+      2008
+    ],
+    [
+      "tfpphotographers/qa/analysis/ui-coverage-analyze.mjs",
+      1951
+    ],
+    [
+      "tfp-moderation-service/tests/integration/test_api.py",
+      1546
+    ],
+    [
+      "tfpphotographers/apps/api/tests/modules/admin/admin.routes.test.ts",
+      1510
+    ],
+    [
+      "tfpphotographers/apps/web/src/scripts/admin/index.js",
+      1493
+    ],
+    [
+      "tfpphotographers/packages/database/prisma/seed.ts",
+      1465
+    ],
+    [
+      "tfpphotographers/apps/web/src/scripts/client/form-helpers.ts",
+      1415
+    ],
+    [
+      "tfpphotographers/scripts/qa/human-target-runner.test.mjs",
+      1308
+    ],
+    [
+      "tfpphotographers/scripts/qa/verify-human-e2e-release.test.mjs",
+      1263
+    ],
+    [
+      "tfp-moderation-service/src/tfp_moderation_service/static/browser_policy_evaluator_toolkit.js",
+      1236
+    ],
+    [
+      "tfp-moderation-service/src/tfp_moderation_service/static/js/app.js",
+      1234
+    ],
+    [
+      "tfpphotographers/tests/e2e/human/opportunity-lifecycle.human.spec.ts",
+      1234
+    ],
+    [
+      "tfpphotographers/apps/mobile/src/infrastructure/api/__tests__/api-content-repository.test.ts",
+      1224
+    ],
+    [
+      "tfpphotographers/apps/web/src/scripts/client/ui-core.ts",
+      1191
+    ],
+    [
+      "tfpphotographers/scripts/qa/session-env.test.mjs",
+      1156
+    ],
+    [
+      "tfpphotographers/scripts/qa/verify-human-e2e-release.mjs",
+      1152
+    ],
+    [
+      "tfpphotographers/apps/api/tests/modules/moderation/application/process-image-moderation-job.test.ts",
+      1142
+    ],
+    [
+      "tfpphotographers/apps/web/src/utils/admin-dashboard.ts",
+      1129
+    ],
+    [
+      "tfpphotographers/qa/capture/ui-coverage-run.mjs",
+      1111
+    ],
+    [
+      "tfpphotographers/tests/e2e/domains/security/tests/upload-integrity-boundaries.spec.ts",
+      1083
+    ],
+    [
+      "tfpphotographers/apps/api/tests/modules/report/report.routes.test.ts",
+      1048
+    ],
+    [
+      "tfpphotographers/apps/api/src/modules/moderation/engine/unified-policy-engine.ts",
+      1030
+    ],
+    [
+      "tfp-moderation-service/src/tfp_moderation_service/raw_verify.py",
+      1014
+    ],
+    [
+      "tfpphotographers/apps/api/src/modules/admin/admin-reporting.queries.ts",
+      1013
+    ],
+    [
+      "tfpphotographers/apps/api/tests/modules/user/user.activity.test.ts",
+      987
+    ],
+    [
+      "tfpphotographers/apps/web/src/components/admin/AdminPanels.astro",
+      975
+    ],
+    [
+      "tfp-collage-service/src/services/imageProcessingWorker.ts",
+      926
+    ],
+    [
+      "tfpphotographers/apps/web/src/pages/events/[slug].astro",
+      900
+    ],
+    [
+      "tfpphotographers/scripts/qa/moderation-e2e-browser.js",
+      896
+    ],
+    [
+      "tfpphotographers/apps/web/src/scripts/admin/runtime-reports.js",
+      894
+    ],
+    [
+      "tfpphotographers/scripts/seo-integrity-check.ts",
+      894
+    ],
+    [
+      "tfpphotographers/apps/web/src/pages/profile/[username].astro",
+      889
+    ],
+    [
+      "tfpphotographers/apps/web/src/pages/contests/[slug].astro",
+      854
+    ],
+    [
+      "tfp-collage-service/src/services/collageMaker.ts",
+      842
+    ],
+    [
+      "tfpphotographers/apps/api/src/modules/opportunity/opportunity.commands.ts",
+      836
+    ],
+    [
+      "tfpphotographers/apps/api/tests/background/event-outbox.postgres.test.ts",
+      828
+    ],
+    [
+      "tfpphotographers/tests/e2e/domains/opportunities/tests/opportunity-contract-boundaries.spec.ts",
+      828
+    ],
+    [
+      "tfp-moderation-service/src/tfp_moderation_service/web.py",
+      826
+    ],
+    [
+      "tfpphotographers/apps/api/src/modules/auth/auth.routes.ts",
+      826
+    ],
+    [
+      "tfpphotographers/apps/api/src/modules/user/user.commands.ts",
+      819
+    ],
+    [
+      "tfpphotographers/tests/contracts/button-action-reuse-current.test.mjs",
+      814
+    ],
+    [
+      "tfpphotographers/apps/mobile/src/presentation/screens/ContestScreens.tsx",
+      808
+    ],
+    [
+      "tfpphotographers/packages/config/src/env-core.ts",
+      798
+    ],
+    [
+      "tfpphotographers/apps/web/src/scripts/client/upload-runtime.ts",
+      796
+    ],
+    [
+      "tfpphotographers/apps/api/src/server.ts",
+      790
+    ],
+    [
+      "tfpphotographers/qa/analysis/ui-visual-qa-report.mjs",
+      772
+    ],
+    [
+      "tfpphotographers/apps/api/src/modules/opportunity/opportunity.queries.ts",
+      771
+    ],
+    [
+      "tfpphotographers/apps/mobile/src/domain/forms.ts",
+      770
+    ],
+    [
+      "tfpphotographers/apps/mobile/tests/e2e/scripts/guard.mjs",
+      770
+    ],
+    [
+      "tfpphotographers/apps/api/src/modules/translation/TranslationService.ts",
+      762
+    ],
+    [
+      "tfpphotographers/apps/web/src/scripts/client/opportunity-create.ts",
+      758
+    ],
+    [
+      "tfpphotographers/tests/e2e/domains/events/tests/event-contract-boundaries.spec.ts",
+      757
+    ],
+    [
+      "tfpphotographers/packages/uploads/src/index.ts",
+      756
+    ],
+    [
+      "tfpphotographers/tests/e2e/human/support/human.fixture.ts",
+      755
+    ],
+    [
+      "tfpphotographers/apps/mobile/src/presentation/screens/HomeScreen.tsx",
+      750
+    ],
+    [
+      "tfpphotographers/tests/e2e/human/contest-lifecycle.human.spec.ts",
+      744
+    ],
+    [
+      "tfpphotographers/tests/e2e/human/public-surfaces.human.spec.ts",
+      734
+    ],
+    [
+      "tfpphotographers/tests/e2e/shared/helpers/launch-readiness-seed.ts",
+      734
+    ],
+    [
+      "tfpphotographers/apps/web/src/pages/opportunities/[slug].astro",
+      729
+    ],
+    [
+      "tfpphotographers/apps/api/tests/security/ip-admission-limiting.test.ts",
+      715
+    ],
+    [
+      "tfpphotographers/apps/mobile/src/presentation/components/DetailComponents.tsx",
+      713
+    ],
+    [
+      "tfpphotographers/tests/e2e/human/event-lifecycle.human.spec.ts",
+      713
+    ],
+    [
+      "tfpphotographers/apps/api/src/modules/user/user.notifications.ts",
+      709
+    ],
+    [
+      "tfpphotographers/apps/web/src/scripts/client/contest-detail.ts",
+      709
+    ],
+    [
+      "tfp-moderation-service/scripts/eval_192_moderation_service.py",
+      706
+    ],
+    [
+      "tfpphotographers/apps/web/src/scripts/admin/runtime-report-presentation.js",
+      704
+    ],
+    [
+      "tfpphotographers/scripts/qa/run-mobile-current-generation-ios.py",
+      690
+    ],
+    [
+      "tfpphotographers/apps/web/tests/client/opportunity-owner-read-discriminator.browser.ts",
+      687
+    ],
+    [
+      "tfp-collage-service/src/tests/server.test.ts",
+      683
+    ],
+    [
+      "tfpphotographers/tests/e2e/domains/uploads/tests/avatar-portfolio.spec.ts",
+      679
+    ],
+    [
+      "tfpphotographers/apps/api/src/modules/contest/contest-submission.handlers.ts",
+      673
+    ],
+    [
+      "tfpphotographers/tests/e2e/domains/security/tests/contest-lifecycle-security-boundaries.spec.ts",
+      671
+    ],
+    [
+      "tfpphotographers/qa/shared/ui-coverage/layout-intelligence.mjs",
+      659
+    ],
+    [
+      "tfpphotographers/apps/mobile/src/presentation/screens/ProfileScreen.tsx",
+      653
+    ],
+    [
+      "tfpphotographers/packages/config/src/moderation-policy.ts",
+      651
+    ],
+    [
+      "tfpphotographers/tests/contracts/profile-gallery-caption-current.test.mjs",
+      651
+    ],
+    [
+      "tfpphotographers/apps/api/src/modules/admin/admin-report.commands.ts",
+      647
+    ],
+    [
+      "tfpphotographers/apps/mobile/src/presentation/screens/EventScreens.tsx",
+      646
+    ],
+    [
+      "tfpphotographers/scripts/qa/mobile-aggregate-verifier.test.mjs",
+      629
+    ],
+    [
+      "tfpphotographers/packages/config/src/config-sections.ts",
+      628
+    ],
+    [
+      "tfpphotographers/tests/e2e/domains/profile/tests/profile-contract-boundaries.spec.ts",
+      627
+    ],
+    [
+      "tfp-ai-interface/tests/test_worker_service.py",
+      622
+    ],
+    [
+      "tfpphotographers/apps/mobile/scripts/capture-pages.mjs",
+      622
+    ],
+    [
+      "tfpphotographers/tests/contracts/registration-validation-ssot.test.mjs",
+      620
+    ],
+    [
+      "tfpphotographers/apps/api/src/modules/opportunity/opportunity-application.handlers.ts",
+      607
+    ],
+    [
+      "tfpphotographers/apps/mobile/src/presentation/testing/test-ids.ts",
+      607
+    ],
+    [
+      "tfpphotographers/apps/api/tests/modules/search/search.routes.integration.test.ts",
+      591
+    ],
+    [
+      "tfpphotographers/scripts/qa/generate-human-e2e-report.mjs",
+      586
+    ],
+    [
+      "tfpphotographers/apps/mobile/src/presentation/screens/CreateHubScreen.tsx",
+      576
+    ],
+    [
+      "tfpphotographers/apps/api/src/modules/moderation/autofix/AutoFixOrchestrator.ts",
+      574
+    ],
+    [
+      "tfp-moderation-service/src/tfp_moderation_service/moderation_worker.py",
+      572
+    ],
+    [
+      "tfpphotographers/scripts/qa/support/human-e2e-operations.mjs",
+      572
+    ],
+    [
+      "tfpphotographers/tests/contracts/domain-image-policy-ssot.test.mjs",
+      567
+    ],
+    [
+      "tfpphotographers/tests/e2e/human/support/human-actions.ts",
+      558
+    ],
+    [
+      "tfpphotographers/apps/mobile/src/domain/entities.ts",
+      555
+    ],
+    [
+      "tfpphotographers/apps/web/src/components/SiteHeader.astro",
+      555
+    ],
+    [
+      "tfpphotographers/apps/api/src/modules/notifications/register-event-handlers.ts",
+      549
+    ],
+    [
+      "tfpphotographers/apps/api/src/modules/opportunity/opportunity.handlers.ts",
+      548
+    ],
+    [
+      "tfpphotographers/apps/api/src/modules/opportunity/opportunity.routes.ts",
+      546
+    ],
+    [
+      "tfpphotographers/apps/mobile/tests/e2e/scripts/verify-mobile-aggregate-run.mjs",
+      542
+    ],
+    [
+      "tfpphotographers/tests/e2e/human/quick-request-lifecycle.human.spec.ts",
+      542
+    ],
+    [
+      "tfpphotographers/apps/api/src/modules/report/report.queries.ts",
+      541
+    ],
+    [
+      "tfpphotographers/apps/web/src/pages/opportunities/create.astro",
+      541
+    ],
+    [
+      "tfpphotographers/apps/web/src/utils/qa-dashboard.ts",
+      536
+    ],
+    [
+      "tfpphotographers/apps/api/tests/modules/media/media-publication-gate.integration.test.ts",
+      534
+    ],
+    [
+      "tfpphotographers/apps/mobile/src/domain/__tests__/forms.test.ts",
+      534
+    ],
+    [
+      "tfpphotographers/scripts/qa/human-e2e-guard.test.mjs",
+      533
+    ],
+    [
+      "tfp-ai-interface/src/tfp_ai_interface/worker_repository.py",
+      532
+    ],
+    [
+      "tfpphotographers/apps/web/src/pages/contests/[slug]/submissions/[submissionId].astro",
+      532
+    ],
+    [
+      "tfpphotographers/scripts/qa/page-performance-report.mjs",
+      531
+    ],
+    [
+      "tfpphotographers/services/ui-review-worker/app/review.py",
+      528
+    ],
+    [
+      "tfpphotographers/tests/e2e/domains/quick-requests/tests/quick-request-contracts.spec.ts",
+      528
+    ],
+    [
+      "tfpphotographers/apps/api/src/modules/moderation/application/text-moderation.ts",
+      525
+    ],
+    [
+      "tfpphotographers/apps/mobile/src/presentation/screens/LegalScreens.tsx",
+      525
+    ],
+    [
+      "tfpphotographers/tests/contracts/quick-request-control-ssot.test.mjs",
+      523
+    ],
+    [
+      "tfpphotographers/packages/shared/src/localization.ts",
+      521
+    ],
+    [
+      "tfpphotographers/apps/api/src/modules/opportunity/opportunity-read-routes.ts",
+      519
+    ],
+    [
+      "tfp-moderation-service/src/tfp_moderation_service/settings.py",
+      516
+    ],
+    [
+      "tfpphotographers/apps/api/src/modules/contest/contest.handlers.ts",
+      515
+    ],
+    [
+      "tfpphotographers/apps/mobile/src/presentation/screens/AccountScreens.tsx",
+      513
+    ],
+    [
+      "tfpphotographers/tests/contracts/profile-role-ssot.test.mjs",
+      510
+    ],
+    [
+      "tfpphotographers/apps/web/src/utils/admin-formatters.ts",
+      508
+    ],
+    [
+      "tfpphotographers/packages/storage/src/adapters/BackblazeB2Adapter.ts",
+      508
+    ],
+    [
+      "tfpphotographers/apps/api/src/modules/report/moderation-cases.ts",
+      506
+    ],
+    [
+      "tfpphotographers/apps/mobile/src/presentation/screens/SearchScreen.tsx",
+      505
+    ],
+    [
+      "tfpphotographers/tests/e2e/shared/helpers/user-flow-helpers.ts",
+      504
+    ],
+    [
+      "tfpphotographers/scripts/ops/prod-log-audit.mjs",
+      501
+    ],
+    [
+      "tfpphotographers/apps/mobile/src/presentation/components/ProfessionalProfileEditor.tsx",
+      500
+    ]
+  ],
+  "duplicate_candidates": [
+    {
+      "lines_count": 12,
+      "snippet": [
+        "if (token.type === 'number') {",
+        "index += 1;",
+        "return { type: 'number', value: token.value };"
+      ],
+      "occurrences": {
+        "tfp-moderation-service/src/tfp_moderation_service/static/browser_policy_evaluator_toolkit.js": [
+          712,
+          723
+        ],
+        "tfpphotographers/packages/moderation/src/raw-policy/runtime.ts": [
+          224,
+          237
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "index += 1;",
+        "return { type: 'number', value: token.value };",
+        "}"
+      ],
+      "occurrences": {
+        "tfp-moderation-service/src/tfp_moderation_service/static/browser_policy_evaluator_toolkit.js": [
+          713,
+          724
+        ],
+        "tfpphotographers/packages/moderation/src/raw-policy/runtime.ts": [
+          225,
+          239
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "return { type: 'number', value: token.value };",
+        "}",
+        "if (token.type === 'string') {"
+      ],
+      "occurrences": {
+        "tfp-moderation-service/src/tfp_moderation_service/static/browser_policy_evaluator_toolkit.js": [
+          714,
+          725
+        ],
+        "tfpphotographers/packages/moderation/src/raw-policy/runtime.ts": [
+          226,
+          240
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "}",
+        "if (token.type === 'string') {",
+        "index += 1;"
+      ],
+      "occurrences": {
+        "tfp-moderation-service/src/tfp_moderation_service/static/browser_policy_evaluator_toolkit.js": [
+          715,
+          726
+        ],
+        "tfpphotographers/packages/moderation/src/raw-policy/runtime.ts": [
+          227,
+          241
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "if (token.type === 'string') {",
+        "index += 1;",
+        "return { type: 'string', value: token.value };"
+      ],
+      "occurrences": {
+        "tfp-moderation-service/src/tfp_moderation_service/static/browser_policy_evaluator_toolkit.js": [
+          716,
+          727
+        ],
+        "tfpphotographers/packages/moderation/src/raw-policy/runtime.ts": [
+          229,
+          242
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "index += 1;",
+        "return { type: 'string', value: token.value };",
+        "}"
+      ],
+      "occurrences": {
+        "tfp-moderation-service/src/tfp_moderation_service/static/browser_policy_evaluator_toolkit.js": [
+          717,
+          728
+        ],
+        "tfpphotographers/packages/moderation/src/raw-policy/runtime.ts": [
+          230,
+          244
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "return { type: 'string', value: token.value };",
+        "}",
+        "if (token.type === 'boolean') {"
+      ],
+      "occurrences": {
+        "tfp-moderation-service/src/tfp_moderation_service/static/browser_policy_evaluator_toolkit.js": [
+          718,
+          729
+        ],
+        "tfpphotographers/packages/moderation/src/raw-policy/runtime.ts": [
+          231,
+          245
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "}",
+        "if (token.type === 'boolean') {",
+        "index += 1;"
+      ],
+      "occurrences": {
+        "tfp-moderation-service/src/tfp_moderation_service/static/browser_policy_evaluator_toolkit.js": [
+          719,
+          730
+        ],
+        "tfpphotographers/packages/moderation/src/raw-policy/runtime.ts": [
+          232,
+          246
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "if (token.type === 'boolean') {",
+        "index += 1;",
+        "return { type: 'boolean', value: token.value };"
+      ],
+      "occurrences": {
+        "tfp-moderation-service/src/tfp_moderation_service/static/browser_policy_evaluator_toolkit.js": [
+          720,
+          731
+        ],
+        "tfpphotographers/packages/moderation/src/raw-policy/runtime.ts": [
+          234,
+          247
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "index += 1;",
+        "return { type: 'boolean', value: token.value };",
+        "}"
+      ],
+      "occurrences": {
+        "tfp-moderation-service/src/tfp_moderation_service/static/browser_policy_evaluator_toolkit.js": [
+          721,
+          732
+        ],
+        "tfpphotographers/packages/moderation/src/raw-policy/runtime.ts": [
+          235,
+          249
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "return { type: 'boolean', value: token.value };",
+        "}",
+        "if (token.type === 'null') {"
+      ],
+      "occurrences": {
+        "tfp-moderation-service/src/tfp_moderation_service/static/browser_policy_evaluator_toolkit.js": [
+          722,
+          733
+        ],
+        "tfpphotographers/packages/moderation/src/raw-policy/runtime.ts": [
+          236,
+          250
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "eventId: string;",
+        "userId: string;",
+        "reason: string;"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/admin/admin-appeal.commands.ts": [
+          5,
+          16
+        ],
+        "tfpphotographers/apps/api/src/modules/report/report.commands.ts": [
+          127,
+          138
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "userId: string;",
+        "reason: string;",
+        "}) {"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/admin/admin-appeal.commands.ts": [
+          6,
+          17
+        ],
+        "tfpphotographers/apps/api/src/modules/report/report.commands.ts": [
+          128,
+          139
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "reason: string;",
+        "}) {",
+        "return prisma.moderationAppeal.create({"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/admin/admin-appeal.commands.ts": [
+          7,
+          18
+        ],
+        "tfpphotographers/apps/api/src/modules/report/report.commands.ts": [
+          129,
+          140
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "}) {",
+        "return prisma.moderationAppeal.create({",
+        "data: {"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/admin/admin-appeal.commands.ts": [
+          8,
+          19
+        ],
+        "tfpphotographers/apps/api/src/modules/report/report.commands.ts": [
+          130,
+          141
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "return prisma.moderationAppeal.create({",
+        "data: {",
+        "eventId: input.eventId,"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/admin/admin-appeal.commands.ts": [
+          9,
+          20
+        ],
+        "tfpphotographers/apps/api/src/modules/report/report.commands.ts": [
+          131,
+          142
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "data: {",
+        "eventId: input.eventId,",
+        "userId: input.userId,"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/admin/admin-appeal.commands.ts": [
+          10,
+          21
+        ],
+        "tfpphotographers/apps/api/src/modules/report/report.commands.ts": [
+          132,
+          143
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "eventId: input.eventId,",
+        "userId: input.userId,",
+        "reason: input.reason,"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/admin/admin-appeal.commands.ts": [
+          11,
+          22
+        ],
+        "tfpphotographers/apps/api/src/modules/report/report.commands.ts": [
+          133,
+          144
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "userId: input.userId,",
+        "reason: input.reason,",
+        "},"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/admin/admin-appeal.commands.ts": [
+          12,
+          23
+        ],
+        "tfpphotographers/apps/api/src/modules/report/report.commands.ts": [
+          134,
+          145
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "reason: input.reason,",
+        "},",
+        "select: {"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/admin/admin-appeal.commands.ts": [
+          13,
+          24
+        ],
+        "tfpphotographers/apps/api/src/modules/report/report.commands.ts": [
+          135,
+          146
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "select: {",
+        "id: true,",
+        "status: true,"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/admin/admin-appeal.commands.ts": [
+          30,
+          41
+        ],
+        "tfpphotographers/apps/api/src/modules/admin/admin-moderation-appeals.queries.ts": [
+          152,
+          163
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "eventId: string;",
+        "userId: string;",
+        "}) {"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/admin/admin-moderation-appeals.queries.ts": [
+          129,
+          140
+        ],
+        "tfpphotographers/apps/api/src/modules/report/report.queries.ts": [
+          523,
+          534
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "userId: string;",
+        "}) {",
+        "return prisma.moderationAppeal.findFirst({"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/admin/admin-moderation-appeals.queries.ts": [
+          130,
+          141
+        ],
+        "tfpphotographers/apps/api/src/modules/report/report.queries.ts": [
+          524,
+          535
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "}) {",
+        "return prisma.moderationAppeal.findFirst({",
+        "where: {"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/admin/admin-moderation-appeals.queries.ts": [
+          131,
+          142
+        ],
+        "tfpphotographers/apps/api/src/modules/report/report.queries.ts": [
+          525,
+          536
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "return prisma.moderationAppeal.findFirst({",
+        "where: {",
+        "eventId: input.eventId,"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/admin/admin-moderation-appeals.queries.ts": [
+          132,
+          143
+        ],
+        "tfpphotographers/apps/api/src/modules/report/report.queries.ts": [
+          526,
+          537
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "where: {",
+        "eventId: input.eventId,",
+        "userId: input.userId,"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/admin/admin-moderation-appeals.queries.ts": [
+          133,
+          144
+        ],
+        "tfpphotographers/apps/api/src/modules/report/report.queries.ts": [
+          527,
+          538
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "eventId: input.eventId,",
+        "userId: input.userId,",
+        "status: 'PENDING',"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/admin/admin-moderation-appeals.queries.ts": [
+          134,
+          145
+        ],
+        "tfpphotographers/apps/api/src/modules/report/report.queries.ts": [
+          528,
+          539
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "userId: input.userId,",
+        "status: 'PENDING',",
+        "},"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/admin/admin-moderation-appeals.queries.ts": [
+          135,
+          146
+        ],
+        "tfpphotographers/apps/api/src/modules/report/report.queries.ts": [
+          529,
+          540
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "status: 'PENDING',",
+        "},",
+        "select: {"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/admin/admin-moderation-appeals.queries.ts": [
+          136,
+          147
+        ],
+        "tfpphotographers/apps/api/src/modules/report/report.queries.ts": [
+          530,
+          541
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "deletedAt: null,",
+        "status: existing.status,",
+        "},"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/contest/commands/ModerateContestStatus.ts": [
+          45,
+          56
+        ],
+        "tfpphotographers/apps/api/src/modules/event/event.commands.ts": [
+          191,
+          202
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "status: existing.status,",
+        "},",
+        "data: buildManualModerationStatusUpdate({"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/contest/commands/ModerateContestStatus.ts": [
+          46,
+          58
+        ],
+        "tfpphotographers/apps/api/src/modules/event/event.commands.ts": [
+          192,
+          204
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "};",
+        "const counterFieldMap: Record<SubmissionReactionType, 'likeCount' | 'voteCount' | 'shareCount'> = {",
+        "LIKE: 'likeCount',"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/contest/commands/RecordSubmissionReaction.ts": [
+          22,
+          36
+        ],
+        "tfpphotographers/apps/api/src/modules/contest/commands/RemoveSubmissionReaction.ts": [
+          21,
+          35
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "submissionFileKey: finalized.key,",
+        "uploadId,",
+        "}).catch(async (error: unknown) => {"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/event/event-participation-routes.ts": [
+          162,
+          174
+        ],
+        "tfpphotographers/apps/api/src/modules/opportunity/opportunity-application.handlers.ts": [
+          360,
+          372
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "uploadId,",
+        "}).catch(async (error: unknown) => {",
+        "await cleanupFailedUpload({ storage: request.server.storage, uploads: request.server.uploads,"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/event/event-participation-routes.ts": [
+          163,
+          175
+        ],
+        "tfpphotographers/apps/api/src/modules/opportunity/opportunity-application.handlers.ts": [
+          361,
+          373
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "}).catch(async (error: unknown) => {",
+        "await cleanupFailedUpload({ storage: request.server.storage, uploads: request.server.uploads,",
+        "key: finalized.key, uploadId, userId: request.userId!, log: request.log,"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/event/event-participation-routes.ts": [
+          164,
+          176
+        ],
+        "tfpphotographers/apps/api/src/modules/opportunity/opportunity-application.handlers.ts": [
+          362,
+          374
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "await cleanupFailedUpload({ storage: request.server.storage, uploads: request.server.uploads,",
+        "key: finalized.key, uploadId, userId: request.userId!, log: request.log,",
+        "deleteMessage: 'Failed cleaning unlinked upload after persistence error' });"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/event/event-participation-routes.ts": [
+          165,
+          177
+        ],
+        "tfpphotographers/apps/api/src/modules/opportunity/opportunity-application.handlers.ts": [
+          363,
+          375
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "});",
+        "}",
+        "});"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/event/event-read-routes.ts": [
+          59,
+          70
+        ],
+        "tfpphotographers/apps/api/src/modules/opportunity/opportunity-read-routes.ts": [
+          133,
+          144
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "}",
+        "});",
+        "const parsedQuery = listQuerySchema.parse(request.query || {});"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/event/event-read-routes.ts": [
+          60,
+          71
+        ],
+        "tfpphotographers/apps/api/src/modules/opportunity/opportunity-read-routes.ts": [
+          134,
+          145
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "});",
+        "const parsedQuery = listQuerySchema.parse(request.query || {});",
+        "const { page, limit, requestedStatus, rejection } = resolveContentListAccess("
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/event/event-read-routes.ts": [
+          61,
+          72
+        ],
+        "tfpphotographers/apps/api/src/modules/opportunity/opportunity-read-routes.ts": [
+          135,
+          146
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "const parsedQuery = listQuerySchema.parse(request.query || {});",
+        "const { page, limit, requestedStatus, rejection } = resolveContentListAccess(",
+        "request,"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/event/event-read-routes.ts": [
+          62,
+          73
+        ],
+        "tfpphotographers/apps/api/src/modules/opportunity/opportunity-read-routes.ts": [
+          136,
+          147
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "const { page, limit, requestedStatus, rejection } = resolveContentListAccess(",
+        "request,",
+        "reply,"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/event/event-read-routes.ts": [
+          63,
+          74
+        ],
+        "tfpphotographers/apps/api/src/modules/opportunity/opportunity-read-routes.ts": [
+          137,
+          148
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "request,",
+        "reply,",
+        "parsedQuery,"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/event/event-read-routes.ts": [
+          64,
+          75
+        ],
+        "tfpphotographers/apps/api/src/modules/opportunity/opportunity-read-routes.ts": [
+          138,
+          149
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "reply,",
+        "parsedQuery,",
+        ");"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/event/event-read-routes.ts": [
+          65,
+          76
+        ],
+        "tfpphotographers/apps/api/src/modules/opportunity/opportunity-read-routes.ts": [
+          139,
+          150
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "parsedQuery,",
+        ");",
+        "if (rejection) return rejection;"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/event/event-read-routes.ts": [
+          66,
+          77
+        ],
+        "tfpphotographers/apps/api/src/modules/opportunity/opportunity-read-routes.ts": [
+          140,
+          151
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        ");",
+        "if (rejection) return rejection;",
+        "const approximateContext ="
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/event/event-read-routes.ts": [
+          67,
+          79
+        ],
+        "tfpphotographers/apps/api/src/modules/opportunity/opportunity-read-routes.ts": [
+          141,
+          153
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "if (rejection) return rejection;",
+        "const approximateContext =",
+        "parsedQuery.radiusKm !== undefined && parsedQuery.lat === undefined"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/event/event-read-routes.ts": [
+          68,
+          80
+        ],
+        "tfpphotographers/apps/api/src/modules/opportunity/opportunity-read-routes.ts": [
+          142,
+          154
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "const approximateContext =",
+        "parsedQuery.radiusKm !== undefined && parsedQuery.lat === undefined",
+        "? await resolveRequestLocationContextWithFallback("
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/modules/event/event-read-routes.ts": [
+          69,
+          81
+        ],
+        "tfpphotographers/apps/api/src/modules/opportunity/opportunity-read-routes.ts": [
+          143,
+          155
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "const candidate = String(value || '').trim();",
+        "if (!candidate) return false;",
+        "try {"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/observability/bootstrap.ts": [
+          15,
+          26
+        ],
+        "tfpphotographers/apps/web/astro.config.mjs": [
+          86,
+          97
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "if (!candidate) return false;",
+        "try {",
+        "const parsed = new URL(candidate);"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/observability/bootstrap.ts": [
+          16,
+          27
+        ],
+        "tfpphotographers/apps/web/astro.config.mjs": [
+          87,
+          98
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "},",
+        "mixin() {",
+        "const spanContext = trace.getSpan(context.active())?.spanContext();"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/api/src/observability/logger.ts": [
+          157,
+          171
+        ],
+        "tfpphotographers/apps/web/src/utils/telemetry.ts": [
+          23,
+          35
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "borderRadius: radii.sm,",
+        "backgroundColor: colors.surfaceElevated,",
+        "},"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/mobile/src/presentation/components/NativeDocumentField.tsx": [
+          85,
+          96
+        ],
+        "tfpphotographers/apps/mobile/src/presentation/components/NativeImageField.tsx": [
+          97,
+          108
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "<SkeletonCard />",
+        "<SkeletonCard />",
+        "</Screen>"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/mobile/src/presentation/screens/AccountScreens.tsx": [
+          443,
+          455
+        ],
+        "tfpphotographers/apps/mobile/src/presentation/screens/ActivityScreen.tsx": [
+          133,
+          145
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "<SkeletonCard />",
+        "</Screen>",
+        ");"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/mobile/src/presentation/screens/AccountScreens.tsx": [
+          444,
+          456
+        ],
+        "tfpphotographers/apps/mobile/src/presentation/screens/ActivityScreen.tsx": [
+          134,
+          146
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "</Screen>",
+        ");",
+        "}"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/mobile/src/presentation/screens/AccountScreens.tsx": [
+          445,
+          457
+        ],
+        "tfpphotographers/apps/mobile/src/presentation/screens/ActivityScreen.tsx": [
+          135,
+          147
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        ");",
+        "}",
+        "if (!session.data) {"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/mobile/src/presentation/screens/AccountScreens.tsx": [
+          446,
+          458
+        ],
+        "tfpphotographers/apps/mobile/src/presentation/screens/ActivityScreen.tsx": [
+          136,
+          148
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "}",
+        "if (!session.data) {",
+        "return ("
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/mobile/src/presentation/screens/AccountScreens.tsx": [
+          447,
+          459
+        ],
+        "tfpphotographers/apps/mobile/src/presentation/screens/ActivityScreen.tsx": [
+          137,
+          149
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "if (!session.data) {",
+        "return (",
+        "<Screen>"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/mobile/src/presentation/screens/AccountScreens.tsx": [
+          449,
+          460
+        ],
+        "tfpphotographers/apps/mobile/src/presentation/screens/ActivityScreen.tsx": [
+          139,
+          150
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "return (",
+        "<Screen>",
+        "<EmptyState"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/mobile/src/presentation/screens/AccountScreens.tsx": [
+          450,
+          461
+        ],
+        "tfpphotographers/apps/mobile/src/presentation/screens/ActivityScreen.tsx": [
+          140,
+          151
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "<Screen>",
+        "<EmptyState",
+        "icon=\"shield\""
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/mobile/src/presentation/screens/AccountScreens.tsx": [
+          451,
+          462
+        ],
+        "tfpphotographers/apps/mobile/src/presentation/screens/ActivityScreen.tsx": [
+          141,
+          152
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "{children}",
+        "</View>",
+        ");"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/mobile/src/presentation/screens/ContestDraftFields.tsx": [
+          170,
+          182
+        ],
+        "tfpphotographers/apps/mobile/src/presentation/screens/EventDraftFields.tsx": [
+          142,
+          154
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "</View>",
+        ");",
+        "}"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/mobile/src/presentation/screens/ContestDraftFields.tsx": [
+          171,
+          183
+        ],
+        "tfpphotographers/apps/mobile/src/presentation/screens/EventDraftFields.tsx": [
+          143,
+          155
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "detailContentCard: {",
+        "gap: spacing.md,",
+        "padding: spacing.md,"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/mobile/src/presentation/screens/EventScreens.tsx": [
+          630,
+          641
+        ],
+        "tfpphotographers/apps/mobile/src/presentation/screens/contest-screen-styles.ts": [
+          26,
+          37
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "gap: spacing.md,",
+        "padding: spacing.md,",
+        "borderRadius: radii.xl,"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/mobile/src/presentation/screens/EventScreens.tsx": [
+          631,
+          642
+        ],
+        "tfpphotographers/apps/mobile/src/presentation/screens/contest-screen-styles.ts": [
+          27,
+          38
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "function isUsableSentryDsn(value: string | undefined): boolean {",
+        "const candidate = String(value || '').trim();",
+        "if (!candidate) return false;"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/web/sentry.client.config.ts": [
+          9,
+          20
+        ],
+        "tfpphotographers/apps/web/sentry.server.config.ts": [
+          21,
+          32
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "const candidate = String(value || '').trim();",
+        "if (!candidate) return false;",
+        "try {"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/web/sentry.client.config.ts": [
+          10,
+          21
+        ],
+        "tfpphotographers/apps/web/sentry.server.config.ts": [
+          22,
+          33
+        ],
+        "tfpphotographers/packages/config/src/config-sections.ts": [
+          417,
+          428
+        ],
+        "tfpphotographers/scripts/env/doctor.mjs": [
+          70,
+          81
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "if (!candidate) return false;",
+        "try {",
+        "const parsed = new URL(candidate);"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/web/sentry.client.config.ts": [
+          11,
+          23
+        ],
+        "tfpphotographers/apps/web/sentry.server.config.ts": [
+          23,
+          35
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "try {",
+        "const parsed = new URL(candidate);",
+        "return ['http:', 'https:'].includes(parsed.protocol)"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/web/sentry.client.config.ts": [
+          12,
+          24
+        ],
+        "tfpphotographers/apps/web/sentry.server.config.ts": [
+          24,
+          36
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "const parsed = new URL(candidate);",
+        "return ['http:', 'https:'].includes(parsed.protocol)",
+        "&& Boolean(parsed.username)"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/web/sentry.client.config.ts": [
+          13,
+          25
+        ],
+        "tfpphotographers/apps/web/sentry.server.config.ts": [
+          25,
+          37
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "return ['http:', 'https:'].includes(parsed.protocol)",
+        "&& Boolean(parsed.username)",
+        "&& !['localhost', '127.0.0.1', '::1'].includes(parsed.hostname)"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/web/sentry.client.config.ts": [
+          14,
+          26
+        ],
+        "tfpphotographers/apps/web/sentry.server.config.ts": [
+          26,
+          38
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "compensation.hasInvalidRange",
+        "? t('create_pages.opportunity_budget_range_invalid')",
+        ": t('create_pages.opportunity_budget_invalid'),"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/web/src/pages/opportunities/[slug]/edit.astro": [
+          127,
+          139
+        ],
+        "tfpphotographers/apps/web/src/pages/opportunities/create.astro": [
+          99,
+          111
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "currentUser,",
+        "user,",
+        "portfolioImages,"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/web/src/pages/profile/[username].astro": [
+          99,
+          110
+        ],
+        "tfpphotographers/apps/web/src/utils/profile-page.ts": [
+          186,
+          197
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "let storageValue: string | null = null;",
+        "try {",
+        "storageValue = window.localStorage.getItem(OPTIONAL_CONSENT_STORAGE_KEY);"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/web/src/scripts/client/ga4-consent-loader.ts": [
+          33,
+          45
+        ],
+        "tfpphotographers/apps/web/src/scripts/client/optional-consent-preferences.ts": [
+          13,
+          25
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "try {",
+        "storageValue = window.localStorage.getItem(OPTIONAL_CONSENT_STORAGE_KEY);",
+        "} catch {"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/web/src/scripts/client/ga4-consent-loader.ts": [
+          34,
+          47
+        ],
+        "tfpphotographers/apps/web/src/scripts/client/optional-consent-preferences.ts": [
+          14,
+          27
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "storageValue = window.localStorage.getItem(OPTIONAL_CONSENT_STORAGE_KEY);",
+        "} catch {",
+        "storageValue = null;"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/web/src/scripts/client/ga4-consent-loader.ts": [
+          35,
+          48
+        ],
+        "tfpphotographers/apps/web/src/scripts/client/optional-consent-preferences.ts": [
+          15,
+          28
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "reasonOther: string;",
+        "moderationRejected: string;",
+        "moderationFlagged: string;"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/web/src/utils/admin-copy.ts": [
+          18,
+          29
+        ],
+        "tfpphotographers/apps/web/src/utils/admin-formatters.ts": [
+          30,
+          41
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "moderationRejected: string;",
+        "moderationFlagged: string;",
+        "aiApproved: string;"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/web/src/utils/admin-copy.ts": [
+          19,
+          30
+        ],
+        "tfpphotographers/apps/web/src/utils/admin-formatters.ts": [
+          31,
+          42
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "moderationFlagged: string;",
+        "aiApproved: string;",
+        "aiRejected: string;"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/web/src/utils/admin-copy.ts": [
+          20,
+          31
+        ],
+        "tfpphotographers/apps/web/src/utils/admin-formatters.ts": [
+          32,
+          43
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "aiApproved: string;",
+        "aiRejected: string;",
+        "aiFlagged: string;"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/web/src/utils/admin-copy.ts": [
+          21,
+          32
+        ],
+        "tfpphotographers/apps/web/src/utils/admin-formatters.ts": [
+          33,
+          44
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "aiRejected: string;",
+        "aiFlagged: string;",
+        "aiUnderReview: string;"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/web/src/utils/admin-copy.ts": [
+          22,
+          33
+        ],
+        "tfpphotographers/apps/web/src/utils/admin-formatters.ts": [
+          34,
+          45
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "aiFlagged: string;",
+        "aiUnderReview: string;",
+        "reportedLabel: string;"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/web/src/utils/admin-copy.ts": [
+          23,
+          34
+        ],
+        "tfpphotographers/apps/web/src/utils/admin-formatters.ts": [
+          35,
+          46
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "aiUnderReview: string;",
+        "reportedLabel: string;",
+        "queueLabels: {"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/web/src/utils/admin-copy.ts": [
+          24,
+          35
+        ],
+        "tfpphotographers/apps/web/src/utils/admin-formatters.ts": [
+          36,
+          47
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "reportedLabel: string;",
+        "queueLabels: {",
+        "pending: string;"
+      ],
+      "occurrences": {
+        "tfpphotographers/apps/web/src/utils/admin-copy.ts": [
+          25,
+          36
+        ],
+        "tfpphotographers/apps/web/src/utils/admin-formatters.ts": [
+          37,
+          48
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "export const APPROXIMATE_LOCATION_SOURCES = [",
+        "'cloudflare',",
+        "'vercel',"
+      ],
+      "occurrences": {
+        "tfpphotographers/packages/shared/src/location-context.native.ts": [
+          9,
+          22
+        ],
+        "tfpphotographers/packages/shared/src/location-context.ts": [
+          1,
+          14
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "'cloudflare',",
+        "'vercel',",
+        "'cloudfront',"
+      ],
+      "occurrences": {
+        "tfpphotographers/packages/shared/src/location-context.native.ts": [
+          10,
+          23
+        ],
+        "tfpphotographers/packages/shared/src/location-context.ts": [
+          2,
+          15
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "'vercel',",
+        "'cloudfront',",
+        "'netlify',"
+      ],
+      "occurrences": {
+        "tfpphotographers/packages/shared/src/location-context.native.ts": [
+          11,
+          24
+        ],
+        "tfpphotographers/packages/shared/src/location-context.ts": [
+          3,
+          16
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "'cloudfront',",
+        "'netlify',",
+        "'custom-edge',"
+      ],
+      "occurrences": {
+        "tfpphotographers/packages/shared/src/location-context.native.ts": [
+          12,
+          25
+        ],
+        "tfpphotographers/packages/shared/src/location-context.ts": [
+          4,
+          17
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "'netlify',",
+        "'custom-edge',",
+        "'ip-provider',"
+      ],
+      "occurrences": {
+        "tfpphotographers/packages/shared/src/location-context.native.ts": [
+          13,
+          26
+        ],
+        "tfpphotographers/packages/shared/src/location-context.ts": [
+          5,
+          18
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "'custom-edge',",
+        "'ip-provider',",
+        "'none',"
+      ],
+      "occurrences": {
+        "tfpphotographers/packages/shared/src/location-context.native.ts": [
+          14,
+          27
+        ],
+        "tfpphotographers/packages/shared/src/location-context.ts": [
+          6,
+          19
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "'ip-provider',",
+        "'none',",
+        "] as const;"
+      ],
+      "occurrences": {
+        "tfpphotographers/packages/shared/src/location-context.native.ts": [
+          15,
+          28
+        ],
+        "tfpphotographers/packages/shared/src/location-context.ts": [
+          7,
+          20
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "'none',",
+        "] as const;",
+        "export type ApproximateLocationSource = (typeof APPROXIMATE_LOCATION_SOURCES)[number];"
+      ],
+      "occurrences": {
+        "tfpphotographers/packages/shared/src/location-context.native.ts": [
+          16,
+          29
+        ],
+        "tfpphotographers/packages/shared/src/location-context.ts": [
+          8,
+          21
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "] as const;",
+        "export type ApproximateLocationSource = (typeof APPROXIMATE_LOCATION_SOURCES)[number];",
+        "export type ApproximateLocationContext = {"
+      ],
+      "occurrences": {
+        "tfpphotographers/packages/shared/src/location-context.native.ts": [
+          17,
+          30
+        ],
+        "tfpphotographers/packages/shared/src/location-context.ts": [
+          9,
+          22
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "export type ApproximateLocationSource = (typeof APPROXIMATE_LOCATION_SOURCES)[number];",
+        "export type ApproximateLocationContext = {",
+        "country: string | null;"
+      ],
+      "occurrences": {
+        "tfpphotographers/packages/shared/src/location-context.native.ts": [
+          19,
+          31
+        ],
+        "tfpphotographers/packages/shared/src/location-context.ts": [
+          11,
+          23
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "}",
+        "async extractExif(buffer: Buffer): Promise<ExifMetadata | null> {",
+        "try {"
+      ],
+      "occurrences": {
+        "tfpphotographers/packages/storage/src/adapters/BackblazeB2Adapter.ts": [
+          492,
+          505
+        ],
+        "tfpphotographers/packages/storage/src/adapters/LocalFilesystemAdapter.ts": [
+          353,
+          365
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "async extractExif(buffer: Buffer): Promise<ExifMetadata | null> {",
+        "try {",
+        "const metadata = await sharp(buffer).metadata();"
+      ],
+      "occurrences": {
+        "tfpphotographers/packages/storage/src/adapters/BackblazeB2Adapter.ts": [
+          494,
+          506
+        ],
+        "tfpphotographers/packages/storage/src/adapters/LocalFilesystemAdapter.ts": [
+          355,
+          366
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "'SENTRY_DSN',",
+        "'PUBLIC_SENTRY_DSN',",
+        "'SENTRY_AUTH_TOKEN',"
+      ],
+      "occurrences": {
+        "tfpphotographers/scripts/env/env-resolver.mjs": [
+          295,
+          306
+        ],
+        "tfpphotographers/scripts/env/setup-env.mjs": [
+          259,
+          270
+        ]
+      }
+    },
+    {
+      "lines_count": 12,
+      "snippet": [
+        "};",
+        "for (let index = 0; index < argv.length; index += 1) {",
+        "const token = argv[index];"
+      ],
+      "occurrences": {
+        "tfpphotographers/scripts/ops/prod-health-snapshot.mjs": [
+          44,
+          56
+        ],
+        "tfpphotographers/scripts/ops/prod-log-audit.mjs": [
+          52,
+          64
+        ]
+      }
+    }
+  ]
+}

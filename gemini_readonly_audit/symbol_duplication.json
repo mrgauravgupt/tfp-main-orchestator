@@ -1,0 +1,580 @@
+{
+  "detector_metadata": {
+    "scanner_type": "lexical_regex_symbol_export_scan",
+    "pattern": "export (?:async )?(?:function|class|type|interface|const|enum) <identifier>",
+    "production_files_scanned": 1157,
+    "test_files_excluded": 947
+  },
+  "multi_symbols": {
+    "CloudflareMediaPurger": [
+      [
+        "tfp-collage-service/src/adapters/cloudflareMediaPurger.ts",
+        3
+      ],
+      [
+        "tfpphotographers/packages/storage/src/adapters/CloudflareMediaPurger.ts",
+        4
+      ]
+    ],
+    "MediaPurger": [
+      [
+        "tfp-collage-service/src/ports/mediaPurger.ts",
+        1
+      ],
+      [
+        "tfpphotographers/packages/storage/src/interfaces.ts",
+        201
+      ]
+    ],
+    "ReportEntityType": [
+      [
+        "tfpphotographers/apps/api/src/modules/admin/admin-moderation-appeals.queries.ts",
+        4
+      ],
+      [
+        "tfpphotographers/apps/api/src/modules/admin/admin-reporting-entity.helpers.ts",
+        5
+      ],
+      [
+        "tfpphotographers/apps/api/src/modules/admin/admin-reporting-owner.helpers.ts",
+        4
+      ],
+      [
+        "tfpphotographers/apps/api/src/modules/admin/admin-reporting.queries.ts",
+        37
+      ],
+      [
+        "tfpphotographers/apps/api/src/modules/admin/admin.queries.ts",
+        11
+      ],
+      [
+        "tfpphotographers/apps/mobile/src/domain/entities.ts",
+        444
+      ],
+      [
+        "tfpphotographers/packages/config/src/report-contract.ts",
+        17
+      ]
+    ],
+    "ReportedEntityExists": [
+      [
+        "tfpphotographers/apps/api/src/modules/admin/admin-reporting.queries.ts",
+        992
+      ],
+      [
+        "tfpphotographers/apps/api/src/modules/shared/reported-entity.queries.ts",
+        6
+      ]
+    ],
+    "getAdminMfaStatus": [
+      [
+        "tfpphotographers/apps/api/src/modules/auth/auth.queries.ts",
+        38
+      ],
+      [
+        "tfpphotographers/apps/web/src/features/admin/server/admin-mfa-api.ts",
+        22
+      ]
+    ],
+    "requestEmailCode": [
+      [
+        "tfpphotographers/apps/api/src/modules/auth/email-code-auth.ts",
+        102
+      ],
+      [
+        "tfpphotographers/apps/mobile/src/infrastructure/api/api-content-session-operations.ts",
+        64
+      ]
+    ],
+    "verifyEmailCode": [
+      [
+        "tfpphotographers/apps/api/src/modules/auth/email-code-auth.ts",
+        158
+      ],
+      [
+        "tfpphotographers/apps/mobile/src/infrastructure/api/api-content-session-operations.ts",
+        81
+      ]
+    ],
+    "LocationSuggestion": [
+      [
+        "tfpphotographers/apps/api/src/modules/location/location.types.ts",
+        3
+      ],
+      [
+        "tfpphotographers/apps/mobile/src/application/content-repository.ts",
+        120
+      ]
+    ],
+    "getPrimaryImageSourceTypeForEntity": [
+      [
+        "tfpphotographers/apps/api/src/modules/moderation/application/entity-media-source.ts",
+        16
+      ],
+      [
+        "tfpphotographers/apps/api/src/modules/moderation/application/entity-media-source.ts",
+        17
+      ],
+      [
+        "tfpphotographers/apps/api/src/modules/moderation/application/entity-media-source.ts",
+        18
+      ]
+    ],
+    "ModerationOutcome": [
+      [
+        "tfpphotographers/apps/api/src/modules/moderation/domain/types.ts",
+        17
+      ],
+      [
+        "tfpphotographers/packages/moderation/src/raw-policy/types.ts",
+        1
+      ]
+    ],
+    "SavedSearchInput": [
+      [
+        "tfpphotographers/apps/api/src/modules/search/saved-search.commands.ts",
+        5
+      ],
+      [
+        "tfpphotographers/apps/mobile/src/application/content-repository.ts",
+        92
+      ]
+    ],
+    "CreationPolicyEntity": [
+      [
+        "tfpphotographers/apps/api/src/modules/shared/register-create-policy-route.ts",
+        5
+      ],
+      [
+        "tfpphotographers/packages/shared/src/creation-policy.ts",
+        44
+      ]
+    ],
+    "completeCreatorOnboarding": [
+      [
+        "tfpphotographers/apps/api/src/modules/user/creator-onboarding.ts",
+        40
+      ],
+      [
+        "tfpphotographers/apps/mobile/src/infrastructure/api/api-content-session-operations.ts",
+        101
+      ]
+    ],
+    "getNotificationPreferences": [
+      [
+        "tfpphotographers/apps/api/src/modules/user/user-activity.queries.ts",
+        164
+      ],
+      [
+        "tfpphotographers/apps/web/src/features/account/server/notification-preferences-api.ts",
+        14
+      ]
+    ],
+    "updateNotificationPreferences": [
+      [
+        "tfpphotographers/apps/api/src/modules/user/user.commands.ts",
+        28
+      ],
+      [
+        "tfpphotographers/apps/web/src/features/account/server/notification-preferences-api.ts",
+        27
+      ]
+    ],
+    "markNotificationsSeen": [
+      [
+        "tfpphotographers/apps/api/src/modules/user/user.notification.commands.ts",
+        3
+      ],
+      [
+        "tfpphotographers/apps/web/src/scripts/client/notification-seen.ts",
+        9
+      ]
+    ],
+    "appendVaryHeader": [
+      [
+        "tfpphotographers/apps/api/src/utils/response-headers.ts",
+        3
+      ],
+      [
+        "tfpphotographers/apps/web/src/utils/middleware-support.ts",
+        126
+      ]
+    ],
+    "slugify": [
+      [
+        "tfpphotographers/apps/api/src/utils/slug.ts",
+        8
+      ],
+      [
+        "tfpphotographers/apps/web/src/utils/routing.ts",
+        9
+      ]
+    ],
+    "QuickRequestStatus": [
+      [
+        "tfpphotographers/apps/mobile/src/domain/entities.ts",
+        104
+      ],
+      [
+        "tfpphotographers/packages/shared/src/api-contracts/quick-request.ts",
+        130
+      ]
+    ],
+    "QuickRequestInvitationStatus": [
+      [
+        "tfpphotographers/apps/mobile/src/domain/entities.ts",
+        105
+      ],
+      [
+        "tfpphotographers/packages/shared/src/api-contracts/quick-request.ts",
+        131
+      ]
+    ],
+    "QuickRequestInvitation": [
+      [
+        "tfpphotographers/apps/mobile/src/domain/entities.ts",
+        107
+      ],
+      [
+        "tfpphotographers/packages/shared/src/api-contracts/quick-request.ts",
+        135
+      ]
+    ],
+    "QuickRequestMessage": [
+      [
+        "tfpphotographers/apps/mobile/src/domain/entities.ts",
+        134
+      ],
+      [
+        "tfpphotographers/packages/shared/src/api-contracts/quick-request.ts",
+        136
+      ]
+    ],
+    "OpportunityApplicationStatus": [
+      [
+        "tfpphotographers/apps/mobile/src/domain/entities.ts",
+        331
+      ],
+      [
+        "tfpphotographers/packages/shared/src/application-status.ts",
+        9
+      ]
+    ],
+    "NotificationSummary": [
+      [
+        "tfpphotographers/apps/mobile/src/domain/entities.ts",
+        425
+      ],
+      [
+        "tfpphotographers/apps/web/src/utils/notifications-loader.ts",
+        7
+      ]
+    ],
+    "PortfolioImage": [
+      [
+        "tfpphotographers/apps/mobile/src/domain/entities.ts",
+        474
+      ],
+      [
+        "tfpphotographers/apps/web/src/utils/profile-page.ts",
+        51
+      ]
+    ],
+    "getCurrentUser": [
+      [
+        "tfpphotographers/apps/mobile/src/infrastructure/api/api-content-session-operations.ts",
+        44
+      ],
+      [
+        "tfpphotographers/apps/web/src/utils/current-user.ts",
+        95
+      ]
+    ],
+    "asRecord": [
+      [
+        "tfpphotographers/apps/mobile/src/infrastructure/api/api-value-primitives.ts",
+        1
+      ],
+      [
+        "tfpphotographers/apps/web/src/utils/api-fetch.ts",
+        275
+      ]
+    ],
+    "normalizeApiBaseUrl": [
+      [
+        "tfpphotographers/apps/mobile/src/infrastructure/http/api-client.ts",
+        64
+      ],
+      [
+        "tfpphotographers/packages/shared/src/api-version.ts",
+        13
+      ]
+    ],
+    "DropdownOption": [
+      [
+        "tfpphotographers/apps/mobile/src/presentation/components/Dropdown.tsx",
+        9
+      ],
+      [
+        "tfpphotographers/packages/shared/src/component-contracts.ts",
+        53
+      ]
+    ],
+    "styles": [
+      [
+        "tfpphotographers/apps/mobile/src/presentation/components/card-shared.tsx",
+        8
+      ],
+      [
+        "tfpphotographers/apps/mobile/src/presentation/screens/opportunity-screen-shared.tsx",
+        12
+      ],
+      [
+        "tfpphotographers/apps/mobile/src/presentation/screens/search-screen-styles.ts",
+        4
+      ]
+    ],
+    "LEGAL_CONTACTS": [
+      [
+        "tfpphotographers/apps/web/src/data/legal-registry.ts",
+        3
+      ],
+      [
+        "tfpphotographers/packages/shared/src/legal-compliance.ts",
+        3
+      ]
+    ],
+    "POST": [
+      [
+        "tfpphotographers/apps/web/src/pages/api/notifications/seen.json.ts",
+        7
+      ],
+      [
+        "tfpphotographers/apps/web/src/pages/api/opportunities/create.json.ts",
+        4
+      ],
+      [
+        "tfpphotographers/apps/web/src/pages/api/opportunities/finalize-upload.json.ts",
+        4
+      ],
+      [
+        "tfpphotographers/apps/web/src/pages/api/uploads/complete.json.ts",
+        4
+      ],
+      [
+        "tfpphotographers/apps/web/src/pages/api/uploads/file.json.ts",
+        31
+      ],
+      [
+        "tfpphotographers/apps/web/src/pages/api/uploads/presign.json.ts",
+        4
+      ],
+      [
+        "tfpphotographers/apps/web/src/pages/preferences/locale.ts",
+        67
+      ]
+    ],
+    "GET": [
+      [
+        "tfpphotographers/apps/web/src/pages/api/og/[type]/[slug].png.ts",
+        155
+      ],
+      [
+        "tfpphotographers/apps/web/src/pages/health.ts",
+        3
+      ],
+      [
+        "tfpphotographers/apps/web/src/pages/sitemap.xml.ts",
+        274
+      ],
+      [
+        "tfpphotographers/apps/web/src/pages/uploads/[...path].ts",
+        4
+      ]
+    ],
+    "isNavigationAbortError": [
+      [
+        "tfpphotographers/apps/web/src/scripts/client/telemetry-bootstrap.ts",
+        26
+      ],
+      [
+        "tfpphotographers/apps/web/src/scripts/telemetry.client.ts",
+        221
+      ]
+    ],
+    "formatRelativeTime": [
+      [
+        "tfpphotographers/apps/web/src/utils/admin-formatters.ts",
+        498
+      ],
+      [
+        "tfpphotographers/packages/shared/src/formatters.ts",
+        53
+      ]
+    ],
+    "formatDate": [
+      [
+        "tfpphotographers/apps/web/src/utils/format.ts",
+        10
+      ],
+      [
+        "tfpphotographers/packages/i18n/src/index.ts",
+        231
+      ]
+    ],
+    "OPPORTUNITY_CATEGORIES": [
+      [
+        "tfpphotographers/packages/config/src/config-sections.ts",
+        378
+      ],
+      [
+        "tfpphotographers/packages/shared/src/content-options.ts",
+        41
+      ]
+    ],
+    "parseCsv": [
+      [
+        "tfpphotographers/packages/config/src/env-core.ts",
+        21
+      ],
+      [
+        "tfpphotographers/packages/storage/scripts/backblaze-cors-policy.mjs",
+        3
+      ]
+    ],
+    "EventEntryFeeRule": [
+      [
+        "tfpphotographers/packages/config/src/env-core.ts",
+        286
+      ],
+      [
+        "tfpphotographers/packages/shared/src/contracts.ts",
+        56
+      ]
+    ],
+    "StorageProvider": [
+      [
+        "tfpphotographers/packages/config/src/env-core.ts",
+        294
+      ],
+      [
+        "tfpphotographers/packages/storage/src/interfaces.ts",
+        198
+      ]
+    ],
+    "ImageDeliveryProvider": [
+      [
+        "tfpphotographers/packages/config/src/env-core.ts",
+        295
+      ],
+      [
+        "tfpphotographers/packages/shared/src/image-delivery.ts",
+        65
+      ]
+    ],
+    "claimPendingOutboxRows": [
+      [
+        "tfpphotographers/packages/database/src/adapters/outbox-shared.ts",
+        51
+      ],
+      [
+        "tfpphotographers/packages/database/src/adapters/outbox-shared.ts",
+        56
+      ],
+      [
+        "tfpphotographers/packages/database/src/adapters/outbox-shared.ts",
+        61
+      ]
+    ],
+    "LocaleStrings": [
+      [
+        "tfpphotographers/packages/i18n/src/catalog-integrity.ts",
+        1
+      ],
+      [
+        "tfpphotographers/packages/i18n/src/index.ts",
+        24
+      ]
+    ],
+    "normalizeLocaleCode": [
+      [
+        "tfpphotographers/packages/i18n/src/index.ts",
+        114
+      ],
+      [
+        "tfpphotographers/packages/shared/src/localization.ts",
+        111
+      ]
+    ],
+    "crossPlatformDesignTokens": [
+      [
+        "tfpphotographers/packages/shared/src/design-tokens.ts",
+        3
+      ],
+      [
+        "tfpphotographers/scripts/design-tokens/sync.mjs",
+        22
+      ]
+    ],
+    "CrossPlatformDesignTokens": [
+      [
+        "tfpphotographers/packages/shared/src/design-tokens.ts",
+        463
+      ],
+      [
+        "tfpphotographers/scripts/design-tokens/sync.mjs",
+        24
+      ]
+    ],
+    "APPROXIMATE_LOCATION_SOURCES": [
+      [
+        "tfpphotographers/packages/shared/src/location-context.native.ts",
+        9
+      ],
+      [
+        "tfpphotographers/packages/shared/src/location-context.ts",
+        1
+      ]
+    ],
+    "ApproximateLocationSource": [
+      [
+        "tfpphotographers/packages/shared/src/location-context.native.ts",
+        19
+      ],
+      [
+        "tfpphotographers/packages/shared/src/location-context.ts",
+        11
+      ]
+    ],
+    "ApproximateLocationContext": [
+      [
+        "tfpphotographers/packages/shared/src/location-context.native.ts",
+        21
+      ],
+      [
+        "tfpphotographers/packages/shared/src/location-context.ts",
+        13
+      ]
+    ],
+    "normalizeOrigin": [
+      [
+        "tfpphotographers/packages/shared/src/request-security.ts",
+        20
+      ],
+      [
+        "tfpphotographers/packages/storage/scripts/backblaze-cors-policy.mjs",
+        10
+      ]
+    ],
+    "PresignedUploadResult": [
+      [
+        "tfpphotographers/packages/storage/src/interfaces.ts",
+        69
+      ],
+      [
+        "tfpphotographers/packages/uploads/src/index.ts",
+        110
+      ]
+    ]
+  }
+}
