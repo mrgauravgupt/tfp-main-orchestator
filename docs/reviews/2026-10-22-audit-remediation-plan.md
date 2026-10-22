@@ -71,3 +71,15 @@ auth/admin tests passed 45 methods. A separate compiled-package PostgreSQL probe
 passed actual OAuth lookup, logout session-version update and violation query,
 then removed only its fixtures. Old compiled-output sourcemap warnings before the
 package rebuild remain in the original test log; they are not runtime defects.
+
+### Phase 3 — shared behavior
+
+MIME primitives now have one pure uploads subpath, preserving general upload
+JPEG-prefix behavior, stricter image-only short buffers and PDF separation.
+Moderation owns appeal creation; admin/report exports are compatibility aliases
+and the member route calls the canonical command. Independent Cloudflare adapters
+share configuration/batching/transport/acknowledgement behavior and contract cases;
+existing error vocabularies remain compatible. No distribution package introduced.
+API tests passed 28 methods; full storage package passed 23; collage purge passed
+four. Upload build, API/collage types, affected lint and architecture gates passed.
+No real purge request, provider operation or authenticated business E2E was run.
