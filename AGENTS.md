@@ -1,5 +1,26 @@
 # Workspace-Wide Agent Notes
 
+## Current implementation candidate — 10 November 2026
+
+The resumed app review/remediation is published in product commits `9dcad5ef0`
+and `6cd4ddb23`, plus image-service commit `89eeee5`. The maintained source,
+validation and remaining-gate report is
+`tfpphotographers/docs/operations/IMPLEMENTATION_READINESS_2026_11_10.md`.
+Use its actual scopes; old strict-human certification is not inherited.
+
+Canonical local FE3000/API4000 and private AI/image workers use only the new
+task-owned `tfp_completion_local_20261110t093951z` database, selected through
+`TFP_DATABASE_NAME`. Its private runtime bindings and all original attempts are
+retained under `/private/tmp/tfp-completion-20261110T093951Z`. Existing developer,
+UAT and production databases were not reset. Native task resources are closed;
+local FE/BE stay running. No schedules were created and no deployment occurred.
+
+The user confirmed production hosts/values still need procurement. Do not ask
+again for their location, invent values or claim public launch readiness. The
+report retains production/signing/provider/backup/deployed-target and full native,
+accessibility, linguistic and deferred-feature limits. Deepmerge's installed-byte
+patch review expires 24 November 2026; do not silently renew its policy.
+
 ## All original failed slots pass; final image verified, launch gates remain open — 18 October 2026
 
 User resumed fixing everything and launch readiness; all scheduled tasks stay deleted.

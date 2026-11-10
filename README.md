@@ -4,6 +4,10 @@ This repository coordinates the **TFP (Time For Print) Creative Collaboration Pl
 
 Start with [how TFP works](tfpphotographers/docs/architecture/SYSTEM_GUIDE.md), the [documentation index](docs/README.md), or the [deep code/architecture audit and implementation plan](docs/reviews/2026-09-08-deep-architecture-audit-and-implementation-plan.md).
 
+The [10 November implementation readiness report](tfpphotographers/docs/operations/IMPLEMENTATION_READINESS_2026_11_10.md)
+lists the current fixes, executed package/runtime checks and remaining public
+release gates. Local validation does not establish public-launch readiness.
+
 The cross-repository AI handoff has one machine-readable source of truth:
 [`contracts/ai-outbox.schema.json`](contracts/ai-outbox.schema.json). It defines
 the durable request/result event names and payload discriminators shared by the

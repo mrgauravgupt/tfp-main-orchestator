@@ -1,5 +1,22 @@
 # Workspace Memory for Future Agents
 
+## Implementation candidate published — 10 November 2026
+
+Product `9dcad5ef0` plus patch-format metadata `6cd4ddb23`, and image-service
+`89eeee5`, close the current transactional correctness, shared-policy,
+pagination, runtime-context, retention, startup and dependency remediation batch.
+Actual checks and remaining gates have one maintained report:
+`tfpphotographers/docs/operations/IMPLEMENTATION_READINESS_2026_11_10.md`.
+
+Local FE3000/API4000 and the private services remain on the newly provisioned
+task database `tfp_completion_local_20261110t093951z`. Private runtime bindings,
+original failures, corrected results and reviewed browser/iOS/Android evidence:
+`/private/tmp/tfp-completion-20261110T093951Z`. Native temporary resources are
+closed and original Expo state verified. Unrelated root files remain untouched.
+No schedules, deployment or new full strict-human certificate followed.
+Production procurement remains user-deferred; preserve the report's explicit
+external, provider, signing, full-program and deferred-capability boundaries.
+
 ## All original failed slots pass; final image verified, launch gates remain open — 18 October 2026
 
 User resumed fixing everything and launch readiness; all scheduled tasks stay deleted.
