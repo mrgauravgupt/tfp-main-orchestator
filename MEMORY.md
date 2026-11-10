@@ -14,8 +14,10 @@ original failures, corrected results and reviewed browser/iOS/Android evidence:
 `/private/tmp/tfp-completion-20261110T093951Z`. Native temporary resources are
 closed and original Expo state verified. Unrelated root files remain untouched.
 No schedules, deployment or new full strict-human certificate followed.
-Production procurement remains user-deferred; preserve the report's explicit
-external, provider, signing, full-program and deferred-capability boundaries.
+Production host procurement remains user-deferred. The maintained
+[provider and service inventory](tfpphotographers/docs/operations/PROVIDER_AND_SERVICE_INVENTORY.md)
+records existing services, secure credential locations and pending operator
+decisions. Consult it before asking for provider inputs.
 
 ## All original failed slots pass; final image verified, launch gates remain open — 18 October 2026
 

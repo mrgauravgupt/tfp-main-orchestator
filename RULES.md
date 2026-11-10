@@ -3,11 +3,12 @@
 This is the concise operational rulebook for humans and AI agents working across the orchestrator and its nested repositories.
 
 The [10 November local implementation readiness report](tfpphotographers/docs/operations/IMPLEMENTATION_READINESS_2026_11_10.md)
-records the latest remediation and actual validation scopes. Its local candidate
-does not inherit historical strict-human or production certification. Production
-hosts/values remain to be procured. Use `TFP_DATABASE_NAME` through the canonical
-environment resolver for an explicitly provisioned isolated local database;
-never substitute or reset an existing database to make verification pass.
+records the latest candidate and the scope of its local validation. Check the maintained
+[provider and service inventory](tfpphotographers/docs/operations/PROVIDER_AND_SERVICE_INVENTORY.md)
+for confirmed resources, secure credential sources and pending production inputs.
+Use `TFP_DATABASE_NAME` through the canonical environment resolver to select an
+explicitly provisioned isolated local database for verification.
+Preserve existing databases during verification.
 
 ## Source of truth
 

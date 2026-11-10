@@ -1,5 +1,13 @@
 # Workspace-Wide Agent Notes
 
+## Provider and hosting decisions — 10 November 2026
+
+Read the [provider and service inventory](tfpphotographers/docs/operations/PROVIDER_AND_SERVICE_INVENTORY.md)
+before reviewing credentials, hosting, monitoring or launch procurement. It owns
+the confirmed services, secure configuration locations, verification scope and
+remaining work. Check those locations before requesting accounts or keys. The
+inventory supersedes earlier blanket procurement notes.
+
 ## Current implementation candidate — 10 November 2026
 
 The resumed app review/remediation is published in product commits `9dcad5ef0`
@@ -15,11 +23,10 @@ retained under `/private/tmp/tfp-completion-20261110T093951Z`. Existing develope
 UAT and production databases were not reset. Native task resources are closed;
 local FE/BE stay running. No schedules were created and no deployment occurred.
 
-The user confirmed production hosts/values still need procurement. Do not ask
-again for their location, invent values or claim public launch readiness. The
-report retains production/signing/provider/backup/deployed-target and full native,
-accessibility, linguistic and deferred-feature limits. Deepmerge's installed-byte
-patch review expires 24 November 2026; do not silently renew its policy.
+Production host procurement and remaining operator inputs are deferred. See the
+provider inventory for resources already available and the report for release
+gates. Deepmerge's installed-byte patch review expires 24 November 2026 and
+requires a new review before any extension.
 
 ## All original failed slots pass; final image verified, launch gates remain open — 18 October 2026
 

@@ -9,6 +9,7 @@ Start with [how the application works](../tfpphotographers/docs/architecture/SYS
 | Architecture ownership | [Canonical guide](../tfpphotographers/docs/CANONICAL_DOCS.md) |
 | Cross-service wire contract | [AI outbox JSON Schema](../contracts/ai-outbox.schema.json) |
 | Active UAT operations | [OCI deployment](operations/deploy.md) |
+| Existing providers, credential locations and production procurement | [Provider and service inventory](../tfpphotographers/docs/operations/PROVIDER_AND_SERVICE_INVENTORY.md) |
 | Security operations | [Deployment security](operations/SECURITY_DEPLOYMENT_README.md) |
 | Contributor tooling | [Tooling and validation entrypoints](../SKILLS.md) |
 
