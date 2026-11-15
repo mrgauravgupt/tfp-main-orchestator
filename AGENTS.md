@@ -8,6 +8,26 @@ the confirmed services, secure configuration locations, verification scope and
 remaining work. Check those locations before requesting accounts or keys. The
 inventory supersedes earlier blanket procurement notes.
 
+## App activity evidence — 15 November 2026
+
+Product commit `1b8b48fe0` adds shared API audit records for business actions,
+separate upload phase attribution, protective evidence holds, and private
+retention and export. Read the
+[investigation evidence runbook](tfpphotographers/docs/operations/INVESTIGATION_EVIDENCE.md)
+before changing capture, web proxy trust, upload processing, preservation,
+account erasure or retention. The provider inventory above still owns host and
+credential decisions.
+
+The isolated compiled web/API preview runs on ports 3104/4104 and uses
+`tfp_activity_local_20261114t105302z`. The runbook records the completed tests and
+the exact scope of browser proof. Both browser widths rendered the revised
+project after reload, and the corrected upload linked a single intent and three
+request IDs to identical bytes. Private receipts are under
+`/private/tmp/tfp-activity-evidence-fix-20261114-0y77llep`. Apply the evidence
+migrations before the API and worker. Production edge attribution and private
+storage retention remain target checks, and the local strict doctor still lists
+19 deferred production values.
+
 ## Current implementation candidate — 10 November 2026
 
 The resumed app review/remediation is published in product commits `9dcad5ef0`
