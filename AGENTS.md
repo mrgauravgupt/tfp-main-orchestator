@@ -1,5 +1,54 @@
 # Workspace-Wide Agent Notes
 
+## Readiness fixes and existing-account commissioning — 17 November 2026
+
+Read [the readiness fixes and validation report](tfpphotographers/docs/operations/READINESS_FIXES_2026_11_17.md)
+and canonical provider inventory before repeating checks. The explicit fix request
+superseded the historical documentation-only decision. Scoped production B2 media
+roles, a separate private SSE backup bucket/writer and operator-only maintenance
+credentials are configured. Backup completion/readback/download, minimum-three
+30-day pruning and interrupted retirement passed real B2 tests, including its
+scoped missing-object HEAD 403. Uploads and backups now share that exact-key
+absence check. Application evidence holds and media ownership remain authoritative;
+File Lock is disabled and software holds are not WORM.
+
+Wrangler access was renewed in Chrome with no broader scopes; account/zone/Worker
+reads passed. No TFP Worker was deployed. UAT Axiom now binds the existing `tfp-uat`
+dataset and a separate ingest-only replacement token; keep it for pre-launch
+monitoring verification under the existing account/quota. Actual Pino events were
+queried for UAT and production, including stored production secret/email redaction.
+Production Axiom credentials are unchanged. Ingest-token query/management denial
+is intentional; no management credential belongs in application runtime bindings.
+
+The new owned restored DB is `tfp_readiness_restore_test_20261116t191537`. A real
+B2 dump/download/restore verified 11 migrations, one held private original and its
+snapshot hashes. Prior provider DB/evidence were not reset. Private attempts,
+secure bindings, scope controls and visual receipts are under
+`/private/tmp/tfp-readiness-fixes-20261117-99p_suyc`. Preview API4137/Web3137/native-
+web3217 were task-owned; source, health, visual and cleanup identities are in that
+directory. Owned previews/browsers are stopped with all data retained.
+Catalogs remain canonical; actual native/web exports use their generated platform
+ports. Auth state is root-scoped and expiring; passwordless aliases stay intact.
+A guarded optional haptics helper fixes the observed Expo-web rejection.
+
+The local production doctor now has 12 deferred DB/legal/service-URL values.
+No purchases, paid plans, production deployment, route activation, scheduled jobs
+or Object Lock occurred. SES is only an optional future provider choice; no email
+adapter/provider change is part of this task. Read
+[storage portability and SSOT](tfpphotographers/docs/operations/STORAGE_PORTABILITY_AND_SSOT.md)
+for the completed scoped review and verified copy/configuration cutover rules.
+API/web/adapter URL mapping, default upload keys, client headers and storage CSP
+origins share canonical owners. Storage listing aggregates pages; legal retention
+requests hidden history before existing ownership/hold-gated retirement. Local
+filesystem failures propagate. Private downloads sign the shared no-store policy.
+The storage doctor requires SHA/copy/download/cleanup proof and exits nonzero on
+failure. Actual B2 hidden-version/marker retirement passed. No schema, moderation
+policy or queue replacement occurred. Compatible S3 copying is supported; arbitrary
+provider/version-history migration and physical-device/host certification are not
+inferred. Final workspace types/lint/build, 59 storage + 13 backup methods,
+808 mobile, 254 shared, 140 i18n and scoped legal/CORS/CSP/browser checks passed.
+The new legal test DB is tfp_storage_test_20261116t203810; existing data were not reset.
+
 ## Provider setup deferred; documentation only — 16 November 2026
 
 The operator selected **“Documentation only for now.”** Read the

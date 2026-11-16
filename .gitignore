@@ -22,3 +22,7 @@ tfp-legacy/
 *.jpg
 *.jpeg
 JUNK/
+
+# Operator-only provider administration; never application runtime configuration.
+.env.b2-admin.local
+.env.backup-maintenance.production.local
