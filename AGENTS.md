@@ -1,5 +1,31 @@
 # Workspace-Wide Agent Notes
 
+## Live provider validation and B2 retirement — 16 November 2026
+
+Read the [live provider validation report](tfpphotographers/docs/operations/LIVE_PROVIDER_VALIDATION_2026_11_16.md)
+and canonical provider inventory before repeating provider checks or changing S3
+lookup/deletion. Product source `f4550422d` and image-service source `1b33ab7`
+fix scoped missing-object HEAD 403 recovery and exact-key historical-version
+retirement. Complete authorized listing is required to establish absence;
+version/delete-marker listing, deletion and verification share a deadline. Existing
+ownership/reference transactions and private evidence holds remain authoritative.
+
+Actual UAT B2 + local workerd + real OpenRouter/Python/application processing,
+checksums, audit integrity and held evidence passed. Real canonical Cloudflare
+cache/purge, four Sentry DSN acknowledgements and production Axiom ingestion passed.
+UAT Axiom still returns 401; production Axiom query returns 403. The supplied
+Cloudflare purge token did not authorize Worker-management reads. Production B2
+role/backup bindings and six legal values remain operator/account work; a host does
+not resolve them. B2 File Lock is disabled: application holds are not WORM proof.
+
+Fresh database `tfp_provider_test_20261116t014523` and held harmless evidence are
+preserved. Only owned API/workerd and AI probe processes were gracefully stopped;
+existing previews were not restarted. Private original failures, passing receipts
+and source manifests are under `/private/tmp/tfp-providers-live-20261116-aOBYuHEu`.
+The report distinguishes final-source provider proof, focused tests and the older
+preview's render-only browser smoke. Feature branches were published; no production
+deployment, route/policy change, key rotation or scheduled job occurred.
+
 ## Provider and hosting decisions — 10 November 2026
 
 Read the [provider and service inventory](tfpphotographers/docs/operations/PROVIDER_AND_SERVICE_INVENTORY.md)
