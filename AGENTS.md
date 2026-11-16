@@ -1,5 +1,24 @@
 # Workspace-Wide Agent Notes
 
+## Provider setup deferred; documentation only — 16 November 2026
+
+The operator selected **“Documentation only for now.”** Read the
+[maintained setup/cost plan and approval record](tfpphotographers/docs/operations/PROVIDER_SETUP_AND_COST_PLAN_2026_11_16.md)
+before acting on the earlier provider recommendations. It is linked from the
+canonical inventory, product agent notes and agent index. No setup or backup fix
+was authorized: do not create keys/buckets, refresh OAuth, repair Axiom bindings,
+change backup code/retention, run provider write tests or activate schedules from
+this proposal. A later explicit user instruction is required. Paid upgrades,
+region moves, Object Lock and production route activation remain excluded.
+
+Read-only checks found an expired Worker-scoped Wrangler OAuth cache and existing
+B2 administration capabilities; they did not establish working Worker access.
+Axiom still needs account authorization. The backup selector can accept an orphan
+dump; a 30-day parameter alone does not implement expiry. Both gaps remain open.
+The proposed six-hour/30-day/minimum-three policy is not installed. Preserve
+existing provider/runtime credentials, application evidence holds and prior
+validation scopes. Only documentation and its discovery links change here.
+
 ## Live provider validation and B2 retirement — 16 November 2026
 
 Read the [live provider validation report](tfpphotographers/docs/operations/LIVE_PROVIDER_VALIDATION_2026_11_16.md)
