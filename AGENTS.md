@@ -18,11 +18,12 @@ existing i18n/link owners. Focused compiled FE3138/API4138 validation used only 
 new copied local DB. Owned sessions/processes are closed; source DB, original
 previews and all receipts remain preserved. No production deployment occurred.
 
-The [independent human-E2E review](tfpphotographers/docs/operations/HUMAN_E2E_REVIEW_2026_11_17.md)
-records five test/ledger findings in the separate uncommitted E2E additions.
-Static guard/type/156 harness passes are not browser proof. Those eight files
-were reviewed read-only and are excluded from the UI/docs transaction. Preserve
-raw audit artifacts, authentication data and unrelated working changes.
+The [human E2E review and local execution record](tfpphotographers/docs/operations/HUMAN_E2E_REVIEW_2026_11_17.md)
+records the five corrected findings and four case contracts. The isolated local
+runs passed four flows each in Chromium, Firefox and mobile Chromium with zero
+retries from product `2cda931dc`. The report links the frozen contexts, earlier
+failed attempts and actual leaf results. The runtime was local TEST and its
+owned services are closed. The other proposed E2E edits remain unstaged.
 
 ## Readiness fixes and existing-account commissioning — 17 November 2026
 
