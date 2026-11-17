@@ -1,5 +1,29 @@
 # Workspace-Wide Agent Notes
 
+## Production handoff and supported UI fixes — 17 November 2026
+
+The canonical [provider inventory ownership table](tfpphotographers/docs/operations/PROVIDER_AND_SERVICE_INVENTORY.md#production-inputs-and-setup-ownership--17-november-2026)
+now lists all twelve pending production settings: six technical values we can
+configure during host setup and six legal values requiring operator approval.
+It records remaining host/access, alert-recipient, legal/contact and go-live
+inputs. Completed B2/provider fixture work must not be relabelled as pending;
+host schedules/commissioning remain open. Existing email stays Resend; no SES
+adapter, provider purchase or paid plan was introduced.
+
+Read the [UI audit reconciliation and fixes](tfpphotographers/docs/operations/UI_AUDIT_REVIEW_2026_11_17.md)
+before inheriting `run-20261117-01` coverage claims. The operator subsequently
+authorized supported fixes: consent reserves page space beneath navigation,
+profile reporting stays in the action grid, and gallery/activity copy reuses
+existing i18n/link owners. Focused compiled FE3138/API4138 validation used only a
+new copied local DB. Owned sessions/processes are closed; source DB, original
+previews and all receipts remain preserved. No production deployment occurred.
+
+The [independent human-E2E review](tfpphotographers/docs/operations/HUMAN_E2E_REVIEW_2026_11_17.md)
+records five test/ledger findings in the separate uncommitted E2E additions.
+Static guard/type/156 harness passes are not browser proof. Those eight files
+were reviewed read-only and are excluded from the UI/docs transaction. Preserve
+raw audit artifacts, authentication data and unrelated working changes.
+
 ## Readiness fixes and existing-account commissioning — 17 November 2026
 
 Read [the readiness fixes and validation report](tfpphotographers/docs/operations/READINESS_FIXES_2026_11_17.md)
