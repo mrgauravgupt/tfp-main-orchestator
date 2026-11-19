@@ -1,6 +1,6 @@
 # Human-like E2E flows pending
 
-Updated: 19 November 2026 20:48:13 IST.
+Updated: 19 November 2026 21:00:40 IST.
 
 ## Scope and rules
 
@@ -9,15 +9,18 @@ Updated: 19 November 2026 20:48:13 IST.
 - **Email-delivery checks are deferred:** 7 canonical cases; no inbox checks or real test emails.
 - Eight previously tested user-facing journeys remain covered by their original evidence and are excluded from this remaining-flow run.
 - Use visible product controls, shared workflow helpers and existing exact read-only DB checks. Preserve data, held evidence and every original failed attempt. **Do not deploy.**
+- **UI fixes are included:** inspect actual desktop/tablet/mobile evidence during these journeys, fix confirmed layout/interaction problems through existing shared components, design tokens and i18n, then verify the affected screen and flow. Admin UI stays deferred.
 - This file tracks actual execution. The [canonical case ledger](tfpphotographers/tests/e2e/human/use-case-coverage.json) owns requirements and implementation status; this tracker does not replace it.
 - Frozen runtime source: `42d46dadc182d3c0871f7bdc4b2f987c2e4e1557`. Later workspace changes before this task were documentation/comment only.
 - Status starts at **Pending** and changes only after the actual test finishes. A failed run remains linked when a corrected attempt passes.
+- The current-task updater reads actual completed Playwright leaf results every two seconds. Discovery, startup, screenshots and an active browser do not count as a pass.
+- The fresh-sign-in security journey naturally waits the canonical ten-minute window; it stays Pending during that wait. No shortened timer or authentication bypass certifies that behavior.
 
 ## Progress
 
 | Browser | Passed | Failed | Pending |
 | --- | ---: | ---: | ---: |
-| Chromium | 0 | 0 | 93 |
+| Chromium | 5 | 0 | 88 |
 | Firefox | 0 | 0 | 93 |
 | Mobile Chromium | 0 | 0 | 93 |
 
@@ -48,8 +51,8 @@ Updated: 19 November 2026 20:48:13 IST.
 | 19 | [pre-fills recipient creative context when navigating from creator profile CTA](tfpphotographers/tests/e2e/human/quick-request-lifecycle.human.spec.ts:227)<br>WEB-E2E-QR-010 | ⬜ Pending | ⬜ Pending | ⬜ Pending |
 | 20 | [validates inverted budget range and creates paid quick request with explicit currency terms](tfpphotographers/tests/e2e/human/quick-request-lifecycle.human.spec.ts:261)<br>WEB-E2E-QR-012 | ⬜ Pending | ⬜ Pending | ⬜ Pending |
 | 21 | [expands creative invitations from quick request detail view](tfpphotographers/tests/e2e/human/quick-request-lifecycle.human.spec.ts:351)<br>WEB-E2E-QR-014 | ⬜ Pending | ⬜ Pending | ⬜ Pending |
-| 22 | [redirects an existing authenticated session away from login](tfpphotographers/tests/e2e/human/auth-profile.human.spec.ts:20)<br>WEB-E2E-AUTH-013 | ⬜ Pending | ⬜ Pending | ⬜ Pending |
-| 23 | [protects private routes and uses only the OTP bridge for authentication](tfpphotographers/tests/e2e/human/auth-profile.human.spec.ts:33)<br>WEB-E2E-AUTH-004, WEB-E2E-AUTH-001 | ⬜ Pending | ⬜ Pending | ⬜ Pending |
+| 22 | [redirects an existing authenticated session away from login](tfpphotographers/tests/e2e/human/auth-profile.human.spec.ts:20)<br>WEB-E2E-AUTH-013 | ✅ Passed (a2) | ⬜ Pending | ⬜ Pending |
+| 23 | [protects private routes and uses only the OTP bridge for authentication](tfpphotographers/tests/e2e/human/auth-profile.human.spec.ts:33)<br>WEB-E2E-AUTH-004, WEB-E2E-AUTH-001 | ✅ Passed (a2) | ⬜ Pending | ⬜ Pending |
 | 24 | [completes new creator onboarding through the visible signup form](tfpphotographers/tests/e2e/human/auth-profile.human.spec.ts:47)<br>WEB-E2E-AUTH-003 | ⬜ Pending | ⬜ Pending | ⬜ Pending |
 | 25 | [edits a profile, uploads real media, and revokes both browser sessions through visible logout](tfpphotographers/tests/e2e/human/auth-profile.human.spec.ts:145)<br>WEB-E2E-AUTH-006, WEB-E2E-AUTH-007 | ⬜ Pending | ⬜ Pending | ⬜ Pending |
 | 26 | [persists professional metadata, secondary roles, specialties, experience and service area](tfpphotographers/tests/e2e/human/auth-profile.human.spec.ts:196)<br>WEB-E2E-PRO-005 | ⬜ Pending | ⬜ Pending | ⬜ Pending |
@@ -98,9 +101,9 @@ Updated: 19 November 2026 20:48:13 IST.
 | 69 | [blocks and unblocks a conversation partner through messaging safety controls](tfpphotographers/tests/e2e/human/messaging-notifications.human.spec.ts:238)<br>WEB-E2E-MSG-005, WEB-E2E-MSG-006, WEB-E2E-MSG-007, WEB-E2E-MSG-008 | ⬜ Pending | ⬜ Pending | ⬜ Pending |
 | 70 | [filters notification feed by category and navigates to target deep link](tfpphotographers/tests/e2e/human/messaging-notifications.human.spec.ts:355)<br>WEB-E2E-NOTIF-005 | ⬜ Pending | ⬜ Pending | ⬜ Pending |
 | 71 | [verifies observable referral code copy, print poster preview, and WhatsApp sharing format](tfpphotographers/tests/e2e/human/referral-lifecycle.human.spec.ts:88)<br>WEB-E2E-REF-003 | ⬜ Pending | ⬜ Pending | ⬜ Pending |
-| 72 | [keeps password-recovery aliases on the OTP-only authentication flow](tfpphotographers/tests/e2e/human/account-security.human.spec.ts:18)<br>WEB-E2E-SEC-001 | ⬜ Pending | ⬜ Pending | ⬜ Pending |
-| 73 | [requires a fresh sign-in after the real account-deletion authentication window expires](tfpphotographers/tests/e2e/human/account-security.human.spec.ts:135)<br>WEB-E2E-SEC-007 | ⬜ Pending | ⬜ Pending | ⬜ Pending |
-| 74 | [blocks authenticated non-admin creator from contest creation by policy gate](tfpphotographers/tests/e2e/human/account-security.human.spec.ts:256)<br>WEB-E2E-SEC-006 | ⬜ Pending | ⬜ Pending | ⬜ Pending |
+| 72 | [keeps password-recovery aliases on the OTP-only authentication flow](tfpphotographers/tests/e2e/human/account-security.human.spec.ts:18)<br>WEB-E2E-SEC-001 | ✅ Passed (a2) | ⬜ Pending | ⬜ Pending |
+| 73 | [requires a fresh sign-in after the real account-deletion authentication window expires](tfpphotographers/tests/e2e/human/account-security.human.spec.ts:135)<br>WEB-E2E-SEC-007 | ✅ Passed (a2) | ⬜ Pending | ⬜ Pending |
+| 74 | [blocks authenticated non-admin creator from contest creation by policy gate](tfpphotographers/tests/e2e/human/account-security.human.spec.ts:256)<br>WEB-E2E-SEC-006 | ✅ Passed (a2) | ⬜ Pending | ⬜ Pending |
 | 75 | [renders every standalone trust document and system surface without a server failure](tfpphotographers/tests/e2e/human/route-access-seo.human.spec.ts:4)<br>WEB-E2E-PUB-013 | ⬜ Pending | ⬜ Pending | ⬜ Pending |
 | 76 | [renders controlled 404 and 500 documents with non-indexable metadata](tfpphotographers/tests/e2e/human/route-access-seo.human.spec.ts:55)<br>WEB-E2E-PUB-014 | ⬜ Pending | ⬜ Pending | ⬜ Pending |
 | 77 | [keeps disabled OAuth provider routes inside the controlled sign-in experience](tfpphotographers/tests/e2e/human/route-access-seo.human.spec.ts:73)<br>WEB-E2E-PUB-015 | ⬜ Pending | ⬜ Pending | ⬜ Pending |
@@ -181,3 +184,9 @@ Updated: 19 November 2026 20:48:13 IST.
 - **chromium-api-a1** — setup failed before journey execution; source `42d46dadc`; original report: `/private/tmp/tfp-remaining-human-20261119-ij86rdi6/chromium-api-a1`.
 - **chromium-api-a2** — running; source `42d46dadc`; original report: `/private/tmp/tfp-remaining-human-20261119-ij86rdi6/chromium-api-a2`.
 <!-- actual-flow-results:end -->
+
+## UI issues discovered during testing
+
+| Affected journey/screen | Confirmed UI issue | Fix/status | Actual verification evidence |
+| --- | --- | --- | --- |
+| — | No confirmed issue recorded yet; inspection continues as journeys run. | Pending inspection | Account-deletion precondition screen visually reviewed; this alone is not a completed flow. |
