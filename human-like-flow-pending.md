@@ -1,8 +1,28 @@
 # Human-like E2E flow tracker
 
-Updated: 19 November 2026 23:55:58 IST.
+Updated: 20 November 2026. The original matrix was reconciled on 19 November 2026 at 23:55:58 IST.
 
-## Scope and rules
+## Responsive web report follow-up — 20 November 2026
+
+The original 93-journey matrix below retains its recorded sources and attempts.
+This focused follow-up tests the shared gallery entrance fix from
+`b2894753b642f95e1dd61ddc073416e84f81e1cf`; it does not restamp the old matrix.
+The [cause, SSOT owners and actual validation record](tfpphotographers/docs/operations/MOBILE_REPORT_CLICK_FIX_2026_11_20.md)
+retain the original missed click and every failed diagnostic attempt.
+
+| Journey | Chromium | Firefox | Mobile Chromium |
+| --- | --- | --- | --- |
+| WEB-E2E-OPP-027 — participant image report, reopen, duplicate and exact saved DB values | ✅ Passed | ✅ Passed | ✅ Passed |
+| WEB-E2E-EVT-014 — 13-photo paging, exact lightbox and image report | ✅ Passed | ✅ Passed | ✅ Passed |
+| WEB-E2E-PRO-011 — role portfolio, public lightbox and exact image report | ✅ Passed | ✅ Passed | ✅ Passed |
+| WEB-E2E-PUB-028 — keyboard application/report and focus recovery | ✅ Passed | ✅ Passed | ✅ Passed |
+
+Zero retries; only completed leaves change these statuses. Admin/email stay
+deferred. Data, held evidence and prior attempts remain preserved. No deployment.
+Phase 1 covers web, including responsive browser layouts. Native iOS/Android
+work is reserved for Phase 2; `mobile-chromium` is browser emulation only.
+
+## Original 93-journey scope and rules
 
 - **93 remaining journeys × 3 browser projects = 279 execution slots.**
 - **Admin journeys are deferred:** 20 admin/mixed-admin declarations, including winner-management flows.
@@ -16,7 +36,7 @@ Updated: 19 November 2026 23:55:58 IST.
 - During execution, the task updater read actual completed Playwright leaves every two seconds. The updater is now stopped after terminal reconciliation. Discovery, startup, screenshots and an active browser never count as a pass.
 - The fresh-sign-in security journey naturally waits the canonical ten-minute window; it stays Pending during that wait. No shortened timer or authentication bypass certifies that behavior.
 
-## Progress
+## Original 93-journey progress
 
 | Browser | Passed | Failed | Pending |
 | --- | ---: | ---: | ---: |
@@ -24,7 +44,7 @@ Updated: 19 November 2026 23:55:58 IST.
 | Firefox | 93 | 0 | 0 |
 | Mobile Chromium | 93 | 0 | 0 |
 
-## Remaining journeys
+## Original 93-journey matrix
 
 **Legend:** ⬜ Pending · ✅ Passed · ❌ Failed · ⏸ Blocked. A journey is complete after all three browser slots pass.
 
