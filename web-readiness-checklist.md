@@ -1,6 +1,6 @@
 # ✅ TFP Web — readiness and pending verification checklist
 
-**Reviewed and expanded: 20 November 2026 (IST). Phase 1: web. Phase 2: native mobile.**
+**Reviewed and implemented locally: 20–21 November 2026 (IST). Phase 1: web. Phase 2: native mobile.**
 
 This is the work checklist for a defensible web release, not a promise of zero
 future bugs. It separates confirmed tooling/configuration problems, uncompleted
@@ -11,7 +11,7 @@ The follow-up review identified eight areas needing explicit acceptance checks.
 [Section 6](#follow-up-findings) records each finding,
 existing implementation/test owners and completion evidence.
 [Section 7](#execution-plan) gives the execution order. These additions are
-pending work; documenting them does not mark them implemented or tested.
+tracked acceptance work. The [implementation and actual-results record](tfpphotographers/docs/operations/WEB_READINESS_BATCH_2026_11_20.md) distinguishes completed local fixes from remaining release gates.
 [Section 8](#public-user-e2e-gaps) records the subsequent public-user E2E
 reconciliation and eight specific scenario additions/refinements. Existing
 domain/API coverage is distinguished from missing strict-human execution.
@@ -23,17 +23,19 @@ domain/API coverage is distinguished from missing strict-human execution.
 - **Providers, secure configuration and operator inputs:** the [provider inventory](tfpphotographers/docs/operations/PROVIDER_AND_SERVICE_INVENTORY.md).
 - **This file:** remaining release tasks and acceptance evidence. It does not replace those owners or maintain another set of per-case pass/fail results. Update the journey tracker first when a flow completes, then link its actual receipt here.
 
-The source inspected was product `73c4267d697219a07f2099e140d6bb0ae0272ac0`;
-the latest application/test change is `b2894753b642f95e1dd61ddc073416e84f81e1cf`.
-The intervening product commit changes documentation only.
+The original read-only review inspected `73c4267d697219a07f2099e140d6bb0ae0272ac0`.
+This implementation batch ends at application/test source
+`1e1476e19339b161ef0557ebec0439ef0d4339e1`. Its intermediate candidates and
+original failed attempts remain recorded separately; documentation publication
+does not restamp them.
 
 | Current fact | Verified boundary |
 | --- | --- |
-| 200 canonical cases | 193 marked implemented; 7 delivered-email cases blocked. Implementation status is not a runtime pass. |
-| 121 executable journey groups in 28 specs | All reconcile to the existing tracker: 93 remaining groups, 8 previously covered groups and 20 operator-deferred admin/mixed-admin groups. No unclassified declaration was found in this reconciliation. |
+| 207 canonical cases | 200 implemented; 7 delivered-email cases blocked. Four new fixture-dependent cases remain local-only. Implementation status is not a runtime pass. |
+| 128 executable journey groups in 29 specs | 108 ordinary/public declarations and 20 deferred admin/mixed-admin declarations. The original 93 + 8 matrix remains historical; this batch adds seven declarations and extends existing ones. |
 | Earlier member journeys | The 93-group matrix has passing source-specific evidence per browser; 8 earlier groups retain their prior evidence. This is not a single complete current-revision run. |
 | Latest reporting fix | 12/12 selected executions passed on the same application candidate: four each in Chromium, Firefox and responsive Chromium, zero retries; six exact DB receipts and 144 retained captures. See the [reporting record](tfpphotographers/docs/operations/MOBILE_REPORT_CLICK_FIX_2026_11_20.md). |
-| Latest affected local validation | 919 web tests, 9 PostgreSQL persistence methods, 202 safe harness checks, types, lint and build passed at their recorded scopes. |
+| Batch lower-level validation | Full API 1,516/1,516 at `70c1925d3`; later frontend/harness candidates have their own selected 73-method prerequisites, including ten exact DB checks. Web 915 + 4 separately after disk recovery; safe harness 245/245. Final affected image/location checks, types/lint and frozen web build passed. These are scoped results. |
 | Production configuration | The local read-only strict doctor was rerun for this checklist: exit 1, exactly 12 unresolved settings, listed below. This is not an observation of a deployed host. |
 
 **Do not reopen completed work as missing:** B2 media roles/private backup bucket,
@@ -42,29 +44,56 @@ repair, monitoring ingestion and shared upload/storage URL ownership already hav
 documented proof. Their future host activation remains separate. Existing email
 is Resend; no SES adapter, new paid plan or replacement provider is required here.
 
-## 🔧 1. Confirmed work we can address before buying a host
+## ✅ Local batch completion — 21 November 2026
 
-- [ ] **Repair moderation/autofix CI database setup.** The [retained CI run](https://github.com/mrgauravgupt/tfpphotographers.com/actions/runs/44353597837) stopped before regression tests because the database bootstrap tried admin role `postgres`, while its service is configured with `tfp_user`. Align the existing canonical admin/owner/password bindings in [the workflow](tfpphotographers/.github/workflows/moderation-autofix-regression.yml) with [database provisioning](tfpphotographers/scripts/db/ensure-env-database.sh). Acceptance: an isolated CI database is provisioned and actual regression methods execute; a typecheck/catalog-only pass does not close this.
-- [ ] **Bind existing CI access securely.** Repository-level Actions secret-name metadata currently lists only `TFP_CI_OPENROUTER_API_KEY`. The current [strict-human workflow](tfpphotographers/.github/workflows/strict-human-e2e.yml) also requires `GEOAPIFY_API_KEY` and `TFP_CROSS_REPO_READ_TOKEN`. Reuse the existing provider key and approved private-repository access; inspect organization/environment scope before requesting any new credential. Also verify secret visibility for the admitted PR/workflow context: the older [CI run](https://github.com/mrgauravgupt/tfpphotographers.com/actions/runs/44353597786) failed its secret preflight before browser execution. Acceptance: real auxiliary checkouts and browser methods execute, with the guard intact.
-- [ ] **Resolve the unsupported Dependency Review CI action without buying a plan.** The [job in the retained security run](https://github.com/mrgauravgupt/tfpphotographers.com/actions/runs/44353597780) reported that dependency review was unsupported for this repository. Confirm available account features and select a supported free check or documented equivalent using existing audits. Keep dependency/security enforcement; do not silently remove it or purchase GitHub security features.
-- [ ] **Update authenticated performance measurement to the existing OTP flow.** [The measurement helper](tfpphotographers/scripts/qa/page-performance-report.mjs) still posts email/password to `/auth/login`; [the API](tfpphotographers/apps/api/src/modules/auth/auth.routes.ts) registers that legacy endpoint only under `NODE_ENV === 'test'`. Public anonymous measurements remain usable; authenticated production-like measurement needs the existing supported session/OTP path, bounded redacted failures and a regression check. Do not add a production password endpoint or bypass authentication.
-- [ ] **Review the dated dependency safeguards before launch or expiry.** [The checked-in policy](tfpphotographers/scripts/security/local-patch-policy.json) expires Deepmerge review on **24 November 2026** and Picomatch review on **2 December 2026**. Review upstream fixes and rerun installed-byte safeguards plus the production audit on the final candidate. Do not extend dates or add blanket advisory exceptions just to pass.
+All **12 affected journeys × 3 web browsers = 36 slots** have passing actual
+source-specific evidence: **39 exact DB receipts, 252 retained captures, zero
+retries**. Mobile web passed 12/12 on `1e1476e19`; Chromium/Firefox use their
+recorded original and failed-only attempts. The [current journey table](human-like-flow-pending.md#readiness-batch-20261120)
+and [batch report](tfpphotographers/docs/operations/WEB_READINESS_BATCH_2026_11_20.md)
+retain sources, original failures and commands. This does not certify the full
+108-declaration current-source member matrix or the full release aggregate.
 
-These are verification/tooling/configuration tasks, not evidence of a newly found
-member-facing production outage. The referenced hosted runs are from 18 November
-on older source `221cd70d4c11783b2424e48b6f4c2cd1af664772`; they are not runs of the
-latest reporting candidate. Current workflow/source inspection confirms the
-remaining setup paths described above.
+Confirmed fixes include homepage count/unread freshness, localized 500 Retry,
+bounded location permission/manual recovery and empty-gallery-image handling.
+The eight public coverage gaps below are closed at their affected local scopes.
+Shared workflow, location, URL/cache and read-only persistence owners remain SSOT.
+Storage, checksums, attribution, moderation and evidence holds are unchanged.
+
+Safe cleanup removed 42 verified rebuildable TFP/PulseTrade cache directories
+(3.24 GiB logical). Sources, DBs/trading ledgers, media, held evidence, releases,
+active PulseTrade and manual FE3000/API4000 remain preserved. Both manual health
+endpoints returned HTTP 200. Owned test services/cluster are stopped; data remain.
+
+**Still open:** scoped hosted-CI repository access; final-source full acceptance,
+production-artifact/security/restart and supported-browser/AT/timezone review;
+operator legal/contact decisions and host commissioning. Admin/email remain
+deferred and native is Phase 2. The final read-only production doctor still
+reports the same 12 settings. No purchase, paid upgrade or deployment occurred.
+
+## 🔧 1. Work before buying a host — implemented and remaining CI access
+
+- [x] **Repair moderation/autofix CI database bindings.** The workflow now supplies the canonical admin role, owner, password and shadow URL matching its Postgres service. The owned local database bootstrap and actual API/regression execution passed. A hosted run of this changed workflow is still unverified; do not replace the retained failed run with a green claim.
+- [ ] **Complete secure CI repository access.** The existing Geoapify key is now bound as `GEOAPIFY_API_KEY`; `TFP_CI_OPENROUTER_API_KEY` already exists. `TFP_CROSS_REPO_READ_TOKEN` remains absent. The private user-owned repository has no organization/environment credential supplying it. Provide approved contents-read-only access to the existing AI/image repositories; do not copy the broad personal local credential into Actions. Real auxiliary checkouts and hosted browser execution remain the acceptance gate.
+- [x] **Replace unsupported paid Dependency Review.** Every PR retains the supported whole production-tree vulnerability audit, frozen install, installed-byte safeguards and Gitleaks. The unsupported duplicate paid action is removed. This does not claim differential/license review. Local frozen-install checks and production audit passed; no purchase or paid feature activation occurred.
+- [x] **Repair OTP-compatible authenticated performance tooling.** Use a private `--storage-state` exported after normal OTP login, read-only `/auth/me` verification and redacted failures. Two actual HTTP/cookie/private-file methods passed; the anonymous two-page CLI smoke ran successfully. Real authenticated measurements remain deferred with delivered email and are not claimed from those component tests.
+- [x] **Review dated dependency safeguards.** The primary Deepmerge/Picomatch advisories are withdrawn; conservative patches and installed-byte safeguards remain. Effect is centrally pinned to the fixed 3.22.1 patch. Frozen-install safeguards passed 6/6 and the production audit passed. Deepmerge **24 November** and Picomatch **2 December** review dates remain unchanged; review again if launch crosses them.
+
+Actual sources, commands, original failures, provider-binding scope and receipts
+are in the [batch record](tfpphotographers/docs/operations/WEB_READINESS_BATCH_2026_11_20.md).
+No hosted CI success or final production performance is inferred from local proof.
 
 ## 🧪 2. Pending human-like E2E and final-source proof
 
 ### Member web journeys and exact persistence
 
-- [ ] **Define the final Phase 1 acceptance scope explicitly.** Chromium, Firefox and responsive Chromium are the current executable projects. `mobile-chromium` is web emulation, not an Expo/iOS/Android result. Keep the admin/email exclusions visible; do not describe this excluded scope as every web case tested.
-- [ ] **Freeze the intended release source and assemble compatible lower-level/API proof.** The latest nine-method PostgreSQL receipt is a selected prerequisite, not the full required-PostgreSQL/API certificate. Use the existing source-bound proof owner; no restamping old results.
+- [x] **Define the final Phase 1 acceptance scope explicitly.** Chromium, Firefox and responsive Chromium are the current executable projects. `mobile-chromium` is web emulation, not an Expo/iOS/Android result. Keep the admin/email exclusions visible; do not describe this excluded scope as every web case tested.
+- [ ] **Freeze the intended release source and assemble compatible lower-level/API proof.** The latest candidate has its own 73-method selected proof, including ten PostgreSQL persistence checks. The complete 1,516-method result is bound to `70c1925d3`; the API implementation is unchanged, but this is not a full final-commit required-PostgreSQL certificate. Use the existing source-bound proof owner; no restamping old results.
 - [ ] **When final sign-off is requested, obtain the missing complete current-source member matrix.** Earlier successful member journeys span several sources and scoped reruns. Use one planned final pass on a clean isolated TEST target, with zero retries and exact selected titles. Do not repeatedly replay completed suites during ordinary fixes. Any later failed-only result must retain the original failure and its actual source.
-- [ ] **Reconcile persisted postconditions with the right evidence.** Reuse [the typed read-only verification port](tfpphotographers/scripts/qa/support/persistence-contract.ts) and visible reload/independent readback. It already covers profiles/location, content, messages, applications, saved searches, reviews, media, holds, erasure and reports. Audit important saved fields against their test assertions and add checks only for confirmed gaps; do not assume every DB column or every form field already has an exact-value checkpoint.
-- [ ] **Investigate a recurrence of the remaining location/SRI watch items before changing code.** The [original Firefox failures and separate passes](tfpphotographers/docs/operations/REMAINING_HUMAN_E2E_2026_11_19.md) remain preserved. They are observations, not diagnosed open product bugs. Keep genuine location results and script integrity checks; no manufactured coordinates, error suppression or automatic retry loop.
+- [x] **Reconcile persisted postconditions with the right evidence.** Reuse [the typed read-only verification port](tfpphotographers/scripts/qa/support/persistence-contract.ts) and visible reload/independent readback. It already covers profiles/location, content, messages, applications, saved searches, reviews, media, holds, erasure and reports. Audit important saved fields against their test assertions and add checks only for confirmed gaps; do not assume every DB column or every form field already has an exact-value checkpoint.
+
+  **Completed scope:** exact contest-entry/RSVP checkpoints were added to the existing typed port; the affected real application/entry/RSVP, report, message and saved-location flows passed independent DB/reload checks across browsers. This does not claim every database column/form field or unexecuted sibling case was checked.
+- [x] **Investigate and fix the newly reproduced pending-location interaction.** Native Firefox permission waiting could keep Detect loading indefinitely; the shared overall deadline/manual cancellation now passes in all three web browsers. This is distinct from the earlier provider-empty/SRI observations, whose original failed and separate passing receipts remain preserved. SRI has not recurred; keep integrity checks and genuine provider results. No error suppression or automatic retry loop was added.
 
 ### Admin/mixed-admin journeys — ⏸ operator-deferred
 
@@ -104,7 +133,7 @@ requirement of this release.
 
 ### Same-source deployed-target certificate
 
-- [ ] **After an explicitly authorized UAT release, verify the declared deployed-target slots.** Match source, registry hashes, actual deployed identity, API prerequisites and original child manifests. The current ledger declares 193 implemented local cases and 161 implemented target cases; use its per-case profiles rather than inventing an identical cross-product for every case.
+- [ ] **After an explicitly authorized UAT release, verify the declared deployed-target slots.** Match source, registry hashes, actual deployed identity, API prerequisites and original child manifests. The current ledger declares 200 implemented local cases and 164 implemented target cases; use its per-case profiles rather than inventing an identical cross-product for every case.
 - [ ] **Run the existing release verifier only after its real requirements are satisfied.** [The canonical certification command](tfpphotographers/scripts/qa/run-human-web-certification.sh) requires clean committed source, matching independently deployed UAT source and the complete required children. It cannot certify an admin-excluded member subset as the full declared web suite. Do not weaken the verifier or change case statuses to make an aggregate green. UAT/production writes need their existing authorization.
 
 ## 🔍 3. Additional confidence checks — uncompleted proof, not confirmed defects
@@ -163,10 +192,9 @@ without copying their secrets.
 
 ## 🔎 6. Follow-up findings and acceptance checks
 
-The review checked the current source, not only the existing checklist. The
-strict-human guard and generated-inventory check passed: 200 canonical cases,
-121 executable declarations, 28 specs, 66 mapped Astro pages and 48 API source
-files. These counts describe the current inventory; they do not establish that
+The original review checked executable source, not only this checklist. The
+updated strict-human guard and inventory pass with 207 canonical cases,
+128 declarations, 29 specs, 66 mapped Astro pages and 48 API source files. These counts describe the current inventory; they do not establish that
 every control, permission or failure branch has been exercised.
 
 The eight items below close omissions or overly broad acceptance wording in the
@@ -221,7 +249,9 @@ Existing lower-level tests must be reused where they already cover a boundary.
 
 ### 3. Device-location permission and fallback — browser journey gap
 
-- [ ] **Verify the actual Detect Location control when permission is denied or location is unavailable.** Check bounded settling, readable feedback, preservation of an existing value, supported approximate fallback and manual selection/save/reload recovery.
+- [x] **Verify the actual Detect Location control when permission is denied or location is unavailable.** Check bounded settling, readable feedback, preservation of an existing value, supported approximate fallback and manual selection/save/reload recovery.
+
+  **Completed:** WEB-E2E-PRO-013 passes per browser, including pending/denied native permission, selected map/metadata preservation and manual Pune save/reopen/reload with exact DB coordinates. Native permission success is not manufactured as GPS evidence; component-only emulation remains separate.
 
   **Finding:** [the shared location client](tfpphotographers/apps/web/src/scripts/client/form-helpers.ts)
   contains a distinct permission-denied/approximate-fallback path. No dedicated
@@ -347,10 +377,10 @@ Existing lower-level tests must be reused where they already cover a boundary.
 
 ## 🧭 7. Execution plan
 
-This is the ordered plan for future authorized implementation and verification.
-The present update changes documentation only. The implementation agent owns
-code/test work; the operator owns legal approvals, credentials/access decisions,
-retention acceptance and go-live authority.
+This plan now has an implemented local batch; the linked report and tracker own
+its actual results. Continue only incomplete acceptance work. The operator owns
+legal approvals, scoped repository access, retention acceptance and go-live
+authority. No production deployment is authorized.
 
 1. **Reconcile scope before adding tests.** Work through section 6 item 1 using actual UI behavior and existing canonical cases, including the concrete public-user scenarios in section 8. Classify coverage and existing proof, preserve the admin/email deferrals and native Phase 2 boundary, and identify only genuinely missing assertions/branches. Decide the final supported web browser scope explicitly.
 2. **Repair prerequisites and add the missing checks.** Address section 1's confirmed CI/performance-tool issues and dependency review dates. Extend existing tests/helpers for section 6 items 2–7 and the section 8 scenarios where evidence is missing; follow section 8's risk order and reuse instructions. Keep security/adversarial/concurrency tests at their appropriate layer; no duplicate storage, logging, upload or coverage implementation. Account bindings/credential changes still follow their separate authorization boundaries.
@@ -361,33 +391,34 @@ retention acceptance and go-live authority.
 
 <a id="public-user-e2e-gaps"></a>
 
-## 🌐 8. Public-user E2E reconciliation and planned additions
+## 🌐 8. Public-user E2E reconciliation and implemented additions
 
 **Scope:** anonymous visitors and ordinary authenticated members. Administrator
-workspaces and delivered-email verification remain deferred. This is a source
-audit of the public/member controls and actual test bodies, including the older
-domain suite; no new browser execution is claimed. The product source remains
-`73c4267d697219a07f2099e140d6bb0ae0272ac0`, with application/test behavior from
-`b2894753b642f95e1dd61ddc073416e84f81e1cf` unchanged.
+workspaces and delivered-email verification remain deferred. All eight confirmed
+scenario additions/refinements below are implemented in existing owners/shared
+helpers. Their actual per-browser results are in the journey tracker and batch
+record. The baseline descriptions below preserve why the checks were added;
+they are not claims that the new implementation is still missing.
 
-The eight items below refine section 6's control/state audit. **Missing strict-human
-coverage does not mean no tests exist, and a partial test does not mean the feature
-is broken.** No new canonical case IDs/statuses are invented by this review.
-Allocate or extend those only when implementing the verified requirement in the
-existing ledger; record actual executions in the existing journey tracker.
+The canonical ledger owns the seven new case IDs and extended existing contracts.
+The admitted TEST seed owns historical paging prerequisites; human journeys do
+not insert or repair database rows. Runtime and current-revision certification
+remain distinct from authored coverage.
 
 ### 1. Anonymous homepage hero search submission
 
-- [ ] **Exercise the homepage search form itself.**
+- [x] **Exercise the homepage search form itself.**
 
-  **Current coverage:** `WEB-E2E-PUB-001/002` in
+  **Completed local acceptance:** WEB-E2E-PUB-019/020/021; all three web browser slots have actual passing evidence in the [readiness journey table](human-like-flow-pending.md#readiness-batch-20261120). Original failures/source identities are preserved.
+
+  **Original coverage:** `WEB-E2E-PUB-001/002` in
   [public surfaces](tfpphotographers/tests/e2e/human/public-surfaces.human.spec.ts)
   checks that `#home-discovery-query` is visible, then submits the separate
   `/search` page form. The domain consent test types into the hero input but
   does not submit it. The homepage submission path remains unexercised in those
   checks; the existing search-results journey remains covered.
 
-  **Planned proof:** submit the real
+  **Acceptance contract:** submit the real
   [hero form](tfpphotographers/apps/web/src/components/DiscoverySearchForm.astro)
   using its button and keyboard Enter, with a unique query and a genuinely
   selected location. Assert the resulting query/coordinates, visible selected
@@ -397,9 +428,11 @@ existing ledger; record actual executions in the existing journey tracker.
 
 ### 2. Member homepage activity metrics and recommendation navigation
 
-- [ ] **Verify the signed-in homepage's actual data and destinations.**
+- [x] **Verify the signed-in homepage's actual data and destinations.**
 
-  **Current coverage:** the older
+  **Completed local acceptance:** WEB-E2E-PUB-033 + WEB-E2E-MSG-010; all three web browser slots have actual passing evidence in the [readiness journey table](human-like-flow-pending.md#readiness-batch-20261120). Original failures/source identities are preserved.
+
+  **Original coverage:** the older
   [public-surface domain suite](tfpphotographers/tests/e2e/domains/discovery/tests/public-surface-boundaries.spec.ts)
   verifies the guest/member layout transition, four activity links, reload and
   logout. It does not establish exact metric values or click the recommendation
@@ -407,7 +440,7 @@ existing ledger; record actual executions in the existing journey tracker.
   found. [Loader unit tests](tfpphotographers/apps/web/tests/utils/home-activity-loader.test.ts)
   cover parsing, not a live member journey.
 
-  **Planned proof:** use a new member and real visible applications/RSVP/message
+  **Acceptance contract:** use a new member and real visible applications/RSVP/message
   actions to establish known state; verify the resulting
   [activity metrics](tfpphotographers/apps/web/src/components/home/YourCreativeActivity.astro),
   summary-link destinations and exact
@@ -420,9 +453,11 @@ existing ledger; record actual executions in the existing journey tracker.
 
 ### 3. Public/member paths bundled with deferred admin declarations
 
-- [ ] **Separate the public proof from the still-deferred administrator phases.**
+- [x] **Separate the public proof from the still-deferred administrator phases.**
 
-  **Current coverage:** `WEB-E2E-PUB-016` combines anonymous member-route gates
+  **Completed local acceptance:** WEB-E2E-PUB-031 + WEB-E2E-REP-008; all three web browser slots have actual passing evidence in the [readiness journey table](human-like-flow-pending.md#readiness-batch-20261120). Original failures/source identities are preserved.
+
+  **Original coverage:** `WEB-E2E-PUB-016` combines anonymous member-route gates
   and member Create Hub controls with admin/QA route checks in
   [route access](tfpphotographers/tests/e2e/human/route-access-seo.human.spec.ts).
   `WEB-E2E-REP-003` combines anonymous/authenticated standalone reporting with
@@ -433,7 +468,7 @@ existing ledger; record actual executions in the existing journey tracker.
   An older [Create Hub domain journey](tfpphotographers/tests/e2e/domains/navigation/tests/create-hub-navigation.spec.ts)
   also exists; it is not a current strict-human result.
 
-  **Planned proof:** review the case contracts and split/re-map the public and
+  **Acceptance contract:** review the case contracts and split/re-map the public and
   privileged requirements without dropping any existing admin assertion. Cover
   anonymous access to the enumerated member routes with safe return paths;
   ordinary-member Create Hub choices, close/reopen and keyboard focus; and the
@@ -446,9 +481,11 @@ existing ledger; record actual executions in the existing journey tracker.
 
 ### 4. Anonymous language/region persistence and unavailable-region recovery
 
-- [ ] **Complete the public preference round trip and recovery navigation.**
+- [x] **Complete the public preference round trip and recovery navigation.**
 
-  **Current coverage:** `WEB-E2E-PUB-026` verifies an authenticated Arabic/IN
+  **Completed local acceptance:** WEB-E2E-PUB-032; all three web browser slots have actual passing evidence in the [readiness journey table](human-like-flow-pending.md#readiness-batch-20261120). Original failures/source identities are preserved.
+
+  **Original coverage:** `WEB-E2E-PUB-026` verifies an authenticated Arabic/IN
   picker change through event publication and search. The older
   [locale preference journey](tfpphotographers/tests/e2e/domains/localization/tests/locale-preference-persistence.spec.ts)
   covers public preference selection but later injects API-authenticated cookies;
@@ -457,7 +494,7 @@ existing ledger; record actual executions in the existing journey tracker.
   `WEB-E2E-PUB-013` visits the region-unavailable document directly and checks its
   rendering rather than the complete incoming URL and recovery path.
 
-  **Planned proof:** as a guest, use the real language/region picker to select a
+  **Acceptance contract:** as a guest, use the real language/region picker to select a
   different supported pair, preserve the current search/detail query, reload
   and navigate to another page to verify persistence. Exercise Cancel without
   changing preferences. Visit an unsupported-region URL, observe its controlled
@@ -467,14 +504,16 @@ existing ledger; record actual executions in the existing journey tracker.
 
 ### 5. Disabled OAuth callback routes
 
-- [ ] **Visit each disabled callback path in the browser.**
+- [x] **Visit each disabled callback path in the browser.**
 
-  **Current coverage:** `WEB-E2E-PUB-015` declares the Apple/Google/Meta entry
+  **Completed local acceptance:** WEB-E2E-PUB-015; all three web browser slots have actual passing evidence in the [readiness journey table](human-like-flow-pending.md#readiness-batch-20261120). Original failures/source identities are preserved.
+
+  **Original coverage:** `WEB-E2E-PUB-015` declares the Apple/Google/Meta entry
   and callback routes, but its actual loop visits only `/auth/apple`,
   `/auth/google` and `/auth/meta`. The three callback pages dispatch a different
   [completion path](tfpphotographers/apps/web/src/utils/oauth.ts).
 
-  **Planned proof:** extend the existing disabled-provider case with the actual
+  **Acceptance contract:** extend the existing disabled-provider case with the actual
   callback URLs, including missing-state and provider-error inputs. Assert the
   expected local login/error state, visible email control and absence of an
   authenticated or external-provider transition. Do not enable social login,
@@ -483,15 +522,17 @@ existing ledger; record actual executions in the existing journey tracker.
 
 ### 6. Generic error-page recovery controls and 500 indexing policy
 
-- [ ] **Activate the generic error document's recovery links.**
+- [x] **Activate the generic error document's recovery links.**
 
-  **Current coverage:** `WEB-E2E-PUB-014` checks a missing route's 404/noindex
+  **Completed local acceptance:** WEB-E2E-PUB-014; all three web browser slots have actual passing evidence in the [readiness journey table](human-like-flow-pending.md#readiness-batch-20261120). Original failures/source identities are preserved.
+
+  **Original coverage:** `WEB-E2E-PUB-014` checks a missing route's 404/noindex
   and the controlled 500 document's status/content/title. Its current contract
   does not require 500 indexing assertions or clicking the generic recovery
   controls. The separate non-existent-profile test already clicks its Search
   recovery link; that is covered and should not be duplicated as a new gap.
 
-  **Planned proof:** extend the controlled-document journey to verify the
+  **Acceptance contract:** extend the controlled-document journey to verify the
   [500 page](tfpphotographers/apps/web/src/pages/500.astro)'s noindex header/meta
   policy, activate its Retry link and verify the same intended path/query, then
   activate its Home link and confirm a healthy localized public page. Use the
@@ -502,9 +543,11 @@ existing ledger; record actual executions in the existing journey tracker.
 
 ### 7. Owner activity application/entry pagination
 
-- [ ] **Guarantee actual page-boundary coverage for owner Applications/Entries.**
+- [x] **Guarantee actual page-boundary coverage for owner Applications/Entries.**
 
-  **Current coverage:** `WEB-E2E-PRO-007` switches Applications/Entries and
+  **Completed local acceptance:** WEB-E2E-PRO-014; all three web browser slots have actual passing evidence in the [readiness journey table](human-like-flow-pending.md#readiness-batch-20261120). Original failures/source identities are preserved. Paging uses the admitted canonical historical TEST seed (21 applications/entries), not DB writes or an admin visit inside the human journey; this does not prove 21 new moderations/uploads.
+
+  **Original coverage:** `WEB-E2E-PRO-007` switches Applications/Entries and
   reloads the selected tab. The older
   [profile contract suite](tfpphotographers/tests/e2e/domains/profile/tests/profile-contract-boundaries.spec.ts)
   queries activity/pagination through APIs. The
@@ -513,7 +556,7 @@ existing ledger; record actual executions in the existing journey tracker.
   journeys already traverse owner **Posts** pages to count exact saved records;
   Posts must not be described as untested.
 
-  **Planned proof:** extend the relevant owner activity case/helper with
+  **Acceptance contract:** extend the relevant owner activity case/helper with
   reachable, UI-created data that spans a real page boundary for the remaining
   tab types. Click Next/Previous, verify the exact expected items are neither
   lost nor duplicated, preserve the selected tab through reload and keep guest
@@ -524,9 +567,11 @@ existing ledger; record actual executions in the existing journey tracker.
 
 ### 8. Filtered discovery pagination with a controlled multi-page result set
 
-- [ ] **Make the pagination outcome discriminating and independent of incidental data volume.**
+- [x] **Make the pagination outcome discriminating and independent of incidental data volume.**
 
-  **Current coverage:** public search already verifies exact creator identity,
+  **Completed local acceptance:** WEB-E2E-PUB-034; all three web browser slots have actual passing evidence in the [readiness journey table](human-like-flow-pending.md#readiness-batch-20261120). Original failures/source identities are preserved.
+
+  **Original coverage:** public search already verifies exact creator identity,
   actual role/sort results and browser Back. The helper in
   [public surfaces](tfpphotographers/tests/e2e/human/public-surfaces.human.spec.ts)
   can traverse listing pages while locating particular event/opportunity titles,
@@ -534,7 +579,7 @@ existing ledger; record actual executions in the existing journey tracker.
   absence of all paging code/tests. Explicit opportunity/event gallery paging
   and message-history paging also already have their own covered journeys.
 
-  **Planned proof:** extend the existing discovery cases/shared traversal
+  **Acceptance contract:** extend the existing discovery cases/shared traversal
   helper with a known, lawful public result set spanning at least two visible
   pages. Keep role/type/location/sort parameters through Next/Previous, assert
   exact disjoint page identities and the expected total/order, then return from
@@ -551,9 +596,9 @@ Use focused tests while changing each owner, then include completed additions
 in the single planned frozen-source member matrix from section 7. Run the
 supported Chromium, Firefox and responsive Chromium projects with zero retries;
 attach actual leaf results, UI evidence and exact DB receipts where persistence
-is part of the scenario. No runtime pass follows from this audit.
+is part of the scenario. Actual source-specific passing leaves, retained original failures and zero-retry totals are recorded separately; no full release certificate is inferred.
 
-The already-planned device-location permission/fallback journey remains in
+The separately implemented device-location permission/fallback journey is recorded in
 section 6 item 3; it is not counted again as a ninth new checkbox here. Existing
 grievance/privacy submission, consent persistence, nearest-first autocomplete,
 saved maps, public gallery identity/paging, profile reporting, message history,
@@ -568,23 +613,23 @@ deferred. Do not expand them or add duplicate cases to increase a coverage count
 - Complete a checkbox only with its actual command/source, runtime/target, passed/failed/skipped/retry totals and original receipt link. A scoped success closes only its scope. Keep unrelated work untouched.
 - Native Expo/iOS/Android, store signing and native profiling remain Phase 2. Admin/email remain explicitly deferred until the user changes that decision. No purchases, credential changes, production deployment or public Worker activation follow from this checklist.
 
-**Validation of the original checklist:** reconciled the ledger with all 121
+**Historical validation of the original checklist:** reconciled the ledger with all 121
 parsed executable test blocks and the 93 + 8 + 20 tracker groups; checked the live
 read-only production doctor and GitHub secret-name/job metadata; inspected the
 affected workflow/auth/performance source. No app services were restarted, no
 tests/deployments dispatched, and no provider/credential settings changed.
 
-**Follow-up review and this expansion:** the strict-human guard and generated
-inventory check passed during the read-only review. This edit records the eight
+**Historical follow-up review:** the strict-human guard and generated
+inventory check passed during the read-only review. That edit recorded the eight
 findings and execution plan without changing application/test behavior or any
 recorded pass/fail status. Local Markdown links, finding/task counts, source
 references and scoped whitespace are checked before publication. No new browser
 or API execution, deployment or provider change is claimed for this doc edit.
 
-**Public-user review:** compared the named public/member source branches with
+**Historical public-user review:** compared the named public/member source branches with
 strict-human and relevant older domain/API test bodies, preserving the coverage
 distinctions above. The strict-human guard and inventory check passed; the
-canonical count remains 200 cases / 121 declarations / 28 specs. This plan adds
-eight unchecked scenario tasks without editing executable tests, the ledger,
+canonical count at that review was 200 cases / 121 declarations / 28 specs. That plan added
+eight initially unchecked scenario tasks without editing executable tests, the ledger,
 existing run receipts or any provider configuration. No app service restart,
 browser journey execution or deployment occurred for this documentation update.

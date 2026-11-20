@@ -1,11 +1,61 @@
 # Human-like E2E flow tracker
 
-Updated: 20 November 2026. The original matrix was reconciled on 19 November 2026 at 23:55:58 IST.
+Updated: 21 November 2026. The original matrix was reconciled on 19 November 2026 at 23:55:58 IST.
 
 For pending release tasks, CI/tooling fixes, the twelve production settings and
 host commissioning, use the [web readiness checklist](web-readiness-checklist.md).
 This file continues to own the source-specific journey execution record; the
 canonical use-case ledger continues to own requirements and implementation status.
+
+<a id="readiness-batch-20261120"></a>
+
+## Readiness batch — completed 20–21 November 2026
+
+All **12 affected journey groups × 3 web browsers = 36 slots** have actual
+source-specific passing evidence. The [batch record](tfpphotographers/docs/operations/WEB_READINESS_BATCH_2026_11_20.md)
+owns fixes, original failures, full source identities, commands and validation
+limits. These additions extend the canonical ledger to 207 cases / 128 declarations
+in 29 specs: 108 public/member declarations and 20 deferred admin declarations.
+The original matrix below remains unchanged; no full current-source certificate
+is inferred from the scoped table.
+
+| Executed journey / canonical cases | Chromium | Firefox | Mobile Chromium |
+| --- | --- | --- | --- |
+| [preserves exact message history across visible pages and persists delivered read and unread states](tfpphotographers/tests/e2e/human/message-history.human.spec.ts)<br>WEB-E2E-MSG-010 | ✅ a2 / `70c1925d3` | ✅ a3 / `3b5f5f841` | ✅ a5 / `1e1476e19` |
+| [searches isolated creators and verifies role filtering, actual sort order and return navigation](tfpphotographers/tests/e2e/human/public-surfaces.human.spec.ts)<br>WEB-E2E-PUB-019, WEB-E2E-PUB-020, WEB-E2E-PUB-021 | ✅ a1 / `b06a6fd89` | ✅ a3 / `3b5f5f841` | ✅ a5 / `1e1476e19` |
+| [applies and clears discovery type, role, location and sort filters through visible controls](tfpphotographers/tests/e2e/human/public-surfaces.human.spec.ts)<br>WEB-E2E-PUB-003 | ✅ a1 / `b06a6fd89` | ✅ a3 / `3b5f5f841` | ✅ a5 / `1e1476e19` |
+| [persists anonymous language and region choices and recovers from an unavailable region](tfpphotographers/tests/e2e/human/readiness-public-member.human.spec.ts)<br>WEB-E2E-PUB-032 | ✅ a1 / `b06a6fd89` | ✅ a3 / `3b5f5f841` | ✅ a5 / `1e1476e19` |
+| [preserves a selected location after denied or unavailable detection and saves a manual replacement](tfpphotographers/tests/e2e/human/readiness-public-member.human.spec.ts)<br>WEB-E2E-PRO-013 | ✅ a4 / `cbda2bc71` | ✅ a4 / `cbda2bc71` | ✅ a5 / `1e1476e19` |
+| [gates anonymous standalone reporting and preserves the exact member report without administrator UI](tfpphotographers/tests/e2e/human/readiness-public-member.human.spec.ts)<br>WEB-E2E-REP-008 | ✅ a1 / `b06a6fd89` | ✅ a3 / `3b5f5f841` | ✅ a5 / `1e1476e19` |
+| [updates exact member homepage counters through real applications entries and RSVPs and follows recommendations](tfpphotographers/tests/e2e/human/readiness-public-member.human.spec.ts)<br>WEB-E2E-PUB-033 | ✅ a3 / `3b5f5f841` | ✅ a3 / `3b5f5f841` | ✅ a5 / `1e1476e19` |
+| [crosses real owner applications and entries page boundaries without missing or repeated records](tfpphotographers/tests/e2e/human/readiness-public-member.human.spec.ts)<br>WEB-E2E-PRO-014 | ✅ a5 / `1e1476e19` | ✅ a5 / `1e1476e19` | ✅ a5 / `1e1476e19` |
+| [preserves real location role and sort filters across two guaranteed discovery pages](tfpphotographers/tests/e2e/human/readiness-public-member.human.spec.ts)<br>WEB-E2E-PUB-034 | ✅ a2 / `70c1925d3` | ✅ a3 / `3b5f5f841` | ✅ a5 / `1e1476e19` |
+| [renders controlled 404 and 500 documents with non-indexable metadata](tfpphotographers/tests/e2e/human/route-access-seo.human.spec.ts)<br>WEB-E2E-PUB-014 | ✅ a2 / `70c1925d3` | ✅ a3 / `3b5f5f841` | ✅ a5 / `1e1476e19` |
+| [keeps disabled OAuth provider routes inside the controlled sign-in experience](tfpphotographers/tests/e2e/human/route-access-seo.human.spec.ts)<br>WEB-E2E-PUB-015 | ✅ a1 / `b06a6fd89` | ✅ a3 / `3b5f5f841` | ✅ a5 / `1e1476e19` |
+| [gates member-only routes and reopens the member create hub](tfpphotographers/tests/e2e/human/route-access-seo.human.spec.ts)<br>WEB-E2E-PUB-031 | ✅ a1 / `b06a6fd89` | ✅ a3 / `3b5f5f841` | ✅ a5 / `1e1476e19` |
+
+**Evidence:** 252 retained captures, 39 exact typed read-only DB receipts and zero
+unexpected diagnostics in the selected passing leaves. Zero retries/skips in
+these completed runs. All nine original attempts (including failed children)
+retain their terminal reports, clean source contexts, DB dumps and media snapshots
+under `/private/tmp/tfp-web-readiness-batch-20261120-sgx59qvi`. The private
+`browser-readiness-reconciliation-final.json` validates leaf identities/hashes.
+
+Location recovery now bounds pending native permission and protects saved/map
+coordinates; missing gallery URLs no longer request page HTML during retries.
+Homepage activity freshness and localized error Retry are fixed. Real business
+creation, upload/moderation, RSVP and report flows keep their existing owners.
+
+Owned services/cluster are stopped with data retained. FE3000/API4000 remain
+healthy and were not restarted. Cleanup retired 42 verified rebuildable TFP/
+PulseTrade caches; trading data, active runtimes, releases and evidence remain.
+The [cleanup details](tfpphotographers/docs/operations/WEB_READINESS_BATCH_2026_11_20.md#performance-tool-and-safe-cleanup)
+do not authorize deleting retained runtime/evidence trees.
+
+Still separate: approved scoped CI repository access, full final-source member/
+release proof, host commissioning and the twelve production values, actual alerts,
+Safari/assistive-technology/priority-language/timezone review where promised. Admin/
+email remain deferred; native is Phase 2. No purchases or production deployment.
 
 ## Responsive web report follow-up — 20 November 2026
 
@@ -175,7 +225,7 @@ work is reserved for Phase 2; `mobile-chromium` is browser emulation only.
 - rejects an invalid and replayed authenticator code around a valid admin MFA check — deferred by operator; not selected.
 - rejects login for a disabled user — deferred by operator; not selected.
 - redirects authenticated non-admin member attempting direct admin workspace access — deferred by operator; not selected.
-- gates member-only routes before authentication and admin routes by role — deferred by operator; not selected.
+- denies privileged admin and QA routes to an ordinary member — deferred by operator; not selected. This is the current WEB-E2E-PUB-016 owner; public member-route/Create Hub assertions moved to independently executed WEB-E2E-PUB-031.
 - opens every administrator and QA workspace with an MFA-verified administrator session — deferred by operator; not selected.
 - removes reported content and refuses account erasure while preserving the exact held original — deferred by operator; not selected.
 - keeps a reported opportunity image hidden and retains exact private evidence — deferred by operator; not selected.
@@ -195,7 +245,7 @@ work is reserved for Phase 2; `mobile-chromium` is browser emulation only.
 
 ## Execution records and retained evidence
 
-- Current private run root: `/private/tmp/tfp-remaining-human-20261119-ij86rdi6`.
+- Original 93-journey private run root: `/private/tmp/tfp-remaining-human-20261119-ij86rdi6`.
 - Derived, frozen selection: `/private/tmp/tfp-remaining-human-20261119-ij86rdi6/selection.json`.
 - Isolation/implementation plan: `/private/tmp/tfp-remaining-human-20261119-ij86rdi6/implementation-plan.json`.
 - Fresh owned TEST clusters used ports 15559 and 15560. Both are now stopped normally with data retained. Existing databases and earlier evidence remain untouched.
