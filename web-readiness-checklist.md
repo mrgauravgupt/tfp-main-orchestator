@@ -12,6 +12,9 @@ The follow-up review identified eight areas needing explicit acceptance checks.
 existing implementation/test owners and completion evidence.
 [Section 7](#execution-plan) gives the execution order. These additions are
 pending work; documenting them does not mark them implemented or tested.
+[Section 8](#public-user-e2e-gaps) records the subsequent public-user E2E
+reconciliation and eight specific scenario additions/refinements. Existing
+domain/API coverage is distinguished from missing strict-human execution.
 
 ## 📍 Ownership and current evidence
 
@@ -349,12 +352,214 @@ The present update changes documentation only. The implementation agent owns
 code/test work; the operator owns legal approvals, credentials/access decisions,
 retention acceptance and go-live authority.
 
-1. **Reconcile scope before adding tests.** Work through section 6 item 1 using actual UI behavior and existing canonical cases. Classify coverage and existing proof, preserve the admin/email deferrals and native Phase 2 boundary, and identify only genuinely missing assertions/branches. Decide the final supported web browser scope explicitly.
-2. **Repair prerequisites and add the missing checks.** Address section 1's confirmed CI/performance-tool issues and dependency review dates. Extend existing tests/helpers for section 6 items 2–7 where evidence is missing. Keep security/adversarial/concurrency tests at their appropriate layer; no duplicate storage, logging, upload or coverage implementation. Account bindings/credential changes still follow their separate authorization boundaries.
+1. **Reconcile scope before adding tests.** Work through section 6 item 1 using actual UI behavior and existing canonical cases, including the concrete public-user scenarios in section 8. Classify coverage and existing proof, preserve the admin/email deferrals and native Phase 2 boundary, and identify only genuinely missing assertions/branches. Decide the final supported web browser scope explicitly.
+2. **Repair prerequisites and add the missing checks.** Address section 1's confirmed CI/performance-tool issues and dependency review dates. Extend existing tests/helpers for section 6 items 2–7 and the section 8 scenarios where evidence is missing; follow section 8's risk order and reuse instructions. Keep security/adversarial/concurrency tests at their appropriate layer; no duplicate storage, logging, upload or coverage implementation. Account bindings/credential changes still follow their separate authorization boundaries.
 3. **Run focused local proof once per meaningful change.** Use fresh owned TEST/shadow resources and unused ports, restore retained checkout dependencies if needed, and check disk/provider readiness. Execute affected API/PostgreSQL/contract checks and strict human journeys across the supported browsers. Inspect actual UI captures, exact DB receipts, negative outcomes and diagnostics. Fix confirmed defects; preserve failed attempts and stop unchanged automatic retry loops.
 4. **Freeze the final local candidate.** Review the complete scoped diff and affected consumers; run the required types/lint/build/guard/inventory and compatible lower-level proof. Plan one complete final member-browser matrix as described in section 2. Record the exact source, selected declarations, environment, zero-retry leaf totals and original receipts. Prior source-specific successes remain historical; do not splice them into a new certificate.
 5. **Commission and verify targets only when authorized.** Meet section 6 item 8 first, then complete section 4's host/network/provider/backup work and the target-dependent security, maintenance and SEO checks. Keep the strict production doctor, same-source deployed identity and release verifier fail-closed. No production deployment, public Worker activation, account purchase or schedule installation is authorized now.
 6. **Publish an evidence-based handoff.** Update the existing journey tracker and canonical case owners before checking release tasks complete. Report exact tested scope, unresolved failures, deferred admin/email cases, operator/legal inputs and host/device gaps. Full declared web certification remains unavailable while its required slots are omitted; any later decision to resume deferred work must be explicit. Final go-live remains an operator decision.
+
+<a id="public-user-e2e-gaps"></a>
+
+## 🌐 8. Public-user E2E reconciliation and planned additions
+
+**Scope:** anonymous visitors and ordinary authenticated members. Administrator
+workspaces and delivered-email verification remain deferred. This is a source
+audit of the public/member controls and actual test bodies, including the older
+domain suite; no new browser execution is claimed. The product source remains
+`73c4267d697219a07f2099e140d6bb0ae0272ac0`, with application/test behavior from
+`b2894753b642f95e1dd61ddc073416e84f81e1cf` unchanged.
+
+The eight items below refine section 6's control/state audit. **Missing strict-human
+coverage does not mean no tests exist, and a partial test does not mean the feature
+is broken.** No new canonical case IDs/statuses are invented by this review.
+Allocate or extend those only when implementing the verified requirement in the
+existing ledger; record actual executions in the existing journey tracker.
+
+### 1. Anonymous homepage hero search submission
+
+- [ ] **Exercise the homepage search form itself.**
+
+  **Current coverage:** `WEB-E2E-PUB-001/002` in
+  [public surfaces](tfpphotographers/tests/e2e/human/public-surfaces.human.spec.ts)
+  checks that `#home-discovery-query` is visible, then submits the separate
+  `/search` page form. The domain consent test types into the hero input but
+  does not submit it. The homepage submission path remains unexercised in those
+  checks; the existing search-results journey remains covered.
+
+  **Planned proof:** submit the real
+  [hero form](tfpphotographers/apps/web/src/components/DiscoverySearchForm.astro)
+  using its button and keyboard Enter, with a unique query and a genuinely
+  selected location. Assert the resulting query/coordinates, visible selected
+  fields and exact expected public result, then verify Back/reload behavior.
+  Reuse the existing search and location helpers and extend the relevant public
+  search case instead of copying the workflow.
+
+### 2. Member homepage activity metrics and recommendation navigation
+
+- [ ] **Verify the signed-in homepage's actual data and destinations.**
+
+  **Current coverage:** the older
+  [public-surface domain suite](tfpphotographers/tests/e2e/domains/discovery/tests/public-surface-boundaries.spec.ts)
+  verifies the guest/member layout transition, four activity links, reload and
+  logout. It does not establish exact metric values or click the recommendation
+  destinations. No corresponding strict-human homepage activity journey was
+  found. [Loader unit tests](tfpphotographers/apps/web/tests/utils/home-activity-loader.test.ts)
+  cover parsing, not a live member journey.
+
+  **Planned proof:** use a new member and real visible applications/RSVP/message
+  actions to establish known state; verify the resulting
+  [activity metrics](tfpphotographers/apps/web/src/components/home/YourCreativeActivity.astro),
+  summary-link destinations and exact
+  [recommended-item links](tfpphotographers/apps/web/src/components/home/RecommendedForYou.astro).
+  Check empty and populated member states, reload persistence and the logout
+  return to the guest layout. Reuse the domain assertions through strict helpers;
+  do not fabricate recommendations or assert values by echoing the same API
+  response that rendered the UI. Add a separately mapped member case where the
+  current anonymous-only case contract does not fit.
+
+### 3. Public/member paths bundled with deferred admin declarations
+
+- [ ] **Separate the public proof from the still-deferred administrator phases.**
+
+  **Current coverage:** `WEB-E2E-PUB-016` combines anonymous member-route gates
+  and member Create Hub controls with admin/QA route checks in
+  [route access](tfpphotographers/tests/e2e/human/route-access-seo.human.spec.ts).
+  `WEB-E2E-REP-003` combines anonymous/authenticated standalone reporting with
+  administrator queue readback in
+  [collaboration workflows](tfpphotographers/tests/e2e/human/collaboration-workflows.human.spec.ts).
+  Both whole declarations are currently deferred. Other selected tests prove
+  some individual gates and modal reporting, but not these complete public paths.
+  An older [Create Hub domain journey](tfpphotographers/tests/e2e/domains/navigation/tests/create-hub-navigation.spec.ts)
+  also exists; it is not a current strict-human result.
+
+  **Planned proof:** review the case contracts and split/re-map the public and
+  privileged requirements without dropping any existing admin assertion. Cover
+  anonymous access to the enumerated member routes with safe return paths;
+  ordinary-member Create Hub choices, close/reopen and keyboard focus; and the
+  actual standalone `/report` form, its exact saved report and independent
+  member-visible retrieval/duplicate behavior. Use the shared read-only report
+  checkpoint in place of an admin visit only in the separately defined member
+  contract. Keep the admin readback contract deferred and do not mark either
+  original combined case fully proven from a public-only subset. Authentication
+  may use the existing admitted TEST bridge; this proves no email delivery.
+
+### 4. Anonymous language/region persistence and unavailable-region recovery
+
+- [ ] **Complete the public preference round trip and recovery navigation.**
+
+  **Current coverage:** `WEB-E2E-PUB-026` verifies an authenticated Arabic/IN
+  picker change through event publication and search. The older
+  [locale preference journey](tfpphotographers/tests/e2e/domains/localization/tests/locale-preference-persistence.spec.ts)
+  covers public preference selection but later injects API-authenticated cookies;
+  [routing hardening](tfpphotographers/tests/e2e/domains/localization/tests/locale-routing-hardening.spec.ts)
+  uses request-level checks for invalid locales/regions. Strict-human
+  `WEB-E2E-PUB-013` visits the region-unavailable document directly and checks its
+  rendering rather than the complete incoming URL and recovery path.
+
+  **Planned proof:** as a guest, use the real language/region picker to select a
+  different supported pair, preserve the current search/detail query, reload
+  and navigate to another page to verify persistence. Exercise Cancel without
+  changing preferences. Visit an unsupported-region URL, observe its controlled
+  redirect and click the actual recovery link to a supported public page.
+  Reuse the locale form/router owners. Keep the already-covered Arabic draft
+  preservation behavior and social-provider/email exclusions unchanged.
+
+### 5. Disabled OAuth callback routes
+
+- [ ] **Visit each disabled callback path in the browser.**
+
+  **Current coverage:** `WEB-E2E-PUB-015` declares the Apple/Google/Meta entry
+  and callback routes, but its actual loop visits only `/auth/apple`,
+  `/auth/google` and `/auth/meta`. The three callback pages dispatch a different
+  [completion path](tfpphotographers/apps/web/src/utils/oauth.ts).
+
+  **Planned proof:** extend the existing disabled-provider case with the actual
+  callback URLs, including missing-state and provider-error inputs. Assert the
+  expected local login/error state, visible email control and absence of an
+  authenticated or external-provider transition. Do not enable social login,
+  exchange real provider credentials or request an OTP. Preserve historical
+  entry-route passes at their original scope.
+
+### 6. Generic error-page recovery controls and 500 indexing policy
+
+- [ ] **Activate the generic error document's recovery links.**
+
+  **Current coverage:** `WEB-E2E-PUB-014` checks a missing route's 404/noindex
+  and the controlled 500 document's status/content/title. Its current contract
+  does not require 500 indexing assertions or clicking the generic recovery
+  controls. The separate non-existent-profile test already clicks its Search
+  recovery link; that is covered and should not be duplicated as a new gap.
+
+  **Planned proof:** extend the controlled-document journey to verify the
+  [500 page](tfpphotographers/apps/web/src/pages/500.astro)'s noindex header/meta
+  policy, activate its Retry link and verify the same intended path/query, then
+  activate its Home link and confirm a healthy localized public page. Use the
+  shared [ErrorCard](tfpphotographers/apps/web/src/components/ErrorCard.astro)
+  and real links. The deliberately controlled `/500` page should remain a 500
+  when retried; do not manufacture an HTTP 200 or confuse that with recovery of
+  a transient upstream outage, which belongs to section 6 item 4.
+
+### 7. Owner activity application/entry pagination
+
+- [ ] **Guarantee actual page-boundary coverage for owner Applications/Entries.**
+
+  **Current coverage:** `WEB-E2E-PRO-007` switches Applications/Entries and
+  reloads the selected tab. The older
+  [profile contract suite](tfpphotographers/tests/e2e/domains/profile/tests/profile-contract-boundaries.spec.ts)
+  queries activity/pagination through APIs. The
+  [profile renderer](tfpphotographers/apps/web/src/pages/profile/[username].astro)
+  supplies separate per-tab page links. Existing creator/duplicate-submission
+  journeys already traverse owner **Posts** pages to count exact saved records;
+  Posts must not be described as untested.
+
+  **Planned proof:** extend the relevant owner activity case/helper with
+  reachable, UI-created data that spans a real page boundary for the remaining
+  tab types. Click Next/Previous, verify the exact expected items are neither
+  lost nor duplicated, preserve the selected tab through reload and keep guest
+  owner-only visibility restrictions. Respect actual quotas and seeded-fixture
+  ownership; record a concrete fixture/policy blocker instead of inserting DB
+  rows or weakening quotas. Contest-entry fixture work must not reopen deferred
+  administrator content-management journeys.
+
+### 8. Filtered discovery pagination with a controlled multi-page result set
+
+- [ ] **Make the pagination outcome discriminating and independent of incidental data volume.**
+
+  **Current coverage:** public search already verifies exact creator identity,
+  actual role/sort results and browser Back. The helper in
+  [public surfaces](tfpphotographers/tests/e2e/human/public-surfaces.human.spec.ts)
+  can traverse listing pages while locating particular event/opportunity titles,
+  but it can finish on page one. This is partial pagination coverage, not an
+  absence of all paging code/tests. Explicit opportunity/event gallery paging
+  and message-history paging also already have their own covered journeys.
+
+  **Planned proof:** extend the existing discovery cases/shared traversal
+  helper with a known, lawful public result set spanning at least two visible
+  pages. Keep role/type/location/sort parameters through Next/Previous, assert
+  exact disjoint page identities and the expected total/order, then return from
+  a selected detail and reload. Derive fixture size from the actual page limit
+  and use real UI setup or the admitted canonical seed; no DB writes inside
+  the human journey and no fabricated search response.
+
+### Reuse, execution order and existing exclusions
+
+Implement the public-only access/report contracts and disabled callbacks first
+(items 3 and 5), then the hero/locale round trips (1 and 4), member homepage (2),
+controlled page-boundary scenarios (7 and 8), and generic error controls (6).
+Use focused tests while changing each owner, then include completed additions
+in the single planned frozen-source member matrix from section 7. Run the
+supported Chromium, Firefox and responsive Chromium projects with zero retries;
+attach actual leaf results, UI evidence and exact DB receipts where persistence
+is part of the scenario. No runtime pass follows from this audit.
+
+The already-planned device-location permission/fallback journey remains in
+section 6 item 3; it is not counted again as a ninth new checkbox here. Existing
+grievance/privacy submission, consent persistence, nearest-first autocomplete,
+saved maps, public gallery identity/paging, profile reporting, message history,
+stale-permission and upload recovery checks retain their recorded coverage.
+Delivered OTP/quiet-hours email, administrator UI and native mobile remain
+deferred. Do not expand them or add duplicate cases to increase a coverage count.
 
 ## 🛡️ Execution rules and checklist maintenance
 
@@ -375,3 +580,11 @@ findings and execution plan without changing application/test behavior or any
 recorded pass/fail status. Local Markdown links, finding/task counts, source
 references and scoped whitespace are checked before publication. No new browser
 or API execution, deployment or provider change is claimed for this doc edit.
+
+**Public-user review:** compared the named public/member source branches with
+strict-human and relevant older domain/API test bodies, preserving the coverage
+distinctions above. The strict-human guard and inventory check passed; the
+canonical count remains 200 cases / 121 declarations / 28 specs. This plan adds
+eight unchecked scenario tasks without editing executable tests, the ledger,
+existing run receipts or any provider configuration. No app service restart,
+browser journey execution or deployment occurred for this documentation update.
