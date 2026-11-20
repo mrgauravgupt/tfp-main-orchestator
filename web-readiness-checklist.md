@@ -1,11 +1,17 @@
 # ✅ TFP Web — readiness and pending verification checklist
 
-**Reviewed: 20 November 2026 (IST). Phase 1: web. Phase 2: native mobile.**
+**Reviewed and expanded: 20 November 2026 (IST). Phase 1: web. Phase 2: native mobile.**
 
 This is the work checklist for a defensible web release, not a promise of zero
 future bugs. It separates confirmed tooling/configuration problems, uncompleted
 verification, operator-deferred work and host commissioning. An unchecked item
 does not automatically mean the corresponding product feature is broken.
+
+The follow-up review identified eight areas needing explicit acceptance checks.
+[Section 6](#follow-up-findings) records each finding,
+existing implementation/test owners and completion evidence.
+[Section 7](#execution-plan) gives the execution order. These additions are
+pending work; documenting them does not mark them implemented or tested.
 
 ## 📍 Ownership and current evidence
 
@@ -150,6 +156,206 @@ without copying their secrets.
 - [ ] After secure binding, rerun the strict doctor and target checks. Twelve filled values alone do not prove application or infrastructure readiness.
 - [ ] Obtain explicit final go-live approval. **Current instruction: no production deployment.**
 
+<a id="follow-up-findings"></a>
+
+## 🔎 6. Follow-up findings and acceptance checks
+
+The review checked the current source, not only the existing checklist. The
+strict-human guard and generated-inventory check passed: 200 canonical cases,
+121 executable declarations, 28 specs, 66 mapped Astro pages and 48 API source
+files. These counts describe the current inventory; they do not establish that
+every control, permission or failure branch has been exercised.
+
+The eight items below close omissions or overly broad acceptance wording in the
+original checklist. They are not eight newly established product defects.
+Existing lower-level tests must be reused where they already cover a boundary.
+
+### 1. Complete control/state coverage — before final web sign-off
+
+- [ ] **Reconcile actual product behavior with the canonical cases.** Inspect visible forms, actions, filters, dialogs and navigation for anonymous users, owners, participants and other members. Cover success, invalid/empty input, limits, forbidden/stale states, cancel, repeated submission and independent retrieval where applicable. Include dates/deadlines across relevant browser timezones and daylight-saving boundaries; a timezone-safe input helper alone does not prove those business boundaries.
+
+  **Finding:** the existing reconciliation accounts for all declared tests. The
+  [route guard](tfpphotographers/scripts/qa/human-e2e-guard.mjs) checks mappings
+  and annotations; it does not establish semantic coverage of every control or
+  branch in a mapped page. No dedicated `timezoneId` variation was found in the
+  strict-human spec bodies inspected during the review.
+
+  **Implementation plan:** extend existing `visibleActions`,
+  `visiblePostconditions`, `persistedPostconditions` and `negativeStates` in the
+  canonical ledger when a real gap is confirmed. Reuse the existing workflow,
+  date/location and persistence helpers. Give each behavior a browser journey,
+  lower-level-only justification or explicit blocker in the existing owners;
+  do not add another action/coverage registry. The four existing API-only
+  dispositions, including moderation appeals, remain explicit in
+  [API source coverage](tfpphotographers/tests/e2e/human/api-source-coverage.json).
+
+  **Acceptance:** important saved values are checked through the typed read-only
+  DB port and independent reload/second-actor retrieval where relevant; negative
+  paths prove the forbidden side effect did not happen. Update the existing
+  journey tracker with exact source/browser results and remaining blockers.
+
+### 2. Production-mode security boundaries — before final web sign-off
+
+- [ ] **Make the security acceptance matrix explicit.** Verify cross-account resource/file access denial, CSRF, CORS, CSP, cookie flags/session revocation, configured rate limits, private downloads, and absence of test-only authentication/preview shortcuts in the intended production profile.
+
+  **Finding:** the original checklist mentioned API proof and configuration
+  checks without listing these security outcomes. The existing
+  [CSRF integration suite](tfpphotographers/apps/api/tests/utils/csrf.integration.test.ts)
+  explicitly distinguishes enforced non-TEST behavior from the TEST bypass.
+  A local TEST human pass alone does not prove the deployed cookie/origin policy.
+
+  **Implementation plan:** reuse the
+  [security boundary suites](tfpphotographers/tests/e2e/domains/security/tests),
+  existing API/config tests and real browser origin/session controls. Keep
+  adversarial request tests in the API/integration layer rather than bypassing
+  business logic inside strict-human journeys. Prepare isolated non-TEST checks
+  locally; repeat topology-dependent checks only on an authorized target.
+
+  **Acceptance:** unauthorized access has the expected denial and no mutation
+  or private-byte disclosure; legitimate writes still work; the final response
+  headers/cookies and disabled test surfaces are observed on the exact artifact.
+  Admin UI journeys remain deferred; flag any security proof that depends on them.
+
+### 3. Device-location permission and fallback — browser journey gap
+
+- [ ] **Verify the actual Detect Location control when permission is denied or location is unavailable.** Check bounded settling, readable feedback, preservation of an existing value, supported approximate fallback and manual selection/save/reload recovery.
+
+  **Finding:** [the shared location client](tfpphotographers/apps/web/src/scripts/client/form-helpers.ts)
+  contains a distinct permission-denied/approximate-fallback path. No dedicated
+  device-location permission journey was found in the strict-human specs/helpers
+  inspected. Existing saved map/coordinate readback and
+  [nearest-first autocomplete assertions](tfpphotographers/tests/e2e/human/support/human-location.ts)
+  already cover different behavior and must not be relabelled as missing.
+
+  **Implementation plan:** extend the relevant profile/location journey and
+  shared helpers using real browser permission controls. Preserve the strict
+  guard; no monkey-patched navigator, fake provider response or invented GPS
+  coordinate may substitute for the user-visible failure/recovery path.
+
+  **Acceptance:** the control leaves loading state, existing data is not silently
+  corrupted, manual correction works, and the saved fields/map match subsequent
+  independent retrieval. Record unsupported browser permission controls honestly.
+
+### 4. Interrupted jobs and dependency failures — recovery proof
+
+- [ ] **Specify recovery outcomes for in-flight work.** Cover interruption/restart of owned API/worker processes, relevant database/storage/moderation transport failures and concurrent completion/repeated submissions, with durable data preserved.
+
+  **Finding:** the original restart/capacity wording did not require proof of
+  in-flight side effects. Real rollback/concurrent-completion methods already
+  exist in [the PostgreSQL upload suite](tfpphotographers/apps/api/tests/modules/upload/upload-completion-concurrency.postgres.test.ts),
+  and [the worker](tfpphotographers/apps/api/src/worker.ts) has a drain lifecycle.
+  These implementations are not missing; final-artifact recovery remains a
+  separately recorded operational test.
+
+  **Implementation plan:** reuse those methods and existing controlled transport
+  tooling, then perform bounded process interruption only on a new owned local
+  fixture. Do not stop manual/developer services or repair data behind the UI.
+  Extend shared recovery logic only after a confirmed failure.
+
+  **Acceptance:** retained bytes/checksums and original attribution survive;
+  retry/lease recovery produces the intended single asset/domain effect without
+  duplicate moderation work; provider failures do not manufacture approval or a
+  content violation; cleanup and evidence holds remain protective. Preserve both
+  the original failed attempt and the subsequent recovery receipt.
+
+### 5. Investigation-log lifecycle — separate from telemetry and backups
+
+- [ ] **Commission and verify audit archival/retention explicitly.** Check approved retention settings, archive readback/hash verification, protection of held records, failure visibility, safe expiry and consistent host time.
+
+  **Finding:** backup schedules and Axiom/Sentry ingestion were listed, but the
+  separate [activity-evidence background job](tfpphotographers/apps/api/src/background/background-jobs.ts)
+  and [archive/expiry owner](tfpphotographers/apps/api/src/modules/legal/activity-retention.ts)
+  were not an explicit acceptance gate. These are implemented and have
+  [integration tests](tfpphotographers/apps/api/tests/modules/legal/activity-evidence.integration.test.ts).
+
+  **Implementation plan:** reuse the existing maintenance job, hold barriers,
+  bounded verification/export tools and [investigation runbook](tfpphotographers/docs/operations/INVESTIGATION_EVIDENCE.md).
+  Confirm the operator-approved policy instead of treating engineering defaults
+  as legal approval. Prepare harmless isolated checks locally; verify actual
+  maintenance progress and alert delivery on the eventual authorized host.
+
+  **Acceptance:** an archive is read back and its hash matches before eligible
+  expiry; active holds survive ordinary expiry/erasure; missing/corrupt archives
+  and failed captures fail visibly; no duplicate retention service is introduced.
+  Restricted exports/hold administration stay deferred with the admin journeys.
+
+### 6. Test-evidence access and preservation — before hosted test publication
+
+- [ ] **Define protection and retention for test artifacts.** Include screenshots, traces, console/email captures, logs and any database/media snapshots. Preserve private originals and make only approved redacted/synthetic evidence available to the intended reviewers.
+
+  **Finding:** [hosted strict-human artifacts](tfpphotographers/.github/workflows/strict-human-e2e.yml)
+  currently have 14-day retention. Failed traces can contain request/session or
+  entered-field details; preserving original attempts does not itself establish
+  safe access or durable release-evidence retention. This is a missing acceptance
+  check, not a finding that a credential was exposed by those artifacts.
+
+  **Implementation plan:** review the actual uploaded paths and representative
+  artifacts, their access audience and expiry. Select a proportionate evidence
+  recovery window using existing storage/account capabilities. Keep test-proof
+  retention separate from legal evidence retention. Produce sanitized review
+  copies without overwriting original receipts; do not buy storage or change
+  external retention policies as part of documentation work.
+
+  **Acceptance:** published artifacts contain no unapproved real credentials,
+  private data or provider payloads; authorized reviewers can retrieve the
+  required source-bound release/failure evidence after ordinary CI expiry.
+
+### 7. Actual public indexing — target SEO acceptance
+
+- [ ] **Check public indexing behavior on the deployed candidate.** Verify the intended domain/canonical URLs, redirects, locale links, robots directives, sitemap contents and the treatment of private, pending, renamed and deleted resources.
+
+  **Finding:** the optional hosted SEO/health configuration task did not spell out
+  these application outcomes. [Sitemap generation](tfpphotographers/apps/web/src/pages/sitemap.xml.ts)
+  depends on dynamic API reads, so an HTTP 200/static-only sitemap is insufficient
+  evidence. Existing [sitemap/robots tests](tfpphotographers/apps/web/tests/utils/sitemap-robots.test.ts)
+  remain useful lower-level proof.
+
+  **Implementation plan:** reuse the SEO sentinel, canonical URL helpers and
+  existing content creation/deletion journeys. Test actual published entries and
+  exclusions without adding duplicate URL generation. Local assertions can be
+  prepared now; real domain/edge verification needs an authorized target.
+
+  **Acceptance:** the exact approved public resource is discoverable at its
+  canonical location; private/pending/deleted resources are excluded as required;
+  redirects/status/indexing directives agree. Do not close this from a skipped
+  workflow, a green badge or a nonempty XML response alone.
+
+### 8. UAT and host network prerequisites — before remote target work
+
+- [ ] **Make the workspace security prerequisites explicit before UAT/production commissioning.** Verify restricted key-only inbound SSH, no direct root login, private service listeners and default denial of unauthorized outbound SSH to public TCP port 22, with only reviewed narrow exceptions.
+
+  **Finding:** the original firewall/TLS item was too broad to carry the explicit
+  requirements in [workspace deployment rules](RULES.md#deployment-rules).
+  Before reconnecting a suspended or potentially compromised UAT host, those
+  rules additionally require evidence preservation, outbound denial, reviewed
+  credential remediation and a trusted rebuild when compromise cannot be excluded.
+
+  **Implementation plan:** inspect existing host/provider controls before any
+  authorized target run. Record the target's trusted state and the operator's
+  recovery decision. Keep the existing credential-change deferral: this checkbox
+  does not authorize rotation, reconnection, rebuild or deployment. Report the
+  dependency if the prerequisites cannot be met under current authorization.
+
+  **Acceptance:** retain redacted ingress/egress/private-listener observations
+  and the recovery disposition where applicable; no target certificate is issued
+  from an untrusted/unadmitted host or by bypassing its access checks.
+
+<a id="execution-plan"></a>
+
+## 🧭 7. Execution plan
+
+This is the ordered plan for future authorized implementation and verification.
+The present update changes documentation only. The implementation agent owns
+code/test work; the operator owns legal approvals, credentials/access decisions,
+retention acceptance and go-live authority.
+
+1. **Reconcile scope before adding tests.** Work through section 6 item 1 using actual UI behavior and existing canonical cases. Classify coverage and existing proof, preserve the admin/email deferrals and native Phase 2 boundary, and identify only genuinely missing assertions/branches. Decide the final supported web browser scope explicitly.
+2. **Repair prerequisites and add the missing checks.** Address section 1's confirmed CI/performance-tool issues and dependency review dates. Extend existing tests/helpers for section 6 items 2–7 where evidence is missing. Keep security/adversarial/concurrency tests at their appropriate layer; no duplicate storage, logging, upload or coverage implementation. Account bindings/credential changes still follow their separate authorization boundaries.
+3. **Run focused local proof once per meaningful change.** Use fresh owned TEST/shadow resources and unused ports, restore retained checkout dependencies if needed, and check disk/provider readiness. Execute affected API/PostgreSQL/contract checks and strict human journeys across the supported browsers. Inspect actual UI captures, exact DB receipts, negative outcomes and diagnostics. Fix confirmed defects; preserve failed attempts and stop unchanged automatic retry loops.
+4. **Freeze the final local candidate.** Review the complete scoped diff and affected consumers; run the required types/lint/build/guard/inventory and compatible lower-level proof. Plan one complete final member-browser matrix as described in section 2. Record the exact source, selected declarations, environment, zero-retry leaf totals and original receipts. Prior source-specific successes remain historical; do not splice them into a new certificate.
+5. **Commission and verify targets only when authorized.** Meet section 6 item 8 first, then complete section 4's host/network/provider/backup work and the target-dependent security, maintenance and SEO checks. Keep the strict production doctor, same-source deployed identity and release verifier fail-closed. No production deployment, public Worker activation, account purchase or schedule installation is authorized now.
+6. **Publish an evidence-based handoff.** Update the existing journey tracker and canonical case owners before checking release tasks complete. Report exact tested scope, unresolved failures, deferred admin/email cases, operator/legal inputs and host/device gaps. Full declared web certification remains unavailable while its required slots are omitted; any later decision to resume deferred work must be explicit. Final go-live remains an operator decision.
+
 ## 🛡️ Execution rules and checklist maintenance
 
 - Use real visible controls, shared workflow helpers and the existing typed exact-value/read-only DB checks. No forced clicks, business API shortcuts, DB repair inside human tests, intercepted fake responses or manufactured moderation approvals.
@@ -157,8 +363,15 @@ without copying their secrets.
 - Complete a checkbox only with its actual command/source, runtime/target, passed/failed/skipped/retry totals and original receipt link. A scoped success closes only its scope. Keep unrelated work untouched.
 - Native Expo/iOS/Android, store signing and native profiling remain Phase 2. Admin/email remain explicitly deferred until the user changes that decision. No purchases, credential changes, production deployment or public Worker activation follow from this checklist.
 
-**Validation of this documentation update:** reconciled the ledger with all 121
+**Validation of the original checklist:** reconciled the ledger with all 121
 parsed executable test blocks and the 93 + 8 + 20 tracker groups; checked the live
 read-only production doctor and GitHub secret-name/job metadata; inspected the
 affected workflow/auth/performance source. No app services were restarted, no
 tests/deployments dispatched, and no provider/credential settings changed.
+
+**Follow-up review and this expansion:** the strict-human guard and generated
+inventory check passed during the read-only review. This edit records the eight
+findings and execution plan without changing application/test behavior or any
+recorded pass/fail status. Local Markdown links, finding/task counts, source
+references and scoped whitespace are checked before publication. No new browser
+or API execution, deployment or provider change is claimed for this doc edit.
