@@ -2,6 +2,11 @@
 
 Updated: 20 November 2026. The original matrix was reconciled on 19 November 2026 at 23:55:58 IST.
 
+For pending release tasks, CI/tooling fixes, the twelve production settings and
+host commissioning, use the [web readiness checklist](web-readiness-checklist.md).
+This file continues to own the source-specific journey execution record; the
+canonical use-case ledger continues to own requirements and implementation status.
+
 ## Responsive web report follow-up — 20 November 2026
 
 The original 93-journey matrix below retains its recorded sources and attempts.
