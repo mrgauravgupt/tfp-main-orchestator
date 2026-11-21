@@ -7,6 +7,44 @@ host commissioning, use the [web readiness checklist](web-readiness-checklist.md
 This file continues to own the source-specific journey execution record; the
 canonical use-case ledger continues to own requirements and implementation status.
 
+<!-- local-policy-timezones:start -->
+<a id="local-policy-timezones-20261121"></a>
+## ✅ Event venue dates, exact zones and shared controls — 21 November
+
+Only the expanded existing `WEB-E2E-EVT-015` journey was selected. Frozen source
+`a93f26f7a7039fb0a03e85d12206062857b16f5f` passed **3/3 browser leaves**, with
+**six exact read-only DB receipts and 54 captures**, zero failures/skips/retries.
+
+| Existing journey | Chromium | Firefox | Mobile Chromium |
+| --- | --- | --- | --- |
+| Rich event edit, exact UTC/venue-zone readback, replacement image pixels, fee removal, independent US-market detail/search date and shared button/modal focus | ✅ Passed | ✅ Passed | ✅ Passed |
+
+The selected reader has an explicit New York browser timezone. The midnight
+Mumbai fixture exposes the previous calendar-day error. Initial source
+`f085ae3fb` failed in all three browsers because the provider/form path dropped
+the zone; original results and post-run snapshots remain intact. The correction
+retains the existing provider field and event interpretation zone rather than
+weakening assertions or changing moderation. No admin page/action was tested;
+the seeded admin identity is only the content owner in the existing helper.
+
+Evidence: `/private/tmp/tfp-web-local-gates-20261121-_hqvzbpi`.
+`local-gates-browser-reconciliation.json` binds actual children, frozen contexts,
+hashes, captures, DB receipts and `api-proof-local-gates-a2/executed-api.json`
+(55 selected API/PostgreSQL methods). Passing diagnostic arrays are empty; all
+captures fit their recorded widths. Unselected lower-level admin sources remain
+`not-run`. Original harness/type attempts and the failed-source API proof remain
+separate; no full suite or release certificate is inferred.
+
+The [implementation/results record](tfpphotographers/docs/operations/WEB_LOCAL_POLICY_AND_TIMEZONES_2026_11_21.md)
+documents shared Origin/calendar fixes, DST instant preservation, location
+metadata and token cleanup. Owned services/PG15565 are stopped; six browser
+snapshots, three final DB dumps, cluster data and all evidence remain. Only the
+owned checkout's rebuildable root dependencies were removed after reconciliation;
+restore them before replay. Manual 3000/4000 retain their listeners and HTTP 200.
+Admin/email, native Phase 2, broader acceptance and host/operator gates remain
+deferred. No deployment, provider account change or purchase occurred.
+<!-- local-policy-timezones:end -->
+
 <!-- storage-url-safety:start -->
 ## Storage URL privacy follow-up — 21 November 2026
 

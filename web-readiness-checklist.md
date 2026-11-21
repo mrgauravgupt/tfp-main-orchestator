@@ -23,6 +23,30 @@ domain/API coverage is distinguished from missing strict-human execution.
 - **Providers, secure configuration and operator inputs:** the [provider inventory](tfpphotographers/docs/operations/PROVIDER_AND_SERVICE_INVENTORY.md).
 - **This file:** remaining release tasks and acceptance evidence. It does not replace those owners or maintain another set of per-case pass/fail results. Update the journey tracker first when a flow completes, then link its actual receipt here.
 
+## ✅ Local request, event-date and token follow-up — 21 November
+
+The [implementation and results record](tfpphotographers/docs/operations/WEB_LOCAL_POLICY_AND_TIMEZONES_2026_11_21.md)
+closes six confirmed local gaps: supplied invalid Origin fallback; impossible
+explicit dates; unchanged DST-hour edits shifting the stored instant; mixed-zone
+event dates/times; venue zones dropped by provider/form mappings; and duplicate
+control styles overriding the shared button minimum/palette. Existing request,
+location, event-write, formatting and design-token owners are extended in place.
+Storage URL generation, moderation, checksums, attribution and holds remain with
+their established owners; no schema migration or provider call was added.
+
+The expanded existing event journey passed **3/3 selected browser leaves** on
+`a93f26f7a`: **six exact DB receipts, 54 captures, zero retries**. The corrected
+candidate also passed **55 affected API/PostgreSQL methods**. Focused component,
+type/lint/build, architecture and strict-human checks passed at their recorded
+scopes. The [journey tracker](human-like-flow-pending.md#local-policy-timezones-20261121)
+owns the actual leaves and original failures. Owned test services/PG15565 are
+stopped, data/evidence retained and manual 3000/4000 remain healthy.
+
+These results close the specific event/CSRF/token checks below. They do not
+complete broader date/locale/AT/security acceptance, the full matrix or any host
+commissioning gate. Legacy zone-less rows are preserved rather than retroactively
+assigned a guessed zone. Admin/email remain deferred; no deployment occurred.
+
 ## 🔐 Storage URL safety follow-up — 21 November
 
 The [URL privacy review](tfpphotographers/docs/operations/STORAGE_URL_PRIVACY_REVIEW_2026_11_21.md)
@@ -54,7 +78,7 @@ still reports **12 deferred settings**; no full release certificate is claimed.
 | Scoped hosted-CI checkout access | An approved contents-read-only credential for the private auxiliary repositories is still needed. Existing broad personal credentials must not be copied into Actions. Then run the affected hosted workflow. |
 | Legal/contact, alert and recovery decisions | The six legal values in section 5 need real operator approval, plus the intended contacts/alert recipient and go-live decision. Engineering defaults cannot supply this authority. |
 | Historical credential retirement | Explicitly deferred by the operator. Preserve the recorded findings and validate every consumer before any future approved replacement/retirement. |
-| Broader web acceptance evidence | Performance/capacity, real assistive technology, priority-locale/long-copy, timezone/DST, supported-browser promises, recovery and artifact-access checks remain uncompleted proof. Fix new defects only when reproduced; existing scoped successes do not certify these areas. |
+| Broader web acceptance evidence | Performance/capacity, real assistive technology/zoom, priority-locale/long-copy, remaining date/deadline boundaries, supported-browser promises, recovery and artifact-access checks remain uncompleted proof. The specific event venue/DST and Origin/cookie checks above now pass; those scoped successes do not certify the broader areas. |
 | Host and deployed-artifact commissioning | Configure the six technical values, private services/TLS/network controls, final artifact/restart/rollback, real edge/B2/moderation access, backup/audit schedules and restore, telemetry/alert delivery, public indexing and measured load on the authorized host. Existing providers are already inventoried. |
 | Complete current-source matrix and deployed-target certificate | Deferred under the explicit affected-only/no-deploy instruction. Do not start a full suite, weaken release gates or splice earlier passing leaves into a new certificate. |
 
@@ -229,6 +253,7 @@ requirement of this release.
 - [ ] **Confirm the browser support promise.** Safari/WebKit and real iPhone Safari are not executable projects in the current matrix. If Safari is a Phase 1 target, add/run the appropriate web verification and document actual engine/device results; desktop Chromium emulation is insufficient. Native app work remains Phase 2. Do not advertise other browsers as tested without their evidence.
 - [ ] **Complete a focused assistive-technology review.** Existing keyboard/modal and responsive checks passed at their scopes. Verify representative forms, errors, navigation and reporting with a real screen reader and browser zoom; retain contrast/focus/overflow findings and fix confirmed problems. Do not call the existing visual scan full accessibility certification.
 - [ ] **Review priority public locales and legal/contact copy.** Existing catalog/schema/RTL checks are useful but do not prove linguistic accuracy in every supported language. Record reviewed languages, long-copy behavior and approved legal text; avoid treating translation inventory counts as human language approval.
+- [x] **Close the reproduced event venue/DST and token-control gaps locally.** The expanded existing event journey passes in all three admitted browsers with exact UTC/zone DB readback, replacement image content, public date/search retrieval and sign-in size/modal focus. Seven real PostgreSQL/HTTP event cases also prove both DST-fold instants, unchanged seconds, active edits, invalid dates and zone fallback preservation. This closes that event subset; broader deadline/timezone and real AT/zoom acceptance remain open.
 - [ ] **Close the historical credential-exposure gate after explicit operator authorization.** The [security record](tfpphotographers/docs/operations/DEPENDENCY_SECURITY_FOLLOWUP_2026_11_18.md#historical-credential-findings--operator-approval-required) retains 47 historical entries, with 28 configuration matches across 13 names; these are not counts of distinct active keys. The user deferred rotation/retirement. Review actual key ownership/consumers and validate replacements before any approved retirement; no revocation, history rewrite or suppression is authorized by this file. A host purchase does not resolve this gate.
 
 ## 🖥️ 4. Host commissioning and deployed-provider verification
@@ -295,8 +320,11 @@ Existing lower-level tests must be reused where they already cover a boundary.
   **Finding:** the existing reconciliation accounts for all declared tests. The
   [route guard](tfpphotographers/scripts/qa/human-e2e-guard.mjs) checks mappings
   and annotations; it does not establish semantic coverage of every control or
-  branch in a mapped page. No dedicated `timezoneId` variation was found in the
-  strict-human spec bodies inspected during the review.
+  branch in a mapped page. At the original review no dedicated `timezoneId`
+  variation was found in the inspected strict-human spec bodies. The 21 November
+  event follow-up now has an explicitly configured New York public reader and
+  US market path, exact retained Mumbai zone and a discriminating midnight
+  fixture; broader business/date boundaries still need their own evidence.
 
   **Implementation plan:** extend existing `visibleActions`,
   `visiblePostconditions`, `persistedPostconditions` and `negativeStates` in the
@@ -315,6 +343,13 @@ Existing lower-level tests must be reused where they already cover a boundary.
 ### 2. Production-mode security boundaries — before final web sign-off
 
 - [ ] **Make the security acceptance matrix explicit.** Verify cross-account resource/file access denial, CSRF, CORS, CSP, cookie flags/session revocation, configured rate limits, private downloads, and absence of test-only authentication/preview shortcuts in the intended production profile.
+
+  **Completed local subset, 21 November:** the shared Origin owner rejects a
+  supplied opaque/empty/malformed origin despite trusted fallback hints. Six
+  actual CSRF integration methods pass, including development/production mode,
+  real loopback HTTP denial with no session mutation, trusted logout/revocation
+  and Secure/HttpOnly/SameSite cookie assertions. This is policy proof over local
+  HTTP; final HTTPS/artifact/topology and the remaining security matrix stay open.
 
   **Finding:** the original checklist mentioned API proof and configuration
   checks without listing these security outcomes. The existing
