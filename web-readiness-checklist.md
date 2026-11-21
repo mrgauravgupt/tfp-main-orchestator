@@ -24,10 +24,10 @@ domain/API coverage is distinguished from missing strict-human execution.
 - **This file:** remaining release tasks and acceptance evidence. It does not replace those owners or maintain another set of per-case pass/fail results. Update the journey tracker first when a flow completes, then link its actual receipt here.
 
 The original read-only review inspected `73c4267d697219a07f2099e140d6bb0ae0272ac0`.
-This implementation batch ends at application/test source
-`1e1476e19339b161ef0557ebec0439ef0d4339e1`. Its intermediate candidates and
-original failed attempts remain recorded separately; documentation publication
-does not restamp them.
+The preceding 20 November batch ended at application/test source
+`1e1476e19339b161ef0557ebec0439ef0d4339e1`. The 21 November exact-readback follow-up
+is recorded below at its own sources. Every intermediate candidate and original
+failure retains its identity; documentation publication does not restamp them.
 
 | Current fact | Verified boundary |
 | --- | --- |
@@ -35,6 +35,7 @@ does not restamp them.
 | 128 executable journey groups in 29 specs | 108 ordinary/public declarations and 20 deferred admin/mixed-admin declarations. The original 93 + 8 matrix remains historical; this batch adds seven declarations and extends existing ones. |
 | Earlier member journeys | The 93-group matrix has passing source-specific evidence per browser; 8 earlier groups retain their prior evidence. This is not a single complete current-revision run. |
 | Latest reporting fix | 12/12 selected executions passed on the same application candidate: four each in Chromium, Firefox and responsive Chromium, zero retries; six exact DB receipts and 144 retained captures. See the [reporting record](tfpphotographers/docs/operations/MOBILE_REPORT_CLICK_FIX_2026_11_20.md). |
+| Latest exact-readback follow-up | 57 affected slots have passing source-specific evidence: 87 exact DB receipts, 540 captures, zero retries. One original Firefox failure is retained; its one-file readiness correction passed in all browsers. This is not a same-source full matrix. |
 | Batch lower-level validation | Full API 1,516/1,516 at `70c1925d3`; later frontend/harness candidates have their own selected 73-method prerequisites, including ten exact DB checks. Web 915 + 4 separately after disk recovery; safe harness 245/245. Final affected image/location checks, types/lint and frozen web build passed. These are scoped results. |
 | Production configuration | The local read-only strict doctor was rerun for this checklist: exit 1, exactly 12 unresolved settings, listed below. This is not an observation of a deployed host. |
 
@@ -43,6 +44,45 @@ backup completion/pruning/restore fixtures, Cloudflare operator access, Axiom UA
 repair, monitoring ingestion and shared upload/storage URL ownership already have
 documented proof. Their future host activation remains separate. Existing email
 is Resend; no SES adapter, new paid plan or replacement provider is required here.
+
+## ✅ Completed affected-only follow-up — 21 November 2026
+
+The operator requested closure of the exact-value/image/count/deletion gaps, then
+changed execution to **implement all fixes first and test only affected flows;
+do not run a complete suite**. The full queue has been cancelled. Its original
+candidate `ca03551d73bf0acdb84f75ba9774e13a6b806117` and the
+[journey tracker](human-like-flow-pending.md) retain **96 Chromium passes, ten
+failures, one interrupted leaf and one not run**. Firefox/mobile were not started.
+Original DB/media snapshots and every failure remain preserved.
+
+The corrected follow-up covers **19 existing affected journeys × 3 browsers =
+57 passing source-specific slots**. It includes exact dates/filter JSON,
+saved values/deletion, uploaded content identity, displayed counts, calendar
+correction and its shared backward-date consumer. Admin/email remain deferred.
+No unchanged full unit/API/business suite will be repeated for this follow-up.
+
+**Completed prerequisites on the original frozen source:** full API/PostgreSQL **1,519/1,519**,
+web unit **922/922**, harness **246/246**, workspace types/lint/build and strict
+human guard/inventory. The [exact-readback record](tfpphotographers/docs/operations/WEB_MEMBER_EXACT_READBACK_2026_11_21.md)
+owns the new shared assertions, negative contracts and original receipts.
+
+**Actual final evidence:** 19 passing selected slots in each browser, **87 exact
+DB receipts and 540 retained captures**. Initial affected source `ae7bf606d` passed
+Chromium 19/19, Firefox 18/19 and mobile 19/19. The original Firefox failure found
+that an image-element count could accept a processing placeholder. Test-only
+correction `4f6504962` waits for the same exact image-content comparison and passed
+that one journey in all three browsers. Pixel threshold, moderation and workflow
+deadline are unchanged. There were 60 actual affected executions: 59 passed and
+one originally failed; it remains retained. No result is spliced into a same-source
+full release certificate.
+
+The corrected candidate passed **65 selected API/PostgreSQL methods**, affected
+types/lint, strict-human guards, two calendar browser checks and the web build.
+API/build suites were not replayed for the one-file test-only correction. Canonical
+source contexts, actual leaves, required before/after captures and diagnostics all
+reconciled. Seven original DB dumps/media snapshots remain; owned test services/PG
+are stopped. Manual FE3000/API4000 remain unchanged and healthy. The complete API
+proof and earlier provider/sleep failures keep their original sources. No deployment.
 
 ## ✅ Local batch completion — 21 November 2026
 
@@ -88,11 +128,19 @@ No hosted CI success or final production performance is inferred from local proo
 ### Member web journeys and exact persistence
 
 - [x] **Define the final Phase 1 acceptance scope explicitly.** Chromium, Firefox and responsive Chromium are the current executable projects. `mobile-chromium` is web emulation, not an Expo/iOS/Android result. Keep the admin/email exclusions visible; do not describe this excluded scope as every web case tested.
-- [ ] **Freeze the intended release source and assemble compatible lower-level/API proof.** The latest candidate has its own 73-method selected proof, including ten PostgreSQL persistence checks. The complete 1,516-method result is bound to `70c1925d3`; the API implementation is unchanged, but this is not a full final-commit required-PostgreSQL certificate. Use the existing source-bound proof owner; no restamping old results.
-- [ ] **When final sign-off is requested, obtain the missing complete current-source member matrix.** Earlier successful member journeys span several sources and scoped reruns. Use one planned final pass on a clean isolated TEST target, with zero retries and exact selected titles. Do not repeatedly replay completed suites during ordinary fixes. Any later failed-only result must retain the original failure and its actual source.
+- [x] **Freeze the intended local member candidate and assemble matching complete API proof.** Candidate `ca03551d7` has a clean owned checkout and its own complete 1,519-method API/PostgreSQL receipt, including thirteen independent persistence methods. Registry/hash/source checks passed. This closes the local prerequisite; the separately admitted deployed-target/full-release certificate remains open.
+- [x] **Complete the operator-selected affected follow-up.** Nineteen journey groups have passing actual evidence in each supported browser, with 87 exact DB receipts, 540 captures and zero retries. Source-specific contexts and original failures are in the [exact-readback report](tfpphotographers/docs/operations/WEB_MEMBER_EXACT_READBACK_2026_11_21.md) and journey tracker. This is the completed current instruction; do not schedule a full-suite replay.
+- [ ] **Complete current-source member matrix — deferred by the latest affected-only instruction.** The original Chromium attempt was interrupted; Firefox/mobile were not run. Do not resume the full queue or repeat full suites under this instruction. Scoped follow-up results retain exact sources and original failures and cannot certify the unexecuted matrix.
 - [x] **Reconcile persisted postconditions with the right evidence.** Reuse [the typed read-only verification port](tfpphotographers/scripts/qa/support/persistence-contract.ts) and visible reload/independent readback. It already covers profiles/location, content, messages, applications, saved searches, reviews, media, holds, erasure and reports. Audit important saved fields against their test assertions and add checks only for confirmed gaps; do not assume every DB column or every form field already has an exact-value checkpoint.
 
   **Completed scope:** exact contest-entry/RSVP checkpoints were added to the existing typed port; the affected real application/entry/RSVP, report, message and saved-location flows passed independent DB/reload checks across browsers. This does not claim every database column/form field or unexecuted sibling case was checked.
+
+  **21 November implementation:** add exact normalized event/opportunity/contest dates,
+  saved-search JSON and stable row identity, portfolio ownership/roles/deletion,
+  accepted application terms and soft-deleted content state. Distinct uploaded
+  fixture content and exact totals/page ranges now have shared assertions.
+  These affected behaviors now have the source-specific passing evidence above;
+  this does not certify every form field/DB column or unexecuted sibling journey.
 - [x] **Investigate and fix the newly reproduced pending-location interaction.** Native Firefox permission waiting could keep Detect loading indefinitely; the shared overall deadline/manual cancellation now passes in all three web browsers. This is distinct from the earlier provider-empty/SRI observations, whose original failed and separate passing receipts remain preserved. SRI has not recurred; keep integrity checks and genuine provider results. No error suppression or automatic retry loop was added.
 
 ### Admin/mixed-admin journeys — ⏸ operator-deferred
