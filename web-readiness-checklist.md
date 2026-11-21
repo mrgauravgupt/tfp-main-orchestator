@@ -23,6 +23,45 @@ domain/API coverage is distinguished from missing strict-human execution.
 - **Providers, secure configuration and operator inputs:** the [provider inventory](tfpphotographers/docs/operations/PROVIDER_AND_SERVICE_INVENTORY.md).
 - **This file:** remaining release tasks and acceptance evidence. It does not replace those owners or maintain another set of per-case pass/fail results. Update the journey tracker first when a flow completes, then link its actual receipt here.
 
+## 🔐 Storage URL safety follow-up — 21 November
+
+The [URL privacy review](tfpphotographers/docs/operations/STORAGE_URL_PRIVACY_REVIEW_2026_11_21.md)
+records the confirmed fixes: public project moodboards no longer fall back to
+private originals; contest resource capabilities bypass shared caches; local
+token URLs and embedded credentials use the shared capability gate; relative
+capabilities are redacted from diagnostics; upload telemetry omits upstream
+message content. The existing storage ports, checksum/moderation/evidence owners
+and controller → application → repository/Prisma boundaries remain in place.
+
+Focused methods, types/build/lint and architecture guards passed. The two
+affected existing journeys passed in all three web browsers at `0230bf24c`:
+**6/6 leaves, 15 exact DB receipts, 54 captures, zero failures/skips/retries**.
+Actual source-bound contexts and original attempts are in the journey tracker;
+this closes only those leaves.
+
+The requested sign-in color correction is separately validated in `5e50c465b`:
+the side panel now uses the shared primary-button palette and standard size;
+the duplicate auth stylesheet/import and contest-only paint/focus rules were
+removed. Three compiled UI checks passed for matching normal/hover colors,
+keyboard modal access, focus restoration and responsive overflow. No completed
+business suite was repeated for this UI-only change. The strict production doctor
+still reports **12 deferred settings**; no full release certificate is claimed.
+
+### What remains apart from admin and email
+
+| Remaining work | Dependency and next action |
+| --- | --- |
+| Scoped hosted-CI checkout access | An approved contents-read-only credential for the private auxiliary repositories is still needed. Existing broad personal credentials must not be copied into Actions. Then run the affected hosted workflow. |
+| Legal/contact, alert and recovery decisions | The six legal values in section 5 need real operator approval, plus the intended contacts/alert recipient and go-live decision. Engineering defaults cannot supply this authority. |
+| Historical credential retirement | Explicitly deferred by the operator. Preserve the recorded findings and validate every consumer before any future approved replacement/retirement. |
+| Broader web acceptance evidence | Performance/capacity, real assistive technology, priority-locale/long-copy, timezone/DST, supported-browser promises, recovery and artifact-access checks remain uncompleted proof. Fix new defects only when reproduced; existing scoped successes do not certify these areas. |
+| Host and deployed-artifact commissioning | Configure the six technical values, private services/TLS/network controls, final artifact/restart/rollback, real edge/B2/moderation access, backup/audit schedules and restore, telemetry/alert delivery, public indexing and measured load on the authorized host. Existing providers are already inventoried. |
+| Complete current-source matrix and deployed-target certificate | Deferred under the explicit affected-only/no-deploy instruction. Do not start a full suite, weaken release gates or splice earlier passing leaves into a new certificate. |
+
+See sections 1–7 for the existing acceptance tasks and owners. The table above
+groups dependencies; it does not create another case/status registry. Native
+remains Phase 2. No purchase, paid plan, credential change or deployment occurred.
+
 The original read-only review inspected `73c4267d697219a07f2099e140d6bb0ae0272ac0`.
 The preceding 20 November batch ended at application/test source
 `1e1476e19339b161ef0557ebec0439ef0d4339e1`. The 21 November exact-readback follow-up
@@ -181,7 +220,7 @@ requirement of this release.
 
 ### Same-source deployed-target certificate
 
-- [ ] **After an explicitly authorized UAT release, verify the declared deployed-target slots.** Match source, registry hashes, actual deployed identity, API prerequisites and original child manifests. The current ledger declares 200 implemented local cases and 164 implemented target cases; use its per-case profiles rather than inventing an identical cross-product for every case.
+- [ ] **After an explicitly authorized UAT release, verify the declared deployed-target slots.** Match source, registry hashes, actual deployed identity, API prerequisites and original child manifests. Derive required slots from the current ledger's per-case profiles rather than maintaining another count or inventing an identical cross-product for every case. Exact DB/byte checks requiring the isolated loopback adapter must remain local until a real approved target adapter exists.
 - [ ] **Run the existing release verifier only after its real requirements are satisfied.** [The canonical certification command](tfpphotographers/scripts/qa/run-human-web-certification.sh) requires clean committed source, matching independently deployed UAT source and the complete required children. It cannot certify an admin-excluded member subset as the full declared web suite. Do not weaken the verifier or change case statuses to make an aggregate green. UAT/production writes need their existing authorization.
 
 ## 🔍 3. Additional confidence checks — uncompleted proof, not confirmed defects
@@ -433,7 +472,7 @@ authority. No production deployment is authorized.
 1. **Reconcile scope before adding tests.** Work through section 6 item 1 using actual UI behavior and existing canonical cases, including the concrete public-user scenarios in section 8. Classify coverage and existing proof, preserve the admin/email deferrals and native Phase 2 boundary, and identify only genuinely missing assertions/branches. Decide the final supported web browser scope explicitly.
 2. **Repair prerequisites and add the missing checks.** Address section 1's confirmed CI/performance-tool issues and dependency review dates. Extend existing tests/helpers for section 6 items 2–7 and the section 8 scenarios where evidence is missing; follow section 8's risk order and reuse instructions. Keep security/adversarial/concurrency tests at their appropriate layer; no duplicate storage, logging, upload or coverage implementation. Account bindings/credential changes still follow their separate authorization boundaries.
 3. **Run focused local proof once per meaningful change.** Use fresh owned TEST/shadow resources and unused ports, restore retained checkout dependencies if needed, and check disk/provider readiness. Execute affected API/PostgreSQL/contract checks and strict human journeys across the supported browsers. Inspect actual UI captures, exact DB receipts, negative outcomes and diagnostics. Fix confirmed defects; preserve failed attempts and stop unchanged automatic retry loops.
-4. **Freeze the final local candidate.** Review the complete scoped diff and affected consumers; run the required types/lint/build/guard/inventory and compatible lower-level proof. Plan one complete final member-browser matrix as described in section 2. Record the exact source, selected declarations, environment, zero-retry leaf totals and original receipts. Prior source-specific successes remain historical; do not splice them into a new certificate.
+4. **Freeze the affected local candidate.** Review the complete scoped diff and affected consumers; run the required affected types/lint/build/guard/inventory and compatible lower-level proof. Execute only the impacted journeys under the latest user instruction; the complete member-browser matrix remains explicitly deferred in section 2. Record the exact source, selected declarations, environment, zero-retry leaf totals and original receipts. Prior source-specific successes remain historical; do not splice them into a new certificate.
 5. **Commission and verify targets only when authorized.** Meet section 6 item 8 first, then complete section 4's host/network/provider/backup work and the target-dependent security, maintenance and SEO checks. Keep the strict production doctor, same-source deployed identity and release verifier fail-closed. No production deployment, public Worker activation, account purchase or schedule installation is authorized now.
 6. **Publish an evidence-based handoff.** Update the existing journey tracker and canonical case owners before checking release tasks complete. Report exact tested scope, unresolved failures, deferred admin/email cases, operator/legal inputs and host/device gaps. Full declared web certification remains unavailable while its required slots are omitted; any later decision to resume deferred work must be explicit. Final go-live remains an operator decision.
 

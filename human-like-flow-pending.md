@@ -7,6 +7,38 @@ host commissioning, use the [web readiness checklist](web-readiness-checklist.md
 This file continues to own the source-specific journey execution record; the
 canonical use-case ledger continues to own requirements and implementation status.
 
+<!-- storage-url-safety:start -->
+## Storage URL privacy follow-up — 21 November 2026
+
+Only these two affected existing journeys were selected on frozen product
+`0230bf24c`. All six leaves passed with zero failures, skips or retries. The
+actual total is **15 exact read-only DB receipts and 54 captures**. The canonical
+context/API-proof checks passed for each child; admin lower-level sources remain
+`not-run` under the exclusion, so this is not a full release certificate.
+
+| Existing journey | Chromium | Firefox | Mobile Chromium |
+| --- | --- | --- | --- |
+| WEB-E2E-CON-020 — exact saved resource key and identical reference download before/after visible logout | ✅ Passed | ✅ Passed | ✅ Passed |
+| WEB-E2E-OPP-028 — rich edit, exact replacement moodboard key/pixels, public URL privacy and retained deletion readback | ✅ Passed | ✅ Passed | ✅ Passed |
+
+Evidence root: `/private/tmp/tfp-storage-url-safety-20261121-o4p48ogt`.
+`storage-browser-reconciliation.json` binds actual children, source/context hashes,
+DB checkpoints and captures. The selected 42-method upload/persistence/evidence
+proof is `api-proof-url-safety-a2/executed-api.json`. The preceding source-specific
+proof and all original setup/typing attempts remain preserved.
+
+The later sign-in style cleanup at `5e50c465b` has **three separate compiled-app
+UI checks** for palette, hover, keyboard/modal focus and overflow. It removed
+duplicate CSS and reused Button/design tokens; it did not replay these business
+journeys or turn their older source into a new full-source certificate. See
+[the source/results record](tfpphotographers/docs/operations/STORAGE_URL_PRIVACY_REVIEW_2026_11_21.md).
+Admin/email stay deferred, native remains Phase 2, existing data/evidence and
+manual 3000/4000 are preserved, and no deployment occurred.
+Owned previews and PostgreSQL 15564 are stopped. Three browser DB/media snapshots,
+two final DB dumps and the cluster data directory remain retained; manual health
+checks returned HTTP 200. `owned-final-cleanup.json` records the exact scope.
+<!-- storage-url-safety:end -->
+
 <!-- affected-final-selection:start -->
 ## ✅ Final affected selection — 57 passing source-specific slots
 
